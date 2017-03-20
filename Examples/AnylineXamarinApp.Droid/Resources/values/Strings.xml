@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ApplicationName">Anyline Examples (Xamarin)</string>
+
+  <!--textview names-->
+
+  <string name="scan_analog_meter">Scan Analog Meter</string>
+  <string name="scan_digital_meter">Scan Digital Meter</string>
+  <string name="scan_heat_meter">Scan Heat Meter</string>
+
+  <string name="scan_barcode">Scan Barcode</string>
+  <string name="scan_mrz">Scan MRZ of Passport or ID</string>
+  <string name="scan_document">Scan Document</string>
+  <string name="scan_voucher_code">Scan Voucher Codes</string>
+  <string name="scan_iban">Scan IBAN</string>
+  <string name="scan_bottlecaps">Scan Bottlecap</string>
+  <string name="scan_license_plates">License Plates (Alpha)</string>
+  <string name="scan_license_plates_austria">Austrian\nLicense Plates (Alpha)</string>
+  <string name="scan_license_plates_germany">German\nLicense Plates (Alpha)</string>
+  
+  <!--energy-->
+
+  <string name="heat_meter_4_3">4 pre-decimal places</string>
+  <string name="heat_meter_5_3">5 pre-decimal places</string>
+  <string name="heat_meter_6_3">6 pre-decimal places</string>
+  
+  <!--categories-->
+  
+  <string name="category_energy">Energy</string>
+  <string name="category_identification">Identification</string>
+  <string name="category_fintech">Fintech</string>
+  <string name="category_barcodes">Barcodes</string>
+  <string name="category_documents">Documents</string>
+  <string name="category_loyality">Loyality</string>
+  <string name="category_vehicle">Vehicles</string>
+  
+  <!--version info-->
+
+  <string name="version_info"></string>
+
+</resources>

@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{922FED8D-BDDD-47BC-BC88-705FF802115D}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AnylineXamarinApp</RootNamespace>
+    <AssemblyName>AnylineXamarinApp</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AndroidApplication>true</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <AndroidLinkSkip>
+    </AndroidLinkSkip>
+    <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+    <AndroidSupportedAbis>armeabi,armeabi-v7a,x86</AndroidSupportedAbis>
+    <AndroidStoreUncompressedFileExtensions>
+    </AndroidStoreUncompressedFileExtensions>
+    <MandroidI18n>
+    </MandroidI18n>
+    <Debugger>Xamarin</Debugger>
+    <DevInstrumentationEnabled>True</DevInstrumentationEnabled>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
+    <BundleAssemblies>False</BundleAssemblies>
+    <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
+    <AndroidEnableMultiDex>False</AndroidEnableMultiDex>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AnylineXamarinSDK.Droid, Version=3.7.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AnylineXamarinSDK.Droid\bin\Debug\AnylineXamarinSDK.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Android" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActivityListAdapter.cs" />
+    <Compile Include="Barcode\BarcodeActivity.cs" />
+    <Compile Include="Document\DocumentActivity.cs" />
+    <Compile Include="Energy\EnergyActivity.cs" />
+    <Compile Include="MainActivity.cs" />
+    <Compile Include="Mrz\MrzActivity.cs" />
+    <Compile Include="Mrz\MrzResultView.cs" />
+    <Compile Include="Ocr\BottlecapActivity.cs" />
+    <Compile Include="Ocr\IbanActivity.cs" />
+    <Compile Include="Ocr\LicensePlateActivityGermany.cs" />
+    <Compile Include="Ocr\LicensePlateActivityAustria.cs" />
+    <Compile Include="Ocr\LicensePlateActivity.cs" />
+    <Compile Include="Ocr\OCRResultView.cs" />
+    <Compile Include="Ocr\VoucherCodeActivity.cs" />
+    <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultDialogBuilder.cs" />
+    <Compile Include="Util.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\EnergyConfigHeatMeter.json" />
+    <AndroidAsset Include="Assets\BarcodeConfig.json" />
+    <AndroidAsset Include="Assets\MrzConfig.json" />
+    <AndroidAsset Include="Assets\VoucherCodeConfig.json" />
+    <AndroidAsset Include="Assets\tessdata\anyline_capitals.traineddata" />
+    <AndroidAsset Include="Assets\tessdata\bottlecap.traineddata" />
+    <AndroidAsset Include="Assets\tessdata\deu.traineddata" />
+    <AndroidAsset Include="Assets\tessdata\eng_dict.traineddata" />
+    <AndroidAsset Include="Assets\tessdata\rbf_jan2015_v2.traineddata" />
+    <AndroidAsset Include="Assets\tessdata\scrabble.traineddata" />
+    <AndroidAsset Include="Assets\IbanConfig.json" />
+    <AndroidAsset Include="Assets\tessdata\eng.traineddata" />
+    <AndroidAsset Include="Assets\BottlecapViewConfig.json" />
+    <AndroidAsset Include="Assets\DocumentConfig.json" />
+    <AndroidAsset Include="Assets\EnergyConfigAll.json" />
+    <AndroidAsset Include="Assets\LicensePlateConfig.json" />
+    <AndroidAsset Include="Assets\license_plates.ale" />
+    <AndroidAsset Include="Assets\license_plates_a.ale" />
+    <AndroidAsset Include="Assets\license_plates_d.ale" />
+    <AndroidAsset Include="Assets\tessdata\Alte.traineddata" />
+    <AndroidAsset Include="Assets\tessdata\Arial.traineddata" />
+    <AndroidAsset Include="Assets\tessdata\eng_no_dict.traineddata" />
+    <AndroidAsset Include="Assets\tessdata\GL-Nummernschild-Mtl7_uml.traineddata" />
+    <None Include="Resources\AboutResources.txt" />
+    <AndroidResource Include="Resources\layout\EnergyActivity.axml" />
+    <AndroidResource Include="Resources\layout\BarcodeActivity.axml" />
+    <AndroidResource Include="Resources\layout\MrzActivity.axml" />
+    <AndroidResource Include="Resources\layout\MrzResult.axml" />
+    <AndroidResource Include="Resources\layout\DialogResult.axml" />
+    <AndroidResource Include="Resources\layout\OCRActivity.axml" />
+    <AndroidResource Include="Resources\layout\OCRResult.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\DocumentActivity.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\MainActivity.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Strings.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AndroidManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_energy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_launcher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\styles.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\passport_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_barcode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_energy_old.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_mrz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DebitCard\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\example_activities.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\bottle_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\gift_card_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\iban_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\license_plate_background.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+     Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

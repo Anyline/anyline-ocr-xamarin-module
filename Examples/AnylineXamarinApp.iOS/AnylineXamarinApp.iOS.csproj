@@ -1,0 +1,493 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{1B7E7069-1386-4B26-93A7-7FE7F661B81F}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>AnylineXamarinApp.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>AnylineXamarinAppiOS</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>i386</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchProfiling>true</MtouchProfiling>
+    <StartupObject>AnylineXamarinApp.iOS.Application</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <ConsolePause>False</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <StartupObject>AnylineXamarinApp.iOS.Application</StartupObject>
+    <MtouchSdkVersion>9.3</MtouchSdkVersion>
+    <MtouchLink>Full</MtouchLink>
+    <MtouchDebug>True</MtouchDebug>
+    <MtouchProfiling>False</MtouchProfiling>
+    <MtouchFastDev>False</MtouchFastDev>
+    <MtouchUseLlvm>False</MtouchUseLlvm>
+    <MtouchUseThumb>False</MtouchUseThumb>
+    <MtouchUseSGen>False</MtouchUseSGen>
+    <MtouchUseRefCounting>False</MtouchUseRefCounting>
+    <OptimizePNGs>True</OptimizePNGs>
+    <MtouchFloat32>False</MtouchFloat32>
+    <DeviceSpecificBuild>False</DeviceSpecificBuild>
+    <DefineConstants>DEBUG;__UNIFIED__;__MOBILE__;__IOS__;</DefineConstants>
+    <Commandlineparameters>-all_load</Commandlineparameters>
+    <Externalconsole>False</Externalconsole>
+    <MtouchEnableBitcode>False</MtouchEnableBitcode>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchExtraArgs>-gcc_flags -all_load</MtouchExtraArgs>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <StartupObject>AnylineXamarinApp.iOS.Application</StartupObject>
+    <MtouchSdkVersion>9.3</MtouchSdkVersion>
+    <MtouchDebug>True</MtouchDebug>
+    <MtouchProfiling>False</MtouchProfiling>
+    <MtouchFastDev>False</MtouchFastDev>
+    <MtouchUseLlvm>False</MtouchUseLlvm>
+    <MtouchUseThumb>False</MtouchUseThumb>
+    <MtouchUseSGen>False</MtouchUseSGen>
+    <MtouchUseRefCounting>False</MtouchUseRefCounting>
+    <OptimizePNGs>True</OptimizePNGs>
+    <MtouchFloat32>False</MtouchFloat32>
+    <MtouchI18n />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;__UNIFIED__;__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchProfiling>False</MtouchProfiling>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>True</MtouchDebug>
+    <MtouchSdkVersion>10.2</MtouchSdkVersion>
+    <MtouchOptimizePNGs>False</MtouchOptimizePNGs>
+    <StartupObject>AnylineXamarinApp.iOS.Application</StartupObject>
+    <MtouchLink>Full</MtouchLink>
+    <MtouchFastDev>False</MtouchFastDev>
+    <MtouchEnableGenericValueTypeSharing>False</MtouchEnableGenericValueTypeSharing>
+    <MtouchUseLlvm>False</MtouchUseLlvm>
+    <MtouchUseThumb>False</MtouchUseThumb>
+    <MtouchUseSGen>True</MtouchUseSGen>
+    <MtouchUseRefCounting>False</MtouchUseRefCounting>
+    <Externalconsole>False</Externalconsole>
+    <MtouchEnableBitcode>False</MtouchEnableBitcode>
+    <OptimizePNGs>False</OptimizePNGs>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchFloat32>False</MtouchFloat32>
+    <DeviceSpecificBuild>True</DeviceSpecificBuild>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>AnylineXamarinApp.iOS.Application</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AnylineXamarinSDK.iOS, Version=3.10.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\AnylineXamarinSDK.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="MainStoryboard.storyboard" />
+    <ImageAsset Include="Resources/Images.xcassets/AppIcons.appiconset/BankCardIcon_120.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources/Images.xcassets/AppIcons.appiconset/BankCardIcon_180.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources/Images.xcassets/AppIcons.appiconset/Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AnylineLogo.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\BankcardScan.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\MeterScan.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\pass.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\blitz.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\flamme.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\kalender.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\ort.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\BankCardIcon_120.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\BankCardIcon_180.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnylineViewController.cs" />
+    <Compile Include="AnylineViewController.designer.cs">
+      <DependentUpon>AnylineViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="MainController.cs" />
+    <Compile Include="MainController.designer.cs">
+      <DependentUpon>MainController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Barcode\ViewController\AnylineBarcodeScanViewController.cs" />
+    <Compile Include="Modules\Document\ViewController\AnylineDocumentScanViewController.cs" />
+    <Compile Include="Modules\Document\View\NotificationView.cs" />
+    <Compile Include="Modules\Energy\ViewController\AnylineEnergyScanViewController.cs" />
+    <Compile Include="Modules\Energy\ViewController\AnylineEnergyScanViewResultController.cs" />
+    <Compile Include="Modules\Energy\View\EnergyMeterReadingView.cs" />
+    <Compile Include="Modules\Mrz\ViewController\AnylineMrzScanViewController.cs" />
+    <Compile Include="Modules\Mrz\View\AnylineIdentificationView.cs" />
+    <Compile Include="Modules\OCR\ViewController\AnylineBottlecapScanViewController.cs" />
+    <Compile Include="Modules\OCR\ViewController\AnylineLicensePlateDEScanViewController.cs" />
+    <Compile Include="Modules\OCR\ViewController\AnylineLicensePlateATScanViewController.cs" />
+    <Compile Include="Modules\OCR\ViewController\AnylineLicensePlateScanViewController.cs" />
+    <Compile Include="Modules\OCR\ViewController\AnylineVoucherScanViewController.cs" />
+    <Compile Include="Modules\OCR\ViewController\AnylineIBANScanViewController.cs" />
+    <Compile Include="Modules\OCR\View\ResultOverlayView.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\drawable\Default-568h%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\drawable\ic_energy_old.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\drawable\ic_launcher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Images.xcassets\AnylineLogo.imageset\Anyline%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Images.xcassets\AnylineLogo.imageset\Anyline%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\BankCardIcon_120.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\BankCardIcon_180.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Images.xcassets\BankcardScan.imageset\BankCardIcon_120.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Images.xcassets\BankcardScan.imageset\BankCardIcon_180.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Images.xcassets\MeterScan.imageset\Icon-60%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Images.xcassets\MeterScan.imageset\Icon-60%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Images.xcassets\pass.imageset\pass2x.png">
+      <InProject>true</InProject>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Images.xcassets\pass.imageset\pass3x.png">
+      <InProject>true</InProject>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Images.xcassets\blitz.imageset\blitz.png">
+      <InProject>true</InProject>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Images.xcassets\blitz.imageset\blitz%402x.png">
+      <InProject>true</InProject>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Images.xcassets\flamme.imageset\flamme.png">
+      <InProject>true</InProject>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Images.xcassets\flamme.imageset\flamme_2x.png">
+      <InProject>true</InProject>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Images.xcassets\kalender.imageset\kalender.png">
+      <InProject>true</InProject>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Images.xcassets\kalender.imageset\kalender%402x.png">
+      <InProject>true</InProject>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Images.xcassets\ort.imageset\ort.png">
+      <InProject>true</InProject>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Images.xcassets\ort.imageset\ort%402x.png">
+      <InProject>true</InProject>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\drawable\ic_mrz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\drawable\ic_barcode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\drawable\ic_energy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\drawable\iban_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\drawable\gift_card_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\drawable\bottle_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\drawable\license_plate_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Modules\OCR\iban_config.json" />
+    <BundleResource Include="Modules\OCR\voucher_code_config.json" />
+    <BundleResource Include="Modules\OCR\bottlecap_config.json" />
+    <BundleResource Include="Modules\OCR\license_plate_view_config.json" />
+    <BundleResource Include="Modules\OCR\Alte.traineddata" />
+    <BundleResource Include="Modules\OCR\Arial.traineddata" />
+    <BundleResource Include="Modules\OCR\GL-Nummernschild-Mtl7_uml.traineddata" />
+    <BundleResource Include="Modules\OCR\license_plates.ale" />
+    <BundleResource Include="Modules\OCR\license_plates_a.ale" />
+    <BundleResource Include="Modules\OCR\license_plates_d.ale" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="..\..\AnylineResources.bundle\threshold_all.ale">
+      <Link>Resources\AnylineResources.bundle\threshold_all.ale</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_grid.ale">
+      <Link>Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_grid.ale</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_line.ale">
+      <Link>Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_line.ale</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_anyline_ocr\simpleocr_capture_config.json">
+      <Link>Resources\AnylineResources.bundle\module_anyline_ocr\simpleocr_capture_config.json</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\anyline_capitals.traineddata">
+      <Link>Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\anyline_capitals.traineddata</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\bottlecap.traineddata">
+      <Link>Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\bottlecap.traineddata</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\deu.traineddata">
+      <Link>Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\deu.traineddata</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\eng_no_dict.traineddata">
+      <Link>Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\eng_no_dict.traineddata</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\rbf_jan2015_v2.traineddata">
+      <Link>Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\rbf_jan2015_v2.traineddata</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\scrabble.traineddata">
+      <Link>Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\scrabble.traineddata</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_barcode\barcode_capture_config.json">
+      <Link>Resources\AnylineResources.bundle\module_barcode\barcode_capture_config.json</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_barcode\ean.ale">
+      <Link>Resources\AnylineResources.bundle\module_barcode\ean.ale</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_debit_card\debitcard_capture_config.json">
+      <Link>Resources\AnylineResources.bundle\module_debit_card\debitcard_capture_config.json</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_document\document.ale">
+      <Link>Resources\AnylineResources.bundle\module_document\document.ale</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_document\document_capture_config.json">
+      <Link>Resources\AnylineResources.bundle\module_document\document_capture_config.json</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_energy\digital_heat_meter.ale">
+      <Link>Resources\AnylineResources.bundle\module_energy\digital_heat_meter.ale</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_energy\digital_meter.ale">
+      <Link>Resources\AnylineResources.bundle\module_energy\digital_meter.ale</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_energy\digital_meter_big_testing.ale">
+      <Link>Resources\AnylineResources.bundle\module_energy\digital_meter_big_testing.ale</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_energy\digital_meter_capture_config.json">
+      <Link>Resources\AnylineResources.bundle\module_energy\digital_meter_capture_config.json</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_energy\digital_number_capture_config.json">
+      <Link>Resources\AnylineResources.bundle\module_energy\digital_number_capture_config.json</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_energy\energy_serial.ale">
+      <Link>Resources\AnylineResources.bundle\module_energy\energy_serial.ale</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_energy\gas_meter_capture_config.json">
+      <Link>Resources\AnylineResources.bundle\module_energy\gas_meter_capture_config.json</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_energy\heat_meter_capture_config.json">
+      <Link>Resources\AnylineResources.bundle\module_energy\heat_meter_capture_config.json</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_energy\patternMulti9AndE.json">
+      <Link>Resources\AnylineResources.bundle\module_energy\patternMulti9AndE.json</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_energy\power_meter_4_capture_config.json">
+      <Link>Resources\AnylineResources.bundle\module_energy\power_meter_4_capture_config.json</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_energy\power_meter_capture_config.json">
+      <Link>Resources\AnylineResources.bundle\module_energy\power_meter_capture_config.json</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_energy\serial_number_capture_config.json">
+      <Link>Resources\AnylineResources.bundle\module_energy\serial_number_capture_config.json</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_energy\smart_meter_ger.ale">
+      <Link>Resources\AnylineResources.bundle\module_energy\smart_meter_ger.ale</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_energy\smart_meter_ger_spec.json">
+      <Link>Resources\AnylineResources.bundle\module_energy\smart_meter_ger_spec.json</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_energy\water_meter_black_background_capture_config.json">
+      <Link>Resources\AnylineResources.bundle\module_energy\water_meter_black_background_capture_config.json</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_energy\water_meter_white_background_capture_config.json">
+      <Link>Resources\AnylineResources.bundle\module_energy\water_meter_white_background_capture_config.json</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_energy\tessdata\anyline.traineddata">
+      <Link>Resources\AnylineResources.bundle\module_energy\tessdata\anyline.traineddata</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_mrz\mrz_capture_config.json">
+      <Link>Resources\AnylineResources.bundle\module_mrz\mrz_capture_config.json</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_mrz\mrz_scanning.ale">
+      <Link>Resources\AnylineResources.bundle\module_mrz\mrz_scanning.ale</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_mrz\tessdata\OcrB.traineddata">
+      <Link>Resources\AnylineResources.bundle\module_mrz\tessdata\OcrB.traineddata</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_order_code\order_code.ale">
+      <Link>Resources\AnylineResources.bundle\module_order_code\order_code.ale</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_order_code\tessdata\OcrB.traineddata">
+      <Link>Resources\AnylineResources.bundle\module_order_code\tessdata\OcrB.traineddata</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_energy\trained_models\CNN_Validation_97.enc">
+      <Link>Resources\AnylineResources.bundle\module_energy\trained_models\CNN_Validation_97.enc</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\images\anyline_logo_white.dat">
+      <Link>Resources\AnylineResources.bundle\images\anyline_logo_white.dat</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_document\document_crop.ale">
+      <Link>Resources\AnylineResources.bundle\module_document\document_crop.ale</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_energy\analog_meter.ale">
+      <Link>Resources\AnylineResources.bundle\module_energy\analog_meter.ale</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_energy\analog_meter_capture_config.json">
+      <Link>Resources\AnylineResources.bundle\module_energy\analog_meter_capture_config.json</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_energy\trained_models\CNN_bgagnostic_energy.enc">
+      <Link>Resources\AnylineResources.bundle\module_energy\trained_models\CNN_bgagnostic_energy.enc</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_mrz\trained_models\CNN_OCRB_Gray_0124.enc">
+      <Link>Resources\AnylineResources.bundle\module_mrz\trained_models\CNN_OCRB_Gray_0124.enc</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\images\flash_white.png">
+      <Link>Resources\AnylineResources.bundle\images\flash_white.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\images\flash_white%402x.png">
+      <Link>Resources\AnylineResources.bundle\images\flash_white%402x.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\images\flash_white%403x.png">
+      <Link>Resources\AnylineResources.bundle\images\flash_white%403x.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\module_energy\prefix_five.png">
+      <Link>Resources\AnylineResources.bundle\module_energy\prefix_five.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\sounds\beep.wav">
+      <Link>Resources\AnylineResources.bundle\sounds\beep.wav</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\AnylineResources.bundle\Anyline-Info.plist">
+      <Link>Resources\AnylineResources.bundle\Anyline-Info.plist</Link>
+    </BundleResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+</Project>

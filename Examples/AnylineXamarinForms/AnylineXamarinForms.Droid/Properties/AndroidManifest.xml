@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="AT.Anyline.Xamarin.Forms.App.Droid" android:versionCode="1" android:versionName="1.0" android:installLocation="auto">
+	<uses-sdk />
+	<application android:label="Anyline Examples (Xamarin.Android Forms)" android:hardwareAccelerated="true"></application>
+	<uses-permission android:name="android.permission.CAMERA" />
+	<uses-feature android:name="android.hardware.camera" android:required="false" />
+	<uses-feature android:name="android.hardware.camera.flash" />
+	<uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+</manifest>

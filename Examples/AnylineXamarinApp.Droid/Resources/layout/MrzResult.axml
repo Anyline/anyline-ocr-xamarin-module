@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="217dp"
+    android:background="@drawable/passport_background"
+    android:paddingBottom="16dp"
+    android:paddingLeft="4dp"
+    android:paddingRight="4dp"
+    android:paddingTop="16dp"
+    tools:context="AnylineXamarinApp.Droid.MRZ.MrzResultView">
+    <TextView
+        style="@style/MrzResultText"
+        android:id="@+id/text_type"
+        android:layout_marginLeft="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="P" />
+    <TextView
+        style="@style/MrzResultText"
+        android:id="@+id/text_country_code_national"
+        android:layout_marginLeft="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/text_type"
+        android:text="AUT" />
+    <TextView
+        style="@style/MrzResultText"
+        android:id="@+id/text_number"
+        android:layout_alignParentRight="true"
+        android:text="1234564XY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="12dp" />
+    <TextView
+        style="@style/MrzResultText"
+        android:id="@+id/text_surnames"
+        android:layout_below="@+id/text_type"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="6dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WHATEVA" />
+    <TextView
+        style="@+style/MrzResultText"
+        android:id="@+id/text_given_names"
+        android:layout_below="@+id/text_surnames"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="6dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PETER PAUL JOHN" />
+    <TextView
+        style="@+style/MrzResultText"
+        android:id="@+id/text_day_of_birth"
+        android:layout_below="@+id/text_given_names"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="6dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="690609" />
+    <TextView
+        style="@+style/MrzResultText"
+        android:id="@+id/text_expiration_date"
+        android:layout_below="@+id/text_day_of_birth"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="6dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="180102" />
+    <TextView
+        style="@+style/MrzResultText"
+        android:id="@+id/text_sex"
+        android:layout_below="@+id/text_expiration_date"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="6dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="M" />
+    <TextView
+        style="@+style/MrzResultMrzText"
+        android:id="@+id/text_mrz"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" />
+</RelativeLayout>

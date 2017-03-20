@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{8FFB629D-F513-41CE-95D2-7ECE97B6EEEC};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{94A2D3B8-2221-4FE7-B9F2-50F9888945EA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>AnylineXamarinSDK.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>AnylineXamarinSDK.iOS</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>true</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <!--added this manually-->
+    <TargetFrameworkIdentifier>Xamarin.iOS</TargetFrameworkIdentifier>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Anyline.linkwith.cs">
+      <DependentUpon>Anyline.a</DependentUpon>
+    </Compile>
+    <Compile Include="Extra.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingNativeLibrary Include="Anyline.a" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <!--
+  <ItemGroup>
+    <Content Include="Framework\AnylineResources.bundle\Anyline-Info.plist" ><LogicalName>Anyline-Info.plist</LogicalName></Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Framework\AnylineResources.bundle\images\anyline_logo_white.png"  ><LogicalName>anyline_logo_white.png</LogicalName></Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Framework\AnylineResources.bundle\images\anyline_logo_white%402x.png"  ><LogicalName>anyline_logo_white%402x.png</LogicalName></Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Framework\AnylineResources.bundle\images\anyline_logo_white%403x.png"  ><LogicalName>anyline_logo_white%403x.png</LogicalName></Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Framework\AnylineResources.bundle\images\flash_white.png"  ><LogicalName>flash_white.png</LogicalName></Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Framework\AnylineResources.bundle\images\flash_white%402x.png"  ><LogicalName>flash_white%402x.png</LogicalName></Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Framework\AnylineResources.bundle\images\flash_white%403x.png"  ><LogicalName>flash_white%403x.png</LogicalName></Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Framework\AnylineResources.bundle\module_barcode\barcode_capture_config.json"  ><LogicalName>barcode_capture_config.json</LogicalName></Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Framework\AnylineResources.bundle\module_barcode\ean.ale"  ><LogicalName>ean.ale</LogicalName></Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Framework\AnylineResources.bundle\module_energy\energy_meter.ale"  ><LogicalName>energy_meter.ale</LogicalName></Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Framework\AnylineResources.bundle\module_energy\energy_serial.ale"  ><LogicalName>energy_serial.ale</LogicalName></Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Framework\AnylineResources.bundle\module_energy\gas_meter_capture_config.json"  ><LogicalName>gas_meter_capture_config.json</LogicalName></Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Framework\AnylineResources.bundle\module_energy\power_meter_capture_config.json"  ><LogicalName>power_meter_capture_config.json</LogicalName></Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Framework\AnylineResources.bundle\module_energy\prefix_five.png"  ><LogicalName>prefix_five.png</LogicalName></Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Framework\AnylineResources.bundle\module_energy\serial_number_capture_config.json"  ><LogicalName>serial_number_capture_config.json</LogicalName></Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Framework\AnylineResources.bundle\module_energy\water_meter.ale"  ><LogicalName>water_meter.ale</LogicalName></Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Framework\AnylineResources.bundle\module_energy\water_meter_capture_config.json"  ><LogicalName>water_meter_capture_config.json</LogicalName></Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Framework\AnylineResources.bundle\module_energy\tessdata\anyline.traineddata"  ><LogicalName>anyline.traineddata</LogicalName></Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Framework\AnylineResources.bundle\module_mrz\mrz_capture_config.json"  ><LogicalName>mrz_capture_config.json</LogicalName></Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Framework\AnylineResources.bundle\module_mrz\mrz_scanning.ale"  ><LogicalName>mrz_scanning.ale</LogicalName></Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Framework\AnylineResources.bundle\module_mrz\tessdata\OcrB.traineddata"  ><LogicalName>OcrB.traineddata</LogicalName></Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Framework\AnylineResources.bundle\sounds\beep.wav"  ><LogicalName>beep.wav</LogicalName></Content>
+  </ItemGroup>
+  -->
+  <!--changed the following path manually-->
+  <!--<Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />-->
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Xamarin.ObjcBinding.CSharp.targets" />
+</Project>

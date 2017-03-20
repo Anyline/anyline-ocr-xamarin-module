@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+	<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+		<metadata>
+			<!-- The identifier that must be unique within the hosting gallery -->
+			<id>Anyline.Xamarin.SDK</id>
+
+			<!-- The package version number that is used when resolving dependencies -->
+			<version>3.10.0</version>
+
+			<!-- Authors contain text that appears directly on the gallery -->
+			<authors>Anyline GmbH</authors>
+
+			<!-- Owners are typically nuget.org identities that allow gallery
+			users to earily find other packages by the same owners.  -->
+			<owners>peteranyline</owners>
+
+			<!-- License and project URLs provide links for the gallery -->
+			<licenseUrl>https://raw.githubusercontent.com/Anyline/anyline-ocr-xamarin-module/master/LICENSE.md</licenseUrl>
+			<!--<projectUrl>GITHUB REPO</projectUrl>-->
+
+			<!-- The icon is used in Visual Studio's package manager UI -->
+			<iconUrl>https://anylinewebsiteresource.blob.core.windows.net/wordpressmedia/2015/11/logo-300x138.png</iconUrl>
+
+			<!-- If true, this value prompts the user to accept the license when
+			installing the package. -->
+			<requireLicenseAcceptance>true</requireLicenseAcceptance>
+
+			<!-- Any details about this particular release -->
+			<releaseNotes>
+			Android: https://documentation.anyline.io/toc/platforms/android/release_guide/release_notes_archive.html
+			iOS: https://documentation.anyline.io/toc/platforms/ios/release_guide/release_notes_archive.html
+			</releaseNotes>
+
+			<!-- The description can be used in package manager UI. Note that the
+			nuget.org gallery uses information you add in the portal. -->
+			<description>Anyline provides an easy-to-use SDK for applications to enable Optical Character Recognition (OCR) on mobile devices.</description>
+
+			<!-- Copyright information -->
+			<copyright>Copyright ©2017 Anyline GmbH</copyright>
+
+			<!-- Tags appear in the gallery and can be used for tag searches -->
+			<tags>ocr scanning meter barcode mrz qr document camera</tags>
+
+			<!-- Dependencies are automatically installed when the package is installed -->
+			<dependencies>
+			<!--<dependency id="Newtonsoft.Json" version="9.0" />-->
+			</dependencies>
+		</metadata>
+
+      <!-- A readme.txt will be displayed when the package is installed -->
+      <files>
+			<file src="README.md" target="" />
+		
+			<!-- SDK .dll -->
+			
+			<file src="AnylineXamarinSDK.iOS.dll" target="lib\Xamarin.iOS10" />
+			<file src="AnylineXamarinSDK.Droid.dll" target="lib\MonoAndroid10" />
+			
+			<!-- AnylineResources.bundle - TODO: pack files and add description how to integrate into iOS project -->
+			
+			<file src="AnylineResources.bundle\threshold_all.ale" target="..\..\AnylineResources.bundle\" />
+			<file src="AnylineResources.bundle\module_anyline_ocr\anyline_ocr_grid.ale" target="..\..\AnylineResources.bundle\module_anyline_ocr\" />
+			<file src="AnylineResources.bundle\module_anyline_ocr\anyline_ocr_line.ale" target="..\..\AnylineResources.bundle\module_anyline_ocr\" />
+			<file src="AnylineResources.bundle\module_anyline_ocr\simpleocr_capture_config.json" target="..\..\AnylineResources.bundle\module_anyline_ocr\" />
+			<file src="AnylineResources.bundle\module_anyline_ocr\tessdata\anyline_capitals.traineddata" target="..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\" />
+			<file src="AnylineResources.bundle\module_anyline_ocr\tessdata\bottlecap.traineddata" target="..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\" />
+			<file src="AnylineResources.bundle\module_anyline_ocr\tessdata\deu.traineddata" target="..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\" />
+			<file src="AnylineResources.bundle\module_anyline_ocr\tessdata\eng_no_dict.traineddata" target="..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\" />
+			<file src="AnylineResources.bundle\module_anyline_ocr\tessdata\rbf_jan2015_v2.traineddata" target="..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\" />
+			<file src="AnylineResources.bundle\module_anyline_ocr\tessdata\scrabble.traineddata" target="..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\" />
+			<file src="AnylineResources.bundle\module_barcode\barcode_capture_config.json" target="..\..\AnylineResources.bundle\module_barcode\" />
+			<file src="AnylineResources.bundle\module_barcode\ean.ale" target="..\..\AnylineResources.bundle\module_barcode\" />
+			<file src="AnylineResources.bundle\module_debit_card\debitcard_capture_config.json" target="..\..\AnylineResources.bundle\module_debit_card\" />
+			<file src="AnylineResources.bundle\module_document\document.ale" target="..\..\AnylineResources.bundle\module_document\" />
+			<file src="AnylineResources.bundle\module_document\document_capture_config.json" target="..\..\AnylineResources.bundle\module_document\" />
+			<file src="AnylineResources.bundle\module_energy\digital_heat_meter.ale" target="..\..\AnylineResources.bundle\module_energy\" />
+			<file src="AnylineResources.bundle\module_energy\digital_meter.ale" target="..\..\AnylineResources.bundle\module_energy\" />
+			<file src="AnylineResources.bundle\module_energy\digital_meter_big_testing.ale" target="..\..\AnylineResources.bundle\module_energy\" />
+			<file src="AnylineResources.bundle\module_energy\digital_meter_capture_config.json" target="..\..\AnylineResources.bundle\module_energy\" />
+			<file src="AnylineResources.bundle\module_energy\digital_number_capture_config.json" target="..\..\AnylineResources.bundle\module_energy\" />
+			<file src="AnylineResources.bundle\module_energy\energy_serial.ale" target="..\..\AnylineResources.bundle\module_energy\" />
+			<file src="AnylineResources.bundle\module_energy\gas_meter_capture_config.json" target="..\..\AnylineResources.bundle\module_energy\" />
+			<file src="AnylineResources.bundle\module_energy\heat_meter_capture_config.json" target="..\..\AnylineResources.bundle\module_energy\" />
+			<file src="AnylineResources.bundle\module_energy\patternMulti9AndE.json" target="..\..\AnylineResources.bundle\module_energy\" />
+			<file src="AnylineResources.bundle\module_energy\power_meter_4_capture_config.json" target="..\..\AnylineResources.bundle\module_energy\" />
+			<file src="AnylineResources.bundle\module_energy\power_meter_capture_config.json" target="..\..\AnylineResources.bundle\module_energy\" />
+			<file src="AnylineResources.bundle\module_energy\serial_number_capture_config.json" target="..\..\AnylineResources.bundle\module_energy\" />
+			<file src="AnylineResources.bundle\module_energy\smart_meter_ger.ale" target="..\..\AnylineResources.bundle\module_energy\" />
+			<file src="AnylineResources.bundle\module_energy\smart_meter_ger_spec.json" target="..\..\AnylineResources.bundle\module_energy\" />
+			<file src="AnylineResources.bundle\module_energy\water_meter_black_background_capture_config.json" target="..\..\AnylineResources.bundle\module_energy\" />
+			<file src="AnylineResources.bundle\module_energy\water_meter_white_background_capture_config.json" target="..\..\AnylineResources.bundle\module_energy\" />
+			<file src="AnylineResources.bundle\module_energy\tessdata\anyline.traineddata" target="..\..\AnylineResources.bundle\module_energy\tessdata\" />
+			<file src="AnylineResources.bundle\module_mrz\mrz_capture_config.json" target="..\..\AnylineResources.bundle\module_mrz\" />
+			<file src="AnylineResources.bundle\module_mrz\mrz_scanning.ale" target="..\..\AnylineResources.bundle\module_mrz\" />
+			<file src="AnylineResources.bundle\module_mrz\tessdata\OcrB.traineddata" target="..\..\AnylineResources.bundle\module_mrz\tessdata\" />
+			<file src="AnylineResources.bundle\module_order_code\order_code.ale" target="..\..\AnylineResources.bundle\module_order_code\" />
+			<file src="AnylineResources.bundle\module_order_code\tessdata\OcrB.traineddata" target="..\..\AnylineResources.bundle\module_order_code\tessdata\" />
+			<file src="AnylineResources.bundle\module_energy\trained_models\CNN_Validation_97.enc" target="..\..\AnylineResources.bundle\module_energy\trained_models\" />
+			<file src="AnylineResources.bundle\images\anyline_logo_white.dat" target="..\..\AnylineResources.bundle\images\" />
+			<file src="AnylineResources.bundle\module_document\document_crop.ale" target="..\..\AnylineResources.bundle\module_document\" />
+			<file src="AnylineResources.bundle\module_energy\analog_meter.ale" target="..\..\AnylineResources.bundle\module_energy\" />
+			<file src="AnylineResources.bundle\module_energy\analog_meter_capture_config.json" target="..\..\AnylineResources.bundle\module_mrz\" />
+			<file src="AnylineResources.bundle\module_energy\trained_models\CNN_bgagnostic_energy.enc" target="..\..\AnylineResources.bundle\module_energy\trained_models\" />
+			<file src="AnylineResources.bundle\module_mrz\trained_models\CNN_OCRB_Gray_0124.enc" target="..\..\AnylineResources.bundle\module_mrz\trained_models\" />
+			<file src="AnylineResources.bundle\images\flash_white.png" target="..\..\AnylineResources.bundle\images\" />
+			<file src="AnylineResources.bundle\images\flash_white@2x.png" target="..\..\AnylineResources.bundle\images\" />
+			<file src="AnylineResources.bundle\images\flash_white@3x.png" target="..\..\AnylineResources.bundle\images\" />
+			<file src="AnylineResources.bundle\module_energy\prefix_five.png" target="..\..\AnylineResources.bundle\images\" />
+			<file src="AnylineResources.bundle\sounds\beep.wav" target="..\..\AnylineResources.bundle\sounds\" />
+			<file src="AnylineResources.bundle\Anyline-Info.plist" target="..\..\AnylineResources.bundle\" />			
+		
+		</files>
+    </package>

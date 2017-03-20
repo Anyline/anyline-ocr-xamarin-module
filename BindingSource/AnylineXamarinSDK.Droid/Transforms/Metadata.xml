@@ -1,0 +1,103 @@
+<metadata>
+
+  <!-- +++++++++++++ About this document +++++++++++++ -->
+
+  <!--
+  This document contains the binding transforms for the Anyline SDK. To learn more about metadata binding transforms, visit  
+  https://developer.xamarin.com/guides/android/advanced_topics/binding-a-java-library/customizing-bindings/java-bindings-metadata/
+  
+  -->
+  
+  <!-- +++++++++++++ Removes +++++++++++++ -->
+
+  <!-- remove opencv components -->
+
+  <remove-node path="/api/package[@name='org.opencv.android']"/>
+  <remove-node path="/api/package[@name='org.opencv.core']"/>
+  <remove-node path="/api/package[@name='org.opencv.imgcodecs']"/>
+  <remove-node path="/api/package[@name='org.opencv.photo']"/>
+  <remove-node path="/api/package[@name='org.opencv.imgproc']"/>
+  <remove-node path="/api/package[@name='org.opencv.utils']"/>
+
+  <!-- remove anyline components -->
+
+  <remove-node path="/api/package[@name='at.nineyards.anylinexamarin.support']/class[@name='BuildConfig']" />
+  
+  <remove-node path="/api/package[@name='at.nineyards.anyline.core']"/>
+  <remove-node path="/api/package[@name='at.nineyards.anyline.core.custom']"/>
+  <remove-node path="/api/package[@name='at.nineyards.anyline.reporter']"/>
+
+  <remove-node path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']"/>
+  <remove-node path="/api/package[@name='at.nineyards.anyline']/class[@name='BuildConfig']"/>
+  <remove-node path="/api/package[@name='at.nineyards.anyline']/class[@name='SimpleImageProvider']"/>
+  <remove-node path="/api/package[@name='at.nineyards.anyline']/interface[@name='AnylineListener']"/>
+  <remove-node path="/api/package[@name='at.nineyards.anyline']/interface[@name='AnylineDebugListener']"/>
+  
+  <remove-node path="/api/package[@name='at.nineyards.anyline.modules']/class[@name='AnylineBaseModuleView']/method[@name='getViewRelativePointListFromCutoutRelativeRect']"/>
+  <remove-node path="/api/package[@name='at.nineyards.anyline.modules']/class[@name='AnylineBaseModuleView']/method[@name='setCropRect']"/>
+  <remove-node path="/api/package[@name='at.nineyards.anyline.modules']/class[@name='AnylineBaseModuleView']/method[@name='getAnylineController']"/>
+  <remove-node path="/api/package[@name='at.nineyards.anyline.modules']/class[@name='AnylineBaseModuleView']/field[@name='anylineController']"/>
+  <remove-node path="/api/package[@name='at.nineyards.anyline.modules']/class[@name='AnylineBaseModuleView']/method[@name='reportDebugRunSkipped']"/>
+  <remove-node path="/api/package[@name='at.nineyards.anyline.modules']/class[@name='AnylineBaseModuleView']/method[@name='setDebugListener']"/>
+
+  <remove-node path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineYuvImage']/method[@name='getAsCvMat']"/>
+  <remove-node path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineImage']/method[@name='getCvMat']"/>
+  <remove-node path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineImage']/method[@name='getGreyCvMat']"/>
+  <remove-node path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineImage']/method[@name='getRgbCvMat']"/>
+  <remove-node path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineImage']/constructor[@name='AnylineImage' and count(parameter)=1 and parameter[1][@type='org.opencv.core.Mat']]"/>
+  <remove-node path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineRawResult']"/>
+  
+  <!-- debitcard is not implemented for now -->
+  <remove-node path="/api/package[@name='at.nineyards.anyline.modules.debitcard']"/>
+
+  <!-- ++++++++ Generic type changes ++++++++ -->
+
+  <!--
+  
+  The following limitations for java generics exist:
+  https://developer.xamarin.com/guides/android/advanced_topics/limitations/
+  
+  As of Anyline version 3.10, the Java AAR library inhibits a support library (anylinesupportlib.jar) for the scan views & result listeners which do not extend the generic result listeners.
+  
+  -->
+  
+  <!-- Fix modifiers etc. -->
+  
+  <attr path="/api/package[@name='at.nineyards.anyline.modules']/class[@name='AnylineBaseModuleView']/method[@name='initAnyline']" name="abstract">false</attr>
+
+  <!-- rename the native (unsupported) java class bindings to Native + <name>, so there is no ambiguity -->
+  
+  <attr path="/api/package[@name='at.nineyards.anyline.modules.barcode']/class[@name='BarcodeScanView']" name="managedName">NativeEnergyScanView</attr>
+  <attr path="/api/package[@name='at.nineyards.anyline.modules.barcode']/interface[@name='BarcodeResultListener']" name="managedName">NativeEnergyResultListener</attr>
+  
+  <attr path="/api/package[@name='at.nineyards.anyline.modules.document']/class[@name='DocumentScanView']" name="managedName">NativeDocumentScanView</attr>
+  <attr path="/api/package[@name='at.nineyards.anyline.modules.document']/interface[@name='DocumentResultListener']" name="managedName">NativeDocumentResultListener</attr>
+  
+  <attr path="/api/package[@name='at.nineyards.anyline.modules.energy']/class[@name='EnergyScanView']" name="managedName">NativeEnergyScanView</attr>
+  <attr path="/api/package[@name='at.nineyards.anyline.modules.energy']/interface[@name='EnergyResultListener']" name="managedName">NativeEnergyResultListener</attr>
+  
+  <attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='MrzScanView']" name="managedName">NativeMrzScanView</attr>
+  <attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/interface[@name='MrzResultListener']" name="managedName">NativeMrzResultListener</attr>
+  
+  <attr path="/api/package[@name='at.nineyards.anyline.modules.ocr']/class[@name='AnylineOcrScanView']" name="managedName">NativeAnylineOcrScanView</attr>
+  <attr path="/api/package[@name='at.nineyards.anyline.modules.ocr']/interface[@name='AnylineOcrResultListener']" name="managedName">NativeAnylineOcrResultListener</attr>
+  
+  <!-- manual parameter name changes (parameter names from support library are not present in the javadoc) -->
+  
+  <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.barcode']/interface[@name='BarcodeResultListener']/method[@name='onResult']/parameter[1]" name="managedName">scanResult</attr>
+  
+  <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.document']/interface[@name='DocumentResultListener']/method[@name='onResult']/parameter[1]" name="managedName">scanResult</attr>  
+  <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.document']/interface[@name='DocumentResultListener']/method[@name='onDocumentOutlineDetected' and count(parameter)=2 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[2][@type='boolean']]/parameter[1]" name="managedName">corners</attr>
+  <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.document']/interface[@name='DocumentResultListener']/method[@name='onDocumentOutlineDetected' and count(parameter)=2 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[2][@type='boolean']]/parameter[2]" name="managedName">documentShapeAndBrightnessValid</attr>
+  <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.document']/interface[@name='DocumentResultListener']/method[@name='onPictureProcessingFailure' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.modules.document.DocumentScanView.DocumentError']]/parameter[1]" name="managedName">error</attr>
+  <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.document']/interface[@name='DocumentResultListener']/method[@name='onPreviewProcessingFailure' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.modules.document.DocumentScanView.DocumentError']]/parameter[1]" name="managedName">error</attr>
+  <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.document']/interface[@name='DocumentResultListener']/method[@name='onPreviewProcessingSuccess' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.models.AnylineImage']]/parameter[1]" name="managedName">anylineImage</attr>
+  <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.document']/interface[@name='DocumentResultListener']/method[@name='onTakePictureError' and count(parameter)=1 and parameter[1][@type='java.lang.Throwable']]/parameter[1]" name="managedName">error</attr>
+  
+  <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.energy']/interface[@name='EnergyResultListener']/method[@name='onResult']/parameter[1]" name="managedName">scanResult</attr>
+  
+  <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.mrz']/interface[@name='MrzResultListener']/method[@name='onResult']/parameter[1]" name="managedName">scanResult</attr>
+  
+  <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.ocr']/interface[@name='AnylineOcrResultListener']/method[@name='onResult']/parameter[1]" name="managedName">scanResult</attr>
+
+</metadata>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <string-array
+      name="example_activity_names">
+    <item>@string/category_energy</item>
+    <item>@string/scan_analog_meter</item>
+    <item>@string/scan_digital_meter</item>
+    <item>@string/scan_heat_meter</item>
+
+    <item>@string/category_identification</item>    
+    <item>@string/scan_mrz</item>
+    
+    <item>@string/category_barcodes</item>    
+    <item>@string/scan_barcode</item>
+    
+    <item>@string/category_fintech</item>    
+    <item>@string/scan_iban</item>
+    
+    <item>@string/category_documents</item>
+    <item>@string/scan_document</item>
+    
+    <item>@string/category_loyality</item>
+    <item>@string/scan_voucher_code</item>
+    <item>@string/scan_bottlecaps</item>
+
+    <item>@string/category_vehicle</item>
+    <item>@string/scan_license_plates</item>
+    <item>@string/scan_license_plates_austria</item>
+    <item>@string/scan_license_plates_germany</item>
+    
+    <item>@string/version_info</item>
+
+  </string-array>
+
+  <string-array
+      name="example_activity_classes">
+    <item>HEADER</item>
+    <item>AnylineXamarinApp.Energy.EnergyActivity</item>
+    <item>AnylineXamarinApp.Energy.EnergyActivity</item>
+    <item>AnylineXamarinApp.Energy.EnergyActivity</item>
+    <item>HEADER</item>
+    <item>AnylineXamarinApp.Mrz.MrzActivity</item>
+    <item>HEADER</item>
+    <item>AnylineXamarinApp.Barcode.BarcodeActivity</item>
+    <item>HEADER</item>
+    <item>AnylineXamarinApp.Ocr.IbanActivity</item>
+    <item>HEADER</item>
+    <item>AnylineXamarinApp.Document.DocumentActivity</item>
+    <item>HEADER</item>
+    <item>AnylineXamarinApp.Ocr.VoucherCodeActivity</item>
+    <item>AnylineXamarinApp.Ocr.BottlecapActivity</item>
+    <item>HEADER</item>
+    <item>AnylineXamarinApp.Ocr.LicensePlateActivity</item>
+    <item>AnylineXamarinApp.Ocr.LicensePlateActivityAustria</item>
+    <item>AnylineXamarinApp.Ocr.LicensePlateActivityGermany</item>
+    <item>HEADER</item>
+  </string-array>
+</resources>

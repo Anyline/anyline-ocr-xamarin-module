@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true">
+    <at.nineyards.anylinexamarin.support.modules.barcode.BarcodeScanView
+        android:id="@+id/barcode_scan_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="0.0dp"
+        android:layout_marginLeft="0.0dp" />
+    <TextView
+        android:id="@+id/text_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="80dp"
+        android:textColor="@android:color/white"
+        tools:text="1234656479765"
+        android:textSize="24sp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp" />
+</RelativeLayout>

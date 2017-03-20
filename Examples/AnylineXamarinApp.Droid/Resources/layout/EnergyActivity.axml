@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <at.nineyards.anylinexamarin.support.modules.energy.EnergyScanView
+        android:id="@+id/energy_scan_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <TextView
+        android:id="@+id/radio_button_header"
+        android:text="Select your configuration"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/radio_group"
+        android:layout_alignLeft="@+id/radio_group"
+        android:layout_alignRight="@+id/radio_group"
+        android:background="#88000000"
+        android:textColor="#FFFFFF"
+        android:paddingLeft="8dp"
+        android:paddingTop="2dp" />
+    <RelativeLayout
+        android:id="@+id/toggle_barcode_layout"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="#88FFFFFF">
+        <TextView
+            android:text="Scan Barcodes"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/toggle_barcode_text"
+            android:textColor="@android:color/white"
+            android:layout_centerHorizontal="true" />
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/toggle_barcode_switch"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/toggle_barcode_text" />
+    </RelativeLayout>
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/toggle_barcode_layout"
+        android:padding="4dp"
+        android:background="#88FFFFFF" />
+    <TextView
+        android:text="Barcode Result"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/toggle_barcode_layout"
+        android:id="@+id/barcode_result_text"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="35dp"
+        android:textColor="@android:color/white" />
+</RelativeLayout>
