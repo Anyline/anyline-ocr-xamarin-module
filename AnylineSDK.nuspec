@@ -26,15 +26,25 @@
 			<requireLicenseAcceptance>true</requireLicenseAcceptance>
 
 			<!-- Any details about this particular release -->
-			<releaseNotes>
-			Android: https://documentation.anyline.io/toc/platforms/android/release_guide/release_notes_archive.html
-			iOS: https://documentation.anyline.io/toc/platforms/ios/release_guide/release_notes_archive.html
-			</releaseNotes>
+			<releaseNotes>https://documentation.anyline.io/toc/platforms/xamarin/release_guide/index.html</releaseNotes>
 
+			<!-- The summary -->
+			<summary>An easy-to-use SDK for applications to enable Optical Character Recognition (OCR) on mobile devices.</summary>
+			
 			<!-- The description can be used in package manager UI. Note that the
 			nuget.org gallery uses information you add in the portal. -->
-			<description>Anyline provides an easy-to-use SDK for applications to enable Optical Character Recognition (OCR) on mobile devices.</description>
+			<description>
+			Anyline provides an easy-to-use SDK for applications to enable Optical Character Recognition (OCR) on mobile devices.
+			
+			This NuGet package contains both the Anyline Xamarin.iOS and Xamarin.Android SDK binaries.
+			
+			For iOS, the AnylineResource.bundle, which has to be integrated into your Xamarin.iOS app as BundleResource will be located in your project/solution under /packages/Anyline.Xamarin.SDK.[version]/.
+			
+			For a detailed integration guide, see https://documentation.anyline.io/toc/platforms/xamarin/xamarin.ios/xamarin.ios_quickstart.html and https://documentation.anyline.io/toc/platforms/xamarin/xamarin.android/xamarin.android_quickstart.html 
+			</description>
 
+			<projectUrl>https://documentation.anyline.io/toc/platforms/xamarin/index.html</projectUrl>
+			
 			<!-- Copyright information -->
 			<copyright>Copyright ©2017 Anyline GmbH</copyright>
 
@@ -45,10 +55,11 @@
 			<dependencies>
 			<!--<dependency id="Newtonsoft.Json" version="9.0" />-->
 			</dependencies>
+						
 		</metadata>
 
-      <!-- A readme.txt will be displayed when the package is installed -->
-      <files>
+		<!-- A readme.txt will be displayed when the package is installed -->
+		<files>
 			<file src="README.md" target="" />
 		
 			<!-- SDK .dll -->
@@ -107,7 +118,7 @@
 			<file src="AnylineResources.bundle\images\flash_white@3x.png" target="..\..\AnylineResources.bundle\images\" />
 			<file src="AnylineResources.bundle\module_energy\prefix_five.png" target="..\..\AnylineResources.bundle\images\" />
 			<file src="AnylineResources.bundle\sounds\beep.wav" target="..\..\AnylineResources.bundle\sounds\" />
-			<file src="AnylineResources.bundle\Anyline-Info.plist" target="..\..\AnylineResources.bundle\" />			
-		
+			<file src="AnylineResources.bundle\Anyline-Info.plist" target="..\..\AnylineResources.bundle\" />					
 		</files>
+				
     </package>
