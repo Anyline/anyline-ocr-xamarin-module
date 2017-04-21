@@ -344,6 +344,9 @@
     <BundleResource Include="..\..\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_grid.ale">
       <Link>Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_grid.ale</Link>
     </BundleResource>
+	<BundleResource Include="..\..\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_auto.ale">
+      <Link>Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_auto.ale</Link>
+    </BundleResource>
     <BundleResource Include="..\..\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_line.ale">
       <Link>Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_line.ale</Link>
     </BundleResource>
@@ -422,8 +425,14 @@
     <BundleResource Include="..\..\AnylineResources.bundle\module_energy\smart_meter_ger.ale">
       <Link>Resources\AnylineResources.bundle\module_energy\smart_meter_ger.ale</Link>
     </BundleResource>
+	<BundleResource Include="..\..\AnylineResources.bundle\module_energy\analog_digital_auto_mode.ale">
+      <Link>Resources\AnylineResources.bundle\module_energy\analog_digital_auto_mode.ale</Link>
+    </BundleResource>
     <BundleResource Include="..\..\AnylineResources.bundle\module_energy\smart_meter_ger_spec.json">
       <Link>Resources\AnylineResources.bundle\module_energy\smart_meter_ger_spec.json</Link>
+    </BundleResource>
+	<BundleResource Include="..\..\AnylineResources.bundle\module_energy\analog_digital_capture_config.json">
+      <Link>Resources\AnylineResources.bundle\module_energy\analog_digital_capture_config.json</Link>
     </BundleResource>
     <BundleResource Include="..\..\AnylineResources.bundle\module_energy\water_meter_black_background_capture_config.json">
       <Link>Resources\AnylineResources.bundle\module_energy\water_meter_black_background_capture_config.json</Link>
@@ -451,6 +460,9 @@
     </BundleResource>
     <BundleResource Include="..\..\AnylineResources.bundle\module_energy\trained_models\CNN_Validation_97.enc">
       <Link>Resources\AnylineResources.bundle\module_energy\trained_models\CNN_Validation_97.enc</Link>
+    </BundleResource>
+	<BundleResource Include="..\..\AnylineResources.bundle\module_energy\trained_models\CNN_energy_detection_full_half.enc">
+      <Link>Resources\AnylineResources.bundle\module_energy\trained_models\CNN_energy_detection_full_half.enc</Link>
     </BundleResource>
     <BundleResource Include="..\..\AnylineResources.bundle\images\anyline_logo_white.dat">
       <Link>Resources\AnylineResources.bundle\images\anyline_logo_white.dat</Link>

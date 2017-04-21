@@ -7,6 +7,7 @@
   <string name="scan_analog_meter">Scan Analog Meter</string>
   <string name="scan_digital_meter">Scan Digital Meter</string>
   <string name="scan_heat_meter">Scan Heat Meter</string>
+  <string name="scan_analog_digital_meter">Scan Analog/Digital Meter</string>
 
   <string name="scan_barcode">Scan Barcode</string>
   <string name="scan_mrz">Scan MRZ of Passport or ID</string>

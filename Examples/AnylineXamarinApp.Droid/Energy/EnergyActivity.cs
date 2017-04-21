@@ -133,6 +133,11 @@ namespace AnylineXamarinApp.Energy
                     NativeBarcodeResultTextView.LayoutParameters = lp;
                 }
             }
+            else if (_energyUseCase.Equals(Resources.GetString(Resource.String.scan_analog_digital_meter)))
+            {
+                SetTitle(Resource.String.scan_analog_digital_meter);
+                _scanView.SetScanMode(EnergyScanView.ScanMode.AutoAnalogDigitalMeter);
+            }
 
             Util.PopulateRadioGroupWithList(this, radioGroup, _scanList, defaultIndex);
 

@@ -40,7 +40,7 @@
 			
 			For iOS, the AnylineResource.bundle, which has to be integrated into your Xamarin.iOS app as BundleResource will be located in your project/solution under /packages/Anyline.Xamarin.SDK.[version]/.
 			
-			For a detailed integration guide, see https://documentation.anyline.io/toc/platforms/xamarin/xamarin.ios/xamarin.ios_quickstart.html and https://documentation.anyline.io/toc/platforms/xamarin/xamarin.android/xamarin.android_quickstart.html 
+			For detailed integration guides, see https://documentation.anyline.io/toc/platforms/xamarin/xamarin.ios/xamarin.ios_quickstart.html and https://documentation.anyline.io/toc/platforms/xamarin/xamarin.android/xamarin.android_quickstart.html 
 			</description>
 
 			<projectUrl>https://documentation.anyline.io/toc/platforms/xamarin/index.html</projectUrl>

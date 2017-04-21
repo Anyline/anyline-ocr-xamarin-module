@@ -23,7 +23,8 @@ namespace AnylineXamarinApp.iOS
             { "Energy", new[] {
                     "Analog Meter Scan",
                     "Digital Meter Scan",
-                    "Heat Meter Scan"
+                    "Heat Meter Scan",
+                    "Analog/Digital Scan"
                 }},
             { "Identification", new[] {
                     "Passport / ID MRZ Scan"
@@ -165,6 +166,9 @@ namespace AnylineXamarinApp.iOS
                             scanModeItems.Add("4 digits", ALScanMode.HeatMeter4);
                             scanModeItems.Add("5 digits", ALScanMode.HeatMeter5);
                             scanModeItems.Add("6 digits", ALScanMode.HeatMeter6);
+                            break;
+                        case 3: //Automatic Analog/Digital Meter Scan
+                            scanModeItems.Add("", ALScanMode.AutoAnalogDigitalMeter);
                             break;
                     }
 
