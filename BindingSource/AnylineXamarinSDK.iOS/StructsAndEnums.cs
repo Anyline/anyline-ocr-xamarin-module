@@ -202,7 +202,8 @@ namespace AnylineXamarinSDK.iOS
         DigitalMeter,
         HeatMeter4,
         HeatMeter5,
-        HeatMeter6
+        HeatMeter6,
+        AutoAnalogDigitalMeter
     }
 
     [Native]
@@ -246,7 +247,8 @@ namespace AnylineXamarinSDK.iOS
     public enum ALOCRScanMode : long
     {
         Line,
-        Grid
+        Grid,
+        Auto
     }
 
     [Native]

@@ -5,7 +5,7 @@
 			<id>Anyline.Xamarin.SDK</id>
 
 			<!-- The package version number that is used when resolving dependencies -->
-			<version>3.10.0</version>
+			<version>3.11.0</version>
 
 			<!-- Authors contain text that appears directly on the gallery -->
 			<authors>Anyline GmbH</authors>
@@ -40,7 +40,7 @@
 			
 			For iOS, the AnylineResource.bundle, which has to be integrated into your Xamarin.iOS app as BundleResource will be located in your project/solution under /packages/Anyline.Xamarin.SDK.[version]/.
 			
-			For a detailed integration guide, see https://documentation.anyline.io/toc/platforms/xamarin/xamarin.ios/xamarin.ios_quickstart.html and https://documentation.anyline.io/toc/platforms/xamarin/xamarin.android/xamarin.android_quickstart.html 
+			For detailed integration guides, see https://documentation.anyline.io/toc/platforms/xamarin/xamarin.ios/xamarin.ios_quickstart.html and https://documentation.anyline.io/toc/platforms/xamarin/xamarin.android/xamarin.android_quickstart.html 
 			</description>
 
 			<projectUrl>https://documentation.anyline.io/toc/platforms/xamarin/index.html</projectUrl>
@@ -72,6 +72,7 @@
 			<file src="AnylineResources.bundle\threshold_all.ale" target="..\..\AnylineResources.bundle\" />
 			<file src="AnylineResources.bundle\module_anyline_ocr\anyline_ocr_grid.ale" target="..\..\AnylineResources.bundle\module_anyline_ocr\" />
 			<file src="AnylineResources.bundle\module_anyline_ocr\anyline_ocr_line.ale" target="..\..\AnylineResources.bundle\module_anyline_ocr\" />
+			<file src="AnylineResources.bundle\module_anyline_ocr\anyline_ocr_auto.ale" target="..\..\AnylineResources.bundle\module_anyline_ocr\" />
 			<file src="AnylineResources.bundle\module_anyline_ocr\simpleocr_capture_config.json" target="..\..\AnylineResources.bundle\module_anyline_ocr\" />
 			<file src="AnylineResources.bundle\module_anyline_ocr\tessdata\anyline_capitals.traineddata" target="..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\" />
 			<file src="AnylineResources.bundle\module_anyline_ocr\tessdata\bottlecap.traineddata" target="..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\" />
