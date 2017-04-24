@@ -126,19 +126,16 @@
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
-    <ImageAsset Include="Resources/Images.xcassets/AppIcons.appiconset/BankCardIcon_120.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources/Images.xcassets/AppIcons.appiconset/BankCardIcon_180.png">
-      <InProject>false</InProject>
-    </ImageAsset>
     <ImageAsset Include="Resources/Images.xcassets/AppIcons.appiconset/Contents.json">
       <InProject>false</InProject>
     </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\AnylineLogo.imageset\Contents.json">
+    <ImageAsset Include="Resources\Images.xcassets\AnylineLogo.imageset\Anyline@2x.png">
       <InProject>false</InProject>
     </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\BankcardScan.imageset\Contents.json">
+    <ImageAsset Include="Resources\Images.xcassets\AnylineLogo.imageset\Anyline@3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AnylineLogo.imageset\Contents.json">
       <InProject>false</InProject>
     </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Contents.json">
@@ -161,13 +158,7 @@
     </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\ort.imageset\Contents.json">
       <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\BankCardIcon_120.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\BankCardIcon_180.png">
-      <InProject>false</InProject>
-    </ImageAsset>
+    </ImageAsset>    
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json">
       <InProject>false</InProject>
     </ImageAsset>
@@ -208,37 +199,7 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\drawable\ic_launcher.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ImageAsset Include="Resources\Images.xcassets\AnylineLogo.imageset\Anyline%402x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-  </ItemGroup>
-  <ItemGroup>
-    <ImageAsset Include="Resources\Images.xcassets\AnylineLogo.imageset\Anyline%403x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-  </ItemGroup>
-  <ItemGroup>
-    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\BankCardIcon_120.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-  </ItemGroup>
-  <ItemGroup>
-    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\BankCardIcon_180.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-  </ItemGroup>
-  <ItemGroup>
-    <ImageAsset Include="Resources\Images.xcassets\BankcardScan.imageset\BankCardIcon_120.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-  </ItemGroup>
-  <ItemGroup>
-    <ImageAsset Include="Resources\Images.xcassets\BankcardScan.imageset\BankCardIcon_180.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-  </ItemGroup>
+  </ItemGroup>  
   <ItemGroup>
     <ImageAsset Include="Resources\Images.xcassets\MeterScan.imageset\Icon-60%402x.png">
       <InProject>false</InProject>
@@ -344,7 +305,7 @@
     <BundleResource Include="..\..\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_grid.ale">
       <Link>Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_grid.ale</Link>
     </BundleResource>
-	<BundleResource Include="..\..\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_auto.ale">
+    <BundleResource Include="..\..\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_auto.ale">
       <Link>Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_auto.ale</Link>
     </BundleResource>
     <BundleResource Include="..\..\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_line.ale">
@@ -425,13 +386,13 @@
     <BundleResource Include="..\..\AnylineResources.bundle\module_energy\smart_meter_ger.ale">
       <Link>Resources\AnylineResources.bundle\module_energy\smart_meter_ger.ale</Link>
     </BundleResource>
-	<BundleResource Include="..\..\AnylineResources.bundle\module_energy\analog_digital_auto_mode.ale">
+    <BundleResource Include="..\..\AnylineResources.bundle\module_energy\analog_digital_auto_mode.ale">
       <Link>Resources\AnylineResources.bundle\module_energy\analog_digital_auto_mode.ale</Link>
     </BundleResource>
     <BundleResource Include="..\..\AnylineResources.bundle\module_energy\smart_meter_ger_spec.json">
       <Link>Resources\AnylineResources.bundle\module_energy\smart_meter_ger_spec.json</Link>
     </BundleResource>
-	<BundleResource Include="..\..\AnylineResources.bundle\module_energy\analog_digital_capture_config.json">
+    <BundleResource Include="..\..\AnylineResources.bundle\module_energy\analog_digital_capture_config.json">
       <Link>Resources\AnylineResources.bundle\module_energy\analog_digital_capture_config.json</Link>
     </BundleResource>
     <BundleResource Include="..\..\AnylineResources.bundle\module_energy\water_meter_black_background_capture_config.json">
@@ -461,7 +422,7 @@
     <BundleResource Include="..\..\AnylineResources.bundle\module_energy\trained_models\CNN_Validation_97.enc">
       <Link>Resources\AnylineResources.bundle\module_energy\trained_models\CNN_Validation_97.enc</Link>
     </BundleResource>
-	<BundleResource Include="..\..\AnylineResources.bundle\module_energy\trained_models\CNN_energy_detection_full_half.enc">
+    <BundleResource Include="..\..\AnylineResources.bundle\module_energy\trained_models\CNN_energy_detection_full_half.enc">
       <Link>Resources\AnylineResources.bundle\module_energy\trained_models\CNN_energy_detection_full_half.enc</Link>
     </BundleResource>
     <BundleResource Include="..\..\AnylineResources.bundle\images\anyline_logo_white.dat">
