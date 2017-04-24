@@ -115,56 +115,168 @@
     <None Include="packages.config" />    
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\threshold_all.ale"><Link>Resources\AnylineResources.bundle\threshold_all.ale</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_grid.ale" ><Link>Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_grid.ale</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_line.ale" ><Link>Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_line.ale</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_anyline_ocr\simpleocr_capture_config.json" ><Link>Resources\AnylineResources.bundle\module_anyline_ocr\simpleocr_capture_config.json</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\anyline_capitals.traineddata" ><Link>Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\anyline_capitals.traineddata</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\bottlecap.traineddata" ><Link>Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\bottlecap.traineddata</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\deu.traineddata" ><Link>Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\deu.traineddata</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\eng_no_dict.traineddata" ><Link>Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\eng_no_dict.traineddata</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\rbf_jan2015_v2.traineddata" ><Link>Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\rbf_jan2015_v2.traineddata</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\scrabble.traineddata" ><Link>Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\scrabble.traineddata</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_barcode\barcode_capture_config.json" ><Link>Resources\AnylineResources.bundle\module_barcode\barcode_capture_config.json</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_barcode\ean.ale" ><Link>Resources\AnylineResources.bundle\module_barcode\ean.ale</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_debit_card\debitcard_capture_config.json" ><Link>Resources\AnylineResources.bundle\module_debit_card\debitcard_capture_config.json</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_document\document.ale" ><Link>Resources\AnylineResources.bundle\module_document\document.ale</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_document\document_capture_config.json" ><Link>Resources\AnylineResources.bundle\module_document\document_capture_config.json</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\digital_heat_meter.ale" ><Link>Resources\AnylineResources.bundle\module_energy\digital_heat_meter.ale</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\digital_meter.ale" ><Link>Resources\AnylineResources.bundle\module_energy\digital_meter.ale</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\digital_meter_big_testing.ale" ><Link>Resources\AnylineResources.bundle\module_energy\digital_meter_big_testing.ale</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\digital_meter_capture_config.json" ><Link>Resources\AnylineResources.bundle\module_energy\digital_meter_capture_config.json</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\digital_number_capture_config.json" ><Link>Resources\AnylineResources.bundle\module_energy\digital_number_capture_config.json</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\energy_serial.ale" ><Link>Resources\AnylineResources.bundle\module_energy\energy_serial.ale</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\gas_meter_capture_config.json" ><Link>Resources\AnylineResources.bundle\module_energy\gas_meter_capture_config.json</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\heat_meter_capture_config.json" ><Link>Resources\AnylineResources.bundle\module_energy\heat_meter_capture_config.json</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\patternMulti9AndE.json" ><Link>Resources\AnylineResources.bundle\module_energy\patternMulti9AndE.json</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\power_meter_4_capture_config.json" ><Link>Resources\AnylineResources.bundle\module_energy\power_meter_4_capture_config.json</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\power_meter_capture_config.json" ><Link>Resources\AnylineResources.bundle\module_energy\power_meter_capture_config.json</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\serial_number_capture_config.json" ><Link>Resources\AnylineResources.bundle\module_energy\serial_number_capture_config.json</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\smart_meter_ger.ale" ><Link>Resources\AnylineResources.bundle\module_energy\smart_meter_ger.ale</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\smart_meter_ger_spec.json" ><Link>Resources\AnylineResources.bundle\module_energy\smart_meter_ger_spec.json</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\water_meter_black_background_capture_config.json" ><Link>Resources\AnylineResources.bundle\module_energy\water_meter_black_background_capture_config.json</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\water_meter_white_background_capture_config.json" ><Link>Resources\AnylineResources.bundle\module_energy\water_meter_white_background_capture_config.json</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\tessdata\anyline.traineddata" ><Link>Resources\AnylineResources.bundle\module_energy\tessdata\anyline.traineddata</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_mrz\mrz_capture_config.json" ><Link>Resources\AnylineResources.bundle\module_mrz\mrz_capture_config.json</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_mrz\mrz_scanning.ale" ><Link>Resources\AnylineResources.bundle\module_mrz\mrz_scanning.ale</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_mrz\tessdata\OcrB.traineddata" ><Link>Resources\AnylineResources.bundle\module_mrz\tessdata\OcrB.traineddata</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_order_code\order_code.ale" ><Link>Resources\AnylineResources.bundle\module_order_code\order_code.ale</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_order_code\tessdata\OcrB.traineddata" ><Link>Resources\AnylineResources.bundle\module_order_code\tessdata\OcrB.traineddata</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\trained_models\CNN_Validation_97.enc" ><Link>Resources\AnylineResources.bundle\module_energy\trained_models\CNN_Validation_97.enc</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\images\anyline_logo_white.dat" ><Link>Resources\AnylineResources.bundle\images\anyline_logo_white.dat</Link></BundleResource>    
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_document\document_crop.ale" ><Link>Resources\AnylineResources.bundle\module_document\document_crop.ale</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\analog_meter.ale" ><Link>Resources\AnylineResources.bundle\module_energy\analog_meter.ale</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\analog_meter_capture_config.json" ><Link>Resources\AnylineResources.bundle\module_energy\analog_meter_capture_config.json</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\trained_models\CNN_bgagnostic_energy.enc" ><Link>Resources\AnylineResources.bundle\module_energy\trained_models\CNN_bgagnostic_energy.enc</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_mrz\trained_models\CNN_OCRB_Gray_0124.enc" ><Link>Resources\AnylineResources.bundle\module_mrz\trained_models\CNN_OCRB_Gray_0124.enc</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\images\flash_white.png" ><Link>Resources\AnylineResources.bundle\images\flash_white.png</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\images\flash_white%402x.png" ><Link>Resources\AnylineResources.bundle\images\flash_white%402x.png</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\images\flash_white%403x.png" ><Link>Resources\AnylineResources.bundle\images\flash_white%403x.png</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\prefix_five.png" ><Link>Resources\AnylineResources.bundle\module_energy\prefix_five.png</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\sounds\beep.wav" ><Link>Resources\AnylineResources.bundle\sounds\beep.wav</Link></BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\Anyline-Info.plist" ><Link>Resources\AnylineResources.bundle\Anyline-Info.plist</Link></BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\threshold_all.ale">
+      <Link>Resources\AnylineResources.bundle\threshold_all.ale</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_grid.ale">
+      <Link>Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_grid.ale</Link>
+    </BundleResource>
+	<BundleResource Include="..\..\..\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_auto.ale">
+      <Link>Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_auto.ale</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_line.ale">
+      <Link>Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_line.ale</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_anyline_ocr\simpleocr_capture_config.json">
+      <Link>Resources\AnylineResources.bundle\module_anyline_ocr\simpleocr_capture_config.json</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\anyline_capitals.traineddata">
+      <Link>Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\anyline_capitals.traineddata</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\bottlecap.traineddata">
+      <Link>Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\bottlecap.traineddata</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\deu.traineddata">
+      <Link>Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\deu.traineddata</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\eng_no_dict.traineddata">
+      <Link>Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\eng_no_dict.traineddata</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\rbf_jan2015_v2.traineddata">
+      <Link>Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\rbf_jan2015_v2.traineddata</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\scrabble.traineddata">
+      <Link>Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\scrabble.traineddata</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_barcode\barcode_capture_config.json">
+      <Link>Resources\AnylineResources.bundle\module_barcode\barcode_capture_config.json</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_barcode\ean.ale">
+      <Link>Resources\AnylineResources.bundle\module_barcode\ean.ale</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_debit_card\debitcard_capture_config.json">
+      <Link>Resources\AnylineResources.bundle\module_debit_card\debitcard_capture_config.json</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_document\document.ale">
+      <Link>Resources\AnylineResources.bundle\module_document\document.ale</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_document\document_capture_config.json">
+      <Link>Resources\AnylineResources.bundle\module_document\document_capture_config.json</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\digital_heat_meter.ale">
+      <Link>Resources\AnylineResources.bundle\module_energy\digital_heat_meter.ale</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\digital_meter.ale">
+      <Link>Resources\AnylineResources.bundle\module_energy\digital_meter.ale</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\digital_meter_big_testing.ale">
+      <Link>Resources\AnylineResources.bundle\module_energy\digital_meter_big_testing.ale</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\digital_meter_capture_config.json">
+      <Link>Resources\AnylineResources.bundle\module_energy\digital_meter_capture_config.json</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\digital_number_capture_config.json">
+      <Link>Resources\AnylineResources.bundle\module_energy\digital_number_capture_config.json</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\energy_serial.ale">
+      <Link>Resources\AnylineResources.bundle\module_energy\energy_serial.ale</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\gas_meter_capture_config.json">
+      <Link>Resources\AnylineResources.bundle\module_energy\gas_meter_capture_config.json</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\heat_meter_capture_config.json">
+      <Link>Resources\AnylineResources.bundle\module_energy\heat_meter_capture_config.json</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\patternMulti9AndE.json">
+      <Link>Resources\AnylineResources.bundle\module_energy\patternMulti9AndE.json</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\power_meter_4_capture_config.json">
+      <Link>Resources\AnylineResources.bundle\module_energy\power_meter_4_capture_config.json</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\power_meter_capture_config.json">
+      <Link>Resources\AnylineResources.bundle\module_energy\power_meter_capture_config.json</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\serial_number_capture_config.json">
+      <Link>Resources\AnylineResources.bundle\module_energy\serial_number_capture_config.json</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\smart_meter_ger.ale">
+      <Link>Resources\AnylineResources.bundle\module_energy\smart_meter_ger.ale</Link>
+    </BundleResource>
+	<BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\analog_digital_auto_mode.ale">
+      <Link>Resources\AnylineResources.bundle\module_energy\analog_digital_auto_mode.ale</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\smart_meter_ger_spec.json">
+      <Link>Resources\AnylineResources.bundle\module_energy\smart_meter_ger_spec.json</Link>
+    </BundleResource>
+	<BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\analog_digital_capture_config.json">
+      <Link>Resources\AnylineResources.bundle\module_energy\analog_digital_capture_config.json</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\water_meter_black_background_capture_config.json">
+      <Link>Resources\AnylineResources.bundle\module_energy\water_meter_black_background_capture_config.json</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\water_meter_white_background_capture_config.json">
+      <Link>Resources\AnylineResources.bundle\module_energy\water_meter_white_background_capture_config.json</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\tessdata\anyline.traineddata">
+      <Link>Resources\AnylineResources.bundle\module_energy\tessdata\anyline.traineddata</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_mrz\mrz_capture_config.json">
+      <Link>Resources\AnylineResources.bundle\module_mrz\mrz_capture_config.json</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_mrz\mrz_scanning.ale">
+      <Link>Resources\AnylineResources.bundle\module_mrz\mrz_scanning.ale</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_mrz\tessdata\OcrB.traineddata">
+      <Link>Resources\AnylineResources.bundle\module_mrz\tessdata\OcrB.traineddata</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_order_code\order_code.ale">
+      <Link>Resources\AnylineResources.bundle\module_order_code\order_code.ale</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_order_code\tessdata\OcrB.traineddata">
+      <Link>Resources\AnylineResources.bundle\module_order_code\tessdata\OcrB.traineddata</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\trained_models\CNN_Validation_97.enc">
+      <Link>Resources\AnylineResources.bundle\module_energy\trained_models\CNN_Validation_97.enc</Link>
+    </BundleResource>
+	<BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\trained_models\CNN_energy_detection_full_half.enc">
+      <Link>Resources\AnylineResources.bundle\module_energy\trained_models\CNN_energy_detection_full_half.enc</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\images\anyline_logo_white.dat">
+      <Link>Resources\AnylineResources.bundle\images\anyline_logo_white.dat</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_document\document_crop.ale">
+      <Link>Resources\AnylineResources.bundle\module_document\document_crop.ale</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\analog_meter.ale">
+      <Link>Resources\AnylineResources.bundle\module_energy\analog_meter.ale</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\analog_meter_capture_config.json">
+      <Link>Resources\AnylineResources.bundle\module_energy\analog_meter_capture_config.json</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\trained_models\CNN_bgagnostic_energy.enc">
+      <Link>Resources\AnylineResources.bundle\module_energy\trained_models\CNN_bgagnostic_energy.enc</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_mrz\trained_models\CNN_OCRB_Gray_0124.enc">
+      <Link>Resources\AnylineResources.bundle\module_mrz\trained_models\CNN_OCRB_Gray_0124.enc</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\images\flash_white.png">
+      <Link>Resources\AnylineResources.bundle\images\flash_white.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\images\flash_white%402x.png">
+      <Link>Resources\AnylineResources.bundle\images\flash_white%402x.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\images\flash_white%403x.png">
+      <Link>Resources\AnylineResources.bundle\images\flash_white%403x.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\prefix_five.png">
+      <Link>Resources\AnylineResources.bundle\module_energy\prefix_five.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\sounds\beep.wav">
+      <Link>Resources\AnylineResources.bundle\sounds\beep.wav</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\..\AnylineResources.bundle\Anyline-Info.plist">
+      <Link>Resources\AnylineResources.bundle\Anyline-Info.plist</Link>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AnylineXamarinForms\AnylineXamarinForms.csproj">
