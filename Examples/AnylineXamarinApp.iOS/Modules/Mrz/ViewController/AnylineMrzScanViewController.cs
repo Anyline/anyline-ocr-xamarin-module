@@ -44,7 +44,7 @@ namespace AnylineXamarinApp.iOS.Modules.Mrz.ViewController
             if (!_success)
             {
                 // Something went wrong. The error object contains the error description
-                (Alert = new UIAlertView("Error", _error.DebugDescription, null, "OK", null)).Show();
+                (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
 
             //we'll manually cancel scanning
@@ -137,7 +137,7 @@ namespace AnylineXamarinApp.iOS.Modules.Mrz.ViewController
             _success = _anylineMrzView.StartScanningAndReturnError(out _error);
             if (!_success)
             {
-                (Alert = new UIAlertView("Error", _error.DebugDescription, null, "OK", null)).Show();
+                (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();                
             }
             else
                 _isScanning = true;
@@ -150,7 +150,7 @@ namespace AnylineXamarinApp.iOS.Modules.Mrz.ViewController
             _error = null;
             if (!_anylineMrzView.CancelScanningAndReturnError(out _error))
             {
-                (Alert = new UIAlertView("Error", _error.DebugDescription, null, "OK", null)).Show();
+                (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
             else
                 _isScanning = false;
@@ -165,7 +165,8 @@ namespace AnylineXamarinApp.iOS.Modules.Mrz.ViewController
         {
             // Because there is a lot of information to be passed along the module
             // uses ALIdentification.
-            _idView.UpdateIdentification(scanResult.Result as ALIdentification);
+            var identification = scanResult.Result as ALIdentification;
+            _idView.UpdateIdentification(identification);
             
             // Present the information to the user
             AnimateFadeIn();

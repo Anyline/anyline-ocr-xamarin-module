@@ -40,7 +40,7 @@ namespace AnylineXamarinApp.iOS.Modules.Barcode.ViewController
 
             if (!_success)
             {
-                (Alert = new UIAlertView("Error", _error.DebugDescription, null, "OK", null)).Show();
+                (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
 
             // Anyline will stop searching for new results once it found a valid code. Here we tell it to continue scanning
@@ -81,7 +81,7 @@ namespace AnylineXamarinApp.iOS.Modules.Barcode.ViewController
             if (!_success)
             {
                 // Something went wrong. The error object contains the error description
-                (Alert = new UIAlertView(@"Start Scanning Error", _error.DebugDescription, null, "OK", null)).Show();
+                (Alert = new UIAlertView(@"Start Scanning Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
         }
 
@@ -101,7 +101,7 @@ namespace AnylineXamarinApp.iOS.Modules.Barcode.ViewController
             _error = null;
             if (!_anylineBarcodeView.CancelScanningAndReturnError(out _error))
             {
-                (Alert = new UIAlertView("Error", _error.DebugDescription, null, "OK", null)).Show();
+                (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
         }
 

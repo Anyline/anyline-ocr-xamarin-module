@@ -50,13 +50,17 @@ namespace AnylineXamarinApp.iOS.Modules.Document.ViewController
             if (!_success)
             {
                 // Something went wrong. The error object contains the error description
-                (_alert = new UIAlertView("Error", _error.DebugDescription, null, "OK", null)).Show();
+                (_alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
 
             //stop scanning on result
             _scanView.CancelOnResult = true;
 
             _scanView.TranslatesAutoresizingMaskIntoConstraints = false;
+            
+            // to set certain supported ratios, they can be provided as follows:
+            //NSNumber[] ratios = { DocumentRatio.BusinessCardLandscape, DocumentRatio.DINAXLandscape };
+            //_scanView.SetDocumentRatios(ratios);
 
             // After setup is complete we add the module to the view of this view controller
             View.AddSubview(_scanView);
@@ -91,7 +95,7 @@ namespace AnylineXamarinApp.iOS.Modules.Document.ViewController
             _success = _scanView.StartScanningAndReturnError(out _error);
             if (!_success)
             {
-                (_alert = new UIAlertView("Error", _error.DebugDescription, null, "OK", null)).Show();
+                (_alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
         }
 

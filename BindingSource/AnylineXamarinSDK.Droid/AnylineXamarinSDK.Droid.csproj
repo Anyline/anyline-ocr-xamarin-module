@@ -74,11 +74,11 @@
     <Folder Include="Additions\" />
   </ItemGroup>
   <ItemGroup>
-    <LibraryProjectZip Include="Jars\anylinesdk-3.11.0.aar" />
+    <LibraryProjectZip Include="Jars\anylinesdk-3.12.0.aar" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
   <PropertyGroup>
-    <PostBuildEvent>$(ProjectDir)Assets\tools\dist\GetXMLMetadata.exe $(ProjectDir)obj\$(ConfigurationName)\generated\src\ $(ProjectDir)Assets\tools\Generated.xml $(ProjectDir)Assets\tools\javadoc</PostBuildEvent>
+    <PostBuildEvent>$(ProjectDir)Assets\tools\dist\GetXMLMetadata.exe $(ProjectDir)obj\$(ConfigurationName)\generated\src\ $(ProjectDir)Assets\tools\Generated.xml $(ProjectDir)Assets\tools\javadoc &amp; xcopy $(TargetPath) $(SolutionDir)..\ /Y</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>$(ProjectDir)Assets\tools\clean.bat $(ProjectDir)Assets\tools</PreBuildEvent>

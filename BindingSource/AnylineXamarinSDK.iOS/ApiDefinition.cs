@@ -1206,10 +1206,11 @@ namespace AnylineXamarinSDK.iOS
         //[Export("anylineEnergyModuleView:didFindScanResult:cropImage:fullImage:inMode:")]
         //void DidFindScanResult(AnylineEnergyModuleView anylineEnergyModuleView, string scanResult, UIImage image, UIImage fullImage, ALScanMode scanMode);
     }
-
+        
+    /* removed since 3.12
     [Static]
     partial interface Constants
-    {
+    {        
         // extern NSString *const kCodeTypeAztec __attribute__((deprecated("Deprecated since 3.4 Use enum ALBarcodeFormatOptions instead.")));
         [Obsolete("Deprecated since 3.4 Use enum ALBarcodeFormatOptions instead.")]
         [Field("kCodeTypeAztec", "__Internal")]
@@ -1288,42 +1289,8 @@ namespace AnylineXamarinSDK.iOS
         // extern NSString *const kCodeTypeUPCEANExtension __attribute__((deprecated("Deprecated since 3.4 Use enum ALBarcodeFormatOptions instead.")));
         [Obsolete("Deprecated since 3.4 Use enum ALBarcodeFormatOptions instead.")]
         [Field("kCodeTypeUPCEANExtension", "__Internal")]
-        NSString kCodeTypeUPCEANExtension { get; }
-
-        // MANUALLY MOVED HERE:
-
-        // extern const CGFloat ALDocumentRatioDINAXLandscape;
-        [Field("ALDocumentRatioDINAXLandscape", "__Internal")]
-        float ALDocumentRatioDINAXLandscape { get; }
-
-        // extern const CGFloat ALDocumentRatioDINAXPortrait;
-        [Field("ALDocumentRatioDINAXPortrait", "__Internal")]
-        float ALDocumentRatioDINAXPortrait { get; }
-
-        // extern const CGFloat ALDocumentRatioCompimentsSlipLandscape;
-        [Field("ALDocumentRatioCompimentsSlipLandscape", "__Internal")]
-        float ALDocumentRatioCompimentsSlipLandscape { get; }
-
-        // extern const CGFloat ALDocumentRatioCompimentsSlipPortrait;
-        [Field("ALDocumentRatioCompimentsSlipPortrait", "__Internal")]
-        float ALDocumentRatioCompimentsSlipPortrait { get; }
-
-        // extern const CGFloat ALDocumentRatioBusinessCardLandscape;
-        [Field("ALDocumentRatioBusinessCardLandscape", "__Internal")]
-        float ALDocumentRatioBusinessCardLandscape { get; }
-
-        // extern const CGFloat ALDocumentRatioBusinessCardPortrait;
-        [Field("ALDocumentRatioBusinessCardPortrait", "__Internal")]
-        float ALDocumentRatioBusinessCardPortrait { get; }
-
-        // extern const CGFloat ALDocumentRatioLetterLandscape;
-        [Field("ALDocumentRatioLetterLandscape", "__Internal")]
-        float ALDocumentRatioLetterLandscape { get; }
-
-        // extern const CGFloat ALDocumentRatioLetterPortrait;
-        [Field("ALDocumentRatioLetterPortrait", "__Internal")]
-        float ALDocumentRatioLetterPortrait { get; }
-    }
+        NSString kCodeTypeUPCEANExtension { get; }        
+    }*/
 
     // @interface AnylineBarcodeModuleView : AnylineAbstractModuleView
     [BaseType(typeof(AnylineAbstractModuleView))]
@@ -1391,10 +1358,11 @@ namespace AnylineXamarinSDK.iOS
         [Export("givenNames", ArgumentSemantic.Strong)]
         string GivenNames { get; set; }
 
+        // removed in 3.12
         // @property (nonatomic, strong) NSString * countryCode __attribute__((deprecated("Deprecated since 3.2.1. Use issuingCountryCode and nationalityCountryCode instead.")));
-        [Obsolete("Deprecated since 3.2.1. Use IssuingCountryCode and NationalityCountryCode instead.")]
+        /*[Obsolete("Deprecated since 3.2.1. Use IssuingCountryCode and NationalityCountryCode instead.")]
         [Export("countryCode", ArgumentSemantic.Strong)]
-        string CountryCode { get; set; }
+        string CountryCode { get; set; }*/
 
         // @property (nonatomic, strong) NSString * issuingCountryCode;
         [Export("issuingCountryCode", ArgumentSemantic.Strong)]
@@ -1443,6 +1411,14 @@ namespace AnylineXamarinSDK.iOS
         // @property (nonatomic, strong) NSString * personalNumber2;
         [Export("personalNumber2", ArgumentSemantic.Strong)]
         string PersonalNumber2 { get; set; }
+
+        // @property (readonly, nonatomic) NSDate * expirationDateObject;
+        [Export("expirationDateObject")]
+        NSDate ExpirationDateObject { get; }
+
+        // @property (readonly, nonatomic) NSDate * dayOfBirthDateObject;
+        [Export("dayOfBirthDateObject")]
+        NSDate DayOfBirthDateObject { get; }
 
         // -(instancetype)initWithDocumentType:(NSString *)documentType countryCode:(NSString *)countryCode issuingCountryCode:(NSString *)issuingCountryCode nationalityCountryCode:(NSString *)nationalityCountryCode surNames:(NSString *)surNames givenNames:(NSString *)givenNames documentNumber:(NSString *)documentNumber checkDigitNumber:(NSString *)checkDigitNumber dayOfBirth:(NSString *)dayOfBirth checkDigitDayOfBirth:(NSString *)checkDigitDayOfBirth sex:(NSString *)sex expirationDate:(NSString *)expirationDate checkDigitExpirationDate:(NSString *)checkdigitExpirationDate personalNumber:(NSString *)personalNumber checkDigitPersonalNumber:(NSString *)checkDigitPersonalNumber checkDigitFinal:(NSString *)checkDigitFinal personalNumber2:(NSString *)personalNumber2;
         [Export("initWithDocumentType:countryCode:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:personalNumber2:")]
@@ -1626,7 +1602,7 @@ namespace AnylineXamarinSDK.iOS
 
     // @interface AnylineDocumentModuleView : AnylineAbstractModuleView
     [BaseType(typeof(AnylineAbstractModuleView))]
-    interface AnylineDocumentModuleView
+    partial interface AnylineDocumentModuleView
     {
         //ADDED
         // -(instancetype)initWithFrame:(CGRect)frame;
@@ -1644,6 +1620,41 @@ namespace AnylineXamarinSDK.iOS
         // -(void)setDocumentRatios:(NSArray<NSNumber *> *)ratios;
         [Export("setDocumentRatios:")]
         void SetDocumentRatios(NSNumber[] ratios);
+
+        // document ratios binding always 0, therefore they are added in extra.cs
+        /*
+        // extern const CGFloat ALDocumentRatioDINAXLandscape;
+        [Field("ALDocumentRatioDINAXLandscape", "__Internal")]
+        float ALDocumentRatioDINAXLandscape { get; }
+
+        // extern const CGFloat ALDocumentRatioDINAXPortrait;
+        [Field("ALDocumentRatioDINAXPortrait", "__Internal")]
+        float ALDocumentRatioDINAXPortrait { get; }
+
+        // extern const CGFloat ALDocumentRatioCompimentsSlipLandscape;
+        [Field("ALDocumentRatioCompimentsSlipLandscape", "__Internal")]
+        float ALDocumentRatioCompimentsSlipLandscape { get; }
+
+        // extern const CGFloat ALDocumentRatioCompimentsSlipPortrait;
+        [Field("ALDocumentRatioCompimentsSlipPortrait", "__Internal")]
+        float ALDocumentRatioCompimentsSlipPortrait { get; }
+
+        // extern const CGFloat ALDocumentRatioBusinessCardLandscape;
+        [Field("ALDocumentRatioBusinessCardLandscape", "__Internal")]
+        float ALDocumentRatioBusinessCardLandscape { get; }
+
+        // extern const CGFloat ALDocumentRatioBusinessCardPortrait;
+        [Field("ALDocumentRatioBusinessCardPortrait", "__Internal")]
+        float ALDocumentRatioBusinessCardPortrait { get; }
+
+        // extern const CGFloat ALDocumentRatioLetterLandscape;
+        [Field("ALDocumentRatioLetterLandscape", "__Internal")]
+        float ALDocumentRatioLetterLandscape { get; }
+
+        // extern const CGFloat ALDocumentRatioLetterPortrait;
+        [Field("ALDocumentRatioLetterPortrait", "__Internal")]
+        float ALDocumentRatioLetterPortrait { get; }
+        */
     }
 
     // @protocol AnylineDocumentModuleDelegate <NSObject>

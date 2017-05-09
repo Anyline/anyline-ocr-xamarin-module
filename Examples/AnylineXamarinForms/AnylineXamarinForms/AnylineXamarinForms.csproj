@@ -37,6 +37,7 @@
     <Compile Include="AnylineFormsPage.cs" />
     <Compile Include="App.cs" />
     <Compile Include="EnergyPage.cs" />
+    <Compile Include="MrzPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

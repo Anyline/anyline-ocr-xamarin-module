@@ -70,7 +70,7 @@ namespace AnylineXamarinApp.iOS.Modules.Energy.ViewController
             _success = _anylineEnergyView.SetupWithLicenseKey(_licenseKey, Self, out _error);
             if (!_success)
             {
-                (_alert = new UIAlertView("Error", _error.DebugDescription, null, "OK", null)).Show();
+                (_alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
             
             // We'll stop scanning manually
@@ -82,7 +82,7 @@ namespace AnylineXamarinApp.iOS.Modules.Energy.ViewController
             _error = null;
             _anylineEnergyView.SetScanMode(_segmentItems.ElementAt(_defaultIndex).Value, out _error);
             if (_error != null)
-                (_alert = new UIAlertView("Error", _error.DebugDescription, null, "OK", null)).Show();
+                (_alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
 
             // Create a subview for toggling native barcode scanning:
 
@@ -175,7 +175,7 @@ namespace AnylineXamarinApp.iOS.Modules.Energy.ViewController
                 _anylineEnergyView.SetScanMode(scanMode, out _error);
 
                 if (_error != null)
-                    (_alert = new UIAlertView("Error", _error.DebugDescription, null, "OK", null)).Show();
+                    (_alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
         }
         
@@ -237,7 +237,7 @@ namespace AnylineXamarinApp.iOS.Modules.Energy.ViewController
 
             if (!_success)
             {
-                (_alert = new UIAlertView("Error", _error.DebugDescription, null, "OK", null)).Show();
+                (_alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
             else
                 _isScanning = true;
@@ -255,7 +255,7 @@ namespace AnylineXamarinApp.iOS.Modules.Energy.ViewController
 
             if (!_success)
             {
-                (_alert = new UIAlertView("Error", _error.DebugDescription, null, "OK", null)).Show();
+                (_alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
             else
                 _isScanning = false;

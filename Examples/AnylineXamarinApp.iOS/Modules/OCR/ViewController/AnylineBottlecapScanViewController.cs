@@ -62,7 +62,7 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
             if (!_success)
             {
                 // Something went wrong. The error object contains the error description
-                (Alert = new UIAlertView("Error", _error.DebugDescription, null, "OK", null)).Show();
+                (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
 
             // We stop scanning manually
@@ -125,7 +125,7 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
             _success = _scanView.StartScanningAndReturnError(out _error);
             if (!_success)
             {
-                (Alert = new UIAlertView("Error", _error.DebugDescription, null, "OK", null)).Show();
+                (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
             else
                 _isScanning = true;
@@ -138,7 +138,7 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
             _error = null;
             if (!_scanView.CancelScanningAndReturnError(out _error))
             {
-                (Alert = new UIAlertView("Error", _error.DebugDescription, null, "OK", null)).Show();
+                (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
             else
                 _isScanning = false;

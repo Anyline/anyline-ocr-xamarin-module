@@ -44,7 +44,7 @@ namespace AnylineXamarinApp.Barcode
             
             // limit the barcode scanner to QR codes or CODE_128 codes
             //scanView.SetBarcodeFormats(BarcodeScanView.BarcodeFormat.QR_CODE, BarcodeScanView.BarcodeFormat.CODE_128);
-
+            
             _scanView.SetBeepOnResult(true);
 
             _scanView.SetCancelOnResult(false);

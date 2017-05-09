@@ -258,6 +258,9 @@ namespace AnylineXamarinForms.Droid
 			// aapt resource value: 0x7f060012
 			public const int manual = 2131099666;
 			
+			// aapt resource value: 0x7f06001c
+			public const int mrz_scan_view = 2131099676;
+			
 			// aapt resource value: 0x7f060013
 			public const int none = 2131099667;
 			
@@ -306,6 +309,9 @@ namespace AnylineXamarinForms.Droid
 			
 			// aapt resource value: 0x7f030000
 			public const int EnergyLayout = 2130903040;
+			
+			// aapt resource value: 0x7f030001
+			public const int MrzLayout = 2130903041;
 			
 			static Layout()
 			{

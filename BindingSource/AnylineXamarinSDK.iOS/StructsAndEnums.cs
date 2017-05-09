@@ -172,7 +172,7 @@ namespace AnylineXamarinSDK.iOS
         BarcodeModuleNativeDelegateWrong = 9004
     }
     
-    static class CFunctions
+    /*static class CFunctions
     {
         // extern int ALCharacterRangeMake (int minCharacterCount, int maxCharacterCount);
         [DllImport("__Internal")]        
@@ -181,7 +181,7 @@ namespace AnylineXamarinSDK.iOS
         // ALRange ALRangeMake (NSUInteger min, NSUInteger max);
         [DllImport("__Internal")]        
         static extern ALRange ALRangeMake(nuint min, nuint max);
-    }
+    }*/
 
     [Native]
     public enum ALScanMode : ulong

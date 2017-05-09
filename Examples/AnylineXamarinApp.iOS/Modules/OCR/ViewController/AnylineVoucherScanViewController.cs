@@ -40,23 +40,11 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
 
             // We'll define the OCR Config here:
             _ocrConfig = new ALOCRConfig();
-            _ocrConfig.CharHeight = new ALRange { min = 45, max = 85 };
             _ocrConfig.TesseractLanguages = new[] { @"anyline_capitals" };
             _ocrConfig.CharWhiteList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-            _ocrConfig.MinConfidence = 85;
-            _ocrConfig.ScanMode = ALOCRScanMode.Grid;
-            _ocrConfig.CharCountX = 8;
-            _ocrConfig.CharCountY = 1;
-            _ocrConfig.CharPaddingXFactor = 0.5;
+            _ocrConfig.ScanMode = ALOCRScanMode.Auto;
             _ocrConfig.ValidationRegex = "[A-Z0-9]{8}$";
-            _ocrConfig.RemoveSmallContours = true;
-            _ocrConfig.IsBrightTextOnDark = true;
-
-            // Experimental parameter to set the minimum sharpness (value between 0-100; 0 to turn sharpness detection off)
-            // The goal of the minimum sharpness is to avoid a time consuming ocr step,
-            // if the image is blurry and good results are therefore not likely.
-            _ocrConfig.MinSharpness = 50;
-
+            
             // We tell the module to bootstrap itself with the license key and delegate. The delegate will later get called
             // by the module once we start receiving results.
             _error = null;
@@ -66,7 +54,7 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
             if (!_success)
             {
                 // Something went wrong. The error object contains the error description
-                (Alert = new UIAlertView("Error", _error.DebugDescription, null, "OK", null)).Show();
+                (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
 
             // We stop scanning manually
@@ -129,7 +117,7 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
             _success = _scanView.StartScanningAndReturnError(out _error);
             if (!_success)
             {
-                (Alert = new UIAlertView("Error", _error.DebugDescription, null, "OK", null)).Show();
+                (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
             else
                 _isScanning = true;
@@ -142,7 +130,7 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
             _error = null;
             if (!_scanView.CancelScanningAndReturnError(out _error))
             {
-                (Alert = new UIAlertView("Error", _error.DebugDescription, null, "OK", null)).Show();
+                (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
             else
                 _isScanning = false;

@@ -61,21 +61,21 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
                 @"f52e3822cdd5423758ba19ed75b0cc32", out _error);
             if (!_success)
             {
-                (Alert = new UIAlertView("Error", _error.DebugDescription, null, "OK", null)).Show();
+                (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
             _error = null;
             _success = _scanView.CopyTrainedData(NSBundle.MainBundle.PathForResource(@"Modules/OCR/Arial", @"traineddata"),
                 @"9a5555eb6ac51c83cbb76d238028c485", out _error);
             if (!_success)
             {
-                (Alert = new UIAlertView("Error", _error.DebugDescription, null, "OK", null)).Show();
+                (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
             _error = null;
             _success = _scanView.CopyTrainedData(NSBundle.MainBundle.PathForResource(@"Modules/OCR/GL-Nummernschild-Mtl7_uml", @"traineddata"),
                 @"8ea050e8f22ba7471df7e18c310430d8", out _error);
             if (!_success)
             {
-                (Alert = new UIAlertView("Error", _error.DebugDescription, null, "OK", null)).Show();
+                (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
             
             // We tell the module to bootstrap itself with the license key and delegate. The delegate will later get called
@@ -87,7 +87,7 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
             if (!_success)
             {
                 // Something went wrong. The error object contains the error description
-                (Alert = new UIAlertView("Error", _error.DebugDescription, null, "OK", null)).Show();
+                (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
 
             // We stop scanning manually
@@ -150,7 +150,7 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
             _success = _scanView.StartScanningAndReturnError(out _error);
             if (!_success)
             {
-                (Alert = new UIAlertView("Error", _error.DebugDescription, null, "OK", null)).Show();
+                (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
             else
                 _isScanning = true;

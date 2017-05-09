@@ -2,11 +2,11 @@
 
 namespace AnylineXamarinForms
 {
-    public class EnergyPage : ContentPage
+    public class MrzPage : ContentPage
     {
-        public EnergyPage()
+        public MrzPage ()
 		{
-            Title = "Energy Scan Page";
+            Title = "Mrz Scan Page";
             // rendering of this page is done natively on each platform (via EnergyPageRenderer / MrzPageRenderer etc.)
 
             NavigationPage.SetHasBackButton(this, false);

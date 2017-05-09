@@ -39,23 +39,16 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
             _scanView = new AnylineOCRModuleView(frame);
 
             if (_error != null)
-                (Alert = new UIAlertView("Error", _error.DebugDescription, null, "OK", null)).Show();
+                (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
 
             // We'll define the OCR Config here:
             _ocrConfig = new ALOCRConfig();
-            _ocrConfig.CharHeight = new ALRange { min = 30, max = 60 };
             _ocrConfig.TesseractLanguages = new[] {@"eng_no_dict", @"deu"};
             _ocrConfig.CharWhiteList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-            _ocrConfig.MinConfidence = 70;
-            _ocrConfig.ScanMode = ALOCRScanMode.Line;
+            _ocrConfig.MinConfidence = 60;
+            _ocrConfig.ScanMode = ALOCRScanMode.Auto;
             _ocrConfig.ValidationRegex = "^[A-Z]{2}([0-9A-Z]\\s*){13,32}$";
-            _ocrConfig.RemoveSmallContours = true;
-            _ocrConfig.RemoveWhitespaces = true;
-            // Experimental parameter to set the minimum sharpness (value between 0-100; 0 to turn sharpness detection off)
-            // The goal of the minimum sharpness is to avoid a time consuming ocr step,
-            // if the image is blurry and good results are therefore not likely.
-            _ocrConfig.MinSharpness = 66;
-
+            
             // We tell the module to bootstrap itself with the license key and delegate. The delegate will later get called
             // by the module once we start receiving results.
             _error = null;
@@ -65,7 +58,7 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
             if (!_success)
             {
                 // Something went wrong. The error object contains the error description
-                (Alert = new UIAlertView("Error", _error.DebugDescription, null, "OK", null)).Show();
+                (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
             
             // We load the UI config for our IBAN view from a .json file.
@@ -125,7 +118,7 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
             _success = _scanView.StartScanningAndReturnError(out _error);
             if (!_success)
             {
-                (Alert = new UIAlertView("Error", _error.DebugDescription, null, "OK", null)).Show();
+                (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
             else
                 _isScanning = true;

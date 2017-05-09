@@ -108,13 +108,21 @@ namespace AnylineXamarinApp.Ocr
             AnylineOcrConfig anylineOcrConfig = new AnylineOcrConfig();
 
             // use the line mode (line length and font may vary)
-            anylineOcrConfig.SetScanMode(AnylineOcrConfig.ScanMode.Line);
+            anylineOcrConfig.SetScanMode(AnylineOcrConfig.ScanMode.Auto);
 
             // set the languages used for OCR
             anylineOcrConfig.SetTesseractLanguages("anyline_capitals");
 
             // allow only capital letters and numbers
             anylineOcrConfig.CharWhitelist = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+
+            // a simple regex for a basic validation of the IBAN, results that don't match this, will not be returned
+            // (full validation is more complex, as different countries have different formats)
+            anylineOcrConfig.ValidationRegex = "[A-Z0-9]{8}$";
+
+            /*
+            
+            // since we use the new OCR auto mode, we don't need to set these parameters anymore!
 
             // set the height range the text can have
             anylineOcrConfig.MinCharHeight = 45;
@@ -123,11 +131,7 @@ namespace AnylineXamarinApp.Ocr
             // The minimum confidence required to return a result, a value between 0 and 100.
             // (higher confidence means less likely to get a wrong result, but may be slower to get a result)
             anylineOcrConfig.MinConfidence = 85;
-
-            // a simple regex for a basic validation of the IBAN, results that don't match this, will not be returned
-            // (full validation is more complex, as different countries have different formats)
-            anylineOcrConfig.ValidationRegex = "[A-Z0-9]{8}$";
-
+            
             // removes small contours (helpful in this case as no letters with small artifacts are allowed, like iöäü)
             anylineOcrConfig.RemoveSmallContours = true;
 
@@ -138,6 +142,7 @@ namespace AnylineXamarinApp.Ocr
 
             // scan white text on black backgroundd
             anylineOcrConfig.IsBrightTextOnDark = true;
+            */
             
             // set the ocr config
             scanView.SetAnylineOcrConfig(anylineOcrConfig);
@@ -194,3 +199,4 @@ namespace AnylineXamarinApp.Ocr
         }
     }
 }
+ 

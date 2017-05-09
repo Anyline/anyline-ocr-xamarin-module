@@ -15,7 +15,7 @@ namespace AnylineXamarinForms
 
             var button = new Button
             {
-                Text = "Launch native Energy module",
+                Text = "Launch native scan module",
                 FontAttributes = FontAttributes.None,
                 FontSize = 18
             };
