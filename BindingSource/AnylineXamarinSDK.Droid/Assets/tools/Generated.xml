@@ -310,9 +310,7 @@
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraUtil']/method[@name='setCameraDisplayOrientation' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='android.hardware.Camera']]/parameter[2]" name="managedName">cameraId</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraUtil']/method[@name='setCameraDisplayOrientation' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='android.hardware.Camera']]/parameter[3]" name="managedName">camera</attr>
 <!-- File: AT.Nineyards.Anyline.Camera.CameraView.cs -->
-<!-- CameraView.CameraView(android.content.Context) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=1 and parameter[1][@type='android.content.Context']]/parameter[1]" name="managedName">context</attr>
-<!-- CameraView.CameraView(android.content.Context, android.util.AttributeSet, int) -->
+<!-- CameraView.CameraView(android.content.Context, android.util.AttributeSet, int) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[2]" name="managedName">attrs</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[3]" name="managedName">defStyleAttr</attr>
@@ -322,6 +320,8 @@
 <!-- CameraView.CameraView(android.content.Context, boolean) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='boolean']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='boolean']]/parameter[2]" name="managedName">api2Enabled</attr>
+<!-- CameraView.CameraView(android.content.Context) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=1 and parameter[1][@type='android.content.Context']]/parameter[1]" name="managedName">context</attr>
 <!-- CameraView.setPreferredCameraConfig(at.nineyards.anyline.camera.CameraConfig) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='setPreferredCameraConfig' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.CameraConfig']]/parameter[1]" name="managedName">preferredConfig</attr>
 <!-- CameraView.onLayout(boolean, int, int, int, int) -->
@@ -616,13 +616,13 @@
 <attr path="/api/package[@name='at.nineyards.anyline.modules.document']/class[@name='DocumentScanView.DocumentError']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
 <!-- DocumentScanView.DocumentRatio.valueOf(java.lang.String) -->
 <attr path="/api/package[@name='at.nineyards.anyline.modules.document']/class[@name='DocumentScanView.DocumentRatio']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
+<!-- DocumentScanView.DocumentScanView(android.content.Context, android.util.AttributeSet) -->
+<attr path="/api/package[@name='at.nineyards.anyline.modules.document']/class[@name='DocumentScanView']/constructor[@name='DocumentScanView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]/parameter[1]" name="managedName">context</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.modules.document']/class[@name='DocumentScanView']/constructor[@name='DocumentScanView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]/parameter[2]" name="managedName">attrs</attr>
 <!-- DocumentScanView.DocumentScanView(android.content.Context, android.util.AttributeSet, int) -->
 <attr path="/api/package[@name='at.nineyards.anyline.modules.document']/class[@name='DocumentScanView']/constructor[@name='DocumentScanView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.modules.document']/class[@name='DocumentScanView']/constructor[@name='DocumentScanView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[2]" name="managedName">attrs</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.modules.document']/class[@name='DocumentScanView']/constructor[@name='DocumentScanView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[3]" name="managedName">defStyleAttr</attr>
-<!-- DocumentScanView.DocumentScanView(android.content.Context, android.util.AttributeSet) -->
-<attr path="/api/package[@name='at.nineyards.anyline.modules.document']/class[@name='DocumentScanView']/constructor[@name='DocumentScanView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]/parameter[1]" name="managedName">context</attr>
-<attr path="/api/package[@name='at.nineyards.anyline.modules.document']/class[@name='DocumentScanView']/constructor[@name='DocumentScanView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]/parameter[2]" name="managedName">attrs</attr>
 <!-- DocumentScanView.initAnyline(java.lang.String, at.nineyards.anyline.modules.document.DocumentResultListener) -->
 <attr path="/api/package[@name='at.nineyards.anyline.modules.document']/class[@name='DocumentScanView']/method[@name='initAnyline' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='at.nineyards.anyline.modules.document.DocumentResultListener']]/parameter[1]" name="managedName">licenseKey</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.modules.document']/class[@name='DocumentScanView']/method[@name='initAnyline' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='at.nineyards.anyline.modules.document.DocumentResultListener']]/parameter[2]" name="managedName">resultListener</attr>
@@ -735,6 +735,7 @@
 <attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='MrzScanView']/method[@name='initAnyline' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='at.nineyards.anyline.modules.mrz.MrzResultListener']]/parameter[2]" name="managedName">mrzResultListener</attr>
 <!-- File: AT.Nineyards.Anyline.Modules.Ocr.AnylineOcrConfig.cs -->
 <!-- AnylineOcrConfig.AnylineOcrRegex.valueOf(java.lang.String) -->
+<attr path="/api/package[@name='at.nineyards.anyline.modules.ocr']/class[@name='AnylineOcrConfig.AnylineOcrRegex']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
 <!-- AnylineOcrConfig.ScanMode.valueOf(java.lang.String) -->
 <attr path="/api/package[@name='at.nineyards.anyline.modules.ocr']/class[@name='AnylineOcrConfig.ScanMode']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
 <!-- AnylineOcrConfig.AnylineOcrConfig(org.json.JSONObject) -->
