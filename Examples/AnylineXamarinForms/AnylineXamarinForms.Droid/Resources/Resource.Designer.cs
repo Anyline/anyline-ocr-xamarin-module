@@ -345,6 +345,9 @@ namespace AnylineXamarinForms.Droid
 			// aapt resource value: 0x7f050000
 			public const int allow_camera_permission = 2131034112;
 			
+			// aapt resource value: 0x7f050001
+			public const int contact_info = 2131034113;
+			
 			// aapt resource value: 0x7f050002
 			public const int flash_auto = 2131034114;
 			
@@ -354,8 +357,11 @@ namespace AnylineXamarinForms.Droid
 			// aapt resource value: 0x7f050004
 			public const int flash_on = 2131034116;
 			
-			// aapt resource value: 0x7f050001
-			public const int open_permission_settings = 2131034113;
+			// aapt resource value: 0x7f050005
+			public const int license_expiry_info = 2131034117;
+			
+			// aapt resource value: 0x7f050006
+			public const int open_permission_settings = 2131034118;
 			
 			static String()
 			{
