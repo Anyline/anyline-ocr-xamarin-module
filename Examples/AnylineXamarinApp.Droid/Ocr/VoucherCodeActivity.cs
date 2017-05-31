@@ -41,7 +41,7 @@ namespace AnylineXamarinApp.Ocr
             _scanView.SetConfigFromAsset("VoucherCodeConfig.json");
 
             _scanView.CopyTrainedData("tessdata/anyline_capitals.traineddata", "cee65c74833eb85e3c31e213b25e72a2");
-
+            
             SetOcrConfig(_scanView);
             
             // set the focus config

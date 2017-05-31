@@ -3,15 +3,15 @@
 <metadata>
 
 <!-- File: AT.Nineyards.Anyline.Camera.AnylineBaseView.cs -->
-<!-- AnylineBaseView.AnylineBaseView(android.content.Context, android.util.AttributeSet, int) -->
+<!-- AnylineBaseView.AnylineBaseView(android.content.Context) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/constructor[@name='AnylineBaseView' and count(parameter)=1 and parameter[1][@type='android.content.Context']]/parameter[1]" name="managedName">context</attr>
+<!-- AnylineBaseView.AnylineBaseView(android.content.Context, android.util.AttributeSet, int) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/constructor[@name='AnylineBaseView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/constructor[@name='AnylineBaseView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[2]" name="managedName">attrs</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/constructor[@name='AnylineBaseView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[3]" name="managedName">defStyleAttr</attr>
 <!-- AnylineBaseView.AnylineBaseView(android.content.Context, android.util.AttributeSet) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/constructor[@name='AnylineBaseView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/constructor[@name='AnylineBaseView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]/parameter[2]" name="managedName">attrs</attr>
-<!-- AnylineBaseView.AnylineBaseView(android.content.Context) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/constructor[@name='AnylineBaseView' and count(parameter)=1 and parameter[1][@type='android.content.Context']]/parameter[1]" name="managedName">context</attr>
 <!-- AnylineBaseView.setConfig(at.nineyards.anyline.camera.AnylineViewConfig) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/method[@name='setConfig' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.AnylineViewConfig']]/parameter[1]" name="managedName">config</attr>
 <!-- AnylineBaseView.setLicenseKey(java.lang.String) -->
@@ -165,10 +165,10 @@
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/method[@name='setUpdateRegionsOnAutoFocusEnabled' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">updateRegionsOnAutoFocusEnabled</attr>
 <!-- CameraConfig.setVideoStabilizationEnabled(boolean) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/method[@name='setVideoStabilizationEnabled' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">videoStabilizationEnabled</attr>
+<!-- CameraConfig.setHighResolutinPictureSize(at.nineyards.anyline.camera.CameraSize) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/method[@name='setHighResolutinPictureSize' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.CameraSize']]/parameter[1]" name="managedName">highResImageSize</attr>
 <!-- File: AT.Nineyards.Anyline.Camera.CameraController.cs -->
-<!-- CameraController.AutoFocusTimer.setInterval(int) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController.AutoFocusTimer']/method[@name='setInterval' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">interval</attr>
-<!-- CameraController.setPreferredCameraConfig(at.nineyards.anyline.camera.CameraConfig) -->
+<!-- CameraController.setPreferredCameraConfig(at.nineyards.anyline.camera.CameraConfig) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setPreferredCameraConfig' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.CameraConfig']]/parameter[1]" name="managedName">preferredCameraConfig</attr>
 <!-- CameraController.getNewImage(int, int, int, int, boolean) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='getNewImage' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='boolean']]/parameter[1]" name="managedName">cropX</attr>
@@ -181,10 +181,10 @@
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setCameraOpenListener' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.CameraOpenListener']]/parameter[1]" name="managedName">listener</attr>
 <!-- CameraController.setFlashOn(boolean) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setFlashOn' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">isOn</attr>
+<!-- CameraController.setHighResolutionImageListener(at.nineyards.anyline.camera.HighResolutionImageListener) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setHighResolutionImageListener' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.HighResolutionImageListener']]/parameter[1]" name="managedName">highResolutionImageListener</attr>
 <!-- CameraController.setImageListener(at.nineyards.anyline.camera.ImageListener) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setImageListener' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.ImageListener']]/parameter[1]" name="managedName">imageListener</attr>
-<!-- CameraController.setPictureTakenListener(at.nineyards.anyline.camera.PictureTakenListener) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setPictureTakenListener' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.PictureTakenListener']]/parameter[1]" name="managedName">pictureTakenListener</attr>
 <!-- CameraController.getNewImage(int, int, int, int, boolean) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='getNewImage' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='boolean']]/parameter[1]" name="managedName">cropX</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='getNewImage' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='boolean']]/parameter[2]" name="managedName">cropY</attr>
@@ -310,18 +310,18 @@
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraUtil']/method[@name='setCameraDisplayOrientation' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='android.hardware.Camera']]/parameter[2]" name="managedName">cameraId</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraUtil']/method[@name='setCameraDisplayOrientation' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='android.hardware.Camera']]/parameter[3]" name="managedName">camera</attr>
 <!-- File: AT.Nineyards.Anyline.Camera.CameraView.cs -->
-<!-- CameraView.CameraView(android.content.Context, android.util.AttributeSet, int) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[1]" name="managedName">context</attr>
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[2]" name="managedName">attrs</attr>
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[3]" name="managedName">defStyleAttr</attr>
-<!-- CameraView.CameraView(android.content.Context, android.util.AttributeSet) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]/parameter[1]" name="managedName">context</attr>
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]/parameter[2]" name="managedName">attrs</attr>
+<!-- CameraView.CameraView(android.content.Context) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=1 and parameter[1][@type='android.content.Context']]/parameter[1]" name="managedName">context</attr>
 <!-- CameraView.CameraView(android.content.Context, boolean) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='boolean']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='boolean']]/parameter[2]" name="managedName">api2Enabled</attr>
-<!-- CameraView.CameraView(android.content.Context) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=1 and parameter[1][@type='android.content.Context']]/parameter[1]" name="managedName">context</attr>
+<!-- CameraView.CameraView(android.content.Context, android.util.AttributeSet) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]/parameter[1]" name="managedName">context</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]/parameter[2]" name="managedName">attrs</attr>
+<!-- CameraView.CameraView(android.content.Context, android.util.AttributeSet, int) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[1]" name="managedName">context</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[2]" name="managedName">attrs</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[3]" name="managedName">defStyleAttr</attr>
 <!-- CameraView.setPreferredCameraConfig(at.nineyards.anyline.camera.CameraConfig) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='setPreferredCameraConfig' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.CameraConfig']]/parameter[1]" name="managedName">preferredConfig</attr>
 <!-- CameraView.onLayout(boolean, int, int, int, int) -->
@@ -338,6 +338,8 @@
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='setFlashOn' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">isOn</attr>
 <!-- CameraView.setFocusConfig(at.nineyards.anyline.camera.FocusConfig) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='setFocusConfig' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.FocusConfig']]/parameter[1]" name="managedName">focusConfig</attr>
+<!-- CameraView.setHighResolutionImageListener(at.nineyards.anyline.camera.HighResolutionImageListener) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='setHighResolutionImageListener' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.HighResolutionImageListener']]/parameter[1]" name="managedName">highResolutionImageListener</attr>
 <!-- CameraView.setImageCropBounds(int, int, int, int, boolean) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='setImageCropBounds' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='boolean']]/parameter[1]" name="managedName">x</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='setImageCropBounds' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='boolean']]/parameter[2]" name="managedName">y</attr>
@@ -352,8 +354,6 @@
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='setImageCropBoundsRelativeToCenter' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='boolean']]/parameter[5]" name="managedName">isGreyScale</attr>
 <!-- CameraView.setImageListener(at.nineyards.anyline.camera.ImageListener) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='setImageListener' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.ImageListener']]/parameter[1]" name="managedName">imageListener</attr>
-<!-- CameraView.setPictureTakenListener(at.nineyards.anyline.camera.PictureTakenListener) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='setPictureTakenListener' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.PictureTakenListener']]/parameter[1]" name="managedName">pictureTakenListener</attr>
 <!-- CameraView.setPreferredPictureSize(int, int) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='setPreferredPictureSize' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='int']]/parameter[1]" name="managedName">width</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='setPreferredPictureSize' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='int']]/parameter[2]" name="managedName">height</attr>
@@ -427,6 +427,14 @@
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/interface[@name='FlashControl']/method[@name='setFlashOnIfAuto' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">isOn</attr>
 <!-- FlashControl.setMode(at.nineyards.anyline.camera.FlashControl.Mode) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/interface[@name='FlashControl']/method[@name='setMode' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.FlashControl.Mode']]/parameter[1]" name="managedName">mode</attr>
+<!-- File: AT.Nineyards.Anyline.Camera.IHighResolutionImageListener.cs -->
+<!-- HighResolutionImageListener.onError(java.lang.Throwable) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/interface[@name='HighResolutionImageListener']/method[@name='onError' and count(parameter)=1 and parameter[1][@type='java.lang.Throwable']]/parameter[1]" name="managedName">e</attr>
+<!-- HighResolutionImageListener.onImageTaken(at.nineyards.anyline.models.AnylineImage) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/interface[@name='HighResolutionImageListener']/method[@name='onImageTaken' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.models.AnylineImage']]/parameter[1]" name="managedName">image</attr>
+<!-- File: AT.Nineyards.Anyline.Camera.IHighResolutionImageProvider.cs -->
+<!-- HighResolutionImageProvider.setHighResolutionImageListener(at.nineyards.anyline.camera.HighResolutionImageListener) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/interface[@name='HighResolutionImageProvider']/method[@name='setHighResolutionImageListener' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.HighResolutionImageListener']]/parameter[1]" name="managedName">highResolutionImageListener</attr>
 <!-- File: AT.Nineyards.Anyline.Camera.IImageListener.cs -->
 <!-- ImageListener.onImageAvailable(at.nineyards.anyline.camera.ImageReceiver) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/interface[@name='ImageListener']/method[@name='onImageAvailable' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.ImageReceiver']]/parameter[1]" name="managedName">imageReceiver</attr>
@@ -436,11 +444,6 @@
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='ImageReceiver']/method[@name='getYuvImage' and count(parameter)=2 and parameter[1][@type='android.graphics.Rect'] and parameter[2][@type='boolean']]/parameter[2]" name="managedName">greyOnly</attr>
 <!-- ImageReceiver.getYuvImage(boolean) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='ImageReceiver']/method[@name='getYuvImage' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">greyOnly</attr>
-<!-- File: AT.Nineyards.Anyline.Camera.IPictureTakenListener.cs -->
-<!-- PictureTakenListener.onPictureTaken(at.nineyards.anyline.models.AnylineImage) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/interface[@name='PictureTakenListener']/method[@name='onPictureTaken' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.models.AnylineImage']]/parameter[1]" name="managedName">image</attr>
-<!-- PictureTakenListener.onTakePictureError(java.lang.Throwable) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/interface[@name='PictureTakenListener']/method[@name='onTakePictureError' and count(parameter)=1 and parameter[1][@type='java.lang.Throwable']]/parameter[1]" name="managedName">e</attr>
 <!-- File: AT.Nineyards.Anyline.Camera.SimpleFlashView.cs -->
 <!-- SimpleFlashView.SimpleFlashView(android.content.Context, android.util.AttributeSet, int) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='SimpleFlashView']/constructor[@name='SimpleFlashView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[1]" name="managedName">context</attr>
@@ -493,7 +496,8 @@
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='VisualFeedbackConfig']/method[@name='setAnimationStyle' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.VisualFeedbackConfig.AnimationStyle']]/parameter[1]" name="managedName">animationStyle</attr>
 <!-- VisualFeedbackConfig.setFeedbackStyle(at.nineyards.anyline.camera.VisualFeedbackConfig.FeedbackStyle) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='VisualFeedbackConfig']/method[@name='setFeedbackStyle' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.VisualFeedbackConfig.FeedbackStyle']]/parameter[1]" name="managedName">feedbackStyle</attr>
-<!-- File: AT.Nineyards.Anyline.IImageProvider.cs -->
+<!-- File: AT.Nineyards.Anyline.ICombinedImageProvider.cs -->
+<!-- File: AT.Nineyards.Anyline.IImageProvider.cs -->
 <!-- File: AT.Nineyards.Anyline.Models.AnylineImage.cs -->
 <!-- AnylineImage.AnylineImage(at.nineyards.anyline.models.AnylineYuvImage) -->
 <attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineImage']/constructor[@name='AnylineImage' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.models.AnylineYuvImage']]/parameter[1]" name="managedName">alYuvImage</attr>
@@ -504,6 +508,8 @@
 <attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineImage']/method[@name='save' and count(parameter)=2 and parameter[1][@type='java.io.File'] and parameter[2][@type='int']]/parameter[2]" name="managedName">quality</attr>
 <!-- File: AT.Nineyards.Anyline.Models.AnylineScanResult.cs -->
 <!-- AnylineScanResult.AnylineScanResult(java.util.List&lt;android.graphics.PointF&gt;, java.lang.Integer, at.nineyards.anyline.models.AnylineImage, at.nineyards.anyline.models.AnylineImage, T) -->
+<!-- AnylineScanResult.setOutline(java.util.List&lt;android.graphics.PointF&gt;) -->
+<attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineScanResult']/method[@name='setOutline' and count(parameter)=1 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;']]/parameter[1]" name="managedName">outline</attr>
 <!-- File: AT.Nineyards.Anyline.Models.AnylineYuvImage.cs -->
 <!-- AnylineYuvImage.AnylineYuvImage(android.media.Image, int, int, int, int, int, boolean) -->
 <attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineYuvImage']/constructor[@name='AnylineYuvImage' and count(parameter)=7 and parameter[1][@type='android.media.Image'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int'] and parameter[7][@type='boolean']]/parameter[1]" name="managedName">image</attr>
@@ -563,6 +569,7 @@
 <!-- AnylineBaseModuleView.setLevelsForAutoFlash(int, int, int, int) -->
 <!-- AnylineBaseModuleView.setScale(float) -->
 <attr path="/api/package[@name='at.nineyards.anyline.modules']/class[@name='AnylineBaseModuleView']/method[@name='setScale' and count(parameter)=1 and parameter[1][@type='float']]/parameter[1]" name="managedName">scale</attr>
+<!-- AnylineBaseModuleView.setScanPlugin(io.anyline.plugin.AbstractScanPlugin) -->
 <!-- AnylineBaseModuleView.setVibrateOnResult(boolean) -->
 <attr path="/api/package[@name='at.nineyards.anyline.modules']/class[@name='AnylineBaseModuleView']/method[@name='setVibrateOnResult' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">isVibrateOnResult</attr>
 <!-- File: AT.Nineyards.Anyline.Modules.Barcode.BarcodeResult.cs -->
@@ -702,6 +709,8 @@
 <attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setGivenNames' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">givenNames</attr>
 <!-- Identification.setIssuingCountryCode(java.lang.String) -->
 <attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setIssuingCountryCode' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">issuingCountryCode</attr>
+<!-- Identification.setMrzString(java.lang.String) -->
+<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setMrzString' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">mrzString</attr>
 <!-- Identification.setNationalityCountryCode(java.lang.String) -->
 <attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setNationalityCountryCode' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">nationalityCountryCode</attr>
 <!-- Identification.setPersonalNumber(java.lang.String) -->
@@ -957,4 +966,79 @@
 <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.ocr']/class[@name='AnylineOcrScanView']/method[@name='initAnyline' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='at.nineyards.anylinexamarin.support.modules.ocr.AnylineOcrResultListener']]/parameter[2]" name="managedName">resultListener</attr>
 <!-- File: AT.Nineyards.Anylinexamarin.Support.Modules.Ocr.IAnylineOcrResultListener.cs -->
 <!-- AnylineOcrResultListener.onResult(at.nineyards.anyline.modules.ocr.AnylineOcrResult) -->
+<!-- File: IO.Anyline.Plugin.AbstractScanPlugin.cs -->
+<!-- AbstractScanPlugin.AbstractScanPlugin(android.content.Context, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, at.nineyards.anyline.ImageProvider) -->
+<!-- AbstractScanPlugin.addScanInfoListener(io.anyline.plugin.ScanInfoListener) -->
+<!-- AbstractScanPlugin.addScanResultListener(io.anyline.plugin.ScanResultListener&lt;ResultType&gt;) -->
+<!-- AbstractScanPlugin.addScanRunSkippedListener(io.anyline.plugin.ScanRunSkippedListener) -->
+<!-- AbstractScanPlugin.invokeOnInfo(java.lang.String, java.lang.Object) -->
+<!-- AbstractScanPlugin.invokeOnResult(ResultType) -->
+<!-- AbstractScanPlugin.onFinishedWithOutput(java.lang.Object) -->
+<!-- AbstractScanPlugin.onReportsVariable(java.lang.String, java.lang.Object) -->
+<!-- AbstractScanPlugin.removeScanInfoListener(io.anyline.plugin.ScanInfoListener) -->
+<!-- AbstractScanPlugin.removeScanResultListener(io.anyline.plugin.ScanResultListener&lt;ResultType&gt;) -->
+<!-- AbstractScanPlugin.removeScanRunSkippedListener(io.anyline.plugin.ScanRunSkippedListener) -->
+<!-- AbstractScanPlugin.setCancelOnResult(boolean) -->
+<!-- AbstractScanPlugin.setDebug(boolean) -->
+<!-- AbstractScanPlugin.setImageProvider(at.nineyards.anyline.ImageProvider) -->
+<!-- AbstractScanPlugin.setReportingEnabled(boolean) -->
+<!-- AbstractScanPlugin.onFinishedWithOutput(java.lang.Object) -->
+<!-- File: IO.Anyline.Plugin.Barcode.BarcodeFormat.cs -->
+<!-- BarcodeFormat.fromBarcodeScanViewBarcodeFormat(at.nineyards.anyline.modules.barcode.BarcodeScanView.BarcodeFormat) -->
+<!-- BarcodeFormat.valueOf(java.lang.String) -->
+<!-- File: IO.Anyline.Plugin.Barcode.BarcodeScanPlugin.cs -->
+<!-- BarcodeScanPlugin.BarcodeScanPlugin(android.content.Context, java.lang.String, java.lang.String, at.nineyards.anyline.ImageProvider) -->
+<!-- BarcodeScanPlugin.onFinishedWithOutput(java.lang.Object) -->
+<!-- BarcodeScanPlugin.setBarcodeFormats(io.anyline.plugin.barcode.BarcodeFormat...) -->
+<!-- File: IO.Anyline.Plugin.Barcode.BarcodeScanResult.cs -->
+<!-- BarcodeScanResult.BarcodeScanResult(java.lang.String, java.util.List&lt;android.graphics.PointF&gt;, java.lang.Integer, at.nineyards.anyline.models.AnylineImage, at.nineyards.anyline.models.AnylineImage, java.lang.String, io.anyline.plugin.barcode.BarcodeFormat) -->
+<!-- File: IO.Anyline.Plugin.Document.DocumentScanPlugin.cs -->
+<!-- DocumentScanPlugin.DocumentScanPlugin(android.content.Context, java.lang.String, java.lang.String, at.nineyards.anyline.CombinedImageProvider) -->
+<!-- DocumentScanPlugin.onFinishedWithOutput(java.lang.Object) -->
+<!-- DocumentScanPlugin.setDocumentRatios(java.lang.Double...) -->
+<!-- DocumentScanPlugin.setMaxDocumentRatioDeviation(java.lang.Double) -->
+<!-- DocumentScanPlugin.setMinBrightness(float) -->
+<!-- DocumentScanPlugin.setSkipImages(boolean) -->
+<!-- File: IO.Anyline.Plugin.Document.DocumentScanState.cs -->
+<!-- DocumentScanState.valueOf(java.lang.String) -->
+<!-- File: IO.Anyline.Plugin.IScanInfoListener.cs -->
+<!-- ScanInfoListener.onInfo(io.anyline.plugin.ScanInfo) -->
+<!-- File: IO.Anyline.Plugin.IScanPlugin.cs -->
+<!-- ScanPlugin.addScanInfoListener(io.anyline.plugin.ScanInfoListener) -->
+<!-- ScanPlugin.addScanResultListener(io.anyline.plugin.ScanResultListener&lt;ResultType&gt;) -->
+<!-- ScanPlugin.addScanRunSkippedListener(io.anyline.plugin.ScanRunSkippedListener) -->
+<!-- ScanPlugin.removeScanInfoListener(io.anyline.plugin.ScanInfoListener) -->
+<!-- ScanPlugin.removeScanResultListener(io.anyline.plugin.ScanResultListener&lt;ResultType&gt;) -->
+<!-- ScanPlugin.removeScanRunSkippedListener(io.anyline.plugin.ScanRunSkippedListener) -->
+<!-- ScanPlugin.setImageProvider(at.nineyards.anyline.ImageProvider) -->
+<!-- File: IO.Anyline.Plugin.IScanResultListener.cs -->
+<!-- ScanResultListener.onResult(T) -->
+<!-- File: IO.Anyline.Plugin.IScanRunSkippedListener.cs -->
+<!-- ScanRunSkippedListener.onRunSkipped(io.anyline.plugin.ScanRunSkippedReason) -->
+<!-- File: IO.Anyline.Plugin.Meter.MeterScanMode.cs -->
+<!-- MeterScanMode.fromEnergyScanMode(at.nineyards.anyline.modules.energy.EnergyScanView.ScanMode) -->
+<!-- MeterScanMode.valueOf(java.lang.String) -->
+<!-- File: IO.Anyline.Plugin.Meter.MeterScanPlugin.cs -->
+<!-- MeterScanPlugin.MeterScanPlugin(android.content.Context, java.lang.String, java.lang.String, at.nineyards.anyline.ImageProvider) -->
+<!-- MeterScanPlugin.setScanMode(io.anyline.plugin.meter.MeterScanMode) -->
+<!-- MeterScanPlugin.onFinishedWithOutput(java.lang.Object) -->
+<!-- File: IO.Anyline.Plugin.Meter.MeterScanResult.cs -->
+<!-- MeterScanResult.MeterScanResult(java.lang.String, java.util.List&lt;android.graphics.PointF&gt;, java.lang.Integer, at.nineyards.anyline.models.AnylineImage, at.nineyards.anyline.models.AnylineImage, java.lang.String, io.anyline.plugin.meter.MeterScanMode) -->
+<!-- File: IO.Anyline.Plugin.Mrz.MrzScanPlugin.cs -->
+<!-- MrzScanPlugin.MrzScanPlugin(android.content.Context, java.lang.String, java.lang.String, at.nineyards.anyline.ImageProvider) -->
+<!-- MrzScanPlugin.onFinishedWithOutput(java.lang.Object) -->
+<!-- File: IO.Anyline.Plugin.Ocr.OcrScanPlugin.cs -->
+<!-- OcrScanPlugin.OcrScanPlugin(android.content.Context, java.lang.String, java.lang.String, at.nineyards.anyline.ImageProvider, at.nineyards.anyline.modules.ocr.AnylineOcrConfig) -->
+<!-- OcrScanPlugin.copyTrainedData(android.content.Context, java.lang.String, java.lang.String) -->
+<!-- OcrScanPlugin.copyTrainedData(java.lang.String, java.lang.String) -->
+<!-- OcrScanPlugin.onFinishedWithOutput(java.lang.Object) -->
+<!-- OcrScanPlugin.setAnylineOcrConfig(at.nineyards.anyline.modules.ocr.AnylineOcrConfig) -->
+<!-- File: IO.Anyline.Plugin.Ocr.OcrScanResult.cs -->
+<!-- OcrScanResult.OcrScanResult(java.lang.String, java.util.List&lt;android.graphics.PointF&gt;, java.lang.Integer, at.nineyards.anyline.models.AnylineImage, at.nineyards.anyline.models.AnylineImage, java.lang.String, at.nineyards.anyline.models.AnylineImage) -->
+<!-- File: IO.Anyline.Plugin.ScanInfo.cs -->
+<!-- ScanInfo.ScanInfo(java.lang.String, java.lang.String, java.lang.Object) -->
+<!-- File: IO.Anyline.Plugin.ScanResult.cs -->
+<!-- ScanResult.ScanResult(java.lang.String, java.util.List&lt;android.graphics.PointF&gt;, java.lang.Integer, at.nineyards.anyline.models.AnylineImage, at.nineyards.anyline.models.AnylineImage, T) -->
+<!-- File: IO.Anyline.Plugin.ScanRunSkippedReason.cs -->
+<!-- ScanRunSkippedReason.ScanRunSkippedReason(java.lang.String, int, java.lang.String) -->
 </metadata>

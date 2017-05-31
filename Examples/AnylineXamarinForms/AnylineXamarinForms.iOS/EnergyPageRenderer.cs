@@ -56,7 +56,7 @@ namespace AnylineXamarinForms.iOS
                 var success = _scanView.SetupWithLicenseKey(LicenseKey, Self, out _error);
                 if (!success)
                 {
-                    (_alert = new UIAlertView("Error", _error.DebugDescription, null, "OK", null)).Show();
+                    (_alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
                 }
 
                 _scanView.CancelOnResult = true;
@@ -67,7 +67,7 @@ namespace AnylineXamarinForms.iOS
                 _error = null;
                 _scanView.SetScanMode(ALScanMode.AnalogMeter, out _error);
                 if (_error != null)
-                    (_alert = new UIAlertView("Error", _error.DebugDescription, null, "OK", null)).Show();
+                    (_alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
 
                 // Start scanning
                 StartScanning();
@@ -82,7 +82,7 @@ namespace AnylineXamarinForms.iOS
         {
             Debug.WriteLine(scanResult.Result.ToString(), @"Result: ");
 
-            _alert = new UIAlertView("Result", scanResult.Result.ToString(), null, "OK", null);
+            _alert = new UIAlertView("Result", scanResult.Result.ToString(), (IUIAlertViewDelegate)null, "OK", null);
             _alert.Clicked += (e, a) => {
                 StartScanning();
             };
@@ -94,7 +94,7 @@ namespace AnylineXamarinForms.iOS
         {            
             var success = _scanView.StartScanningAndReturnError(out _error);
             if (!success)
-                (_alert = new UIAlertView("Error", _error.DebugDescription, null, "OK", null)).Show();
+                (_alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
         }        
     }
 }
