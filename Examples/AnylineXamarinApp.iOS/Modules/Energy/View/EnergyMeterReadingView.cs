@@ -114,23 +114,17 @@ namespace AnylineXamarinApp.iOS.Modules.Energy.View
             {
                 case ALScanMode.AnalogMeter:
                     break;
-                case ALScanMode.GasMeter:
-                case ALScanMode.GasMeter6:
                 case ALScanMode.HeatMeter4:
                 case ALScanMode.HeatMeter5:
                 case ALScanMode.HeatMeter6:
                     _meterIcon.Image = UIImage.FromBundle("flamme");
                     //unit.Text = "m³";
                     break;
-                case ALScanMode.ElectricMeter:
-                case ALScanMode.ElectricMeter5_1:
-                case ALScanMode.ElectricMeter6_1:
                 case ALScanMode.DigitalMeter:
                     _meterIcon.Image = UIImage.FromBundle("blitz");
                     //unit.Text = "kWh";
                     break;
-                case ALScanMode.WaterMeterBlackBackground:
-                case ALScanMode.WaterMeterWhiteBackground:
+                default:
                     _meterIcon.Image = null;
                     //unit.Text = "m³";
                     break;

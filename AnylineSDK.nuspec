@@ -5,7 +5,7 @@
 			<id>Anyline.Xamarin.SDK</id>
 
 			<!-- The package version number that is used when resolving dependencies -->
-			<version>3.12.0</version>
+			<version>3.13.0</version>
 
 			<!-- Authors contain text that appears directly on the gallery -->
 			<authors>Anyline GmbH</authors>
@@ -107,12 +107,11 @@
 			<file src="AnylineResources.bundle\module_mrz\tessdata\OcrB.traineddata" target="..\..\AnylineResources.bundle\module_mrz\tessdata\" />
 			<file src="AnylineResources.bundle\module_order_code\order_code.ale" target="..\..\AnylineResources.bundle\module_order_code\" />
 			<file src="AnylineResources.bundle\module_order_code\tessdata\OcrB.traineddata" target="..\..\AnylineResources.bundle\module_order_code\tessdata\" />
-			<file src="AnylineResources.bundle\module_energy\trained_models\CNN_Validation_97.enc" target="..\..\AnylineResources.bundle\module_energy\trained_models\" />
+			<file src="AnylineResources.bundle\module_energy\trained_models\CNN_energy_detection_full_half.enc" target="..\..\AnylineResources.bundle\module_energy\trained_models\" />
 			<file src="AnylineResources.bundle\images\anyline_logo_white.dat" target="..\..\AnylineResources.bundle\images\" />
 			<file src="AnylineResources.bundle\module_document\document_crop.ale" target="..\..\AnylineResources.bundle\module_document\" />
 			<file src="AnylineResources.bundle\module_energy\analog_meter.ale" target="..\..\AnylineResources.bundle\module_energy\" />
 			<file src="AnylineResources.bundle\module_energy\analog_meter_capture_config.json" target="..\..\AnylineResources.bundle\module_mrz\" />
-			<file src="AnylineResources.bundle\module_energy\trained_models\CNN_bgagnostic_energy.enc" target="..\..\AnylineResources.bundle\module_energy\trained_models\" />
 			<file src="AnylineResources.bundle\module_mrz\trained_models\CNN_OCRB_Gray_0124.enc" target="..\..\AnylineResources.bundle\module_mrz\trained_models\" />
 			<file src="AnylineResources.bundle\images\flash_white.png" target="..\..\AnylineResources.bundle\images\" />
 			<file src="AnylineResources.bundle\images\flash_white@2x.png" target="..\..\AnylineResources.bundle\images\" />

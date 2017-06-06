@@ -172,38 +172,17 @@ namespace AnylineXamarinSDK.iOS
         BarcodeModuleNativeDelegateWrong = 9004
     }
     
-    /*static class CFunctions
-    {
-        // extern int ALCharacterRangeMake (int minCharacterCount, int maxCharacterCount);
-        [DllImport("__Internal")]        
-        static extern int ALCharacterRangeMake(int minCharacterCount, int maxCharacterCount);
-
-        // ALRange ALRangeMake (NSUInteger min, NSUInteger max);
-        [DllImport("__Internal")]        
-        static extern ALRange ALRangeMake(nuint min, nuint max);
-    }*/
-
     [Native]
     public enum ALScanMode : ulong
     {
         AnalogMeter,
-        ElectricMeter,
-        ElectricMeter5_1,
-        ElectricMeter6_1,
-        AnalogMeterWhite,
-        AnalogMeter4,
-        AnalogMeter7,
-        GasMeter,
-        GasMeter6,
-        Barcode,
         SerialNumber,
-        WaterMeterBlackBackground,
-        WaterMeterWhiteBackground,
         DigitalMeter,
         HeatMeter4,
         HeatMeter5,
         HeatMeter6,
-        AutoAnalogDigitalMeter
+        AutoAnalogDigitalMeter,
+        Barcode,
     }
 
     [Native]

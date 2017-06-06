@@ -2,6 +2,7 @@
 using System;
 namespace AnylineXamarinSDK.iOS
 {
+    /*
     // document ratio presets
     public static class DocumentRatio
     {
@@ -35,5 +36,5 @@ namespace AnylineXamarinSDK.iOS
         public static readonly string ISBN = @"ISBN0123456789<>-X";
         public static readonly string VIN = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         public static readonly string IMEI = @"-/0123456789";         
-    }
+    }*/
 }

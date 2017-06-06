@@ -908,9 +908,9 @@ namespace AnylineXamarinSDK.iOS
         IntPtr Constructor(nint size, nint minEqualResults, bool consecutivelyValue);
     }
 
-// @interface AnylineController : NSObject
+    // @interface ALCoreController : NSObject
     [BaseType(typeof(NSObject))]
-    interface AnylineController
+    interface ALCoreController
     {
         // @property (assign, nonatomic) BOOL asyncSDK;
         [Export("asyncSDK")]
@@ -921,9 +921,9 @@ namespace AnylineXamarinSDK.iOS
         bool Running { [Bind("isRunning")] get; set; }
 
         [Wrap("WeakDelegate")]
-        AnylineControllerDelegate Delegate { get; set; }
+        ALCoreControllerDelegate Delegate { get; set; }
 
-        // @property (nonatomic, weak) id<AnylineControllerDelegate> delegate;
+        // @property (nonatomic, weak) id<ALCoreControllerDelegate> delegate;
         [NullAllowed, Export("delegate", ArgumentSemantic.Weak)]
         NSObject WeakDelegate { get; set; }
 
@@ -931,9 +931,9 @@ namespace AnylineXamarinSDK.iOS
         [Export("initWithLicenseKey:")]
         IntPtr Constructor(string licenseKey);
 
-        // -(instancetype)initWithLicenseKey:(NSString *)licenseKey delegate:(id<AnylineControllerDelegate>)delegate;
+        // -(instancetype)initWithLicenseKey:(NSString *)licenseKey delegate:(id<ALCoreControllerDelegate>)delegate;
         [Export("initWithLicenseKey:delegate:")]
-        IntPtr Constructor(string licenseKey, AnylineControllerDelegate @delegate);
+        IntPtr Constructor(string licenseKey, ALCoreControllerDelegate @delegate);
 
         // -(BOOL)loadScript:(NSString *)script bundlePath:(NSString *)bundlePath error:(NSError **)error;
         [Export("loadScript:bundlePath:error:")]
@@ -1003,66 +1003,29 @@ namespace AnylineXamarinSDK.iOS
         NSObject[] RunStatistics { get; }
     }
 
-// @protocol AnylineControllerDelegate <NSObject>
+    // @protocol ALCoreControllerDelegate <NSObject>
     [Protocol, Model]
     [BaseType(typeof(NSObject))]
-    interface AnylineControllerDelegate
+    interface ALCoreControllerDelegate
     {
-        // @required -(void)anylineController:(AnylineController *)anylineController didFinishWithOutput:(id)object;
+        // @required -(void)anylineController:(ALCoreController *)anylineController didFinishWithOutput:(id)object;
         [Abstract]
         [Export("anylineController:didFinishWithOutput:")]
-        void DidFinishWithOutput(AnylineController anylineController, NSObject @object);
+        void DidFinishWithOutput(ALCoreController anylineController, NSObject @object);
 
-        // @optional -(void)anylineController:(AnylineController *)anylineController didAbortRun:(NSError *)reason;
+        // @optional -(void)anylineController:(ALCoreController *)anylineController didAbortRun:(NSError *)reason;
         [Export("anylineController:didAbortRun:")]
-        void DidAbortRun(AnylineController anylineController, NSError reason);
+        void DidAbortRun(ALCoreController anylineController, NSError reason);
 
-        // @optional -(void)anylineController:(AnylineController *)anylineController reportsVariable:(NSString *)variableName value:(id)value;
+        // @optional -(void)anylineController:(ALCoreController *)anylineController reportsVariable:(NSString *)variableName value:(id)value;
         [Export("anylineController:reportsVariable:value:")]
-        void ReportsVariable(AnylineController anylineController, string variableName, NSObject value);
+        void ReportsVariable(ALCoreController anylineController, string variableName, NSObject value);
 
-        // @optional -(void)anylineController:(AnylineController *)anylineController parserError:(NSError *)error;
+        // @optional -(void)anylineController:(ALCoreController *)anylineController parserError:(NSError *)error;
         [Export("anylineController:parserError:")]
-        void ParserError(AnylineController anylineController, NSError error);
+        void ParserError(ALCoreController anylineController, NSError error);
     }
-
-    /*
-    // @protocol ALMotionDetectorDelegate <NSObject>    
-    [Protocol, Model]
-    [BaseType(typeof(NSObject))]
-    interface ALMotionDetectorDelegate
-    {
-        // @required -(void)motionDetectorAboveThreshold;
-        [Abstract]
-        [Export("motionDetectorAboveThreshold")]
-        void MotionDetectorAboveThreshold();
-    }*/
-
-    /*
-    // @interface ALMotionDetector : NSObject
-    [BaseType(typeof(NSObject))]
-    interface ALMotionDetector
-    {
-        [Wrap("WeakDelegate")]
-        ALMotionDetectorDelegate Delegate { get; set; }
-
-        // @property (assign, nonatomic) id<ALMotionDetectorDelegate> delegate;
-        [NullAllowed, Export("delegate", ArgumentSemantic.Assign)]
-        NSObject WeakDelegate { get; set; }
-
-        // -(void)startListeningForMotion;
-        [Export("startListeningForMotion")]
-        void StartListeningForMotion();
-
-        // -(void)stopListeningForMotion;
-        [Export("stopListeningForMotion")]
-        void StopListeningForMotion();
-
-        // -(instancetype)initWithThreshold:(CGFloat)threshold delegate:(id)delegate;
-        [Export("initWithThreshold:delegate:")]
-        IntPtr Constructor(nfloat threshold, NSObject @delegate);
-    }*/
-    
+        
     // @interface AnylineAbstractModuleView : UIView
     [BaseType(typeof(UIView))]
     interface AnylineAbstractModuleView
@@ -1206,91 +1169,6 @@ namespace AnylineXamarinSDK.iOS
         //[Export("anylineEnergyModuleView:didFindScanResult:cropImage:fullImage:inMode:")]
         //void DidFindScanResult(AnylineEnergyModuleView anylineEnergyModuleView, string scanResult, UIImage image, UIImage fullImage, ALScanMode scanMode);
     }
-        
-    /* removed since 3.12
-    [Static]
-    partial interface Constants
-    {        
-        // extern NSString *const kCodeTypeAztec __attribute__((deprecated("Deprecated since 3.4 Use enum ALBarcodeFormatOptions instead.")));
-        [Obsolete("Deprecated since 3.4 Use enum ALBarcodeFormatOptions instead.")]
-        [Field("kCodeTypeAztec", "__Internal")]
-        NSString kCodeTypeAztec { get; }
-
-        // extern NSString *const kCodeTypeCodabar __attribute__((deprecated("Deprecated since 3.4 Use enum ALBarcodeFormatOptions instead.")));
-        [Obsolete("Deprecated since 3.4 Use enum ALBarcodeFormatOptions instead.")]
-        [Field("kCodeTypeCodabar", "__Internal")]
-        NSString kCodeTypeCodabar { get; }
-
-        // extern NSString *const kCodeTypeCode39 __attribute__((deprecated("Deprecated since 3.4 Use enum ALBarcodeFormatOptions instead.")));
-        [Obsolete("Deprecated since 3.4 Use enum ALBarcodeFormatOptions instead.")]
-        [Field("kCodeTypeCode39", "__Internal")]
-        NSString kCodeTypeCode39 { get; }
-
-        // extern NSString *const kCodeTypeCode93 __attribute__((deprecated("Deprecated since 3.4 Use enum ALBarcodeFormatOptions instead.")));
-        [Obsolete("Deprecated since 3.4 Use enum ALBarcodeFormatOptions instead.")]
-        [Field("kCodeTypeCode93", "__Internal")]
-        NSString kCodeTypeCode93 { get; }
-
-        // extern NSString *const kCodeTypeCode128 __attribute__((deprecated("Deprecated since 3.4 Use enum ALBarcodeFormatOptions instead.")));
-        [Obsolete("Deprecated since 3.4 Use enum ALBarcodeFormatOptions instead.")]
-        [Field("kCodeTypeCode128", "__Internal")]
-        NSString kCodeTypeCode128 { get; }
-
-        // extern NSString *const kCodeTypeDataMatrix __attribute__((deprecated("Deprecated since 3.4 Use enum ALBarcodeFormatOptions instead.")));
-        [Obsolete("Deprecated since 3.4 Use enum ALBarcodeFormatOptions instead.")]
-        [Field("kCodeTypeDataMatrix", "__Internal")]
-        NSString kCodeTypeDataMatrix { get; }
-
-        // extern NSString *const kCodeTypeEAN8 __attribute__((deprecated("Deprecated since 3.4 Use enum ALBarcodeFormatOptions instead.")));
-        [Obsolete("Deprecated since 3.4 Use enum ALBarcodeFormatOptions instead.")]
-        [Field("kCodeTypeEAN8", "__Internal")]
-        NSString kCodeTypeEAN8 { get; }
-
-        // extern NSString *const kCodeTypeEAN13 __attribute__((deprecated("Deprecated since 3.4 Use enum ALBarcodeFormatOptions instead.")));
-        [Obsolete("Deprecated since 3.4 Use enum ALBarcodeFormatOptions instead.")]
-        [Field("kCodeTypeEAN13", "__Internal")]
-        NSString kCodeTypeEAN13 { get; }
-
-        // extern NSString *const kCodeTypeITF __attribute__((deprecated("Deprecated since 3.4 Use enum ALBarcodeFormatOptions instead.")));
-        [Obsolete("Deprecated since 3.4 Use enum ALBarcodeFormatOptions instead.")]
-        [Field("kCodeTypeITF", "__Internal")]
-        NSString kCodeTypeITF { get; }
-
-        // extern NSString *const kCodeTypePDF417 __attribute__((deprecated("Deprecated since 3.4 Use enum ALBarcodeFormatOptions instead.")));
-        [Obsolete("Deprecated since 3.4 Use enum ALBarcodeFormatOptions instead.")]
-        [Field("kCodeTypePDF417", "__Internal")]
-        NSString kCodeTypePDF417 { get; }
-
-        // extern NSString *const kCodeTypeQR __attribute__((deprecated("Deprecated since 3.4 Use enum ALBarcodeFormatOptions instead.")));
-        [Obsolete("Deprecated since 3.4 Use enum ALBarcodeFormatOptions instead.")]
-        [Field("kCodeTypeQR", "__Internal")]
-        NSString kCodeTypeQR { get; }
-
-        // extern NSString *const kCodeTypeRSS14 __attribute__((deprecated("Deprecated since 3.4 Use enum ALBarcodeFormatOptions instead.")));
-        [Obsolete("Deprecated since 3.4 Use enum ALBarcodeFormatOptions instead.")]
-        [Field("kCodeTypeRSS14", "__Internal")]
-        NSString kCodeTypeRSS14 { get; }
-
-        // extern NSString *const kCodeTypeRSSExpanded __attribute__((deprecated("Deprecated since 3.4 Use enum ALBarcodeFormatOptions instead.")));
-        [Obsolete("Deprecated since 3.4 Use enum ALBarcodeFormatOptions instead.")]
-        [Field("kCodeTypeRSSExpanded", "__Internal")]
-        NSString kCodeTypeRSSExpanded { get; }
-
-        // extern NSString *const kCodeTypeUPCA __attribute__((deprecated("Deprecated since 3.4 Use enum ALBarcodeFormatOptions instead.")));
-        [Obsolete("Deprecated since 3.4 Use enum ALBarcodeFormatOptions instead.")]
-        [Field("kCodeTypeUPCA", "__Internal")]
-        NSString kCodeTypeUPCA { get; }
-
-        // extern NSString *const kCodeTypeUPCE __attribute__((deprecated("Deprecated since 3.4 Use enum ALBarcodeFormatOptions instead.")));
-        [Obsolete("Deprecated since 3.4 Use enum ALBarcodeFormatOptions instead.")]
-        [Field("kCodeTypeUPCE", "__Internal")]
-        NSString kCodeTypeUPCE { get; }
-
-        // extern NSString *const kCodeTypeUPCEANExtension __attribute__((deprecated("Deprecated since 3.4 Use enum ALBarcodeFormatOptions instead.")));
-        [Obsolete("Deprecated since 3.4 Use enum ALBarcodeFormatOptions instead.")]
-        [Field("kCodeTypeUPCEANExtension", "__Internal")]
-        NSString kCodeTypeUPCEANExtension { get; }        
-    }*/
 
     // @interface AnylineBarcodeModuleView : AnylineAbstractModuleView
     [BaseType(typeof(AnylineAbstractModuleView))]
@@ -1548,6 +1426,96 @@ namespace AnylineXamarinSDK.iOS
         IntPtr Constructor(string result, UIImage image, UIImage fullImage, nint confidence, ALSquare outline, UIImage thresholdedImage);
     }
 
+    // the aliases of these fields have been modified in Anyline.linkwith.cs
+    [Static]
+    partial interface ALDocumentConstants
+    {
+        // extern const CGFloat ALDocumentRatioDINAXLandscape;
+        [Field("DocumentRatioDINAXLandscape", "__Internal")]
+        nfloat ALDocumentRatioDINAXLandscape { get; }
+
+        // extern const CGFloat ALDocumentRatioDINAXPortrait;
+        [Field("DocumentRatioDINAXPortrait", "__Internal")]
+        nfloat ALDocumentRatioDINAXPortrait { get; }
+
+        // extern const CGFloat ALDocumentRatioCompimentsSlipLandscape;
+        [Field("DocumentRatioCompimentsSlipLandscape", "__Internal")]
+        nfloat ALDocumentRatioCompimentsSlipLandscape { get; }
+
+        // extern const CGFloat ALDocumentRatioCompimentsSlipPortrait;
+        [Field("DocumentRatioCompimentsSlipPortrait", "__Internal")]
+        nfloat ALDocumentRatioCompimentsSlipPortrait { get; }
+
+        // extern const CGFloat ALDocumentRatioBusinessCardLandscape;
+        [Field("DocumentRatioBusinessCardLandscape", "__Internal")]
+        nfloat ALDocumentRatioBusinessCardLandscape { get; }
+
+        // extern const CGFloat ALDocumentRatioBusinessCardPortrait;
+        [Field("DocumentRatioBusinessCardPortrait", "__Internal")]
+        nfloat ALDocumentRatioBusinessCardPortrait { get; }
+
+        // extern const CGFloat ALDocumentRatioLetterLandscape;
+        [Field("DocumentRatioLetterLandscape", "__Internal")]
+        nfloat ALDocumentRatioLetterLandscape { get; }
+
+        // extern const CGFloat ALDocumentRatioLetterPortrait;
+        [Field("DocumentRatioLetterPortrait", "__Internal")]
+        nfloat ALDocumentRatioLetterPortrait { get; }
+    }
+
+    // the aliases of these fields have been modified in Anyline.linkwith.cs
+    [Static]
+    partial interface ALOCRConstants
+    {
+        // extern NSString *const regexForEmail;
+        [Field("RegexForEmail", "__Internal")]
+        NSString RegexForEmail { get; }
+
+        // extern NSString *const regexForURL;
+        [Field("RegexForURL", "__Internal")]
+        NSString RegexForURL { get; }
+
+        // extern NSString *const regexForPriceTag;
+        [Field("RegexForPriceTag", "__Internal")]
+        NSString RegexForPriceTag { get; }
+
+        // extern NSString *const regexForISBN;
+        [Field("RegexForISBN", "__Internal")]
+        NSString RegexForISBN { get; }
+
+        // extern NSString *const regexForVIN;
+        [Field("RegexForVIN", "__Internal")]
+        NSString RegexForVIN { get; }
+
+        // extern NSString *const regexForIMEI;
+        [Field("RegexForIMEI", "__Internal")]
+        NSString RegexForIMEI { get; }
+
+        // extern NSString *const charWhiteListForEmail;
+        [Field("CharWhiteListForEmail", "__Internal")]
+        NSString CharWhiteListForEmail { get; }
+
+        // extern NSString *const charWhiteListForURL;
+        [Field("CharWhiteListForURL", "__Internal")]
+        NSString CharWhiteListForURL { get; }
+
+        // extern NSString *const charWhiteListForPriceTag;
+        [Field("CharWhiteListForPriceTag", "__Internal")]
+        NSString CharWhiteListForPriceTag { get; }
+
+        // extern NSString *const charWhiteListForISBN;
+        [Field("CharWhiteListForISBN", "__Internal")]
+        NSString CharWhiteListForISBN { get; }
+
+        // extern NSString *const charWhiteListForVIN;
+        [Field("CharWhiteListForVIN", "__Internal")]
+        NSString CharWhiteListForVIN { get; }
+
+        // extern NSString *const charWhiteListForIMEI;
+        [Field("CharWhiteListForIMEI", "__Internal")]
+        NSString CharWhiteListForIMEI { get; }
+    }
+
     // @interface AnylineOCRModuleView : AnylineAbstractModuleView
     [BaseType(typeof(AnylineAbstractModuleView))]
     interface AnylineOCRModuleView
@@ -1598,6 +1566,7 @@ namespace AnylineXamarinSDK.iOS
         [Export("anylineOCRModuleView:textOutlineDetected:")]
         [Abstract]
         bool TextOutlineDetected(AnylineOCRModuleView anylineOCRModuleView, ALSquare outline);
+        
     }
 
     // @interface AnylineDocumentModuleView : AnylineAbstractModuleView

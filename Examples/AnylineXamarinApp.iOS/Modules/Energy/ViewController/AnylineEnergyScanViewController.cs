@@ -187,27 +187,7 @@ namespace AnylineXamarinApp.iOS.Modules.Energy.ViewController
             {
                 case ALScanMode.AnalogMeter:
                     desc = "";
-                    break;
-                case ALScanMode.AnalogMeter4:
-                    desc = "4 pre-decimal places";
-                    break;
-                case ALScanMode.ElectricMeter:
-                    desc = "5 or 6 pre-decimal places";
-                    break;
-                case ALScanMode.GasMeter:
-                case ALScanMode.ElectricMeter5_1:
-                    desc = "5 pre-decimal places";
-                    break;
-                case ALScanMode.GasMeter6:
-                case ALScanMode.ElectricMeter6_1:
-                    desc = "6 pre-decimal places";
-                    break;
-                case ALScanMode.AnalogMeter7:
-                    desc = "7 pre-decimal places";
-                    break;
-                case ALScanMode.AnalogMeterWhite:
-                    desc = "5 or 6 pre-decimal (white background)";
-                    break;
+                    break;                
             }
             _infoLabel.Text = desc;
         }

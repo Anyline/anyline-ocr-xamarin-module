@@ -236,9 +236,6 @@
     <BundleResource Include="..\..\..\AnylineResources.bundle\module_order_code\tessdata\OcrB.traineddata">
       <Link>Resources\AnylineResources.bundle\module_order_code\tessdata\OcrB.traineddata</Link>
     </BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\trained_models\CNN_Validation_97.enc">
-      <Link>Resources\AnylineResources.bundle\module_energy\trained_models\CNN_Validation_97.enc</Link>
-    </BundleResource>
     <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\trained_models\CNN_energy_detection_full_half.enc">
       <Link>Resources\AnylineResources.bundle\module_energy\trained_models\CNN_energy_detection_full_half.enc</Link>
     </BundleResource>
@@ -253,9 +250,6 @@
     </BundleResource>
     <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\analog_meter_capture_config.json">
       <Link>Resources\AnylineResources.bundle\module_energy\analog_meter_capture_config.json</Link>
-    </BundleResource>
-    <BundleResource Include="..\..\..\AnylineResources.bundle\module_energy\trained_models\CNN_bgagnostic_energy.enc">
-      <Link>Resources\AnylineResources.bundle\module_energy\trained_models\CNN_bgagnostic_energy.enc</Link>
     </BundleResource>
     <BundleResource Include="..\..\..\AnylineResources.bundle\module_mrz\trained_models\CNN_OCRB_Gray_0124.enc">
       <Link>Resources\AnylineResources.bundle\module_mrz\trained_models\CNN_OCRB_Gray_0124.enc</Link>
