@@ -3,15 +3,15 @@
 <metadata>
 
 <!-- File: AT.Nineyards.Anyline.Camera.AnylineBaseView.cs -->
-<!-- AnylineBaseView.AnylineBaseView(android.content.Context) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/constructor[@name='AnylineBaseView' and count(parameter)=1 and parameter[1][@type='android.content.Context']]/parameter[1]" name="managedName">context</attr>
-<!-- AnylineBaseView.AnylineBaseView(android.content.Context, android.util.AttributeSet, int) -->
+<!-- AnylineBaseView.AnylineBaseView(android.content.Context, android.util.AttributeSet, int) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/constructor[@name='AnylineBaseView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/constructor[@name='AnylineBaseView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[2]" name="managedName">attrs</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/constructor[@name='AnylineBaseView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[3]" name="managedName">defStyleAttr</attr>
 <!-- AnylineBaseView.AnylineBaseView(android.content.Context, android.util.AttributeSet) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/constructor[@name='AnylineBaseView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/constructor[@name='AnylineBaseView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]/parameter[2]" name="managedName">attrs</attr>
+<!-- AnylineBaseView.AnylineBaseView(android.content.Context) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/constructor[@name='AnylineBaseView' and count(parameter)=1 and parameter[1][@type='android.content.Context']]/parameter[1]" name="managedName">context</attr>
 <!-- AnylineBaseView.setConfig(at.nineyards.anyline.camera.AnylineViewConfig) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/method[@name='setConfig' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.AnylineViewConfig']]/parameter[1]" name="managedName">config</attr>
 <!-- AnylineBaseView.setLicenseKey(java.lang.String) -->
@@ -312,16 +312,16 @@
 <!-- File: AT.Nineyards.Anyline.Camera.CameraView.cs -->
 <!-- CameraView.CameraView(android.content.Context) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=1 and parameter[1][@type='android.content.Context']]/parameter[1]" name="managedName">context</attr>
-<!-- CameraView.CameraView(android.content.Context, boolean) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='boolean']]/parameter[1]" name="managedName">context</attr>
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='boolean']]/parameter[2]" name="managedName">api2Enabled</attr>
-<!-- CameraView.CameraView(android.content.Context, android.util.AttributeSet) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]/parameter[1]" name="managedName">context</attr>
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]/parameter[2]" name="managedName">attrs</attr>
 <!-- CameraView.CameraView(android.content.Context, android.util.AttributeSet, int) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[2]" name="managedName">attrs</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[3]" name="managedName">defStyleAttr</attr>
+<!-- CameraView.CameraView(android.content.Context, android.util.AttributeSet) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]/parameter[1]" name="managedName">context</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]/parameter[2]" name="managedName">attrs</attr>
+<!-- CameraView.CameraView(android.content.Context, boolean) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='boolean']]/parameter[1]" name="managedName">context</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='boolean']]/parameter[2]" name="managedName">api2Enabled</attr>
 <!-- CameraView.setPreferredCameraConfig(at.nineyards.anyline.camera.CameraConfig) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='setPreferredCameraConfig' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.CameraConfig']]/parameter[1]" name="managedName">preferredConfig</attr>
 <!-- CameraView.onLayout(boolean, int, int, int, int) -->

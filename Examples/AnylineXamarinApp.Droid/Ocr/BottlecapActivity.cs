@@ -44,7 +44,7 @@ namespace AnylineXamarinApp.Ocr
             _scanView.SetConfigFromAsset("BottlecapViewConfig.json");
 
             _scanView.CopyTrainedData("tessdata/bottlecap.traineddata", "a8224bfaf4d2085f5b0de7018dee29eb");
-
+            
             SetOcrConfig(_scanView);
             
             // set an individual focus configuration for this example
