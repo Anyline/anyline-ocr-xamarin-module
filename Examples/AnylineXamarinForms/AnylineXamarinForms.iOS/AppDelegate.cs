@@ -20,8 +20,8 @@ namespace AnylineXamarinForms.iOS
          *  
          *  See https://bugzilla.xamarin.com/show_bug.cgi?id=41859
          */
-        [Export("window")]
-        public UIWindow GetWindow() { return UIApplication.SharedApplication.Windows[0]; }
+        //[Export("window")]
+        //public UIWindow GetWindow() { return UIApplication.SharedApplication.Windows[0]; }
 
         //
         // This method is invoked when the application has loaded and is ready to run. In this 

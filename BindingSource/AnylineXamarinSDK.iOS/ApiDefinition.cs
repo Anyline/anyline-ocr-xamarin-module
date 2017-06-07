@@ -1301,9 +1301,14 @@ namespace AnylineXamarinSDK.iOS
         // -(instancetype)initWithDocumentType:(NSString *)documentType countryCode:(NSString *)countryCode issuingCountryCode:(NSString *)issuingCountryCode nationalityCountryCode:(NSString *)nationalityCountryCode surNames:(NSString *)surNames givenNames:(NSString *)givenNames documentNumber:(NSString *)documentNumber checkDigitNumber:(NSString *)checkDigitNumber dayOfBirth:(NSString *)dayOfBirth checkDigitDayOfBirth:(NSString *)checkDigitDayOfBirth sex:(NSString *)sex expirationDate:(NSString *)expirationDate checkDigitExpirationDate:(NSString *)checkdigitExpirationDate personalNumber:(NSString *)personalNumber checkDigitPersonalNumber:(NSString *)checkDigitPersonalNumber checkDigitFinal:(NSString *)checkDigitFinal personalNumber2:(NSString *)personalNumber2;
         [Export("initWithDocumentType:countryCode:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:personalNumber2:")]
         IntPtr Constructor(string documentType, string countryCode, string issuingCountryCode, string nationalityCountryCode, string surNames, string givenNames, string documentNumber, string checkDigitNumber, string dayOfBirth, string checkDigitDayOfBirth, string sex, string expirationDate, string checkdigitExpirationDate, string personalNumber, string checkDigitPersonalNumber, string checkDigitFinal, string personalNumber2);
+
+        // @property (readonly, nonatomic) NSString * MRZString;
+        [Export("MRZString")]
+        string MRZString { get; set; }
+
     }
 
-// @interface AnylineMRZModuleView : AnylineAbstractModuleView
+    // @interface AnylineMRZModuleView : AnylineAbstractModuleView
     [BaseType(typeof(AnylineAbstractModuleView))]
     interface AnylineMRZModuleView
     {
@@ -1725,7 +1730,7 @@ namespace AnylineXamarinSDK.iOS
 
     // @interface ALEnergyResult : ALScanResult
     [BaseType(typeof(ALScanResult))]
-    interface ALEnergyResult
+    interface ALMeterResult
     {
         // @property (readonly, assign, nonatomic) ALScanMode scanMode;
         [Export("scanMode", ArgumentSemantic.Assign)]
@@ -1736,8 +1741,14 @@ namespace AnylineXamarinSDK.iOS
         IntPtr Constructor(string result, UIImage image, UIImage fullImage, nint confidence, ALSquare outline, ALScanMode scanMode);
     }
 
-    // @interface ALBarcodeResult : ALScanResult
-    [BaseType(typeof(ALScanResult))]
+    // @interface ALEnergyResult : ALMeterResult
+    [BaseType(typeof(ALMeterResult))]
+    interface ALEnergyResult
+    {
+    }
+
+        // @interface ALBarcodeResult : ALScanResult
+        [BaseType(typeof(ALScanResult))]
     interface ALBarcodeResult
     {
         // @property (readonly, assign, nonatomic) ALBarcodeFormat barcodeFormat;

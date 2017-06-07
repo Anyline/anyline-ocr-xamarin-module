@@ -251,6 +251,8 @@ namespace AnylineXamarinApp.iOS.Modules.Energy.ViewController
             //we'll go to a temporary new view controller, so we keep this one alive
             _keepScanViewControllerAlive = true;
 
+            var x = scanResult.ScanMode;
+
             try
             {
                 AnylineEnergyScanViewResultController vc = new AnylineEnergyScanViewResultController(scanResult.Result.ToString(), scanResult.ScanMode, _barcodeResult);

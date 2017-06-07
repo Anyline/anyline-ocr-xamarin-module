@@ -138,43 +138,24 @@ namespace AnylineXamarinApp.iOS
             expirationDate.Text = aId.ExpirationDate;
             sex.Text = aId.Sex;
 
-            if (aId.DocumentType.Equals(@"P"))
+            var mrzString = aId.MRZString.Replace("\\n", "\n");
+            var splitString = mrzString.Split('\n');
+            
+            if (splitString.Length == 2)
             {
-                line0.Text = string.Format("{0,-44}",
-                    string.Format("P<{0}{1}<<{2}", aId.NationalityCountryCode, aId.SurNames, aId.GivenNames)
-                    ).Replace(" ","<");
-                
+                line0.Text = splitString[0];
                 line1.Text = "";
-                
-                line2.Text = string.Format("{0,-42}{1,1}{2,1}", string.Format("{0,-9}{1}{2}{3}{4}{5}{6}{7}{8}",
-                                aId.DocumentNumber, aId.CheckdigitNumber,
-                                aId.IssuingCountryCode,
-                                aId.DayOfBirth, aId.CheckdigitDayOfBirth,
-                                aId.Sex,
-                                aId.ExpirationDate, aId.CheckdigitExpirationDate,
-                                aId.PersonalNumber),
-                        aId.CheckDigitPersonalNumber, aId.CheckdigitFinal)
-                        .Replace(" ", "<");
-
+                line2.Text = splitString[1];
+            }
+            else if (splitString.Length == 3)
+            {
+                line0.Text = splitString[0];
+                line1.Text = splitString[1];
+                line2.Text = splitString[2];
             }
             else
-            {
-                line0.Text = string.Format("{0,-30}\n", string.Format("{0}{1,-3}{2,-9}{3}",
-                        aId.DocumentType, aId.NationalityCountryCode,
-                        aId.DocumentNumber, aId.CheckdigitNumber))
-                        .Replace(" ","<");
+                return;
 
-                line1.Text = string.Format("{0,-29}{1,1}\n", string.Format("{0}{1}{2}{3}{4}{5}",
-                                aId.DayOfBirth, aId.CheckdigitDayOfBirth,
-                                aId.Sex, aId.ExpirationDate,
-                                aId.CheckdigitExpirationDate, aId.IssuingCountryCode),
-                        aId.CheckdigitFinal)
-                        .Replace(" ","<");
-
-                line2.Text = string.Format("{0,-30}", string.Format("{0}<<{1}",
-                        aId.SurNames, aId.GivenNames))
-                        .Replace(" ","<");
-            }
         }
     }
 }
