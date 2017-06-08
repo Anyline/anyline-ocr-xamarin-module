@@ -55,6 +55,20 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
 
             SetupLicensePlateConfig();
 
+            // important: set up the scanView with the license key BEFORE calling CopyTrainedData, else it will fail!
+
+            // We tell the module to bootstrap itself with the license key and delegate. The delegate will later get called
+            // by the module once we start receiving results.
+            _error = null;
+            _success = _scanView.SetupWithLicenseKey(_licenseKey, Self, OcrConfig, out _error);
+            // SetupWithLicenseKey:delegate:error returns true if everything went fine. In the case something wrong
+            // we have to check the error object for the error message.
+            if (!_success)
+            {
+                // Something went wrong. The error object contains the error description
+                (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
+            }
+
             // We'll copy the required traineddata files here
             _error = null;
             _success = _scanView.CopyTrainedData(NSBundle.MainBundle.PathForResource(@"Modules/OCR/Alte", @"traineddata"),
@@ -78,23 +92,11 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
                 (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
             
-            // We tell the module to bootstrap itself with the license key and delegate. The delegate will later get called
-            // by the module once we start receiving results.
-            _error = null;
-            _success = _scanView.SetupWithLicenseKey(_licenseKey, Self, OcrConfig, out _error);
-            // SetupWithLicenseKey:delegate:error returns true if everything went fine. In the case something wrong
-            // we have to check the error object for the error message.
-            if (!_success)
-            {
-                // Something went wrong. The error object contains the error description
-                (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
-            }
-
             // We stop scanning manually
             _scanView.CancelOnResult = false;
 
             // We load the UI config for our VoucherCode view from a .json file.
-            String configFile = NSBundle.MainBundle.PathForResource(@"Modules/OCR/license_plate_view_config", @"json");
+            string configFile = NSBundle.MainBundle.PathForResource(@"Modules/OCR/license_plate_view_config", @"json");
             _scanView.CurrentConfiguration = ALUIConfiguration.CutoutConfigurationFromJsonFile(configFile);
             _scanView.TranslatesAutoresizingMaskIntoConstraints = false;
 

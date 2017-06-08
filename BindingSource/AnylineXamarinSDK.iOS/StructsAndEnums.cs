@@ -169,9 +169,10 @@ namespace AnylineXamarinSDK.iOS
         ModuleSimpleOCRConfigIsNil = 9001,
         ModuleSimpleOCRConfigTesseractConfigIsNil = 9002,
         ModuleSimpleOCRConfigTextHeightNotSet = 9003,
-        BarcodeModuleNativeDelegateWrong = 9004
+        BarcodeModuleNativeDelegateWrong = 9004,
+        EnergyScanPluginBarcodeNotSupported = 9005
     }
-    
+
     [Native]
     public enum ALScanMode : ulong
     {
@@ -182,7 +183,7 @@ namespace AnylineXamarinSDK.iOS
         HeatMeter5,
         HeatMeter6,
         AutoAnalogDigitalMeter,
-        Barcode,
+        Barcode
     }
 
     [Native]

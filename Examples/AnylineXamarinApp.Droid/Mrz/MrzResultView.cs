@@ -51,39 +51,7 @@ namespace AnylineXamarinApp.Mrz
             _expirationDateText.SetText(identification.ExpirationDate, TextView.BufferType.Normal);
             _sexText.SetText(identification.Sex, TextView.BufferType.Normal);
 
-            string mrzString;
-            if ("P".Equals(identification.DocumentType))
-            {
-                mrzString = string.Format("{0,-44}\n\n", string.Format("P<{0}{1}<<{2}", identification.NationalityCountryCode,
-                        identification.SurNames, identification.GivenNames));
-                
-                mrzString += string.Format("{0,-42}{1,1}{2,1}", string.Format("{0,-9}{1}{2}{3}{4}{5}{6}{7}{8}",
-                                identification.DocumentNumber, identification.CheckDigitNumber,
-                                identification.IssuingCountryCode,
-                                identification.DayOfBirth, identification.CheckDigitDayOfBirth,
-                                identification.Sex,
-                                identification.ExpirationDate, identification.CheckDigitExpirationDate,
-                                identification.PersonalNumber),
-                        identification.CheckDigitPersonalNumber, identification.CheckDigitFinal);
-            }
-            else
-            {
-
-                mrzString = string.Format("{0,-30}\n", string.Format("{0}{1,-3}{2,-9}{3}",
-                        identification.DocumentType, identification.NationalityCountryCode,
-                        identification.DocumentNumber, identification.CheckDigitNumber));
-
-
-                mrzString += string.Format("{0,-29}{1,1}\n", string.Format("{0}{1}{2}{3}{4}{5}",
-                                identification.DayOfBirth, identification.CheckDigitDayOfBirth,
-                                identification.Sex, identification.ExpirationDate,
-                                identification.CheckDigitExpirationDate, identification.IssuingCountryCode),
-                        identification.CheckDigitFinal);
-
-                mrzString += string.Format("{0,-30}", string.Format("{0}<<{1}",
-                        identification.SurNames, identification.GivenNames));
-            }
-            mrzString = mrzString.Replace(" ", "<");
+            string mrzString = identification.MrzString.Replace("\\n", "\n");            
             _mrzText.SetText(mrzString, TextView.BufferType.Normal);
         }
     }
