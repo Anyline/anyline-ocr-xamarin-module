@@ -53,7 +53,7 @@ namespace AnylineXamarinApp.Document
             _scanView.SetConfigFromAsset("DocumentConfig.json");
 
             // you can limit the supported document ratios as follows:
-            //Java.Lang.Double[] ratios = { new Java.Lang.Double(DocumentRatio.DinAxLandscape.Ratio) };
+            //Java.Lang.Double[] ratios = { new Java.Lang.Double(DocumentRatio.DinAxLandscape.Ratio), new Java.Lang.Double(DocumentRatio.DinAxPortrait.Ratio) };
             //_scanView.SetDocumentRatios(ratios);
 
             _scanView.InitAnyline(MainActivity.LicenseKey, this);

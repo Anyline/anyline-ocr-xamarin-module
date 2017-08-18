@@ -195,3 +195,4 @@ Release
 obj
 bin
 /AnylineResources.bundle/images/*.DS_Store
+/Examples/packages
