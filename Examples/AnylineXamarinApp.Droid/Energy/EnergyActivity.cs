@@ -12,6 +12,7 @@ using Android.Gms.Vision.Barcodes;
 using AT.Nineyards.Anyline.Modules.Energy;
 using AT.Nineyards.Anyline.Modules.Barcode;
 using AT.Nineyards.Anylinexamarin.Support.Modules.Energy;
+using AT.Nineyards.Anyline.Camera;
 
 namespace AnylineXamarinApp.Energy
 {
@@ -41,14 +42,14 @@ namespace AnylineXamarinApp.Energy
             SetContentView(Resource.Layout.EnergyActivity);
 
             _scanView = FindViewById<EnergyScanView>(Resource.Id.energy_scan_view);
-                        
+            
             _energyUseCase = Intent.Extras.GetSerializable("OBJECT").ToString();
             _scanView.SetConfigFromAsset(_energyUseCase.Equals(Resources.GetString(Resource.String.scan_heat_meter))
                 ? "EnergyConfigHeatMeter.json"
                 : "EnergyConfigAll.json");
 
             _scanView.InitAnyline(MainActivity.LicenseKey, this);
-            
+                                    
             NativeBarcodeResultTextView = FindViewById<TextView>(Resource.Id.barcode_result_text);
             NativeBarcodeResultTextView.Text = "";
             
