@@ -10,6 +10,7 @@ using AnylineXamarinApp.iOS.Modules.Mrz.ViewController;
 using AnylineXamarinApp.iOS.Modules.OCR.ViewController;
 using UIKit;
 using System.Threading.Tasks;
+using System.Reflection;
 
 namespace AnylineXamarinApp.iOS
 {
@@ -95,8 +96,13 @@ namespace AnylineXamarinApp.iOS
             {
                 if (section == NumberOfSections(tableView) - 1)
                 {
-                    var sdkVer = NSBundle.MainBundle.ObjectForInfoDictionary("CFBundleShortVersionString").ToString();
-                    return $"SDK: {sdkVer}";
+                    Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
+                    var assembly = assemblies.Where(x => x.FullName.StartsWith("AnylineXamarinSDK")).FirstOrDefault();
+                    if (assembly != null)
+                    {
+                        return $"SDK: {assembly.GetName().Version}";                        
+                    }
+                    return "";
                 }
                 return TableItems.Keys.ToList().ElementAt((int)section);
             }

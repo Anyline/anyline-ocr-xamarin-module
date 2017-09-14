@@ -352,10 +352,10 @@
     <BundleResource Include="..\..\AnylineResources.bundle\module_energy\digital_meter.ale">
       <Link>Resources\AnylineResources.bundle\module_energy\digital_meter.ale</Link>
     </BundleResource>
-	<BundleResource Include="..\..\AnylineResources.bundle\module_energy\dial_meter.ale">
+    <BundleResource Include="..\..\AnylineResources.bundle\module_energy\dial_meter.ale">
       <Link>Resources\AnylineResources.bundle\module_energy\dial_meter.ale</Link>
     </BundleResource>
-	<BundleResource Include="..\..\AnylineResources.bundle\module_energy\dial_meter_capture_config.json">
+    <BundleResource Include="..\..\AnylineResources.bundle\module_energy\dial_meter_capture_config.json">
       <Link>Resources\AnylineResources.bundle\module_energy\dial_meter_capture_config.json</Link>
     </BundleResource>
     <BundleResource Include="..\..\AnylineResources.bundle\module_energy\digital_meter_big_testing.ale">
