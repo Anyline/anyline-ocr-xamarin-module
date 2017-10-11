@@ -301,7 +301,6 @@
     <BundleResource Include="Modules\OCR\iban_config.json" />
     <BundleResource Include="Modules\OCR\voucher_code_config.json" />
     <BundleResource Include="Modules\OCR\bottlecap_config.json" />
-    <BundleResource Include="Modules\LicensePlate\license_plate_view_config.json" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="..\..\AnylineResources.bundle\threshold_all.ale">

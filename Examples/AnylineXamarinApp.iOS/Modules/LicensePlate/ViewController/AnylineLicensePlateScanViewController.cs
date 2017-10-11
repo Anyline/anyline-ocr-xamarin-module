@@ -58,12 +58,7 @@ namespace AnylineXamarinApp.iOS.Modules.LicensePlate.ViewController
                         
             // We stop scanning manually
             _scanView.CancelOnResult = false;
-
-            // We load the UI config for our VoucherCode view from a .json file.
-            string configFile = NSBundle.MainBundle.PathForResource(@"Modules/LicensePlate/license_plate_view_config", @"json");
-            _scanView.CurrentConfiguration = ALUIConfiguration.CutoutConfigurationFromJsonFile(configFile);
-            _scanView.TranslatesAutoresizingMaskIntoConstraints = false;
-
+            
             // After setup is complete we add the module to the view of this view controller
             View.AddSubview(_scanView);
 

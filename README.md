@@ -63,7 +63,7 @@ For a detailed setup guide on how to integrate Anyline for your scanning applica
 - [**Document:**](https://documentation.anyline.io/toc/modules/document/index.html) Detect and scan documents for further processing.
 - [**MRZ:**](https://documentation.anyline.io/toc/modules/mrz/index.html) Reliable scanning of data from passports' and IDs' machine readable zones (MRZ).
 - [**Anyline OCR:**](https://documentation.anyline.io/toc/modules/anyline_ocr/index.html) Create your own custom use case.
-
+- [**License Plate:**](https://documentation.anyline.io/toc/modules/license_plate/index.html) Scan license plates.
 
 ### Requirements
 
