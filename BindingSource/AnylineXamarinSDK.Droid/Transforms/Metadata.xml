@@ -33,7 +33,6 @@
   <remove-node path="/api/package[@name='at.nineyards.anyline']/interface[@name='AnylineListener']"/>
   <remove-node path="/api/package[@name='at.nineyards.anyline']/interface[@name='AnylineDebugListener']"/>
   
-  <remove-node path="/api/package[@name='at.nineyards.anyline.modules']/class[@name='AnylineBaseModuleView']/method[@name='getViewRelativePointListFromCutoutRelativeRect']"/>
   <remove-node path="/api/package[@name='at.nineyards.anyline.modules']/class[@name='AnylineBaseModuleView']/method[@name='setCropRect']"/>
   <remove-node path="/api/package[@name='at.nineyards.anyline.modules']/class[@name='AnylineBaseModuleView']/method[@name='getAnylineController']"/>
   <remove-node path="/api/package[@name='at.nineyards.anyline.modules']/class[@name='AnylineBaseModuleView']/field[@name='anylineController']"/>
@@ -67,37 +66,49 @@
 
   <!-- rename the native (unsupported) java class bindings to Native + <name>, so there is no ambiguity -->
   
-  <attr path="/api/package[@name='at.nineyards.anyline.modules.barcode']/class[@name='BarcodeScanView']" name="managedName">NativeEnergyScanView</attr>
-  <attr path="/api/package[@name='at.nineyards.anyline.modules.barcode']/interface[@name='BarcodeResultListener']" name="managedName">NativeEnergyResultListener</attr>
+  <!-- Barcode -->
+  <attr path="/api/package[@name='at.nineyards.anyline.modules.barcode']/class[@name='BarcodeScanView']" name="managedName">NativeBarcodeScanView</attr>
+  <attr path="/api/package[@name='at.nineyards.anyline.modules.barcode']/interface[@name='BarcodeResultListener']" name="managedName">NativeBarcodeResultListener</attr>
   
+  <!-- Document -->
   <attr path="/api/package[@name='at.nineyards.anyline.modules.document']/class[@name='DocumentScanView']" name="managedName">NativeDocumentScanView</attr>
   <attr path="/api/package[@name='at.nineyards.anyline.modules.document']/interface[@name='DocumentResultListener']" name="managedName">NativeDocumentResultListener</attr>
   
+  <!-- Energy -->
   <attr path="/api/package[@name='at.nineyards.anyline.modules.energy']/class[@name='EnergyScanView']" name="managedName">NativeEnergyScanView</attr>
   <attr path="/api/package[@name='at.nineyards.anyline.modules.energy']/interface[@name='EnergyResultListener']" name="managedName">NativeEnergyResultListener</attr>
-  
+
+  <!-- License Plate -->
+  <attr path="/api/package[@name='at.nineyards.anyline.modules.licenseplate']/class[@name='LicensePlateScanView']" name="managedName">NativeLicensePlateScanView</attr>
+  <attr path="/api/package[@name='at.nineyards.anyline.modules.licenseplate']/interface[@name='LicensePlateResultListener']" name="managedName">NativeLicensePlateResultListener</attr>
+
+  <!-- MRZ -->
   <attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='MrzScanView']" name="managedName">NativeMrzScanView</attr>
   <attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/interface[@name='MrzResultListener']" name="managedName">NativeMrzResultListener</attr>
   
+  <!-- OCR -->
   <attr path="/api/package[@name='at.nineyards.anyline.modules.ocr']/class[@name='AnylineOcrScanView']" name="managedName">NativeAnylineOcrScanView</attr>
   <attr path="/api/package[@name='at.nineyards.anyline.modules.ocr']/interface[@name='AnylineOcrResultListener']" name="managedName">NativeAnylineOcrResultListener</attr>
   
   <!-- manual parameter name changes (parameter names from support library are not present in the javadoc) -->
   
+  <!-- Barcode -->
   <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.barcode']/interface[@name='BarcodeResultListener']/method[@name='onResult']/parameter[1]" name="managedName">scanResult</attr>
   
-  <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.document']/interface[@name='DocumentResultListener']/method[@name='onResult']/parameter[1]" name="managedName">scanResult</attr>  
-  <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.document']/interface[@name='DocumentResultListener']/method[@name='onDocumentOutlineDetected' and count(parameter)=2 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[2][@type='boolean']]/parameter[1]" name="managedName">corners</attr>
-  <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.document']/interface[@name='DocumentResultListener']/method[@name='onDocumentOutlineDetected' and count(parameter)=2 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[2][@type='boolean']]/parameter[2]" name="managedName">documentShapeAndBrightnessValid</attr>
-  <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.document']/interface[@name='DocumentResultListener']/method[@name='onPictureProcessingFailure' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.modules.document.DocumentScanView.DocumentError']]/parameter[1]" name="managedName">error</attr>
-  <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.document']/interface[@name='DocumentResultListener']/method[@name='onPreviewProcessingFailure' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.modules.document.DocumentScanView.DocumentError']]/parameter[1]" name="managedName">error</attr>
-  <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.document']/interface[@name='DocumentResultListener']/method[@name='onPreviewProcessingSuccess' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.models.AnylineImage']]/parameter[1]" name="managedName">anylineImage</attr>
-  <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.document']/interface[@name='DocumentResultListener']/method[@name='onTakePictureError' and count(parameter)=1 and parameter[1][@type='java.lang.Throwable']]/parameter[1]" name="managedName">error</attr>
+  <!-- Document -->
+  <!-- hint: Xamarin manages to restore the parameter names of the other methods -->
+  <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.document']/interface[@name='DocumentResultListener']/method[@name='onResult']/parameter[1]" name="managedName">scanResult</attr>
   
+  <!-- Energy -->
   <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.energy']/interface[@name='EnergyResultListener']/method[@name='onResult']/parameter[1]" name="managedName">scanResult</attr>
-  
+
+  <!-- License Plate -->
+  <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.licenseplate']/interface[@name='AnylineLicensePlateResultListener']/method[@name='onResult']/parameter[1]" name="managedName">scanResult</attr>
+
+  <!-- MRZ -->
   <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.mrz']/interface[@name='MrzResultListener']/method[@name='onResult']/parameter[1]" name="managedName">scanResult</attr>
   
+  <!-- OCR -->
   <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.ocr']/interface[@name='AnylineOcrResultListener']/method[@name='onResult']/parameter[1]" name="managedName">scanResult</attr>
 
 </metadata>
