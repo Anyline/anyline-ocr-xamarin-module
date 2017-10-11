@@ -182,12 +182,10 @@
     <Compile Include="Modules\Mrz\ViewController\AnylineMrzScanViewController.cs" />
     <Compile Include="Modules\Mrz\View\AnylineIdentificationView.cs" />
     <Compile Include="Modules\OCR\ViewController\AnylineBottlecapScanViewController.cs" />
-    <Compile Include="Modules\OCR\ViewController\AnylineLicensePlateDEScanViewController.cs" />
-    <Compile Include="Modules\OCR\ViewController\AnylineLicensePlateATScanViewController.cs" />
-    <Compile Include="Modules\OCR\ViewController\AnylineLicensePlateScanViewController.cs" />
+    <Compile Include="Modules\LicensePlate\ViewController\AnylineLicensePlateScanViewController.cs" />
     <Compile Include="Modules\OCR\ViewController\AnylineVoucherScanViewController.cs" />
     <Compile Include="Modules\OCR\ViewController\AnylineIBANScanViewController.cs" />
-    <Compile Include="Modules\OCR\View\ResultOverlayView.cs" />
+    <Compile Include="ResultOverlayView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -284,18 +282,26 @@
     <None Include="Info.plist">
       <SubType>Designer</SubType>
     </None>
+    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\trained_models\CNN_serialnumbers_combined.enc" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\aut_nice.traineddata" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\ch_nice.traineddata" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\cz_nice.traineddata" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\de_umlaut.traineddata" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\deu.traineddata" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\hr_nice.traineddata" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\italy_nice.traineddata" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\old.traineddata" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\polish_nice.traineddata" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\sk_nice.traineddata" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\standard.traineddata" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\license_plate_capture_config.json" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\license_plates_combined.ale" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Modules\OCR\iban_config.json" />
     <BundleResource Include="Modules\OCR\voucher_code_config.json" />
     <BundleResource Include="Modules\OCR\bottlecap_config.json" />
-    <BundleResource Include="Modules\OCR\license_plate_view_config.json" />
-    <BundleResource Include="Modules\OCR\Alte.traineddata" />
-    <BundleResource Include="Modules\OCR\Arial.traineddata" />
-    <BundleResource Include="Modules\OCR\GL-Nummernschild-Mtl7_uml.traineddata" />
-    <BundleResource Include="Modules\OCR\license_plates.ale" />
-    <BundleResource Include="Modules\OCR\license_plates_a.ale" />
-    <BundleResource Include="Modules\OCR\license_plates_d.ale" />
+    <BundleResource Include="Modules\LicensePlate\license_plate_view_config.json" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="..\..\AnylineResources.bundle\threshold_all.ale">
@@ -406,9 +412,6 @@
     <BundleResource Include="..\..\AnylineResources.bundle\module_energy\water_meter_white_background_capture_config.json">
       <Link>Resources\AnylineResources.bundle\module_energy\water_meter_white_background_capture_config.json</Link>
     </BundleResource>
-    <BundleResource Include="..\..\AnylineResources.bundle\module_energy\tessdata\anyline.traineddata">
-      <Link>Resources\AnylineResources.bundle\module_energy\tessdata\anyline.traineddata</Link>
-    </BundleResource>
     <BundleResource Include="..\..\AnylineResources.bundle\module_mrz\mrz_capture_config.json">
       <Link>Resources\AnylineResources.bundle\module_mrz\mrz_capture_config.json</Link>
     </BundleResource>
@@ -461,5 +464,6 @@
       <Link>Resources\AnylineResources.bundle\Anyline-Info.plist</Link>
     </BundleResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

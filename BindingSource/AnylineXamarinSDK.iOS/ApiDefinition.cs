@@ -323,6 +323,10 @@ namespace AnylineXamarinSDK.iOS
     [BaseType(typeof(NSObject))]
     interface ALUIConfiguration
     {
+        // @property (assign, nonatomic) NSString * defaultCamera;
+        [Export("defaultCamera")]
+        string DefaultCamera { get; set; }
+
         // @property (assign, nonatomic) CGFloat cutoutWidthPercent;
         [Export("cutoutWidthPercent")]
         nfloat CutoutWidthPercent { get; set; }
@@ -1574,6 +1578,35 @@ namespace AnylineXamarinSDK.iOS
         
     }
 
+    // @interface AnylineLicensePlateModuleView : AnylineAbstractModuleView
+    [BaseType(typeof(AnylineAbstractModuleView))]
+    interface AnylineLicensePlateModuleView
+    {
+        //ADDED
+        // -(instancetype)initWithFrame:(CGRect)frame;
+        [Export("initWithFrame:")]
+        IntPtr Constructor(CGRect frame);
+
+        // @property (nonatomic, strong) ALLicensePlateScanPlugin * licensePlateScanPlugin;
+        //[Export("licensePlateScanPlugin", ArgumentSemantic.Strong)]
+        //ALLicensePlateScanPlugin LicensePlateScanPlugin { get; set; }
+
+        // -(BOOL)setupWithLicenseKey:(NSString *)licenseKey delegate:(id<AnylineLicensePlateModuleDelegate>)delegate error:(NSError **)error;
+        [Export("setupWithLicenseKey:delegate:error:")]
+        bool SetupWithLicenseKey(string licenseKey, NSObject @delegate, out NSError error);
+    }
+
+    // @protocol AnylineLicensePlateModuleDelegate <NSObject>
+    [Protocol, Model]
+    [BaseType(typeof(NSObject))]
+    interface AnylineLicensePlateModuleDelegate
+    {
+        // @required -(void)anylineLicensePlateModuleView:(AnylineLicensePlateModuleView *)anylineLicensePlateModuleView didFindResult:(ALLicensePlateResult *)scanResult;
+        [Abstract]
+        [Export("anylineLicensePlateModuleView:didFindResult:")]
+        void DidFindResult(AnylineLicensePlateModuleView anylineLicensePlateModuleView, ALLicensePlateResult scanResult);
+    }
+
     // @interface AnylineDocumentModuleView : AnylineAbstractModuleView
     [BaseType(typeof(AnylineAbstractModuleView))]
     partial interface AnylineDocumentModuleView
@@ -1594,6 +1627,18 @@ namespace AnylineXamarinSDK.iOS
         // -(void)setDocumentRatios:(NSArray<NSNumber *> *)ratios;
         [Export("setDocumentRatios:")]
         void SetDocumentRatios(NSNumber[] ratios);
+
+        // -(BOOL)triggerPictureCornerDetectionAndReturnError:(NSError **)error;
+        [Export("triggerPictureCornerDetectionAndReturnError:")]
+        bool TriggerPictureCornerDetectionAndReturnError(out NSError error);
+
+        // -(BOOL)transformImageWithSquare:(ALSquare * _Nullable)square image:(UIImage * _Nullable)image error:(NSError * _Nullable * _Nullable)error;
+        [Export("transformImageWithSquare:image:error:")]
+        bool TransformImageWithSquare([NullAllowed] ALSquare square, [NullAllowed] UIImage image, [NullAllowed] out NSError error);
+
+        // -(BOOL)transformALImageWithSquare:(ALSquare * _Nullable)square image:(ALImage * _Nullable)image error:(NSError * _Nullable * _Nullable)error;
+        [Export("transformALImageWithSquare:image:error:")]
+        bool TransformALImageWithSquare([NullAllowed] ALSquare square, [NullAllowed] ALImage image, [NullAllowed] out NSError error);
 
         // document ratios binding always 0, therefore they are added in extra.cs
         /*
@@ -1637,7 +1682,6 @@ namespace AnylineXamarinSDK.iOS
     interface AnylineDocumentModuleDelegate
     {
         // @required -(void)anylineDocumentModuleView:(AnylineDocumentModuleView *)anylineDocumentModuleView hasResult:(UIImage *)transformedImage fullImage:(UIImage *)fullFrame documentCorners:(ALSquare *)corners;
-        [Abstract]
         [Export("anylineDocumentModuleView:hasResult:fullImage:documentCorners:")]
         [Abstract]
         void HasResult(AnylineDocumentModuleView anylineDocumentModuleView, UIImage transformedImage, UIImage fullFrame, ALSquare corners);
@@ -1771,5 +1815,20 @@ namespace AnylineXamarinSDK.iOS
         // -(instancetype)initWithResult:(ALIdentification *)result image:(UIImage *)image fullImage:(UIImage *)fullImage confidence:(NSInteger)confidence outline:(ALSquare *)outline allCheckDigitsValid:(BOOL)allCheckDigitsValid;
         [Export("initWithResult:image:fullImage:confidence:outline:allCheckDigitsValid:")]
         IntPtr Constructor(ALIdentification result, UIImage image, UIImage fullImage, nint confidence, ALSquare outline, bool allCheckDigitsValid);
-    }    
+    }
+
+    // license plate module added in 3.17
+    
+    // @interface ALLicensePlateResult : ALScanResult
+    [BaseType(typeof(ALScanResult))]
+    interface ALLicensePlateResult
+    {
+        // @property (readonly, nonatomic, strong) NSString * _Nullable country;
+        [NullAllowed, Export("country", ArgumentSemantic.Strong)]
+        string Country { get; }
+
+        // -(instancetype _Nullable)initWithResult:(NSString * _Nonnull)result image:(UIImage * _Nonnull)image fullImage:(UIImage * _Nullable)fullImage confidence:(NSInteger)confidence outline:(ALSquare * _Nullable)outline pluginID:(NSString * _Nonnull)pluginID country:(NSString * _Nullable)country;
+        [Export("initWithResult:image:fullImage:confidence:outline:pluginID:country:")]
+        IntPtr Constructor(string result, UIImage image, [NullAllowed] UIImage fullImage, nint confidence, [NullAllowed] ALSquare outline, string pluginID, [NullAllowed] string country);
+    }
 }

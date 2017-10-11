@@ -5,16 +5,14 @@ using UIKit;
 
 using AnylineXamarinSDK.iOS;
 
-namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
+namespace AnylineXamarinApp.iOS.Modules.LicensePlate.ViewController
 {
-    public class AnylineLicensePlateScanViewController : UIViewController, IAnylineOCRModuleDelegate
+    public class AnylineLicensePlateScanViewController : UIViewController, IAnylineLicensePlateModuleDelegate
     {
         readonly string _licenseKey = AnylineViewController.LicenseKey;
 
-        AnylineOCRModuleView _scanView;
+        AnylineLicensePlateModuleView _scanView;
         ResultOverlayView _resultView;
-
-        protected ALOCRConfig OcrConfig;
         
         NSError _error;
         bool _success;
@@ -30,16 +28,7 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
         {
             SetTitle(name);
         }
-
-        public virtual void SetupLicensePlateConfig()
-        {
-            // We'll define the OCR Config here:
-            OcrConfig = new ALOCRConfig
-            {
-                CustomCmdFilePath = NSBundle.MainBundle.PathForResource(@"Modules/OCR/license_plates", @"ale")
-            };
-        }
-
+        
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
@@ -51,16 +40,14 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
                 frame.Width,
                 frame.Height - NavigationController.NavigationBar.Frame.Size.Height);
 
-            _scanView = new AnylineOCRModuleView(frame);
-
-            SetupLicensePlateConfig();
-
+            _scanView = new AnylineLicensePlateModuleView(frame);
+            
             // important: set up the scanView with the license key BEFORE calling CopyTrainedData, else it will fail!
 
             // We tell the module to bootstrap itself with the license key and delegate. The delegate will later get called
             // by the module once we start receiving results.
             _error = null;
-            _success = _scanView.SetupWithLicenseKey(_licenseKey, Self, OcrConfig, out _error);
+            _success = _scanView.SetupWithLicenseKey(_licenseKey, Self, out _error);
             // SetupWithLicenseKey:delegate:error returns true if everything went fine. In the case something wrong
             // we have to check the error object for the error message.
             if (!_success)
@@ -68,35 +55,12 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
                 // Something went wrong. The error object contains the error description
                 (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
-
-            // We'll copy the required traineddata files here
-            _error = null;
-            _success = _scanView.CopyTrainedData(NSBundle.MainBundle.PathForResource(@"Modules/OCR/Alte", @"traineddata"),
-                @"f52e3822cdd5423758ba19ed75b0cc32", out _error);
-            if (!_success)
-            {
-                (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
-            }
-            _error = null;
-            _success = _scanView.CopyTrainedData(NSBundle.MainBundle.PathForResource(@"Modules/OCR/Arial", @"traineddata"),
-                @"9a5555eb6ac51c83cbb76d238028c485", out _error);
-            if (!_success)
-            {
-                (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
-            }
-            _error = null;
-            _success = _scanView.CopyTrainedData(NSBundle.MainBundle.PathForResource(@"Modules/OCR/GL-Nummernschild-Mtl7_uml", @"traineddata"),
-                @"8ea050e8f22ba7471df7e18c310430d8", out _error);
-            if (!_success)
-            {
-                (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
-            }
-            
+                        
             // We stop scanning manually
             _scanView.CancelOnResult = false;
 
             // We load the UI config for our VoucherCode view from a .json file.
-            string configFile = NSBundle.MainBundle.PathForResource(@"Modules/OCR/license_plate_view_config", @"json");
+            string configFile = NSBundle.MainBundle.PathForResource(@"Modules/LicensePlate/license_plate_view_config", @"json");
             _scanView.CurrentConfiguration = ALUIConfiguration.CutoutConfigurationFromJsonFile(configFile);
             _scanView.TranslatesAutoresizingMaskIntoConstraints = false;
 
@@ -195,50 +159,22 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
 
         /*
         This is the main delegate method Anyline uses to report its results
-        */
-        void IAnylineOCRModuleDelegate.DidFindResult(AnylineOCRModuleView anylineOCRModuleView, ALOCRResult result)
+        */      
+        void IAnylineLicensePlateModuleDelegate.DidFindResult(AnylineLicensePlateModuleView anylineLicensePlateModuleView, ALLicensePlateResult scanResult)
         {
-            
             StopAnyline();
             View.BringSubviewToFront(_resultView);
 
-            var text = result.Text.Split('-');
-            if (text.Length > 1 && text[0] != "")
-                _resultView.UpdateResult(result.Text);
-            else
-                _resultView.UpdateResult(result.Text.Split('-')[1]);            
-            
+            var country = scanResult.Country;
+            var textResult = scanResult.Result.ToString();
+
+            if (country != "")
+                textResult = $"{country} - {textResult}";
+
+            _resultView.UpdateResult(textResult);
+        
             // Present the information to the user
             _resultView.AnimateFadeIn(View);
         }
-
-        void IAnylineOCRModuleDelegate.ReportsRunFailure(AnylineOCRModuleView anylineOCRModuleView, ALOCRError error)
-        {
-            switch (error)
-            {
-                case ALOCRError.ConfidenceNotReached:
-                    Console.WriteLine("Confidence not reached.");
-                    break;
-                case ALOCRError.NoLinesFound:
-                    Console.WriteLine("No lines found.");
-                    break;
-                case ALOCRError.NoTextFound:
-                    Console.WriteLine("No text found.");
-                    break;
-                case ALOCRError.ResultNotValid:
-                    Console.WriteLine("Result is not valid.");
-                    break;
-                case ALOCRError.SharpnessNotReached:
-                    Console.WriteLine("Sharpness is not reached.");
-                    break;
-                case ALOCRError.Unkown:
-                    Console.WriteLine("Unknown run error.");
-                    break;
-            }
-        }
-
-        void IAnylineOCRModuleDelegate.ReportsVariable(AnylineOCRModuleView anylineOCRModuleView, string variableName, NSObject value) { }
-
-        bool IAnylineOCRModuleDelegate.TextOutlineDetected(AnylineOCRModuleView anylineOCRModuleView, ALSquare outline) { return false; }
     }
 }

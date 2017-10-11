@@ -257,9 +257,12 @@ namespace AnylineXamarinApp.iOS.Modules.Document.ViewController
             
         }
 
+        /*
+         * Will be called when AnylineDocumentModuleView.TriggerPictureCornerDetectionAndReturnError is invoked.
+         */
         void IAnylineDocumentModuleDelegate.DetectedPictureCorners(AnylineDocumentModuleView anylineDocumentModuleView, ALSquare corners, UIImage image)
         {
-            
+
         }
     }
 }

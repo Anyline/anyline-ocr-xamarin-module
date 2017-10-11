@@ -152,10 +152,7 @@
     <AndroidAsset Include="Assets\DocumentConfig.json" />
     <AndroidAsset Include="Assets\EnergyConfigAll.json" />
     <AndroidAsset Include="Assets\LicensePlateConfig.json" />
-    <AndroidAsset Include="Assets\tessdata\Alte.traineddata" />
-    <AndroidAsset Include="Assets\tessdata\Arial.traineddata" />
     <AndroidAsset Include="Assets\tessdata\eng_no_dict.traineddata" />
-    <AndroidAsset Include="Assets\tessdata\GL-Nummernschild-Mtl7_uml.traineddata" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <AndroidResource Include="Resources\layout\EnergyActivity.axml">

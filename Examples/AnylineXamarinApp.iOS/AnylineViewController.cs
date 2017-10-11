@@ -11,6 +11,7 @@ using AnylineXamarinApp.iOS.Modules.OCR.ViewController;
 using UIKit;
 using System.Threading.Tasks;
 using System.Reflection;
+using AnylineXamarinApp.iOS.Modules.LicensePlate.ViewController;
 
 namespace AnylineXamarinApp.iOS
 {
@@ -44,9 +45,7 @@ namespace AnylineXamarinApp.iOS
                     "Bottlecap Code Scan"                    
                 }},
             { "Vehicle", new[] {
-                    "License Plate Scan (Alpha)",
-                    "AT License Plate Scan (Alpha)",
-                    "DE License Plate Scan (Alpha)"
+                    "License Plate Scan"
                 }}
         };
         
@@ -208,12 +207,7 @@ namespace AnylineXamarinApp.iOS
                         Parent.NavigationController.PushViewController(new AnylineBottlecapScanViewController(name), true);                    
                     break;
                 case 6: //License Plate
-                    if (indexPath.Row == 0) //License Plate Scan
-                        Parent.NavigationController.PushViewController(new AnylineLicensePlateScanViewController(name), true);
-                    if (indexPath.Row == 1) //AT License Plate Scan
-                        Parent.NavigationController.PushViewController(new AnylineLicensePlateAtScanViewController(name), true);
-                    if (indexPath.Row == 2) //DE License Plate Scan
-                        Parent.NavigationController.PushViewController(new AnylineLicensePlateDeScanViewController(name), true);
+                    Parent.NavigationController.PushViewController(new AnylineLicensePlateScanViewController(name), true);                    
                     break;
             }
 
