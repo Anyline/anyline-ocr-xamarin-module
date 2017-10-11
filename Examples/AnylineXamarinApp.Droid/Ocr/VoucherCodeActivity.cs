@@ -7,8 +7,9 @@ using Android.Views;
 using Android.Widget;
 using AT.Nineyards.Anyline.Camera;
 using AT.Nineyards.Anyline.Modules.Ocr;
-using AT.Nineyards.Anyline.Util;
 using AT.Nineyards.Anylinexamarin.Support.Modules.Ocr;
+using AT.Nineyards.Anyline.Util;
+
 #pragma warning disable 618
 
 namespace AnylineXamarinApp.Ocr
@@ -17,13 +18,12 @@ namespace AnylineXamarinApp.Ocr
     public class VoucherCodeActivity : Activity, IAnylineOcrResultListener
     {
         public static string TAG = typeof(VoucherCodeActivity).Name;
-
+        
         private AnylineOcrScanView _scanView;
         private OcrResultView _voucherCodeResultView;
         
         protected override void OnCreate(Bundle bundle)
-        {
-
+        {            
             Window.SetFlags(WindowManagerFlags.KeepScreenOn, WindowManagerFlags.KeepScreenOn);
             
             base.OnCreate(bundle);
@@ -196,7 +196,7 @@ namespace AnylineXamarinApp.Ocr
         {
             _voucherCodeResultView.Visibility = ViewStates.Visible;
             _voucherCodeResultView.ResultText.Text = scanResult.Result.ToString().Trim();
-        }
+        }        
     }
 }
  

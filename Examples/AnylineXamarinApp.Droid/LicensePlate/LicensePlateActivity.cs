@@ -4,23 +4,23 @@ using Android.OS;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
-using AT.Nineyards.Anyline.Modules.Ocr;
-using AT.Nineyards.Anylinexamarin.Support.Modules.Ocr;
+using AT.Nineyards.Anyline.Modules.LicensePlate;
+using AT.Nineyards.Anylinexamarin.Support.Modules.LicensePlate;
 #pragma warning disable 618
 
-namespace AnylineXamarinApp.Ocr
+namespace AnylineXamarinApp.LicensePlate
 {
     [Activity(Label = "", 
         MainLauncher = false, 
         Icon = "@drawable/ic_launcher", 
         ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait, 
         HardwareAccelerated = true)]
-    public class LicensePlateActivity : Activity, IAnylineOcrResultListener
+    public class LicensePlateActivity : Activity, ILicensePlateResultListener
     {
         public static string TAG = typeof(LicensePlateActivity).Name;
-
-        protected AnylineOcrScanView scanView;
-        private OcrResultView _licensePlateResultView;
+        
+        protected LicensePlateScanView scanView;
+        private LicensePlateResultView _licensePlateResultView;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -33,44 +33,26 @@ namespace AnylineXamarinApp.Ocr
 
             Window.SetFlags(WindowManagerFlags.KeepScreenOn, WindowManagerFlags.KeepScreenOn);
 
-            SetContentView(Resource.Layout.OCRActivity);
+            SetContentView(Resource.Layout.LicensePlateActivity);
 
             InitLicensePlateResultView();
 
-            scanView = FindViewById<AnylineOcrScanView>(Resource.Id.ocr_scan_view);
+            scanView = FindViewById<LicensePlateScanView>(Resource.Id.license_plate_scan_view);
 
             scanView.SetConfigFromAsset("LicensePlateConfig.json");
             
-            scanView.CopyTrainedData("tessdata/GL-Nummernschild-Mtl7_uml.traineddata",
-                "8ea050e8f22ba7471df7e18c310430d8");
-            scanView.CopyTrainedData("tessdata/Arial.traineddata", "9a5555eb6ac51c83cbb76d238028c485");
-            scanView.CopyTrainedData("tessdata/Alte.traineddata", "f52e3822cdd5423758ba19ed75b0cc32");
-            scanView.CopyTrainedData("tessdata/deu.traineddata", "2d5190b9b62e28fa6d17b728ca195776");
-
-            SetOcrConfig(scanView);
-
             scanView.InitAnyline(MainActivity.LicenseKey, this);
 
             scanView.CameraOpened += (s, e) => { Log.Debug(TAG, "Camera opened successfully. Frame resolution " + e.Width + " x " + e.Height); };
             scanView.CameraError += (s, e) => { Log.Error(TAG, "OnCameraError: " + e.Event.Message); };
 
         }
-
-        private static void SetOcrConfig(AnylineOcrScanView scanView)
-        {
-            //Configure the OCR for License Plates
-            AnylineOcrConfig anylineOcrConfig = new AnylineOcrConfig();
-
-            anylineOcrConfig.CustomCmdFile = "license_plates.ale";
-            
-            scanView.SetAnylineOcrConfig(anylineOcrConfig);
-        }
-
+        
         private void InitLicensePlateResultView()
         {
             RelativeLayout mainLayout = (RelativeLayout)FindViewById(Resource.Id.main_layout);
 
-            _licensePlateResultView = new OcrResultView(this)
+            _licensePlateResultView = new LicensePlateResultView(this)
             {
                 Visibility = ViewStates.Invisible
             };
@@ -152,16 +134,17 @@ namespace AnylineXamarinApp.Ocr
             GC.Collect(GC.MaxGeneration);
         }
 
-        void IAnylineOcrResultListener.OnResult(AnylineOcrResult scanResult)
+        public void OnResult(LicensePlateResult scanResult)
         {
+            var country = scanResult.Country;
             var textResult = scanResult.Result.ToString();
 
             _licensePlateResultView.Visibility = ViewStates.Visible;
-            var text = textResult.Split('-');
-            if (text.Length > 1 && text[0] != "")
-                _licensePlateResultView.ResultText.Text = textResult;
-            else
-                _licensePlateResultView.ResultText.Text = textResult.Split('-')[1];
-        }        
+
+            if (country != "")
+                textResult = $"{country} - {textResult}";
+
+            _licensePlateResultView.ResultText.Text = textResult;
+        }
     }
 }

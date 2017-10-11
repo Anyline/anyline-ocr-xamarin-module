@@ -16,8 +16,6 @@
   <string name="scan_iban">Scan IBAN</string>
   <string name="scan_bottlecaps">Scan Bottlecap</string>
   <string name="scan_license_plates">License Plates</string>
-  <string name="scan_license_plates_austria">Austrian\nLicense Plates</string>
-  <string name="scan_license_plates_germany">German\nLicense Plates</string>
   
   <!--energy-->
 

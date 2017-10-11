@@ -27,8 +27,6 @@
 
     <item>@string/category_vehicle</item>
     <item>@string/scan_license_plates</item>
-    <item>@string/scan_license_plates_austria</item>
-    <item>@string/scan_license_plates_germany</item>
     
     <item>@string/version_info</item>
 
@@ -53,9 +51,7 @@
     <item>AnylineXamarinApp.Ocr.VoucherCodeActivity</item>
     <item>AnylineXamarinApp.Ocr.BottlecapActivity</item>
     <item>HEADER</item>
-    <item>AnylineXamarinApp.Ocr.LicensePlateActivity</item>
-    <item>AnylineXamarinApp.Ocr.LicensePlateActivityAustria</item>
-    <item>AnylineXamarinApp.Ocr.LicensePlateActivityGermany</item>
+    <item>AnylineXamarinApp.LicensePlate.LicensePlateActivity</item>
     <item>HEADER</item>
   </string-array>
 </resources>

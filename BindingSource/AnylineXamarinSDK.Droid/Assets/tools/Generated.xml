@@ -715,10 +715,10 @@
 <!-- File: AT.Nineyards.Anyline.Modules.IAnylineModuleResultListener.cs -->
 <!-- AnylineModuleResultListener.onResult(T) -->
 <attr path="/api/package[@name='at.nineyards.anyline.modules']/interface[@name='AnylineModuleResultListener']/method[@name='onResult' and count(parameter)=1 and parameter[1][@type='T']]/parameter[1]" name="managedName">scanResult</attr>
-<!-- File: AT.Nineyards.Anyline.Modules.Licenseplate.LicensePlateResult.cs -->
+<!-- File: AT.Nineyards.Anyline.Modules.LicensePlate.LicensePlateResult.cs -->
 <!-- LicensePlateResult.LicensePlateResult(java.util.List&lt;android.graphics.PointF&gt;, java.lang.Integer, at.nineyards.anyline.models.AnylineImage, at.nineyards.anyline.models.AnylineImage, java.lang.String, java.lang.String) -->
-<!-- File: AT.Nineyards.Anyline.Modules.Licenseplate.NativeLicensePlateResultListener.cs -->
-<!-- File: AT.Nineyards.Anyline.Modules.Licenseplate.NativeLicensePlateScanView.cs -->
+<!-- File: AT.Nineyards.Anyline.Modules.LicensePlate.NativeLicensePlateResultListener.cs -->
+<!-- File: AT.Nineyards.Anyline.Modules.LicensePlate.NativeLicensePlateScanView.cs -->
 <!-- LicensePlateScanView.LicensePlateScanView(android.content.Context, android.util.AttributeSet) -->
 <attr path="/api/package[@name='at.nineyards.anyline.modules.licenseplate']/class[@name='LicensePlateScanView']/constructor[@name='LicensePlateScanView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.modules.licenseplate']/class[@name='LicensePlateScanView']/constructor[@name='LicensePlateScanView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]/parameter[2]" name="managedName">attrs</attr>
@@ -994,9 +994,9 @@
 <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.energy']/class[@name='EnergyScanView']/method[@name='initAnyline' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='at.nineyards.anylinexamarin.support.modules.energy.EnergyResultListener']]/parameter[2]" name="managedName">listener</attr>
 <!-- File: AT.Nineyards.Anylinexamarin.Support.Modules.Energy.IEnergyResultListener.cs -->
 <!-- EnergyResultListener.onResult(at.nineyards.anyline.modules.energy.EnergyResult) -->
-<!-- File: AT.Nineyards.Anylinexamarin.Support.Modules.Licenseplate.ILicensePlateResultListener.cs -->
+<!-- File: AT.Nineyards.Anylinexamarin.Support.Modules.LicensePlate.ILicensePlateResultListener.cs -->
 <!-- LicensePlateResultListener.onResult(at.nineyards.anyline.modules.licenseplate.LicensePlateResult) -->
-<!-- File: AT.Nineyards.Anylinexamarin.Support.Modules.Licenseplate.LicensePlateScanView.cs -->
+<!-- File: AT.Nineyards.Anylinexamarin.Support.Modules.LicensePlate.LicensePlateScanView.cs -->
 <!-- LicensePlateScanView.LicensePlateScanView(android.content.Context, android.util.AttributeSet) -->
 <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.licenseplate']/class[@name='LicensePlateScanView']/constructor[@name='LicensePlateScanView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.licenseplate']/class[@name='LicensePlateScanView']/constructor[@name='LicensePlateScanView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]/parameter[2]" name="managedName">attrs</attr>

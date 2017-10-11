@@ -173,6 +173,21 @@ namespace AnylineXamarinApp.Document
 
         bool IDocumentResultListener.OnDocumentOutlineDetected(IList<PointF> corners, bool documentShapeAndBrightnessValid) { return false; }
 
+        void IDocumentResultListener.OnPictureCornersDetected(AnylineImage fullFrame, IList<PointF> corners)
+        {
+            //
+        }
+
+        void IDocumentResultListener.OnPictureTransformError(DocumentError error)
+        {
+            //
+        }
+
+        void IDocumentResultListener.OnPictureTransformed(AnylineImage transformedImage)
+        {
+            //
+        }
+
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             switch (item.ItemId)
@@ -213,5 +228,4 @@ namespace AnylineXamarinApp.Document
             GC.Collect(GC.MaxGeneration);
         }        
     }
-
 }

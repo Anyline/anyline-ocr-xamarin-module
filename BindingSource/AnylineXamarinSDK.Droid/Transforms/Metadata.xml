@@ -49,6 +49,11 @@
   <!-- debitcard is not implemented for now -->
   <remove-node path="/api/package[@name='at.nineyards.anyline.modules.debitcard']"/>
 
+  <!-- namespace changes -->
+
+  <attr path="/api/package[@name='at.nineyards.anyline.modules.licenseplate']" name="managedName">AT.Nineyards.Anyline.Modules.LicensePlate</attr>
+  <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.licenseplate']" name="managedName">AT.Nineyards.Anylinexamarin.Support.Modules.LicensePlate</attr>
+  
   <!-- ++++++++ Generic type changes ++++++++ -->
 
   <!--
@@ -89,21 +94,21 @@
   <!-- OCR -->
   <attr path="/api/package[@name='at.nineyards.anyline.modules.ocr']/class[@name='AnylineOcrScanView']" name="managedName">NativeAnylineOcrScanView</attr>
   <attr path="/api/package[@name='at.nineyards.anyline.modules.ocr']/interface[@name='AnylineOcrResultListener']" name="managedName">NativeAnylineOcrResultListener</attr>
-  
+
   <!-- manual parameter name changes (parameter names from support library are not present in the javadoc) -->
   
   <!-- Barcode -->
   <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.barcode']/interface[@name='BarcodeResultListener']/method[@name='onResult']/parameter[1]" name="managedName">scanResult</attr>
   
   <!-- Document -->
-  <!-- hint: Xamarin manages to restore the parameter names of the other methods -->
+  <!-- hint: Xamarin manages to restore the parameter names of the other interface methods -->
   <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.document']/interface[@name='DocumentResultListener']/method[@name='onResult']/parameter[1]" name="managedName">scanResult</attr>
   
   <!-- Energy -->
   <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.energy']/interface[@name='EnergyResultListener']/method[@name='onResult']/parameter[1]" name="managedName">scanResult</attr>
 
   <!-- License Plate -->
-  <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.licenseplate']/interface[@name='AnylineLicensePlateResultListener']/method[@name='onResult']/parameter[1]" name="managedName">scanResult</attr>
+  <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.licenseplate']/interface[@name='LicensePlateResultListener']/method[@name='onResult']/parameter[1]" name="managedName">scanResult</attr>
 
   <!-- MRZ -->
   <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.mrz']/interface[@name='MrzResultListener']/method[@name='onResult']/parameter[1]" name="managedName">scanResult</attr>
