@@ -27,8 +27,7 @@
     "cancelOnResult": true,
     "visualFeedback": {
         "style": "contour_rect",
-        "strokeColor": "0AFC94",
-        "strokeWidth": 1,
-        "fillColor": "110AFC94"
+        "strokeColor": "0099FF",
+        "strokeWidth": 1
     }
 }
