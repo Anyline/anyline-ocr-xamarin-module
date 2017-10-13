@@ -105,7 +105,7 @@
 			<file src="AnylineResources.bundle\module_energy\patternMulti9AndE.json" target="..\..\AnylineResources.bundle\module_energy\" />
 			<file src="AnylineResources.bundle\module_energy\power_meter_4_capture_config.json" target="..\..\AnylineResources.bundle\module_energy\" />
 			<file src="AnylineResources.bundle\module_energy\power_meter_capture_config.json" target="..\..\AnylineResources.bundle\module_energy\" />
-			<file src="AnylineResources.bundle\module_energy\serial_number_capture_config.json" target=..\..\AnylineResources.bundle\module_energy\"" />
+			<file src="AnylineResources.bundle\module_energy\serial_number_capture_config.json" target="..\..\AnylineResources.bundle\module_energy\" />
 			<file src="AnylineResources.bundle\module_energy\smart_meter_ger.ale" target="..\..\AnylineResources.bundle\module_energy\" />
 			<file src="AnylineResources.bundle\module_energy\smart_meter_ger_spec.json" target="..\..\AnylineResources.bundle\module_energy\" />
 			<file src="AnylineResources.bundle\module_energy\water_meter_black_background_capture_config.json" target="..\..\AnylineResources.bundle\module_energy\" />
