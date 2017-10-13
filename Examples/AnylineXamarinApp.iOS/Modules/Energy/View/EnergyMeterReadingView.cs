@@ -78,8 +78,8 @@ namespace AnylineXamarinApp.iOS.Modules.Energy.View
             nfloat digitYPosition = Frame.Size.Height / 2 + (Frame.Size.Height / 2 - KMeterLabelHeight) / 2;
 
             _unit = new UILabel(new CGRect(0, digitYPosition, KUnitKwhWidth, KMeterLabelHeight));
-            _unit.TextColor = UIColor.White;
-            _unit.Font = UIFont.SystemFontOfSize(28);
+            _unit.TextColor = UIColor.White;            
+            _unit.Font = UIFont.SystemFontOfSize(digitsCount == 1 ? 22 : 28);
 
             _digits = new List<AnylineMeterLabel>();
 
@@ -105,6 +105,12 @@ namespace AnylineXamarinApp.iOS.Modules.Energy.View
             {
                 _unit.Frame = new CGRect(offset + (KMeterLabelWidth + KMeterLabelGap) * (_digits.Count + 1), _unit.Frame.Y,
                     _unit.Frame.Size.Width, _unit.Frame.Size.Height);
+            }
+
+            if (d == 1) // big frame for extra long results
+            {
+                _digits[0].Frame = new CGRect(KMeterLabelWidth * .5,
+                    _digits[0].Frame.Y, Frame.Size.Width - KMeterLabelWidth, _digits[0].Frame.Size.Height);
             }
         }
         
@@ -132,14 +138,21 @@ namespace AnylineXamarinApp.iOS.Modules.Energy.View
         }
 
         public void SetText(string text)
-        {
+        {            
+            if (text.Length <= 9)
+            {
+                InitSubViews(text.Length);
 
-            InitSubViews(text.Length);
-
-            for(int i = 0; i < text.Length; i++)
-                _digits[i].Text = text.Substring(i, 1);
-            
-            LayoutViewForDigits(text.Length);
+                for (int i = 0; i < text.Length; i++)
+                    _digits[i].Text = text.Substring(i, 1);
+                LayoutViewForDigits(text.Length);
+            }
+            else
+            {
+                InitSubViews(1);
+                _digits[0].Text = text;
+                LayoutViewForDigits(1);
+            }
         }        
     }
 }
