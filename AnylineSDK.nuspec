@@ -73,8 +73,7 @@
 			<file src="AnylineResources.bundle\module_anyline_ocr\anyline_ocr_auto.ale" target="..\..\AnylineResources.bundle\module_anyline_ocr\" />
 			<file src="AnylineResources.bundle\module_anyline_ocr\anyline_ocr_grid.ale" target="..\..\AnylineResources.bundle\module_anyline_ocr\" />
 			<file src="AnylineResources.bundle\module_anyline_ocr\anyline_ocr_line.ale" target="..\..\AnylineResources.bundle\module_anyline_ocr\" />
-			<file src="AnylineResources.bundle\module_anyline_ocr\simpleocr_capture_config.json" target="..\..\AnylineResources.bundle\module_anyline_ocr\" />
-			<file src="AnylineResources.bundle\module_anyline_ocr\tessdata\.DS_Store" target="..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\" />
+			<file src="AnylineResources.bundle\module_anyline_ocr\simpleocr_capture_config.json" target="..\..\AnylineResources.bundle\module_anyline_ocr\" />			
 			<file src="AnylineResources.bundle\module_anyline_ocr\tessdata\anyline_capitals.traineddata" target="..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\" />
 			<file src="AnylineResources.bundle\module_anyline_ocr\tessdata\bottlecap.traineddata" target="..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\" />
 			<file src="AnylineResources.bundle\module_anyline_ocr\tessdata\deu.traineddata" target="..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\" />
@@ -83,8 +82,7 @@
 			<file src="AnylineResources.bundle\module_anyline_ocr\tessdata\scrabble.traineddata" target="..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\" />
 			<file src="AnylineResources.bundle\module_barcode\barcode_capture_config.json" target="..\..\AnylineResources.bundle\module_barcode\" />
 			<file src="AnylineResources.bundle\module_barcode\ean.ale" target="..\..\AnylineResources.bundle\module_barcode\" />
-			<file src="AnylineResources.bundle\module_debit_card\debitcard_capture_config.json" target="..\..\AnylineResources.bundle\module_debit_card\" />
-			<file src="AnylineResources.bundle\module_document\.DS_Store" target="..\..\AnylineResources.bundle\module_document\" />
+			<file src="AnylineResources.bundle\module_debit_card\debitcard_capture_config.json" target="..\..\AnylineResources.bundle\module_debit_card\" />			
 			<file src="AnylineResources.bundle\module_document\document.ale" target="..\..\AnylineResources.bundle\module_document\" />
 			<file src="AnylineResources.bundle\module_document\document_capture_config.json" target="..\..\AnylineResources.bundle\module_document\" />
 			<file src="AnylineResources.bundle\module_document\document_crop.ale" target="..\..\AnylineResources.bundle\module_document\" />
