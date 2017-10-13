@@ -3,9 +3,7 @@
     "cutout": {
         "style": "rect",
         "width": 540,
-        "maxWidthPercent": "80%",
-        "maxHeightPercent": "80%",
-        "alignment": "top_half",
+        "alignment": "top",
         "image": "Overlay",
         "ratioFromSize": {
             "width": 125,
@@ -16,7 +14,7 @@
         "cornerRadius": 4,
         "offset": {
             "x": 0,
-            "y": 0
+            "y": 20
         },
         "cropPadding": {
             "x": 0,
@@ -42,8 +40,8 @@
     "cancelOnResult": true,
     "visualFeedback": {
         "style": "rect",
-        "fillColor": "11FF0000",
-        "strokeColor": "FF0000",
+        "fillColor": "110099FF",
+        "strokeColor": "0099FF",
         "redrawTimeout": 400
     }
 }

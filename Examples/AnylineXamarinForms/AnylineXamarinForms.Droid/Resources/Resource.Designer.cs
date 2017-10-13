@@ -40,83 +40,86 @@ namespace AnylineXamarinForms.Droid
 			// aapt resource value: 0x7f010008
 			public const int blink_animation_on_result = 2130771976;
 			
-			// aapt resource value: 0x7f01002b
-			public const int camera_id = 2130772011;
-			
 			// aapt resource value: 0x7f010009
 			public const int cancel_on_result = 2130771977;
 			
-			// aapt resource value: 0x7f010013
-			public const int cutout_alignment = 2130771987;
+			// aapt resource value: 0x7f010015
+			public const int cutout_alignment = 2130771989;
+			
+			// aapt resource value: 0x7f010024
+			public const int cutout_crop_offset_x = 2130772004;
+			
+			// aapt resource value: 0x7f010025
+			public const int cutout_crop_offset_y = 2130772005;
 			
 			// aapt resource value: 0x7f010022
-			public const int cutout_crop_offset_x = 2130772002;
+			public const int cutout_crop_padding_x = 2130772002;
 			
 			// aapt resource value: 0x7f010023
-			public const int cutout_crop_offset_y = 2130772003;
-			
-			// aapt resource value: 0x7f010020
-			public const int cutout_crop_padding_x = 2130772000;
+			public const int cutout_crop_padding_y = 2130772003;
 			
 			// aapt resource value: 0x7f010021
-			public const int cutout_crop_padding_y = 2130772001;
-			
-			// aapt resource value: 0x7f01001f
-			public const int cutout_drawable = 2130771999;
+			public const int cutout_drawable = 2130772001;
 			
 			// aapt resource value: 0x7f01000a
 			public const int cutout_feedback_stroke_color = 2130771978;
 			
-			// aapt resource value: 0x7f010016
-			public const int cutout_max_height_percent = 2130771990;
-			
-			// aapt resource value: 0x7f010015
-			public const int cutout_max_width_percent = 2130771989;
+			// aapt resource value: 0x7f010018
+			public const int cutout_max_height_percent = 2130771992;
 			
 			// aapt resource value: 0x7f010017
-			public const int cutout_offset_x = 2130771991;
-			
-			// aapt resource value: 0x7f010018
-			public const int cutout_offset_y = 2130771992;
-			
-			// aapt resource value: 0x7f010024
-			public const int cutout_outside_color = 2130772004;
-			
-			// aapt resource value: 0x7f01001d
-			public const int cutout_ratio_from_size_height = 2130771997;
-			
-			// aapt resource value: 0x7f01001c
-			public const int cutout_ratio_from_size_width = 2130771996;
-			
-			// aapt resource value: 0x7f01001e
-			public const int cutout_rect_corner_radius_in_dp = 2130771998;
-			
-			// aapt resource value: 0x7f01001b
-			public const int cutout_stroke_color = 2130771995;
-			
-			// aapt resource value: 0x7f01001a
-			public const int cutout_stroke_width_in_dp = 2130771994;
+			public const int cutout_max_width_percent = 2130771991;
 			
 			// aapt resource value: 0x7f010019
-			public const int cutout_style = 2130771993;
+			public const int cutout_offset_x = 2130771993;
 			
-			// aapt resource value: 0x7f010014
-			public const int cutout_width = 2130771988;
+			// aapt resource value: 0x7f01001a
+			public const int cutout_offset_y = 2130771994;
 			
 			// aapt resource value: 0x7f010026
-			public const int flash_alignment = 2130772006;
+			public const int cutout_outside_color = 2130772006;
 			
-			// aapt resource value: 0x7f010029
-			public const int flash_image_auto = 2130772009;
+			// aapt resource value: 0x7f01001f
+			public const int cutout_ratio_from_size_height = 2130771999;
+			
+			// aapt resource value: 0x7f01001e
+			public const int cutout_ratio_from_size_width = 2130771998;
+			
+			// aapt resource value: 0x7f010020
+			public const int cutout_rect_corner_radius_in_dp = 2130772000;
+			
+			// aapt resource value: 0x7f01001d
+			public const int cutout_stroke_color = 2130771997;
+			
+			// aapt resource value: 0x7f01001c
+			public const int cutout_stroke_width_in_dp = 2130771996;
+			
+			// aapt resource value: 0x7f01001b
+			public const int cutout_style = 2130771995;
+			
+			// aapt resource value: 0x7f010016
+			public const int cutout_width = 2130771990;
+			
+			// aapt resource value: 0x7f010013
+			public const int default_camera = 2130771987;
+			
+			// aapt resource value: 0x7f010014
+			public const int fallback_cameras = 2130771988;
 			
 			// aapt resource value: 0x7f010028
-			public const int flash_image_off = 2130772008;
+			public const int flash_alignment = 2130772008;
+			
+			// aapt resource value: 0x7f01002b
+			public const int flash_image_auto = 2130772011;
+			
+			// aapt resource value: 0x7f01002a
+			public const int flash_image_off = 2130772010;
+			
+			// aapt resource value: 0x7f010029
+			public const int flash_image_on = 2130772009;
 			
 			// aapt resource value: 0x7f010027
-			public const int flash_image_on = 2130772007;
-			
-			// aapt resource value: 0x7f010025
-			public const int flash_mode = 2130772005;
+			public const int flash_mode = 2130772007;
 			
 			// aapt resource value: 0x7f010000
 			public const int overlay_drawable = 2130771968;
@@ -135,9 +138,6 @@ namespace AnylineXamarinForms.Droid
 			
 			// aapt resource value: 0x7f010005
 			public const int preferred_preview_width = 2130771973;
-			
-			// aapt resource value: 0x7f01002a
-			public const int show_fps = 2130772010;
 			
 			// aapt resource value: 0x7f010007
 			public const int vibrate_on_result = 2130771975;
@@ -207,32 +207,29 @@ namespace AnylineXamarinForms.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f060018
-			public const int any = 2131099672;
+			// aapt resource value: 0x7f060014
+			public const int auto = 2131099668;
 			
-			// aapt resource value: 0x7f060011
-			public const int auto = 2131099665;
-			
-			// aapt resource value: 0x7f060019
-			public const int back = 2131099673;
+			// aapt resource value: 0x7f06000b
+			public const int back = 2131099659;
 			
 			// aapt resource value: 0x7f060004
 			public const int blink = 2131099652;
 			
-			// aapt resource value: 0x7f06000b
-			public const int bottom = 2131099659;
+			// aapt resource value: 0x7f06000e
+			public const int bottom = 2131099662;
 			
-			// aapt resource value: 0x7f06000c
-			public const int bottom_half = 2131099660;
+			// aapt resource value: 0x7f06000f
+			public const int bottom_half = 2131099663;
 			
-			// aapt resource value: 0x7f060014
-			public const int bottom_left = 2131099668;
+			// aapt resource value: 0x7f060017
+			public const int bottom_left = 2131099671;
 			
-			// aapt resource value: 0x7f060015
-			public const int bottom_right = 2131099669;
+			// aapt resource value: 0x7f060018
+			public const int bottom_right = 2131099672;
 			
-			// aapt resource value: 0x7f06000d
-			public const int center = 2131099661;
+			// aapt resource value: 0x7f060010
+			public const int center = 2131099664;
 			
 			// aapt resource value: 0x7f060000
 			public const int contour_point = 2131099648;
@@ -246,23 +243,26 @@ namespace AnylineXamarinForms.Droid
 			// aapt resource value: 0x7f06001b
 			public const int energy_scan_view = 2131099675;
 			
-			// aapt resource value: 0x7f06001a
-			public const int front = 2131099674;
+			// aapt resource value: 0x7f06000c
+			public const int external = 2131099660;
 			
-			// aapt resource value: 0x7f060010
-			public const int image = 2131099664;
+			// aapt resource value: 0x7f06000d
+			public const int front = 2131099661;
+			
+			// aapt resource value: 0x7f060013
+			public const int image = 2131099667;
 			
 			// aapt resource value: 0x7f060005
 			public const int kitt = 2131099653;
 			
-			// aapt resource value: 0x7f060012
-			public const int manual = 2131099666;
+			// aapt resource value: 0x7f060015
+			public const int manual = 2131099669;
 			
 			// aapt resource value: 0x7f06001c
 			public const int mrz_scan_view = 2131099676;
 			
-			// aapt resource value: 0x7f060013
-			public const int none = 2131099667;
+			// aapt resource value: 0x7f060016
+			public const int none = 2131099670;
 			
 			// aapt resource value: 0x7f060006
 			public const int pulse = 2131099654;
@@ -276,17 +276,17 @@ namespace AnylineXamarinForms.Droid
 			// aapt resource value: 0x7f060008
 			public const int resize = 2131099656;
 			
-			// aapt resource value: 0x7f06000e
-			public const int top = 2131099662;
+			// aapt resource value: 0x7f060011
+			public const int top = 2131099665;
 			
-			// aapt resource value: 0x7f06000f
-			public const int top_half = 2131099663;
+			// aapt resource value: 0x7f060012
+			public const int top_half = 2131099666;
 			
-			// aapt resource value: 0x7f060016
-			public const int top_left = 2131099670;
+			// aapt resource value: 0x7f060019
+			public const int top_left = 2131099673;
 			
-			// aapt resource value: 0x7f060017
-			public const int top_right = 2131099671;
+			// aapt resource value: 0x7f06001a
+			public const int top_right = 2131099674;
 			
 			// aapt resource value: 0x7f060009
 			public const int traverse_multi = 2131099657;
@@ -457,76 +457,84 @@ namespace AnylineXamarinForms.Droid
 					2130772006,
 					2130772007,
 					2130772008,
-					2130772009};
-			
-			// aapt resource value: 4
-			public const int AnylineView_cutout_alignment = 4;
-			
-			// aapt resource value: 19
-			public const int AnylineView_cutout_crop_offset_x = 19;
-			
-			// aapt resource value: 20
-			public const int AnylineView_cutout_crop_offset_y = 20;
-			
-			// aapt resource value: 17
-			public const int AnylineView_cutout_crop_padding_x = 17;
-			
-			// aapt resource value: 18
-			public const int AnylineView_cutout_crop_padding_y = 18;
-			
-			// aapt resource value: 16
-			public const int AnylineView_cutout_drawable = 16;
-			
-			// aapt resource value: 7
-			public const int AnylineView_cutout_max_height_percent = 7;
+					2130772009,
+					2130772010,
+					2130772011};
 			
 			// aapt resource value: 6
-			public const int AnylineView_cutout_max_width_percent = 6;
-			
-			// aapt resource value: 8
-			public const int AnylineView_cutout_offset_x = 8;
-			
-			// aapt resource value: 9
-			public const int AnylineView_cutout_offset_y = 9;
+			public const int AnylineView_cutout_alignment = 6;
 			
 			// aapt resource value: 21
-			public const int AnylineView_cutout_outside_color = 21;
-			
-			// aapt resource value: 14
-			public const int AnylineView_cutout_ratio_from_size_height = 14;
-			
-			// aapt resource value: 13
-			public const int AnylineView_cutout_ratio_from_size_width = 13;
-			
-			// aapt resource value: 15
-			public const int AnylineView_cutout_rect_corner_radius_in_dp = 15;
-			
-			// aapt resource value: 12
-			public const int AnylineView_cutout_stroke_color = 12;
-			
-			// aapt resource value: 11
-			public const int AnylineView_cutout_stroke_width_in_dp = 11;
-			
-			// aapt resource value: 10
-			public const int AnylineView_cutout_style = 10;
-			
-			// aapt resource value: 5
-			public const int AnylineView_cutout_width = 5;
-			
-			// aapt resource value: 23
-			public const int AnylineView_flash_alignment = 23;
-			
-			// aapt resource value: 26
-			public const int AnylineView_flash_image_auto = 26;
-			
-			// aapt resource value: 25
-			public const int AnylineView_flash_image_off = 25;
-			
-			// aapt resource value: 24
-			public const int AnylineView_flash_image_on = 24;
+			public const int AnylineView_cutout_crop_offset_x = 21;
 			
 			// aapt resource value: 22
-			public const int AnylineView_flash_mode = 22;
+			public const int AnylineView_cutout_crop_offset_y = 22;
+			
+			// aapt resource value: 19
+			public const int AnylineView_cutout_crop_padding_x = 19;
+			
+			// aapt resource value: 20
+			public const int AnylineView_cutout_crop_padding_y = 20;
+			
+			// aapt resource value: 18
+			public const int AnylineView_cutout_drawable = 18;
+			
+			// aapt resource value: 9
+			public const int AnylineView_cutout_max_height_percent = 9;
+			
+			// aapt resource value: 8
+			public const int AnylineView_cutout_max_width_percent = 8;
+			
+			// aapt resource value: 10
+			public const int AnylineView_cutout_offset_x = 10;
+			
+			// aapt resource value: 11
+			public const int AnylineView_cutout_offset_y = 11;
+			
+			// aapt resource value: 23
+			public const int AnylineView_cutout_outside_color = 23;
+			
+			// aapt resource value: 16
+			public const int AnylineView_cutout_ratio_from_size_height = 16;
+			
+			// aapt resource value: 15
+			public const int AnylineView_cutout_ratio_from_size_width = 15;
+			
+			// aapt resource value: 17
+			public const int AnylineView_cutout_rect_corner_radius_in_dp = 17;
+			
+			// aapt resource value: 14
+			public const int AnylineView_cutout_stroke_color = 14;
+			
+			// aapt resource value: 13
+			public const int AnylineView_cutout_stroke_width_in_dp = 13;
+			
+			// aapt resource value: 12
+			public const int AnylineView_cutout_style = 12;
+			
+			// aapt resource value: 7
+			public const int AnylineView_cutout_width = 7;
+			
+			// aapt resource value: 4
+			public const int AnylineView_default_camera = 4;
+			
+			// aapt resource value: 5
+			public const int AnylineView_fallback_cameras = 5;
+			
+			// aapt resource value: 25
+			public const int AnylineView_flash_alignment = 25;
+			
+			// aapt resource value: 28
+			public const int AnylineView_flash_image_auto = 28;
+			
+			// aapt resource value: 27
+			public const int AnylineView_flash_image_off = 27;
+			
+			// aapt resource value: 26
+			public const int AnylineView_flash_image_on = 26;
+			
+			// aapt resource value: 24
+			public const int AnylineView_flash_mode = 24;
 			
 			// aapt resource value: 0
 			public const int AnylineView_preferred_picture_height = 0;
@@ -539,16 +547,6 @@ namespace AnylineXamarinForms.Droid
 			
 			// aapt resource value: 3
 			public const int AnylineView_preferred_preview_width = 3;
-			
-			public static int[] CameraBridgeViewBase = new int[] {
-					2130772010,
-					2130772011};
-			
-			// aapt resource value: 1
-			public const int CameraBridgeViewBase_camera_id = 1;
-			
-			// aapt resource value: 0
-			public const int CameraBridgeViewBase_show_fps = 0;
 			
 			public static int[] CameraView = new int[] {
 					2130772012};

@@ -15,5 +15,5 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="0123456"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium" />
 </LinearLayout>

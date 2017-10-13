@@ -3,6 +3,8 @@ using AnylineXamarinSDK.iOS;
 using CoreGraphics;
 using Foundation;
 using UIKit;
+using System.Reflection;
+using System.IO;
 
 namespace AnylineXamarinApp.iOS.Modules.Barcode.ViewController
 {
@@ -21,7 +23,7 @@ namespace AnylineXamarinApp.iOS.Modules.Barcode.ViewController
         {
             Title = name;
         }
-
+        
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
@@ -32,7 +34,7 @@ namespace AnylineXamarinApp.iOS.Modules.Barcode.ViewController
                 _frame.Y + NavigationController.NavigationBar.Frame.Size.Height,
                 _frame.Width,
                 _frame.Height - NavigationController.NavigationBar.Frame.Size.Height);
-
+            
             _anylineBarcodeView = new AnylineBarcodeModuleView(_frame);
 
             _error = null;

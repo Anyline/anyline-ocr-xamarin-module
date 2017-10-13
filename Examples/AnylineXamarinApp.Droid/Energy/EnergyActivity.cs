@@ -139,6 +139,11 @@ namespace AnylineXamarinApp.Energy
                 SetTitle(Resource.String.scan_analog_digital_meter);
                 _scanView.SetScanMode(EnergyScanView.ScanMode.AutoAnalogDigitalMeter);
             }
+            else if (_energyUseCase.Equals(Resources.GetString(Resource.String.scan_serial_numbers)))
+            {
+                SetTitle(Resource.String.scan_serial_numbers);
+                _scanView.SetScanMode(EnergyScanView.ScanMode.SerialNumber);
+            }
 
             Util.PopulateRadioGroupWithList(this, radioGroup, _scanList, defaultIndex);
 
@@ -168,14 +173,14 @@ namespace AnylineXamarinApp.Energy
             // explicitly free memory
             GC.Collect(GC.MaxGeneration);
 
-            string typeString = "Meter Result";
+            string typeString = "Scan Result";
 
             // we just want to display the plain text
             var formattedResult = new SpannableString(scanResult.Result.ToString());
 
             ResultDialogBuilder rdb = (ResultDialogBuilder)new ResultDialogBuilder(this)
                 .SetResultImage(scanResult.CutoutImage)
-                .SetTextSize(ComplexUnitType.Dip, 32)
+                .SetTextSize(ComplexUnitType.Dip, 26)
                 .SetTextGravity(GravityFlags.Center)
                 .SetText(formattedResult)
                 .SetPositiveButton(Android.Resource.String.Ok, this)

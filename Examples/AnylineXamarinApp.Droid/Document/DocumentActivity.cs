@@ -22,12 +22,12 @@ namespace AnylineXamarinApp.Document
     {
         public static string TAG = typeof(DocumentActivity).Name;
 
-        private DocumentScanView _scanView;
-        private ProgressDialog _progressDialog;
+        private DocumentScanView _scanView;        
         private ImageView _imageViewResult;
-        private ImageView _imageViewFull;
-        private Toast _toast;
-        
+        private ImageView _imageViewFull;        
+        private TextView _textView;
+        private bool _toastAlreadyShowing;
+
         protected override void OnCreate(Bundle bundle)
         {
             Window.SetFlags(WindowManagerFlags.KeepScreenOn, WindowManagerFlags.KeepScreenOn);
@@ -40,6 +40,9 @@ namespace AnylineXamarinApp.Document
             SetContentView(Resource.Layout.DocumentActivity);
 
             SetTitle(Resource.String.scan_document);
+
+            _textView = FindViewById<TextView>(Resource.Id.text_feedback);
+            _textView.Text = "";
 
             _scanView = FindViewById<DocumentScanView>(Resource.Id.document_scan_view);
             _imageViewResult = FindViewById<ImageView>(Resource.Id.image_result);
@@ -70,15 +73,14 @@ namespace AnylineXamarinApp.Document
         
         public void OnResult(DocumentResult scanResult)
         {
-            _toast = Toast.MakeText(BaseContext, "Document scanned successfully.", ToastLength.Short);
-            _toast.Show();
-
-            _progressDialog.Dismiss();
-
+            _textView.Text = "Document scanned successfully.";
+            
             var resImg = (scanResult.Result as AnylineImage).Clone();
 
             _imageViewFull.SetImageBitmap(null);
             _imageViewResult.SetImageBitmap(resImg.Bitmap);
+
+            _toastAlreadyShowing = false;
             
         }
         
@@ -102,14 +104,7 @@ namespace AnylineXamarinApp.Document
             if (e.Equals(DocumentScanView.DocumentError.Unknown.ToString()))
                 text += "Unknown Failure.";
 
-            _toast = Toast.MakeText(this, text, ToastLength.Long);
-            _toast.Show();
-
-            if(_progressDialog != null && _progressDialog.IsShowing)
-            {
-                _progressDialog.Dismiss();
-            }
-
+            _textView.Text = text;            
             _imageViewFull.SetImageBitmap(null);
         }
 
@@ -118,8 +113,7 @@ namespace AnylineXamarinApp.Document
         // An error message should only be presented to the user after some time
         void IDocumentResultListener.OnPreviewProcessingFailure(DocumentScanView.DocumentError error)
         {
-            if (_toast != null)
-                _toast.Cancel();
+            _textView.Text = "";
 
             var e = error.ToString();
             string text = "";
@@ -139,21 +133,14 @@ namespace AnylineXamarinApp.Document
 
             if (text != "")
             {
-                _toast = Toast.MakeText(this, text, ToastLength.Short);
-                _toast.Show();
-            }
+                _textView.Text = text;                
+            }            
         }
-
+        
         // this is called after the preview of the document is completed, and a full picture will be processed automatically
         void IDocumentResultListener.OnPreviewProcessingSuccess(AnylineImage anylineImage)
         {
-            _toast?.Cancel();
-
-            //_imageViewFull.SetImageBitmap(anylineImage.Bitmap);
-
-            _toast = Toast.MakeText(this, "Scanning full document. Please hold still.", ToastLength.Long);
-            _toast.Show();
-            
+            _textView.Text = "Scanning full document. Please hold still.";
         }
 
         // This is called if the image could not be captured from the camera (most probably because of an OutOfMemoryError)
@@ -167,8 +154,9 @@ namespace AnylineXamarinApp.Document
         // this is called after the image has been captured from the camera and is about to be processed
         void IDocumentResultListener.OnTakePictureSuccess()
         {
-            _progressDialog = ProgressDialog.Show(this, "Processing", "Processing the picture. Please wait.", true);
-            _toast?.Cancel();
+            if (_toastAlreadyShowing) return;
+            _toastAlreadyShowing = true;
+            Toast.MakeText(this, "Processing the picture. Please wait.", ToastLength.Short).Show();
         }
 
         bool IDocumentResultListener.OnDocumentOutlineDetected(IList<PointF> corners, bool documentShapeAndBrightnessValid) { return false; }

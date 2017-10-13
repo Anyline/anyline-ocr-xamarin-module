@@ -25,7 +25,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>AT.Anyline.Xamarin.Forms.App.iOS</string>
 	<key>CFBundleVersion</key>
-	<string>3.8</string>
+	<string>3.17.0</string>
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string>Icon-60@2x.png</string>
@@ -44,7 +44,7 @@
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.8</string>
+	<string>3.17.0</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Yes we scan!</string>
 </dict>
