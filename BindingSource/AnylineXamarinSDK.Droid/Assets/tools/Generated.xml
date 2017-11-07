@@ -3,15 +3,15 @@
 <metadata>
 
 <!-- File: AT.Nineyards.Anyline.Camera.AnylineBaseView.cs -->
-<!-- AnylineBaseView.AnylineBaseView(android.content.Context) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/constructor[@name='AnylineBaseView' and count(parameter)=1 and parameter[1][@type='android.content.Context']]/parameter[1]" name="managedName">context</attr>
-<!-- AnylineBaseView.AnylineBaseView(android.content.Context, android.util.AttributeSet, int) -->
+<!-- AnylineBaseView.AnylineBaseView(android.content.Context, android.util.AttributeSet, int) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/constructor[@name='AnylineBaseView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/constructor[@name='AnylineBaseView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[2]" name="managedName">attrs</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/constructor[@name='AnylineBaseView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[3]" name="managedName">defStyleAttr</attr>
 <!-- AnylineBaseView.AnylineBaseView(android.content.Context, android.util.AttributeSet) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/constructor[@name='AnylineBaseView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/constructor[@name='AnylineBaseView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]/parameter[2]" name="managedName">attrs</attr>
+<!-- AnylineBaseView.AnylineBaseView(android.content.Context) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/constructor[@name='AnylineBaseView' and count(parameter)=1 and parameter[1][@type='android.content.Context']]/parameter[1]" name="managedName">context</attr>
 <!-- AnylineBaseView.setConfig(at.nineyards.anyline.camera.AnylineViewConfig) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/method[@name='setConfig' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.AnylineViewConfig']]/parameter[1]" name="managedName">config</attr>
 <!-- AnylineBaseView.setLicenseKey(java.lang.String) -->
@@ -330,9 +330,7 @@
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraUtil']/method[@name='setCameraDisplayOrientation' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='android.hardware.Camera']]/parameter[2]" name="managedName">cameraId</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraUtil']/method[@name='setCameraDisplayOrientation' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='android.hardware.Camera']]/parameter[3]" name="managedName">camera</attr>
 <!-- File: AT.Nineyards.Anyline.Camera.CameraView.cs -->
-<!-- CameraView.CameraView(android.content.Context) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=1 and parameter[1][@type='android.content.Context']]/parameter[1]" name="managedName">context</attr>
-<!-- CameraView.CameraView(android.content.Context, android.util.AttributeSet, int) -->
+<!-- CameraView.CameraView(android.content.Context, android.util.AttributeSet, int) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[2]" name="managedName">attrs</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[3]" name="managedName">defStyleAttr</attr>
@@ -342,6 +340,8 @@
 <!-- CameraView.CameraView(android.content.Context, boolean) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='boolean']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='boolean']]/parameter[2]" name="managedName">api2Enabled</attr>
+<!-- CameraView.CameraView(android.content.Context) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=1 and parameter[1][@type='android.content.Context']]/parameter[1]" name="managedName">context</attr>
 <!-- CameraView.setPreferredCameraConfig(at.nineyards.anyline.camera.CameraConfig) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='setPreferredCameraConfig' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.CameraConfig']]/parameter[1]" name="managedName">preferredConfig</attr>
 <!-- CameraView.onLayout(boolean, int, int, int, int) -->
@@ -593,6 +593,17 @@
 <!-- AnylineBaseModuleView.setScanPlugin(io.anyline.plugin.AbstractScanPlugin) -->
 <!-- AnylineBaseModuleView.setVibrateOnResult(boolean) -->
 <attr path="/api/package[@name='at.nineyards.anyline.modules']/class[@name='AnylineBaseModuleView']/method[@name='setVibrateOnResult' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">isVibrateOnResult</attr>
+<!-- File: AT.Nineyards.Anyline.Modules.AnylineSurfaceView.cs -->
+<!-- AnylineSurfaceView.AnylineSurfaceView(android.content.Context, at.nineyards.anyline.camera.VisualFeedbackConfig) -->
+<attr path="/api/package[@name='at.nineyards.anyline.modules']/class[@name='AnylineSurfaceView']/constructor[@name='AnylineSurfaceView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='at.nineyards.anyline.camera.VisualFeedbackConfig']]/parameter[1]" name="managedName">context</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.modules']/class[@name='AnylineSurfaceView']/constructor[@name='AnylineSurfaceView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='at.nineyards.anyline.camera.VisualFeedbackConfig']]/parameter[2]" name="managedName">visualFeedbackConfig</attr>
+<!-- AnylineSurfaceView.setIsFlipped(boolean) -->
+<attr path="/api/package[@name='at.nineyards.anyline.modules']/class[@name='AnylineSurfaceView']/method[@name='setIsFlipped' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">isFlipped</attr>
+<!-- AnylineSurfaceView.setCutoutInfo(android.graphics.Rect, float, int, int) -->
+<attr path="/api/package[@name='at.nineyards.anyline.modules']/class[@name='AnylineSurfaceView']/method[@name='setCutoutInfo' and count(parameter)=4 and parameter[1][@type='android.graphics.Rect'] and parameter[2][@type='float'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[1]" name="managedName">cutoutRectOnView</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.modules']/class[@name='AnylineSurfaceView']/method[@name='setCutoutInfo' and count(parameter)=4 and parameter[1][@type='android.graphics.Rect'] and parameter[2][@type='float'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[2]" name="managedName">frameToViewScale</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.modules']/class[@name='AnylineSurfaceView']/method[@name='setCutoutInfo' and count(parameter)=4 and parameter[1][@type='android.graphics.Rect'] and parameter[2][@type='float'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[3]" name="managedName">cutoutCropOffsetOnViewX</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.modules']/class[@name='AnylineSurfaceView']/method[@name='setCutoutInfo' and count(parameter)=4 and parameter[1][@type='android.graphics.Rect'] and parameter[2][@type='float'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[4]" name="managedName">cutoutCropOffsetOnViewY</attr>
 <!-- File: AT.Nineyards.Anyline.Modules.Barcode.BarcodeResult.cs -->
 <!-- BarcodeResult.BarcodeResult(java.util.List&lt;android.graphics.PointF&gt;, java.lang.Integer, at.nineyards.anyline.models.AnylineImage, at.nineyards.anyline.models.AnylineImage, java.lang.String, at.nineyards.anyline.modules.barcode.BarcodeScanView.BarcodeFormat) -->
 <attr path="/api/package[@name='at.nineyards.anyline.modules.barcode']/class[@name='BarcodeResult']/constructor[@name='BarcodeResult' and count(parameter)=6 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[2][@type='java.lang.Integer'] and parameter[3][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[4][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[5][@type='java.lang.String'] and parameter[6][@type='at.nineyards.anyline.modules.barcode.BarcodeScanView.BarcodeFormat']]/parameter[1]" name="managedName">boundingBox</attr>
