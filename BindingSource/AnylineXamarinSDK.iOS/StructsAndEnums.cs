@@ -174,6 +174,17 @@ namespace AnylineXamarinSDK.iOS
     }
 
     [Native]
+    public enum ALRunFailure : long
+    {
+        Unkown = -1,
+        NoLinesFound = -2,
+        NoTextFound = -3,
+        ConfidenceNotReached = -4,
+        ResultNotValid = -5,
+        SharpnessNotReached = -6
+    }
+
+    [Native]
     public enum ALScanMode : ulong
     {
         AnalogMeter,

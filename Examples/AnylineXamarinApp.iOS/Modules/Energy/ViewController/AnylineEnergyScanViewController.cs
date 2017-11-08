@@ -151,7 +151,7 @@ namespace AnylineXamarinApp.iOS.Modules.Energy.ViewController
             if (isOn)
             {
                 // We set this instance to as the barcode delegate so we get native barcode result callbacks
-                _anylineEnergyView.CaptureDeviceManager.BarcodeDelegate = Self;
+                _anylineEnergyView.CaptureDeviceManager.BarcodeDelegate = this;
             }
             else
             {
