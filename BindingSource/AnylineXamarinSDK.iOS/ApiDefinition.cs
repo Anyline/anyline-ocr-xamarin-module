@@ -207,26 +207,14 @@ namespace AnylineXamarinSDK.iOS
         [Export("torchAvailable")]
         bool TorchAvailable { get; }
     }
-    
-    // @interface AnylineVideoView : UIView <ALImageProvider>
-    [BaseType(typeof(UIView))]
-    interface AnylineVideoView  : ALImageProvider
+
+    // @interface ALCaptureDeviceManager : NSObject <ALImageProvider>
+    [BaseType(typeof(NSObject))]
+    interface ALCaptureDeviceManager : ALImageProvider
     {
-        // @property (readonly, nonatomic, strong) ALFlashButton * flashButton;
-        [Export("flashButton", ArgumentSemantic.Strong)]
-        ALFlashButton FlashButton { get; }
-
-        // @property (readonly, nonatomic, strong) ALCutoutView * cutoutView;
-        [Export("cutoutView", ArgumentSemantic.Strong)]
-        ALCutoutView CutoutView { get; }
-
-        // @property (readonly, nonatomic) CGRect watermarkRect;
-        [Export("watermarkRect")]
-        CGRect WatermarkRect { get; }
-
-        // @property (nonatomic, strong) ALTorchManager * torchManager;
-        [Export("torchManager", ArgumentSemantic.Strong)]
-        ALTorchManager TorchManager { get; set; }
+        // -(instancetype)initWithCaptureResolution:(ALCaptureViewResolution)captureResolution pictureResolution:(ALPictureResolution)pictureResolution cutoutScreen:(CGRect)cutoutScreen cutoutPadding:(CGSize)cutoutPadding cutoutOffset:(CGPoint)cutoutOffset defaultDevice:(NSString *)defaultDevice;
+        [Export("initWithCaptureResolution:pictureResolution:cutoutScreen:cutoutPadding:cutoutOffset:defaultDevice:")]
+        IntPtr Constructor(ALCaptureViewResolution captureResolution, ALPictureResolution pictureResolution, CGRect cutoutScreen, CGSize cutoutPadding, CGPoint cutoutOffset, string defaultDevice);
 
         [Wrap("WeakBarcodeDelegate")]
         NSObject BarcodeDelegate { get; set; }
@@ -235,71 +223,111 @@ namespace AnylineXamarinSDK.iOS
         [NullAllowed, Export("barcodeDelegate", ArgumentSemantic.Weak)]
         NSObject WeakBarcodeDelegate { get; set; }
 
-        [Wrap("WeakSampleBufferDelegate")]
-        AnylineVideoDataSampleBufferDelegate SampleBufferDelegate { get; set; }
+        //[Wrap("WeakSampleBufferDelegate")]
+        //AnylineVideoDataSampleBufferDelegate SampleBufferDelegate { get; set; }
 
-        // @property (nonatomic, weak) id<AnylineVideoDataSampleBufferDelegate> sampleBufferDelegate;
-        [NullAllowed, Export("sampleBufferDelegate", ArgumentSemantic.Weak)]
-        NSObject WeakSampleBufferDelegate { get; set; }
+        //// @property (nonatomic, weak) id<AnylineVideoDataSampleBufferDelegate> sampleBufferDelegate;
+        //[NullAllowed, Export("sampleBufferDelegate", ArgumentSemantic.Weak)]
+        //NSObject WeakSampleBufferDelegate { get; set; }
 
-        // -(instancetype)initWithFrame:(CGRect)frame configuration:(ALUIConfiguration *)configuration;
-        [Export("initWithFrame:configuration:")]
-        IntPtr Constructor(CGRect frame, ALUIConfiguration configuration);
+        // @property (assign, nonatomic) ALCaptureViewResolution captureResolution;
+        [Export("captureResolution", ArgumentSemantic.Assign)]
+        ALCaptureViewResolution CaptureResolution { get; set; }
 
-        // -(instancetype)initWithFrame:(CGRect)frame;
-        [Export("initWithFrame:")]
-        IntPtr Constructor(CGRect frame);
+        // @property (assign, nonatomic) ALPictureResolution pictureResolution;
+        [Export("pictureResolution", ArgumentSemantic.Assign)]
+        ALPictureResolution PictureResolution { get; set; }
 
-        // -(instancetype)initWithCoder:(NSCoder *)aDecoder configuration:(ALUIConfiguration *)configuration;
-        //[Export("initWithCoder:configuration:")]
-        //IntPtr Constructor(NSCoder aDecoder, ALUIConfiguration configuration);
-        
-        //--> compiler generated
-        // -(instancetype)initWithCoder:(NSCoder *)aDecoder;
-        //[Export("initWithCoder:")]
-        //IntPtr Constructor(NSCoder aDecoder);
+        // @property (assign, nonatomic) CGSize videoResolution;
+        [Export("videoResolution", ArgumentSemantic.Assign)]
+        CGSize VideoResolution { get; set; }
 
-        // -(BOOL)startVideoAndReturnError:(NSError **)error;
-        [Export("startVideoAndReturnError:")]
-        bool StartVideoAndReturnError(out NSError error);
+        // @property (assign, nonatomic) CGRect cutoutFrame;
+        [Export("cutoutFrame", ArgumentSemantic.Assign)]
+        CGRect CutoutFrame { get; set; }
 
-        // -(void)stopVideo;
-        [Export("stopVideo")]
-        void StopVideo();
+        // @property (assign, nonatomic) CGRect cutoutScreen;
+        [Export("cutoutScreen", ArgumentSemantic.Assign)]
+        CGRect CutoutScreen { get; set; }
+
+        // @property (assign, nonatomic) CGSize cutoutPadding;
+        [Export("cutoutPadding", ArgumentSemantic.Assign)]
+        CGSize CutoutPadding { get; set; }
+
+        // @property (assign, nonatomic) CGPoint cutoutOffset;
+        [Export("cutoutOffset", ArgumentSemantic.Assign)]
+        CGPoint CutoutOffset { get; set; }
+
+        // @property (nonatomic, strong) AVCaptureVideoPreviewLayer * previewLayer;
+        [Export("previewLayer", ArgumentSemantic.Strong)]
+        AVCaptureVideoPreviewLayer PreviewLayer { get; set; }
+
+        // -(void)addVideoLayerOnView:(UIView *)view;
+        [Export("addVideoLayerOnView:")]
+        void AddVideoLayerOnView(UIView view);
 
         // -(void)setFocusAndExposurePoint:(CGPoint)point;
         [Export("setFocusAndExposurePoint:")]
         void SetFocusAndExposurePoint(CGPoint point);
 
-        // -(void)captureStillImageAndStopWithCompletionBlock:(ALImageProviderBlock)completionHandler;
-        [Export("captureStillImageAndStopWithCompletionBlock:")]
-        void CaptureStillImageAndStopWithCompletionBlock(ALImageProviderBlock completionHandler);
+        // -(void)startSession;
+        [Export("startSession")]
+        void StartSession();
 
-        // -(ALSquare *)resizeSquareToFullImageSquare:(ALSquare *)square withImageSize:(CGSize)imageSize resizeWidth:(CGFloat)resizeWidth;
-        [Export("resizeSquareToFullImageSquare:withImageSize:resizeWidth:")]
-        ALSquare ResizeSquareToFullImageSquare(ALSquare square, CGSize imageSize, nfloat resizeWidth);
+        // -(void)stopSession;
+        [Export("stopSession")]
+        void StopSession();
+
+        // -(BOOL)isRunning;
+        [Export("isRunning")]
+        bool IsRunning { get; }
+
+        // -(CGPoint)convertPoint:(CGPoint)inPoint;
+        [Export("convertPoint:")]
+        CGPoint ConvertPoint(CGPoint inPoint);
+
+        // -(CGPoint)convertPoint:(CGPoint)inPoint imageWidth:(CGFloat)inWidth;
+        [Export("convertPoint:imageWidth:")]
+        CGPoint ConvertPoint(CGPoint inPoint, nfloat inWidth);
+
+        // -(CGPoint)fullResolutionPointForPointInPreview:(CGPoint)inPoint;
+        [Export("fullResolutionPointForPointInPreview:")]
+        CGPoint FullResolutionPointForPointInPreview(CGPoint inPoint);
+
+        // -(UIInterfaceOrientation)currentInterfaceOrientation;
+        [Export("currentInterfaceOrientation")]        
+        UIInterfaceOrientation CurrentInterfaceOrientation { get; }
     }
 
     // @protocol AnylineVideoDataSampleBufferDelegate <NSObject>
-    [Protocol, Model]
-    [BaseType(typeof(NSObject))]
-    interface AnylineVideoDataSampleBufferDelegate
-    {
-        // @required -(void)anylineVideoView:(AnylineVideoView *)videoView didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer;
-        [Abstract]
-        [Export("anylineVideoView:didOutputSampleBuffer:")]
-        void DidOutputSampleBuffer(AnylineVideoView videoView, ref NSObject sampleBuffer);
-    }
+    //[Protocol, Model]
+    //[BaseType(typeof(NSObject))]
+    //interface AnylineVideoDataSampleBufferDelegate
+    //{
+    //    // @required -(void)anylineCaptureDeviceManager:(ALCaptureDeviceManager *)captureDeviceManager didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer;
+    //    [Abstract]
+    //    [Export("anylineCaptureDeviceManager:didOutputSampleBuffer:")]
+    //    unsafe void DidOutputSampleBuffer(ALCaptureDeviceManager captureDeviceManager, NSObject* sampleBuffer);
+    //}
 
     // @protocol AnylineNativeBarcodeDelegate <NSObject>
     [Protocol, Model]
     [BaseType(typeof(NSObject))]
     interface AnylineNativeBarcodeDelegate
     {
-        // @required -(void)anylineVideoView:(AnylineVideoView *)videoView didFindBarcodeResult:(NSString *)scanResult type:(NSString *)barcodeType;
+        // @required -(void)anylineCaptureDeviceManager:(ALCaptureDeviceManager *)captureDeviceManager didFindBarcodeResult:(NSString *)scanResult type:(NSString *)barcodeType;
         [Abstract]
-        [Export("anylineVideoView:didFindBarcodeResult:type:")]
-        void DidFindBarcodeResult(AnylineVideoView videoView, string scanResult, string barcodeType);
+        [Export("anylineCaptureDeviceManager:didFindBarcodeResult:type:")]
+        void DidFindBarcodeResult(ALCaptureDeviceManager captureDeviceManager, string scanResult, string barcodeType);
+    }
+
+    // @interface ALCameraView : UIView
+    [BaseType(typeof(UIView))]
+    interface ALCameraView
+    {
+        // -(instancetype)initWithFrame:(CGRect)frame captureDeviceManager:(ALCaptureDeviceManager *)captureDeviceManger;
+        [Export("initWithFrame:captureDeviceManager:")]
+        IntPtr Constructor(CGRect frame, ALCaptureDeviceManager captureDeviceManger);
     }
 
     // @interface ALCutoutView : UIView
@@ -1039,9 +1067,13 @@ namespace AnylineXamarinSDK.iOS
         [Export("initWithFrame:")]
         IntPtr Constructor(CGRect frame);
 
-        // @property (nonatomic, strong) AnylineVideoView * videoView;
-        [Export("videoView", ArgumentSemantic.Strong)]
-        AnylineVideoView VideoView { get; set; }
+        // @property (nonatomic, strong) ALCameraView * cameraView;
+        [Export("cameraView", ArgumentSemantic.Strong)]
+        ALCameraView CameraView { get; set; }
+
+        // @property (nonatomic, strong) ALCaptureDeviceManager * captureDeviceManager;
+        [Export("captureDeviceManager", ArgumentSemantic.Strong)]
+        ALCaptureDeviceManager CaptureDeviceManager { get; set; }
 
         // @property (nonatomic, strong) ALUIConfiguration * currentConfiguration;
         [Export("currentConfiguration", ArgumentSemantic.Strong)]

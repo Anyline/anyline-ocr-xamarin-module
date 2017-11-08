@@ -151,12 +151,12 @@ namespace AnylineXamarinApp.iOS.Modules.Energy.ViewController
             if (isOn)
             {
                 // We set this instance to as the barcode delegate so we get native barcode result callbacks
-                _anylineEnergyView.VideoView.BarcodeDelegate = Self;
+                _anylineEnergyView.CaptureDeviceManager.BarcodeDelegate = Self;
             }
             else
             {
                 _barcodeResult = "";
-                _anylineEnergyView.VideoView.BarcodeDelegate = null;
+                _anylineEnergyView.CaptureDeviceManager.BarcodeDelegate = null;
             }
         }
 
@@ -313,7 +313,7 @@ namespace AnylineXamarinApp.iOS.Modules.Energy.ViewController
             Dispose();
         }
 
-        public void DidFindBarcodeResult(AnylineVideoView videoView, string scanResult, string barcodeType)
+        void IAnylineNativeBarcodeDelegate.DidFindBarcodeResult(ALCaptureDeviceManager captureDeviceManager, string scanResult, string barcodeType)
         {
             Console.WriteLine("Barcode Result: " + scanResult);
             _barcodeResult = scanResult;

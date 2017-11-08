@@ -183,6 +183,7 @@ namespace AnylineXamarinSDK.iOS
         HeatMeter5,
         HeatMeter6,
         AutoAnalogDigitalMeter,
+        DialMeter,
         Barcode
     }
 
