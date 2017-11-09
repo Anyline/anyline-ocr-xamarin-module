@@ -62,23 +62,30 @@ namespace AnylineXamarinApp.LicensePlate
             //register click event
             _licensePlateResultView.Click += (sender, args) =>
             {
+                _licensePlateResultView.CountryText.Text = "";
+                _licensePlateResultView.ResultText.Text = "";
                 _licensePlateResultView.Visibility = ViewStates.Invisible;
                 scanView.StartScanning();
             };
 
             //set text properties
             _licensePlateResultView.ResultText.TextAlignment = TextAlignment.Center;
-            _licensePlateResultView.ResultText.TextSize = 36;
+            _licensePlateResultView.ResultText.Gravity = GravityFlags.Center;
+            _licensePlateResultView.ResultText.TextSize = 38;
             _licensePlateResultView.ResultText.Typeface = Android.Graphics.Typeface.DefaultBold;
-            _licensePlateResultView.ResultText.SetTextColor(Android.Graphics.Color.Black);
+            _licensePlateResultView.ResultText.SetTextColor(Android.Graphics.Color.DarkGray);
 
-            var textParams = (RelativeLayout.LayoutParams)_licensePlateResultView.ResultText.LayoutParameters;
+            _licensePlateResultView.CountryText.TextAlignment = TextAlignment.Center;
+            _licensePlateResultView.CountryText.Gravity = GravityFlags.Center;
+            _licensePlateResultView.CountryText.SetTextColor(Android.Graphics.Color.White);
+
+            var resultParams = (RelativeLayout.LayoutParams)_licensePlateResultView.ResultText.LayoutParameters;
 
             //center text
-            textParams.AddRule(LayoutRules.CenterHorizontal, (int)LayoutRules.True);
-            textParams.AddRule(LayoutRules.CenterVertical, (int)LayoutRules.True);
+            resultParams.AddRule(LayoutRules.CenterHorizontal, (int)LayoutRules.True);
+            resultParams.AddRule(LayoutRules.CenterVertical, (int)LayoutRules.True);
 
-            _licensePlateResultView.ResultText.LayoutParameters = textParams;
+            _licensePlateResultView.ResultText.LayoutParameters = resultParams;
 
             //center the result in the parent
             RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(
@@ -128,7 +135,6 @@ namespace AnylineXamarinApp.LicensePlate
 
             _licensePlateResultView?.Bg?.Dispose();
             _licensePlateResultView?.Dispose();
-            _licensePlateResultView?.Dispose();
 
             // explicitly free memory
             GC.Collect(GC.MaxGeneration);
@@ -140,10 +146,8 @@ namespace AnylineXamarinApp.LicensePlate
             var textResult = scanResult.Result.ToString();
 
             _licensePlateResultView.Visibility = ViewStates.Visible;
-
-            if (country != "")
-                textResult = $"{country} - {textResult}";
-
+            
+            _licensePlateResultView.CountryText.Text = country;
             _licensePlateResultView.ResultText.Text = textResult;
         }
     }

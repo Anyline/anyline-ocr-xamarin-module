@@ -395,8 +395,8 @@ namespace AnylineXamarinApp
 			// aapt resource value: 0x7f0a0014
 			public const int back = 2131361812;
 			
-			// aapt resource value: 0x7f0a0030
-			public const int barcode_result_text = 2131361840;
+			// aapt resource value: 0x7f0a002f
+			public const int barcode_result_text = 2131361839;
 			
 			// aapt resource value: 0x7f0a0022
 			public const int barcode_scan_view = 2131361826;
@@ -434,17 +434,14 @@ namespace AnylineXamarinApp
 			// aapt resource value: 0x7f0a0025
 			public const int document_scan_view = 2131361829;
 			
-			// aapt resource value: 0x7f0a002a
-			public const int energy_scan_view = 2131361834;
+			// aapt resource value: 0x7f0a0029
+			public const int energy_scan_view = 2131361833;
 			
 			// aapt resource value: 0x7f0a0015
 			public const int external = 2131361813;
 			
 			// aapt resource value: 0x7f0a0016
 			public const int front = 2131361814;
-			
-			// aapt resource value: 0x7f0a0028
-			public const int full_image = 2131361832;
 			
 			// aapt resource value: 0x7f0a0003
 			public const int icon_only = 2131361795;
@@ -458,8 +455,8 @@ namespace AnylineXamarinApp
 			// aapt resource value: 0x7f0a000e
 			public const int kitt = 2131361806;
 			
-			// aapt resource value: 0x7f0a0032
-			public const int license_plate_scan_view = 2131361842;
+			// aapt resource value: 0x7f0a0031
+			public const int license_plate_scan_view = 2131361841;
 			
 			// aapt resource value: 0x7f0a0008
 			public const int light = 2131361800;
@@ -467,8 +464,8 @@ namespace AnylineXamarinApp
 			// aapt resource value: 0x7f0a0034
 			public const int listView = 2131361844;
 			
-			// aapt resource value: 0x7f0a0031
-			public const int main_layout = 2131361841;
+			// aapt resource value: 0x7f0a0030
+			public const int main_layout = 2131361840;
 			
 			// aapt resource value: 0x7f0a001d
 			public const int manual = 2131361821;
@@ -491,11 +488,11 @@ namespace AnylineXamarinApp
 			// aapt resource value: 0x7f0a0010
 			public const int pulse_random = 2131361808;
 			
-			// aapt resource value: 0x7f0a002b
-			public const int radio_button_header = 2131361835;
+			// aapt resource value: 0x7f0a002a
+			public const int radio_button_header = 2131361834;
 			
-			// aapt resource value: 0x7f0a002c
-			public const int radio_group = 2131361836;
+			// aapt resource value: 0x7f0a002b
+			public const int radio_group = 2131361835;
 			
 			// aapt resource value: 0x7f0a000c
 			public const int rect = 2131361804;
@@ -503,17 +500,20 @@ namespace AnylineXamarinApp
 			// aapt resource value: 0x7f0a0011
 			public const int resize = 2131361809;
 			
-			// aapt resource value: 0x7f0a0033
-			public const int result_background = 2131361843;
+			// aapt resource value: 0x7f0a0032
+			public const int result_background = 2131361842;
 			
-			// aapt resource value: 0x7f0a0029
-			public const int root = 2131361833;
+			// aapt resource value: 0x7f0a0028
+			public const int root = 2131361832;
 			
 			// aapt resource value: 0x7f0a0004
 			public const int standard = 2131361796;
 			
 			// aapt resource value: 0x7f0a0024
 			public const int text = 2131361828;
+			
+			// aapt resource value: 0x7f0a0033
+			public const int text_country = 2131361843;
 			
 			// aapt resource value: 0x7f0a0038
 			public const int text_country_code_national = 2131361848;
@@ -548,14 +548,14 @@ namespace AnylineXamarinApp
 			// aapt resource value: 0x7f0a0037
 			public const int text_type = 2131361847;
 			
-			// aapt resource value: 0x7f0a002d
-			public const int toggle_barcode_layout = 2131361837;
-			
-			// aapt resource value: 0x7f0a002f
-			public const int toggle_barcode_switch = 2131361839;
+			// aapt resource value: 0x7f0a002c
+			public const int toggle_barcode_layout = 2131361836;
 			
 			// aapt resource value: 0x7f0a002e
-			public const int toggle_barcode_text = 2131361838;
+			public const int toggle_barcode_switch = 2131361838;
+			
+			// aapt resource value: 0x7f0a002d
+			public const int toggle_barcode_text = 2131361837;
 			
 			// aapt resource value: 0x7f0a001a
 			public const int top = 2131361818;

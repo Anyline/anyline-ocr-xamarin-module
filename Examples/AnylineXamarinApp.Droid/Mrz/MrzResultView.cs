@@ -1,4 +1,5 @@
 using Android.Content;
+using Android.Text.Format;
 using Android.Widget;
 using AT.Nineyards.Anyline.Modules.Mrz;
 
@@ -16,6 +17,8 @@ namespace AnylineXamarinApp.Mrz
         private TextView _expirationDateText;
         private TextView _sexText;
         private TextView _mrzText;
+
+        private Java.Text.DateFormat _mrzDateFormat;
 
         public MrzResultView(Context context) : base(context) { Init(); }
 
@@ -38,6 +41,8 @@ namespace AnylineXamarinApp.Mrz
             _expirationDateText = FindViewById<TextView>(Resource.Id.text_expiration_date);
             _sexText = FindViewById<TextView>(Resource.Id.text_sex);
             _mrzText = FindViewById<TextView>(Resource.Id.text_mrz);
+
+            _mrzDateFormat = DateFormat.GetDateFormat(Context);
         }
 
         public void SetIdentification(Identification identification)
@@ -47,8 +52,8 @@ namespace AnylineXamarinApp.Mrz
             _numberText.SetText(identification.DocumentNumber, TextView.BufferType.Normal);
             _surNamesText.SetText(identification.SurNames, TextView.BufferType.Normal);
             _givenNamesText.SetText(identification.GivenNames, TextView.BufferType.Normal);
-            _dayOfBirthText.SetText(identification.DayOfBirth, TextView.BufferType.Normal);
-            _expirationDateText.SetText(identification.ExpirationDate, TextView.BufferType.Normal);
+            _dayOfBirthText.SetText(_mrzDateFormat.Format(identification.DayOfBirthObject), TextView.BufferType.Normal);
+            _expirationDateText.SetText(_mrzDateFormat.Format(identification.ExpirationDateObject), TextView.BufferType.Normal);
             _sexText.SetText(identification.Sex, TextView.BufferType.Normal);
 
             string mrzString = identification.MrzString.Replace("\\n", "\n");            

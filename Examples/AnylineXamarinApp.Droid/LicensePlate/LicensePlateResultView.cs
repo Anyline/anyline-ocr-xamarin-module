@@ -7,6 +7,7 @@ namespace AnylineXamarinApp.LicensePlate
     public class LicensePlateResultView : RelativeLayout
     {
         public TextView ResultText { get; set; }
+        public TextView CountryText { get; set; }
         public ImageView Bg { get; set; }
 
         public LicensePlateResultView(Context context) : base(context) { Init(); }
@@ -20,9 +21,10 @@ namespace AnylineXamarinApp.LicensePlate
             SetPadding(DimensUtil.GetPixFromDp(Context, 4), DimensUtil.GetPixFromDp(Context, 16),
                 DimensUtil.GetPixFromDp(Context, 4), DimensUtil.GetPixFromDp(Context, 16));
 
-            Inflate(Context, Resource.Layout.OCRResult, this);
+            Inflate(Context, Resource.Layout.LicensePlateResult, this);
 
             ResultText = (TextView)FindViewById(Resource.Id.text_result);
+            CountryText = (TextView)FindViewById(Resource.Id.text_country);
             Bg = (ImageView)FindViewById(Resource.Id.result_background);
                         
         }

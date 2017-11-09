@@ -52,12 +52,21 @@ namespace AnylineXamarinApp.Energy
                                     
             NativeBarcodeResultTextView = FindViewById<TextView>(Resource.Id.barcode_result_text);
             NativeBarcodeResultTextView.Text = "";
-            
+
             _toggleBarcodeSwitch = FindViewById<Switch>(Resource.Id.toggle_barcode_switch);
-            _toggleBarcodeSwitch.CheckedChange += (sender, args) =>
+
+            // we don't use the native barcode scan mode in heat meters in this example
+            if (_energyUseCase.Equals(Resources.GetString(Resource.String.scan_heat_meter)))
+            {                
+                var toggleBarcodeLayout = FindViewById<RelativeLayout>(Resource.Id.toggle_barcode_layout);
+                toggleBarcodeLayout.Visibility = ViewStates.Gone;
+            }
+            else
             {
-                if (((Switch)sender).Checked)
+                _toggleBarcodeSwitch.CheckedChange += (sender, args) =>
                 {
+                    if (((Switch)sender).Checked)
+                    {
                     /*
                      * Enable simultaneous barcode scanning:
                      * 
@@ -70,33 +79,34 @@ namespace AnylineXamarinApp.Energy
                      * Also, the Nuget Package "Xamarin.GooglePlayServices.Vision" must be installed for this application.
                      * For installation, the App must be targeted to Android 7.0, but then the SDK version can be reduced again.
                     */
-                    try
-                    {
+                        try
+                        {
 
                         // First, we check if the barcode detector works on the device
                         var detector = new BarcodeDetector.Builder(ApplicationContext).Build();
-                        if (!detector.IsOperational)
-                        {
+                            if (!detector.IsOperational)
+                            {
                             // Native barcode scanning not supported on this device
                             Toast.MakeText(ApplicationContext, "Native Barcode scanning not supported on this device!", ToastLength.Long).Show();
-                            _toggleBarcodeSwitch.Checked = false;
-                        }
-                        else
-                        {
-                            _nativeBarcodeResultListener?.Dispose(); // dispose of old barcodelistener first
+                                _toggleBarcodeSwitch.Checked = false;
+                            }
+                            else
+                            {
+                                _nativeBarcodeResultListener?.Dispose(); // dispose of old barcodelistener first
                             _nativeBarcodeResultListener = new NativeBarcodeResultListener(this);
-                            _scanView.EnableBarcodeDetection(true, _nativeBarcodeResultListener);
+                                _scanView.EnableBarcodeDetection(true, _nativeBarcodeResultListener);
+                            }
                         }
+                        catch (Exception) { }
                     }
-                    catch (Exception) { }                    
-                }
-                else
-                {
-                    _scanView.DisableBarcodeDetection();
-                    _nativeBarcodeResultListener?.Dispose();
-                    NativeBarcodeResultTextView.Text = "";
-                }
-            };
+                    else
+                    {
+                        _scanView.DisableBarcodeDetection();
+                        _nativeBarcodeResultListener?.Dispose();
+                        NativeBarcodeResultTextView.Text = "";
+                    }
+                };
+            }
             
             // In our main activity, we selected which type of meters we want to scan
             // Now we want to populate the RadioButton group accordingly:

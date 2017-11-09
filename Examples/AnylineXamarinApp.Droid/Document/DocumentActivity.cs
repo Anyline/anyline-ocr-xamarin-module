@@ -23,8 +23,7 @@ namespace AnylineXamarinApp.Document
         public static string TAG = typeof(DocumentActivity).Name;
 
         private DocumentScanView _scanView;        
-        private ImageView _imageViewResult;
-        private ImageView _imageViewFull;        
+        private ImageView _imageViewResult;      
         private TextView _textView;
         private bool _toastAlreadyShowing;
 
@@ -46,12 +45,9 @@ namespace AnylineXamarinApp.Document
 
             _scanView = FindViewById<DocumentScanView>(Resource.Id.document_scan_view);
             _imageViewResult = FindViewById<ImageView>(Resource.Id.image_result);
-            _imageViewFull = FindViewById<ImageView>(Resource.Id.full_image);
 
-            _imageViewFull.Click += (s, e) =>
-            {
-                _imageViewFull.SetImageBitmap(null);
-            };
+            // clear image
+            _imageViewResult.Click += ResultImage_Click;
 
             _scanView.SetConfigFromAsset("DocumentConfig.json");
 
@@ -70,14 +66,18 @@ namespace AnylineXamarinApp.Document
             _scanView.CameraError += (s, e) => { Log.Error(TAG, "OnCameraError: " + e.Event.Message); };
 
         }
-        
+
+        private void ResultImage_Click(object sender, EventArgs e)
+        {             
+            _imageViewResult.SetImageBitmap(null);             
+        }
+
         public void OnResult(DocumentResult scanResult)
         {
             _textView.Text = "Document scanned successfully.";
             
             var resImg = (scanResult.Result as AnylineImage).Clone();
-
-            _imageViewFull.SetImageBitmap(null);
+            
             _imageViewResult.SetImageBitmap(resImg.Bitmap);
 
             _toastAlreadyShowing = false;
@@ -104,8 +104,7 @@ namespace AnylineXamarinApp.Document
             if (e.Equals(DocumentScanView.DocumentError.Unknown.ToString()))
                 text += "Unknown Failure.";
 
-            _textView.Text = text;            
-            _imageViewFull.SetImageBitmap(null);
+            _textView.Text = text;
         }
 
         // this is called on any error while processing the document image
@@ -147,7 +146,6 @@ namespace AnylineXamarinApp.Document
         void IDocumentResultListener.OnTakePictureError(Java.Lang.Throwable error)
         {
             Console.WriteLine(error.Message);
-            _imageViewFull.SetImageBitmap(null);
             GC.Collect();            
         }
 
@@ -211,6 +209,9 @@ namespace AnylineXamarinApp.Document
         protected override void OnDestroy()
         {
             base.OnDestroy();
+
+            if (_imageViewResult != null)
+                _imageViewResult.Click -= ResultImage_Click;
 
             // explicitly free memory
             GC.Collect(GC.MaxGeneration);
