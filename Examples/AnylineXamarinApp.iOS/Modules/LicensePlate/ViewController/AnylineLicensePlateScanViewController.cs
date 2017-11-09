@@ -12,7 +12,7 @@ namespace AnylineXamarinApp.iOS.Modules.LicensePlate.ViewController
         readonly string _licenseKey = AnylineViewController.LicenseKey;
 
         AnylineLicensePlateModuleView _scanView;
-        ResultOverlayView _resultView;
+        LicensePlateResultOverlayView _resultView;
         
         NSError _error;
         bool _success;
@@ -66,7 +66,7 @@ namespace AnylineXamarinApp.iOS.Modules.LicensePlate.ViewController
              The following view will present the scanned values. Here we start listening for taps
              to later dismiss the view.
              */
-            _resultView = new ResultOverlayView(new CGRect(0, 0, View.Frame.Width, View.Frame.Height), UIImage.FromBundle(@"drawable/license_plate_background.png"));
+            _resultView = new LicensePlateResultOverlayView(new CGRect(0, 0, View.Frame.Width, View.Frame.Height), UIImage.FromBundle(@"drawable/license_plate_background.png"));
             _resultView.AddGestureRecognizer(new UITapGestureRecognizer(this, new ObjCRuntime.Selector("ViewTapSelector:")));
 
             _resultView.Center = View.Center;
@@ -75,6 +75,10 @@ namespace AnylineXamarinApp.iOS.Modules.LicensePlate.ViewController
             _resultView.Result.Center = new CGPoint(View.Center.X, View.Center.Y);
             _resultView.Result.Font = UIFont.BoldSystemFontOfSize(27);
             _resultView.Result.TextColor = UIColor.Black;
+
+            _resultView.Country.Center = new CGPoint(View.Center.X - 100, View.Center.Y);
+            _resultView.Country.Font = UIFont.SystemFontOfSize(16);
+            _resultView.Country.TextColor = UIColor.White;
 
             View.AddSubview(_resultView);
         }
@@ -162,11 +166,9 @@ namespace AnylineXamarinApp.iOS.Modules.LicensePlate.ViewController
 
             var country = scanResult.Country;
             var textResult = scanResult.Result.ToString();
-
-            if (country != "")
-                textResult = $"{country} - {textResult}";
-
+            
             _resultView.UpdateResult(textResult);
+            _resultView.UpdateCountry(country);
         
             // Present the information to the user
             _resultView.AnimateFadeIn(View);

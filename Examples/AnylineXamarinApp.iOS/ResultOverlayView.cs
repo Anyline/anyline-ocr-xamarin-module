@@ -11,7 +11,7 @@ namespace AnylineXamarinApp.iOS
 {
     class ResultOverlayView : UIView
     {
-        public UILabel Result { get; set; }
+        public UILabel Result { get; set; }        
         private UIImageView backgroundView;
 
         public ResultOverlayView() : base()
@@ -60,7 +60,7 @@ namespace AnylineXamarinApp.iOS
 
         }
         
-        public void UpdateResult(String result)
+        public void UpdateResult(string result)
         {            
             Result.Text = result;
         }

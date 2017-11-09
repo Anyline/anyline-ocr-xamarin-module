@@ -129,13 +129,16 @@ namespace AnylineXamarinApp.iOS
 
         public void UpdateIdentification(ALIdentification aId)
         {
+            NSDateFormatter dateFormat = new NSDateFormatter();
+            dateFormat.DateFormat = "dd/MM/yyyy";
+            
             nr.Text = aId.DocumentNumber;
             surname.Text = aId.SurNames;
             givenNames.Text = aId.GivenNames;
             code.Text = aId.NationalityCountryCode;
             type.Text = aId.DocumentType;
-            dayOfBirth.Text = aId.DayOfBirth;
-            expirationDate.Text = aId.ExpirationDate;
+            dayOfBirth.Text = dateFormat.ToString(aId.DayOfBirthDateObject);
+            expirationDate.Text = dateFormat.ToString(aId.ExpirationDateObject);
             sex.Text = aId.Sex;
 
             var mrzString = aId.MRZString.Replace("\\n", "\n");

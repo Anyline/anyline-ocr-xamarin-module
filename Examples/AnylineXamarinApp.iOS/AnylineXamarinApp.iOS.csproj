@@ -179,6 +179,7 @@
     <Compile Include="Modules\Energy\ViewController\AnylineEnergyScanViewController.cs" />
     <Compile Include="Modules\Energy\ViewController\AnylineEnergyScanViewResultController.cs" />
     <Compile Include="Modules\Energy\View\EnergyMeterReadingView.cs" />
+    <Compile Include="Modules\LicensePlate\View\LicensePlateResultOverlayView.cs" />
     <Compile Include="Modules\Mrz\ViewController\AnylineMrzScanViewController.cs" />
     <Compile Include="Modules\Mrz\View\AnylineIdentificationView.cs" />
     <Compile Include="Modules\OCR\ViewController\AnylineBottlecapScanViewController.cs" />
