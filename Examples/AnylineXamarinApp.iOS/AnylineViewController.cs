@@ -87,7 +87,7 @@ namespace AnylineXamarinApp.iOS
         public TableSource(Dictionary<string, string[]> tableItems, AnylineViewController parent)
         {
             TableItems = tableItems;
-            Parent = parent;
+            Parent = parent;            
         }
         
         public override string TitleForHeader(UITableView tableView, nint section)

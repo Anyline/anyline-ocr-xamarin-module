@@ -245,8 +245,7 @@
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_auto.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_grid.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_line.ale" />
-    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\simpleocr_capture_config.json" />
-    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\.DS_Store" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\simpleocr_capture_config.json" />    
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\anyline_capitals.traineddata" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\bottlecap.traineddata" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\deu.traineddata" />
@@ -255,8 +254,7 @@
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\scrabble.traineddata" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_barcode\barcode_capture_config.json" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_barcode\ean.ale" />
-    <BundleResource Include="Resources\AnylineResources.bundle\module_debit_card\debitcard_capture_config.json" />
-    <BundleResource Include="Resources\AnylineResources.bundle\module_document\.DS_Store" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_debit_card\debitcard_capture_config.json" />    
     <BundleResource Include="Resources\AnylineResources.bundle\module_document\document.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_document\document_capture_config.json" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_document\document_crop.ale" />

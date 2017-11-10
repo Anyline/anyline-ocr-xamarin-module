@@ -37,7 +37,7 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
                 frame.Height - NavigationController.NavigationBar.Frame.Size.Height);
 
             _scanView = new AnylineOCRModuleView(frame);
-            
+
             // We'll define the OCR Config here:
             _ocrConfig = new ALOCRConfig();
             _ocrConfig.CharHeight = new ALRange { min = 14, max = 95 };

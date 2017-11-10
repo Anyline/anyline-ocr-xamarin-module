@@ -76,9 +76,9 @@ namespace AnylineXamarinApp.iOS.Modules.LicensePlate.ViewController
             _resultView.Result.Font = UIFont.BoldSystemFontOfSize(27);
             _resultView.Result.TextColor = UIColor.Black;
 
-            _resultView.Country.Center = new CGPoint(View.Center.X - 130, View.Center.Y + 13);
+            _resultView.Country.Center = new CGPoint(View.Center.X - 136, View.Center.Y + 13);
             _resultView.Country.Font = UIFont.BoldSystemFontOfSize(16);
-            _resultView.Country.TextColor = UIColor.Blue;
+            _resultView.Country.TextColor = UIColor.White;
 
             View.AddSubview(_resultView);
         }

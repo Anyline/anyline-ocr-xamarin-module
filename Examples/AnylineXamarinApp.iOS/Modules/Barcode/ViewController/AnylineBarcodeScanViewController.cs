@@ -66,7 +66,7 @@ namespace AnylineXamarinApp.iOS.Modules.Barcode.ViewController
             View.AddSubview(_resultLabel);
 
         }
-
+        
         /*
          * This method will be called once the view controller and its subviews have appeared on screen
          */

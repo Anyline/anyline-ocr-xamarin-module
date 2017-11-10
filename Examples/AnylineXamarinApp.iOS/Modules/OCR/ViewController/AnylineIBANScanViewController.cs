@@ -36,7 +36,7 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
                 frame.Width,
                 frame.Height - NavigationController.NavigationBar.Frame.Size.Height);
 
-            _scanView = new AnylineOCRModuleView(frame);
+            _scanView = new AnylineOCRModuleView(frame);            
 
             if (_error != null)
                 (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();

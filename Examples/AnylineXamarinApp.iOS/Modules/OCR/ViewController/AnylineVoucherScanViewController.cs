@@ -14,6 +14,7 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
         ResultOverlayView _resultView;
 
         ALOCRConfig _ocrConfig;
+        CGRect frame;
 
         NSError _error;
         bool _success;
@@ -24,19 +25,30 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
         {
             Title = name;
         }
-
+        
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            
+            //TODO: REMOVE
+            NavigationController.NavigationBar.Alpha = 0.5f;
+
+            /*
+             * CGRect frame = [[UIScreen mainScreen] applicationFrame];
+
+    frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
+    self.ocrModuleView = [[AnylineOCRModuleView alloc] initWithFrame:frame];
+             */
 
             // Initializing the Voucher Code module.
-            CGRect frame = UIScreen.MainScreen.ApplicationFrame;
+            frame = UIScreen.MainScreen.ApplicationFrame;
             frame = new CGRect(frame.X,
                 frame.Y + NavigationController.NavigationBar.Frame.Size.Height,
                 frame.Width,
                 frame.Height - NavigationController.NavigationBar.Frame.Size.Height);
 
-            _scanView = new AnylineOCRModuleView(frame);
+            Console.WriteLine($"frame: {frame.X}, {frame.Y}, {frame.Width}, {frame.Height}");
+            _scanView = new AnylineOCRModuleView(frame);            
 
             // We'll define the OCR Config here:
             _ocrConfig = new ALOCRConfig();

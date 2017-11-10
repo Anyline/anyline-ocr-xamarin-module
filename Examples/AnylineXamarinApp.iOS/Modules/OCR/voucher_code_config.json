@@ -1,5 +1,5 @@
 {
-    "captureResolution":"1080",
+    "captureResolution":"1080p",
     "cutout": {
         "style": "rect",
         "maxWidthPercent": "80%",

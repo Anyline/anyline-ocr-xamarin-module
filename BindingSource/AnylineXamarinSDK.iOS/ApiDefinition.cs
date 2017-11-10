@@ -1256,7 +1256,7 @@ namespace AnylineXamarinSDK.iOS
     // @interface AnylineAbstractModuleView : UIView
     [BaseType(typeof(UIView))]
     interface AnylineAbstractModuleView
-    {        
+    {
         [Wrap("WeakDebugDelegate")]
         AnylineDebugDelegate DebugDelegate { get; set; }
 
@@ -1826,12 +1826,7 @@ namespace AnylineXamarinSDK.iOS
     // @interface AnylineEnergyModuleView : AnylineAbstractModuleView
     [BaseType(typeof(AnylineAbstractModuleView))]
     interface AnylineEnergyModuleView
-    {
-        //ADDED
-        // -(instancetype)initWithFrame:(CGRect)frame;
-        [Export("initWithFrame:")]
-        IntPtr Constructor(CGRect frame);
-
+    {        
         // @property (nonatomic, strong) ALMeterScanViewPlugin * meterScanViewPlugin;
         [Export("meterScanViewPlugin", ArgumentSemantic.Strong)]
         ALMeterScanViewPlugin MeterScanViewPlugin { get; set; }
@@ -1893,11 +1888,6 @@ namespace AnylineXamarinSDK.iOS
     [BaseType(typeof(AnylineAbstractModuleView))]
     interface AnylineBarcodeModuleView
     {
-        //ADDED
-        // -(instancetype)initWithFrame:(CGRect)frame;
-        [Export("initWithFrame:")]
-        IntPtr Constructor(CGRect frame);
-
         // @property (nonatomic, strong) ALBarcodeScanPlugin * barcodeScanPlugin;
         [Export("barcodeScanPlugin", ArgumentSemantic.Strong)]
         ALBarcodeScanPlugin BarcodeScanPlugin { get; set; }
@@ -2077,11 +2067,6 @@ namespace AnylineXamarinSDK.iOS
     [BaseType(typeof(AnylineAbstractModuleView))]
     interface AnylineMRZModuleView
     {
-        //ADDED
-        // -(instancetype)initWithFrame:(CGRect)frame;
-        [Export("initWithFrame:")]
-        IntPtr Constructor(CGRect frame);
-
         // @property (nonatomic, strong) ALMRZScanViewPlugin * mrzScanViewPlugin;
         [Export("mrzScanViewPlugin", ArgumentSemantic.Strong)]
         ALMRZScanViewPlugin MrzScanViewPlugin { get; set; }
@@ -2326,11 +2311,6 @@ namespace AnylineXamarinSDK.iOS
     [BaseType(typeof(AnylineAbstractModuleView))]
     interface AnylineOCRModuleView
     {
-        //ADDED
-        // -(instancetype)initWithFrame:(CGRect)frame;
-        [Export("initWithFrame:")]
-        IntPtr Constructor(CGRect frame);
-
         // @property (nonatomic, strong) ALOCRScanViewPlugin * ocrScanViewPlugin;
         [Export("ocrScanViewPlugin", ArgumentSemantic.Strong)]
         ALOCRScanViewPlugin OcrScanViewPlugin { get; set; }
@@ -2566,11 +2546,6 @@ namespace AnylineXamarinSDK.iOS
     [BaseType(typeof(AnylineAbstractModuleView))]
     interface AnylineDocumentModuleView
     {
-        //ADDED
-        // -(instancetype)initWithFrame:(CGRect)frame;
-        [Export("initWithFrame:")]
-        IntPtr Constructor(CGRect frame);
-
         // @property (nonatomic, strong) ALDocumentScanViewPlugin * documentScanViewPlugin;
         [Export("documentScanViewPlugin", ArgumentSemantic.Strong)]
         ALDocumentScanViewPlugin DocumentScanViewPlugin { get; set; }
@@ -2713,11 +2688,6 @@ namespace AnylineXamarinSDK.iOS
     [BaseType(typeof(AnylineAbstractModuleView))]
     interface AnylineLicensePlateModuleView
     {
-        //ADDED
-        // -(instancetype)initWithFrame:(CGRect)frame;
-        [Export("initWithFrame:")]
-        IntPtr Constructor(CGRect frame);
-
         // @property (nonatomic, strong) ALLicensePlateScanPlugin * licensePlateScanPlugin;
         [Export("licensePlateScanPlugin", ArgumentSemantic.Strong)]
         ALLicensePlateScanPlugin LicensePlateScanPlugin { get; set; }
