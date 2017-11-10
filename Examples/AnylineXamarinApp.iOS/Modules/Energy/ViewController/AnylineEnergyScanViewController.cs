@@ -34,6 +34,9 @@ namespace AnylineXamarinApp.iOS.Modules.Energy.ViewController
         UIView _toggleBarcodeView;
         string _barcodeResult = "";
 
+        object _lock = new object();
+        bool _isLocked = false;
+
         public AnylineEnergyScanViewController(string name, Dictionary<string,ALScanMode> segmentItems, string labelText, int defaultIndex)
         {
             Title = name;
@@ -163,21 +166,36 @@ namespace AnylineXamarinApp.iOS.Modules.Energy.ViewController
 
         private void HandleSegmentChange(object sender, EventArgs e)
         {
-            var uiSegmentedControl = sender as UISegmentedControl;
-            if (uiSegmentedControl != null)
+            lock (_lock)
             {
-                var selectedSegmentId = uiSegmentedControl.SelectedSegment;
-                
-                var scanMode = _segmentItems.ElementAt((int)selectedSegmentId).Value;
-                Console.WriteLine("Scanmode: {0}", scanMode);
-
-                UpdateInfoLabel(scanMode);
-                _error = null;
-                _anylineEnergyView.SetScanMode(scanMode, out _error);
-
-                if (_error != null)
-                    (_alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
+                if (_isLocked)
+                    return;
+                _isLocked = true;
             }
+            try
+            {
+                var uiSegmentedControl = sender as UISegmentedControl;
+                if (uiSegmentedControl != null)
+                {
+                    var selectedSegmentId = uiSegmentedControl.SelectedSegment;
+
+                    var scanMode = _segmentItems.ElementAt((int)selectedSegmentId).Value;
+                    Console.WriteLine("Scanmode: {0}", scanMode);
+
+                    UpdateInfoLabel(scanMode);
+                    _error = null;
+                    _anylineEnergyView.SetScanMode(scanMode, out _error);
+
+                    if (_error != null)
+                        (_alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
+                }
+            }
+            catch (Exception) { }
+            finally
+            {
+                lock (_lock)
+                    _isLocked = false;
+            }            
         }
         
         //update the info text for certain energy scan modes
