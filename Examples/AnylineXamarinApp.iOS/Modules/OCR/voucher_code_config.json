@@ -1,5 +1,5 @@
 {
-    "captureResolution":"1080p",
+    "captureResolution":"1080",
     "cutout": {
         "style": "rect",
         "maxWidthPercent": "80%",
@@ -22,11 +22,11 @@
     },
     "beepOnResult": true,
     "vibrateOnResult": true,
-    "blinkAnimationOnResult": true, 
-    "cancelOnResult": false,
+    "blinkAnimationOnResult": true,
+    "cancelOnResult": true,
     "visualFeedback": {
         "style": "contour_point",
-        "strokeColor": "0099FF",
+        "strokeColor": "32ADFF",
         "strokeWidth": 3
     }
 }

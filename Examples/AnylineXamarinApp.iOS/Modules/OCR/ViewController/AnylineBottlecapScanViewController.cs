@@ -77,8 +77,7 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
             // We load the UI config for our Bottlecap view from a .json file.
             string configFile = NSBundle.MainBundle.PathForResource(@"Modules/OCR/bottlecap_config", @"json");
             _scanView.CurrentConfiguration = ALUIConfiguration.CutoutConfigurationFromJsonFile(configFile);
-            _scanView.TranslatesAutoresizingMaskIntoConstraints = false;
-
+            
             // After setup is complete we add the module to the view of this view controller
             View.AddSubview(_scanView);
 

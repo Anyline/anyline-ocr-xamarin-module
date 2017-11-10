@@ -63,8 +63,7 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
             
             // We load the UI config for our IBAN view from a .json file.
             string configFile = NSBundle.MainBundle.PathForResource(@"Modules/OCR/iban_config", @"json");
-            _scanView.CurrentConfiguration = ALUIConfiguration.CutoutConfigurationFromJsonFile(configFile);
-            _scanView.TranslatesAutoresizingMaskIntoConstraints = false;
+            _scanView.CurrentConfiguration = ALUIConfiguration.CutoutConfigurationFromJsonFile(configFile);            
 
             // We stop scanning manually
             _scanView.CancelOnResult = false;

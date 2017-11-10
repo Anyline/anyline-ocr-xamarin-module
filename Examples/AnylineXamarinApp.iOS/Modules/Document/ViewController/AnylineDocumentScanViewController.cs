@@ -55,9 +55,7 @@ namespace AnylineXamarinApp.iOS.Modules.Document.ViewController
 
             //stop scanning on result
             _scanView.CancelOnResult = true;
-
-            _scanView.TranslatesAutoresizingMaskIntoConstraints = false;
-            
+                        
             // to set certain supported ratios, they can be provided as follows:
             //NSNumber[] ratios = { DocumentRatio.BusinessCardLandscape, DocumentRatio.DINAXLandscape };
             //_scanView.SetDocumentRatios(ratios);

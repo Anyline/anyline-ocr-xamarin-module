@@ -33,7 +33,7 @@ namespace AnylineXamarinApp.iOS.Modules.LicensePlate.ViewController
         {
             base.ViewDidLoad();
 
-            // Initializing the Voucher Code module.
+            // Initializing the License Plate module.
             CGRect frame = UIScreen.MainScreen.ApplicationFrame;
             frame = new CGRect(frame.X,
                 frame.Y + NavigationController.NavigationBar.Frame.Size.Height,

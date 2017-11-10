@@ -30,25 +30,14 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
         {
             base.ViewDidLoad();
             
-            //TODO: REMOVE
-            NavigationController.NavigationBar.Alpha = 0.5f;
-
-            /*
-             * CGRect frame = [[UIScreen mainScreen] applicationFrame];
-
-    frame = CGRectMake(frame.origin.x, frame.origin.y + self.navigationController.navigationBar.frame.size.height, frame.size.width, frame.size.height - self.navigationController.navigationBar.frame.size.height);
-    self.ocrModuleView = [[AnylineOCRModuleView alloc] initWithFrame:frame];
-             */
-
             // Initializing the Voucher Code module.
-            frame = UIScreen.MainScreen.ApplicationFrame;
+            CGRect frame = UIScreen.MainScreen.ApplicationFrame;
             frame = new CGRect(frame.X,
                 frame.Y + NavigationController.NavigationBar.Frame.Size.Height,
                 frame.Width,
                 frame.Height - NavigationController.NavigationBar.Frame.Size.Height);
 
-            Console.WriteLine($"frame: {frame.X}, {frame.Y}, {frame.Width}, {frame.Height}");
-            _scanView = new AnylineOCRModuleView(frame);            
+            _scanView = new AnylineOCRModuleView(frame);
 
             // We'll define the OCR Config here:
             _ocrConfig = new ALOCRConfig();
@@ -73,10 +62,9 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
             _scanView.CancelOnResult = false;
 
             // We load the UI config for our VoucherCode view from a .json file.
-            String configFile = NSBundle.MainBundle.PathForResource(@"Modules/OCR/voucher_code_config", @"json");
+            string configFile = NSBundle.MainBundle.PathForResource(@"Modules/OCR/voucher_code_config", @"json");
             _scanView.CurrentConfiguration = ALUIConfiguration.CutoutConfigurationFromJsonFile(configFile);
-            _scanView.TranslatesAutoresizingMaskIntoConstraints = false;
-
+            
             // After setup is complete we add the module to the view of this view controller
             View.AddSubview(_scanView);
 
