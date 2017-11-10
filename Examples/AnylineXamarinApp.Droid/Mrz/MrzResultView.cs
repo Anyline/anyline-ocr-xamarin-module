@@ -2,6 +2,8 @@ using Android.Content;
 using Android.Text.Format;
 using Android.Widget;
 using AT.Nineyards.Anyline.Modules.Mrz;
+using Java.Lang;
+using Java.Util;
 
 namespace AnylineXamarinApp.Mrz
 {
@@ -16,9 +18,7 @@ namespace AnylineXamarinApp.Mrz
         private TextView _dayOfBirthText;
         private TextView _expirationDateText;
         private TextView _sexText;
-        private TextView _mrzText;
-
-        private Java.Text.DateFormat _mrzDateFormat;
+        private TextView _mrzText;        
 
         public MrzResultView(Context context) : base(context) { Init(); }
 
@@ -32,17 +32,14 @@ namespace AnylineXamarinApp.Mrz
             Inflate(Context, Resource.Layout.MrzResult, this);
 
             _typeText = FindViewById<TextView>(Resource.Id.text_type);
-            _nationalCodeText = FindViewById<TextView>(Resource.Id.text_country_code_national);
-            //_issueCodeText = FindViewById<TextView>(Resource.Id.text_country_code_national);
+            _nationalCodeText = FindViewById<TextView>(Resource.Id.text_country_code_national);            
             _numberText = FindViewById<TextView>(Resource.Id.text_number);
             _surNamesText = FindViewById<TextView>(Resource.Id.text_surnames);
             _givenNamesText = FindViewById<TextView>(Resource.Id.text_given_names);
             _dayOfBirthText = FindViewById<TextView>(Resource.Id.text_day_of_birth);
             _expirationDateText = FindViewById<TextView>(Resource.Id.text_expiration_date);
             _sexText = FindViewById<TextView>(Resource.Id.text_sex);
-            _mrzText = FindViewById<TextView>(Resource.Id.text_mrz);
-
-            _mrzDateFormat = DateFormat.GetDateFormat(Context);
+            _mrzText = FindViewById<TextView>(Resource.Id.text_mrz);            
         }
 
         public void SetIdentification(Identification identification)
@@ -52,12 +49,30 @@ namespace AnylineXamarinApp.Mrz
             _numberText.SetText(identification.DocumentNumber, TextView.BufferType.Normal);
             _surNamesText.SetText(identification.SurNames, TextView.BufferType.Normal);
             _givenNamesText.SetText(identification.GivenNames, TextView.BufferType.Normal);
-            _dayOfBirthText.SetText(_mrzDateFormat.Format(identification.DayOfBirthObject), TextView.BufferType.Normal);
-            _expirationDateText.SetText(_mrzDateFormat.Format(identification.ExpirationDateObject), TextView.BufferType.Normal);
+            _dayOfBirthText.SetText(GetStringFromDateObject(identification.DayOfBirthObject, identification.DayOfBirth), TextView.BufferType.Normal);
+            _expirationDateText.SetText(GetStringFromDateObject(identification.ExpirationDateObject, identification.ExpirationDate), TextView.BufferType.Normal);
             _sexText.SetText(identification.Sex, TextView.BufferType.Normal);
 
             string mrzString = identification.MrzString.Replace("\\n", "\n");            
             _mrzText.SetText(mrzString, TextView.BufferType.Normal);
+        }
+
+        string GetStringFromDateObject(Date dateObject, string fallbackString)
+        {
+            var format = DateFormat.GetDateFormat(Context);
+            var str = "";
+            try
+            {
+                if (dateObject != null)
+                    str = format.Format(dateObject);
+                else
+                    str = fallbackString;                
+            }
+            catch (Exception)
+            {
+                return fallbackString;
+            }
+            return str;
         }
     }
 }

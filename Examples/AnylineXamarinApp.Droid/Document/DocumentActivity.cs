@@ -45,7 +45,7 @@ namespace AnylineXamarinApp.Document
 
             _scanView = FindViewById<DocumentScanView>(Resource.Id.document_scan_view);
             _imageViewResult = FindViewById<ImageView>(Resource.Id.image_result);
-
+            
             // clear image
             _imageViewResult.Click += ResultImage_Click;
 
