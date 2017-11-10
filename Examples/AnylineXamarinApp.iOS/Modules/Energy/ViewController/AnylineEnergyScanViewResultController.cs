@@ -47,7 +47,8 @@ namespace AnylineXamarinApp.iOS.Modules.Energy.ViewController
             _barcodeResultLabel = new UILabel();
             _barcodeResultLabel.Center = new CGPoint(View.Frame.Size.Width / 2, _meterImageView.Center.Y + _meterImageView.Frame.Size.Height);
             _barcodeResultLabel.TextColor = UIColor.White;
-            _barcodeResultLabel.Font = UIFont.SystemFontOfSize(28);
+            _barcodeResultLabel.Font = UIFont.SystemFontOfSize(18);
+            _barcodeResultLabel.LineBreakMode = UILineBreakMode.WordWrap;
             View.AddSubview(_barcodeResultLabel);
 
         }
@@ -64,7 +65,6 @@ namespace AnylineXamarinApp.iOS.Modules.Energy.ViewController
             _barcodeResultLabel.SizeToFit();
             _barcodeResultLabel.Center = new CGPoint(_barcodeResultLabel.Center.X - _barcodeResultLabel.Frame.Size.Width / 2, _barcodeResultLabel.Center.Y);
             Title = "Result";
-            _meterReadingView.SetScanMode(ScanMode);
         }
     }
 }

@@ -60,7 +60,7 @@ namespace AnylineXamarinApp.iOS.Modules.Barcode.ViewController
 
             _resultLabel.TextAlignment = UITextAlignment.Center;
             _resultLabel.TextColor = UIColor.White;
-            _resultLabel.Font = UIFont.FromName(@"HelveticaNeue-UltraLight",35);
+            _resultLabel.Font = UIFont.FromName(@"HelveticaNeue-UltraLight", 22);
             _resultLabel.AdjustsFontSizeToFitWidth = true;
 
             View.AddSubview(_resultLabel);

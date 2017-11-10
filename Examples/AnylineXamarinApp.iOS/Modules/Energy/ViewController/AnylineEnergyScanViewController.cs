@@ -101,7 +101,8 @@ namespace AnylineXamarinApp.iOS.Modules.Energy.ViewController
             _toggleBarcodeView.AddSubview(_toggleBarcodeLabel);
             _toggleBarcodeView.AddSubview(_toggleBarcodeSwitch);
 
-            View.AddSubview(_toggleBarcodeView);
+            if (Title != "Heat Meter Scan")
+                View.AddSubview(_toggleBarcodeView);
 
             // We don't need a segment control for only one option:
             if (_segmentItems.Count > 1)

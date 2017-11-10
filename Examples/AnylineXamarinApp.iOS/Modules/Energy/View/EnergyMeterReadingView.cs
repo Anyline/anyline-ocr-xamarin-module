@@ -70,7 +70,7 @@ namespace AnylineXamarinApp.iOS.Modules.Energy.View
 
         private void InitSubViews(int digitsCount)
         {
-            _meterIcon = new UIImageView(UIImage.FromBundle("flamme"));
+            _meterIcon = new UIImageView(new UIImage());
             _meterIcon.Center = new CGPoint(Frame.Size.Width / 2, Frame.Size.Height / 4);
 
             AddSubview(_meterIcon);
@@ -114,29 +114,6 @@ namespace AnylineXamarinApp.iOS.Modules.Energy.View
             }
         }
         
-        public void SetScanMode(ALScanMode scanMode)
-        {
-            switch (scanMode)
-            {
-                case ALScanMode.AnalogMeter:
-                    break;
-                case ALScanMode.HeatMeter4:
-                case ALScanMode.HeatMeter5:
-                case ALScanMode.HeatMeter6:
-                    _meterIcon.Image = UIImage.FromBundle("flamme");
-                    //unit.Text = "m³";
-                    break;
-                case ALScanMode.DigitalMeter:
-                    _meterIcon.Image = UIImage.FromBundle("blitz");
-                    //unit.Text = "kWh";
-                    break;
-                default:
-                    _meterIcon.Image = null;
-                    //unit.Text = "m³";
-                    break;
-            }
-        }
-
         public void SetText(string text)
         {            
             if (text.Length <= 9)
