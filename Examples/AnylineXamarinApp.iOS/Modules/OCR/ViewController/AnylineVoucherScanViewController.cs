@@ -161,6 +161,24 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
             Dispose();
         }
 
+        new void Dispose()
+        {
+            //un-register any event handlers here, if you have any
+
+            //remove result view
+            _resultView?.RemoveFromSuperview();
+            _resultView?.Dispose();
+            _resultView = null;
+
+            //we have to erase the scan view so that there are no dependencies for the viewcontroller left.
+            _scanView?.RemoveFromSuperview();
+            _scanView?.Dispose();
+            _scanView = null;
+
+            GC.Collect(GC.MaxGeneration);
+
+            base.Dispose();
+        }
 
         /*
         This is the main delegate method Anyline uses to report its results

@@ -183,16 +183,27 @@ namespace AnylineXamarinApp.iOS.Modules.Mrz.ViewController
         public override void ViewDidDisappear(bool animated)
         {
             base.ViewDidDisappear(animated);
+            
+            Dispose();
+        }
 
+        new void Dispose()
+        {
+            //un-register any event handlers here, if you have any
+            
             //remove identification view
             _idView?.RemoveFromSuperview();
             _idView?.Dispose();
+            _idView = null;
 
             //we have to erase the scan view so that there are no dependencies for the viewcontroller left.
             _anylineMrzView?.RemoveFromSuperview();
             _anylineMrzView?.Dispose();
+            _anylineMrzView = null;
 
-            Dispose();
+            GC.Collect(GC.MaxGeneration);
+
+            base.Dispose();
         }
     }
 }

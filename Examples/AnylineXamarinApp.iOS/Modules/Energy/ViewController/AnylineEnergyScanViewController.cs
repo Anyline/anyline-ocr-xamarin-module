@@ -23,7 +23,6 @@ namespace AnylineXamarinApp.iOS.Modules.Energy.ViewController
         bool _keepScanViewControllerAlive;
 
         UILabel _selectionLabel;
-        UILabel _infoLabel;
         readonly string _labelText;
         readonly int _defaultIndex;
 
@@ -33,10 +32,7 @@ namespace AnylineXamarinApp.iOS.Modules.Energy.ViewController
         UILabel _toggleBarcodeLabel;
         UIView _toggleBarcodeView;
         string _barcodeResult = "";
-
-        object _lock = new object();
-        bool _isLocked = false;
-
+        
         public AnylineEnergyScanViewController(string name, Dictionary<string,ALScanMode> segmentItems, string labelText, int defaultIndex)
         {
             Title = name;
@@ -134,16 +130,7 @@ namespace AnylineXamarinApp.iOS.Modules.Energy.ViewController
                 _selectionLabel = new UILabel(new CGRect(_meterTypeSegment.Frame.X, _meterTypeSegment.Frame.Y - 35, _meterTypeSegment.Frame.Width, 35));
                 _selectionLabel.TextColor = UIColor.White;
                 _selectionLabel.Text = _labelText;
-                View.AddSubview(_selectionLabel);
-                
-                _infoLabel = new UILabel(new CGRect(0, View.Frame.Y + NavigationController.NavigationBar.Frame.Size.Height + 13, View.Frame.Width, 35));
-                _infoLabel.TextColor = UIColor.White;
-                _infoLabel.Text = "";
-                _infoLabel.TextAlignment = UITextAlignment.Center;
-                View.AddSubview(_infoLabel);
-
-                UpdateInfoLabel(_anylineEnergyView.ScanMode);
-            
+                View.AddSubview(_selectionLabel);            
             }
         }
 
@@ -165,52 +152,23 @@ namespace AnylineXamarinApp.iOS.Modules.Energy.ViewController
         }
 
         private void HandleSegmentChange(object sender, EventArgs e)
-        {
-            lock (_lock)
+        {                    
+            var uiSegmentedControl = sender as UISegmentedControl;
+            if (uiSegmentedControl != null)
             {
-                if (_isLocked)
-                    return;
-                _isLocked = true;
-            }
-            try
-            {
-                var uiSegmentedControl = sender as UISegmentedControl;
-                if (uiSegmentedControl != null)
-                {
-                    var selectedSegmentId = uiSegmentedControl.SelectedSegment;
+                var selectedSegmentId = uiSegmentedControl.SelectedSegment;
 
-                    var scanMode = _segmentItems.ElementAt((int)selectedSegmentId).Value;
-                    Console.WriteLine("Scanmode: {0}", scanMode);
+                var scanMode = _segmentItems.ElementAt((int)selectedSegmentId).Value;
+                Console.WriteLine("Scanmode: {0}", scanMode);
+                
+                _error = null;
+                _anylineEnergyView.SetScanMode(scanMode, out _error);
 
-                    UpdateInfoLabel(scanMode);
-                    _error = null;
-                    _anylineEnergyView.SetScanMode(scanMode, out _error);
-
-                    if (_error != null)
-                        (_alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
-                }
-            }
-            catch (Exception) { }
-            finally
-            {
-                lock (_lock)
-                    _isLocked = false;
-            }            
+                if (_error != null)
+                    (_alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
+            }      
         }
         
-        //update the info text for certain energy scan modes
-        private void UpdateInfoLabel(ALScanMode scanMode)
-        {
-            var desc = "";
-            switch (scanMode)
-            {
-                case ALScanMode.AnalogMeter:
-                    desc = "";
-                    break;                
-            }
-            _infoLabel.Text = desc;
-        }
-
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
@@ -298,7 +256,12 @@ namespace AnylineXamarinApp.iOS.Modules.Energy.ViewController
 
             //don't clean up objects, if we want the controller to be kept alive
             if (_keepScanViewControllerAlive) return;
+            
+            Dispose();
+        }
 
+        new void Dispose()
+        {            
             //we have to un-register the event handlers because else the whole viewcontroller will be kept in the garbage collector.
             if (_meterTypeSegment != null) _meterTypeSegment.ValueChanged -= HandleSegmentChange;
 
@@ -316,18 +279,19 @@ namespace AnylineXamarinApp.iOS.Modules.Energy.ViewController
             _toggleBarcodeView.RemoveFromSuperview();
             _toggleBarcodeView?.Dispose();
 
-            _infoLabel?.Dispose();
-
             _segmentItems = null;
-            
+
             _alert?.Dispose();
             _error?.Dispose();
 
             //we have to erase the scan view so that there are no dependencies for the viewcontroller left.
             _anylineEnergyView?.RemoveFromSuperview();
             _anylineEnergyView?.Dispose();
+            _anylineEnergyView = null;
 
-            Dispose();
+            GC.Collect(GC.MaxGeneration);
+
+            base.Dispose();
         }
 
         void IAnylineNativeBarcodeDelegate.DidFindBarcodeResult(ALCaptureDeviceManager captureDeviceManager, string scanResult, string barcodeType)

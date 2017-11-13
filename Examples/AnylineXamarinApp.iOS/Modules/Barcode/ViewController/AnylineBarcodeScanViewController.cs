@@ -110,13 +110,22 @@ namespace AnylineXamarinApp.iOS.Modules.Barcode.ViewController
         public override void ViewDidDisappear(bool animated)
         {
             base.ViewDidDisappear(animated);
-
-            //un-register any event handlers here, if you have any
-            
-            //we have to erase the scan view so that there are no dependencies for the viewcontroller left.
-            _anylineBarcodeView.RemoveFromSuperview();
-            _anylineBarcodeView.Dispose();            
             Dispose();
-        }        
+        }
+        
+        new void Dispose()
+        {
+            //un-register any event handlers here, if you have any
+
+            //we have to erase the scan view so that there are no dependencies for the viewcontroller left.
+
+            _anylineBarcodeView?.RemoveFromSuperview();
+            _anylineBarcodeView?.Dispose();
+            _anylineBarcodeView = null;
+
+            GC.Collect(GC.MaxGeneration);
+
+            base.Dispose();
+        }
     }
 }

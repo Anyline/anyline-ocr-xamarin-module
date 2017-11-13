@@ -20,6 +20,8 @@ namespace AnylineXamarinApp.iOS
 
         public const string LicenseKey = "eyAiYW5kcm9pZElkZW50aWZpZXIiOiBbICJBVC5BbnlsaW5lLlhhbWFyaW4uQXBwLkRyb2lkIiwgIkFULkFueWxpbmUuWGFtYXJpbi5Gb3Jtcy5BcHAuRHJvaWQiIF0sICJkZWJ1Z1JlcG9ydGluZyI6ICJvbiIsICJpb3NJZGVudGlmaWVyIjogWyAiQVQuQW55bGluZS5YYW1hcmluLkFwcC5pT1MiLCAiQVQuQW55bGluZS5YYW1hcmluLkZvcm1zLkFwcC5pT1MiIF0sICJsaWNlbnNlS2V5VmVyc2lvbiI6IDIsICJtYWpvclZlcnNpb24iOiAiMyIsICJwaW5nUmVwb3J0aW5nIjogdHJ1ZSwgInBsYXRmb3JtIjogWyAiaU9TIiwgIkFuZHJvaWQiIF0sICJzY29wZSI6IFsgIkFMTCIgXSwgInNob3dXYXRlcm1hcmsiOiB0cnVlLCAidG9sZXJhbmNlRGF5cyI6IDkwLCAidmFsaWQiOiAiMjAyMC0wMS0wMSIgfQprcS9WL0wrSGlpN0NzL2tXa1E5VWRzbGxzd0hOanphelZEZ2Z2WU1LLytJN1VHYmlITy9SblMrdGZIeUZxQmlJCkN3QXkrdkk5RnJpOVc5MStGdjJTS2FJNS8vLzZhUVgyVXlSVC9CaVRKM1QzTXBVOEIrMWpFZTQxbCtXejRqaFgKMlZ6dENpT2E3cit3d2RlTm1GUFpxdGVUTG5BRmgxQWgycDZpMzgyMWhOb3FsVHNxcFlJdjN3cWdCbWg5clh2WgpBM01pRnpkZ0dab1gzbzNINzFGRUtJME9JSy9ZRkNJRk5nVEI0MFhBM3ZTOXk2ak1FR2E5bjVQRHY5MU5NZEFRCnlHTzcxRVVuZE9ndmJmTkJWbVJYNUR1MGVrZ0RGYUNFMUwweVpUQ3dhMFJVTStLSE9PcXA3TThYOWVFdjJ0RVkKVEcyejdydGQ5YytiRlBvTU5vcUpwZz09Cg==";
 
+        public UIViewController CurrentScanViewController { get; set; }
+
         public Dictionary<string, string[]> TableItems = new Dictionary<string, string[]>
         {
             { "Energy", new[] {
@@ -77,7 +79,7 @@ namespace AnylineXamarinApp.iOS
     {
         protected Dictionary<string, string[]> TableItems;
 
-        protected AnylineViewController Parent;
+        protected AnylineViewController AnylineViewController;
 
         protected string CellIdentifier = "TableCell";
 
@@ -87,7 +89,7 @@ namespace AnylineXamarinApp.iOS
         public TableSource(Dictionary<string, string[]> tableItems, AnylineViewController parent)
         {
             TableItems = tableItems;
-            Parent = parent;            
+            AnylineViewController = parent;            
         }
         
         public override string TitleForHeader(UITableView tableView, nint section)
@@ -152,6 +154,12 @@ namespace AnylineXamarinApp.iOS
             if (_isNavigating) return;
             lock (_lock) _isNavigating = true;
             
+            if (AnylineViewController.CurrentScanViewController != null)
+            {
+                AnylineViewController.CurrentScanViewController.Dispose();
+                AnylineViewController.CurrentScanViewController = null;
+            }
+
             var name = TableItems.ElementAt(indexPath.Section).Value.ElementAt(indexPath.Row);            
             switch (indexPath.Section)
             {
@@ -180,40 +188,45 @@ namespace AnylineXamarinApp.iOS
                             scanModeItems.Add("", ALScanMode.SerialNumber);
                             break;
                     }
-
-                    Parent.NavigationController.PushViewController(new AnylineEnergyScanViewController(name, scanModeItems, labelText, defaultIndex), true);
+                    AnylineViewController.CurrentScanViewController = new AnylineEnergyScanViewController(name, scanModeItems, labelText, defaultIndex);
                     break;
 
                 case 1: //Identification
                     //Passport / ID MRZ Scan
-                    Parent.NavigationController.PushViewController(new AnylineMrzScanViewController(name), true);
+                    AnylineViewController.CurrentScanViewController = new AnylineMrzScanViewController(name);
                     break;
 
                 case 2: //Barcodes
                     //Barcode Scan
-                    Parent.NavigationController.PushViewController(new AnylineBarcodeScanViewController(name), true);
+                    AnylineViewController.CurrentScanViewController = new AnylineBarcodeScanViewController(name);
                     break;
 
                 case 3: //Fintech
                     //Iban Scan
-                    Parent.NavigationController.PushViewController(new AnylineIBANScanViewController(name), true);
+                    AnylineViewController.CurrentScanViewController = new AnylineIBANScanViewController(name);
                     break;
 
                 case 4: //Document
                     //Document Scan
-                    Parent.NavigationController.PushViewController(new AnylineDocumentScanViewController(name), true);
+                    AnylineViewController.CurrentScanViewController = new AnylineDocumentScanViewController(name);
                     break;
 
                 case 5: //Loyalty
                     if (indexPath.Row == 0) //Voucher Code Scan
-                        Parent.NavigationController.PushViewController(new AnylineVoucherScanViewController(name), true);
+                        AnylineViewController.CurrentScanViewController = new AnylineVoucherScanViewController(name);
                     if (indexPath.Row == 1) //Bottlecap Code Scan
-                        Parent.NavigationController.PushViewController(new AnylineBottlecapScanViewController(name), true);                    
+                        AnylineViewController.CurrentScanViewController = new AnylineBottlecapScanViewController(name);
                     break;
                 case 6: //License Plate
-                    Parent.NavigationController.PushViewController(new AnylineLicensePlateScanViewController(name), true);                    
+                    AnylineViewController.CurrentScanViewController = new AnylineLicensePlateScanViewController(name);
+                    break;
+                default:
                     break;
             }
+
+            // navigate to the newly created scan view controller
+            if (AnylineViewController.CurrentScanViewController != null)            
+                AnylineViewController.NavigationController.PushViewController(AnylineViewController.CurrentScanViewController, true);
 
             // workaround so the row selection is not creating a scanViewController twice
             await Task.Delay(200);
