@@ -6,7 +6,7 @@
         "alignment": "top_half",
         "ratioFromSize" : {
             "width": 720,
-            "height": 160
+            "height": 144
         },
         "strokeWidth": 2,
         "strokeColor": "FFFFFF",

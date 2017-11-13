@@ -145,15 +145,7 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
         public override void ViewDidDisappear(bool animated)
         {
             base.ViewDidDisappear(animated);
-            
-            //remove result view
-            _resultView?.RemoveFromSuperview();
-            _resultView?.Dispose();
-            
-            //we have to erase the scan view so that there are no dependencies for the viewcontroller left.
-            _scanView?.RemoveFromSuperview();
-            _scanView?.Dispose();
-            
+                        
             Dispose();
         }
 
