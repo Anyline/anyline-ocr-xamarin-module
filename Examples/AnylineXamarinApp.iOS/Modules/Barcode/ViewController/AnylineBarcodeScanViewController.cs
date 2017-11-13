@@ -99,6 +99,8 @@ namespace AnylineXamarinApp.iOS.Modules.Barcode.ViewController
         {
             base.ViewWillDisappear(animated);
 
+            if (_anylineBarcodeView == null) return;
+
             // We have to stop scanning before the view dissapears
             _error = null;
             if (!_anylineBarcodeView.CancelScanningAndReturnError(out _error))

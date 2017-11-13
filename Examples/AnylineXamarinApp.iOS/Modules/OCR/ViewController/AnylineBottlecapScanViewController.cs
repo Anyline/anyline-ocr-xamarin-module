@@ -139,14 +139,15 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
         public void StopAnyline()
         {
             if (!_isScanning) return;
+            _isScanning = false;
+
+            if (_resultView == null || _scanView == null) return;
 
             _error = null;
             if (!_scanView.CancelScanningAndReturnError(out _error))
             {
                 (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
-            else
-                _isScanning = false;
 
             View.BringSubviewToFront(_resultView);
         }
@@ -192,12 +193,13 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
         {
             
             StopAnyline();
-            View.BringSubviewToFront(_resultView);
+            if (_resultView != null)
+                View.BringSubviewToFront(_resultView);
 
-            _resultView.UpdateResult(result.Text);
+            _resultView?.UpdateResult(result.Text);
 
             // Present the information to the user
-            _resultView.AnimateFadeIn(View);
+            _resultView?.AnimateFadeIn(View);
         }
 
         void IAnylineOCRModuleDelegate.ReportsRunFailure(AnylineOCRModuleView anylineOCRModuleView, ALOCRError error)

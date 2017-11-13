@@ -126,6 +126,8 @@ namespace AnylineXamarinApp.iOS.Modules.LicensePlate.ViewController
             if (!_isScanning) return;
             _isScanning = false;
 
+            if (_scanView == null) return;
+
             _error = null;
             _scanView.CancelScanningAndReturnError(out _error);
             
@@ -174,16 +176,17 @@ namespace AnylineXamarinApp.iOS.Modules.LicensePlate.ViewController
         void IAnylineLicensePlateModuleDelegate.DidFindResult(AnylineLicensePlateModuleView anylineLicensePlateModuleView, ALLicensePlateResult scanResult)
         {
             StopAnyline();
-            View.BringSubviewToFront(_resultView);
+            if (_resultView != null)
+                View.BringSubviewToFront(_resultView);
 
             var country = scanResult.Country;
             var textResult = scanResult.Result.ToString();
             
-            _resultView.UpdateResult(textResult);
-            _resultView.UpdateCountry(country);
+            _resultView?.UpdateResult(textResult);
+            _resultView?.UpdateCountry(country);
         
             // Present the information to the user
-            _resultView.AnimateFadeIn(View);
+            _resultView?.AnimateFadeIn(View);
         }
     }
 }

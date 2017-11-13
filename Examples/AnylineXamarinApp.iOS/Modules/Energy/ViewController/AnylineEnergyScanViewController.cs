@@ -206,6 +206,9 @@ namespace AnylineXamarinApp.iOS.Modules.Energy.ViewController
         public void StopAnyline()
         {
             if (!_isScanning) return;
+            _isScanning = false;
+
+            if (_anylineEnergyView == null) return;
 
             _error = null;
             _success = _anylineEnergyView.CancelScanningAndReturnError(out _error);
@@ -214,8 +217,6 @@ namespace AnylineXamarinApp.iOS.Modules.Energy.ViewController
             {
                 (_alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
-            else
-                _isScanning = false;
         }
 
         /*

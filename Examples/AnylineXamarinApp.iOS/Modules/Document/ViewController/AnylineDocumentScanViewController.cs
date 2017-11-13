@@ -204,6 +204,8 @@ namespace AnylineXamarinApp.iOS.Modules.Document.ViewController
         {
             if (_disposing) return;
 
+            if (_scanView == null) return;
+
             //we'll go to a temporary new view controller, so we keep this one alive
             _keepScanViewControllerAlive = true;
 

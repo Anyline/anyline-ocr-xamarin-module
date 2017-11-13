@@ -146,14 +146,16 @@ namespace AnylineXamarinApp.iOS.Modules.Mrz.ViewController
         public void StopAnyline()
         {
             if (!_isScanning) return;
+            _isScanning = false;
+
+            if (_anylineMrzView == null || _idView == null)
+                return;
 
             _error = null;
             if (!_anylineMrzView.CancelScanningAndReturnError(out _error))
             {
                 (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
-            else
-                _isScanning = false;
 
             View.BringSubviewToFront(_idView);
         }
@@ -163,6 +165,8 @@ namespace AnylineXamarinApp.iOS.Modules.Mrz.ViewController
         */
         void IAnylineMRZModuleDelegate.DidFindResult(AnylineMRZModuleView anylineMRZModuleView, ALMRZResult scanResult)
         {
+            if (_idView == null) return;
+
             // Because there is a lot of information to be passed along the module
             // uses ALIdentification.
             var identification = scanResult.Result as ALIdentification;
