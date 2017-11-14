@@ -27,7 +27,7 @@
         "strokeColor": "FF0000",
         "animationDuration": 150,
         "cornerRadius": 2,
-        "strokeWidth": 4
+        "strokeWidth": 4,
     },
     "beepOnResult": false,
     "vibrateOnResult": false,

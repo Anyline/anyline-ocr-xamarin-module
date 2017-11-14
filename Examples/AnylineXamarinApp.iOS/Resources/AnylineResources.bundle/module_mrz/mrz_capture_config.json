@@ -15,6 +15,7 @@
         "strokeColor": "FFFFFF",
         "outerColor": "000000",
         "outerAlpha": 0.3,
+        "feedbackStrokeColor": "000000",
         "cropPadding": {
             "x": -30,
             "y": -90
@@ -32,7 +33,7 @@
     },
     "flash": {
         "mode": "manual",
-        "alignment": "top_left"
+        "alignment": "top_left",
     },
     "beepOnResult": true,
     "vibrateOnResult": true,
