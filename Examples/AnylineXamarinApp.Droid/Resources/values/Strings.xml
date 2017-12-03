@@ -9,6 +9,7 @@
   <string name="scan_heat_meter">Scan Heat Meter</string>
   <string name="scan_analog_digital_meter">Scan Analog/Digital Meter</string>
   <string name="scan_serial_numbers">Scan Serial Numbers</string>
+  <string name="scan_dial_meters">Scan Dial Meters</string>
 
   <string name="scan_barcode">Scan Barcode</string>
   <string name="scan_mrz">Scan MRZ of Passport or ID</string>

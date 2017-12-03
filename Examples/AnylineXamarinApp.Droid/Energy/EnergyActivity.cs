@@ -154,7 +154,11 @@ namespace AnylineXamarinApp.Energy
                 SetTitle(Resource.String.scan_serial_numbers);
                 _scanView.SetScanMode(EnergyScanView.ScanMode.SerialNumber);
             }
-
+            else if (_energyUseCase.Equals(Resources.GetString(Resource.String.scan_dial_meters)))
+            {
+                SetTitle(Resource.String.scan_dial_meters);
+                _scanView.SetScanMode(EnergyScanView.ScanMode.DialMeter);
+            }
             Util.PopulateRadioGroupWithList(this, radioGroup, _scanList, defaultIndex);
 
             // Switch the scan mode depending on user selection
