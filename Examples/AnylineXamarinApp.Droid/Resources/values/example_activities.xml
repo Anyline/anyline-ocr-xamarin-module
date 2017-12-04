@@ -10,6 +10,7 @@
     <item>@string/scan_analog_digital_meter</item>
     <item>@string/scan_serial_numbers</item>
     <item>@string/scan_dial_meters</item>
+    <item>@string/scan_dot_matrix_meters</item>
     
     <item>@string/category_identification</item>    
     <item>@string/scan_mrz</item>
@@ -37,6 +38,7 @@
   <string-array
       name="example_activity_classes">
     <item>HEADER</item>
+    <item>AnylineXamarinApp.Energy.EnergyActivity</item>
     <item>AnylineXamarinApp.Energy.EnergyActivity</item>
     <item>AnylineXamarinApp.Energy.EnergyActivity</item>
     <item>AnylineXamarinApp.Energy.EnergyActivity</item>
