@@ -5,7 +5,7 @@
 			<id>Anyline.Xamarin.SDK</id>
 
 			<!-- The package version number that is used when resolving dependencies -->
-			<version>3.18.0</version>
+			<version>3.19.0</version>
 
 			<!-- Authors contain text that appears directly on the gallery -->
 			<authors>Anyline GmbH</authors>
@@ -92,11 +92,14 @@
 			<file src="AnylineResources.bundle\module_energy\analog_meter_capture_config.json" target="..\..\AnylineResources.bundle\module_energy\" />
 			<file src="AnylineResources.bundle\module_energy\dial_meter.ale" target="..\..\AnylineResources.bundle\module_energy\" />
 			<file src="AnylineResources.bundle\module_energy\dial_meter_capture_config.json" target="..\..\AnylineResources.bundle\module_energy\" />
+			<file src="AnylineResources.bundle\module_energy\dot_matrix_meter.ale" target="..\..\AnylineResources.bundle\module_energy\" />
+			<file src="AnylineResources.bundle\module_energy\dot_matrix_meter_capture_config.json" target="..\..\AnylineResources.bundle\module_energy\" />
 			<file src="AnylineResources.bundle\module_energy\digital_heat_meter.ale" target="..\..\AnylineResources.bundle\module_energy\" />
 			<file src="AnylineResources.bundle\module_energy\digital_meter.ale" target="..\..\AnylineResources.bundle\module_energy\" />			
 			<file src="AnylineResources.bundle\module_energy\digital_meter_capture_config.json" target="..\..\AnylineResources.bundle\module_energy\" />
 			<file src="AnylineResources.bundle\module_energy\digital_number_capture_config.json" target="..\..\AnylineResources.bundle\module_energy\" />
 			<file src="AnylineResources.bundle\module_energy\energy_serial.ale" target="..\..\AnylineResources.bundle\module_energy\" />
+			<file src="AnylineResources.bundle\module_energy\energy_serial_alnum_3_letters.ale" target="..\..\AnylineResources.bundle\module_energy\" />
 			<file src="AnylineResources.bundle\module_energy\gas_meter_capture_config.json" target="..\..\AnylineResources.bundle\module_energy\" />
 			<file src="AnylineResources.bundle\module_energy\heat_meter_capture_config.json" target="..\..\AnylineResources.bundle\module_energy\" />
 			<file src="AnylineResources.bundle\module_energy\patternMulti9AndE.json" target="..\..\AnylineResources.bundle\module_energy\" />
