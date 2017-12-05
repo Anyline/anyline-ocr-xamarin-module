@@ -2579,7 +2579,7 @@ namespace AnylineXamarinSDK.iOS
         bool TransformALImageWithSquare([NullAllowed] ALSquare square, [NullAllowed] ALImage image, [NullAllowed] out NSError error);
 
         // since 3.19: @property(nonatomic, assign) CGSize maxOutputResolution;
-        [Export("maxOutputResolution:"), ArgumentSemantic.Assign]
+        [Export("maxOutputResolution")]
         CGSize MaxOutputResolution { get; set; }
     }
 

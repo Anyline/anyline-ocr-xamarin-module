@@ -51,6 +51,9 @@ namespace AnylineXamarinApp.Document
 
             _scanView.SetConfigFromAsset("DocumentConfig.json");
 
+            // you can set the max output resolution of your image here so it will be scaled to a desired size
+            _scanView.SetMaxDocumentOutputResolution(new Java.Lang.Double(35), new Java.Lang.Double(35));
+            
             // you can limit the supported document ratios as follows:
             //Java.Lang.Double[] ratios = { new Java.Lang.Double(DocumentRatio.DinAxLandscape.Ratio), new Java.Lang.Double(DocumentRatio.DinAxPortrait.Ratio) };
             //_scanView.SetDocumentRatios(ratios);

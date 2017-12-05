@@ -55,10 +55,13 @@ namespace AnylineXamarinApp.iOS.Modules.Document.ViewController
 
             //stop scanning on result
             _scanView.CancelOnResult = true;
-                        
+
             // to set certain supported ratios, they can be provided as follows:
             //NSNumber[] ratios = { DocumentRatio.BusinessCardLandscape, DocumentRatio.DINAXLandscape };
             //_scanView.SetDocumentRatios(ratios);
+
+            // you can set the max output resolution of your image here so it will be scaled to a desired size
+            //_scanView.MaxOutputResolution = new CGSize(width, height);
 
             // After setup is complete we add the module to the view of this view controller
             View.AddSubview(_scanView);

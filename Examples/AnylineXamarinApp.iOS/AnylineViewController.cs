@@ -29,7 +29,9 @@ namespace AnylineXamarinApp.iOS
                     "Digital Meter Scan",
                     "Heat Meter Scan",
                     "Analog/Digital Scan",
-                    "Serial Number Scan"
+                    "Serial Number Scan",
+                    "Dial Meter Scan",
+                    "Dot Matrix Meter Scan",
                 }},
             { "Identification", new[] {
                     "Passport / ID MRZ Scan"
@@ -186,6 +188,12 @@ namespace AnylineXamarinApp.iOS
                             break;
                         case 4: //Automatic Serial Number Scan
                             scanModeItems.Add("", ALScanMode.SerialNumber);
+                            break;
+                        case 5: //Dial Meter Scan
+                            scanModeItems.Add("", ALScanMode.DialMeter);
+                            break;
+                        case 6: //Dot Matrix Meter Scan
+                            scanModeItems.Add("", ALScanMode.DotMatrixMeter);
                             break;
                     }
                     AnylineViewController.CurrentScanViewController = new AnylineEnergyScanViewController(name, scanModeItems, labelText, defaultIndex);

@@ -141,7 +141,10 @@
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\digital_meter.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\digital_meter_capture_config.json" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\digital_number_capture_config.json" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\dot_matrix_meter.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\dot_matrix_meter_capture_config.json" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\energy_serial.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\energy_serial_alnum_3_letters.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\gas_meter_capture_config.json" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\heat_meter_capture_config.json" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\patternMulti9AndE.json" />
@@ -152,6 +155,7 @@
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\smart_meter_ger_spec.json" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\water_meter_black_background_capture_config.json" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\water_meter_white_background_capture_config.json" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\tessdata\eng_no_dict.traineddata" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\trained_models\CNN_energy_detection_full_half.enc" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\trained_models\CNN_serialnumbers_combined.enc" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\license_plate_capture_config.json" />
@@ -174,8 +178,6 @@
     <BundleResource Include="Resources\AnylineResources.bundle\module_order_code\order_code.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_order_code\tessdata\OcrB.traineddata" />
     <BundleResource Include="Resources\AnylineResources.bundle\threshold_all.ale" />
-    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\dot_matrix_meter.ale" />
-    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\dot_matrix_meter_capture_config.json" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AnylineXamarinForms\AnylineXamarinForms.csproj">

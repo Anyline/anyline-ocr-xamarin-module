@@ -195,9 +195,10 @@ namespace AnylineXamarinSDK.iOS
         HeatMeter6,
         AutoAnalogDigitalMeter,
         DialMeter,
+        DotMatrixMeter,
         Barcode
     }
-
+    
     [Native]
     public enum ALBarcodeFormat : ulong
     {
