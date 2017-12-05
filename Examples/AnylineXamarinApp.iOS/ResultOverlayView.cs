@@ -9,10 +9,12 @@ using UIKit;
 
 namespace AnylineXamarinApp.iOS
 {
-    class ResultOverlayView : UIView
+    class ResultOverlayView : UIView, IDisposable
     {
-        public UILabel Result { get; set; }        
-        private UIImageView backgroundView;
+        public UILabel Result { get; set; }
+
+        private UIImageView _backgroundView;
+        private bool _disposed;
 
         public ResultOverlayView() : base()
         {
@@ -24,13 +26,13 @@ namespace AnylineXamarinApp.iOS
             //background:
             if (backgroundImage != null)
             {                
-                backgroundView = new UIImageView(new CGRect(0, 0, 320, frame.Size.Height));
-                backgroundView.Image = backgroundImage;
-                backgroundView.ContentMode = UIViewContentMode.ScaleAspectFit;
-                backgroundView.Center = new CGPoint(frame.Width / 2, frame.Height / 2);
+                _backgroundView = new UIImageView(new CGRect(0, 0, 320, frame.Size.Height));
+                _backgroundView.Image = backgroundImage;
+                _backgroundView.ContentMode = UIViewContentMode.ScaleAspectFit;
+                _backgroundView.Center = new CGPoint(frame.Width / 2, frame.Height / 2);
 
-                AddSubview(backgroundView);
-                SendSubviewToBack(backgroundView);
+                AddSubview(_backgroundView);
+                SendSubviewToBack(_backgroundView);
             }
 
             SetupView();
@@ -43,8 +45,8 @@ namespace AnylineXamarinApp.iOS
             nfloat lx = 250;
             nfloat ly = 160;
         
-            nfloat rx = backgroundView.Center.X - lx/2;
-            nfloat ry = backgroundView.Center.Y - ly/2;
+            nfloat rx = _backgroundView.Center.X - lx/2;
+            nfloat ry = _backgroundView.Center.Y - ly/2;
         
             nfloat width  = lx;
             nfloat height = ly;
@@ -102,6 +104,38 @@ namespace AnylineXamarinApp.iOS
                     Alpha = 0;
                     Transform = CGAffineTransform.MakeScale((nfloat)0, (nfloat)0);
                 }, resultAction);
+            }
+        }
+
+        public new void Dispose()
+        {
+            Dispose(true);
+
+            // Use SupressFinalize in case a subclass
+            // of this type implements a finalizer.
+            GC.SuppressFinalize(this);
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            // If you need thread safety, use a lock around these 
+            // operations, as well as in your methods that use the resource.
+            if (!_disposed)
+            {
+                if (disposing)
+                {
+                    if (Result != null)
+                        Result.Dispose();
+
+                    if (_backgroundView != null)
+                        _backgroundView.Dispose();
+                }
+
+                // Indicate that the instance has been disposed.
+                Result = null;
+                _backgroundView = null;
+
+                _disposed = true;
             }
         }
     }

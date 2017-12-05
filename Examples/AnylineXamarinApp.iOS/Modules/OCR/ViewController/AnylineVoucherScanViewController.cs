@@ -14,8 +14,7 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
         ResultOverlayView _resultView;
 
         ALOCRConfig _ocrConfig;
-        CGRect frame;
-
+        
         NSError _error;
         bool _success;
         bool _isScanning;
@@ -91,7 +90,7 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
         [Export("ViewTapSelector:")]
         private void AnimateFadeOut(UIGestureRecognizer sender)
         {
-            _resultView.AnimateFadeOut(View, StartAnyline);
+            _resultView?.AnimateFadeOut(View, StartAnyline);
         }
 
         /*
@@ -107,7 +106,7 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
         }
 
         public void StartAnyline()
-        {
+        {            
             if (_isScanning) return;
 
             //send the result view to the back before we start scanning
@@ -120,7 +119,7 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
                 (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
             else
-                _isScanning = true;
+                _isScanning = true;            
         }
 
         public void StopAnyline()
@@ -137,6 +136,7 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
             }
 
             View.BringSubviewToFront(_resultView);
+            
         }
 
         public override void ViewWillDisappear(bool animated)
@@ -171,6 +171,7 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
             GC.Collect(GC.MaxGeneration);
 
             base.Dispose();
+            
         }
 
         /*
@@ -178,7 +179,6 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
         */
         void IAnylineOCRModuleDelegate.DidFindResult(AnylineOCRModuleView anylineOCRModuleView, ALOCRResult result)
         {
-
             StopAnyline();
             if (_resultView != null)
                 View.BringSubviewToFront(_resultView);
@@ -186,7 +186,7 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
             _resultView?.UpdateResult(result.Text);
 
             // Present the information to the user
-            _resultView?.AnimateFadeIn(View);
+            _resultView?.AnimateFadeIn(View);            
         }
 
         void IAnylineOCRModuleDelegate.ReportsRunFailure(AnylineOCRModuleView anylineOCRModuleView, ALOCRError error)
