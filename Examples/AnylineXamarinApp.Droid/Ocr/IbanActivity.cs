@@ -44,9 +44,10 @@ namespace AnylineXamarinApp.Ocr
             InitIbanResultView();
 
             _scanView.SetConfigFromAsset("IbanConfig.json");
-            
-            _scanView.CopyTrainedData("tessdata/eng_no_dict.traineddata", "d142032d86da1be4dbe22dce2eec18d7");
-            _scanView.CopyTrainedData("tessdata/deu.traineddata", "2d5190b9b62e28fa6d17b728ca195776");
+
+            // as of 3.20, use AnylineOcrConfig.SetLanguages(...) instead of CopyTraineddata and SetTesseractLanguages
+            //_scanView.CopyTrainedData("tessdata/eng_no_dict.traineddata", "d142032d86da1be4dbe22dce2eec18d7");
+            //_scanView.CopyTrainedData("tessdata/deu.traineddata", "2d5190b9b62e28fa6d17b728ca195776");
 
             SetOcrConfig(_scanView);
             
@@ -81,9 +82,10 @@ namespace AnylineXamarinApp.Ocr
             // use the auto mode
             anylineOcrConfig.SetScanMode(AnylineOcrConfig.ScanMode.Auto);
 
-            // set the languages used for OCR
-            anylineOcrConfig.SetTesseractLanguages("eng_no_dict", "deu");
-
+            // SetTesseractLanguages is obsolete as of 3.20. Use SetLanguages instead
+            //anylineOcrConfig.SetTesseractLanguages("eng_no_dict", "deu");
+            anylineOcrConfig.SetLanguages("tessdata/eng_no_dict.traineddata", "tessdata/deu.traineddata");
+            
             // allow only capital letters and numbers
             anylineOcrConfig.CharWhitelist = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
 

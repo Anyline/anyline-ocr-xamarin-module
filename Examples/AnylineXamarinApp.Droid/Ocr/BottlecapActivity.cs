@@ -42,8 +42,9 @@ namespace AnylineXamarinApp.Ocr
             _scanView = FindViewById<AnylineOcrScanView>(Resource.Id.ocr_scan_view);
 
             _scanView.SetConfigFromAsset("BottlecapViewConfig.json");
-
-            _scanView.CopyTrainedData("tessdata/bottlecap.traineddata", "a8224bfaf4d2085f5b0de7018dee29eb");
+            
+            // as of 3.20, use AnylineOcrConfig.SetLanguages(...) instead of CopyTraineddata and SetTesseractLanguages
+            //_scanView.CopyTrainedData("tessdata/bottlecap.traineddata", "a8224bfaf4d2085f5b0de7018dee29eb");
             
             SetOcrConfig(_scanView);
             
@@ -77,7 +78,10 @@ namespace AnylineXamarinApp.Ocr
 
             anylineOcrConfig.SetScanMode(AnylineOcrConfig.ScanMode.Grid);
 
-            anylineOcrConfig.SetTesseractLanguages("bottlecap");
+            // SetTesseractLanguages is obsolete as of 3.20. Use SetLanguages instead
+            //anylineOcrConfig.SetTesseractLanguages("bottlecap");
+            anylineOcrConfig.SetLanguages("tessdata/bottlecap.traineddata");
+
             anylineOcrConfig.CharWhitelist = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
             anylineOcrConfig.MinCharHeight = 14;
             anylineOcrConfig.MaxCharHeight = 65;

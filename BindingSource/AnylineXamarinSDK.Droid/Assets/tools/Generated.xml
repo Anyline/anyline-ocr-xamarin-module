@@ -836,10 +836,14 @@
 <attr path="/api/package[@name='at.nineyards.anyline.modules.ocr']/class[@name='AnylineOcrConfig']/method[@name='setRemoveWhitespaces' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">removeWhitespaces</attr>
 <!-- AnylineOcrConfig.setValidationRegex(java.lang.String) -->
 <attr path="/api/package[@name='at.nineyards.anyline.modules.ocr']/class[@name='AnylineOcrConfig']/method[@name='setValidationRegex' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">validationRegex</attr>
+<!-- AnylineOcrConfig.addLanguage(java.lang.String) -->
+<attr path="/api/package[@name='at.nineyards.anyline.modules.ocr']/class[@name='AnylineOcrConfig']/method[@name='addLanguage' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">languagePath</attr>
+<!-- AnylineOcrConfig.setLanguages(java.lang.String...) -->
+<attr path="/api/package[@name='at.nineyards.anyline.modules.ocr']/class[@name='AnylineOcrConfig']/method[@name='setLanguages' and count(parameter)=1 and parameter[1][@type='java.lang.String...']]/parameter[1]" name="managedName">languagePaths</attr>
 <!-- AnylineOcrConfig.setScanMode(at.nineyards.anyline.modules.ocr.AnylineOcrConfig.ScanMode) -->
 <attr path="/api/package[@name='at.nineyards.anyline.modules.ocr']/class[@name='AnylineOcrConfig']/method[@name='setScanMode' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.modules.ocr.AnylineOcrConfig.ScanMode']]/parameter[1]" name="managedName">scanMode</attr>
 <!-- AnylineOcrConfig.setTesseractLanguages(java.lang.String...) -->
-<attr path="/api/package[@name='at.nineyards.anyline.modules.ocr']/class[@name='AnylineOcrConfig']/method[@name='setTesseractLanguages' and count(parameter)=1 and parameter[1][@type='java.lang.String...']]/parameter[1]" name="managedName">languages</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.modules.ocr']/class[@name='AnylineOcrConfig']/method[@name='setTesseractLanguages' and count(parameter)=1 and parameter[1][@type='java.lang.String...']]/parameter[1]" name="managedName">tesseractLanguages</attr>
 <!-- File: AT.Nineyards.Anyline.Modules.Ocr.AnylineOcrResult.cs -->
 <!-- AnylineOcrResult.AnylineOcrResult(java.util.List&lt;android.graphics.PointF&gt;, java.lang.Integer, at.nineyards.anyline.models.AnylineImage, at.nineyards.anyline.models.AnylineImage, at.nineyards.anyline.models.AnylineImage, java.lang.String) -->
 <attr path="/api/package[@name='at.nineyards.anyline.modules.ocr']/class[@name='AnylineOcrResult']/constructor[@name='AnylineOcrResult' and count(parameter)=6 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[2][@type='java.lang.Integer'] and parameter[3][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[4][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[5][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[6][@type='java.lang.String']]/parameter[1]" name="managedName">boundingBox</attr>

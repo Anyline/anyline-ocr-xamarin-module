@@ -40,8 +40,9 @@ namespace AnylineXamarinApp.Ocr
             
             _scanView.SetConfigFromAsset("VoucherCodeConfig.json");
 
-            _scanView.CopyTrainedData("tessdata/anyline_capitals.traineddata", "cee65c74833eb85e3c31e213b25e72a2");
-            
+            // as of 3.20, use AnylineOcrConfig.SetLanguages(...) instead of CopyTraineddata and SetTesseractLanguages
+            //_scanView.CopyTrainedData("tessdata/anyline_capitals.traineddata", "cee65c74833eb85e3c31e213b25e72a2");
+
             SetOcrConfig(_scanView);
             
             // set the focus config
@@ -110,8 +111,9 @@ namespace AnylineXamarinApp.Ocr
             // use the line mode (line length and font may vary)
             anylineOcrConfig.SetScanMode(AnylineOcrConfig.ScanMode.Auto);
 
-            // set the languages used for OCR
-            anylineOcrConfig.SetTesseractLanguages("anyline_capitals");
+            // SetTesseractLanguages is obsolete as of 3.20. Use SetLanguages instead
+            //anylineOcrConfig.SetTesseractLanguages("anyline_capitals");
+            anylineOcrConfig.SetLanguages("tessdata/anyline_capitals.traineddata");
 
             // allow only capital letters and numbers
             anylineOcrConfig.CharWhitelist = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";

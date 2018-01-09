@@ -115,5 +115,14 @@
   
   <!-- OCR -->
   <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.ocr']/interface[@name='AnylineOcrResultListener']/method[@name='onResult']/parameter[1]" name="managedName">scanResult</attr>
+  
+  <!-- make OCR copyTrainedData obsolete -->
+  <attr path="/api/package[@name='at.nineyards.anyline.modules.ocr']/class[@name='AnylineOcrScanView']/method[@name='copyTrainedData' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String']]" name="deprecated">
+    Deprecated. AnylineOcrConfig.SetLanguages(String...) should be used instead.
+  </attr>
+  <!-- make OCR setTesseractLanguages obsolete -->
+  <attr path="/api/package[@name='at.nineyards.anyline.modules.ocr']/class[@name='AnylineOcrConfig']/method[@name='setTesseractLanguages' and count(parameter)=1 and parameter[1][@type='java.lang.String...']]" name="deprecated">
+    Deprecated. AnylineOcrConfig.SetLanguages(String...) should be used instead.
+  </attr>
 
 </metadata>
