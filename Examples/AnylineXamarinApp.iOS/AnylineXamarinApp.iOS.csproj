@@ -299,12 +299,6 @@
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_grid.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_line.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\simpleocr_capture_config.json" />
-    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\anyline_capitals.traineddata" />
-    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\bottlecap.traineddata" />
-    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\deu.traineddata" />
-    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\eng_no_dict.traineddata" />
-    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\rbf_jan2015_v2.traineddata" />
-    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\scrabble.traineddata" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Modules\OCR\iban_config.json" />

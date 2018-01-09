@@ -2194,6 +2194,7 @@ namespace AnylineXamarinSDK.iOS
 
         // @property (nonatomic, strong) NSArray<NSString *> * _Nullable tesseractLanguages;
         [NullAllowed, Export("tesseractLanguages", ArgumentSemantic.Strong)]
+        [System.Obsolete("TesseractLanguages is deprecated, please use Languages instead.")]
         string[] TesseractLanguages { get; set; }
 
         // @property (nonatomic, strong) NSString * _Nullable charWhiteList;
@@ -2248,6 +2249,12 @@ namespace AnylineXamarinSDK.iOS
         // -(NSString * _Nullable)toJsonString;
         [NullAllowed, Export("toJsonString")]
         string ToJsonString { get; }
+
+        //added in 3.20
+        // @property(nullable, nonatomic, copy) NSArray<NSString*>* languages;
+        [NullAllowed, Export("languages", ArgumentSemantic.Strong)]
+        string[] Languages { get; set; }
+
     }
 
     // @interface ALOCRScanPlugin : ALAbstractScanPlugin
@@ -2272,6 +2279,7 @@ namespace AnylineXamarinSDK.iOS
 
         // -(BOOL)copyTrainedData:(NSString * _Nonnull)trainedDataPath fileHash:(NSString * _Nullable)hash error:(NSError * _Nullable * _Nullable)error;
         [Export("copyTrainedData:fileHash:error:")]
+        [System.Obsolete("CopyTrainedData is deprecated, please use ALOCRConfig.Languages instead.")]
         bool CopyTrainedData(string trainedDataPath, [NullAllowed] string hash, [NullAllowed] out NSError error);
 
         // -(void)addDelegate:(id<ALOCRScanPluginDelegate> _Nonnull)delegate;

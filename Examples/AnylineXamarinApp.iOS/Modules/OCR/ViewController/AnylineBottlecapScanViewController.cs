@@ -41,7 +41,8 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
             // We'll define the OCR Config here:
             _ocrConfig = new ALOCRConfig();
             _ocrConfig.CharHeight = new ALRange { min = 14, max = 95 };
-            _ocrConfig.TesseractLanguages = new[] { "bottlecap" };
+            //_ocrConfig.TesseractLanguages = new[] { "bottlecap" };
+            _ocrConfig.Languages = new[] { "bottlecap" };
             _ocrConfig.CharWhiteList = "123456789ABCDEFGHJKLMNPRSTUVWXYZ";
             _ocrConfig.MinConfidence = 75;
             _ocrConfig.ScanMode = ALOCRScanMode.Grid;
@@ -52,13 +53,7 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
 
             _ocrConfig.IsBrightTextOnDark = true;
             _ocrConfig.ValidationRegex = "^[0-9A-Z]{3}\n[0-9A-Z]{3}\n[0-9A-Z]{3}";
-
-            Console.WriteLine($": {ALDocumentConstants.ALDocumentRatioDINAXLandscape}");
-            Console.WriteLine($": {ALDocumentConstants.ALDocumentRatioDINAXPortrait}");
-            Console.WriteLine($": {ALOCRConstants.RegexForEmail}");
-            Console.WriteLine($": {ALOCRConstants.RegexForIMEI}");
-            Console.WriteLine($": {ALOCRConstants.CharWhiteListForURL}");
-
+            
             // We tell the module to bootstrap itself with the license key and delegate. The delegate will later get called
             // by the module once we start receiving results.
             _error = null;
