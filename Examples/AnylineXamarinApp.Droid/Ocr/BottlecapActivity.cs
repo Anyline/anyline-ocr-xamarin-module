@@ -156,6 +156,7 @@ namespace AnylineXamarinApp.Ocr
         protected override void OnResume()
         {
             base.OnResume();
+            _bottlecapResultView.Visibility = ViewStates.Invisible;
             _scanView.StartScanning();
         }
 

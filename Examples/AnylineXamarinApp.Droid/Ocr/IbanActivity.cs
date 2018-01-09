@@ -172,6 +172,7 @@ namespace AnylineXamarinApp.Ocr
         protected override void OnResume()
         {
             base.OnResume();
+            _ibanResultView.Visibility = ViewStates.Invisible;
             _scanView.StartScanning();
         }
 

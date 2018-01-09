@@ -166,6 +166,7 @@ namespace AnylineXamarinApp.Ocr
         protected override void OnResume()
         {
             base.OnResume();
+            _voucherCodeResultView.Visibility = ViewStates.Invisible;
             _scanView.StartScanning();
         }
 
