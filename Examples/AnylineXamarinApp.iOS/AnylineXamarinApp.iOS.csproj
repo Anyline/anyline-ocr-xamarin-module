@@ -303,6 +303,7 @@
     <BundleResource Include="Modules\OCR\bottlecap.traineddata" />
     <BundleResource Include="Modules\OCR\deu.traineddata" />
     <BundleResource Include="Modules\OCR\eng_no_dict.traineddata" />
+    <BundleResource Include="Modules\OCR\anyline_capitals.traineddata" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Modules\OCR\iban_config.json" />
