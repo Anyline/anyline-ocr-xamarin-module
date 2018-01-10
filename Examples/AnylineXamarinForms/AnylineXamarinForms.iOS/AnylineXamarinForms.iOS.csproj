@@ -178,6 +178,7 @@
     <BundleResource Include="Resources\AnylineResources.bundle\module_order_code\order_code.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_order_code\tessdata\OcrB.traineddata" />
     <BundleResource Include="Resources\AnylineResources.bundle\threshold_all.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_auto_any.ale" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AnylineXamarinForms\AnylineXamarinForms.csproj">

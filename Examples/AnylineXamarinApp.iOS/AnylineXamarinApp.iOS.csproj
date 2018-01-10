@@ -299,6 +299,8 @@
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_grid.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_line.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\simpleocr_capture_config.json" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_auto_any.ale" />
+    <BundleResource Include="Modules\OCR\bottlecap.traineddata" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Modules\OCR\iban_config.json" />
@@ -319,6 +321,9 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\AnylineResources.bundle\images\flash_white%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

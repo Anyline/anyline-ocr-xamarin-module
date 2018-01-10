@@ -10,7 +10,7 @@ using System.Drawing;
 
 /*
     OBJECTIVE SHARPIE COMMAND:    
-    sharpie bind -sdk iphoneos10.2 Anyline.framework/Headers/Anyline.h -o Bindings -scope Anyline.framework/Headers -c -F Anyline.framework
+    sharpie bind -sdk iphoneos10.3 Anyline.framework/Headers/Anyline.h -o Bindings -scope Anyline.framework/Headers -c -F Anyline.framework
 */
 
 namespace AnylineXamarinSDK.iOS
@@ -2168,6 +2168,36 @@ namespace AnylineXamarinSDK.iOS
         NSString CharWhiteListForIMEI { get; }
     }
 
+    // @interface ALOCRLanguage : NSObject
+    [BaseType(typeof(NSObject))]
+    interface ALOCRLanguage
+    {
+        // @property (nonatomic, strong) NSString * _Nullable path;
+        [NullAllowed, Export("path", ArgumentSemantic.Strong)]
+        string Path { get; set; }
+
+        // @property (nonatomic, strong) NSString * _Nullable md5;
+        [NullAllowed, Export("md5", ArgumentSemantic.Strong)]
+        string Md5 { get; set; }
+
+        // @property (nonatomic, strong) NSString * _Nullable filename;
+        [NullAllowed, Export("filename", ArgumentSemantic.Strong)]
+        string Filename { get; set; }
+
+        // @property (nonatomic, strong) NSString * _Nullable fileExtension;
+        [NullAllowed, Export("fileExtension", ArgumentSemantic.Strong)]
+        string FileExtension { get; set; }
+
+        // -(instancetype _Nullable)initWithPath:(NSString * _Nonnull)path;
+        [Export("initWithPath:")]
+        IntPtr Constructor(string path);
+
+        // +(BOOL)copyLanguage:(NSString * _Nonnull)path toPath:(NSString * _Nonnull)toPath fileHash:(NSString * _Nullable)hash error:(NSError * _Nullable * _Nullable)error;
+        [Static]
+        [Export("copyLanguage:toPath:fileHash:error:")]
+        bool CopyLanguage(string path, string toPath, [NullAllowed] string hash, [NullAllowed] out NSError error);
+    }
+
     // @interface ALOCRConfig : NSObject
     [BaseType(typeof(NSObject))]
     interface ALOCRConfig
@@ -2192,11 +2222,11 @@ namespace AnylineXamarinSDK.iOS
         [Export("charHeight", ArgumentSemantic.Assign)]
         ALRange CharHeight { get; set; }
 
-        // @property (nonatomic, strong) NSArray<NSString *> * _Nullable tesseractLanguages;
+        // @property (nonatomic, strong) NSArray<NSString *> * _Nullable tesseractLanguages __attribute__((deprecated("Deprecated since 3.20. Use languages instead! This method still requires a copy of the traineddata.")));
         [NullAllowed, Export("tesseractLanguages", ArgumentSemantic.Strong)]
-        [System.Obsolete("TesseractLanguages is deprecated, please use Languages instead.")]
+        [System.Obsolete("Deprecated since 3.20.Use languages instead! This method still requires a copy of the traineddata.")]
         string[] TesseractLanguages { get; set; }
-
+        
         // @property (nonatomic, strong) NSString * _Nullable charWhiteList;
         [NullAllowed, Export("charWhiteList", ArgumentSemantic.Strong)]
         string CharWhiteList { get; set; }
@@ -2250,11 +2280,15 @@ namespace AnylineXamarinSDK.iOS
         [NullAllowed, Export("toJsonString")]
         string ToJsonString { get; }
 
-        //added in 3.20
-        // @property(nullable, nonatomic, copy) NSArray<NSString*>* languages;
-        [NullAllowed, Export("languages", ArgumentSemantic.Strong)]
+        // added in 3.20        
+        // @property (copy, nonatomic) NSArray<NSString *> * _Nullable languages;
+        [NullAllowed, Export("languages", ArgumentSemantic.Copy)]
         string[] Languages { get; set; }
 
+        // added in 3.20
+        // -(BOOL)allLanguagesAnyFiles;
+        [Export("allLanguagesAnyFiles")]        
+        bool AllLanguagesAnyFiles { get; }
     }
 
     // @interface ALOCRScanPlugin : ALAbstractScanPlugin
