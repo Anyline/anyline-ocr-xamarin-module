@@ -43,7 +43,12 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
 
             // We'll define the OCR Config here:
             _ocrConfig = new ALOCRConfig();
-            _ocrConfig.TesseractLanguages = new[] {@"eng_no_dict", @"deu"};
+
+            // as of 3.20, we use Languages instead of TesseractLanguages as it doesn't require to copy the traineddata file
+            string engNoDict = NSBundle.MainBundle.PathForResource(@"Modules/OCR/eng_no_dict", @"traineddata");
+            string deu = NSBundle.MainBundle.PathForResource(@"Modules/OCR/deu", @"traineddata");
+            _ocrConfig.Languages = new[] { engNoDict, deu };
+            //_ocrConfig.TesseractLanguages = new[] {@"eng_no_dict", @"deu"};
             _ocrConfig.CharWhiteList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
             _ocrConfig.MinConfidence = 60;
             _ocrConfig.ScanMode = ALOCRScanMode.Auto;

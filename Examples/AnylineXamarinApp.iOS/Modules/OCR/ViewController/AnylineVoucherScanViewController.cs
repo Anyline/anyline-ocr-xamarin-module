@@ -40,7 +40,11 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
 
             // We'll define the OCR Config here:
             _ocrConfig = new ALOCRConfig();
-            _ocrConfig.TesseractLanguages = new[] { @"anyline_capitals" };
+
+            // as of 3.20, we use Languages instead of TesseractLanguages as it doesn't require to copy the traineddata file
+            string anylineCapitals = NSBundle.MainBundle.PathForResource(@"Modules/OCR/anyline_capitals", @"traineddata");
+            _ocrConfig.Languages = new[] { anylineCapitals };
+            //_ocrConfig.TesseractLanguages = new[] { @"anyline_capitals" };
             _ocrConfig.CharWhiteList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
             _ocrConfig.ScanMode = ALOCRScanMode.Auto;
             _ocrConfig.ValidationRegex = "[A-Z0-9]{8}$";

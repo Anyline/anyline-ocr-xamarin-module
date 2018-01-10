@@ -301,6 +301,8 @@
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\simpleocr_capture_config.json" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_auto_any.ale" />
     <BundleResource Include="Modules\OCR\bottlecap.traineddata" />
+    <BundleResource Include="Modules\OCR\deu.traineddata" />
+    <BundleResource Include="Modules\OCR\eng_no_dict.traineddata" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Modules\OCR\iban_config.json" />

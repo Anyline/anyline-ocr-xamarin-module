@@ -43,10 +43,7 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
             _ocrConfig.CharHeight = new ALRange { min = 14, max = 95 };
 
             // as of 3.20, we use Languages instead of TesseractLanguages as it doesn't require to copy the traineddata file
-            //NSString* bottlecapTraineddata = [[NSBundle mainBundle] pathForResource: @"bottlecap" ofType: @"traineddata"];
-            //config.languages = @[bottlecapTraineddata];
             string bottlecap = NSBundle.MainBundle.PathForResource(@"Modules/OCR/bottlecap", @"traineddata");
-            
             _ocrConfig.Languages = new[] { bottlecap };
             //_ocrConfig.TesseractLanguages = new[] { "bottlecap" };
 
