@@ -5,7 +5,7 @@
 			<id>Anyline.Xamarin.SDK</id>
 
 			<!-- The package version number that is used when resolving dependencies -->
-			<version>3.19.0</version>
+			<version>3.20.0</version>
 
 			<!-- Authors contain text that appears directly on the gallery -->
 			<authors>Anyline GmbH</authors>
@@ -26,7 +26,7 @@
 			<requireLicenseAcceptance>true</requireLicenseAcceptance>
 
 			<!-- Any details about this particular release -->
-			<releaseNotes>https://documentation.anyline.io/toc/platforms/xamarin/release_guide/index.html</releaseNotes>
+			<releaseNotes>https://documentation.anyline.com/toc/platforms/xamarin/release_guide/index.html</releaseNotes>
 
 			<!-- The summary -->
 			<summary>An easy-to-use SDK for applications to enable Optical Character Recognition (OCR) on mobile devices.</summary>
@@ -40,16 +40,16 @@
 			
 			For iOS, the AnylineResource.bundle, which has to be integrated into your Xamarin.iOS app as BundleResource will be located in your project/solution under /packages/Anyline.Xamarin.SDK.[version]/.
 			
-			For detailed integration guides, see https://documentation.anyline.io/toc/platforms/xamarin/xamarin.ios/xamarin.ios_quickstart.html and https://documentation.anyline.io/toc/platforms/xamarin/xamarin.android/xamarin.android_quickstart.html 
+			For detailed integration guides, see https://documentation.anyline.com/toc/platforms/xamarin/xamarin.ios/xamarin.ios_quickstart.html and https://documentation.anyline.com/toc/platforms/xamarin/xamarin.android/xamarin.android_quickstart.html 
 			</description>
 
 			<projectUrl>https://documentation.anyline.io/toc/platforms/xamarin/index.html</projectUrl>
 			
 			<!-- Copyright information -->
-			<copyright>Copyright ©2017 Anyline GmbH</copyright>
+			<copyright>Copyright © 2018 Anyline GmbH</copyright>
 
 			<!-- Tags appear in the gallery and can be used for tag searches -->
-			<tags>ocr scanning meter barcode mrz qr document camera</tags>
+			<tags>ocr scanning meter barcode mrz qr document camera anyline license plate </tags>
 
 			<!-- Dependencies are automatically installed when the package is installed -->
 			<dependencies>
@@ -71,15 +71,10 @@
 			
 			<file src="AnylineResources.bundle\images\anyline_logo_white.dat" target="..\..\AnylineResources.bundle\" />
 			<file src="AnylineResources.bundle\module_anyline_ocr\anyline_ocr_auto.ale" target="..\..\AnylineResources.bundle\module_anyline_ocr\" />
+			<file src="AnylineResources.bundle\module_anyline_ocr\anyline_ocr_auto_any.ale" target="..\..\AnylineResources.bundle\module_anyline_ocr\" />
 			<file src="AnylineResources.bundle\module_anyline_ocr\anyline_ocr_grid.ale" target="..\..\AnylineResources.bundle\module_anyline_ocr\" />
 			<file src="AnylineResources.bundle\module_anyline_ocr\anyline_ocr_line.ale" target="..\..\AnylineResources.bundle\module_anyline_ocr\" />
 			<file src="AnylineResources.bundle\module_anyline_ocr\simpleocr_capture_config.json" target="..\..\AnylineResources.bundle\module_anyline_ocr\" />			
-			<file src="AnylineResources.bundle\module_anyline_ocr\tessdata\anyline_capitals.traineddata" target="..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\" />
-			<file src="AnylineResources.bundle\module_anyline_ocr\tessdata\bottlecap.traineddata" target="..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\" />
-			<file src="AnylineResources.bundle\module_anyline_ocr\tessdata\deu.traineddata" target="..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\" />
-			<file src="AnylineResources.bundle\module_anyline_ocr\tessdata\eng_no_dict.traineddata" target="..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\" />
-			<file src="AnylineResources.bundle\module_anyline_ocr\tessdata\rbf_jan2015_v2.traineddata" target="..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\" />
-			<file src="AnylineResources.bundle\module_anyline_ocr\tessdata\scrabble.traineddata" target="..\..\AnylineResources.bundle\module_anyline_ocr\tessdata\" />
 			<file src="AnylineResources.bundle\module_barcode\barcode_capture_config.json" target="..\..\AnylineResources.bundle\module_barcode\" />
 			<file src="AnylineResources.bundle\module_barcode\ean.ale" target="..\..\AnylineResources.bundle\module_barcode\" />
 			<file src="AnylineResources.bundle\module_debit_card\debitcard_capture_config.json" target="..\..\AnylineResources.bundle\module_debit_card\" />			
