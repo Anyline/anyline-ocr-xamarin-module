@@ -703,6 +703,10 @@
 <attr path="/api/package[@name='at.nineyards.anyline.modules.energy']/class[@name='EnergyScanView']/method[@name='setReportingEnabled' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">isReportingEnabled</attr>
 <!-- EnergyScanView.setScanMode(at.nineyards.anyline.modules.energy.EnergyScanView.ScanMode) -->
 <attr path="/api/package[@name='at.nineyards.anyline.modules.energy']/class[@name='EnergyScanView']/method[@name='setScanMode' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.modules.energy.EnergyScanView.ScanMode']]/parameter[1]" name="managedName">scanMode</attr>
+<!-- EnergyScanView.setSerialNumberCharWhitelist(java.lang.String) -->
+<attr path="/api/package[@name='at.nineyards.anyline.modules.energy']/class[@name='EnergyScanView']/method[@name='setSerialNumberCharWhitelist' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">whiteList</attr>
+<!-- EnergyScanView.setSerialNumberValidationRegex(java.lang.String) -->
+<attr path="/api/package[@name='at.nineyards.anyline.modules.energy']/class[@name='EnergyScanView']/method[@name='setSerialNumberValidationRegex' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">regexString</attr>
 <!-- File: AT.Nineyards.Anyline.Modules.IAnylineModule.cs -->
 <!-- AnylineModule.initAnyline(java.lang.String, T) -->
 <attr path="/api/package[@name='at.nineyards.anyline.modules']/interface[@name='AnylineModule']/method[@name='initAnyline' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='T']]/parameter[1]" name="managedName">licenseKey</attr>
@@ -1179,6 +1183,10 @@
 <!-- MeterScanPlugin.setScanMode(io.anyline.plugin.meter.MeterScanMode) -->
 <attr path="/api/package[@name='io.anyline.plugin.meter']/class[@name='MeterScanPlugin']/method[@name='setScanMode' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.meter.MeterScanMode']]/parameter[1]" name="managedName">scanMode</attr>
 <!-- MeterScanPlugin.onFinishedWithOutput(java.lang.Object) -->
+<!-- MeterScanPlugin.setSerialNumberCharWhitelist(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.meter']/class[@name='MeterScanPlugin']/method[@name='setSerialNumberCharWhitelist' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">whiteList</attr>
+<!-- MeterScanPlugin.setSerialNumberValidationRegex(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.meter']/class[@name='MeterScanPlugin']/method[@name='setSerialNumberValidationRegex' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">regexString</attr>
 <!-- File: IO.Anyline.Plugin.Meter.MeterScanResult.cs -->
 <!-- MeterScanResult.MeterScanResult(java.lang.String, java.util.List&lt;android.graphics.PointF&gt;, java.lang.Integer, at.nineyards.anyline.models.AnylineImage, at.nineyards.anyline.models.AnylineImage, java.lang.String, io.anyline.plugin.meter.MeterScanMode) -->
 <attr path="/api/package[@name='io.anyline.plugin.meter']/class[@name='MeterScanResult']/constructor[@name='MeterScanResult' and count(parameter)=7 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[3][@type='java.lang.Integer'] and parameter[4][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[5][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[6][@type='java.lang.String'] and parameter[7][@type='io.anyline.plugin.meter.MeterScanMode']]/parameter[1]" name="managedName">pluginId</attr>
