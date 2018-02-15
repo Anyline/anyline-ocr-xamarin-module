@@ -12,7 +12,6 @@ using Android.Gms.Vision.Barcodes;
 using AT.Nineyards.Anyline.Modules.Energy;
 using AT.Nineyards.Anyline.Modules.Barcode;
 using AT.Nineyards.Anylinexamarin.Support.Modules.Energy;
-using AT.Nineyards.Anyline.Camera;
 
 namespace AnylineXamarinApp.Energy
 {
