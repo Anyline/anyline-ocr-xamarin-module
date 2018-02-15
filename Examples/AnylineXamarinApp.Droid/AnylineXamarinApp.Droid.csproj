@@ -119,11 +119,13 @@
     <Compile Include="ActivityListAdapter.cs" />
     <Compile Include="Barcode\BarcodeActivity.cs" />
     <Compile Include="Document\DocumentActivity.cs" />
+    <Compile Include="DriverLicense\DriverLicenseResultView.cs" />
     <Compile Include="Energy\EnergyActivity.cs" />
     <Compile Include="LicensePlate\LicensePlateResultView.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Mrz\MrzActivity.cs" />
     <Compile Include="Mrz\MrzResultView.cs" />
+    <Compile Include="DriverLicense\DriverLicenseActivity.cs" />
     <Compile Include="Ocr\BottlecapActivity.cs" />
     <Compile Include="Ocr\IbanActivity.cs" />
     <Compile Include="LicensePlate\LicensePlateActivity.cs" />
@@ -152,6 +154,7 @@
     <AndroidAsset Include="Assets\EnergyConfigAll.json" />
     <AndroidAsset Include="Assets\LicensePlateConfig.json" />
     <AndroidAsset Include="Assets\tessdata\eng_no_dict.traineddata" />
+    <AndroidAsset Include="Assets\DriverLicenseConfig.json" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <AndroidResource Include="Resources\layout\EnergyActivity.axml">
@@ -168,6 +171,9 @@
     <AndroidResource Include="Resources\layout\DocumentActivity.axml" />
     <AndroidResource Include="Resources\layout\LicensePlateActivity.axml" />
     <AndroidResource Include="Resources\layout\LicensePlateResult.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\DriverLicenseResult.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -210,7 +216,9 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\ic_mrz.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\driving_license_background.png" />
+  </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\example_activities.xml">
       <SubType>Designer</SubType>

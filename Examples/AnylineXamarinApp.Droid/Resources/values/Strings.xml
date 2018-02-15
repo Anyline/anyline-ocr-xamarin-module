@@ -19,6 +19,7 @@
   <string name="scan_iban">Scan IBAN</string>
   <string name="scan_bottlecaps">Scan Bottlecap</string>
   <string name="scan_license_plates">License Plates</string>
+  <string name="scan_driver_licenses">Driver Licenses</string>
   
   <!--energy-->
 

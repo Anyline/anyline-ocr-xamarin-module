@@ -30,6 +30,7 @@
 
     <item>@string/category_vehicle</item>
     <item>@string/scan_license_plates</item>
+    <item>@string/scan_driver_licenses</item>
     
     <item>@string/version_info</item>
 
@@ -58,6 +59,7 @@
     <item>AnylineXamarinApp.Ocr.BottlecapActivity</item>
     <item>HEADER</item>
     <item>AnylineXamarinApp.LicensePlate.LicensePlateActivity</item>
+    <item>AnylineXamarinApp.DriverLicense.DriverLicenseActivity</item>
     <item>HEADER</item>
   </string-array>
 </resources>
