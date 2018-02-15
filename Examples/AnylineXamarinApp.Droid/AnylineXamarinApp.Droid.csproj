@@ -155,6 +155,7 @@
     <AndroidAsset Include="Assets\LicensePlateConfig.json" />
     <AndroidAsset Include="Assets\tessdata\eng_no_dict.traineddata" />
     <AndroidAsset Include="Assets\DriverLicenseConfig.json" />
+    <AndroidAsset Include="Assets\anyline_austrian_driver_license.ale" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <AndroidResource Include="Resources\layout\EnergyActivity.axml">

@@ -265,8 +265,8 @@ namespace AnylineXamarinApp
 			// aapt resource value: 0x7f08000b
 			public const int back = 2131230731;
 			
-			// aapt resource value: 0x7f08002a
-			public const int barcode_result_text = 2131230762;
+			// aapt resource value: 0x7f08002d
+			public const int barcode_result_text = 2131230765;
 			
 			// aapt resource value: 0x7f08001b
 			public const int barcode_scan_view = 2131230747;
@@ -301,8 +301,8 @@ namespace AnylineXamarinApp
 			// aapt resource value: 0x7f08001e
 			public const int document_scan_view = 2131230750;
 			
-			// aapt resource value: 0x7f080024
-			public const int energy_scan_view = 2131230756;
+			// aapt resource value: 0x7f080027
+			public const int energy_scan_view = 2131230759;
 			
 			// aapt resource value: 0x7f08000c
 			public const int external = 2131230732;
@@ -319,29 +319,29 @@ namespace AnylineXamarinApp
 			// aapt resource value: 0x7f080005
 			public const int kitt = 2131230725;
 			
-			// aapt resource value: 0x7f08002c
-			public const int license_plate_scan_view = 2131230764;
+			// aapt resource value: 0x7f08002f
+			public const int license_plate_scan_view = 2131230767;
 			
-			// aapt resource value: 0x7f08002d
-			public const int listView = 2131230765;
+			// aapt resource value: 0x7f080031
+			public const int listView = 2131230769;
 			
-			// aapt resource value: 0x7f08002b
-			public const int main_layout = 2131230763;
+			// aapt resource value: 0x7f08002e
+			public const int main_layout = 2131230766;
 			
 			// aapt resource value: 0x7f080015
 			public const int manual = 2131230741;
 			
-			// aapt resource value: 0x7f08002f
-			public const int mrz_result = 2131230767;
+			// aapt resource value: 0x7f080033
+			public const int mrz_result = 2131230771;
 			
-			// aapt resource value: 0x7f08002e
-			public const int mrz_scan_view = 2131230766;
+			// aapt resource value: 0x7f080032
+			public const int mrz_scan_view = 2131230770;
 			
 			// aapt resource value: 0x7f080016
 			public const int none = 2131230742;
 			
-			// aapt resource value: 0x7f080039
-			public const int ocr_scan_view = 2131230777;
+			// aapt resource value: 0x7f08003a
+			public const int ocr_scan_view = 2131230778;
 			
 			// aapt resource value: 0x7f080006
 			public const int pulse = 2131230726;
@@ -349,11 +349,11 @@ namespace AnylineXamarinApp
 			// aapt resource value: 0x7f080007
 			public const int pulse_random = 2131230727;
 			
-			// aapt resource value: 0x7f080025
-			public const int radio_button_header = 2131230757;
+			// aapt resource value: 0x7f080028
+			public const int radio_button_header = 2131230760;
 			
-			// aapt resource value: 0x7f080026
-			public const int radio_group = 2131230758;
+			// aapt resource value: 0x7f080029
+			public const int radio_group = 2131230761;
 			
 			// aapt resource value: 0x7f080003
 			public const int rect = 2131230723;
@@ -364,56 +364,59 @@ namespace AnylineXamarinApp
 			// aapt resource value: 0x7f080021
 			public const int result_background = 2131230753;
 			
-			// aapt resource value: 0x7f080023
-			public const int root = 2131230755;
+			// aapt resource value: 0x7f080026
+			public const int root = 2131230758;
 			
 			// aapt resource value: 0x7f08001d
 			public const int text = 2131230749;
 			
-			// aapt resource value: 0x7f080022
-			public const int text_country = 2131230754;
-			
-			// aapt resource value: 0x7f080031
-			public const int text_country_code_national = 2131230769;
+			// aapt resource value: 0x7f080030
+			public const int text_country = 2131230768;
 			
 			// aapt resource value: 0x7f080035
-			public const int text_day_of_birth = 2131230773;
+			public const int text_country_code_national = 2131230773;
 			
-			// aapt resource value: 0x7f080036
-			public const int text_expiration_date = 2131230774;
+			// aapt resource value: 0x7f080024
+			public const int text_day_of_birth = 2131230756;
+			
+			// aapt resource value: 0x7f080037
+			public const int text_expiration_date = 2131230775;
 			
 			// aapt resource value: 0x7f08001f
 			public const int text_feedback = 2131230751;
 			
-			// aapt resource value: 0x7f080034
-			public const int text_given_names = 2131230772;
+			// aapt resource value: 0x7f080023
+			public const int text_given_names = 2131230755;
 			
-			// aapt resource value: 0x7f080038
-			public const int text_mrz = 2131230776;
+			// aapt resource value: 0x7f080039
+			public const int text_mrz = 2131230777;
 			
-			// aapt resource value: 0x7f080032
-			public const int text_number = 2131230770;
+			// aapt resource value: 0x7f080022
+			public const int text_number = 2131230754;
+			
+			// aapt resource value: 0x7f080025
+			public const int text_number_two = 2131230757;
 			
 			// aapt resource value: 0x7f08001c
 			public const int text_result = 2131230748;
 			
-			// aapt resource value: 0x7f080037
-			public const int text_sex = 2131230775;
+			// aapt resource value: 0x7f080038
+			public const int text_sex = 2131230776;
 			
-			// aapt resource value: 0x7f080033
-			public const int text_surnames = 2131230771;
+			// aapt resource value: 0x7f080036
+			public const int text_surnames = 2131230774;
 			
-			// aapt resource value: 0x7f080030
-			public const int text_type = 2131230768;
+			// aapt resource value: 0x7f080034
+			public const int text_type = 2131230772;
 			
-			// aapt resource value: 0x7f080027
-			public const int toggle_barcode_layout = 2131230759;
+			// aapt resource value: 0x7f08002a
+			public const int toggle_barcode_layout = 2131230762;
 			
-			// aapt resource value: 0x7f080029
-			public const int toggle_barcode_switch = 2131230761;
+			// aapt resource value: 0x7f08002c
+			public const int toggle_barcode_switch = 2131230764;
 			
-			// aapt resource value: 0x7f080028
-			public const int toggle_barcode_text = 2131230760;
+			// aapt resource value: 0x7f08002b
+			public const int toggle_barcode_text = 2131230763;
 			
 			// aapt resource value: 0x7f080011
 			public const int top = 2131230737;

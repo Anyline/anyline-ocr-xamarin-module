@@ -28,7 +28,7 @@ namespace AnylineXamarinApp.DriverLicense
             Inflate(Context, Resource.Layout.DriverLicenseResult, this);
 
             TextNumber = (TextView)FindViewById(Resource.Id.text_number);
-            TextNumber2 = (TextView)FindViewById(Resource.Id.text_number2);
+            TextNumber2 = (TextView)FindViewById(Resource.Id.text_number_two);
             TextGivenNames = (TextView)FindViewById(Resource.Id.text_given_names);
             TextDayOfBirth = (TextView)FindViewById(Resource.Id.text_day_of_birth);
 
