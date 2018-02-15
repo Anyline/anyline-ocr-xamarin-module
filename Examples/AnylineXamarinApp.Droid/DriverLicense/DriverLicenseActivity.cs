@@ -41,7 +41,7 @@ namespace AnylineXamarinApp.DriverLicense
 
             _scanView = FindViewById<AnylineOcrScanView>(Resource.Id.ocr_scan_view);
 
-            _scanView.SetConfigFromAsset("DriverLicenseViewConfig.json");
+            _scanView.SetConfigFromAsset("DriverLicenseConfig.json");
             
             SetOcrConfig(_scanView);
             

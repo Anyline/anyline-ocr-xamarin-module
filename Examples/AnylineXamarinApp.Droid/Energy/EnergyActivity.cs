@@ -153,6 +153,10 @@ namespace AnylineXamarinApp.Energy
             {
                 SetTitle(Resource.String.scan_serial_numbers);
                 _scanView.SetScanMode(EnergyScanView.ScanMode.SerialNumber);
+
+                // we can set the regex and character whitelist for this
+                _scanView.SetSerialNumberCharWhitelist("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+                _scanView.SetSerialNumberValidationRegex("^[0-9A-Z]{5,}$");
             }
             else if (_energyUseCase.Equals(Resources.GetString(Resource.String.scan_dial_meters)))
             {
