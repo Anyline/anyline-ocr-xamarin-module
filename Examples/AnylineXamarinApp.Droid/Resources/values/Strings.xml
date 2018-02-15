@@ -4,22 +4,22 @@
 
   <!--textview names-->
 
-  <string name="scan_analog_meter">Scan Analog Meter</string>
-  <string name="scan_digital_meter">Scan Digital Meter</string>
-  <string name="scan_heat_meter">Scan Heat Meter</string>
-  <string name="scan_analog_digital_meter">Scan Analog/Digital Meter</string>
-  <string name="scan_serial_numbers">Scan Serial Numbers</string>
-  <string name="scan_dial_meters">Scan Dial Meters</string>
-  <string name="scan_dot_matrix_meters">Scan Dot Matrix Meters</string>
+  <string name="scan_analog_meter">Analog Meter</string>
+  <string name="scan_digital_meter">Digital Meter</string>
+  <string name="scan_heat_meter">Heat Meter</string>
+  <string name="scan_analog_digital_meter">Analog/Digital Meter</string>
+  <string name="scan_serial_numbers">Serial Number</string>
+  <string name="scan_dial_meters">Dial Meter (Alpha)</string>
+  <string name="scan_dot_matrix_meters">Dot Matrix Meter</string>
 
-  <string name="scan_barcode">Scan Barcode</string>
-  <string name="scan_mrz">Scan MRZ of Passport or ID</string>
-  <string name="scan_document">Scan Document</string>
-  <string name="scan_voucher_code">Scan Voucher Codes</string>
-  <string name="scan_iban">Scan IBAN</string>
-  <string name="scan_bottlecaps">Scan Bottlecap</string>
-  <string name="scan_license_plates">License Plates</string>
-  <string name="scan_driver_licenses">Driver Licenses</string>
+  <string name="scan_barcode">Barcode / QR-Code</string>
+  <string name="scan_mrz">MRZ / Passport</string>
+  <string name="scan_document">Document</string>
+  <string name="scan_voucher_code">Voucher Code</string>
+  <string name="scan_iban">IBAN</string>
+  <string name="scan_bottlecaps">Bottlecap</string>
+  <string name="scan_license_plates">EU License Plate</string>
+  <string name="scan_driving_licenses">Austrian Driving License</string>
   
   <!--energy-->
 
@@ -29,11 +29,11 @@
   
   <!--categories-->
   
-  <string name="category_energy">Energy</string>
-  <string name="category_identification">Identification</string>
+  <string name="category_energy">Meter Reading</string>
+  <string name="category_identification">MRZ / Passport</string>
   <string name="category_fintech">Fintech</string>
-  <string name="category_barcodes">Barcodes</string>
-  <string name="category_documents">Documents</string>
+  <string name="category_barcodes">Barcode / QR-Code</string>
+  <string name="category_documents">Document</string>
   <string name="category_loyality">Loyality</string>
   <string name="category_vehicle">Vehicles</string>
   

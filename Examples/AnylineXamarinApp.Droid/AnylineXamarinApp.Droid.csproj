@@ -140,13 +140,13 @@
     <Compile Include="ActivityListAdapter.cs" />
     <Compile Include="Barcode\BarcodeActivity.cs" />
     <Compile Include="Document\DocumentActivity.cs" />
-    <Compile Include="DriverLicense\DriverLicenseResultView.cs" />
+    <Compile Include="DrivingLicense\DrivingLicenseResultView.cs" />
     <Compile Include="Energy\EnergyActivity.cs" />
     <Compile Include="LicensePlate\LicensePlateResultView.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Mrz\MrzActivity.cs" />
     <Compile Include="Mrz\MrzResultView.cs" />
-    <Compile Include="DriverLicense\DriverLicenseActivity.cs" />
+    <Compile Include="DrivingLicense\DrivingLicenseActivity.cs" />
     <Compile Include="Ocr\BottlecapActivity.cs" />
     <Compile Include="Ocr\IbanActivity.cs" />
     <Compile Include="LicensePlate\LicensePlateActivity.cs" />

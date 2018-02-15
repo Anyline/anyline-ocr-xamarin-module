@@ -153,7 +153,7 @@ namespace AnylineXamarinApp.Energy
                 SetTitle(Resource.String.scan_serial_numbers);
                 _scanView.SetScanMode(EnergyScanView.ScanMode.SerialNumber);
 
-                // we can set the regex and character whitelist for this
+                // we can set the regex and character whitelist to improve SerialNumber scanning
                 _scanView.SetSerialNumberCharWhitelist("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ");
                 _scanView.SetSerialNumberValidationRegex("^[0-9A-Z]{5,}$");
             }

@@ -1119,7 +1119,7 @@ namespace AnylineXamarinApp
 			public const int scan_dot_matrix_meters = 2131099680;
 			
 			// aapt resource value: 0x7f060028
-			public const int scan_driver_licenses = 2131099688;
+			public const int scan_driving_licenses = 2131099688;
 			
 			// aapt resource value: 0x7f06001c
 			public const int scan_heat_meter = 2131099676;

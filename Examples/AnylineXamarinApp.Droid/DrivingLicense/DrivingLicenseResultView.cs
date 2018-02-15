@@ -3,9 +3,9 @@ using Android.Widget;
 using AT.Nineyards.Anyline.Util;
 using Java.Text;
 
-namespace AnylineXamarinApp.DriverLicense
+namespace AnylineXamarinApp.DrivingLicense
 {
-    public class DriverLicenseResultView : RelativeLayout
+    public class DrivingLicenseResultView : RelativeLayout
     {
         public TextView TextNumber { get; set; }
         public TextView TextNumber2 { get; set; }
@@ -14,11 +14,11 @@ namespace AnylineXamarinApp.DriverLicense
 
         public ImageView Bg { get; set; }
 
-        public DriverLicenseResultView(Context context) : base(context) { Init(); }
+        public DrivingLicenseResultView(Context context) : base(context) { Init(); }
 
-        public DriverLicenseResultView(Context context, Android.Util.IAttributeSet attrs) : base(context, attrs) { Init(); }
+        public DrivingLicenseResultView(Context context, Android.Util.IAttributeSet attrs) : base(context, attrs) { Init(); }
 
-        public DriverLicenseResultView(Context context, Android.Util.IAttributeSet attrs, int defStyleAttr) : base(context, attrs, defStyleAttr) { Init(); }
+        public DrivingLicenseResultView(Context context, Android.Util.IAttributeSet attrs, int defStyleAttr) : base(context, attrs, defStyleAttr) { Init(); }
 
         private void Init()
         {

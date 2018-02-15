@@ -10,19 +10,19 @@ using AT.Nineyards.Anyline.Modules.Ocr;
 using AT.Nineyards.Anylinexamarin.Support.Modules.Ocr;
 #pragma warning disable 618
 
-namespace AnylineXamarinApp.DriverLicense
+namespace AnylineXamarinApp.DrivingLicense
 {
     [Activity(Label = "", 
         MainLauncher = false, 
         Icon = "@drawable/ic_launcher", 
         ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait, 
         HardwareAccelerated = true)]
-    public class DriverLicenseActivity : Activity, IAnylineOcrResultListener
+    public class DrivingLicenseActivity : Activity, IAnylineOcrResultListener
     {
-        public static string TAG = typeof(DriverLicenseActivity).Name;
+        public static string TAG = typeof(DrivingLicenseActivity).Name;
 
         private AnylineOcrScanView _scanView;
-        private DriverLicenseResultView _driverLicenseResultView;
+        private DrivingLicenseResultView _driverLicenseResultView;
         
         protected override void OnCreate(Bundle bundle)
         {
@@ -31,7 +31,7 @@ namespace AnylineXamarinApp.DriverLicense
             ActionBar.SetHomeButtonEnabled(true);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
 
-            SetTitle(Resource.String.scan_driver_licenses);
+            SetTitle(Resource.String.scan_driving_licenses);
 
             Window.SetFlags(WindowManagerFlags.KeepScreenOn, WindowManagerFlags.KeepScreenOn);
 
@@ -83,7 +83,7 @@ namespace AnylineXamarinApp.DriverLicense
         {
             RelativeLayout mainLayout = (RelativeLayout)FindViewById(Resource.Id.main_layout);
 
-            _driverLicenseResultView = new DriverLicenseResultView(this)
+            _driverLicenseResultView = new DrivingLicenseResultView(this)
             {
                 Visibility = ViewStates.Invisible
             };
