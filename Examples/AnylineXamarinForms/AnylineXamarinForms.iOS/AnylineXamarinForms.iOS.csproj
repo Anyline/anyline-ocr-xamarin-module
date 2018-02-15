@@ -114,23 +114,25 @@
     <ITunesArtwork Include="iTunesArtwork" />
     <ITunesArtwork Include="iTunesArtwork@2x" />
     <None Include="packages.config" />
+    <BundleResource Include="Resources\AnylineResources.bundle\Anyline-Info.plist" />
+    <BundleResource Include="Resources\AnylineResources.bundle\threshold_all.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\images\anyline_logo_white.dat" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_austrian_driver_license.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_auto.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_auto_any.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_grid.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_line.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\simpleocr_capture_config.json" />
-    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\anyline_capitals.traineddata" />
-    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\bottlecap.traineddata" />
-    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\deu.traineddata" />
-    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\eng_no_dict.traineddata" />
-    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\rbf_jan2015_v2.traineddata" />
-    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\scrabble.traineddata" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_barcode\barcode_capture_config.json" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_barcode\ean.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_debit_card\debitcard_capture_config.json" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_document\document.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_document\document_capture_config.json" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_document\document_crop.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\tessdata\eng_no_dict.traineddata" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\trained_models\CNN_energy_detection_full_half.enc" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\trained_models\CNN_serialnumbers_combined.enc" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\trained_models\CNN_SNr_w_CL_special_whiteList.enc" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\analog_digital_auto_mode.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\analog_digital_capture_config.json" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\analog_meter.ale" />
@@ -145,6 +147,7 @@
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\dot_matrix_meter_capture_config.json" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\energy_serial.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\energy_serial_alnum_3_letters.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\energy_serial_capital_letters.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\gas_meter_capture_config.json" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\heat_meter_capture_config.json" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\patternMulti9AndE.json" />
@@ -155,11 +158,6 @@
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\smart_meter_ger_spec.json" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\water_meter_black_background_capture_config.json" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\water_meter_white_background_capture_config.json" />
-    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\tessdata\eng_no_dict.traineddata" />
-    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\trained_models\CNN_energy_detection_full_half.enc" />
-    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\trained_models\CNN_serialnumbers_combined.enc" />
-    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\license_plate_capture_config.json" />
-    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\license_plates_combined.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\aut_nice.traineddata" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\ch_nice.traineddata" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\cz_nice.traineddata" />
@@ -171,14 +169,13 @@
     <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\polish_nice.traineddata" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\sk_nice.traineddata" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\standard.traineddata" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\license_plate_capture_config.json" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\license_plates_combined.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_mrz\trained_models\CNN_OCRB_Gray_0124.enc" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_mrz\mrz_capture_config.json" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_mrz\mrz_scanning.ale" />
-    <BundleResource Include="Resources\AnylineResources.bundle\module_mrz\tessdata\OcrB.traineddata" />
-    <BundleResource Include="Resources\AnylineResources.bundle\module_mrz\trained_models\CNN_OCRB_Gray_0124.enc" />
-    <BundleResource Include="Resources\AnylineResources.bundle\module_order_code\order_code.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_order_code\tessdata\OcrB.traineddata" />
-    <BundleResource Include="Resources\AnylineResources.bundle\threshold_all.ale" />
-    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_auto_any.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_order_code\order_code.ale" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AnylineXamarinForms\AnylineXamarinForms.csproj">
@@ -228,6 +225,7 @@
     </Reference>
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BundleResource Include="Resources\AnylineResources.bundle\images\flash_white.png" />
   </ItemGroup>
@@ -239,9 +237,6 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\AnylineResources.bundle\sounds\beep.wav" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\AnylineResources.bundle\Anyline-Info.plist" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

@@ -12,6 +12,7 @@ using UIKit;
 using System.Threading.Tasks;
 using System.Reflection;
 using AnylineXamarinApp.iOS.Modules.LicensePlate.ViewController;
+using AnylineXamarinApp.iOS.Modules.DrivingLicense.ViewController;
 
 namespace AnylineXamarinApp.iOS
 {
@@ -50,7 +51,8 @@ namespace AnylineXamarinApp.iOS
                     "Bottlecap Code Scan"                    
                 }},
             { "Vehicle", new[] {
-                    "License Plate Scan"
+                    "License Plate Scan",
+                    "Driving License Scan"
                 }}
         };
         
@@ -225,8 +227,11 @@ namespace AnylineXamarinApp.iOS
                     if (indexPath.Row == 1) //Bottlecap Code Scan
                         AnylineViewController.CurrentScanViewController = new AnylineBottlecapScanViewController(name);
                     break;
-                case 6: //License Plate
-                    AnylineViewController.CurrentScanViewController = new AnylineLicensePlateScanViewController(name);
+                case 6: //Vehicle
+                    if (indexPath.Row == 0) //License Plate Scan
+                        AnylineViewController.CurrentScanViewController = new AnylineLicensePlateScanViewController(name);
+                    if (indexPath.Row == 1) //Driving License Scan
+                        AnylineViewController.CurrentScanViewController = new AnylineDrivingLicenseScanViewController(name);                    
                     break;
                 default:
                     break;

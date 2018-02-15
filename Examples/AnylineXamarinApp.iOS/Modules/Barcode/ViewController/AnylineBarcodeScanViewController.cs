@@ -34,7 +34,7 @@ namespace AnylineXamarinApp.iOS.Modules.Barcode.ViewController
                 _frame.Y + NavigationController.NavigationBar.Frame.Size.Height,
                 _frame.Width,
                 _frame.Height - NavigationController.NavigationBar.Frame.Size.Height);
-            
+
             _anylineBarcodeView = new AnylineBarcodeModuleView(_frame);
 
             _error = null;

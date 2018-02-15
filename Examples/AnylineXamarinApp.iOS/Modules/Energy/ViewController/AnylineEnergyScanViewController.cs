@@ -83,6 +83,14 @@ namespace AnylineXamarinApp.iOS.Modules.Energy.ViewController
             if (_error != null)
                 (_alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
 
+            // if we set the SerialNumber scan mode, we can optionally set
+            // a character whitelist and a validation regex
+            if (_segmentItems.ElementAt(_defaultIndex).Value.Equals(ALScanMode.SerialNumber))
+            {
+                _anylineEnergyView.SerialNumberCharWhitelist = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                _anylineEnergyView.SerialNumberValidationRegex = "^[0-9A-Z]{5,}$";
+            }
+
             // Create a subview for toggling native barcode scanning:
 
             _toggleBarcodeView = new UIView(new CGRect(0, 0, 150, 50));

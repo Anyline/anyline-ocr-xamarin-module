@@ -41,6 +41,7 @@
     <Compile Include="Anyline.linkwith.cs">
       <DependentUpon>Anyline.a</DependentUpon>
     </Compile>
+    <Compile Include="Extra.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

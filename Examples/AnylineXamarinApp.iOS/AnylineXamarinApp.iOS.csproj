@@ -90,7 +90,7 @@
     <MtouchProfiling>False</MtouchProfiling>
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>True</MtouchDebug>
-    <MtouchSdkVersion>10.2</MtouchSdkVersion>
+    <MtouchSdkVersion>10.3</MtouchSdkVersion>
     <MtouchOptimizePNGs>False</MtouchOptimizePNGs>
     <StartupObject>AnylineXamarinApp.iOS.Application</StartupObject>
     <MtouchLink>Full</MtouchLink>
@@ -115,6 +115,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>AnylineXamarinApp.iOS.Application</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
+    <AppExtensionDebugBundleId />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AnylineXamarinSDK.iOS, Version=3.10.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -176,6 +179,8 @@
     <Compile Include="Modules\Barcode\ViewController\AnylineBarcodeScanViewController.cs" />
     <Compile Include="Modules\Document\ViewController\AnylineDocumentScanViewController.cs" />
     <Compile Include="Modules\Document\View\NotificationView.cs" />
+    <Compile Include="Modules\DrivingLicense\ViewController\AnylineDrivingLicenseScanViewController.cs" />
+    <Compile Include="Modules\DrivingLicense\View\DrivingLicenseResultOverlayView.cs" />
     <Compile Include="Modules\Energy\ViewController\AnylineEnergyScanViewController.cs" />
     <Compile Include="Modules\Energy\ViewController\AnylineEnergyScanViewResultController.cs" />
     <Compile Include="Modules\Energy\View\EnergyMeterReadingView.cs" />
@@ -289,7 +294,6 @@
     <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\standard.traineddata" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_mrz\mrz_capture_config.json" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_mrz\mrz_scanning.ale" />
-    <BundleResource Include="Resources\AnylineResources.bundle\module_mrz\tessdata\OcrB.traineddata" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_mrz\trained_models\CNN_OCRB_Gray_0124.enc" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_order_code\order_code.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_order_code\tessdata\OcrB.traineddata" />
@@ -304,6 +308,11 @@
     <BundleResource Include="Modules\OCR\deu.traineddata" />
     <BundleResource Include="Modules\OCR\eng_no_dict.traineddata" />
     <BundleResource Include="Modules\OCR\anyline_capitals.traineddata" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_austrian_driver_license.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\energy_serial_capital_letters.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\trained_models\CNN_SNr_w_CL_special_whiteList.enc" />
+    <BundleResource Include="Modules\DrivingLicense\anyline_austrian_driving_license.ale" />
+    <BundleResource Include="Modules\DrivingLicense\drivinglicense_capture_config.json" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Modules\OCR\iban_config.json" />
@@ -327,6 +336,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\AnylineResources.bundle\module_anyline_ocr\tessdata\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\drawable\driving_license_background.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
