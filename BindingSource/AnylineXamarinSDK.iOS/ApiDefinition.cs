@@ -725,7 +725,7 @@ namespace AnylineXamarinSDK.iOS
     {
         // -(int)numberOfDigits;
         [Export("numberOfDigits")]
-        int NumberOfDigits { get; }
+        nint NumberOfDigits { get; }
 
         // -(NSArray *)digitsForIdentifier:(NSString *)identifier;
         [Export("digitsForIdentifier:")]
@@ -962,11 +962,11 @@ namespace AnylineXamarinSDK.iOS
 
         // -(void)setLevelForAutoFlash:(int)brightness;
         [Export("setLevelForAutoFlash:")]
-        void SetLevelForAutoFlash(int brightness);
+        void SetLevelForAutoFlash(nint brightness);
 
         // -(void)setCountForAutoFlash:(int)brightnessCount;
         [Export("setCountForAutoFlash:")]
-        void SetCountForAutoFlash(int brightnessCount);
+        void SetCountForAutoFlash(nint brightnessCount);
 
         // -(void)resetLightLevelCounter;
         [Export("resetLightLevelCounter")]
@@ -1850,6 +1850,17 @@ namespace AnylineXamarinSDK.iOS
         // -(BOOL)setupWithLicenseKey:(NSString *)licenseKey delegate:(id<AnylineEnergyModuleDelegate>)delegate error:(NSError **)error;
         [Export("setupWithLicenseKey:delegate:error:")]
         bool SetupWithLicenseKey(string licenseKey, NSObject @delegate, out NSError error);
+        
+        // added in 3.21
+        // @property (nonatomic, strong) NSString * _Nullable serialNumberValidationRegex;
+        [NullAllowed, Export("serialNumberValidationRegex", ArgumentSemantic.Strong)]
+        string SerialNumberValidationRegex { get; set; }
+
+        // added in 3.21
+        // @property (nonatomic, strong) NSString * _Nullable serialNumberCharWhitelist;
+        [NullAllowed, Export("serialNumberCharWhitelist", ArgumentSemantic.Strong)]
+        string SerialNumberCharWhitelist { get; set; }
+
     }
 
     // @protocol AnylineEnergyModuleDelegate <NSObject>
