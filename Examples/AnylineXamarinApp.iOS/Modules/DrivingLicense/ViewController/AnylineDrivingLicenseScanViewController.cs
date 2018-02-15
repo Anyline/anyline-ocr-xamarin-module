@@ -11,7 +11,7 @@ namespace AnylineXamarinApp.iOS.Modules.DrivingLicense.ViewController
         readonly string _licenseKey = AnylineViewController.LicenseKey;
 
         AnylineOCRModuleView _scanView;
-        DrivingLicenseResultOverlayView _resultView;
+        DrivingLicenseResultOverlayView _drivingLicenseResultView;
 
         ALOCRConfig _ocrConfig;
         
@@ -73,17 +73,17 @@ namespace AnylineXamarinApp.iOS.Modules.DrivingLicense.ViewController
              The following view will present the scanned values. Here we start listening for taps
              to later dismiss the view.
              */
-            _resultView = new DrivingLicenseResultOverlayView(new CGRect(0, 0, View.Frame.Width, View.Frame.Height));
-            _resultView.AddGestureRecognizer(new UITapGestureRecognizer(this, new ObjCRuntime.Selector("ViewTapSelector:")));
+            _drivingLicenseResultView = new DrivingLicenseResultOverlayView(new CGRect(0, 0, View.Frame.Width, View.Frame.Height));
+            _drivingLicenseResultView.AddGestureRecognizer(new UITapGestureRecognizer(this, new ObjCRuntime.Selector("ViewTapSelector:")));
 
-            _resultView.Center = View.Center;
-            _resultView.Alpha = 0;
+            _drivingLicenseResultView.Center = View.Center;
+            _drivingLicenseResultView.Alpha = 0;
 
-            _resultView.Result.Center = new CGPoint(View.Center.X, View.Center.Y - 45);
-            _resultView.Result.Font = UIFont.BoldSystemFontOfSize(18);
-            _resultView.Result.TextColor = UIColor.White;
+            _drivingLicenseResultView.Result.Center = new CGPoint(View.Center.X, View.Center.Y - 45);
+            _drivingLicenseResultView.Result.Font = UIFont.BoldSystemFontOfSize(18);
+            _drivingLicenseResultView.Result.TextColor = UIColor.White;
 
-            View.AddSubview(_resultView);
+            View.AddSubview(_drivingLicenseResultView);
         }
 
         /*
@@ -92,7 +92,7 @@ namespace AnylineXamarinApp.iOS.Modules.DrivingLicense.ViewController
         [Export("ViewTapSelector:")]
         private void AnimateFadeOut(UIGestureRecognizer sender)
         {
-            _resultView?.AnimateFadeOut(View, StartAnyline);
+            _drivingLicenseResultView?.AnimateFadeOut(View, StartAnyline);
         }
 
         /*
@@ -112,7 +112,7 @@ namespace AnylineXamarinApp.iOS.Modules.DrivingLicense.ViewController
             if (_isScanning) return;
 
             //send the result view to the back before we start scanning
-            View.SendSubviewToBack(_resultView);
+            View.SendSubviewToBack(_drivingLicenseResultView);
 
             _error = null;
             _success = _scanView.StartScanningAndReturnError(out _error);
@@ -129,7 +129,7 @@ namespace AnylineXamarinApp.iOS.Modules.DrivingLicense.ViewController
             if (!_isScanning) return;
             _isScanning = false;
 
-            if (_resultView == null || _scanView == null) return;
+            if (_drivingLicenseResultView == null || _scanView == null) return;
 
             _error = null;
             if (!_scanView.CancelScanningAndReturnError(out _error))
@@ -137,7 +137,7 @@ namespace AnylineXamarinApp.iOS.Modules.DrivingLicense.ViewController
                 (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
 
-            View.BringSubviewToFront(_resultView);
+            View.BringSubviewToFront(_drivingLicenseResultView);
             
         }
 
@@ -161,9 +161,9 @@ namespace AnylineXamarinApp.iOS.Modules.DrivingLicense.ViewController
             //un-register any event handlers here, if you have any
 
             //remove result view
-            _resultView?.RemoveFromSuperview();
-            _resultView?.Dispose();
-            _resultView = null;
+            _drivingLicenseResultView?.RemoveFromSuperview();
+            _drivingLicenseResultView?.Dispose();
+            _drivingLicenseResultView = null;
 
             //we have to erase the scan view so that there are no dependencies for the viewcontroller left.
             _scanView?.RemoveFromSuperview();
@@ -182,13 +182,50 @@ namespace AnylineXamarinApp.iOS.Modules.DrivingLicense.ViewController
         void IAnylineOCRModuleDelegate.DidFindResult(AnylineOCRModuleView anylineOCRModuleView, ALOCRResult result)
         {
             StopAnyline();
-            if (_resultView != null)
-                View.BringSubviewToFront(_resultView);
+            if (_drivingLicenseResultView != null)
+                View.BringSubviewToFront(_drivingLicenseResultView);
 
-            _resultView?.UpdateResult(result.Text);
+            string[] comps = result.Result.ToString().Split('|');
+
+            string name = comps[0];
+            string birthdateID = comps[1];
+
+            string[] nameComps = name.Split(' ');
+
+            if (nameComps.Length == 3)
+            {
+                _drivingLicenseResultView.Surname.Text = nameComps[0];
+                _drivingLicenseResultView.Surname2.Text = nameComps[1];
+                _drivingLicenseResultView.GivenNames.Text = nameComps[2];
+            }
+            else
+            {
+                _drivingLicenseResultView.Surname.Text = nameComps[0];
+                _drivingLicenseResultView.Surname2.Text = "";
+                _drivingLicenseResultView.GivenNames.Text = nameComps[1];
+            }
+
+            string[] birthdateIDComps = birthdateID.Split(' ');
+
+            string birthday = birthdateIDComps[0];
+
+            NSDateFormatter formatter = new NSDateFormatter();
+            formatter.DateFormat = @"ddMMyyyy";
+
+            NSDate date = formatter.Parse(birthday);
+
+            if (date == null)
+            {
+                formatter.DateFormat = @"yyyyMMdd";
+                date = formatter.Parse(birthday);
+            }
+
+            formatter.DateFormat = @"yyyy-MM-dd";
+            _drivingLicenseResultView.Birthdate.Text = formatter.StringFor(date);
+            _drivingLicenseResultView.IDNumber.Text = birthdateIDComps[1];
 
             // Present the information to the user
-            _resultView?.AnimateFadeIn(View);            
+            _drivingLicenseResultView?.AnimateFadeIn(View);            
         }
 
         void IAnylineOCRModuleDelegate.ReportsRunFailure(AnylineOCRModuleView anylineOCRModuleView, ALOCRError error)
