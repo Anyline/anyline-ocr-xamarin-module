@@ -78,11 +78,7 @@ namespace AnylineXamarinApp.iOS.Modules.DrivingLicense.ViewController
 
             _drivingLicenseResultView.Center = View.Center;
             _drivingLicenseResultView.Alpha = 0;
-
-            _drivingLicenseResultView.Result.Center = new CGPoint(View.Center.X, View.Center.Y - 45);
-            _drivingLicenseResultView.Result.Font = UIFont.BoldSystemFontOfSize(18);
-            _drivingLicenseResultView.Result.TextColor = UIColor.White;
-
+            
             View.AddSubview(_drivingLicenseResultView);
         }
 

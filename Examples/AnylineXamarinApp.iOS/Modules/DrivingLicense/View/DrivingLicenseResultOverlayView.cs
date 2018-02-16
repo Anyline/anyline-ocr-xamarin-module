@@ -1,18 +1,17 @@
-﻿using AnylineXamarinSDK.iOS;
-using CoreGraphics;
-using Foundation;
+﻿using CoreGraphics;
 using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Text;
 using UIKit;
 
 namespace AnylineXamarinApp.iOS
 {
     class DrivingLicenseResultOverlayView : UIView, IDisposable
     {
-        public UILabel Result { get; set; }
-
+        public UILabel Birthdate { get; set; }
+        public UILabel Surname { get; set; }
+        public UILabel Surname2 { get; set; }
+        public UILabel GivenNames { get; set; }
+        public UILabel IDNumber { get; set; }
+        
         private UIImageView _backgroundView;
         private bool _disposed;
 
@@ -28,7 +27,7 @@ namespace AnylineXamarinApp.iOS
 
             //background:
             if (backgroundImage != null)
-            {                
+            {
                 _backgroundView = new UIImageView(new CGRect(0, 0, 320, frame.Size.Height));
                 _backgroundView.Image = backgroundImage;
                 _backgroundView.ContentMode = UIViewContentMode.ScaleAspectFit;
@@ -42,32 +41,23 @@ namespace AnylineXamarinApp.iOS
         }
 
         private void SetupView()
-        {            
-            //label:
+        {
+            var y = 10 + (_backgroundView.Frame.Height * _backgroundView.Image.CurrentScale) / 4;
 
-            nfloat lx = 250;
-            nfloat ly = 160;
-        
-            nfloat rx = _backgroundView.Center.X - lx/2;
-            nfloat ry = _backgroundView.Center.Y - ly/2;
-        
-            nfloat width  = lx;
-            nfloat height = ly;
-        
-            Result = new UILabel(new CGRect(rx,ry,width,height));
-            Result.Text = "--result--";
-            Result.TextColor = UIColor.Black;
-            Result.TextAlignment = UITextAlignment.Center;
-            Result.AdjustsFontSizeToFitWidth = true;
-            Result.Font = UIFont.BoldSystemFontOfSize(20);
+            Surname = new UILabel(new CGRect(130, y + 80, 200, 20));
+            AddSubview(Surname);
 
-            AddSubview(Result);
+            Surname2 = new UILabel(new CGRect(130, y + 100, 200, 20));
+            AddSubview(Surname2);
 
-        }
-        
-        public void UpdateResult(string result)
-        {            
-            Result.Text = result;
+            GivenNames = new UILabel(new CGRect(130, y + 120, 200, 20));
+            AddSubview(GivenNames);
+
+            Birthdate = new UILabel(new CGRect(130, y + 140, 200, 20));
+            AddSubview(Birthdate);
+
+            IDNumber = new UILabel(new CGRect(130, y+ 160, 200, 20));
+            AddSubview(IDNumber);            
         }
 
         /*
@@ -127,15 +117,27 @@ namespace AnylineXamarinApp.iOS
             {
                 if (disposing)
                 {
-                    if (Result != null)
-                        Result.Dispose();
+                    if (Birthdate != null)
+                        Birthdate.Dispose();
+                    if (Surname != null)
+                        Surname.Dispose();
+                    if (Surname2 != null)
+                        Surname2.Dispose();
+                    if (GivenNames != null)
+                        GivenNames.Dispose();
+                    if (IDNumber != null)
+                        IDNumber.Dispose();
 
                     if (_backgroundView != null)
                         _backgroundView.Dispose();
                 }
 
                 // Indicate that the instance has been disposed.
-                Result = null;
+                Birthdate = null;
+                Surname = null;
+                Surname2 = null;
+                GivenNames = null;
+                IDNumber = null;
                 _backgroundView = null;
 
                 _disposed = true;
