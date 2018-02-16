@@ -5,7 +5,7 @@
 			<id>Anyline.Xamarin.SDK</id>
 
 			<!-- The package version number that is used when resolving dependencies -->
-			<version>3.20.0</version>
+			<version>3.21.0</version>
 
 			<!-- Authors contain text that appears directly on the gallery -->
 			<authors>Anyline GmbH</authors>
@@ -74,7 +74,8 @@
 			<file src="AnylineResources.bundle\module_anyline_ocr\anyline_ocr_auto_any.ale" target="..\..\AnylineResources.bundle\module_anyline_ocr\" />
 			<file src="AnylineResources.bundle\module_anyline_ocr\anyline_ocr_grid.ale" target="..\..\AnylineResources.bundle\module_anyline_ocr\" />
 			<file src="AnylineResources.bundle\module_anyline_ocr\anyline_ocr_line.ale" target="..\..\AnylineResources.bundle\module_anyline_ocr\" />
-			<file src="AnylineResources.bundle\module_anyline_ocr\simpleocr_capture_config.json" target="..\..\AnylineResources.bundle\module_anyline_ocr\" />			
+			<file src="AnylineResources.bundle\module_anyline_ocr\simpleocr_capture_config.json" target="..\..\AnylineResources.bundle\module_anyline_ocr\" />
+			<file src="AnylineResources.bundle\module_anyline_ocr\anyline_austrian_driver_license.ale" target="..\..\AnylineResources.bundle\module_anyline_ocr\" />			
 			<file src="AnylineResources.bundle\module_barcode\barcode_capture_config.json" target="..\..\AnylineResources.bundle\module_barcode\" />
 			<file src="AnylineResources.bundle\module_barcode\ean.ale" target="..\..\AnylineResources.bundle\module_barcode\" />
 			<file src="AnylineResources.bundle\module_debit_card\debitcard_capture_config.json" target="..\..\AnylineResources.bundle\module_debit_card\" />			
@@ -106,7 +107,9 @@
 			<file src="AnylineResources.bundle\module_energy\water_meter_black_background_capture_config.json" target="..\..\AnylineResources.bundle\module_energy\" />
 			<file src="AnylineResources.bundle\module_energy\water_meter_white_background_capture_config.json" target="..\..\AnylineResources.bundle\module_energy\" />			
 			<file src="AnylineResources.bundle\module_energy\trained_models\CNN_energy_detection_full_half.enc" target="..\..\AnylineResources.bundle\module_energy\trained_models\" />
-			<file src="AnylineResources.bundle\module_energy\trained_models\CNN_serialnumbers_combined.enc" target="..\..\AnylineResources.bundle\module_energy\trained_models\" />
+			<file src="AnylineResources.bundle\module_energy\trained_models\CNN_serialnumbers_combined.enc" target="..\..\AnylineResources.bundle\module_energy\trained_models\" />			
+			<file src="AnylineResources.bundle\module_energy\energy_serial_capital_letters.ale" target="..\..\AnylineResources.bundle\module_energy\" />
+			<file src="AnylineResources.bundle\module_energy\trained_models\CNN_SNr_w_CL_special_whiteList.enc" target="..\..\AnylineResources.bundle\module_energy\trained_models\" />			
 			<file src="AnylineResources.bundle\module_license_plate\license_plate_capture_config.json" target="..\..\AnylineResources.bundle\module_license_plate\" />
 			<file src="AnylineResources.bundle\module_license_plate\license_plates_combined.ale" target="..\..\AnylineResources.bundle\module_license_plate\" />
 			<file src="AnylineResources.bundle\module_license_plate\tessdata\aut_nice.traineddata" target="..\..\AnylineResources.bundle\module_license_plate\tessdata\" />
@@ -122,7 +125,6 @@
 			<file src="AnylineResources.bundle\module_license_plate\tessdata\standard.traineddata" target="..\..\AnylineResources.bundle\module_license_plate\tessdata\" />
 			<file src="AnylineResources.bundle\module_mrz\mrz_capture_config.json" target="..\..\AnylineResources.bundle\module_mrz\" />
 			<file src="AnylineResources.bundle\module_mrz\mrz_scanning.ale" target="..\..\AnylineResources.bundle\module_mrz\" />
-			<file src="AnylineResources.bundle\module_mrz\tessdata\OcrB.traineddata" target="..\..\AnylineResources.bundle\module_mrz\tessdata\" />
 			<file src="AnylineResources.bundle\module_mrz\trained_models\CNN_OCRB_Gray_0124.enc" target="..\..\AnylineResources.bundle\module_mrz\trained_models\" />
 			<file src="AnylineResources.bundle\module_order_code\order_code.ale" target="..\..\AnylineResources.bundle\module_order_code\" />
 			<file src="AnylineResources.bundle\module_order_code\tessdata\OcrB.traineddata" target="..\..\AnylineResources.bundle\module_order_code\tessdata\" />
