@@ -188,17 +188,27 @@ namespace AnylineXamarinApp.iOS.Modules.DrivingLicense.ViewController
 
             string[] nameComps = name.Split(' ');
 
-            if (nameComps.Length == 3)
+            switch(nameComps.Length)
             {
-                _drivingLicenseResultView.Surname.Text = nameComps[0];
-                _drivingLicenseResultView.Surname2.Text = nameComps[1];
-                _drivingLicenseResultView.GivenNames.Text = nameComps[2];
-            }
-            else
-            {
-                _drivingLicenseResultView.Surname.Text = nameComps[0];
-                _drivingLicenseResultView.Surname2.Text = "";
-                _drivingLicenseResultView.GivenNames.Text = nameComps[1];
+                case 0:
+                    break;
+                case 1:
+                    _drivingLicenseResultView.Surname.Text = nameComps[0];
+                    _drivingLicenseResultView.Surname2.Text = "";
+                    _drivingLicenseResultView.GivenNames.Text = "";
+                    break;
+                case 2:
+                    _drivingLicenseResultView.Surname.Text = nameComps[0];
+                    _drivingLicenseResultView.Surname2.Text = "";
+                    _drivingLicenseResultView.GivenNames.Text = nameComps[1];
+                    break;
+                case 3:
+                    _drivingLicenseResultView.Surname.Text = nameComps[0];
+                    _drivingLicenseResultView.Surname2.Text = nameComps[1];
+                    _drivingLicenseResultView.GivenNames.Text = nameComps[2];
+                    break;
+                default:
+                    break;
             }
 
             string[] birthdateIDComps = birthdateID.Split(' ');
