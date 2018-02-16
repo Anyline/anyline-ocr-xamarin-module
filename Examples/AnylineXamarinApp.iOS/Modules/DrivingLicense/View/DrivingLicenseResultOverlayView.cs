@@ -28,7 +28,7 @@ namespace AnylineXamarinApp.iOS
             //background:
             if (backgroundImage != null)
             {
-                _backgroundView = new UIImageView(new CGRect(0, 0, 320, frame.Size.Height));
+                _backgroundView = new UIImageView(frame);
                 _backgroundView.Image = backgroundImage;
                 _backgroundView.ContentMode = UIViewContentMode.ScaleAspectFit;
                 _backgroundView.Center = new CGPoint(frame.Width / 2, frame.Height / 2);
@@ -42,21 +42,26 @@ namespace AnylineXamarinApp.iOS
 
         private void SetupView()
         {
-            var y = 10 + (_backgroundView.Frame.Height * _backgroundView.Image.CurrentScale) / 4;
+            nfloat x = Frame.Width / 3;
 
-            Surname = new UILabel(new CGRect(130, y + 80, 200, 20));
+            nfloat scale = NMath.Min(_backgroundView.Frame.Width, _backgroundView.Frame.Height)
+                / NMath.Min(_backgroundView.Image.CGImage.Width, _backgroundView.Image.CGImage.Height);
+            
+            nfloat y = scale * (Frame.Height / 2) + ((1 - scale) * 120);
+            
+            Surname = new UILabel(new CGRect(x, y + 20, 200, 20));
             AddSubview(Surname);
 
-            Surname2 = new UILabel(new CGRect(130, y + 100, 200, 20));
+            Surname2 = new UILabel(new CGRect(x, y +  40, 200, 20));
             AddSubview(Surname2);
 
-            GivenNames = new UILabel(new CGRect(130, y + 120, 200, 20));
+            GivenNames = new UILabel(new CGRect(x, y + 60, 200, 20));
             AddSubview(GivenNames);
 
-            Birthdate = new UILabel(new CGRect(130, y + 140, 200, 20));
+            Birthdate = new UILabel(new CGRect(x, y + 80, 200, 20));
             AddSubview(Birthdate);
 
-            IDNumber = new UILabel(new CGRect(130, y+ 160, 200, 20));
+            IDNumber = new UILabel(new CGRect(x, y + 100, 200, 20));
             AddSubview(IDNumber);            
         }
 

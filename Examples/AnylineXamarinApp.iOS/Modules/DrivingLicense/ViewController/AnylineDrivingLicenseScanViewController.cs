@@ -72,8 +72,10 @@ namespace AnylineXamarinApp.iOS.Modules.DrivingLicense.ViewController
             /*
              The following view will present the scanned values. Here we start listening for taps
              to later dismiss the view.
-             */
+             */             
             _drivingLicenseResultView = new DrivingLicenseResultOverlayView(new CGRect(0, 0, View.Frame.Width, View.Frame.Height));
+            //new CGRect(0, 0, View.Frame.Width, View.Frame.Width / 1.4));
+
             _drivingLicenseResultView.AddGestureRecognizer(new UITapGestureRecognizer(this, new ObjCRuntime.Selector("ViewTapSelector:")));
 
             _drivingLicenseResultView.Center = View.Center;
