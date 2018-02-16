@@ -25,34 +25,34 @@ namespace AnylineXamarinApp.iOS
 
         public Dictionary<string, string[]> TableItems = new Dictionary<string, string[]>
         {
-            { "Energy", new[] {
-                    "Analog Meter Scan",
-                    "Digital Meter Scan",
-                    "Heat Meter Scan",
-                    "Analog/Digital Scan",
-                    "Serial Number Scan",
-                    "Dial Meter Scan",
-                    "Dot Matrix Meter Scan",
+            { "Meter Reading", new[] {
+                    "Analog Meter",
+                    "Digital Meter",
+                    "Heat Meter",
+                    "Analog/Digital",
+                    "Serial Number",
+                    "Dial Meter",
+                    "Dot Matrix Meter",
                 }},
             { "Identification", new[] {
-                    "Passport / ID MRZ Scan"
+                    "Passport / MRZ"
                 }},
             { "Barcodes", new[] {
-                    "Barcode Scan"
+                    "Barcode / QR-Code"
                 }},
             { "Fintech", new[] {
-                    "IBAN Scan"
+                    "IBAN"
                 }},
             { "Document", new[] {
-                    "Document Scan"
+                    "Document"
                 }},
             { "Loyalty", new[] {
-                    "Voucher Code Scan",
-                    "Bottlecap Code Scan"                    
+                    "Voucher Code",
+                    "Bottlecap"
                 }},
             { "Vehicle", new[] {
-                    "License Plate Scan",
-                    "Driving License Scan"
+                    "EU License Plate",
+                    "AT Driving License"
                 }}
         };
         
