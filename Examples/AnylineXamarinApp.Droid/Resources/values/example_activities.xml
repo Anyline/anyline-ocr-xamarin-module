@@ -31,6 +31,7 @@
     <item>@string/category_vehicle</item>
     <item>@string/scan_license_plates</item>
     <item>@string/scan_driving_licenses</item>
+    <item>@string/scan_vin_number</item>
     
     <item>@string/version_info</item>
 
@@ -60,6 +61,7 @@
     <item>HEADER</item>
     <item>AnylineXamarinApp.LicensePlate.LicensePlateActivity</item>
     <item>AnylineXamarinApp.DrivingLicense.DrivingLicenseActivity</item>
-    <item>HEADER</item>
+    <item>AnylineXamarinApp.Ocr.VinActivity</item>
+  <item>HEADER</item>
   </string-array>
 </resources>

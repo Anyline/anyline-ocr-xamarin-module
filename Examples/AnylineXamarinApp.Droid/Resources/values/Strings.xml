@@ -20,7 +20,8 @@
   <string name="scan_bottlecaps">Bottlecap</string>
   <string name="scan_license_plates">EU License Plate</string>
   <string name="scan_driving_licenses">Austrian Driving License</string>
-  
+  <string name="scan_vin_number">Vehicle Identification Number</string>
+
   <!--energy-->
 
   <string name="heat_meter_4_3">4 pre-decimal places</string>

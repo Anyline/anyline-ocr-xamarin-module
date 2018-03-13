@@ -151,6 +151,7 @@
     <Compile Include="Ocr\IbanActivity.cs" />
     <Compile Include="LicensePlate\LicensePlateActivity.cs" />
     <Compile Include="Ocr\OCRResultView.cs" />
+    <Compile Include="Ocr\VinActivity.cs" />
     <Compile Include="Ocr\VoucherCodeActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -177,6 +178,9 @@
     <AndroidAsset Include="Assets\tessdata\eng_no_dict.traineddata" />
     <AndroidAsset Include="Assets\DriverLicenseConfig.json" />
     <AndroidAsset Include="Assets\anyline_austrian_driver_license.ale" />
+    <AndroidAsset Include="Assets\vin.ale" />
+    <AndroidAsset Include="Assets\VIN.any" />
+    <AndroidAsset Include="Assets\VinViewConfig.json" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <AndroidResource Include="Resources\layout\EnergyActivity.axml">
@@ -258,6 +262,7 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\license_plate_background.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
