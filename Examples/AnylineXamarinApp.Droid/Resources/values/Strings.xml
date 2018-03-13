@@ -13,6 +13,7 @@
   <string name="scan_dot_matrix_meters">Dot Matrix Meter</string>
 
   <string name="scan_barcode">Barcode / QR-Code</string>
+  <string name="scan_universal_serial_number">Universal Serial Number</string>
   <string name="scan_mrz">MRZ / Passport</string>
   <string name="scan_document">Document</string>
   <string name="scan_voucher_code">Voucher Code</string>
@@ -34,6 +35,7 @@
   <string name="category_identification">MRZ / Passport</string>
   <string name="category_fintech">Fintech</string>
   <string name="category_barcodes">Barcode / QR-Code</string>
+  <string name="category_serialnumber">Serial Number</string>
   <string name="category_documents">Document</string>
   <string name="category_loyality">Loyality</string>
   <string name="category_vehicle">Vehicles</string>

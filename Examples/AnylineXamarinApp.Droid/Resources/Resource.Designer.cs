@@ -995,26 +995,29 @@ namespace AnylineXamarinApp
 			// aapt resource value: 0x7f060012
 			public const int allow_camera_permission = 2131099666;
 			
-			// aapt resource value: 0x7f060030
-			public const int category_barcodes = 2131099696;
-			
 			// aapt resource value: 0x7f060031
-			public const int category_documents = 2131099697;
-			
-			// aapt resource value: 0x7f06002d
-			public const int category_energy = 2131099693;
-			
-			// aapt resource value: 0x7f06002f
-			public const int category_fintech = 2131099695;
-			
-			// aapt resource value: 0x7f06002e
-			public const int category_identification = 2131099694;
-			
-			// aapt resource value: 0x7f060032
-			public const int category_loyality = 2131099698;
+			public const int category_barcodes = 2131099697;
 			
 			// aapt resource value: 0x7f060033
-			public const int category_vehicle = 2131099699;
+			public const int category_documents = 2131099699;
+			
+			// aapt resource value: 0x7f06002e
+			public const int category_energy = 2131099694;
+			
+			// aapt resource value: 0x7f060030
+			public const int category_fintech = 2131099696;
+			
+			// aapt resource value: 0x7f06002f
+			public const int category_identification = 2131099695;
+			
+			// aapt resource value: 0x7f060034
+			public const int category_loyality = 2131099700;
+			
+			// aapt resource value: 0x7f060032
+			public const int category_serialnumber = 2131099698;
+			
+			// aapt resource value: 0x7f060035
+			public const int category_vehicle = 2131099701;
 			
 			// aapt resource value: 0x7f060001
 			public const int common_google_play_services_enable_button = 2131099649;
@@ -1079,14 +1082,14 @@ namespace AnylineXamarinApp
 			// aapt resource value: 0x7f060016
 			public const int flash_on = 2131099670;
 			
-			// aapt resource value: 0x7f06002a
-			public const int heat_meter_4_3 = 2131099690;
-			
 			// aapt resource value: 0x7f06002b
-			public const int heat_meter_5_3 = 2131099691;
+			public const int heat_meter_4_3 = 2131099691;
 			
 			// aapt resource value: 0x7f06002c
-			public const int heat_meter_6_3 = 2131099692;
+			public const int heat_meter_5_3 = 2131099692;
+			
+			// aapt resource value: 0x7f06002d
+			public const int heat_meter_6_3 = 2131099693;
 			
 			// aapt resource value: 0x7f060017
 			public const int license_expiry_info = 2131099671;
@@ -1103,8 +1106,8 @@ namespace AnylineXamarinApp
 			// aapt resource value: 0x7f060021
 			public const int scan_barcode = 2131099681;
 			
-			// aapt resource value: 0x7f060026
-			public const int scan_bottlecaps = 2131099686;
+			// aapt resource value: 0x7f060027
+			public const int scan_bottlecaps = 2131099687;
 			
 			// aapt resource value: 0x7f06001f
 			public const int scan_dial_meters = 2131099679;
@@ -1112,41 +1115,44 @@ namespace AnylineXamarinApp
 			// aapt resource value: 0x7f06001b
 			public const int scan_digital_meter = 2131099675;
 			
-			// aapt resource value: 0x7f060023
-			public const int scan_document = 2131099683;
+			// aapt resource value: 0x7f060024
+			public const int scan_document = 2131099684;
 			
 			// aapt resource value: 0x7f060020
 			public const int scan_dot_matrix_meters = 2131099680;
 			
-			// aapt resource value: 0x7f060028
-			public const int scan_driving_licenses = 2131099688;
+			// aapt resource value: 0x7f060029
+			public const int scan_driving_licenses = 2131099689;
 			
 			// aapt resource value: 0x7f06001c
 			public const int scan_heat_meter = 2131099676;
 			
-			// aapt resource value: 0x7f060025
-			public const int scan_iban = 2131099685;
+			// aapt resource value: 0x7f060026
+			public const int scan_iban = 2131099686;
 			
-			// aapt resource value: 0x7f060027
-			public const int scan_license_plates = 2131099687;
+			// aapt resource value: 0x7f060028
+			public const int scan_license_plates = 2131099688;
 			
-			// aapt resource value: 0x7f060022
-			public const int scan_mrz = 2131099682;
+			// aapt resource value: 0x7f060023
+			public const int scan_mrz = 2131099683;
 			
 			// aapt resource value: 0x7f06001e
 			public const int scan_serial_numbers = 2131099678;
 			
-			// aapt resource value: 0x7f060029
-			public const int scan_vin_number = 2131099689;
+			// aapt resource value: 0x7f060022
+			public const int scan_universal_serial_number = 2131099682;
 			
-			// aapt resource value: 0x7f060024
-			public const int scan_voucher_code = 2131099684;
+			// aapt resource value: 0x7f06002a
+			public const int scan_vin_number = 2131099690;
+			
+			// aapt resource value: 0x7f060025
+			public const int scan_voucher_code = 2131099685;
 			
 			// aapt resource value: 0x7f060011
 			public const int status_bar_notification_info_overflow = 2131099665;
 			
-			// aapt resource value: 0x7f060034
-			public const int version_info = 2131099700;
+			// aapt resource value: 0x7f060036
+			public const int version_info = 2131099702;
 			
 			static String()
 			{

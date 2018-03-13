@@ -18,6 +18,9 @@
     <item>@string/category_barcodes</item>    
     <item>@string/scan_barcode</item>
     
+    <item>@string/category_serialnumber</item>
+    <item>@string/scan_universal_serial_number</item>
+    
     <item>@string/category_fintech</item>    
     <item>@string/scan_iban</item>
     
@@ -51,6 +54,8 @@
     <item>AnylineXamarinApp.Mrz.MrzActivity</item>
     <item>HEADER</item>
     <item>AnylineXamarinApp.Barcode.BarcodeActivity</item>
+    <item>HEADER</item>
+    <item>AnylineXamarinApp.Ocr.SerialNumberActivity</item>
     <item>HEADER</item>
     <item>AnylineXamarinApp.Ocr.IbanActivity</item>
     <item>HEADER</item>

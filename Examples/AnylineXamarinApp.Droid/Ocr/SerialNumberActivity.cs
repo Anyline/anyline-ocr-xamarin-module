@@ -14,10 +14,10 @@ using AT.Nineyards.Anyline.Util;
 
 namespace AnylineXamarinApp.Ocr
 {
-    [Activity(Label = "Vehicle Identification Number", MainLauncher = false, Icon = "@drawable/ic_launcher", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait, HardwareAccelerated = true)]
-    public class VinActivity : Activity, IAnylineOcrResultListener
+    [Activity(Label = "Unversal Serial Number", MainLauncher = false, Icon = "@drawable/ic_launcher", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait, HardwareAccelerated = true)]
+    public class SerialNumberActivity : Activity, IAnylineOcrResultListener
     {
-        public static string TAG = typeof(VinActivity).Name;
+        public static string TAG = typeof(SerialNumberActivity).Name;
         
         private AnylineOcrScanView _scanView;
         private Dialog _resultDialog;
@@ -35,7 +35,7 @@ namespace AnylineXamarinApp.Ocr
             
             _scanView = FindViewById<AnylineOcrScanView>(Resource.Id.ocr_scan_view);
             
-            _scanView.SetConfigFromAsset("VinViewConfig.json");
+            _scanView.SetConfigFromAsset("SerialNumberViewConfig.json");
             
             SetOcrConfig(_scanView);
             
@@ -56,14 +56,12 @@ namespace AnylineXamarinApp.Ocr
         
         private void SetOcrConfig(AnylineOcrScanView scanView)
         {
-            //Configure the OCR for vehicle identification numbers
+            //Configure the OCR for Serial Numbers
             AnylineOcrConfig anylineOcrConfig = new AnylineOcrConfig();
 
             anylineOcrConfig.SetScanMode(AnylineOcrConfig.ScanMode.Auto);
-            anylineOcrConfig.SetLanguages("VIN.any");
-            
-            // set command file to config
-            anylineOcrConfig.CustomCmdFile = "vin.ale";
+            anylineOcrConfig.SetLanguages("USN_A-Z0-9.any");
+            anylineOcrConfig.ValidationRegex = "[A-Z0-9]{4,}";
             
             scanView.SetAnylineOcrConfig(anylineOcrConfig);
         }
