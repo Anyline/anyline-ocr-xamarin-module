@@ -66,10 +66,7 @@ namespace AnylineXamarinApp.Ocr
             
             // set command file to config
             anylineOcrConfig.CustomCmdFile = "vin.ale";
-
-            // set scan mode to config
-            anylineOcrConfig.SetScanMode(AnylineOcrConfig.ScanMode.Auto);
-
+            
             scanView.SetAnylineOcrConfig(anylineOcrConfig);
         }
 
@@ -121,7 +118,7 @@ namespace AnylineXamarinApp.Ocr
         {
             AlertDialog.Builder resultDialogBuilder = new AlertDialog.Builder(this);
             resultDialogBuilder.SetTitle("Result");
-            resultDialogBuilder.SetMessage(scanResult.ToString().Trim());
+            resultDialogBuilder.SetMessage(scanResult.Result.ToString().Trim());
 
             resultDialogBuilder.SetPositiveButton("OK", 
                 (sender, args) => 
