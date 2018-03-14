@@ -176,6 +176,8 @@
     <BundleResource Include="Resources\AnylineResources.bundle\module_mrz\mrz_scanning.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_order_code\tessdata\OcrB.traineddata" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_order_code\order_code.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\trained_models\VIN.any" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\vin.ale" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AnylineXamarinForms\AnylineXamarinForms.csproj">

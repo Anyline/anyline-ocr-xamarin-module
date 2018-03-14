@@ -40,6 +40,9 @@ namespace AnylineXamarinApp.iOS
             { "Barcodes", new[] {
                     "Barcode / QR-Code"
                 }},
+            { "Serial Numbers", new[] {
+                    "Universal Serial Number"
+                }},
             { "Fintech", new[] {
                     "IBAN"
                 }},
@@ -211,27 +214,34 @@ namespace AnylineXamarinApp.iOS
                     AnylineViewController.CurrentScanViewController = new AnylineBarcodeScanViewController(name);
                     break;
 
-                case 3: //Fintech
+                case 3: //Serial Numbers
+                    //Universal Serial Number
+                    AnylineViewController.CurrentScanViewController = new AnylineSerialNumberScanViewController(name);
+                    break;
+
+                case 4: //Fintech
                     //Iban Scan
                     AnylineViewController.CurrentScanViewController = new AnylineIBANScanViewController(name);
                     break;
 
-                case 4: //Document
+                case 5: //Document
                     //Document Scan
                     AnylineViewController.CurrentScanViewController = new AnylineDocumentScanViewController(name);
                     break;
 
-                case 5: //Loyalty
+                case 6: //Loyalty
                     if (indexPath.Row == 0) //Voucher Code Scan
                         AnylineViewController.CurrentScanViewController = new AnylineVoucherScanViewController(name);
                     if (indexPath.Row == 1) //Bottlecap Code Scan
                         AnylineViewController.CurrentScanViewController = new AnylineBottlecapScanViewController(name);
                     break;
-                case 6: //Vehicle
+                case 7: //Vehicle
                     if (indexPath.Row == 0) //License Plate Scan
                         AnylineViewController.CurrentScanViewController = new AnylineLicensePlateScanViewController(name);
                     if (indexPath.Row == 1) //Driving License Scan
-                        AnylineViewController.CurrentScanViewController = new AnylineDrivingLicenseScanViewController(name);                    
+                        AnylineViewController.CurrentScanViewController = new AnylineDrivingLicenseScanViewController(name);
+                    if (indexPath.Row == 2) //VIN Scan
+                        AnylineViewController.CurrentScanViewController = new AnylineVinScanViewController(name);
                     break;
                 default:
                     break;
