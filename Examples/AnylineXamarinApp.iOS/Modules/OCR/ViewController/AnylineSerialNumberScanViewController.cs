@@ -11,9 +11,9 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
         readonly string _licenseKey = AnylineViewController.LicenseKey;
 
         AnylineOCRModuleView _scanView;
-        ResultOverlayView _resultView;
-
         ALOCRConfig _ocrConfig;
+
+        UIAlertView _resultAlert;
 
         NSError _error;
         bool _success;
@@ -24,6 +24,12 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
         {
             Title = name;
         }
+
+        [Export("ViewTapSelector:")]
+        private void AnimateFadeOut(UIGestureRecognizer sender)
+        {
+        }
+
 
         public override void ViewDidLoad()
         {
@@ -44,15 +50,10 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
             // We'll define the OCR Config here:
             _ocrConfig = new ALOCRConfig();
 
-            // as of 3.20, we use Languages instead of TesseractLanguages as it doesn't require to copy the traineddata file
-            string engNoDict = NSBundle.MainBundle.PathForResource(@"Modules/OCR/eng_no_dict", @"traineddata");
-            string deu = NSBundle.MainBundle.PathForResource(@"Modules/OCR/deu", @"traineddata");
-            _ocrConfig.Languages = new[] { engNoDict, deu };
-            //_ocrConfig.TesseractLanguages = new[] {@"eng_no_dict", @"deu"};
-            _ocrConfig.CharWhiteList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-            _ocrConfig.MinConfidence = 60;
             _ocrConfig.ScanMode = ALOCRScanMode.Auto;
-            _ocrConfig.ValidationRegex = "^[A-Z]{2}([0-9A-Z]\\s*){13,32}$";
+            string anyFile = NSBundle.MainBundle.PathForResource("USN_A-Z0-9", @"any");
+            _ocrConfig.Languages = new[] { anyFile };
+            _ocrConfig.ValidationRegex = "[A-Z0-9]{4,}";
             
             // We tell the module to bootstrap itself with the license key and delegate. The delegate will later get called
             // by the module once we start receiving results.
@@ -66,38 +67,16 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
                 (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
             
-            // We load the UI config for our IBAN view from a .json file.
-            string configFile = NSBundle.MainBundle.PathForResource(@"Modules/OCR/iban_config", @"json");
+            // We load the UI config for our serial number view from a .json file.
+            string configFile = NSBundle.MainBundle.PathForResource(@"Modules/OCR/serial_number_config", @"json");
             _scanView.CurrentConfiguration = ALUIConfiguration.CutoutConfigurationFromJsonFile(configFile);            
 
             // We stop scanning manually
             _scanView.CancelOnResult = false;
 
             // After setup is complete we add the module to the view of this view controller
-            View.AddSubview(_scanView);
-
-            /*
-             The following view will present the scanned values. Here we start listening for taps
-             to later dismiss the view.
-             */
-            _resultView = new ResultOverlayView(new CGRect(0, 0, View.Frame.Width, View.Frame.Height), UIImage.FromBundle(@"drawable/iban_background.png"));
-            _resultView.AddGestureRecognizer(new UITapGestureRecognizer(this, new ObjCRuntime.Selector("ViewTapSelector:")));
-
-            _resultView.Center = View.Center;
-            _resultView.Alpha = 0;
-
-            View.AddSubview(_resultView);            
+            View.AddSubview(_scanView);           
         }
-
-        /*
-         Dismiss the view if the user taps the screen
-         */
-        [Export("ViewTapSelector:")]
-        private void AnimateFadeOut(UIGestureRecognizer sender)
-        {
-            _resultView.AnimateFadeOut(View, StartAnyline);
-        }
-
 
         /*
          This method will be called once the view controller and its subviews have appeared on screen
@@ -115,9 +94,11 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
         {
             if (_isScanning) return;
 
-            //send the result view to the back before we start scanning
-            View.SendSubviewToBack(_resultView);
-
+            if (_resultAlert != null)
+                _resultAlert.Dismissed -= _resultAlert_Dismissed;
+            _resultAlert?.Dispose();
+            _resultAlert = null;
+            
             _error = null;
             _success = _scanView.StartScanningAndReturnError(out _error);
             if (!_success)
@@ -133,15 +114,13 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
             if (!_isScanning) return;
             _isScanning = false;
 
-            if (_resultView == null || _scanView == null) return;
+            if (_scanView == null) return;
 
             _error = null;
             if (!_scanView.CancelScanningAndReturnError(out _error))
             {
                 (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
-
-            View.BringSubviewToFront(_resultView);
         }
 
         public override void ViewWillDisappear(bool animated)
@@ -163,10 +142,8 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
         {
             //un-register any event handlers here, if you have any
 
-            //remove result view
-            _resultView?.RemoveFromSuperview();
-            _resultView?.Dispose();
-            _resultView = null;
+            _resultAlert?.Dispose();
+            _resultAlert = null;
 
             //we have to erase the scan view so that there are no dependencies for the viewcontroller left.
             _scanView?.RemoveFromSuperview();
@@ -185,13 +162,17 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
         {
 
             StopAnyline();
-            if (_resultView != null)
-                View.BringSubviewToFront(_resultView);
 
-            _resultView?.UpdateResult(result.Text);
+            _resultAlert = new UIAlertView() { Title = "Result", Message = result.Text };
+            _resultAlert.AddButton("OK");
+            _resultAlert.Show();
 
-            // Present the information to the user
-            _resultView?.AnimateFadeIn(View);
+            _resultAlert.Dismissed += _resultAlert_Dismissed;
+        }
+
+        private void _resultAlert_Dismissed(object sender, UIButtonEventArgs e)
+        {
+            StartAnyline();
         }
 
         void IAnylineOCRModuleDelegate.ReportsRunFailure(AnylineOCRModuleView anylineOCRModuleView, ALOCRError error)

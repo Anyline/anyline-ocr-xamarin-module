@@ -240,8 +240,8 @@ namespace AnylineXamarinApp.iOS
                         AnylineViewController.CurrentScanViewController = new AnylineLicensePlateScanViewController(name);
                     if (indexPath.Row == 1) //Driving License Scan
                         AnylineViewController.CurrentScanViewController = new AnylineDrivingLicenseScanViewController(name);
-                    if (indexPath.Row == 2) //VIN Scan
-                        AnylineViewController.CurrentScanViewController = new AnylineVinScanViewController(name);
+                    //if (indexPath.Row == 2) //VIN Scan
+                    //    AnylineViewController.CurrentScanViewController = new AnylineVinScanViewController(name);
                     break;
                 default:
                     break;

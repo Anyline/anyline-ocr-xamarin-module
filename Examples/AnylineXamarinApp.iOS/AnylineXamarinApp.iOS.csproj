@@ -191,6 +191,7 @@
     <Compile Include="Modules\LicensePlate\ViewController\AnylineLicensePlateScanViewController.cs" />
     <Compile Include="Modules\OCR\ViewController\AnylineVoucherScanViewController.cs" />
     <Compile Include="Modules\OCR\ViewController\AnylineIBANScanViewController.cs" />
+    <Compile Include="Modules\OCR\ViewController\AnylineSerialNumberScanViewController.cs" />
     <Compile Include="ResultOverlayView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -315,6 +316,9 @@
     <BundleResource Include="Modules\DrivingLicense\drivinglicense_capture_config.json" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\vin.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\trained_models\VIN.any" />
+    <BundleResource Include="Modules\OCR\USN_A-Z0-9.any" />
+    <BundleResource Include="Modules\OCR\serial_number_config.json" />
+    <BundleResource Include="Modules\OCR\vin_config.json" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Modules\OCR\iban_config.json" />
