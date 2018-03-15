@@ -189,9 +189,10 @@
     <Compile Include="Modules\Mrz\View\AnylineIdentificationView.cs" />
     <Compile Include="Modules\OCR\ViewController\AnylineBottlecapScanViewController.cs" />
     <Compile Include="Modules\LicensePlate\ViewController\AnylineLicensePlateScanViewController.cs" />
+    <Compile Include="Modules\OCR\ViewController\AnylineSerialNumberScanViewController.cs" />
     <Compile Include="Modules\OCR\ViewController\AnylineVoucherScanViewController.cs" />
     <Compile Include="Modules\OCR\ViewController\AnylineIBANScanViewController.cs" />
-    <Compile Include="Modules\OCR\ViewController\AnylineSerialNumberScanViewController.cs" />
+    <Compile Include="Modules\OCR\ViewController\AnylineVinScanViewController.cs" />
     <Compile Include="ResultOverlayView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -312,13 +313,15 @@
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_austrian_driver_license.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\energy_serial_capital_letters.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\trained_models\CNN_SNr_w_CL_special_whiteList.enc" />
-    <BundleResource Include="Modules\DrivingLicense\anyline_austrian_driving_license.ale" />
     <BundleResource Include="Modules\DrivingLicense\drivinglicense_capture_config.json" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\vin.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\trained_models\VIN.any" />
     <BundleResource Include="Modules\OCR\USN_A-Z0-9.any" />
     <BundleResource Include="Modules\OCR\serial_number_config.json" />
-    <BundleResource Include="Modules\OCR\vin_config.json" />
+    <BundleResource Include="Modules\OCR\vin.ale" />
+    <BundleResource Include="Modules\DrivingLicense\anyline_austrian_driver_license.ale" />
+    <BundleResource Include="Modules\OCR\vin.any" />
+    <BundleResource Include="Modules\OCR\vin_capture_config.json" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Modules\OCR\iban_config.json" />

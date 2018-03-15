@@ -24,18 +24,12 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
         {
             Title = name;
         }
-
-        [Export("ViewTapSelector:")]
-        private void AnimateFadeOut(UIGestureRecognizer sender)
-        {
-        }
-
-
+        
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
 
-            // Initializing the serial number module.
+            // Initializing the OCR module.
             CGRect frame = UIScreen.MainScreen.ApplicationFrame;
             frame = new CGRect(frame.X,
                 frame.Y + NavigationController.NavigationBar.Frame.Size.Height,
@@ -51,7 +45,7 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
             _ocrConfig = new ALOCRConfig();
 
             _ocrConfig.ScanMode = ALOCRScanMode.Auto;
-            string anyFile = NSBundle.MainBundle.PathForResource("USN_A-Z0-9", @"any");
+            string anyFile = NSBundle.MainBundle.PathForResource(@"Modules/OCR/USN_A-Z0-9", @"any");
             _ocrConfig.Languages = new[] { anyFile };
             _ocrConfig.ValidationRegex = "[A-Z0-9]{4,}";
             

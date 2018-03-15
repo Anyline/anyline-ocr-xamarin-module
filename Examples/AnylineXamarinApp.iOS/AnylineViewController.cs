@@ -55,7 +55,8 @@ namespace AnylineXamarinApp.iOS
                 }},
             { "Vehicle", new[] {
                     "EU License Plate",
-                    "AT Driving License"
+                    "AT Driving License",
+                    "Vehicle Identification Number"
                 }}
         };
         
@@ -241,7 +242,7 @@ namespace AnylineXamarinApp.iOS
                     if (indexPath.Row == 1) //Driving License Scan
                         AnylineViewController.CurrentScanViewController = new AnylineDrivingLicenseScanViewController(name);
                     //if (indexPath.Row == 2) //VIN Scan
-                    //    AnylineViewController.CurrentScanViewController = new AnylineVinScanViewController(name);
+                        AnylineViewController.CurrentScanViewController = new AnylineVinScanViewController(name);
                     break;
                 default:
                     break;
