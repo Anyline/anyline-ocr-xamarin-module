@@ -7,6 +7,7 @@ using Foundation;
 using ObjCRuntime;
 using UIKit;
 using System.Drawing;
+using Foundation;
 
 /*
     OBJECTIVE SHARPIE COMMAND:    
@@ -1139,12 +1140,17 @@ namespace AnylineXamarinSDK.iOS
         [Export("initWithCaptureResolution:pictureResolution:cutoutScreen:cutoutPadding:cutoutOffset:defaultDevice:")]
         IntPtr Constructor(ALCaptureViewResolution captureResolution, ALPictureResolution pictureResolution, CGRect cutoutScreen, CGSize cutoutPadding, CGPoint cutoutOffset, string defaultDevice);
 
-        [Wrap("WeakBarcodeDelegate")]
-        NSObject BarcodeDelegate { get; set; }
+        // @property (readonly, nonatomic, strong) NSHashTable<AnylineNativeBarcodeDelegate> * _Nullable barcodeDelegates;
+        [NullAllowed, Export("barcodeDelegates", ArgumentSemantic.Strong)]
+        NSSet BarcodeDelegates { get; }
 
-        // @property (nonatomic, weak) id<AnylineNativeBarcodeDelegate> barcodeDelegate;
-        [NullAllowed, Export("barcodeDelegate", ArgumentSemantic.Weak)]
-        NSObject WeakBarcodeDelegate { get; set; }
+        // -(void)addBarcodeDelegate:(id<AnylineNativeBarcodeDelegate> _Nonnull)delegate;
+        [Export("addBarcodeDelegate:")]
+        void AddBarcodeDelegate(NSObject @delegate);
+
+        // -(void)removeBarcodeDelegate:(id<AnylineNativeBarcodeDelegate> _Nonnull)delegate;
+        [Export("removeBarcodeDelegate:")]
+        void RemoveBarcodeDelegate (NSObject @delegate);
 
         //[Wrap("WeakSampleBufferDelegate")]
         //AnylineVideoDataSampleBufferDelegate SampleBufferDelegate { get; set; }
@@ -1268,8 +1274,8 @@ namespace AnylineXamarinSDK.iOS
         [Export("cameraView", ArgumentSemantic.Strong)]
         ALCameraView CameraView { get; set; }
 
-        // @property (nonatomic, strong) ALCaptureDeviceManager * captureDeviceManager;
-        [Export("captureDeviceManager", ArgumentSemantic.Strong)]
+        // @property (nonatomic, strong) ALCaptureDeviceManager * _Nullable captureDeviceManager;
+        [NullAllowed, Export("captureDeviceManager", ArgumentSemantic.Strong)]
         ALCaptureDeviceManager CaptureDeviceManager { get; set; }
 
         // @property (nonatomic, strong) ALCutoutView * cutoutView;
