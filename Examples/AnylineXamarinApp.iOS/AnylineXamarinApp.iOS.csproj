@@ -322,6 +322,7 @@
     <BundleResource Include="Modules\DrivingLicense\anyline_austrian_driver_license.ale" />
     <BundleResource Include="Modules\OCR\vin.any" />
     <BundleResource Include="Modules\OCR\vin_capture_config.json" />
+    <BundleResource Include="Modules\LicensePlate\license_plate_view_config.json" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Modules\OCR\iban_config.json" />

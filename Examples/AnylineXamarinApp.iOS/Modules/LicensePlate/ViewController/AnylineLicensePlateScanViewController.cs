@@ -55,7 +55,12 @@ namespace AnylineXamarinApp.iOS.Modules.LicensePlate.ViewController
                 // Something went wrong. The error object contains the error description
                 (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
-                        
+
+            _scanView.EnableReporting(true);
+
+            string configFile = NSBundle.MainBundle.PathForResource(@"Modules/LicensePlate/license_plate_view_config", @"json");
+            _scanView.CurrentConfiguration = ALUIConfiguration.CutoutConfigurationFromJsonFile(configFile);
+            
             // We stop scanning manually
             _scanView.CancelOnResult = false;
             
