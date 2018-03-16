@@ -326,24 +326,11 @@
     <BundleResource Include="Modules\OCR\iban_config.json" />
     <BundleResource Include="Modules\OCR\voucher_code_config.json" />
     <BundleResource Include="Modules\OCR\bottlecap_config.json" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\AnylineResources.bundle\sounds\beep.wav" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\AnylineResources.bundle\Anyline-Info.plist" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\AnylineResources.bundle\images\flash_white.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\AnylineResources.bundle\images\flash_white%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\AnylineResources.bundle\images\flash_white%403x.png" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
     <BundleResource Include="Resources\drawable\driving_license_background.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

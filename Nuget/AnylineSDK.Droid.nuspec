@@ -2,7 +2,7 @@
 	<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
 		<metadata>
 			<!-- The identifier that must be unique within the hosting gallery -->
-			<id>Anyline.Xamarin.SDK</id>
+			<id>Anyline.Xamarin.SDK.Droid</id>
 
 			<!-- The package version number that is used when resolving dependencies -->
 			<version>3.22.0</version>
@@ -53,10 +53,10 @@
 
 		<files>
 			<!-- A readme.txt will be displayed when the package is installed -->
-			<file src="README.md" target="" />
+			<file src="..\README.md" target="" />
 		
 			<!-- SDK .dll -->
-			<file src="AnylineXamarinSDK.Droid.dll" target="lib\MonoAndroid10" />
+			<file src="..\AnylineXamarinSDK.Droid.dll" target="lib\MonoAndroid10" />
 			
 		</files>
 				
