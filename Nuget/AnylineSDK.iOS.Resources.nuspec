@@ -3,6 +3,8 @@
 		<metadata>
 			<!-- The identifier that must be unique within the hosting gallery -->
 			<id>Anyline.Xamarin.SDK.iOS.Resources</id>
+			
+			<title>Anyline Xamarin SDK (iOS Resources)</title>
 
 			<!-- The package version number that is used when resolving dependencies -->
 			<version>3.22.0</version>
