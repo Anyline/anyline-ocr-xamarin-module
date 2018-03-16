@@ -36,7 +36,7 @@
 			<description>
 			Anyline provides an easy-to-use SDK for applications to enable Optical Character Recognition (OCR) on mobile devices.
 			
-			This NuGet package contains the dependencies to the Anyline Xamarin.iOS and Xamarin.Android SDK binaries.
+			This NuGet package contains the Xamarin.Android SDK binary.
 			
 			For detailed integration guides, see https://documentation.anyline.com/toc/platforms/xamarin/xamarin.ios/xamarin.ios_quickstart.html and https://documentation.anyline.com/toc/platforms/xamarin/xamarin.android/xamarin.android_quickstart.html 
 			</description>
@@ -48,18 +48,16 @@
 
 			<!-- Tags appear in the gallery and can be used for tag searches -->
 			<tags>ocr scanning meter barcode mrz qr document camera anyline license plate </tags>
-
-			<!-- Dependencies are automatically installed when the package is installed -->
-			<dependencies>
-				<dependency id="Anyline.Xamarin.SDK.Droid" version="3.22.0" />
-				<dependency id="Anyline.Xamarin.SDK.iOS" version="3.22.0" />
-			</dependencies>
-			
+						
 		</metadata>
 
-		<!-- A readme.txt will be displayed when the package is installed -->
 		<files>
+			<!-- A readme.txt will be displayed when the package is installed -->
 			<file src="README.md" target="" />
+		
+			<!-- SDK .dll -->
+			<file src="AnylineXamarinSDK.Droid.dll" target="lib\MonoAndroid10" />
+			
 		</files>
 				
     </package>
