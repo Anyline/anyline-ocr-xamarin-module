@@ -149,7 +149,6 @@ namespace AnylineXamarinApp.Document
         void IDocumentResultListener.OnTakePictureError(Java.Lang.Throwable error)
         {
             Console.WriteLine(error.Message);
-            GC.Collect();            
         }
 
         // this is called after the image has been captured from the camera and is about to be processed
@@ -215,9 +214,8 @@ namespace AnylineXamarinApp.Document
 
             if (_imageViewResult != null)
                 _imageViewResult.Click -= ResultImage_Click;
-
-            // explicitly free memory
-            GC.Collect(GC.MaxGeneration);
+            _scanView?.Dispose();
+            _scanView = null;
         }        
     }
 }

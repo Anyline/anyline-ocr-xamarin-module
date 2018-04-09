@@ -145,9 +145,7 @@ namespace AnylineXamarinApp.DrivingLicense
             _driverLicenseResultView?.Bg?.Dispose();
             _driverLicenseResultView?.Dispose();
             _scanView?.Dispose();
-
-            // explicitly free memory
-            GC.Collect(GC.MaxGeneration);
+            _scanView = null;
         }
 
         void IAnylineOcrResultListener.OnResult(AnylineOcrResult scanResult)

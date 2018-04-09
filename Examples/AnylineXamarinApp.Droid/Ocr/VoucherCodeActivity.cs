@@ -190,9 +190,7 @@ namespace AnylineXamarinApp.Ocr
             _voucherCodeResultView?.Bg?.Dispose();
             _voucherCodeResultView?.Dispose();
             _scanView?.Dispose();
-
-            // explicitly free memory
-            GC.Collect(GC.MaxGeneration);
+            _scanView = null;
         }
 
         void IAnylineOcrResultListener.OnResult(AnylineOcrResult scanResult)

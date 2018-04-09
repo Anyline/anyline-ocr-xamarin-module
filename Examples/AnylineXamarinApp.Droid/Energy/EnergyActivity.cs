@@ -191,10 +191,7 @@ namespace AnylineXamarinApp.Energy
         void IEnergyResultListener.OnResult(EnergyResult scanResult)        
         {
             _scanView.CancelScanning();
-
-            // explicitly free memory
-            GC.Collect(GC.MaxGeneration);
-
+            
             string typeString = "Scan Result";
 
             // we just want to display the plain text
@@ -255,9 +252,8 @@ namespace AnylineXamarinApp.Energy
         protected override void OnDestroy()
         {
             base.OnDestroy();
-
-            // explicitly free memory
-            GC.Collect(GC.MaxGeneration);
+            _scanView?.Dispose();
+            _scanView = null;
         }
     }
 

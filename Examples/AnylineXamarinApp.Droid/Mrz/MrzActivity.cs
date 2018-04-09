@@ -51,7 +51,9 @@ namespace AnylineXamarinApp.Mrz
             };
 
             _scanView.CameraError += (s, e) => { Log.Error(TAG, "OnCameraError: " + e.Event.Message); };
-            
+
+            // set this to true after InitAnyline if only a result should be found, when all check digits are valid
+            _scanView.StrictMode = true;
         }
 
         void IMrzResultListener.OnResult(MrzResult scanResult)
@@ -101,9 +103,8 @@ namespace AnylineXamarinApp.Mrz
         protected override void OnDestroy()
         {
             base.OnDestroy();
-
-            // explicitly free memory
-            GC.Collect(GC.MaxGeneration);
+            _scanView?.Dispose();
+            _scanView = null;
         }
     }
 }

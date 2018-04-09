@@ -99,9 +99,8 @@ namespace AnylineXamarinApp.Barcode
         protected override void OnDestroy()
         {
             base.OnDestroy();
-
-            // explicitly free memory
-            GC.Collect(GC.MaxGeneration);
+            _scanView?.Dispose();
+            _scanView = null;
         }
 
         void IBarcodeResultListener.OnResult(BarcodeResult scanResult)
