@@ -32,7 +32,7 @@
   <!--categories-->
   
   <string name="category_energy">Meter Reading</string>
-  <string name="category_identification">MRZ / Passport</string>
+  <string name="category_identification">Identification Documents</string>
   <string name="category_fintech">Fintech</string>
   <string name="category_barcodes">Barcode / QR-Code</string>
   <string name="category_serialnumber">Serial Number</string>

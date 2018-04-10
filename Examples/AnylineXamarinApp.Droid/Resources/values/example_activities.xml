@@ -14,6 +14,7 @@
     
     <item>@string/category_identification</item>    
     <item>@string/scan_mrz</item>
+    <item>@string/scan_driving_licenses</item>
     
     <item>@string/category_barcodes</item>    
     <item>@string/scan_barcode</item>
@@ -33,7 +34,6 @@
 
     <item>@string/category_vehicle</item>
     <item>@string/scan_license_plates</item>
-    <item>@string/scan_driving_licenses</item>
     <item>@string/scan_vin_number</item>
     
     <item>@string/version_info</item>
@@ -52,6 +52,7 @@
     <item>AnylineXamarinApp.Energy.EnergyActivity</item>
     <item>HEADER</item>
     <item>AnylineXamarinApp.Mrz.MrzActivity</item>
+    <item>AnylineXamarinApp.DrivingLicense.DrivingLicenseActivity</item>
     <item>HEADER</item>
     <item>AnylineXamarinApp.Barcode.BarcodeActivity</item>
     <item>HEADER</item>
@@ -65,7 +66,6 @@
     <item>AnylineXamarinApp.Ocr.BottlecapActivity</item>
     <item>HEADER</item>
     <item>AnylineXamarinApp.LicensePlate.LicensePlateActivity</item>
-    <item>AnylineXamarinApp.DrivingLicense.DrivingLicenseActivity</item>
     <item>AnylineXamarinApp.Ocr.VinActivity</item>
   <item>HEADER</item>
   </string-array>
