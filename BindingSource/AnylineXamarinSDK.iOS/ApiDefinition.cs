@@ -2092,6 +2092,8 @@ namespace AnylineXamarinSDK.iOS
         [Export("mrzScanPlugin", ArgumentSemantic.Strong)]
         ALMRZScanPlugin MrzScanPlugin { get; set; }
 
+        // TODO: Strict mode!
+
         // -(BOOL)setupWithLicenseKey:(NSString *)licenseKey delegate:(id<AnylineMRZModuleDelegate>)delegate error:(NSError **)error;
         [Export("setupWithLicenseKey:delegate:error:")]
         bool SetupWithLicenseKey(string licenseKey, NSObject @delegate, out NSError error);
