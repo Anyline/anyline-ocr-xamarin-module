@@ -2054,6 +2054,10 @@ namespace AnylineXamarinSDK.iOS
         // -(void)removeDelegate:(id<ALMRZScanPluginDelegate> _Nonnull)delegate;
         [Export("removeDelegate:")]
         void RemoveDelegate(ALMRZScanPluginDelegate @delegate);
+
+        // @property(nonatomic) BOOL strictMode;
+        [Export("strictMode")]
+        bool StrictMode { get; set; }
     }
 
     // @protocol ALMRZScanPluginDelegate <NSObject>
@@ -2092,8 +2096,10 @@ namespace AnylineXamarinSDK.iOS
         [Export("mrzScanPlugin", ArgumentSemantic.Strong)]
         ALMRZScanPlugin MrzScanPlugin { get; set; }
 
-        // TODO: Strict mode!
-
+        // @property(nonatomic) BOOL strictMode;
+        [Export("strictMode")]
+        bool StrictMode { get; set; }
+        
         // -(BOOL)setupWithLicenseKey:(NSString *)licenseKey delegate:(id<AnylineMRZModuleDelegate>)delegate error:(NSError **)error;
         [Export("setupWithLicenseKey:delegate:error:")]
         bool SetupWithLicenseKey(string licenseKey, NSObject @delegate, out NSError error);
