@@ -45,7 +45,7 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
             _ocrConfig = new ALOCRConfig();
 
             _ocrConfig.ScanMode = ALOCRScanMode.Auto;
-            string anyFile = NSBundle.MainBundle.PathForResource(@"Modules/OCR/USN_A-Z0-9", @"any");
+            string anyFile = NSBundle.MainBundle.PathForResource(@"Modules/OCR/USNr", @"any");
             _ocrConfig.Languages = new[] { anyFile };
             _ocrConfig.ValidationRegex = "[A-Z0-9]{4,}";
             

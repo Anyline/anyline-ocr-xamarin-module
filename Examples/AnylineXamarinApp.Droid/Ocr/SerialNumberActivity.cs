@@ -60,7 +60,7 @@ namespace AnylineXamarinApp.Ocr
             AnylineOcrConfig anylineOcrConfig = new AnylineOcrConfig();
 
             anylineOcrConfig.SetScanMode(AnylineOcrConfig.ScanMode.Auto);
-            anylineOcrConfig.SetLanguages("USN_A-Z0-9.any");
+            anylineOcrConfig.SetLanguages("USNr.any");
             anylineOcrConfig.ValidationRegex = "[A-Z0-9]{4,}";
             
             scanView.SetAnylineOcrConfig(anylineOcrConfig);

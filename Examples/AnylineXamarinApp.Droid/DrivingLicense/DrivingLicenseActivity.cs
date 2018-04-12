@@ -73,7 +73,7 @@ namespace AnylineXamarinApp.DrivingLicense
             //Configure the OCR for Driver Licenses
             AnylineOcrConfig anylineOcrConfig = new AnylineOcrConfig();
 
-            anylineOcrConfig.CustomCmdFile = "anyline_austrian_driver_license.ale";
+            anylineOcrConfig.CustomCmdFile = "anyline_austrian_driving_license.ale";
             anylineOcrConfig.SetLanguages("tessdata/eng_no_dict.traineddata", "tessdata/deu.traineddata");
             
             scanView.SetAnylineOcrConfig(anylineOcrConfig);

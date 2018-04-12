@@ -51,7 +51,7 @@ namespace AnylineXamarinApp.iOS.Modules.Mrz.ViewController
             _anylineMrzView.CancelOnResult = false;
 
             //set strict mode here
-            _anylineMrzView.StrictMode = true;
+            //_anylineMrzView.StrictMode = true;
                         
             // After setup is complete we add the module to the view of this view controller
             View.AddSubview(_anylineMrzView);

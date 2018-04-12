@@ -84,7 +84,6 @@
 			<file src="..\AnylineResources.bundle\module_anyline_ocr\simpleocr_capture_config.json" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\"/>
 			<file src="..\AnylineResources.bundle\module_anyline_ocr\vin.ale" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\"/>
 			<file src="..\AnylineResources.bundle\module_anyline_ocr\trained_models\USNr.any" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\trained_models\"/>
-			<file src="..\AnylineResources.bundle\module_anyline_ocr\trained_models\USNr.pb" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\trained_models\"/>
 			<file src="..\AnylineResources.bundle\module_anyline_ocr\trained_models\VIN.any" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\trained_models\"/>
 			<file src="..\AnylineResources.bundle\module_barcode\barcode_capture_config.json" target="..\..\..\AnylineResources.bundle\module_barcode\"/>
 			<file src="..\AnylineResources.bundle\module_barcode\ean.ale" target="..\..\..\AnylineResources.bundle\module_barcode\"/>

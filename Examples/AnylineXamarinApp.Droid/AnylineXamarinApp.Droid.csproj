@@ -179,12 +179,12 @@
     <AndroidAsset Include="Assets\LicensePlateConfig.json" />
     <AndroidAsset Include="Assets\tessdata\eng_no_dict.traineddata" />
     <AndroidAsset Include="Assets\DriverLicenseConfig.json" />
-    <AndroidAsset Include="Assets\anyline_austrian_driver_license.ale" />
     <AndroidAsset Include="Assets\vin.ale" />
     <AndroidAsset Include="Assets\VIN.any" />
     <AndroidAsset Include="Assets\VinViewConfig.json" />
-    <AndroidAsset Include="Assets\USN_A-Z0-9.any" />
     <AndroidAsset Include="Assets\SerialNumberViewConfig.json" />
+    <AndroidAsset Include="Assets\USNr.any" />
+    <AndroidAsset Include="Assets\anyline_austrian_driving_license.ale" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <AndroidResource Include="Resources\layout\EnergyActivity.axml">
