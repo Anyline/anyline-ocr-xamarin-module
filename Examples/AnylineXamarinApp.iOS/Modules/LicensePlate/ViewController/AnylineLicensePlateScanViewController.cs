@@ -169,9 +169,7 @@ namespace AnylineXamarinApp.iOS.Modules.LicensePlate.ViewController
             _scanView?.RemoveFromSuperview();
             _scanView?.Dispose();
             _scanView = null;
-
-            GC.Collect(GC.MaxGeneration);
-
+            
             base.Dispose();
         }
 

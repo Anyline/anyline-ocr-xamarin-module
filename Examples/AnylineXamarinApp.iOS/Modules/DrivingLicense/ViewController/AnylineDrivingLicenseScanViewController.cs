@@ -45,7 +45,7 @@ namespace AnylineXamarinApp.iOS.Modules.DrivingLicense.ViewController
             string deuTraineddata = NSBundle.MainBundle.PathForResource(@"Modules/OCR/deu", @"traineddata");
             _ocrConfig.Languages = new[] { engTraineddata, deuTraineddata };
 
-            _ocrConfig.CustomCmdFilePath = NSBundle.MainBundle.PathForResource(@"Modules/DrivingLicense/anyline_austrian_driver_license", @"ale");
+            _ocrConfig.CustomCmdFilePath = NSBundle.MainBundle.PathForResource(@"Modules/DrivingLicense/anyline_austrian_driving_license", @"ale");
 
             // We tell the module to bootstrap itself with the license key and delegate. The delegate will later get called
             // by the module once we start receiving results.
@@ -167,9 +167,7 @@ namespace AnylineXamarinApp.iOS.Modules.DrivingLicense.ViewController
             _scanView?.RemoveFromSuperview();
             _scanView?.Dispose();
             _scanView = null;
-
-            GC.Collect(GC.MaxGeneration);
-
+            
             base.Dispose();
             
         }

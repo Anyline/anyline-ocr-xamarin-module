@@ -3,7 +3,7 @@ using ObjCRuntime;
 
 [assembly: LinkWith ("Anyline.a",    
     LinkTarget = LinkTarget.Simulator | LinkTarget.ArmV7 | LinkTarget.ArmV7s | LinkTarget.Arm64,
-    Frameworks = "ImageIO AssetsLibrary AVFoundation CoreMedia CoreVideo AudioToolbox QuartzCore Accelerate Security CoreMotion",
+    Frameworks = "ImageIO AssetsLibrary AVFoundation CoreMedia CoreVideo AudioToolbox QuartzCore Accelerate Security CoreMotion CoreImage",
     LinkerFlags = "-lz -lstdc++.6.0.9 -lc++ -liconv -all_load -ObjC -v "
 
     // redefine all extern const symbols, see https://forums.xamarin.com/discussion/8572/how-do-you-bind-extern-nsstring-const

@@ -124,9 +124,7 @@ namespace AnylineXamarinApp.iOS.Modules.Barcode.ViewController
             _anylineBarcodeView?.RemoveFromSuperview();
             _anylineBarcodeView?.Dispose();
             _anylineBarcodeView = null;
-
-            GC.Collect(GC.MaxGeneration);
-
+            
             base.Dispose();
         }
     }

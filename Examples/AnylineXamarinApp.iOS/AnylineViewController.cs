@@ -34,8 +34,9 @@ namespace AnylineXamarinApp.iOS
                     "Dial Meter",
                     "Dot Matrix Meter",
                 }},
-            { "Identification", new[] {
-                    "Passport / MRZ"
+            { "Identification Documents", new[] {
+                    "Passport / MRZ",
+                    "AT Driving License"
                 }},
             { "Barcodes", new[] {
                     "Barcode / QR-Code"
@@ -55,7 +56,6 @@ namespace AnylineXamarinApp.iOS
                 }},
             { "Vehicle", new[] {
                     "EU License Plate",
-                    "AT Driving License",
                     "Vehicle Identification Number"
                 }}
         };
@@ -206,8 +206,10 @@ namespace AnylineXamarinApp.iOS
                     break;
 
                 case 1: //Identification
-                    //Passport / ID MRZ Scan
-                    AnylineViewController.CurrentScanViewController = new AnylineMrzScanViewController(name);
+                    if (indexPath.Row == 0) //Passport / ID MRZ Scan
+                        AnylineViewController.CurrentScanViewController = new AnylineMrzScanViewController(name);
+                    if (indexPath.Row == 1) //Driving License Scan
+                        AnylineViewController.CurrentScanViewController = new AnylineDrivingLicenseScanViewController(name);
                     break;
 
                 case 2: //Barcodes
@@ -239,9 +241,7 @@ namespace AnylineXamarinApp.iOS
                 case 7: //Vehicle
                     if (indexPath.Row == 0) //License Plate Scan
                         AnylineViewController.CurrentScanViewController = new AnylineLicensePlateScanViewController(name);
-                    if (indexPath.Row == 1) //Driving License Scan
-                        AnylineViewController.CurrentScanViewController = new AnylineDrivingLicenseScanViewController(name);
-                    if (indexPath.Row == 2) //VIN Scan
+                    if (indexPath.Row == 1) //VIN Scan
                         AnylineViewController.CurrentScanViewController = new AnylineVinScanViewController(name);
                     break;
                 default:

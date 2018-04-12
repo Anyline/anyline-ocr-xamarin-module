@@ -134,9 +134,7 @@ namespace AnylineXamarinApp.iOS.Modules.Document.ViewController
 
             _resultImage?.Dispose();
             _resultImage = null;
-
-            GC.Collect(GC.MaxGeneration);
-
+            
             base.Dispose();
         }
 

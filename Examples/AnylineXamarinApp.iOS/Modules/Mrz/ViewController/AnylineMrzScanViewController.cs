@@ -49,6 +49,9 @@ namespace AnylineXamarinApp.iOS.Modules.Mrz.ViewController
 
             //we'll manually cancel scanning
             _anylineMrzView.CancelOnResult = false;
+
+            //set strict mode here
+            _anylineMrzView.StrictMode = true;
                         
             // After setup is complete we add the module to the view of this view controller
             View.AddSubview(_anylineMrzView);
@@ -204,9 +207,7 @@ namespace AnylineXamarinApp.iOS.Modules.Mrz.ViewController
             _anylineMrzView?.RemoveFromSuperview();
             _anylineMrzView?.Dispose();
             _anylineMrzView = null;
-
-            GC.Collect(GC.MaxGeneration);
-
+            
             base.Dispose();
         }
     }

@@ -301,9 +301,7 @@ namespace AnylineXamarinApp.iOS.Modules.Energy.ViewController
             _anylineEnergyView?.RemoveFromSuperview();
             _anylineEnergyView?.Dispose();
             _anylineEnergyView = null;
-
-            GC.Collect(GC.MaxGeneration);
-
+            
             base.Dispose();
         }
 

@@ -75,13 +75,16 @@
 			<file src="..\AnylineResources.bundle\images\flash_white.png" target="..\..\..\AnylineResources.bundle\images\"/>
 			<file src="..\AnylineResources.bundle\images\flash_white@2x.png" target="..\..\..\AnylineResources.bundle\images\"/>
 			<file src="..\AnylineResources.bundle\images\flash_white@3x.png" target="..\..\..\AnylineResources.bundle\images\"/>
-			<file src="..\AnylineResources.bundle\module_anyline_ocr\anyline_austrian_driver_license.ale" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\"/>
+			<file src="..\AnylineResources.bundle\module_anyline_ocr\anyline_austrian_driving_license.ale" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\"/>
 			<file src="..\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_auto.ale" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\"/>
 			<file src="..\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_auto_any.ale" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\"/>
 			<file src="..\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_grid.ale" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\"/>
 			<file src="..\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_line.ale" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\"/>
+			<file src="..\AnylineResources.bundle\module_anyline_ocr\container_scanner.ale" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\"/>
 			<file src="..\AnylineResources.bundle\module_anyline_ocr\simpleocr_capture_config.json" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\"/>
 			<file src="..\AnylineResources.bundle\module_anyline_ocr\vin.ale" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\"/>
+			<file src="..\AnylineResources.bundle\module_anyline_ocr\trained_models\USNr.any" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\trained_models\"/>
+			<file src="..\AnylineResources.bundle\module_anyline_ocr\trained_models\USNr.pb" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\trained_models\"/>
 			<file src="..\AnylineResources.bundle\module_anyline_ocr\trained_models\VIN.any" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\trained_models\"/>
 			<file src="..\AnylineResources.bundle\module_barcode\barcode_capture_config.json" target="..\..\..\AnylineResources.bundle\module_barcode\"/>
 			<file src="..\AnylineResources.bundle\module_barcode\ean.ale" target="..\..\..\AnylineResources.bundle\module_barcode\"/>
@@ -114,7 +117,6 @@
 			<file src="..\AnylineResources.bundle\module_energy\smart_meter_ger_spec.json" target="..\..\..\AnylineResources.bundle\module_energy\"/>
 			<file src="..\AnylineResources.bundle\module_energy\water_meter_black_background_capture_config.json" target="..\..\..\AnylineResources.bundle\module_energy\"/>
 			<file src="..\AnylineResources.bundle\module_energy\water_meter_white_background_capture_config.json" target="..\..\..\AnylineResources.bundle\module_energy\"/>
-			<file src="..\AnylineResources.bundle\module_energy\tessdata\eng_no_dict.traineddata" target="..\..\..\AnylineResources.bundle\module_energy\tessdata\"/>
 			<file src="..\AnylineResources.bundle\module_energy\trained_models\CNN_energy_detection_full_half.enc" target="..\..\..\AnylineResources.bundle\module_energy\trained_models\"/>
 			<file src="..\AnylineResources.bundle\module_energy\trained_models\CNN_serialnumbers_combined.enc" target="..\..\..\AnylineResources.bundle\module_energy\trained_models\"/>
 			<file src="..\AnylineResources.bundle\module_energy\trained_models\CNN_SNr_w_CL_special_whiteList.enc" target="..\..\..\AnylineResources.bundle\module_energy\trained_models\"/>
@@ -134,8 +136,6 @@
 			<file src="..\AnylineResources.bundle\module_mrz\mrz_capture_config.json" target="..\..\..\AnylineResources.bundle\module_mrz\"/>
 			<file src="..\AnylineResources.bundle\module_mrz\mrz_scanning.ale" target="..\..\..\AnylineResources.bundle\module_mrz\"/>
 			<file src="..\AnylineResources.bundle\module_mrz\trained_models\CNN_OCRB_Gray_0124.enc" target="..\..\..\AnylineResources.bundle\module_mrz\trained_models\"/>
-			<file src="..\AnylineResources.bundle\module_order_code\order_code.ale" target="..\..\..\AnylineResources.bundle\module_order_code\"/>
-			<file src="..\AnylineResources.bundle\module_order_code\tessdata\OcrB.traineddata" target="..\..\..\AnylineResources.bundle\module_order_code\tessdata\"/>
 			<file src="..\AnylineResources.bundle\sounds\beep.wav" target="..\..\..\AnylineResources.bundle\sounds\"/>
 		</files>
 				

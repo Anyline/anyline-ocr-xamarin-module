@@ -256,7 +256,6 @@
     <BundleResource Include="Modules\OCR\USN_A-Z0-9.any" />
     <BundleResource Include="Modules\OCR\serial_number_config.json" />
     <BundleResource Include="Modules\OCR\vin.ale" />
-    <BundleResource Include="Modules\DrivingLicense\anyline_austrian_driver_license.ale" />
     <BundleResource Include="Modules\OCR\vin.any" />
     <BundleResource Include="Modules\OCR\vin_capture_config.json" />
     <BundleResource Include="Modules\LicensePlate\license_plate_view_config.json" />
@@ -264,19 +263,23 @@
     <BundleResource Include="Modules\OCR\voucher_code_config.json" />
     <BundleResource Include="Modules\OCR\bottlecap_config.json" />
     <BundleResource Include="Resources\drawable\driving_license_background.png" />
+    <BundleResource Include="Modules\DrivingLicense\anyline_austrian_driving_license.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\Anyline-Info.plist"/>
     <BundleResource Include="Resources\AnylineResources.bundle\threshold_all.ale"/>
     <BundleResource Include="Resources\AnylineResources.bundle\images\anyline_logo_white.dat"/>
     <BundleResource Include="Resources\AnylineResources.bundle\images\flash_white.png"/>
     <BundleResource Include="Resources\AnylineResources.bundle\images\flash_white%402x.png"/>
     <BundleResource Include="Resources\AnylineResources.bundle\images\flash_white%403x.png"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_austrian_driver_license.ale"/>
+    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_austrian_driving_license.ale"/>
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_auto.ale"/>
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_auto_any.ale"/>
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_grid.ale"/>
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_line.ale"/>
+    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\container_scanner.ale"/>
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\simpleocr_capture_config.json"/>
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\vin.ale"/>
+    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\trained_models\USNr.any"/>
+    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\trained_models\USNr.pb"/>
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\trained_models\VIN.any"/>
     <BundleResource Include="Resources\AnylineResources.bundle\module_barcode\barcode_capture_config.json"/>
     <BundleResource Include="Resources\AnylineResources.bundle\module_barcode\ean.ale"/>
@@ -309,7 +312,6 @@
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\smart_meter_ger_spec.json"/>
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\water_meter_black_background_capture_config.json"/>
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\water_meter_white_background_capture_config.json"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\tessdata\eng_no_dict.traineddata"/>
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\trained_models\CNN_energy_detection_full_half.enc"/>
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\trained_models\CNN_serialnumbers_combined.enc"/>
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\trained_models\CNN_SNr_w_CL_special_whiteList.enc"/>
@@ -329,8 +331,6 @@
     <BundleResource Include="Resources\AnylineResources.bundle\module_mrz\mrz_capture_config.json"/>
     <BundleResource Include="Resources\AnylineResources.bundle\module_mrz\mrz_scanning.ale"/>
     <BundleResource Include="Resources\AnylineResources.bundle\module_mrz\trained_models\CNN_OCRB_Gray_0124.enc"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_order_code\order_code.ale"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_order_code\tessdata\OcrB.traineddata"/>
     <BundleResource Include="Resources\AnylineResources.bundle\sounds\beep.wav"/>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

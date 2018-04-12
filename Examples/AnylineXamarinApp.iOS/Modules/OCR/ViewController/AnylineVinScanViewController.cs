@@ -144,9 +144,7 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
             _scanView?.RemoveFromSuperview();
             _scanView?.Dispose();
             _scanView = null;
-
-            GC.Collect(GC.MaxGeneration);
-
+            
             base.Dispose();
         }
 
