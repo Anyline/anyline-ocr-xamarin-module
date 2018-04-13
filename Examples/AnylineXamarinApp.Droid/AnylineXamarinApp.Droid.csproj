@@ -66,8 +66,7 @@
     <DebugSymbols>False</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AnylineXamarinSDK.Droid, Version=3.22.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="AnylineXamarinSDK.Droid">
       <HintPath>..\..\AnylineXamarinSDK.Droid.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Android" />

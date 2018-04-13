@@ -216,6 +216,9 @@ namespace AnylineXamarinApp.Document
                 _imageViewResult.Click -= ResultImage_Click;
             _scanView?.Dispose();
             _scanView = null;
+
+            // explicitly free memory
+            GC.Collect(GC.MaxGeneration);
         }        
     }
 }

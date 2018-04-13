@@ -1856,7 +1856,11 @@ namespace AnylineXamarinSDK.iOS
         // -(BOOL)setupWithLicenseKey:(NSString *)licenseKey delegate:(id<AnylineEnergyModuleDelegate>)delegate error:(NSError **)error;
         [Export("setupWithLicenseKey:delegate:error:")]
         bool SetupWithLicenseKey(string licenseKey, NSObject @delegate, out NSError error);
-        
+
+        // -(void)setupAsyncWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<AnylineEnergyModuleDelegate> _Nonnull)delegate finished:(void (^ _Nonnull)(BOOL, NSError * _Nullable))finished;
+        [Export("setupAsyncWithLicenseKey:delegate:finished:")]
+        void SetupAsyncWithLicenseKey(string licenseKey, NSObject @delegate, Action<bool, NSError> finished);
+
         // added in 3.21
         // @property (nonatomic, strong) NSString * _Nullable serialNumberValidationRegex;
         [NullAllowed, Export("serialNumberValidationRegex", ArgumentSemantic.Strong)]
@@ -1924,6 +1928,10 @@ namespace AnylineXamarinSDK.iOS
         // -(BOOL)setupWithLicenseKey:(NSString *)licenseKey delegate:(id<AnylineBarcodeModuleDelegate>)delegate error:(NSError **)error;
         [Export("setupWithLicenseKey:delegate:error:")]
         bool SetupWithLicenseKey(string licenseKey, NSObject @delegate, out NSError error);
+
+        // -(void)setupAsyncWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<AnylineBarcodeModuleDelegate> _Nonnull)delegate finished:(void (^ _Nonnull)(BOOL, NSError * _Nullable))finished;
+        [Export("setupAsyncWithLicenseKey:delegate:finished:")]
+        void SetupAsyncWithLicenseKey(string licenseKey, NSObject @delegate, Action<bool, NSError> finished);
     }
 
     // @protocol AnylineBarcodeModuleDelegate <NSObject>
@@ -2103,6 +2111,10 @@ namespace AnylineXamarinSDK.iOS
         // -(BOOL)setupWithLicenseKey:(NSString *)licenseKey delegate:(id<AnylineMRZModuleDelegate>)delegate error:(NSError **)error;
         [Export("setupWithLicenseKey:delegate:error:")]
         bool SetupWithLicenseKey(string licenseKey, NSObject @delegate, out NSError error);
+
+        // -(void)setupAsyncWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<AnylineMRZModuleDelegate> _Nonnull)delegate finished:(void (^ _Nonnull)(BOOL, NSError * _Nullable))finished;
+        [Export("setupAsyncWithLicenseKey:delegate:finished:")]
+        void SetupAsyncWithLicenseKey(string licenseKey, NSObject @delegate, Action<bool, NSError> finished);
     }
 
     // @protocol AnylineMRZModuleDelegate <NSObject>
@@ -2394,6 +2406,10 @@ namespace AnylineXamarinSDK.iOS
         [Export("setupWithLicenseKey:delegate:ocrConfig:error:")]
         bool SetupWithLicenseKey(string licenseKey, NSObject @delegate, ALOCRConfig ocrConfig, out NSError error);
 
+        // -(void)setupAsyncWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<AnylineOCRModuleDelegate> _Nonnull)delegate ocrConfig:(ALOCRConfig * _Nonnull)ocrConfig finished:(void (^ _Nonnull)(BOOL, NSError * _Nullable))finished;
+        [Export("setupAsyncWithLicenseKey:delegate:ocrConfig:finished:")]
+        void SetupAsyncWithLicenseKey(string licenseKey, NSObject @delegate, ALOCRConfig ocrConfig, Action<bool, NSError> finished);
+
         // -(BOOL)setOCRConfig:(ALOCRConfig *)ocrConfig error:(NSError **)error;
         [Export("setOCRConfig:error:")]
         bool SetOCRConfig(ALOCRConfig ocrConfig, out NSError error);
@@ -2625,6 +2641,10 @@ namespace AnylineXamarinSDK.iOS
         [Export("setupWithLicenseKey:delegate:error:")]
         bool SetupWithLicenseKey(string licenseKey, NSObject @delegate, out NSError error);
 
+        // -(void)setupAsyncWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<AnylineDocumentModuleDelegate> _Nonnull)delegate finished:(void (^ _Nonnull)(BOOL, NSError * _Nullable))finished;
+        [Export("setupAsyncWithLicenseKey:delegate:finished:")]
+        void SetupAsyncWithLicenseKey(string licenseKey, NSObject @delegate, Action<bool, NSError> finished);
+
         // @property (nonatomic, strong) NSNumber * maxDocumentRatioDeviation;
         [Export("maxDocumentRatioDeviation", ArgumentSemantic.Strong)]
         NSNumber MaxDocumentRatioDeviation { get; set; }
@@ -2770,6 +2790,10 @@ namespace AnylineXamarinSDK.iOS
         // -(BOOL)setupWithLicenseKey:(NSString *)licenseKey delegate:(id<AnylineLicensePlateModuleDelegate>)delegate error:(NSError **)error;
         [Export("setupWithLicenseKey:delegate:error:")]
         bool SetupWithLicenseKey(string licenseKey, NSObject @delegate, out NSError error);
+
+        // -(void)setupAsyncWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<AnylineLicensePlateModuleDelegate> _Nonnull)delegate finished:(void (^ _Nonnull)(BOOL, NSError * _Nullable))finished;
+        [Export("setupAsyncWithLicenseKey:delegate:finished:")]
+        void SetupAsyncWithLicenseKey(string licenseKey, NSObject @delegate, Action<bool, NSError> finished);
     }
 
     // @protocol AnylineLicensePlateModuleDelegate <NSObject>

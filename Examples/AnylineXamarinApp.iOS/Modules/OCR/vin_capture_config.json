@@ -13,12 +13,11 @@
         "strokeWidth": 1,
         "strokeColor": "FFFFFF",
         "cornerRadius": 2,
-        "outerColor": "000000",
-        "feedbackStrokeColor": "0099FF",
+        "feedbackStrokeColor": "0099FF"
     },
     "flash": {
         "mode": "manual",
-        "alignment": "TOP_LEFT",
+        "alignment": "TOP_LEFT"
     },
     "visualFeedback": {
         "animation": "traverse_multi",
@@ -32,5 +31,4 @@
     "blinkAnimationOnResult": true,
     "cancelOnResult": true,
     "reportingEnabled": true
-
 }

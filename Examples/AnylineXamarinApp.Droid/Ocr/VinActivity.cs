@@ -108,6 +108,9 @@ namespace AnylineXamarinApp.Ocr
             _resultDialog?.Dispose();
             _scanView?.Dispose();
             _scanView = null;
+
+            // explicitly free memory
+            GC.Collect(GC.MaxGeneration);
         }
 
         void IAnylineOcrResultListener.OnResult(AnylineOcrResult scanResult)

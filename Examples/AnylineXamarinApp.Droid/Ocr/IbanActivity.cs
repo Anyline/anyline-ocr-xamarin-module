@@ -197,6 +197,9 @@ namespace AnylineXamarinApp.Ocr
             _ibanResultView?.Dispose();
             _scanView?.Dispose();
             _scanView = null;
+
+            // explicitly free memory
+            GC.Collect(GC.MaxGeneration);
         }
 
         void IAnylineOcrResultListener.OnResult(AnylineOcrResult scanResult)

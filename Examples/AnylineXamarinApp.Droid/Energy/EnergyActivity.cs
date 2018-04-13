@@ -254,6 +254,9 @@ namespace AnylineXamarinApp.Energy
             base.OnDestroy();
             _scanView?.Dispose();
             _scanView = null;
+
+            // explicitly free memory
+            GC.Collect(GC.MaxGeneration);
         }
     }
 

@@ -34,7 +34,7 @@ namespace AnylineXamarinApp.iOS.Modules.Mrz.ViewController
                 frame.Height - NavigationController.NavigationBar.Frame.Size.Height);
 
             _anylineMrzView = new AnylineMRZModuleView(frame);
-        
+            
             _error = null;
             // We tell the module to bootstrap itself with the license key and delegate. The delegate will later get called
             // by the module once we start receiving results.
@@ -46,15 +46,15 @@ namespace AnylineXamarinApp.iOS.Modules.Mrz.ViewController
                 // Something went wrong. The error object contains the error description
                 (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
+            
+            // After setup is complete we add the module to the view of this view controller
+            View.AddSubview(_anylineMrzView);
 
             //we'll manually cancel scanning
             _anylineMrzView.CancelOnResult = false;
 
             //set strict mode here
             //_anylineMrzView.StrictMode = true;
-                        
-            // After setup is complete we add the module to the view of this view controller
-            View.AddSubview(_anylineMrzView);
 
             /*
              ALIdentificationView will present the scanned values. Here we start listening for taps

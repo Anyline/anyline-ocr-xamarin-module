@@ -101,6 +101,9 @@ namespace AnylineXamarinApp.Barcode
             base.OnDestroy();
             _scanView?.Dispose();
             _scanView = null;
+
+            // explicitly free memory
+            GC.Collect(GC.MaxGeneration);
         }
 
         void IBarcodeResultListener.OnResult(BarcodeResult scanResult)
