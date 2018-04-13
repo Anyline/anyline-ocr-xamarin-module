@@ -131,6 +131,7 @@ namespace AnylineXamarinApp.iOS.Modules.Mrz.ViewController
 
         public void StartAnyline()
         {
+            if (_anylineMrzView == null) return;
             if (_isScanning) return;
 
             //send the identification view to the back before we start scanning

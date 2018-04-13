@@ -120,6 +120,7 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
 
         public void StartAnyline()
         {
+            if (_scanView == null) return;
             if (_isScanning) return;
 
             //send the result view to the back before we start scanning

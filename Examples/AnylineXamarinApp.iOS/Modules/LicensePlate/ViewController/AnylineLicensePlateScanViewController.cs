@@ -111,6 +111,7 @@ namespace AnylineXamarinApp.iOS.Modules.LicensePlate.ViewController
 
         public void StartAnyline()
         {
+            if (_scanView == null) return;
             if (_isScanning) return;
 
             //send the result view to the back before we start scanning

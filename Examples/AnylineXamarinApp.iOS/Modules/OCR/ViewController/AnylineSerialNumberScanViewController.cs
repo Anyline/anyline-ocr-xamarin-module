@@ -86,6 +86,7 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
 
         public void StartAnyline()
         {
+            if (_scanView == null) return;
             if (_isScanning) return;
 
             if (_resultAlert != null)

@@ -5,7 +5,7 @@
 			<id>Anyline.Xamarin.SDK.iOS</id>
 
 			<!-- The package version number that is used when resolving dependencies -->
-			<version>3.22.0</version>
+			<version>3.23.0</version>
 
 			<title>Anyline Xamarin SDK (iOS)</title>
 			
@@ -52,12 +52,6 @@
 
 			<!-- Tags appear in the gallery and can be used for tag searches -->
 			<tags>ocr scanning meter barcode mrz qr document camera anyline license plate </tags>
-
-			<!-- Dependencies are automatically installed when the package is installed -->
-			<dependencies>
-				<!--<dependency id="Anyline.Xamarin.SDK.iOS.Resources" version="3.22.0" />-->
-			</dependencies>
-
 			
 		</metadata>
 

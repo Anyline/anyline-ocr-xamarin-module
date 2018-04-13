@@ -32,7 +32,7 @@ namespace AnylineXamarinApp.iOS.Modules.Document.ViewController
         {
             base.ViewDidLoad();
 
-            // Initializing the Bottlecap scan module.
+            // Initializing the Document scan module.
             CGRect frame = UIScreen.MainScreen.ApplicationFrame;
             frame = new CGRect(frame.X,
                 frame.Y + NavigationController.NavigationBar.Frame.Size.Height,
@@ -92,6 +92,7 @@ namespace AnylineXamarinApp.iOS.Modules.Document.ViewController
 
         public void StartAnyline()
         {
+            if (_scanView == null) return;
             _error = null;
             _success = _scanView.StartScanningAndReturnError(out _error);
             if (!_success)

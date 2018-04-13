@@ -199,6 +199,7 @@ namespace AnylineXamarinApp.iOS.Modules.Energy.ViewController
         {
             _barcodeResult = "";
 
+            if (_anylineEnergyView == null) return;
             if (_isScanning) return;
             
             _error = null;

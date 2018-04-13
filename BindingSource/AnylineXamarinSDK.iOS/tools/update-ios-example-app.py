@@ -15,11 +15,10 @@ def main(argv):
     csproj_file = os.path.abspath(argv[3])
     nuget_file = os.path.abspath(argv[4])
 
-    print bundle_input_path
-    print bundle_output_path
-    print csproj_file
-
-    print '------'
+    print "Bundle path: " + bundle_input_path
+    print "Copy files to: " + bundle_output_path
+    print "Updating project file: " + csproj_file
+    print "Updating nuget file: " + nuget_file
 
     # delete everything in output_path first!
     # create every directory if not exists

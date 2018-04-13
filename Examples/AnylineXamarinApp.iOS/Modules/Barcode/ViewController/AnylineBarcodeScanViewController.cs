@@ -78,6 +78,7 @@ namespace AnylineXamarinApp.iOS.Modules.Barcode.ViewController
              Success/error tells us if everything went fine.
              */
             _error = null;
+            if (_anylineBarcodeView == null) return;
             _success = _anylineBarcodeView.StartScanningAndReturnError(out _error);
             
             if (!_success)
