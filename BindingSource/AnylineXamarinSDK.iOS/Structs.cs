@@ -116,6 +116,7 @@ namespace AnylineXamarinSDK.iOS
 
     public enum ALErrorCodes : ulong
     {
+
         OperationNotFound = 1001,
         SyntaxError = 2001,
         TypeError = 2002,
@@ -170,7 +171,8 @@ namespace AnylineXamarinSDK.iOS
         ModuleSimpleOCRConfigTesseractConfigIsNil = 9002,
         ModuleSimpleOCRConfigTextHeightNotSet = 9003,
         BarcodeModuleNativeDelegateWrong = 9004,
-        EnergyScanPluginBarcodeNotSupported = 9005
+        EnergyScanPluginBarcodeNotSupported = 9005,
+        ModuleSimpleOCRConfigLanguagesConfigIsNil = 9006
     }
 
     [Native]

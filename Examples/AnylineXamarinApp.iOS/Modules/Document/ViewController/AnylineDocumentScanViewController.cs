@@ -40,7 +40,12 @@ namespace AnylineXamarinApp.iOS.Modules.Document.ViewController
                 frame.Height - NavigationController.NavigationBar.Frame.Size.Height);
 
             _scanView = new AnylineDocumentModuleView(frame);
-            
+
+            NSError e;
+            string date = ALCoreController.LicenseExpirationDateForLicense(AnylineViewController.LicenseKey, out e);
+
+            Console.WriteLine("Date: " + date);
+
             // We tell the module to bootstrap itself with the license key and delegate. The delegate will later get called
             // by the module once we start receiving results.
             _error = null;
@@ -62,6 +67,9 @@ namespace AnylineXamarinApp.iOS.Modules.Document.ViewController
 
             // you can set the max output resolution of your image here so it will be scaled to a desired size
             //_scanView.MaxOutputResolution = new CGSize(width, height);
+
+            // you can set post processing to enabled here
+            _scanView.PostProcessingEnabled = true;
 
             // After setup is complete we add the module to the view of this view controller
             View.AddSubview(_scanView);

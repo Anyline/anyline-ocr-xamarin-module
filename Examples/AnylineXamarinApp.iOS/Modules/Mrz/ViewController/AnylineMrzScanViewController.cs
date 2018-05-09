@@ -22,8 +22,6 @@ namespace AnylineXamarinApp.iOS.Modules.Mrz.ViewController
             Title = name;
         }
         
-        public override void ViewDi
-
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();

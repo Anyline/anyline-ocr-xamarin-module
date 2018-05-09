@@ -839,76 +839,87 @@ namespace AnylineXamarinSDK.iOS
         [Export("running")]
         bool Running { [Bind("isRunning")] get; set; }
 
+        // @property (getter = isSingleRun, assign, nonatomic) BOOL singleRun;
+        [Export("singleRun")]
+        bool SingleRun { [Bind("isSingleRun")] get; set; }
+
         [Wrap("WeakDelegate")]
+        [NullAllowed]
         ALCoreControllerDelegate Delegate { get; set; }
 
-        // @property (nonatomic, weak) id<ALCoreControllerDelegate> delegate;
+        // @property (nonatomic, weak) id<ALCoreControllerDelegate> _Nullable delegate;
         [NullAllowed, Export("delegate", ArgumentSemantic.Weak)]
         NSObject WeakDelegate { get; set; }
 
-        // -(instancetype)initWithLicenseKey:(NSString *)licenseKey;
+        // -(instancetype _Nullable)initWithLicenseKey:(NSString * _Nonnull)licenseKey;
         [Export("initWithLicenseKey:")]
         IntPtr Constructor(string licenseKey);
 
-        // -(instancetype)initWithLicenseKey:(NSString *)licenseKey delegate:(id<ALCoreControllerDelegate>)delegate;
+        // -(instancetype _Nullable)initWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<ALCoreControllerDelegate> _Nullable)delegate;
         [Export("initWithLicenseKey:delegate:")]
-        IntPtr Constructor(string licenseKey, ALCoreControllerDelegate @delegate);
+        IntPtr Constructor(string licenseKey, [NullAllowed] ALCoreControllerDelegate @delegate);
 
-        // -(BOOL)loadScript:(NSString *)script bundlePath:(NSString *)bundlePath error:(NSError **)error;
-        [Export("loadScript:bundlePath:error:")]
-        bool LoadScript(string script, string bundlePath, out NSError error);
+        // -(void)loadScript:(NSString * _Nonnull)script bundlePath:(NSString * _Nonnull)bundlePath finished:(void (^ _Nonnull)(BOOL, NSError * _Nullable))finished;
+        [Export("loadScript:bundlePath:finished:")]
+        void LoadScript(string script, string bundlePath, Action<bool, NSError> finished);
 
-        // -(BOOL)loadScript:(NSString *)script scriptName:(NSString *)scriptName bundlePath:(NSString *)bundlePath error:(NSError **)error;
-        [Export("loadScript:scriptName:bundlePath:error:")]
-        bool LoadScript(string script, string scriptName, string bundlePath, out NSError error);
+        // -(void)loadScript:(NSString * _Nonnull)script scriptName:(NSString * _Nonnull)scriptName bundlePath:(NSString * _Nonnull)bundlePath finished:(void (^ _Nonnull)(BOOL, NSError * _Nullable))finished;
+        [Export("loadScript:scriptName:bundlePath:finished:")]
+        void LoadScript(string script, string scriptName, string bundlePath, Action<bool, NSError> finished);
 
-        // -(BOOL)loadCmdFile:(NSString *)cmdFileName bundlePath:(NSString *)bundlePath error:(NSError **)error;
-        [Export("loadCmdFile:bundlePath:error:")]
-        bool LoadCmdFile(string cmdFileName, string bundlePath, out NSError error);
+        // -(void)loadCmdFile:(NSString * _Nonnull)cmdFileName bundlePath:(NSString * _Nonnull)bundlePath finished:(void (^ _Nonnull)(BOOL, NSError * _Nullable))finished;
+        [Export("loadCmdFile:bundlePath:finished:")]
+        void LoadCmdFile(string cmdFileName, string bundlePath, Action<bool, NSError> finished);
 
-        // -(BOOL)startWithImageProvider:(id<ALImageProvider>)imageProvider error:(NSError **)error;
+        // -(BOOL)startWithImageProvider:(id<ALImageProvider> _Nonnull)imageProvider error:(NSError * _Nullable * _Nullable)error;
         [Export("startWithImageProvider:error:")]
-        bool StartWithImageProvider(ALImageProvider imageProvider, out NSError error);
+        bool StartWithImageProvider(ALImageProvider imageProvider, [NullAllowed] out NSError error);
 
-        // -(BOOL)startWithImageProvider:(id<ALImageProvider>)imageProvider startVariables:(NSDictionary *)variables error:(NSError **)error;
+        // -(BOOL)startWithImageProvider:(id<ALImageProvider> _Nonnull)imageProvider startVariables:(NSDictionary * _Nullable)variables error:(NSError * _Nullable * _Nullable)error;
         [Export("startWithImageProvider:startVariables:error:")]
-        bool StartWithImageProvider(ALImageProvider imageProvider, NSDictionary variables, out NSError error);
+        bool StartWithImageProvider(ALImageProvider imageProvider, [NullAllowed] NSDictionary variables, [NullAllowed] out NSError error);
 
-        // -(BOOL)stopAndReturnError:(NSError **)error;
+        // -(BOOL)stopAndReturnError:(NSError * _Nullable * _Nullable)error;
         [Export("stopAndReturnError:")]
-        bool StopAndReturnError(out NSError error);
+        bool StopAndReturnError([NullAllowed] out NSError error);
 
-        // -(BOOL)processImage:(UIImage *)image error:(NSError **)error;
+        // -(BOOL)processImage:(UIImage * _Nonnull)image error:(NSError * _Nullable * _Nullable)error;
         [Export("processImage:error:")]
-        bool ProcessImage(UIImage image, out NSError error);
+        bool ProcessImage(UIImage image, [NullAllowed] out NSError error);
 
-        // -(BOOL)processImage:(UIImage *)image startVariables:(NSDictionary *)variables error:(NSError **)error;
+        // -(BOOL)processImage:(UIImage * _Nonnull)image startVariables:(NSDictionary * _Nullable)variables error:(NSError * _Nullable * _Nullable)error;
         [Export("processImage:startVariables:error:")]
-        bool ProcessImage(UIImage image, NSDictionary variables, out NSError error);
+        bool ProcessImage(UIImage image, [NullAllowed] NSDictionary variables, [NullAllowed] out NSError error);
 
-        // -(BOOL)processALImage:(ALImage *)alImage error:(NSError **)error;
+        // -(BOOL)processALImage:(ALImage * _Nonnull)alImage error:(NSError * _Nullable * _Nullable)error;
         [Export("processALImage:error:")]
-        bool ProcessALImage(ALImage alImage, out NSError error);
+        bool ProcessALImage(ALImage alImage, [NullAllowed] out NSError error);
 
-        // -(BOOL)processALImage:(ALImage *)alImage startVariables:(NSDictionary *)variables error:(NSError **)error;
+        // -(BOOL)processALImage:(ALImage * _Nonnull)alImage startVariables:(NSDictionary * _Nullable)variables error:(NSError * _Nullable * _Nullable)error;
         [Export("processALImage:startVariables:error:")]
-        bool ProcessALImage(ALImage alImage, NSDictionary variables, out NSError error);
+        bool ProcessALImage(ALImage alImage, [NullAllowed] NSDictionary variables, [NullAllowed] out NSError error);
 
-        // -(void)setParameter:(id)parameter forKey:(NSString *)key;
+        // -(void)setParameter:(id _Nonnull)parameter forKey:(NSString * _Nonnull)key;
         [Export("setParameter:forKey:")]
         void SetParameter(NSObject parameter, string key);
 
-        // +(NSString *)versionNumber;
+        // +(NSString * _Nonnull)versionNumber;
         [Static]
         [Export("versionNumber")]
         string VersionNumber { get; }
 
-        // +(NSString *)buildNumber;
+        // +(NSString * _Nonnull)buildNumber;
         [Static]
         [Export("buildNumber")]
         string BuildNumber { get; }
 
-        // +(NSBundle *)frameworkBundle;
+        // +(NSString * _Nullable)licenseExpirationDateForLicense:(NSString * _Nullable)licenseKey error:(NSError * _Nullable * _Nullable)error;
+        [Static]
+        [Export("licenseExpirationDateForLicense:error:")]
+        [return: NullAllowed]
+        string LicenseExpirationDateForLicense([NullAllowed] string licenseKey, [NullAllowed] out NSError error);
+
+        // +(NSBundle * _Nonnull)frameworkBundle;
         [Static]
         [Export("frameworkBundle")]
         NSBundle FrameworkBundle { get; }
@@ -917,11 +928,11 @@ namespace AnylineXamarinSDK.iOS
         [Export("enableReporting:")]
         void EnableReporting(bool enable);
 
-        // -(void)reportIncludeValues:(NSString *)values;
+        // -(void)reportIncludeValues:(NSString * _Nonnull)values;
         [Export("reportIncludeValues:")]
         void ReportIncludeValues(string values);
 
-        // -(NSArray *)runStatistics;
+        // -(NSArray * _Nonnull)runStatistics;
         [Export("runStatistics")]
         NSObject[] RunStatistics { get; }
     }
@@ -1251,13 +1262,13 @@ namespace AnylineXamarinSDK.iOS
     }
 
     // @interface ALCameraView : UIView
-    [BaseType(typeof(UIView))]
+    /*[BaseType(typeof(UIView))]
     interface ALCameraView
     {
         // -(instancetype)initWithFrame:(CGRect)frame captureDeviceManager:(ALCaptureDeviceManager *)captureDeviceManger;
         [Export("initWithFrame:captureDeviceManager:")]
         IntPtr Constructor(CGRect frame, ALCaptureDeviceManager captureDeviceManger);
-    }
+    }*/
 
     // @interface AnylineAbstractModuleView : UIView
     [BaseType(typeof(UIView))]
@@ -1271,8 +1282,8 @@ namespace AnylineXamarinSDK.iOS
         NSObject WeakDebugDelegate { get; set; }
 
         // @property (nonatomic, strong) ALCameraView * cameraView;
-        [Export("cameraView", ArgumentSemantic.Strong)]
-        ALCameraView CameraView { get; set; }
+        //[Export("cameraView", ArgumentSemantic.Strong)]
+        //ALCameraView CameraView { get; set; }
 
         // @property (nonatomic, strong) ALCaptureDeviceManager * _Nullable captureDeviceManager;
         [NullAllowed, Export("captureDeviceManager", ArgumentSemantic.Strong)]
@@ -1728,8 +1739,8 @@ namespace AnylineXamarinSDK.iOS
     interface ALAbstractScanViewPlugin : ALInfoDelegate
     {
         // @property (nonatomic, strong) ALCameraView * cameraView;
-        [Export("cameraView", ArgumentSemantic.Strong)]
-        ALCameraView CameraView { get; set; }
+        //[Export("cameraView", ArgumentSemantic.Strong)]
+        //ALCameraView CameraView { get; set; }
 
         // @property (nonatomic, strong) ALCaptureDeviceManager * captureDeviceManager;
         [Export("captureDeviceManager", ArgumentSemantic.Strong)]
@@ -2513,6 +2524,10 @@ namespace AnylineXamarinSDK.iOS
         [Export("justDetectCornersIfPossible")]
         bool JustDetectCornersIfPossible { get; set; }
 
+        // @property (assign, nonatomic) BOOL postProcessingEnabled;
+        [Export("postProcessingEnabled")]
+        bool PostProcessingEnabled { get; set; }
+
         // -(instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID __attribute__((objc_designated_initializer));
         [Export("initWithPluginID:")]
         [DesignatedInitializer]
@@ -2668,6 +2683,10 @@ namespace AnylineXamarinSDK.iOS
         // since 3.19: @property(nonatomic, assign) CGSize maxOutputResolution;
         [Export("maxOutputResolution")]
         CGSize MaxOutputResolution { get; set; }
+        
+        // @property (assign, nonatomic) BOOL postProcessingEnabled;
+        [Export("postProcessingEnabled")]
+        bool PostProcessingEnabled { get; set; }
     }
 
     // @protocol AnylineDocumentModuleDelegate <NSObject>
