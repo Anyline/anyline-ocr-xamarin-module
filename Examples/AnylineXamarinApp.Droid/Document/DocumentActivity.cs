@@ -10,6 +10,7 @@ using AT.Nineyards.Anyline.Modules.Document;
 using AT.Nineyards.Anyline.Models;
 using static AT.Nineyards.Anyline.Modules.Document.NativeDocumentScanView;
 using AT.Nineyards.Anylinexamarin.Support.Modules.Document;
+using AT.Nineyards.Anyline;
 
 namespace AnylineXamarinApp.Document
 {
@@ -59,9 +60,9 @@ namespace AnylineXamarinApp.Document
             //_scanView.SetDocumentRatios(ratios);
 
             _scanView.InitAnyline(MainActivity.LicenseKey, this);
-
+            
             // after InitAnyline, post processing can be optionally enabled:
-            _scanView.PostProcessingEnabled = true;
+            //_scanView.PostProcessingEnabled = true;
 
             _scanView.CameraOpened += (s, e) =>
             {                

@@ -46,6 +46,11 @@
   <remove-node path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineImage']/constructor[@name='AnylineImage' and count(parameter)=1 and parameter[1][@type='org.opencv.core.Mat']]"/>
   <remove-node path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineRawResult']"/>
   
+  <!-- add AnylineController license expiration date API -->
+  
+  <!-- AnylineController.getLicenseExpirationDate(java.lang.String) -->
+  <!--<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='getLicenseExpirationDate' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">licenseKey</attr>-->
+  
   <!-- debitcard is not implemented for now -->
   <remove-node path="/api/package[@name='at.nineyards.anyline.modules.debitcard']"/>
 
