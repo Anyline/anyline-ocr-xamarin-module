@@ -53,7 +53,7 @@ namespace AnylineXamarinApp.Mrz
             _scanView.CameraError += (s, e) => { Log.Error(TAG, "OnCameraError: " + e.Event.Message); };
 
             // set this to true after InitAnyline if only a result should be found, when all check digits are valid
-            //_scanView.StrictMode = true;
+            _scanView.StrictMode = false;
         }
 
         void IMrzResultListener.OnResult(MrzResult scanResult)
