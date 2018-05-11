@@ -160,12 +160,11 @@ namespace AnylineXamarinApp.DrivingLicense
             // as scanned and the given image shows the scanned driving license
             string resultString = scanResult.Result.ToString();
             string[] results = resultString.Split('|');
-
-            string[] birthdateDocNumber = results[1].Split(' ');
             
-            _driverLicenseResultView.SetDocumentNumber(birthdateDocNumber[1]);
-            _driverLicenseResultView.SetDayOfBirth(birthdateDocNumber[0]);
-            _driverLicenseResultView.SetName(results[0]);
+            _driverLicenseResultView.SetDocumentNumber(results[3]);
+            _driverLicenseResultView.SetDayOfBirth(results[2]);
+
+            _driverLicenseResultView.SetName(results[0] + " " + results[1]);
 
         }
     }

@@ -1260,16 +1260,7 @@ namespace AnylineXamarinSDK.iOS
         [Export("anylineCaptureDeviceManager:didFindBarcodeResult:type:")]
         void DidFindBarcodeResult(ALCaptureDeviceManager captureDeviceManager, string scanResult, string barcodeType);
     }
-
-    // @interface ALCameraView : UIView
-    /*[BaseType(typeof(UIView))]
-    interface ALCameraView
-    {
-        // -(instancetype)initWithFrame:(CGRect)frame captureDeviceManager:(ALCaptureDeviceManager *)captureDeviceManger;
-        [Export("initWithFrame:captureDeviceManager:")]
-        IntPtr Constructor(CGRect frame, ALCaptureDeviceManager captureDeviceManger);
-    }*/
-
+    
     // @interface AnylineAbstractModuleView : UIView
     [BaseType(typeof(UIView))]
     interface AnylineAbstractModuleView
@@ -1280,11 +1271,7 @@ namespace AnylineXamarinSDK.iOS
         // @property (nonatomic, weak) id<AnylineDebugDelegate> debugDelegate;
         [NullAllowed, Export("debugDelegate", ArgumentSemantic.Weak)]
         NSObject WeakDebugDelegate { get; set; }
-
-        // @property (nonatomic, strong) ALCameraView * cameraView;
-        //[Export("cameraView", ArgumentSemantic.Strong)]
-        //ALCameraView CameraView { get; set; }
-
+        
         // @property (nonatomic, strong) ALCaptureDeviceManager * _Nullable captureDeviceManager;
         [NullAllowed, Export("captureDeviceManager", ArgumentSemantic.Strong)]
         ALCaptureDeviceManager CaptureDeviceManager { get; set; }
@@ -1738,10 +1725,6 @@ namespace AnylineXamarinSDK.iOS
     [BaseType(typeof(UIView))]
     interface ALAbstractScanViewPlugin : ALInfoDelegate
     {
-        // @property (nonatomic, strong) ALCameraView * cameraView;
-        //[Export("cameraView", ArgumentSemantic.Strong)]
-        //ALCameraView CameraView { get; set; }
-
         // @property (nonatomic, strong) ALCaptureDeviceManager * captureDeviceManager;
         [Export("captureDeviceManager", ArgumentSemantic.Strong)]
         ALCaptureDeviceManager CaptureDeviceManager { get; set; }
