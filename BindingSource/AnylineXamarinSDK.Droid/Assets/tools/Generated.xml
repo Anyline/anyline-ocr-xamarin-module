@@ -2,7 +2,41 @@
 
 <metadata>
 
-<!-- File: AT.Nineyards.Anyline.Camera.AnylineBaseView.cs -->
+<!-- File: AT.Nineyards.Anyline.AnylineController.cs -->
+<!-- AnylineController.setDebug(boolean) -->
+<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setDebug' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">isDebug</attr>
+<!-- AnylineController.getLicenseExpirationDate(java.lang.String) -->
+<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='getLicenseExpirationDate' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">licenseKey</attr>
+<!-- AnylineController.loadCmdFile(java.lang.String) -->
+<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='loadCmdFile' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">cmdFileName</attr>
+<!-- AnylineController.loadCmdFile(java.lang.String, java.lang.String) -->
+<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='loadCmdFile' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">cmdFileName</attr>
+<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='loadCmdFile' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String']]/parameter[2]" name="managedName">pathInAssets</attr>
+<!-- AnylineController.loadScript(java.lang.String) -->
+<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='loadScript' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">script</attr>
+<!-- AnylineController.loadScript(java.lang.String, java.lang.String) -->
+<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='loadScript' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">script</attr>
+<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='loadScript' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String']]/parameter[2]" name="managedName">bundlePath</attr>
+<!-- AnylineController.loadScript(java.lang.String, java.lang.String, java.lang.String) -->
+<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='loadScript' and count(parameter)=3 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[1]" name="managedName">scriptName</attr>
+<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='loadScript' and count(parameter)=3 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[2]" name="managedName">script</attr>
+<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='loadScript' and count(parameter)=3 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[3]" name="managedName">bundlePath</attr>
+<!-- AnylineController.reportIncludeValues(java.lang.String) -->
+<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='reportIncludeValues' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">jsonString</attr>
+<!-- AnylineController.setAssetJsonPaths(java.lang.String...) -->
+<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setAssetJsonPaths' and count(parameter)=1 and parameter[1][@type='java.lang.String...']]/parameter[1]" name="managedName">assetJsonPaths</attr>
+<!-- AnylineController.setCancelOnResult(boolean) -->
+<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setCancelOnResult' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">isCancelOnResult</attr>
+<!-- AnylineController.setImageProvider(at.nineyards.anyline.ImageProvider) -->
+<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setImageProvider' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.ImageProvider']]/parameter[1]" name="managedName">imageProvider</attr>
+<!-- AnylineController.setReportingEnabled(boolean) -->
+<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setReportingEnabled' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">isReportingEnabled</attr>
+<!-- AnylineController.setStartVariable(java.lang.String, java.lang.Object) -->
+<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setStartVariable' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.Object']]/parameter[1]" name="managedName">key</attr>
+<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setStartVariable' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.Object']]/parameter[2]" name="managedName">value</attr>
+<!-- AnylineController.setWorkerThreadUncaughtExceptionHandler(java.lang.Thread.UncaughtExceptionHandler) -->
+<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setWorkerThreadUncaughtExceptionHandler' and count(parameter)=1 and parameter[1][@type='java.lang.Thread.UncaughtExceptionHandler']]/parameter[1]" name="managedName">handler</attr>
+<!-- File: AT.Nineyards.Anyline.Camera.AnylineBaseView.cs -->
 <!-- AnylineBaseView.AnylineBaseView(android.content.Context, android.util.AttributeSet, int) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/constructor[@name='AnylineBaseView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/constructor[@name='AnylineBaseView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[2]" name="managedName">attrs</attr>
@@ -547,10 +581,10 @@
 <attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineYuvImage']/constructor[@name='AnylineYuvImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='byte[]'] and parameter[5][@type='int'] and parameter[6][@type='boolean']]/parameter[5]" name="managedName">targetOrientation</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineYuvImage']/constructor[@name='AnylineYuvImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='byte[]'] and parameter[5][@type='int'] and parameter[6][@type='boolean']]/parameter[6]" name="managedName">isGreyOnly</attr>
 <!-- AnylineYuvImage.AnylineYuvImage(int, int, int, int) -->
-<attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineYuvImage']/constructor[@name='AnylineYuvImage' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[1]" name="managedName">image</attr>
-<attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineYuvImage']/constructor[@name='AnylineYuvImage' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[2]" name="managedName">targetOrientation</attr>
-<attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineYuvImage']/constructor[@name='AnylineYuvImage' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[3]" name="managedName">cropX</attr>
-<attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineYuvImage']/constructor[@name='AnylineYuvImage' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[4]" name="managedName">cropY</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineYuvImage']/constructor[@name='AnylineYuvImage' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[1]" name="managedName">format</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineYuvImage']/constructor[@name='AnylineYuvImage' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[2]" name="managedName">width</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineYuvImage']/constructor[@name='AnylineYuvImage' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[3]" name="managedName">height</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineYuvImage']/constructor[@name='AnylineYuvImage' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[4]" name="managedName">targetOrientation</attr>
 <!-- AnylineYuvImage.crop(int, int, int, int, boolean) -->
 <attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineYuvImage']/method[@name='crop' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='boolean']]/parameter[1]" name="managedName">cropX</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineYuvImage']/method[@name='crop' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='boolean']]/parameter[2]" name="managedName">cropY</attr>
@@ -1223,8 +1257,8 @@
 <attr path="/api/package[@name='io.anyline.plugin.ocr']/class[@name='OcrScanPlugin']/method[@name='copyTrainedData' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[2]" name="managedName">fileName</attr>
 <attr path="/api/package[@name='io.anyline.plugin.ocr']/class[@name='OcrScanPlugin']/method[@name='copyTrainedData' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[3]" name="managedName">fileHash</attr>
 <!-- OcrScanPlugin.copyTrainedData(java.lang.String, java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.plugin.ocr']/class[@name='OcrScanPlugin']/method[@name='copyTrainedData' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">context</attr>
-<attr path="/api/package[@name='io.anyline.plugin.ocr']/class[@name='OcrScanPlugin']/method[@name='copyTrainedData' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String']]/parameter[2]" name="managedName">fileName</attr>
+<attr path="/api/package[@name='io.anyline.plugin.ocr']/class[@name='OcrScanPlugin']/method[@name='copyTrainedData' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">fileName</attr>
+<attr path="/api/package[@name='io.anyline.plugin.ocr']/class[@name='OcrScanPlugin']/method[@name='copyTrainedData' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String']]/parameter[2]" name="managedName">fileHash</attr>
 <!-- OcrScanPlugin.onFinishedWithOutput(java.lang.Object) -->
 <!-- OcrScanPlugin.setAnylineOcrConfig(at.nineyards.anyline.modules.ocr.AnylineOcrConfig) -->
 <attr path="/api/package[@name='io.anyline.plugin.ocr']/class[@name='OcrScanPlugin']/method[@name='setAnylineOcrConfig' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.modules.ocr.AnylineOcrConfig']]/parameter[1]" name="managedName">config</attr>
