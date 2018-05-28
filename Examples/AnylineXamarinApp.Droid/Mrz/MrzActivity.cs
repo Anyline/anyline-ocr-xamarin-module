@@ -36,7 +36,7 @@ namespace AnylineXamarinApp.Mrz
             _resultView = FindViewById<MrzResultView>(Resource.Id.mrz_result);
 
             _resultView.SetOnClickListener(this);
-
+            
             _scanView.SetConfigFromAsset("MrzConfig.json");
 
             _scanView.InitAnyline(MainActivity.LicenseKey, this);
