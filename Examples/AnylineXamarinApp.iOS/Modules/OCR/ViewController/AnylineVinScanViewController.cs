@@ -45,7 +45,7 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
             _ocrConfig = new ALOCRConfig();
 
             _ocrConfig.ScanMode = ALOCRScanMode.Auto;
-            string anyFile = NSBundle.MainBundle.PathForResource(@"Modules/OCR/vin", @"any");
+            string anyFile = NSBundle.MainBundle.PathForResource(@"Modules/OCR/VIN", @"any");
             _ocrConfig.Languages = new[] { anyFile };
 
             _ocrConfig.CustomCmdFilePath = NSBundle.MainBundle.PathForResource(@"Modules/OCR/vin", @"ale");

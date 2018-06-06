@@ -69,11 +69,14 @@
 			<file src="..\AnylineResources.bundle\images\flash_white.png" target="..\..\..\AnylineResources.bundle\images\"/>
 			<file src="..\AnylineResources.bundle\images\flash_white@2x.png" target="..\..\..\AnylineResources.bundle\images\"/>
 			<file src="..\AnylineResources.bundle\images\flash_white@3x.png" target="..\..\..\AnylineResources.bundle\images\"/>
+			<file src="..\AnylineResources.bundle\images\Thumbs.db" target="..\..\..\AnylineResources.bundle\images\"/>
 			<file src="..\AnylineResources.bundle\module_anyline_ocr\anyline_austrian_driving_license.ale" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\"/>
 			<file src="..\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_auto.ale" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\"/>
 			<file src="..\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_auto_any.ale" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\"/>
 			<file src="..\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_grid.ale" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\"/>
+			<file src="..\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_grid_any.ale" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\"/>
 			<file src="..\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_line.ale" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\"/>
+			<file src="..\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_line_any.ale" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\"/>
 			<file src="..\AnylineResources.bundle\module_anyline_ocr\container_scanner.ale" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\"/>
 			<file src="..\AnylineResources.bundle\module_anyline_ocr\simpleocr_capture_config.json" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\"/>
 			<file src="..\AnylineResources.bundle\module_anyline_ocr\vin.ale" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\"/>
@@ -85,6 +88,7 @@
 			<file src="..\AnylineResources.bundle\module_document\document.ale" target="..\..\..\AnylineResources.bundle\module_document\"/>
 			<file src="..\AnylineResources.bundle\module_document\document_capture_config.json" target="..\..\..\AnylineResources.bundle\module_document\"/>
 			<file src="..\AnylineResources.bundle\module_document\document_crop.ale" target="..\..\..\AnylineResources.bundle\module_document\"/>
+			<file src="..\AnylineResources.bundle\module_document\trained_models\doc_model.any" target="..\..\..\AnylineResources.bundle\module_document\trained_models\"/>
 			<file src="..\AnylineResources.bundle\module_energy\analog_digital_auto_mode.ale" target="..\..\..\AnylineResources.bundle\module_energy\"/>
 			<file src="..\AnylineResources.bundle\module_energy\analog_digital_capture_config.json" target="..\..\..\AnylineResources.bundle\module_energy\"/>
 			<file src="..\AnylineResources.bundle\module_energy\analog_meter.ale" target="..\..\..\AnylineResources.bundle\module_energy\"/>
@@ -129,6 +133,7 @@
 			<file src="..\AnylineResources.bundle\module_mrz\mrz_capture_config.json" target="..\..\..\AnylineResources.bundle\module_mrz\"/>
 			<file src="..\AnylineResources.bundle\module_mrz\mrz_scanning.ale" target="..\..\..\AnylineResources.bundle\module_mrz\"/>
 			<file src="..\AnylineResources.bundle\module_mrz\trained_models\CNN_OCRB_Gray_0124.enc" target="..\..\..\AnylineResources.bundle\module_mrz\trained_models\"/>
+			<file src="..\AnylineResources.bundle\module_mrz\trained_models\mrz_retrain3_17500.enc" target="..\..\..\AnylineResources.bundle\module_mrz\trained_models\"/>
 			<file src="..\AnylineResources.bundle\sounds\beep.wav" target="..\..\..\AnylineResources.bundle\sounds\"/>
 		</files>
 				

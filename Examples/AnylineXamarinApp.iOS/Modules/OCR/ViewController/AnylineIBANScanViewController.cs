@@ -47,11 +47,14 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
             // as of 3.20, we use Languages instead of TesseractLanguages as it doesn't require to copy the traineddata file
             string engNoDict = NSBundle.MainBundle.PathForResource(@"Modules/OCR/eng_no_dict", @"traineddata");
             string deu = NSBundle.MainBundle.PathForResource(@"Modules/OCR/deu", @"traineddata");
-            _ocrConfig.Languages = new[] { engNoDict, deu };
-            //_ocrConfig.TesseractLanguages = new[] {@"eng_no_dict", @"deu"};
+
+            string ibanScannerAny = NSBundle.MainBundle.PathForResource(@"Modules/OCR/USNr", @"any");
+            
+            _ocrConfig.Languages = new[] { ibanScannerAny };
             _ocrConfig.CharWhiteList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-            _ocrConfig.MinConfidence = 60;
-            _ocrConfig.ScanMode = ALOCRScanMode.Auto;
+            _ocrConfig.MinConfidence = 70;
+            _ocrConfig.ScanMode = ALOCRScanMode.Line;
+            _ocrConfig.CharHeight = new ALRange { min = 25, max = 65 };
             _ocrConfig.ValidationRegex = "^[A-Z]{2}([0-9A-Z]\\s*){13,32}$";
             
             // We tell the module to bootstrap itself with the license key and delegate. The delegate will later get called

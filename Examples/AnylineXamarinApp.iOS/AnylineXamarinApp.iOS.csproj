@@ -35,7 +35,7 @@
     <ConsolePause>False</ConsolePause>
     <CodesignKey>iPhone Developer</CodesignKey>
     <StartupObject>AnylineXamarinApp.iOS.Application</StartupObject>
-    <MtouchSdkVersion>9.3</MtouchSdkVersion>
+    <MtouchSdkVersion>11.2</MtouchSdkVersion>
     <MtouchLink>Full</MtouchLink>
     <MtouchDebug>True</MtouchDebug>
     <MtouchProfiling>False</MtouchProfiling>
@@ -136,43 +136,33 @@
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
     <ImageAsset Include="Resources\Images.xcassets\AnylineLogo.imageset\Anyline@2x.png">
       <Visible>false</Visible>
-      <InProject>false</InProject>
     </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\AnylineLogo.imageset\Anyline@3x.png">
       <Visible>false</Visible>
-      <InProject>false</InProject>
     </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\AnylineLogo.imageset\Contents.json">
       <Visible>false</Visible>
-      <InProject>false</InProject>
     </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Contents.json">
       <Visible>false</Visible>
-      <InProject>false</InProject>
     </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\MeterScan.imageset\Contents.json">
       <Visible>false</Visible>
-      <InProject>false</InProject>
     </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\pass.imageset\Contents.json">
       <Visible>false</Visible>
-      <InProject>false</InProject>
     </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\blitz.imageset\Contents.json">
       <Visible>false</Visible>
-      <InProject>false</InProject>
     </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\flamme.imageset\Contents.json">
       <Visible>false</Visible>
-      <InProject>false</InProject>
     </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\kalender.imageset\Contents.json">
       <Visible>false</Visible>
-      <InProject>false</InProject>
     </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\ort.imageset\Contents.json">
       <Visible>false</Visible>
-      <InProject>false</InProject>
     </ImageAsset>
   </ItemGroup>
   <ItemGroup>
@@ -212,51 +202,39 @@
     <BundleResource Include="Resources\drawable\ic_launcher.png" />
     <ImageAsset Include="Resources\Images.xcassets\MeterScan.imageset\Icon-60%402x.png">
       <Visible>false</Visible>
-      <InProject>false</InProject>
     </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\MeterScan.imageset\Icon-60%403x.png">
       <Visible>false</Visible>
-      <InProject>false</InProject>
     </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\pass.imageset\pass2x.png">
       <Visible>false</Visible>
-      <InProject>false</InProject>
     </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\pass.imageset\pass3x.png">
       <Visible>false</Visible>
-      <InProject>false</InProject>
     </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\blitz.imageset\blitz.png">
       <Visible>false</Visible>
-      <InProject>false</InProject>
     </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\blitz.imageset\blitz%402x.png">
       <Visible>false</Visible>
-      <InProject>false</InProject>
     </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\flamme.imageset\flamme.png">
       <Visible>false</Visible>
-      <InProject>false</InProject>
     </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\flamme.imageset\flamme_2x.png">
       <Visible>false</Visible>
-      <InProject>false</InProject>
     </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\kalender.imageset\kalender.png">
       <Visible>false</Visible>
-      <InProject>false</InProject>
     </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\kalender.imageset\kalender%402x.png">
       <Visible>false</Visible>
-      <InProject>false</InProject>
     </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\ort.imageset\ort.png">
       <Visible>false</Visible>
-      <InProject>false</InProject>
     </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\ort.imageset\ort%402x.png">
       <Visible>false</Visible>
-      <InProject>false</InProject>
     </ImageAsset>
     <BundleResource Include="Resources\drawable\ic_mrz.png" />
     <BundleResource Include="Resources\drawable\ic_barcode.png" />
@@ -278,7 +256,7 @@
     <BundleResource Include="Modules\OCR\USNr.any" />
     <BundleResource Include="Modules\OCR\serial_number_config.json" />
     <BundleResource Include="Modules\OCR\vin.ale" />
-    <BundleResource Include="Modules\OCR\vin.any" />
+    <BundleResource Include="Modules\OCR\VIN.any" />
     <BundleResource Include="Modules\OCR\vin_capture_config.json" />
     <BundleResource Include="Modules\LicensePlate\license_plate_view_config.json" />
     <BundleResource Include="Modules\OCR\iban_config.json" />
@@ -292,11 +270,14 @@
     <BundleResource Include="Resources\AnylineResources.bundle\images\flash_white.png" />
     <BundleResource Include="Resources\AnylineResources.bundle\images\flash_white%402x.png" />
     <BundleResource Include="Resources\AnylineResources.bundle\images\flash_white%403x.png" />
+    <BundleResource Include="Resources\AnylineResources.bundle\images\Thumbs.db" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_austrian_driving_license.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_auto.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_auto_any.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_grid.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_grid_any.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_line.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_line_any.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\container_scanner.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\simpleocr_capture_config.json" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\vin.ale" />
@@ -308,6 +289,7 @@
     <BundleResource Include="Resources\AnylineResources.bundle\module_document\document.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_document\document_capture_config.json" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_document\document_crop.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_document\trained_models\doc_model.any" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\analog_digital_auto_mode.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\analog_digital_capture_config.json" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\analog_meter.ale" />
@@ -352,6 +334,7 @@
     <BundleResource Include="Resources\AnylineResources.bundle\module_mrz\mrz_capture_config.json" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_mrz\mrz_scanning.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_mrz\trained_models\CNN_OCRB_Gray_0124.enc" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_mrz\trained_models\mrz_retrain3_17500.enc" />
     <BundleResource Include="Resources\AnylineResources.bundle\sounds\beep.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
