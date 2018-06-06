@@ -80,11 +80,10 @@ namespace AnylineXamarinApp.Ocr
             AnylineOcrConfig anylineOcrConfig = new AnylineOcrConfig();
 
             // use the auto mode
-            anylineOcrConfig.SetScanMode(AnylineOcrConfig.ScanMode.Auto);
+            anylineOcrConfig.SetScanMode(AnylineOcrConfig.ScanMode.Line);
 
-            // SetTesseractLanguages is obsolete as of 3.20. Use SetLanguages instead
-            //anylineOcrConfig.SetTesseractLanguages("eng_no_dict", "deu");
-            anylineOcrConfig.SetLanguages("tessdata/eng_no_dict.traineddata", "tessdata/deu.traineddata");
+            // set the .any file
+            anylineOcrConfig.SetLanguages("USNr.any");
             
             // allow only capital letters and numbers
             anylineOcrConfig.CharWhitelist = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
@@ -92,28 +91,25 @@ namespace AnylineXamarinApp.Ocr
             // a simple regex for a basic validation of the IBAN, results that don't match this, will not be returned
             // (full validation is more complex, as different countries have different formats)
             anylineOcrConfig.ValidationRegex = "^[A-Z]{2}([0-9A-Z]\\s*){13,32}$";
-
-            /*
-            
+                        
             // since we use the new OCR auto mode, we don't need to set these parameters anymore!
             
             // set the height range the text can have
-            anylineOcrConfig.MinCharHeight = 20; //note: if you set this too low, it tries to find all the small letters too
-            anylineOcrConfig.MaxCharHeight = 60;
+            anylineOcrConfig.MinCharHeight = 25;
+            anylineOcrConfig.MaxCharHeight = 65;
 
             // The minimum confidence required to return a result, a value between 0 and 100.
             // (higher confidence means less likely to get a wrong result, but may be slower to get a result)
-            anylineOcrConfig.MinConfidence = 65;
+            anylineOcrConfig.MinConfidence = 70;
             
             // removes small contours (helpful in this case as no letters with small artifacts are allowed, like iöäü)
-            anylineOcrConfig.RemoveSmallContours = true;
+            //anylineOcrConfig.RemoveSmallContours = true;
 
             // Experimental parameter to set the minimum sharpness (value between 0-100; 0 to turn sharpness detection off)
             // The goal of the minimum sharpness is to avoid a time consuming ocr step,
             // if the image is blurry and good results are therefore not likely.
-            anylineOcrConfig.MinSharpness = 66;
-            */
-
+            //anylineOcrConfig.MinSharpness = 66;
+            
             // set the ocr config
             scanView.SetAnylineOcrConfig(anylineOcrConfig);
         }
