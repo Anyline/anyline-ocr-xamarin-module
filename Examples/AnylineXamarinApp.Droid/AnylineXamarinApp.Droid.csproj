@@ -62,8 +62,10 @@
     <AotAssemblies>false</AotAssemblies>
     <EnableLLVM>false</EnableLLVM>
     <AndroidEnableMultiDex>False</AndroidEnableMultiDex>
-    <EnableProguard>False</EnableProguard>
+    <EnableProguard>false</EnableProguard>
     <DebugSymbols>False</DebugSymbols>
+    <AndroidStoreUncompressedFileExtensions />
+    <AndroidSupportedAbis />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AnylineXamarinSDK.Droid">

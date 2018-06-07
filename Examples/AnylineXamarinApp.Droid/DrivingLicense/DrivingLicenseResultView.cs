@@ -48,26 +48,7 @@ namespace AnylineXamarinApp.DrivingLicense
 
         public void SetDayOfBirth(string dayOfBirth)
         {
-            string dateString = dayOfBirth;
-            string inputFormat = "ddMMyyyy";
-            string outputFormat = "yyyy-MM-dd";
-
-            if (int.Parse(dayOfBirth.Substring(2, 4))  > 12 || int.Parse(dayOfBirth.Substring(4, 6)) <= 12)
-            {
-                inputFormat = "yyyyMMdd";
-            }
-            SimpleDateFormat inputDateFormat = new SimpleDateFormat(inputFormat);
-            SimpleDateFormat outputDateFormat = new SimpleDateFormat(outputFormat);
-            try
-            {
-                dateString = outputDateFormat.Format(inputDateFormat.Parse(dayOfBirth));
-            }
-            catch (ParseException e)
-            {
-                e.PrintStackTrace();
-            }
-
-            TextDayOfBirth.Text = dateString;
+            TextDayOfBirth.Text = dayOfBirth;
         }
     }
 }

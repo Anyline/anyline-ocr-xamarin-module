@@ -69,7 +69,6 @@
 			<file src="..\AnylineResources.bundle\images\flash_white.png" target="..\..\..\AnylineResources.bundle\images\"/>
 			<file src="..\AnylineResources.bundle\images\flash_white@2x.png" target="..\..\..\AnylineResources.bundle\images\"/>
 			<file src="..\AnylineResources.bundle\images\flash_white@3x.png" target="..\..\..\AnylineResources.bundle\images\"/>
-			<file src="..\AnylineResources.bundle\images\Thumbs.db" target="..\..\..\AnylineResources.bundle\images\"/>
 			<file src="..\AnylineResources.bundle\module_anyline_ocr\anyline_austrian_driving_license.ale" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\"/>
 			<file src="..\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_auto.ale" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\"/>
 			<file src="..\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_auto_any.ale" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\"/>

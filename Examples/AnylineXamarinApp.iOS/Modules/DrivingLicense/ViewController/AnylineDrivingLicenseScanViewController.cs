@@ -207,20 +207,8 @@ namespace AnylineXamarinApp.iOS.Modules.DrivingLicense.ViewController
             string[] birthdateIDComps = birthdateID.Split(' ');
 
             string birthday = birthdateIDComps[0];
-
-            NSDateFormatter formatter = new NSDateFormatter();
-            formatter.DateFormat = @"ddMMyyyy";
-
-            NSDate date = formatter.Parse(birthday);
-
-            if (date == null)
-            {
-                formatter.DateFormat = @"yyyyMMdd";
-                date = formatter.Parse(birthday);
-            }
-
-            formatter.DateFormat = @"yyyy-MM-dd";
-            _drivingLicenseResultView.Birthdate.Text = formatter.StringFor(date);
+            
+            _drivingLicenseResultView.Birthdate.Text = birthday;
             _drivingLicenseResultView.IDNumber.Text = idNumber;
 
             // Present the information to the user
