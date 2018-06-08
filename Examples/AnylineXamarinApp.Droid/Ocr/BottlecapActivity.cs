@@ -58,12 +58,7 @@ namespace AnylineXamarinApp.Ocr
                 .Build();
 
             _scanView.SetFocusConfig(focusConfig);
-
-            _scanView.SetUseMaxFpsRange(true);
-
-            // set sports scene mode to try and bump up the fps count even more
-            _scanView.SetSceneMode(Camera.Parameters.SceneModeSports);
-
+            
             _scanView.InitAnyline(MainActivity.LicenseKey, this);
 
             _scanView.CameraOpened += (s, e) => { Log.Debug(TAG, "Camera opened successfully. Frame resolution " + e.Width + " x " + e.Height); };

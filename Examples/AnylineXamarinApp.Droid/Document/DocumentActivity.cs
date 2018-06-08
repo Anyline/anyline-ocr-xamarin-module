@@ -62,7 +62,7 @@ namespace AnylineXamarinApp.Document
             _scanView.InitAnyline(MainActivity.LicenseKey, this);
             
             // after InitAnyline, post processing can be optionally enabled:
-            //_scanView.PostProcessingEnabled = true;
+            _scanView.PostProcessingEnabled = true;
 
             _scanView.CameraOpened += (s, e) =>
             {

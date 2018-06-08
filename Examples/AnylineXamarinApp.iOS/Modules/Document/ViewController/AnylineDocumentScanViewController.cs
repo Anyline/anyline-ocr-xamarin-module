@@ -70,7 +70,7 @@ namespace AnylineXamarinApp.iOS.Modules.Document.ViewController
             //_scanView.MaxOutputResolution = new CGSize(width, height);
 
             // you can set post processing to enabled here
-            //_scanView.PostProcessingEnabled = true;
+            _scanView.PostProcessingEnabled = true;
 
             // After setup is complete we add the module to the view of this view controller
             View.AddSubview(_scanView);
