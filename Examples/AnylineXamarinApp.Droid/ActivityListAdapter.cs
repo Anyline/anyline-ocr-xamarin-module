@@ -6,6 +6,7 @@ using AT.Nineyards.Anyline.Util;
 using System;
 using System.Reflection;
 using System.Linq;
+using Android.Content.PM;
 
 namespace AnylineXamarinApp
 {
@@ -16,6 +17,12 @@ namespace AnylineXamarinApp
         private readonly string[] _names;
         private readonly string[] _classes;
         private readonly Context _context;
+
+        private string GetBuildNumber()
+        {
+            var ver = Assembly.GetExecutingAssembly().GetName().Version;
+            return ver.ToString();
+        }
 
         public ActivityListAdapter(Context context)
         {
@@ -30,7 +37,7 @@ namespace AnylineXamarinApp
             if (assembly != null)
             {
                 Version ver = assembly.GetName().Version;
-                _names[_names.Length - 1] = "Version: " + ver;
+                _names[_names.Length - 1] = $"Version: {ver}, Build: {GetBuildNumber()}";
             }
         }
 
