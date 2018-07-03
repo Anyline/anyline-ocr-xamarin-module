@@ -5,6 +5,7 @@ using Android.Util;
 using Android.Views;
 using AT.Nineyards.Anyline.Modules.Mrz;
 using AT.Nineyards.Anylinexamarin.Support.Modules.Mrz;
+using Android.Widget;
 
 namespace AnylineXamarinApp.Mrz
 {
@@ -18,6 +19,8 @@ namespace AnylineXamarinApp.Mrz
         
         private MrzResultView _resultView;
         private MrzScanView _scanView;
+        private Switch _strictModeSwitch;
+        private Switch _cropResultSwitch;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -35,6 +38,9 @@ namespace AnylineXamarinApp.Mrz
             _scanView = FindViewById<MrzScanView>(Resource.Id.mrz_scan_view);
             _resultView = FindViewById<MrzResultView>(Resource.Id.mrz_result);
 
+            _strictModeSwitch = FindViewById<Switch>(Resource.Id.toggle_strict_mode_switch);
+            _cropResultSwitch = FindViewById<Switch>(Resource.Id.toggle_crop_switch);
+            
             _resultView.SetOnClickListener(this);
             
             _scanView.SetConfigFromAsset("MrzConfig.json");
@@ -52,8 +58,17 @@ namespace AnylineXamarinApp.Mrz
 
             _scanView.CameraError += (s, e) => { Log.Error(TAG, "OnCameraError: " + e.Event.Message); };
 
-            // set this to true after InitAnyline if only a result should be found, when all check digits are valid
-            _scanView.StrictMode = false;
+            _strictModeSwitch.CheckedChange += (sender, args) =>
+            {
+                // set this to true after InitAnyline if only a result should be found, when all check digits are valid
+                _scanView.StrictMode = ((Switch)sender).Checked;
+            };
+
+            _cropResultSwitch.CheckedChange += (sender, args) =>
+            {
+                // set this to true after InitAnyline to receive a cropped image of the ID instead of the whole scanning area
+                _scanView.CropAndTransformID = ((Switch)sender).Checked;
+            };
         }
 
         void IMrzResultListener.OnResult(MrzResult scanResult)

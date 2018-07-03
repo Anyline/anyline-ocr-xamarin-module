@@ -13,17 +13,17 @@
         "outerAlpha": 0.3,
         "feedbackStrokeColor": "0099FF",
         "cropPadding": {
-            "x": -30,
-            "y": -90
+            "x": 0,
+            "y": 0
         },
         "cropOffset": {
             "x": 0,
-            "y": 90
+            "y": 0
         }
     },
     "flash": {
         "mode": "manual",
-        "alignment": "bottom_right"
+        "alignment": "top_right"
     },
     "beepOnResult": true,
     "vibrateOnResult": true,

@@ -157,6 +157,7 @@
     <Compile Include="Ocr\IbanActivity.cs" />
     <Compile Include="LicensePlate\LicensePlateActivity.cs" />
     <Compile Include="Ocr\OCRResultView.cs" />
+    <Compile Include="Ocr\ShippingContainerActivity.cs" />
     <Compile Include="Ocr\SerialNumberActivity.cs" />
     <Compile Include="Ocr\VinActivity.cs" />
     <Compile Include="Ocr\VoucherCodeActivity.cs" />
@@ -190,6 +191,8 @@
     <AndroidAsset Include="Assets\SerialNumberViewConfig.json" />
     <AndroidAsset Include="Assets\USNr.any" />
     <AndroidAsset Include="Assets\anyline_austrian_driving_license.ale" />
+    <AndroidAsset Include="Assets\container_scanner.ale" />
+    <AndroidAsset Include="Assets\ShippingContainerViewConfig.json" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <AndroidResource Include="Resources\layout\EnergyActivity.axml">

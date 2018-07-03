@@ -8,7 +8,7 @@
   <string name="scan_digital_meter">Digital Meter</string>
   <string name="scan_heat_meter">Heat Meter</string>
   <string name="scan_analog_digital_meter">Analog/Digital Meter</string>
-  <string name="scan_serial_numbers">Serial Number</string>
+  <string name="scan_serial_numbers">Energy Serial Number</string>
   <string name="scan_dial_meters">Dial Meter (Alpha)</string>
   <string name="scan_dot_matrix_meters">Dot Matrix Meter</string>
 
@@ -22,6 +22,7 @@
   <string name="scan_license_plates">EU License Plate</string>
   <string name="scan_driving_licenses">Austrian Driving License</string>
   <string name="scan_vin_number">Vehicle Identification Number</string>
+  <string name="scan_shipping_container">Shipping Container</string>
 
   <!--energy-->
 
@@ -35,7 +36,7 @@
   <string name="category_identification">Identification Documents</string>
   <string name="category_fintech">Fintech</string>
   <string name="category_barcodes">Barcode / QR-Code</string>
-  <string name="category_serialnumber">Serial Number</string>
+  <string name="category_mro">MRO</string>
   <string name="category_documents">Document</string>
   <string name="category_loyality">Loyality</string>
   <string name="category_vehicle">Vehicles</string>

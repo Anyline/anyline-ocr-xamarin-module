@@ -30,7 +30,7 @@ namespace AnylineXamarinApp.iOS
                     "Digital Meter",
                     "Heat Meter",
                     "Analog/Digital",
-                    "Serial Number",
+                    "Energy Serial Number",
                     "Dial Meter",
                     "Dot Matrix Meter",
                 }},
@@ -41,8 +41,10 @@ namespace AnylineXamarinApp.iOS
             { "Barcodes", new[] {
                     "Barcode / QR-Code"
                 }},
-            { "Serial Numbers", new[] {
-                    "Universal Serial Number"
+            { "MRO", new[] {
+                    "Universal Serial Number",
+                    "Shipping Container",
+                    "Vehicle Identification Number"
                 }},
             { "Fintech", new[] {
                     "IBAN"
@@ -55,8 +57,7 @@ namespace AnylineXamarinApp.iOS
                     "Bottlecap"
                 }},
             { "Vehicle", new[] {
-                    "EU License Plate",
-                    "Vehicle Identification Number"
+                    "EU License Plate"
                 }}
         };
         
@@ -218,10 +219,13 @@ namespace AnylineXamarinApp.iOS
                     break;
 
                 case 3: //Serial Numbers
-                    //Universal Serial Number
-                    AnylineViewController.CurrentScanViewController = new AnylineSerialNumberScanViewController(name);
+                    if (indexPath.Row == 0) //Universal Serial Number
+                        AnylineViewController.CurrentScanViewController = new AnylineSerialNumberScanViewController(name);
+                    if (indexPath.Row == 1) //Shipping Container
+                        AnylineViewController.CurrentScanViewController = new AnylineShippingContainerScanViewController(name);
+                    if (indexPath.Row == 2) //VIN Scan
+                        AnylineViewController.CurrentScanViewController = new AnylineVinScanViewController(name);
                     break;
-
                 case 4: //Fintech
                     //Iban Scan
                     AnylineViewController.CurrentScanViewController = new AnylineIBANScanViewController(name);
@@ -239,10 +243,7 @@ namespace AnylineXamarinApp.iOS
                         AnylineViewController.CurrentScanViewController = new AnylineBottlecapScanViewController(name);
                     break;
                 case 7: //Vehicle
-                    if (indexPath.Row == 0) //License Plate Scan
-                        AnylineViewController.CurrentScanViewController = new AnylineLicensePlateScanViewController(name);
-                    if (indexPath.Row == 1) //VIN Scan
-                        AnylineViewController.CurrentScanViewController = new AnylineVinScanViewController(name);
+                    AnylineViewController.CurrentScanViewController = new AnylineLicensePlateScanViewController(name);
                     break;
                 default:
                     break;

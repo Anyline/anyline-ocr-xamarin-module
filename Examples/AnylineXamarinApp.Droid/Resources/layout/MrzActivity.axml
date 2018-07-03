@@ -3,10 +3,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-  <at.nineyards.anylinexamarin.support.modules.mrz.MrzScanView
+    <at.nineyards.anylinexamarin.support.modules.mrz.MrzScanView
         android:id="@+id/mrz_scan_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+    <RelativeLayout
+        android:id="@+id/toggle_strict_mode_layout"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="#88FFFFFF">
+        <TextView
+            android:text="Strict Mode"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/toggle_strict_mode_text"
+            android:textColor="@android:color/white"
+            android:layout_centerHorizontal="true" />
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/toggle_strict_mode_switch"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/toggle_strict_mode_text" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/toggle_crop_layout"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="#88FFFFFF">
+        <TextView
+            android:text="Crop Result"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/toggle_crop_text"
+            android:textColor="@android:color/white"
+            android:layout_centerHorizontal="true" />
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/toggle_crop_switch"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/toggle_crop_text" />
+    </RelativeLayout>
     <AnylineXamarinApp.Mrz.MrzResultView
         android:id="@+id/mrz_result"
         android:layout_width="300dp"
