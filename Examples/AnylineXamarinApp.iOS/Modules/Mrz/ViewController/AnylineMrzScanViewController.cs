@@ -17,6 +17,15 @@ namespace AnylineXamarinApp.iOS.Modules.Mrz.ViewController
         bool _isScanning;
         public UIAlertView Alert { get; private set; }
 
+        UIView _toggleStrictModeView;
+        UILabel _toggleStrictModeLabel;
+        UISwitch _toggleStrictModeSwitch;
+
+        UIView _toggleCropAndTransformIDView;
+        UILabel _toggleCropAndTransformIDLabel;
+        UISwitch _toggleCropAndTransformIDSwitch;
+
+
         public AnylineMrzScanViewController (string name)
         {
             Title = name;
@@ -52,10 +61,7 @@ namespace AnylineXamarinApp.iOS.Modules.Mrz.ViewController
 
             //we'll manually cancel scanning
             _anylineMrzView.CancelOnResult = false;
-
-            //set strict mode here
-            //_anylineMrzView.StrictMode = true;
-
+            
             /*
              ALIdentificationView will present the scanned values. Here we start listening for taps
              to later dismiss the view.
@@ -67,6 +73,56 @@ namespace AnylineXamarinApp.iOS.Modules.Mrz.ViewController
             _idView.Alpha = 0;
             
             View.AddSubview(_idView);
+
+            // Create a subview for toggling strict mode
+
+            _toggleStrictModeView = new UIView(new CGRect(0, 0, 150, 50));
+            _toggleStrictModeLabel = new UILabel(new CGRect(0, 0, 100, 30));
+            _toggleStrictModeLabel.Text = "Strict Mode";
+            _toggleStrictModeLabel.TextColor = UIColor.White;
+            _toggleStrictModeLabel.SizeToFit();
+
+            _toggleStrictModeSwitch = new UISwitch();
+            _toggleStrictModeSwitch.On = false;
+            _toggleStrictModeSwitch.TintColor = UIColor.White;
+            _toggleStrictModeSwitch.OnTintColor = new UIColor(0, 153 / 255, 1, 1);
+            _toggleStrictModeSwitch.ValueChanged += OnStrictModeValueChanged;
+
+            _toggleStrictModeView.AddSubview(_toggleStrictModeLabel);
+            _toggleStrictModeView.AddSubview(_toggleStrictModeSwitch);
+
+            View.AddSubview(_toggleStrictModeView);
+
+            // Create a subview for toggling crop and transform ID
+
+            _toggleCropAndTransformIDView = new UIView(new CGRect(0, 0, 150, 50));
+            _toggleCropAndTransformIDLabel = new UILabel(new CGRect(0, 0, 100, 30));
+            _toggleCropAndTransformIDLabel.Text = "Crop And Transform ID";
+            _toggleCropAndTransformIDLabel.TextColor = UIColor.White;
+            _toggleCropAndTransformIDLabel.SizeToFit();
+
+            _toggleCropAndTransformIDSwitch = new UISwitch();
+            _toggleCropAndTransformIDSwitch.On = false;
+            _toggleCropAndTransformIDSwitch.TintColor = UIColor.White;
+            _toggleCropAndTransformIDSwitch.OnTintColor = new UIColor(0, 153 / 255, 1, 1);
+            _toggleCropAndTransformIDSwitch.ValueChanged += OnCropAndTransformIDValueChanged;
+
+            _toggleCropAndTransformIDView.AddSubview(_toggleCropAndTransformIDLabel);
+            _toggleCropAndTransformIDView.AddSubview(_toggleCropAndTransformIDSwitch);
+
+            View.AddSubview(_toggleCropAndTransformIDView);
+
+
+        }
+
+        private void OnStrictModeValueChanged(object sender, EventArgs e)
+        {
+            _anylineMrzView.StrictMode = ((UISwitch)sender).On;
+        }
+
+        private void OnCropAndTransformIDValueChanged(object sender, EventArgs e)
+        {
+            _anylineMrzView.CropAndTransformID = ((UISwitch)sender).On;
         }
 
         /*

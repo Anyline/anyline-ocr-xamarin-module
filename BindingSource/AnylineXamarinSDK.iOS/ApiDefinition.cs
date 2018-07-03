@@ -2060,6 +2060,10 @@ namespace AnylineXamarinSDK.iOS
         // @property(nonatomic) BOOL strictMode;
         [Export("strictMode")]
         bool StrictMode { get; set; }
+
+        // @property(nonatomic) BOOL cropAndTransformID;
+        [Export("cropAndTransformID")]
+        bool CropAndTransformID { get; set; }
     }
 
     // @protocol ALMRZScanPluginDelegate <NSObject>
@@ -2102,6 +2106,10 @@ namespace AnylineXamarinSDK.iOS
         [Export("strictMode")]
         bool StrictMode { get; set; }
         
+        // @property(nonatomic) BOOL cropAndTransformID;
+        [Export("cropAndTransformID")]
+        bool CropAndTransformID { get; set; }
+
         // -(BOOL)setupWithLicenseKey:(NSString *)licenseKey delegate:(id<AnylineMRZModuleDelegate>)delegate error:(NSError **)error;
         [Export("setupWithLicenseKey:delegate:error:")]
         bool SetupWithLicenseKey(string licenseKey, NSObject @delegate, out NSError error);
