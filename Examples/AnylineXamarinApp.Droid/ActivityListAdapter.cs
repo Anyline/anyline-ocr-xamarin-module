@@ -18,10 +18,13 @@ namespace AnylineXamarinApp
         private readonly string[] _classes;
         private readonly Context _context;
 
-        private string GetBuildNumber()
+        public int GetBuildNumber()
         {
-            var ver = Assembly.GetExecutingAssembly().GetName().Version;
-            return ver.ToString();
+            var context = global::Android.App.Application.Context;
+            PackageManager manager = context.PackageManager;
+            PackageInfo info = manager.GetPackageInfo(context.PackageName, 0);
+
+            return info.VersionCode;
         }
 
         public ActivityListAdapter(Context context)
@@ -37,7 +40,7 @@ namespace AnylineXamarinApp
             if (assembly != null)
             {
                 Version ver = assembly.GetName().Version;
-                _names[_names.Length - 1] = $"Version: {ver}, Build: {GetBuildNumber()}";
+                _names[_names.Length - 1] = $"Version: {ver} - Build: {GetBuildNumber()}";
             }
         }
 

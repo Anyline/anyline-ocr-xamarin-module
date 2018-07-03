@@ -3,7 +3,7 @@
   <Import Project="..\packages\Xamarin.Build.Download.0.4.7\build\Xamarin.Build.Download.props" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.7\build\Xamarin.Build.Download.props')" />
   <PropertyGroup Label="Custom">
     <SetVersion>true</SetVersion>
-	<BuildNumber>2</BuildNumber>
+    <BuildNumber>2</BuildNumber>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -317,6 +317,9 @@
   <Import Project="..\packages\Xamarin.GooglePlayServices.Base.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Base.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Base.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Base.targets')" />
   <Import Project="..\packages\Xamarin.GooglePlayServices.Vision.Common.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Vision.Common.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Vision.Common.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Vision.Common.targets')" />
   <Import Project="..\packages\Xamarin.GooglePlayServices.Vision.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Vision.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Vision.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Vision.targets')" />
+  <PropertyGroup>
+    <PreBuildEvent>$(SolutionDir)tools\dist\IncrementBuildNumber.exe $(ProjectDir)Properties\AndroidManifest.xml</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
      Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
