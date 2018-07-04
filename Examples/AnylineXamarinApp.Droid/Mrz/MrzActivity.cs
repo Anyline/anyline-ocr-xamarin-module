@@ -21,6 +21,7 @@ namespace AnylineXamarinApp.Mrz
         private MrzScanView _scanView;
         private Switch _strictModeSwitch;
         private Switch _cropResultSwitch;
+        private ImageView _mrzResultImageView;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -40,7 +41,9 @@ namespace AnylineXamarinApp.Mrz
 
             _strictModeSwitch = FindViewById<Switch>(Resource.Id.toggle_strict_mode_switch);
             _cropResultSwitch = FindViewById<Switch>(Resource.Id.toggle_crop_switch);
-            
+
+            _mrzResultImageView = FindViewById<ImageView>(Resource.Id.mrz_result_image_view);
+
             _resultView.SetOnClickListener(this);
             
             _scanView.SetConfigFromAsset("MrzConfig.json");
@@ -52,35 +55,51 @@ namespace AnylineXamarinApp.Mrz
             _scanView.CameraOpened += (s, e) => 
             {
                 Log.Debug(TAG, "Camera opened successfully. Frame resolution " + e.Width + " x " + e.Height);
-                _resultView.Visibility = ViewStates.Invisible;
-                _scanView.StartScanning();
+
+                StartScanning();
             };
 
             _scanView.CameraError += (s, e) => { Log.Error(TAG, "OnCameraError: " + e.Event.Message); };
 
             _strictModeSwitch.CheckedChange += (sender, args) =>
             {
+                // make sure scanning is stopped before setting this property
+                _scanView.CancelScanning();
                 // set this to true after InitAnyline if only a result should be found, when all check digits are valid
                 _scanView.StrictMode = ((Switch)sender).Checked;
+
+                StartScanning();
             };
 
             _cropResultSwitch.CheckedChange += (sender, args) =>
             {
+                // make sure scanning is stopped before setting this property
+                _scanView.CancelScanning();
                 // set this to true after InitAnyline to receive a cropped image of the ID instead of the whole scanning area
                 _scanView.CropAndTransformID = ((Switch)sender).Checked;
+
+                StartScanning();
             };
+        }
+
+        private void StartScanning()
+        {
+            _mrzResultImageView.SetImageBitmap(null);
+            _resultView.Visibility = ViewStates.Invisible;
+            _scanView.StartScanning();
         }
 
         void IMrzResultListener.OnResult(MrzResult scanResult)
         {
             _resultView.SetIdentification(scanResult.Result as Identification);
             _resultView.Visibility = ViewStates.Visible;
+            
+            _mrzResultImageView.SetImageBitmap(scanResult.CutoutImage.Bitmap);
         }
 
         void View.IOnClickListener.OnClick(View v)
         {
-            _resultView.Visibility = ViewStates.Invisible;
-            _scanView.StartScanning();
+            StartScanning();
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
@@ -120,6 +139,12 @@ namespace AnylineXamarinApp.Mrz
             base.OnDestroy();
             _scanView?.Dispose();
             _scanView = null;
+
+            _resultView?.Dispose();
+            _resultView = null;
+
+            _mrzResultImageView?.Dispose();
+            _mrzResultImageView = null;
 
             // explicitly free memory
             GC.Collect(GC.MaxGeneration);

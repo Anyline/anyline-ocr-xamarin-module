@@ -23,7 +23,7 @@
     },
     "flash": {
         "mode": "manual",
-        "alignment": "top_right"
+        "alignment": "top_left"
     },
     "beepOnResult": true,
     "vibrateOnResult": true,

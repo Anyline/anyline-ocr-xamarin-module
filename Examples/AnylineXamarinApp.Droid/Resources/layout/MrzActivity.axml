@@ -7,6 +7,12 @@
         android:id="@+id/mrz_scan_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+    <ImageView 
+        android:id="@+id/mrz_result_image_view"
+        android:layout_width="125dp"
+        android:layout_height="85dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true" />
     <RelativeLayout
         android:id="@+id/toggle_strict_mode_layout"
         android:layout_width="120dp"
