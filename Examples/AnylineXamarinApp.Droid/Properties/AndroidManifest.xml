@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="AT.Anyline.Xamarin.App.Droid" android:versionCode="16" 
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="AT.Anyline.Xamarin.App.Droid" android:versionCode="18" 
           android:versionName="1.0" android:installLocation="preferExternal">
 	<uses-sdk />
 	<!--add android:hardwareAccelerated="true" for camera2 api support-->
