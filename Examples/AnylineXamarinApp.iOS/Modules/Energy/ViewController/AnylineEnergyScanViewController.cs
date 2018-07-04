@@ -49,7 +49,7 @@ namespace AnylineXamarinApp.iOS.Modules.Energy.ViewController
             _toggleBarcodeSwitch.Center = new CGPoint(_toggleBarcodeLabel.Frame.Size.Width + _toggleBarcodeSwitch.Frame.Size.Width  / 2 + 7, _toggleBarcodeView.Frame.Size.Height / 2);
 
             var width = _toggleBarcodeSwitch.Frame.Size.Width + 7 + _toggleBarcodeLabel.Frame.Size.Width;
-            _toggleBarcodeView.Frame = new CGRect(_frame.Size.Width - width - 15, _frame.Size.Height - 40, width, 50);            
+            _toggleBarcodeView.Frame = new CGRect(_frame.Size.Width - width - 15, _frame.Size.Height - 40, width, 50);        
         }
 
         public override void ViewDidLoad()

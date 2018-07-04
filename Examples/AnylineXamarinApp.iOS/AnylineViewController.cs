@@ -111,7 +111,7 @@ namespace AnylineXamarinApp.iOS
                     var assembly = assemblies.Where(x => x.FullName.StartsWith("AnylineXamarinSDK")).FirstOrDefault();
                     if (assembly != null)
                     {
-                        return $"SDK: {assembly.GetName().Version}";                        
+                        return $"SDK: {assembly.GetName().Version} - Build: {NSBundle.MainBundle.InfoDictionary["CFBundleVersion"].ToString()}";               
                     }
                     return "";
                 }

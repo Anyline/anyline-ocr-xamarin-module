@@ -25,6 +25,9 @@ namespace AnylineXamarinApp.iOS.Modules.Mrz.ViewController
         UILabel _toggleCropAndTransformIDLabel;
         UISwitch _toggleCropAndTransformIDSwitch;
 
+        CGRect _frame;
+        
+        UIImageView _mrzResultImageView;
 
         public AnylineMrzScanViewController (string name)
         {
@@ -36,13 +39,13 @@ namespace AnylineXamarinApp.iOS.Modules.Mrz.ViewController
             base.ViewDidLoad();
 
             // Initializing the MRZ module.
-            CGRect frame = UIScreen.MainScreen.ApplicationFrame;
-            frame = new CGRect(frame.X,
-                frame.Y + NavigationController.NavigationBar.Frame.Size.Height,
-                frame.Width,
-                frame.Height - NavigationController.NavigationBar.Frame.Size.Height);
+            _frame = UIScreen.MainScreen.ApplicationFrame;
+            _frame = new CGRect(_frame.X,
+                _frame.Y + NavigationController.NavigationBar.Frame.Size.Height,
+                _frame.Width,
+                _frame.Height - NavigationController.NavigationBar.Frame.Size.Height);
 
-            _anylineMrzView = new AnylineMRZModuleView(frame);
+            _anylineMrzView = new AnylineMRZModuleView(_frame);
             
             _error = null;
             // We tell the module to bootstrap itself with the license key and delegate. The delegate will later get called
@@ -112,17 +115,49 @@ namespace AnylineXamarinApp.iOS.Modules.Mrz.ViewController
 
             View.AddSubview(_toggleCropAndTransformIDView);
 
+            // Create view for the result image
 
+            _mrzResultImageView = new UIImageView(new CGRect(0, 0, 125, 85));
+            
+            View.AddSubview(_mrzResultImageView);
+            
+        }
+
+        public override void ViewDidLayoutSubviews()
+        {
+            base.ViewDidLayoutSubviews();
+
+            double width = 0;
+
+            _toggleStrictModeLabel.Center = new CGPoint(_toggleStrictModeLabel.Frame.Size.Width / 2, _toggleStrictModeView.Frame.Size.Height / 2);
+            _toggleStrictModeSwitch.Center = new CGPoint(_toggleStrictModeLabel.Frame.Size.Width + _toggleStrictModeSwitch.Frame.Size.Width / 2 + 7, _toggleStrictModeView.Frame.Size.Height / 2);
+
+            width = _toggleStrictModeSwitch.Frame.Size.Width + 7 + _toggleStrictModeLabel.Frame.Size.Width;
+            _toggleStrictModeView.Frame = new CGRect(_frame.Size.Width - width - 15, _frame.Size.Height - 50, width, 50);
+            
+            _toggleCropAndTransformIDLabel.Center = new CGPoint(_toggleCropAndTransformIDLabel.Frame.Size.Width / 2, _toggleCropAndTransformIDView.Frame.Size.Height / 2);
+            _toggleCropAndTransformIDSwitch.Center = new CGPoint(_toggleCropAndTransformIDLabel.Frame.Size.Width + _toggleCropAndTransformIDSwitch.Frame.Size.Width / 2 + 7, _toggleCropAndTransformIDView.Frame.Size.Height / 2);
+
+            width = _toggleCropAndTransformIDSwitch.Frame.Size.Width + 7 + _toggleCropAndTransformIDLabel.Frame.Size.Width;
+            _toggleCropAndTransformIDView.Frame = new CGRect(_frame.Size.Width - width - 15, _frame.Size.Height - 0, width, 50);
+
+            _mrzResultImageView.Frame = new CGRect(_frame.Size.Width - 125, _frame.Y, 125, 85);
         }
 
         private void OnStrictModeValueChanged(object sender, EventArgs e)
         {
+            // Make sure that it isn't scanning when setting this property
+            StopAnyline();
             _anylineMrzView.StrictMode = ((UISwitch)sender).On;
+            StartAnyline();
         }
 
         private void OnCropAndTransformIDValueChanged(object sender, EventArgs e)
         {
+            // Make sure that it isn't scanning when setting this property
+            StopAnyline();
             _anylineMrzView.CropAndTransformID = ((UISwitch)sender).On;
+            StartAnyline();
         }
 
         /*
@@ -190,6 +225,8 @@ namespace AnylineXamarinApp.iOS.Modules.Mrz.ViewController
             if (_anylineMrzView == null) return;
             if (_isScanning) return;
 
+            _mrzResultImageView.Image = null;
+
             //send the identification view to the back before we start scanning
             View.SendSubviewToBack(_idView);
 
@@ -226,6 +263,8 @@ namespace AnylineXamarinApp.iOS.Modules.Mrz.ViewController
         void IAnylineMRZModuleDelegate.DidFindResult(AnylineMRZModuleView anylineMRZModuleView, ALMRZResult scanResult)
         {
             if (_idView == null) return;
+
+            _mrzResultImageView.Image = scanResult.Image;
 
             // Because there is a lot of information to be passed along the module
             // uses ALIdentification.
@@ -264,7 +303,30 @@ namespace AnylineXamarinApp.iOS.Modules.Mrz.ViewController
             _anylineMrzView?.RemoveFromSuperview();
             _anylineMrzView?.Dispose();
             _anylineMrzView = null;
+
+            _toggleCropAndTransformIDLabel.RemoveFromSuperview();
+            _toggleCropAndTransformIDLabel?.Dispose();
+
+            _toggleCropAndTransformIDSwitch.ValueChanged -= OnCropAndTransformIDValueChanged;
+            _toggleCropAndTransformIDSwitch.RemoveFromSuperview();
+            _toggleCropAndTransformIDSwitch?.Dispose();
+
+            _toggleCropAndTransformIDView.RemoveFromSuperview();
+            _toggleCropAndTransformIDView?.Dispose();
+
+            _toggleStrictModeLabel.RemoveFromSuperview();
+            _toggleStrictModeLabel?.Dispose();
+
+            _toggleStrictModeSwitch.ValueChanged -= OnStrictModeValueChanged;
+            _toggleStrictModeSwitch.RemoveFromSuperview();
+            _toggleStrictModeSwitch?.Dispose();
+
+            _toggleStrictModeView.RemoveFromSuperview();
+            _toggleStrictModeView?.Dispose();
             
+            _mrzResultImageView.RemoveFromSuperview();
+            _mrzResultImageView?.Dispose();
+
             base.Dispose();
         }
     }
