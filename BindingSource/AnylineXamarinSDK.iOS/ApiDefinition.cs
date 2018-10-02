@@ -161,6 +161,216 @@ namespace AnylineXamarinSDK.iOS
         IntPtr Constructor(CGRect frame, UIImage flashImage, ALFlashAlignment flashAlignment, ALFlashMode flashMode, CGPoint flashOffset);
     }
 
+    // @interface ALScanFeedbackConfig : NSObject
+    [BaseType(typeof(NSObject))]
+    interface ALScanFeedbackConfig
+    {
+        // @property (assign, nonatomic) ALUIFeedbackStyle style;
+        [Export("style", ArgumentSemantic.Assign)]
+        ALUIFeedbackStyle Style { get; set; }
+
+        // @property (assign, nonatomic) ALUIVisualFeedbackAnimation animation;
+        [Export("animation", ArgumentSemantic.Assign)]
+        ALUIVisualFeedbackAnimation Animation { get; set; }
+
+        // @property (nonatomic, strong) UIColor * _Nullable strokeColor;
+        [NullAllowed, Export("strokeColor", ArgumentSemantic.Strong)]
+        UIColor StrokeColor { get; set; }
+
+        // @property (nonatomic, strong) UIColor * _Nullable fillColor;
+        [NullAllowed, Export("fillColor", ArgumentSemantic.Strong)]
+        UIColor FillColor { get; set; }
+
+        // @property (assign, nonatomic) NSInteger strokeWidth;
+        [Export("strokeWidth")]
+        nint StrokeWidth { get; set; }
+
+        // @property (assign, nonatomic) NSInteger cornerRadius;
+        [Export("cornerRadius")]
+        nint CornerRadius { get; set; }
+
+        // @property (assign, nonatomic) NSInteger animationDuration;
+        [Export("animationDuration")]
+        nint AnimationDuration { get; set; }
+
+        // @property (assign, nonatomic) NSInteger redrawTimeout;
+        [Export("redrawTimeout")]
+        nint RedrawTimeout { get; set; }
+
+        // @property (assign, nonatomic) BOOL beepOnResult;
+        [Export("beepOnResult")]
+        bool BeepOnResult { get; set; }
+
+        // @property (assign, nonatomic) BOOL vibrateOnResult;
+        [Export("vibrateOnResult")]
+        bool VibrateOnResult { get; set; }
+
+        // @property (assign, nonatomic) BOOL blinkAnimationOnResult;
+        [Export("blinkAnimationOnResult")]
+        bool BlinkAnimationOnResult { get; set; }
+
+        // -(instancetype _Nullable)initWithDictionary:(NSDictionary * _Nonnull)configDict;
+        [Export("initWithDictionary:")]
+        IntPtr Constructor(NSDictionary configDict);
+
+        // -(instancetype _Nullable)initWithStyle:(ALUIFeedbackStyle)style animation:(ALUIVisualFeedbackAnimation)animation strokeColor:(UIColor * _Nonnull)strokeColor fillColor:(UIColor * _Nonnull)fillColor strokeWidth:(NSInteger)strokeWidth cornerRadius:(NSInteger)cornerRadius animationDuration:(NSInteger)animationDuration redrawTimeout:(NSInteger)redrawTimeout beepOnResult:(BOOL)beepOnResult vibrateOnResult:(BOOL)vibrateOnResult blinkAnimationOnResult:(BOOL)blinkAnimationOnResult;
+        [Export("initWithStyle:animation:strokeColor:fillColor:strokeWidth:cornerRadius:animationDuration:redrawTimeout:beepOnResult:vibrateOnResult:blinkAnimationOnResult:")]
+        IntPtr Constructor(ALUIFeedbackStyle style, ALUIVisualFeedbackAnimation animation, UIColor strokeColor, UIColor fillColor, nint strokeWidth, nint cornerRadius, nint animationDuration, nint redrawTimeout, bool beepOnResult, bool vibrateOnResult, bool blinkAnimationOnResult);
+
+        // +(instancetype _Nonnull)defaultScanFeedbackConfig;
+        [Static]
+        [Export("defaultScanFeedbackConfig")]
+        ALScanFeedbackConfig DefaultScanFeedbackConfig();
+    }
+
+    // @interface ALCutoutConfig : NSObject
+    [BaseType(typeof(NSObject))]
+    interface ALCutoutConfig
+    {
+        // @property (assign, nonatomic) CGFloat widthPercent;
+        [Export("widthPercent")]
+        nfloat WidthPercent { get; set; }
+
+        // @property (assign, nonatomic) CGFloat maxPercentWidth;
+        [Export("maxPercentWidth")]
+        nfloat MaxPercentWidth { get; set; }
+
+        // @property (assign, nonatomic) CGFloat maxPercentHeight;
+        [Export("maxPercentHeight")]
+        nfloat MaxPercentHeight { get; set; }
+
+        // @property (assign, nonatomic) ALCutoutAlignment alignment;
+        [Export("alignment", ArgumentSemantic.Assign)]
+        ALCutoutAlignment Alignment { get; set; }
+
+        // @property (assign, nonatomic) CGPoint offset;
+        [Export("offset", ArgumentSemantic.Assign)]
+        CGPoint Offset { get; set; }
+
+        // @property (copy, nonatomic) UIBezierPath * _Nullable path;
+        [NullAllowed, Export("path", ArgumentSemantic.Copy)]
+        UIBezierPath Path { get; set; }
+
+        // @property (assign, nonatomic) CGSize cropPadding;
+        [Export("cropPadding", ArgumentSemantic.Assign)]
+        CGSize CropPadding { get; set; }
+
+        // @property (assign, nonatomic) CGPoint cropOffset;
+        [Export("cropOffset", ArgumentSemantic.Assign)]
+        CGPoint CropOffset { get; set; }
+
+        // @property (nonatomic, strong) UIColor * _Nullable backgroundColor;
+        [NullAllowed, Export("backgroundColor", ArgumentSemantic.Strong)]
+        UIColor BackgroundColor { get; set; }
+
+        // @property (nonatomic, strong) UIColor * _Nullable strokeColor;
+        [NullAllowed, Export("strokeColor", ArgumentSemantic.Strong)]
+        UIColor StrokeColor { get; set; }
+
+        // @property (nonatomic, strong) UIColor * _Nullable feedbackStrokeColor;
+        [NullAllowed, Export("feedbackStrokeColor", ArgumentSemantic.Strong)]
+        UIColor FeedbackStrokeColor { get; set; }
+
+        // @property (nonatomic, strong) UIImage * _Nullable overlayImage;
+        [NullAllowed, Export("overlayImage", ArgumentSemantic.Strong)]
+        UIImage OverlayImage { get; set; }
+
+        // @property (assign, nonatomic) NSInteger strokeWidth;
+        [Export("strokeWidth")]
+        nint StrokeWidth { get; set; }
+
+        // @property (assign, nonatomic) NSInteger cornerRadius;
+        [Export("cornerRadius")]
+        nint CornerRadius { get; set; }
+
+        // -(void)setCutoutPathForWidth:(CGFloat)width height:(CGFloat)height;
+        [Export("setCutoutPathForWidth:height:")]
+        void SetCutoutPathForWidth(nfloat width, nfloat height);
+
+        // -(void)updateCutoutWidth:(CGFloat)width;
+        [Export("updateCutoutWidth:")]
+        void UpdateCutoutWidth(nfloat width);
+
+        // +(instancetype _Nonnull)defaultCutoutConfig;
+        [Static]
+        [Export("defaultCutoutConfig")]
+        ALCutoutConfig DefaultCutoutConfig();
+
+        // -(instancetype _Nullable)initWithDictionary:(NSDictionary * _Nonnull)configDict;
+        [Export("initWithDictionary:")]
+        IntPtr Constructor(NSDictionary configDict);
+
+        // -(instancetype _Nullable)initWithWidthPercent:(CGFloat)widthPercent maxPercentWidth:(CGFloat)maxPercentWidth maxPercentHeight:(CGFloat)maxPercentHeight alignment:(ALCutoutAlignment)alignment offset:(CGPoint)offset path:(UIBezierPath * _Nonnull)path cropPadding:(CGSize)cropPadding cropOffset:(CGPoint)cropOffset backgroundColor:(UIColor * _Nonnull)backgroundColor strokeColor:(UIColor * _Nonnull)strokeColor feedbackStrokeColor:(UIColor * _Nonnull)feedbackStrokeColor overlayImage:(UIImage * _Nullable)overlayImage strokeWidth:(NSInteger)strokeWidth cornerRadius:(NSInteger)cornerRadius;
+        [Export("initWithWidthPercent:maxPercentWidth:maxPercentHeight:alignment:offset:path:cropPadding:cropOffset:backgroundColor:strokeColor:feedbackStrokeColor:overlayImage:strokeWidth:cornerRadius:")]
+        IntPtr Constructor(nfloat widthPercent, nfloat maxPercentWidth, nfloat maxPercentHeight, ALCutoutAlignment alignment, CGPoint offset, UIBezierPath path, CGSize cropPadding, CGPoint cropOffset, UIColor backgroundColor, UIColor strokeColor, UIColor feedbackStrokeColor, [NullAllowed] UIImage overlayImage, nint strokeWidth, nint cornerRadius);
+    }
+
+
+    // @interface ALScanViewPluginConfig : NSObject
+    [BaseType(typeof(NSObject))]
+    interface ALScanViewPluginConfig
+    {
+        // @property (nonatomic, strong) ALScanFeedbackConfig * _Nonnull scanFeedbackConfig;
+        [Export("scanFeedbackConfig", ArgumentSemantic.Strong)]
+        ALScanFeedbackConfig ScanFeedbackConfig { get; set; }
+
+        // @property (nonatomic, strong) ALCutoutConfig * _Nonnull cutoutConfig;
+        [Export("cutoutConfig", ArgumentSemantic.Strong)]
+        ALCutoutConfig CutoutConfig { get; set; }
+
+        // @property (assign, nonatomic) BOOL cancelOnResult;
+        [Export("cancelOnResult")]
+        bool CancelOnResult { get; set; }
+
+        // -(instancetype _Nullable)initWithDictionary:(NSDictionary * _Nonnull)configDict;
+        [Export("initWithDictionary:")]
+        IntPtr Constructor(NSDictionary configDict);
+
+        // -(instancetype _Nullable)initWithScanFeedbackConfig:(ALScanFeedbackConfig * _Nonnull)scanFeedbackConfig cutoutConfig:(ALCutoutConfig * _Nonnull)cutoutConfig cancelOnResult:(BOOL)cancelOnResult;
+        [Export("initWithScanFeedbackConfig:cutoutConfig:cancelOnResult:")]
+        IntPtr Constructor(ALScanFeedbackConfig scanFeedbackConfig, ALCutoutConfig cutoutConfig, bool cancelOnResult);
+
+        // +(instancetype _Nonnull)defaultScanViewPluginConfig;
+        [Static]
+        [Export("defaultScanViewPluginConfig")]
+        ALScanViewPluginConfig DefaultScanViewPluginConfig();
+
+        // +(instancetype _Nonnull)defaultDocumentScannerConfig;
+        [Static]
+        [Export("defaultDocumentScannerConfig")]
+        ALScanViewPluginConfig DefaultDocumentScannerConfig();
+
+        // +(instancetype _Nonnull)defaultBarcodeConfig;
+        [Static]
+        [Export("defaultBarcodeConfig")]
+        ALScanViewPluginConfig DefaultBarcodeConfig();
+
+        // +(instancetype _Nonnull)defaultLicensePlateConfig;
+        [Static]
+        [Export("defaultLicensePlateConfig")]
+        ALScanViewPluginConfig DefaultLicensePlateConfig();
+
+        // +(instancetype _Nonnull)defaultOCRConfig;
+        [Static]
+        [Export("defaultOCRConfig")]
+        ALScanViewPluginConfig DefaultOCRConfig();
+
+        // +(instancetype _Nonnull)defaultMRZConfig;
+        [Static]
+        [Export("defaultMRZConfig")]
+        ALScanViewPluginConfig DefaultMRZConfig();
+
+        // +(instancetype _Nonnull)defaultDrivingLicenseConfig;
+        [Static]
+        [Export("defaultDrivingLicenseConfig")]
+        ALScanViewPluginConfig DefaultDrivingLicenseConfig();
+
+        // +(instancetype _Nonnull)defaultMeterConfig;
+        [Static]
+        [Export("defaultMeterConfig")]
+        ALScanViewPluginConfig DefaultMeterConfig();
+    }
+
     // @interface ALUIConfiguration : NSObject
     [BaseType(typeof(NSObject))]
     interface ALUIConfiguration
@@ -1939,9 +2149,9 @@ namespace AnylineXamarinSDK.iOS
         void DidFindResult(AnylineBarcodeModuleView anylineBarcodeModuleView, ALBarcodeResult scanResult);
     }
 
-    // @interface ALIdentification : NSObject
+    // @interface ALMRZIdentification : NSObject
     [BaseType(typeof(NSObject))]
-    interface ALIdentification
+    interface ALMRZIdentification
     {
         // @property (readonly, nonatomic, strong) NSString * _Nonnull documentType;
         [Export("documentType", ArgumentSemantic.Strong)]
@@ -2019,88 +2229,125 @@ namespace AnylineXamarinSDK.iOS
         [Export("MRZString", ArgumentSemantic.Strong)]
         string MRZString { get; }
 
+        // @property (nonatomic, strong) UIImage * _Nullable faceImage;
+        [NullAllowed, Export("faceImage", ArgumentSemantic.Strong)]
+        UIImage FaceImage { get; set; }
+
         // -(instancetype _Nullable)initWithDocumentType:(NSString * _Nonnull)documentType issuingCountryCode:(NSString * _Nonnull)issuingCountryCode nationalityCountryCode:(NSString * _Nonnull)nationalityCountryCode surNames:(NSString * _Nonnull)surNames givenNames:(NSString * _Nonnull)givenNames documentNumber:(NSString * _Nonnull)documentNumber checkDigitNumber:(NSString * _Nonnull)checkDigitNumber dayOfBirth:(NSString * _Nonnull)dayOfBirth checkDigitDayOfBirth:(NSString * _Nonnull)checkDigitDayOfBirth sex:(NSString * _Nonnull)sex expirationDate:(NSString * _Nonnull)expirationDate checkDigitExpirationDate:(NSString * _Nonnull)checkdigitExpirationDate personalNumber:(NSString * _Nonnull)personalNumber checkDigitPersonalNumber:(NSString * _Nonnull)checkDigitPersonalNumber checkDigitFinal:(NSString * _Nonnull)checkDigitFinal personalNumber2:(NSString * _Nonnull)personalNumber2 MRZString:(NSString * _Nonnull)MRZString;
         [Export("initWithDocumentType:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:personalNumber2:MRZString:")]
         IntPtr Constructor(string documentType, string issuingCountryCode, string nationalityCountryCode, string surNames, string givenNames, string documentNumber, string checkDigitNumber, string dayOfBirth, string checkDigitDayOfBirth, string sex, string expirationDate, string checkdigitExpirationDate, string personalNumber, string checkDigitPersonalNumber, string checkDigitFinal, string personalNumber2, string MRZString);
     }
 
-    // @interface ALMRZResult : ALScanResult
+    // audit-objc-generics: @interface ALIDResult<__covariant ObjectType> : ALScanResult
     [BaseType(typeof(ALScanResult))]
-    interface ALMRZResult
+    interface ALIDResult
     {
         // @property (readonly, assign, nonatomic) BOOL allCheckDigitsValid;
         [Export("allCheckDigitsValid")]
         bool AllCheckDigitsValid { get; }
 
-        // -(instancetype _Nullable)initWithResult:(ALIdentification * _Nonnull)result image:(UIImage * _Nonnull)image fullImage:(UIImage * _Nullable)fullImage confidence:(NSInteger)confidence pluginID:(NSString * _Nonnull)pluginID allCheckDigitsValid:(BOOL)allCheckDigitsValid;
+        // -(instancetype _Nullable)initWithResult:(ObjectType _Nonnull)result image:(UIImage * _Nonnull)image fullImage:(UIImage * _Nullable)fullImage confidence:(NSInteger)confidence pluginID:(NSString * _Nonnull)pluginID allCheckDigitsValid:(BOOL)allCheckDigitsValid;
         [Export("initWithResult:image:fullImage:confidence:pluginID:allCheckDigitsValid:")]
-        IntPtr Constructor(ALIdentification result, UIImage image, [NullAllowed] UIImage fullImage, nint confidence, string pluginID, bool allCheckDigitsValid);
+        IntPtr Constructor(NSObject result, UIImage image, [NullAllowed] UIImage fullImage, nint confidence, string pluginID, bool allCheckDigitsValid);
     }
 
-    // @interface ALMRZScanPlugin : ALAbstractScanPlugin
-    [BaseType(typeof(ALAbstractScanPlugin))]
-    interface ALMRZScanPlugin
+    // @interface ALIDConfig : NSObject
+    [BaseType(typeof(NSObject))]
+    interface ALIDConfig
     {
-        // @property (readonly, nonatomic, strong) NSHashTable<ALMRZScanPluginDelegate> * _Nullable delegates;
-        [NullAllowed, Export("delegates", ArgumentSemantic.Strong)]
-        ALMRZScanPluginDelegate Delegates { get; }
+        // -(instancetype _Nullable)initWithJsonDictionary:(NSDictionary * _Nonnull)configDict;
+        [Export("initWithJsonDictionary:")]
+        IntPtr Constructor(NSDictionary configDict);
+    }
 
-        // -(BOOL)setupWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<ALMRZScanPluginDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
-        [Export("setupWithLicenseKey:delegate:error:")]
-        bool SetupWithLicenseKey(string licenseKey, NSObject @delegate, [NullAllowed] out NSError error);
-
-        // -(void)addDelegate:(id<ALMRZScanPluginDelegate> _Nonnull)delegate;
-        [Export("addDelegate:")]
-        void AddDelegate(ALMRZScanPluginDelegate @delegate);
-
-        // -(void)removeDelegate:(id<ALMRZScanPluginDelegate> _Nonnull)delegate;
-        [Export("removeDelegate:")]
-        void RemoveDelegate(ALMRZScanPluginDelegate @delegate);
-
-        // @property(nonatomic) BOOL strictMode;
+    // @interface ALMRZConfig : ALIDConfig
+    [BaseType(typeof(ALIDConfig))]
+    interface ALMRZConfig
+    {
+        // @property (nonatomic) BOOL strictMode;
         [Export("strictMode")]
         bool StrictMode { get; set; }
 
-        // @property(nonatomic) BOOL cropAndTransformID;
+        // @property (nonatomic) BOOL cropAndTransformID;
         [Export("cropAndTransformID")]
         bool CropAndTransformID { get; set; }
     }
 
-    // @protocol ALMRZScanPluginDelegate <NSObject>
-    [Protocol, Model]
-    [BaseType(typeof(NSObject))]
-    interface ALMRZScanPluginDelegate
+    // @interface ALDrivingLicenseConfig : ALIDConfig
+    [BaseType(typeof(ALIDConfig))]
+    interface ALDrivingLicenseConfig
     {
-        // @required -(void)anylineMRZScanPlugin:(ALMRZScanPlugin * _Nonnull)anylineMRZScanPlugin didFindResult:(ALMRZResult * _Nonnull)scanResult;
-        [Abstract]
-        [Export("anylineMRZScanPlugin:didFindResult:")]
-        void DidFindResult(ALMRZScanPlugin anylineMRZScanPlugin, ALMRZResult scanResult);
     }
 
-    // @interface ALMRZScanViewPlugin : ALAbstractScanViewPlugin
-    [BaseType(typeof(ALAbstractScanViewPlugin))]
-    interface ALMRZScanViewPlugin
+    // @interface ALIDScanPlugin : ALAbstractScanPlugin
+    [BaseType(typeof(ALAbstractScanPlugin))]
+    [DisableDefaultCtor]
+    interface ALIDScanPlugin
     {
-        // @property (nonatomic, strong) ALMRZScanPlugin * _Nullable mrzScanPlugin;
-        [NullAllowed, Export("mrzScanPlugin", ArgumentSemantic.Strong)]
-        ALMRZScanPlugin MrzScanPlugin { get; set; }
+        // -(instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID licenseKey:(NSString * _Nonnull)licenseKey delegate:(id<ALIDPluginDelegate> _Nonnull)delegate idConfig:(ALIDConfig * _Nonnull)config error:(NSError * _Nullable * _Nullable)error;
+        [Export("initWithPluginID:licenseKey:delegate:idConfig:error:")]
+        IntPtr Constructor([NullAllowed] string pluginID, string licenseKey, ALIDPluginDelegate @delegate, ALIDConfig config, [NullAllowed] out NSError error);
 
-        // -(instancetype _Nullable)initWithFrame:(CGRect)frame scanPlugin:(ALMRZScanPlugin * _Nonnull)mrzScanPlugin;
+        // @property (readonly, nonatomic, strong) NSHashTable<ALIDPluginDelegate> * _Nullable delegates;
+        [NullAllowed, Export("delegates", ArgumentSemantic.Strong)]
+        ALIDPluginDelegate Delegates { get; }
+
+        // -(void)addDelegate:(id<ALIDPluginDelegate> _Nonnull)delegate;
+        [Export("addDelegate:")]
+        void AddDelegate(ALIDPluginDelegate @delegate);
+
+        // -(void)removeDelegate:(id<ALIDPluginDelegate> _Nonnull)delegate;
+        [Export("removeDelegate:")]
+        void RemoveDelegate(ALIDPluginDelegate @delegate);
+
+        // @property (readonly, nonatomic, strong) ALIDConfig * _Nullable idConfig;
+        [NullAllowed, Export("idConfig", ArgumentSemantic.Strong)]
+        ALIDConfig IdConfig { get; }
+
+        // -(BOOL)setIDConfig:(ALIDConfig * _Nonnull)idConfig error:(NSError * _Nullable * _Nullable)error;
+        [Export("setIDConfig:error:")]
+        bool SetIDConfig(ALIDConfig idConfig, [NullAllowed] out NSError error);
+    }
+
+    // @protocol ALIDPluginDelegate <NSObject>
+    [Protocol, Model]
+    [BaseType(typeof(NSObject))]
+    interface ALIDPluginDelegate
+    {
+        // @required -(void)anylineIDScanPlugin:(ALIDScanPlugin * _Nonnull)anylineIDScanPlugin didFindResult:(ALIDResult * _Nonnull)scanResult;
+        [Abstract]
+        [Export("anylineIDScanPlugin:didFindResult:")]
+        void DidFindResult(ALIDScanPlugin anylineIDScanPlugin, ALIDResult scanResult);
+    }
+
+    // @interface ALIDScanViewPlugin : ALAbstractScanViewPlugin
+    [BaseType(typeof(ALAbstractScanViewPlugin))]
+    interface ALIDScanViewPlugin
+    {
+        // @property (nonatomic, strong) ALIDScanPlugin * _Nullable idScanPlugin;
+        [NullAllowed, Export("idScanPlugin", ArgumentSemantic.Strong)]
+        ALIDScanPlugin IdScanPlugin { get; set; }
+
+        // -(instancetype _Nullable)initWithFrame:(CGRect)frame scanPlugin:(ALIDScanPlugin * _Nonnull)idScanPlugin;
         [Export("initWithFrame:scanPlugin:")]
-        IntPtr Constructor(CGRect frame, ALMRZScanPlugin mrzScanPlugin);
+        IntPtr Constructor(CGRect frame, ALIDScanPlugin idScanPlugin);
+
+        // -(instancetype _Nullable)initWithFrame:(CGRect)frame scanPlugin:(ALIDScanPlugin * _Nonnull)idScanPlugin scanViewPluginConfig:(ALScanViewPluginConfig * _Nonnull)scanViewPluginConfig;
+        [Export("initWithFrame:scanPlugin:scanViewPluginConfig:")]
+        IntPtr Constructor(CGRect frame, ALIDScanPlugin idScanPlugin, ALScanViewPluginConfig scanViewPluginConfig);
     }
 
     // @interface AnylineMRZModuleView : AnylineAbstractModuleView
     [BaseType(typeof(AnylineAbstractModuleView))]
     interface AnylineMRZModuleView
-    {
-        // @property (nonatomic, strong) ALMRZScanViewPlugin * mrzScanViewPlugin;
-        [Export("mrzScanViewPlugin", ArgumentSemantic.Strong)]
-        ALMRZScanViewPlugin MrzScanViewPlugin { get; set; }
 
-        // @property (nonatomic, strong) ALMRZScanPlugin * mrzScanPlugin;
-        [Export("mrzScanPlugin", ArgumentSemantic.Strong)]
-        ALMRZScanPlugin MrzScanPlugin { get; set; }
+    {   // @property (nonatomic, strong) ALIDScanViewPlugin * _Nullable mrzScanViewPlugin;
+        [NullAllowed, Export("mrzScanViewPlugin", ArgumentSemantic.Strong)]
+        ALIDScanViewPlugin MrzScanViewPlugin { get; set; }
+
+        // @property (nonatomic, strong) ALIDScanPlugin * _Nullable mrzScanPlugin;
+        [NullAllowed, Export("mrzScanPlugin", ArgumentSemantic.Strong)]
+        ALIDScanPlugin MrzScanPlugin { get; set; }
 
         // @property(nonatomic) BOOL strictMode;
         [Export("strictMode")]
@@ -2126,12 +2373,12 @@ namespace AnylineXamarinSDK.iOS
     {
         // @optional -(void)anylineMRZModuleView:(AnylineMRZModuleView *)anylineMRZModuleView didFindScanResult:(ALIdentification *)scanResult allCheckDigitsValid:(BOOL)allCheckDigitsValid atImage:(UIImage *)image __attribute__((deprecated("Deprecated since 3.10. Use method anylineMRZModuleView:didFindScanResult: instead.")));
         [Export("anylineMRZModuleView:didFindScanResult:allCheckDigitsValid:atImage:")]
-        void DidFindScanResult(AnylineMRZModuleView anylineMRZModuleView, ALIdentification scanResult, bool allCheckDigitsValid, UIImage image);
+        void DidFindScanResult(AnylineMRZModuleView anylineMRZModuleView, ALMRZIdentification scanResult, bool allCheckDigitsValid, UIImage image);
 
         // @required -(void)anylineMRZModuleView:(AnylineMRZModuleView *)anylineMRZModuleView didFindResult:(ALMRZResult *)scanResult;
         [Abstract]
         [Export("anylineMRZModuleView:didFindResult:")]
-        void DidFindResult(AnylineMRZModuleView anylineMRZModuleView, ALMRZResult scanResult);
+        void DidFindResult(AnylineMRZModuleView anylineMRZModuleView, ALIDResult scanResult);
     }
 
     // @interface ALOCRResult : ALScanResult

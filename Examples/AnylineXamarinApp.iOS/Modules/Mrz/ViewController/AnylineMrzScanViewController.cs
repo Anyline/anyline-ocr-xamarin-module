@@ -260,7 +260,7 @@ namespace AnylineXamarinApp.iOS.Modules.Mrz.ViewController
         /*
         This is the main delegate method Anyline uses to report its results
         */
-        void IAnylineMRZModuleDelegate.DidFindResult(AnylineMRZModuleView anylineMRZModuleView, ALMRZResult scanResult)
+        void IAnylineMRZModuleDelegate.DidFindResult(AnylineMRZModuleView anylineMRZModuleView, ALIDResult scanResult)
         {
             if (_idView == null) return;
 
@@ -268,7 +268,7 @@ namespace AnylineXamarinApp.iOS.Modules.Mrz.ViewController
 
             // Because there is a lot of information to be passed along the module
             // uses ALIdentification.
-            var identification = scanResult.Result as ALIdentification;
+            var identification = scanResult.Result as ALMRZIdentification;
             _idView.UpdateIdentification(identification);
             
             // Present the information to the user

@@ -5,7 +5,7 @@
 			<id>Anyline.Xamarin.SDK.iOS</id>
 
 			<!-- The package version number that is used when resolving dependencies -->
-			<version>3.26.0</version>
+			<version>3.27.0</version>
 
 			<title>Anyline Xamarin SDK (iOS)</title>
 			
@@ -77,47 +77,36 @@
 			<file src="..\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_line.ale" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\"/>
 			<file src="..\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_line_any.ale" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\"/>
 			<file src="..\AnylineResources.bundle\module_anyline_ocr\container_scanner.ale" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\"/>
-			<file src="..\AnylineResources.bundle\module_anyline_ocr\simpleocr_capture_config.json" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\"/>
 			<file src="..\AnylineResources.bundle\module_anyline_ocr\vin.ale" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\"/>
 			<file src="..\AnylineResources.bundle\module_anyline_ocr\trained_models\USNr.any" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\trained_models\"/>
 			<file src="..\AnylineResources.bundle\module_anyline_ocr\trained_models\VIN.any" target="..\..\..\AnylineResources.bundle\module_anyline_ocr\trained_models\"/>
-			<file src="..\AnylineResources.bundle\module_barcode\barcode_capture_config.json" target="..\..\..\AnylineResources.bundle\module_barcode\"/>
 			<file src="..\AnylineResources.bundle\module_barcode\ean.ale" target="..\..\..\AnylineResources.bundle\module_barcode\"/>
-			<file src="..\AnylineResources.bundle\module_debit_card\debitcard_capture_config.json" target="..\..\..\AnylineResources.bundle\module_debit_card\"/>
 			<file src="..\AnylineResources.bundle\module_document\document.ale" target="..\..\..\AnylineResources.bundle\module_document\"/>
-			<file src="..\AnylineResources.bundle\module_document\document_capture_config.json" target="..\..\..\AnylineResources.bundle\module_document\"/>
 			<file src="..\AnylineResources.bundle\module_document\document_crop.ale" target="..\..\..\AnylineResources.bundle\module_document\"/>
-			<file src="..\AnylineResources.bundle\module_document\trained_models\doc_model.any" target="..\..\..\AnylineResources.bundle\module_document\trained_models\"/>
+			<file src="..\AnylineResources.bundle\module_document\trained_models\doc_model_3_25.any" target="..\..\..\AnylineResources.bundle\module_document\trained_models\"/>
+			<file src="..\AnylineResources.bundle\module_document\trained_models\doc_model_3_27.any" target="..\..\..\AnylineResources.bundle\module_document\trained_models\"/>
 			<file src="..\AnylineResources.bundle\module_energy\analog_digital_auto_mode.ale" target="..\..\..\AnylineResources.bundle\module_energy\"/>
-			<file src="..\AnylineResources.bundle\module_energy\analog_digital_capture_config.json" target="..\..\..\AnylineResources.bundle\module_energy\"/>
 			<file src="..\AnylineResources.bundle\module_energy\analog_meter.ale" target="..\..\..\AnylineResources.bundle\module_energy\"/>
-			<file src="..\AnylineResources.bundle\module_energy\analog_meter_capture_config.json" target="..\..\..\AnylineResources.bundle\module_energy\"/>
 			<file src="..\AnylineResources.bundle\module_energy\dial_meter.ale" target="..\..\..\AnylineResources.bundle\module_energy\"/>
-			<file src="..\AnylineResources.bundle\module_energy\dial_meter_capture_config.json" target="..\..\..\AnylineResources.bundle\module_energy\"/>
 			<file src="..\AnylineResources.bundle\module_energy\digital_heat_meter.ale" target="..\..\..\AnylineResources.bundle\module_energy\"/>
 			<file src="..\AnylineResources.bundle\module_energy\digital_meter.ale" target="..\..\..\AnylineResources.bundle\module_energy\"/>
-			<file src="..\AnylineResources.bundle\module_energy\digital_meter_capture_config.json" target="..\..\..\AnylineResources.bundle\module_energy\"/>
-			<file src="..\AnylineResources.bundle\module_energy\digital_number_capture_config.json" target="..\..\..\AnylineResources.bundle\module_energy\"/>
 			<file src="..\AnylineResources.bundle\module_energy\dot_matrix_meter.ale" target="..\..\..\AnylineResources.bundle\module_energy\"/>
-			<file src="..\AnylineResources.bundle\module_energy\dot_matrix_meter_capture_config.json" target="..\..\..\AnylineResources.bundle\module_energy\"/>
 			<file src="..\AnylineResources.bundle\module_energy\energy_serial.ale" target="..\..\..\AnylineResources.bundle\module_energy\"/>
 			<file src="..\AnylineResources.bundle\module_energy\energy_serial_alnum_3_letters.ale" target="..\..\..\AnylineResources.bundle\module_energy\"/>
 			<file src="..\AnylineResources.bundle\module_energy\energy_serial_capital_letters.ale" target="..\..\..\AnylineResources.bundle\module_energy\"/>
-			<file src="..\AnylineResources.bundle\module_energy\gas_meter_capture_config.json" target="..\..\..\AnylineResources.bundle\module_energy\"/>
-			<file src="..\AnylineResources.bundle\module_energy\heat_meter_capture_config.json" target="..\..\..\AnylineResources.bundle\module_energy\"/>
 			<file src="..\AnylineResources.bundle\module_energy\patternMulti9AndE.json" target="..\..\..\AnylineResources.bundle\module_energy\"/>
-			<file src="..\AnylineResources.bundle\module_energy\power_meter_4_capture_config.json" target="..\..\..\AnylineResources.bundle\module_energy\"/>
-			<file src="..\AnylineResources.bundle\module_energy\power_meter_capture_config.json" target="..\..\..\AnylineResources.bundle\module_energy\"/>
-			<file src="..\AnylineResources.bundle\module_energy\serial_number_capture_config.json" target="..\..\..\AnylineResources.bundle\module_energy\"/>
 			<file src="..\AnylineResources.bundle\module_energy\smart_meter_ger.ale" target="..\..\..\AnylineResources.bundle\module_energy\"/>
 			<file src="..\AnylineResources.bundle\module_energy\smart_meter_ger_spec.json" target="..\..\..\AnylineResources.bundle\module_energy\"/>
-			<file src="..\AnylineResources.bundle\module_energy\water_meter_black_background_capture_config.json" target="..\..\..\AnylineResources.bundle\module_energy\"/>
-			<file src="..\AnylineResources.bundle\module_energy\water_meter_white_background_capture_config.json" target="..\..\..\AnylineResources.bundle\module_energy\"/>
 			<file src="..\AnylineResources.bundle\module_energy\trained_models\CNN_energy_detection_full_half.enc" target="..\..\..\AnylineResources.bundle\module_energy\trained_models\"/>
 			<file src="..\AnylineResources.bundle\module_energy\trained_models\CNN_serialnumbers_combined.enc" target="..\..\..\AnylineResources.bundle\module_energy\trained_models\"/>
 			<file src="..\AnylineResources.bundle\module_energy\trained_models\CNN_SNr_w_CL_special_whiteList.enc" target="..\..\..\AnylineResources.bundle\module_energy\trained_models\"/>
+			<file src="..\AnylineResources.bundle\module_id\anyline_austrian_driving_license.ale" target="..\..\..\AnylineResources.bundle\module_id\"/>
+			<file src="..\AnylineResources.bundle\module_id\mrz_scanning.ale" target="..\..\..\AnylineResources.bundle\module_id\"/>
+			<file src="..\AnylineResources.bundle\module_id\tessdata\deu.traineddata" target="..\..\..\AnylineResources.bundle\module_id\tessdata\"/>
+			<file src="..\AnylineResources.bundle\module_id\tessdata\eng_no_dict.traineddata" target="..\..\..\AnylineResources.bundle\module_id\tessdata\"/>
+			<file src="..\AnylineResources.bundle\module_id\trained_models\CNN_OCRB_Gray_0124.enc" target="..\..\..\AnylineResources.bundle\module_id\trained_models\"/>
+			<file src="..\AnylineResources.bundle\module_id\trained_models\mrz_retrain3_17500.enc" target="..\..\..\AnylineResources.bundle\module_id\trained_models\"/>
 			<file src="..\AnylineResources.bundle\module_license_plate\license_plates_combined.ale" target="..\..\..\AnylineResources.bundle\module_license_plate\"/>
-			<file src="..\AnylineResources.bundle\module_license_plate\license_plate_capture_config.json" target="..\..\..\AnylineResources.bundle\module_license_plate\"/>
 			<file src="..\AnylineResources.bundle\module_license_plate\tessdata\aut_nice.traineddata" target="..\..\..\AnylineResources.bundle\module_license_plate\tessdata\"/>
 			<file src="..\AnylineResources.bundle\module_license_plate\tessdata\ch_nice.traineddata" target="..\..\..\AnylineResources.bundle\module_license_plate\tessdata\"/>
 			<file src="..\AnylineResources.bundle\module_license_plate\tessdata\cz_nice.traineddata" target="..\..\..\AnylineResources.bundle\module_license_plate\tessdata\"/>
@@ -129,11 +118,10 @@
 			<file src="..\AnylineResources.bundle\module_license_plate\tessdata\polish_nice.traineddata" target="..\..\..\AnylineResources.bundle\module_license_plate\tessdata\"/>
 			<file src="..\AnylineResources.bundle\module_license_plate\tessdata\sk_nice.traineddata" target="..\..\..\AnylineResources.bundle\module_license_plate\tessdata\"/>
 			<file src="..\AnylineResources.bundle\module_license_plate\tessdata\standard.traineddata" target="..\..\..\AnylineResources.bundle\module_license_plate\tessdata\"/>
-			<file src="..\AnylineResources.bundle\module_mrz\mrz_capture_config.json" target="..\..\..\AnylineResources.bundle\module_mrz\"/>
-			<file src="..\AnylineResources.bundle\module_mrz\mrz_scanning.ale" target="..\..\..\AnylineResources.bundle\module_mrz\"/>
-			<file src="..\AnylineResources.bundle\module_mrz\trained_models\CNN_OCRB_Gray_0124.enc" target="..\..\..\AnylineResources.bundle\module_mrz\trained_models\"/>
-			<file src="..\AnylineResources.bundle\module_mrz\trained_models\mrz_retrain3_17500.enc" target="..\..\..\AnylineResources.bundle\module_mrz\trained_models\"/>
 			<file src="..\AnylineResources.bundle\sounds\beep.wav" target="..\..\..\AnylineResources.bundle\sounds\"/>
+			<file src="..\AnylineResources.bundle\ui\configuration.html" target="..\..\..\AnylineResources.bundle\ui\"/>
+			<file src="..\AnylineResources.bundle\ui\cutout.css" target="..\..\..\AnylineResources.bundle\ui\"/>
+			<file src="..\AnylineResources.bundle\ui\frontend.min.js" target="..\..\..\AnylineResources.bundle\ui\"/>
 		</files>
 				
     </package>

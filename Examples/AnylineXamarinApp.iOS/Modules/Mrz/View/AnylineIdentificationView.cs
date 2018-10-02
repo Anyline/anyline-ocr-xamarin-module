@@ -127,7 +127,7 @@ namespace AnylineXamarinApp.iOS
             }
         };
 
-        public void UpdateIdentification(ALIdentification aId)
+        public void UpdateIdentification(ALMRZIdentification aId)
         {
             nr.Text = aId.DocumentNumber;
             surname.Text = aId.SurNames;
