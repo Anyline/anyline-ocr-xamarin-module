@@ -13,6 +13,7 @@
         "strokeWidth": 2,
         "cornerRadius": 10,
         "strokeColor": "FFFFFF",
+        "feedbackStrokeColor": "0099FF",
         "outerColor": "000000",
         "outerAlpha": 0.3
     },
@@ -21,12 +22,11 @@
         "alignment": "top_left"
     },
     "visualFeedback": {
-        "style": "CONTOUR_RECT",
+        "style": "CONTOUR_UNDERLINE",
         "strokeWidth": 1,
         "strokeColor": "0099FF",
         "fillColor": "110099FF",
         "cornerRadius": 10
-        
     },
     "beepOnResult": true,
     "vibrateOnResult": true,

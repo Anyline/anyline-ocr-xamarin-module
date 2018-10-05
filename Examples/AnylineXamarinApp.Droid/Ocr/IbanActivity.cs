@@ -66,7 +66,7 @@ namespace AnylineXamarinApp.Ocr
             
             _scanView.CameraOpened += (s, e) => { Log.Debug(TAG, "Camera opened successfully. Frame resolution " + e.Width + " x " + e.Height); };
             _scanView.CameraError += (s, e) => { Log.Error(TAG, "OnCameraError: " + e.Event.Message); };
-
+            
         }
 
         private void SetOcrConfig(AnylineOcrScanView scanView)

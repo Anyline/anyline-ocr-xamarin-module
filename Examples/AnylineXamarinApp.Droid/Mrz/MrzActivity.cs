@@ -23,6 +23,8 @@ namespace AnylineXamarinApp.Mrz
         private Switch _cropResultSwitch;
         private ImageView _mrzResultImageView;
 
+        
+
         protected override void OnCreate(Bundle bundle)
         {
             Window.SetFlags(WindowManagerFlags.KeepScreenOn, WindowManagerFlags.KeepScreenOn);
@@ -35,7 +37,7 @@ namespace AnylineXamarinApp.Mrz
             SetContentView(Resource.Layout.MrzActivity);
 
             SetTitle(Resource.String.scan_mrz);
-
+            
             _scanView = FindViewById<MrzScanView>(Resource.Id.mrz_scan_view);
             _resultView = FindViewById<MrzResultView>(Resource.Id.mrz_result);
 
@@ -60,7 +62,7 @@ namespace AnylineXamarinApp.Mrz
             };
 
             _scanView.CameraError += (s, e) => { Log.Error(TAG, "OnCameraError: " + e.Event.Message); };
-
+            
             _strictModeSwitch.CheckedChange += (sender, args) =>
             {
                 // make sure scanning is stopped before setting this property
@@ -84,9 +86,9 @@ namespace AnylineXamarinApp.Mrz
 
         private void StartScanning()
         {
-            _mrzResultImageView.SetImageBitmap(null);
-            _resultView.Visibility = ViewStates.Invisible;
-            _scanView.StartScanning();
+            _mrzResultImageView?.SetImageBitmap(null);
+            if(_resultView != null) _resultView.Visibility = ViewStates.Invisible;
+            _scanView?.StartScanning();
         }
 
         void IMrzResultListener.OnResult(MrzResult scanResult)

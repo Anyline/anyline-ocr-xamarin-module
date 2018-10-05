@@ -23,3 +23,6 @@ rmdir BindingSource\AnylineXamarinSDK.iOS\bin /S /Q
 IF EXIST BindingSource\AnylineXamarinSDK.iOS\obj (
 rmdir BindingSource\AnylineXamarinSDK.iOS\obj /S /Q
 )
+
+echo off
+pause
