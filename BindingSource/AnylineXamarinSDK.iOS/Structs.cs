@@ -1,36 +1,12 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+//using Anyline;
 using ObjCRuntime;
 
 namespace AnylineXamarinSDK.iOS
 {
-    using System.Runtime.InteropServices;
-    using ObjCRuntime;
-
-    [StructLayout(LayoutKind.Sequential)]
-    public struct ALCharacterRange
-    {
-        public int minCharacterCount;
-        public int maxCharacterCount;
-    }
-
-    [StructLayout(LayoutKind.Sequential)]
-    public struct ALRange
-    {
-        public nuint min;
-        public nuint max;
-    }
-
     [Native]
-    public enum ALFlashStatus : ulong
-    {
-        On,
-        Off,
-        Auto
-    }
-
-    [Native]
-    public enum ALCutoutAlignment : ulong
+    public enum ALCutoutAlignment : long
     {
         Top = 0,
         TopHalf = 1,
@@ -40,7 +16,7 @@ namespace AnylineXamarinSDK.iOS
     }
 
     [Native]
-    public enum ALPictureResolution : ulong
+    public enum ALPictureResolution : long
     {
         None = 0,
         Highest = 1,
@@ -50,7 +26,7 @@ namespace AnylineXamarinSDK.iOS
     }
 
     [Native]
-    public enum ALCaptureViewResolution : ulong
+    public enum ALCaptureViewResolution : long
     {
         ALCaptureViewResolution1080 = 0,
         ALCaptureViewResolution720 = 1,
@@ -58,14 +34,14 @@ namespace AnylineXamarinSDK.iOS
     }
 
     [Native]
-    public enum ALCaptureViewMode : ulong
+    public enum ALCaptureViewMode : long
     {
         Bgra = 0,
         Yuv = 1
     }
 
     [Native]
-    public enum ALFlashMode : ulong
+    public enum ALFlashMode : long
     {
         Manual = 0,
         None = 1,
@@ -73,7 +49,7 @@ namespace AnylineXamarinSDK.iOS
     }
 
     [Native]
-    public enum ALFlashAlignment : ulong
+    public enum ALFlashAlignment : long
     {
         Top = 0,
         TopLeft = 1,
@@ -84,7 +60,7 @@ namespace AnylineXamarinSDK.iOS
     }
 
     [Native]
-    public enum ALUIFeedbackStyle : ulong
+    public enum ALUIFeedbackStyle : long
     {
         Rect = 0,
         ContourRect = 1,
@@ -94,7 +70,7 @@ namespace AnylineXamarinSDK.iOS
     }
 
     [Native]
-    public enum ALUIVisualFeedbackAnimation : ulong
+    public enum ALUIVisualFeedbackAnimation : long
     {
         TraverseSingle = 0,
         TraverseMulti = 1,
@@ -107,22 +83,31 @@ namespace AnylineXamarinSDK.iOS
     }
 
     [Native]
-    public enum ALReportingMode : ulong
+    public enum ALFlashStatus : long
+    {
+        On,
+        Off,
+        Auto
+    }
+
+    [Native]
+    public enum ALReportingMode : long
     {
         Enabled,
         Disabled,
         NotSet
     }
 
-    public enum ALErrorCodes : ulong
+    [Native]
+    public enum ALErrorCode : long
     {
-
         OperationNotFound = 1001,
         SyntaxError = 2001,
         TypeError = 2002,
         ParameterInvalid = 2003,
         LicenseKeyInvalid = 3001,
         LicenseNotValidForFunction = 3002,
+        LicenseNotValidForFeature = 3003,
         WatermarkImageNotFound = 3003,
         WatermarkNotOnWindow = 3004,
         WatermarkNotCorrectInViewHierarchy = 3005,
@@ -159,6 +144,7 @@ namespace AnylineXamarinSDK.iOS
         IntAssertionFailed = 5016,
         DocumentRatioOutsideOfTolerance = 5019,
         DocumentBoundsOutsideOfTolerance = 5020,
+        PointsOutOfCutout = 5021,
         OtherConditionNotMet = 5555,
         NoInformationFound = 6001,
         ImageColorConvertionProblem = 6002,
@@ -167,12 +153,51 @@ namespace AnylineXamarinSDK.iOS
         SingleImageRunError = 7003,
         CameraResolutionNotSupportedByDevice = 8001,
         CameraAccessDenied = 8002,
+        FlashNotAvailable = 8003,
+        CameraConnectionError = 8004,
         ModuleSimpleOCRConfigIsNil = 9001,
         ModuleSimpleOCRConfigTesseractConfigIsNil = 9002,
         ModuleSimpleOCRConfigTextHeightNotSet = 9003,
         BarcodeModuleNativeDelegateWrong = 9004,
         EnergyScanPluginBarcodeNotSupported = 9005,
         ModuleSimpleOCRConfigLanguagesConfigIsNil = 9006
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct ALCharacterRange
+    {
+        public int minCharacterCount;
+
+        public int maxCharacterCount;
+    }
+
+    static class CFunctions
+    {
+        // extern ALCharacterRange ALCharacterRangeMake (int minCharacterCount, int maxCharacterCount);
+        [DllImport("__Internal")]
+        static extern ALCharacterRange ALCharacterRangeMake(int minCharacterCount, int maxCharacterCount);
+
+        // ALRange ALRangeMake (NSUInteger min, NSUInteger max);
+        [DllImport("__Internal")]
+        static extern ALRange ALRangeMake(uint min, uint max);
+    }
+
+    [Native]
+    public enum ALScanResultState : long
+    {
+        UserDidAbortState = 0,
+        ScanSuccessfulState = 1,
+        ScanErrorWrongResultState = 2,
+        UserDidEnterManuallyState = 4,
+        ScanErrorResultAlreadyUsedState = 5,
+        ScanErrorResultAlreadyExpiredState = 6,
+        StateUserAccountInactive = 10,
+        StateUserAccountLocked = 11,
+        StateUserReachedScanLimit = 12,
+        StateNetworkTimeout = 13,
+        StateModuleSuccess = 21,
+        StateModuleAbort = 22,
+        StateUnknownError = 99
     }
 
     [Native]
@@ -183,11 +208,12 @@ namespace AnylineXamarinSDK.iOS
         NoTextFound = -3,
         ConfidenceNotReached = -4,
         ResultNotValid = -5,
-        SharpnessNotReached = -6
+        SharpnessNotReached = -6,
+        PointsOutOfCutout = -7
     }
 
     [Native]
-    public enum ALScanMode : ulong
+    public enum ALScanMode : long
     {
         AnalogMeter,
         SerialNumber,
@@ -200,9 +226,9 @@ namespace AnylineXamarinSDK.iOS
         DotMatrixMeter,
         Barcode
     }
-    
+
     [Native]
-    public enum ALBarcodeFormat : ulong
+    public enum ALBarcodeFormat : long
     {
         Aztec = 1 << 0,
         Codabar = 1 << 1,
@@ -221,12 +247,32 @@ namespace AnylineXamarinSDK.iOS
         Upce = 1 << 14,
         UPCEANExtension = 1 << 15,
         Unknown = 0,
-
-        All =
-        (Aztec | Codabar | Code39 | Code93 | Code128 | DataMatrix | Ean8 | Ean13 | Itf | Pdf417 | Qr | Rss14 |
-         RSSExpanded | Upca | Upce | UPCEANExtension)
+        All = (Aztec | Codabar | Code39 | Code93 | Code128 | DataMatrix | Ean8 | Ean13 | Itf | Pdf417 | Qr | Rss14 | RSSExpanded | Upca | Upce | UPCEANExtension)
     }
-    
+
+    [Native]
+    public enum ALIdentityDocumentScanMode : long
+    {
+        Mrz,
+        DrivingLicense
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct ALRange
+    {
+        public uint min;
+
+        public uint max;
+    }
+
+    [Native]
+    public enum ALOCRScanMode : long
+    {
+        Line,
+        Grid,
+        Auto
+    }
+
     [Native]
     public enum ALOCRError : long
     {
@@ -236,14 +282,6 @@ namespace AnylineXamarinSDK.iOS
         ConfidenceNotReached = -4,
         ResultNotValid = -5,
         SharpnessNotReached = -6
-    }
-
-    [Native]
-    public enum ALOCRScanMode : long
-    {
-        Line,
-        Grid,
-        Auto
     }
 
     [Native]

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using UIKit;
 
 namespace AnylineXamarinSDK.iOS
-{    
+{
     public partial class AnylineAbstractModuleView : UIView
     {
         public AnylineAbstractModuleView(CGRect frame) : base(frame) { }        
@@ -42,5 +42,5 @@ namespace AnylineXamarinSDK.iOS
     public partial class AnylineLicensePlateModuleView : AnylineAbstractModuleView
     {
         public AnylineLicensePlateModuleView(CGRect frame) : base(frame) { }
-    }    
+    }
 }

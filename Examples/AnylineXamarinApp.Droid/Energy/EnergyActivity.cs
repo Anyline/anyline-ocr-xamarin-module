@@ -93,7 +93,7 @@ namespace AnylineXamarinApp.Energy
                             {
                                 _nativeBarcodeResultListener?.Dispose(); // dispose of old barcodelistener first
                             _nativeBarcodeResultListener = new NativeBarcodeResultListener(this);
-                                _scanView.EnableBarcodeDetection(true, _nativeBarcodeResultListener);
+                                _scanView.EnableBarcodeDetection(_nativeBarcodeResultListener);
                             }
                         }
                         catch (Exception) { }

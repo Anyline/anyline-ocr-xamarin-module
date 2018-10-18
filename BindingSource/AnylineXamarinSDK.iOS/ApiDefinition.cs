@@ -1,18 +1,12 @@
 ﻿using System;
 using AVFoundation;
+//using Anyline;
 using CoreGraphics;
 using CoreMedia;
 using CoreVideo;
 using Foundation;
 using ObjCRuntime;
 using UIKit;
-using System.Drawing;
-using Foundation;
-
-/*
-    OBJECTIVE SHARPIE COMMAND:    
-    sharpie bind -sdk iphoneos10.3 Anyline.framework/Headers/Anyline.h -o Bindings -scope Anyline.framework/Headers -c -F Anyline.framework
-*/
 
 namespace AnylineXamarinSDK.iOS
 {
@@ -48,27 +42,27 @@ namespace AnylineXamarinSDK.iOS
         [Export("cutoutAlignment", ArgumentSemantic.Assign)]
         ALCutoutAlignment CutoutAlignment { get; set; }
 
-        // @property (copy, nonatomic) UIBezierPath * cutoutPath;
-        [Export("cutoutPath", ArgumentSemantic.Copy)]
+        // @property (copy, nonatomic) UIBezierPath * _Nullable cutoutPath;
+        [NullAllowed, Export("cutoutPath", ArgumentSemantic.Copy)]
         UIBezierPath CutoutPath { get; set; }
 
-        // @property (nonatomic, strong) UIColor * cutoutBackgroundColor;
-        [Export("cutoutBackgroundColor", ArgumentSemantic.Strong)]
+        // @property (nonatomic, strong) UIColor * _Nullable cutoutBackgroundColor;
+        [NullAllowed, Export("cutoutBackgroundColor", ArgumentSemantic.Strong)]
         UIColor CutoutBackgroundColor { get; set; }
 
-        // @property (nonatomic, strong) UIColor * strokeColor;
-        [Export("strokeColor", ArgumentSemantic.Strong)]
+        // @property (nonatomic, strong) UIColor * _Nullable strokeColor;
+        [NullAllowed, Export("strokeColor", ArgumentSemantic.Strong)]
         UIColor StrokeColor { get; set; }
 
-        // @property (nonatomic, strong) UIColor * feedbackStrokeColor;
-        [Export("feedbackStrokeColor", ArgumentSemantic.Strong)]
+        // @property (nonatomic, strong) UIColor * _Nullable feedbackStrokeColor;
+        [NullAllowed, Export("feedbackStrokeColor", ArgumentSemantic.Strong)]
         UIColor FeedbackStrokeColor { get; set; }
 
-        // @property (nonatomic, strong) UIImage * overlayImage;
-        [Export("overlayImage", ArgumentSemantic.Strong)]
+        // @property (nonatomic, strong) UIImage * _Nullable overlayImage;
+        [NullAllowed, Export("overlayImage", ArgumentSemantic.Strong)]
         UIImage OverlayImage { get; set; }
 
-        // -(instancetype)initWithFrame:(CGRect)frame cutoutWidthPercent:(CGFloat)cutoutWidthPercent cutoutMaxPercentWidth:(CGFloat)cutoutMaxPercentWidth cutoutMaxPercentHeight:(CGFloat)cutoutMaxPercentHeight cutoutOffset:(CGPoint)cutoutOffset cornerRadius:(NSInteger)cornerRadius strokeWidth:(NSInteger)strokeWidth cutoutAlignment:(ALCutoutAlignment)cutoutAlignment cutoutPath:(UIBezierPath *)cutoutPath cutoutBackgroundColor:(UIColor *)cutoutBackgroundColor strokeColor:(UIColor *)strokeColor feedbackStrokeColor:(UIColor *)feedbackStrokeColor overlayImage:(UIImage *)overlayImage;
+        // -(instancetype _Nullable)initWithFrame:(CGRect)frame cutoutWidthPercent:(CGFloat)cutoutWidthPercent cutoutMaxPercentWidth:(CGFloat)cutoutMaxPercentWidth cutoutMaxPercentHeight:(CGFloat)cutoutMaxPercentHeight cutoutOffset:(CGPoint)cutoutOffset cornerRadius:(NSInteger)cornerRadius strokeWidth:(NSInteger)strokeWidth cutoutAlignment:(ALCutoutAlignment)cutoutAlignment cutoutPath:(UIBezierPath * _Nonnull)cutoutPath cutoutBackgroundColor:(UIColor * _Nonnull)cutoutBackgroundColor strokeColor:(UIColor * _Nonnull)strokeColor feedbackStrokeColor:(UIColor * _Nonnull)feedbackStrokeColor overlayImage:(UIImage * _Nonnull)overlayImage;
         [Export("initWithFrame:cutoutWidthPercent:cutoutMaxPercentWidth:cutoutMaxPercentHeight:cutoutOffset:cornerRadius:strokeWidth:cutoutAlignment:cutoutPath:cutoutBackgroundColor:strokeColor:feedbackStrokeColor:overlayImage:")]
         IntPtr Constructor(CGRect frame, nfloat cutoutWidthPercent, nfloat cutoutMaxPercentWidth, nfloat cutoutMaxPercentHeight, CGPoint cutoutOffset, nint cornerRadius, nint strokeWidth, ALCutoutAlignment cutoutAlignment, UIBezierPath cutoutPath, UIColor cutoutBackgroundColor, UIColor strokeColor, UIColor feedbackStrokeColor, UIImage overlayImage);
 
@@ -85,12 +79,56 @@ namespace AnylineXamarinSDK.iOS
         void CalculateAndDrawCutout();
     }
 
+    // @interface ALFlashButtonConfig : NSObject
+    [BaseType(typeof(NSObject))]
+    interface ALFlashButtonConfig
+    {
+        // @property (assign, nonatomic) ALFlashMode flashMode;
+        [Export("flashMode", ArgumentSemantic.Assign)]
+        ALFlashMode FlashMode { get; set; }
+
+        // @property (assign, nonatomic) ALFlashAlignment flashAlignment;
+        [Export("flashAlignment", ArgumentSemantic.Assign)]
+        ALFlashAlignment FlashAlignment { get; set; }
+
+        // @property (nonatomic, strong) UIImage * _Nullable flashImage;
+        [NullAllowed, Export("flashImage", ArgumentSemantic.Strong)]
+        UIImage FlashImage { get; set; }
+
+        // @property (assign, nonatomic) CGPoint flashOffset;
+        [Export("flashOffset", ArgumentSemantic.Assign)]
+        CGPoint FlashOffset { get; set; }
+
+        // +(instancetype _Nullable)configurationFromJsonFilePath:(NSString * _Nonnull)jsonFile;
+        [Static]
+        [Export("configurationFromJsonFilePath:")]
+        [return: NullAllowed]
+        ALFlashButtonConfig ConfigurationFromJsonFilePath(string jsonFile);
+
+        // -(instancetype _Nullable)initWithJsonFilePath:(NSString * _Nonnull)jsonFile;
+        [Export("initWithJsonFilePath:")]
+        IntPtr Constructor(string jsonFile);
+
+        // -(instancetype _Nullable)initWithDictionary:(NSDictionary * _Nonnull)configDict;
+        [Export("initWithDictionary:")]
+        IntPtr Constructor(NSDictionary configDict);
+
+        // -(instancetype _Nullable)initWithFlashMode:(ALFlashMode)flashMode flashAlignment:(ALFlashAlignment)flashAlignment flashOffset:(CGPoint)flashOffset;
+        [Export("initWithFlashMode:flashAlignment:flashOffset:")]
+        IntPtr Constructor(ALFlashMode flashMode, ALFlashAlignment flashAlignment, CGPoint flashOffset);
+
+        // +(instancetype _Nonnull)defaultFlashConfig;
+        [Static]
+        [Export("defaultFlashConfig")]
+        ALFlashButtonConfig DefaultFlashConfig();
+    }
+
     // @protocol ALFlashButtonStatusDelegate <NSObject>
     [Protocol, Model]
     [BaseType(typeof(NSObject))]
-    interface ALFlashButtonStatusDelegate
+    interface IALFlashButtonStatusDelegate
     {
-        // @required -(void)flashButton:(ALFlashButton *)flashButton statusChanged:(ALFlashStatus)flashStatus;
+        // @required -(void)flashButton:(ALFlashButton * _Nonnull)flashButton statusChanged:(ALFlashStatus)flashStatus;
         [Abstract]
         [Export("flashButton:statusChanged:")]
         void StatusChanged(ALFlashButton flashButton, ALFlashStatus flashStatus);
@@ -101,7 +139,7 @@ namespace AnylineXamarinSDK.iOS
     [BaseType(typeof(NSObject))]
     interface ALFlashButtonAnimationDelegate
     {
-        // @optional -(void)flashButton:(ALFlashButton *)flashButton expanded:(BOOL)expanded;
+        // @optional -(void)flashButton:(ALFlashButton * _Nonnull)flashButton expanded:(BOOL)expanded;
         [Export("flashButton:expanded:")]
         void Expanded(ALFlashButton flashButton, bool expanded);
     }
@@ -110,45 +148,35 @@ namespace AnylineXamarinSDK.iOS
     [BaseType(typeof(UIControl))]
     interface ALFlashButton
     {
-        // @property (assign, nonatomic) BOOL expanded;
+        // @property (readonly, assign, nonatomic) BOOL expanded;
         [Export("expanded")]
-        bool Expanded { get; set; }
+        bool Expanded { get; }
 
-        // @property (assign, nonatomic) BOOL expandLeft;
+        // @property (readonly, assign, nonatomic) BOOL expandLeft;
         [Export("expandLeft")]
-        bool ExpandLeft { get; set; }
+        bool ExpandLeft { get; }
 
-        // @property (nonatomic, strong) UIImageView * flashImage;
-        [Export("flashImage", ArgumentSemantic.Strong)]
-        UIImageView FlashImage { get; set; }
-
-        // @property (assign, nonatomic) ALFlashAlignment flashAlignment;
-        [Export("flashAlignment", ArgumentSemantic.Assign)]
-        ALFlashAlignment FlashAlignment { get; set; }
-
-        // @property (assign, nonatomic) ALFlashMode flashMode;
-        [Export("flashMode", ArgumentSemantic.Assign)]
-        ALFlashMode FlashMode { get; set; }
-
-        // @property (assign, nonatomic) CGPoint flashOffset;
-        [Export("flashOffset", ArgumentSemantic.Assign)]
-        CGPoint FlashOffset { get; set; }
+        // @property (readonly, nonatomic, strong) UIImageView * _Nullable flashImage;
+        [NullAllowed, Export("flashImage", ArgumentSemantic.Strong)]
+        UIImageView FlashImage { get; }
 
         // @property (assign, nonatomic) ALFlashStatus flashStatus;
         [Export("flashStatus", ArgumentSemantic.Assign)]
         ALFlashStatus FlashStatus { get; set; }
 
         [Wrap("WeakDelegate")]
-        ALFlashButtonStatusDelegate Delegate { get; set; }
+        [NullAllowed]
+        IALFlashButtonStatusDelegate Delegate { get; set; }
 
-        // @property (nonatomic, weak) id<ALFlashButtonStatusDelegate> delegate;
+        // @property (nonatomic, weak) id<ALFlashButtonStatusDelegate> _Nullable delegate;
         [NullAllowed, Export("delegate", ArgumentSemantic.Weak)]
         NSObject WeakDelegate { get; set; }
 
         [Wrap("WeakAnimationDelegate")]
+        [NullAllowed]
         ALFlashButtonAnimationDelegate AnimationDelegate { get; set; }
 
-        // @property (nonatomic, weak) id<ALFlashButtonAnimationDelegate> animationDelegate;
+        // @property (nonatomic, weak) id<ALFlashButtonAnimationDelegate> _Nullable animationDelegate;
         [NullAllowed, Export("animationDelegate", ArgumentSemantic.Weak)]
         NSObject WeakAnimationDelegate { get; set; }
 
@@ -156,9 +184,56 @@ namespace AnylineXamarinSDK.iOS
         [Export("setExpanded:animated:")]
         void SetExpanded(bool expanded, bool animated);
 
-        // -(instancetype)initWithFrame:(CGRect)frame flashImage:(UIImage *)flashImage alignment:(ALFlashAlignment)flashAlignment flashMode:(ALFlashMode)flashMode flashOffset:(CGPoint)flashOffset;
-        [Export("initWithFrame:flashImage:alignment:flashMode:flashOffset:")]
-        IntPtr Constructor(CGRect frame, UIImage flashImage, ALFlashAlignment flashAlignment, ALFlashMode flashMode, CGPoint flashOffset);
+        // -(instancetype _Nullable)initWithFrame:(CGRect)frame flashButtonConfig:(ALFlashButtonConfig * _Nonnull)flashButtonConfig;
+        [Export("initWithFrame:flashButtonConfig:")]
+        IntPtr Constructor(CGRect frame, ALFlashButtonConfig flashButtonConfig);
+    }
+
+    // @interface ALCameraConfig : NSObject
+    [BaseType(typeof(NSObject))]
+    interface ALCameraConfig
+    {
+        // @property (nonatomic, strong) NSString * _Nullable defaultCamera;
+        [NullAllowed, Export("defaultCamera", ArgumentSemantic.Strong)]
+        string DefaultCamera { get; set; }
+
+        // @property (assign, nonatomic) ALCaptureViewResolution captureResolution;
+        [Export("captureResolution", ArgumentSemantic.Assign)]
+        ALCaptureViewResolution CaptureResolution { get; set; }
+
+        // @property (assign, nonatomic) ALPictureResolution pictureResolution;
+        [Export("pictureResolution", ArgumentSemantic.Assign)]
+        ALPictureResolution PictureResolution { get; set; }
+
+        // +(instancetype _Nullable)configurationFromJsonFilePath:(NSString * _Nonnull)jsonFile;
+        [Static]
+        [Export("configurationFromJsonFilePath:")]
+        [return: NullAllowed]
+        ALCameraConfig ConfigurationFromJsonFilePath(string jsonFile);
+
+        // -(instancetype _Nullable)initWithJsonFilePath:(NSString * _Nonnull)jsonFile;
+        [Export("initWithJsonFilePath:")]
+        IntPtr Constructor(string jsonFile);
+
+        // -(instancetype _Nullable)initWithDictionary:(NSDictionary * _Nonnull)configDict;
+        [Export("initWithDictionary:")]
+        IntPtr Constructor(NSDictionary configDict);
+
+        // -(instancetype _Nullable)initWithDefaultCamera:(NSString * _Nonnull)defaultCamera captureResolution:(ALCaptureViewResolution)captureResolution pictureResolution:(ALPictureResolution)pictureResolution;
+        [Export("initWithDefaultCamera:captureResolution:pictureResolution:")]
+        IntPtr Constructor(string defaultCamera, ALCaptureViewResolution captureResolution, ALPictureResolution pictureResolution);
+
+        // +(instancetype _Nullable)defaultCameraConfig;
+        [Static]
+        [Export("defaultCameraConfig")]
+        [return: NullAllowed]
+        ALCameraConfig DefaultCameraConfig();
+
+        // +(instancetype _Nullable)defaultDocumentCameraConfig;
+        [Static]
+        [Export("defaultDocumentCameraConfig")]
+        [return: NullAllowed]
+        ALCameraConfig DefaultDocumentCameraConfig();
     }
 
     // @interface ALScanFeedbackConfig : NSObject
@@ -305,7 +380,6 @@ namespace AnylineXamarinSDK.iOS
         IntPtr Constructor(nfloat widthPercent, nfloat maxPercentWidth, nfloat maxPercentHeight, ALCutoutAlignment alignment, CGPoint offset, UIBezierPath path, CGSize cropPadding, CGPoint cropOffset, UIColor backgroundColor, UIColor strokeColor, UIColor feedbackStrokeColor, [NullAllowed] UIImage overlayImage, nint strokeWidth, nint cornerRadius);
     }
 
-
     // @interface ALScanViewPluginConfig : NSObject
     [BaseType(typeof(NSObject))]
     interface ALScanViewPluginConfig
@@ -325,6 +399,16 @@ namespace AnylineXamarinSDK.iOS
         // -(instancetype _Nullable)initWithDictionary:(NSDictionary * _Nonnull)configDict;
         [Export("initWithDictionary:")]
         IntPtr Constructor(NSDictionary configDict);
+
+        // +(instancetype _Nullable)configurationFromJsonFilePath:(NSString * _Nonnull)jsonFile;
+        [Static]
+        [Export("configurationFromJsonFilePath:")]
+        [return: NullAllowed]
+        ALScanViewPluginConfig ConfigurationFromJsonFilePath(string jsonFile);
+
+        // -(instancetype _Nullable)initWithJsonFilePath:(NSString * _Nonnull)jsonFile;
+        [Export("initWithJsonFilePath:")]
+        IntPtr Constructor(string jsonFile);
 
         // -(instancetype _Nullable)initWithScanFeedbackConfig:(ALScanFeedbackConfig * _Nonnull)scanFeedbackConfig cutoutConfig:(ALCutoutConfig * _Nonnull)cutoutConfig cancelOnResult:(BOOL)cancelOnResult;
         [Export("initWithScanFeedbackConfig:cutoutConfig:cancelOnResult:")]
@@ -371,12 +455,47 @@ namespace AnylineXamarinSDK.iOS
         ALScanViewPluginConfig DefaultMeterConfig();
     }
 
-    // @interface ALUIConfiguration : NSObject
+    // @interface ALBasicConfig : NSObject
     [BaseType(typeof(NSObject))]
+    interface ALBasicConfig
+    {
+        // @property (nonatomic, strong) ALCameraConfig * _Nonnull cameraConfig;
+        [Export("cameraConfig", ArgumentSemantic.Strong)]
+        ALCameraConfig CameraConfig { get; set; }
+
+        // @property (nonatomic, strong) ALFlashButtonConfig * _Nonnull flashButtonConfig;
+        [Export("flashButtonConfig", ArgumentSemantic.Strong)]
+        ALFlashButtonConfig FlashButtonConfig { get; set; }
+
+        // @property (nonatomic, strong) ALScanViewPluginConfig * _Nonnull scanViewPluginConfig;
+        [Export("scanViewPluginConfig", ArgumentSemantic.Strong)]
+        ALScanViewPluginConfig ScanViewPluginConfig { get; set; }
+
+        // +(instancetype _Nullable)cutoutConfigurationFromJsonFile:(NSString * _Nonnull)jsonFile;
+        [Static]
+        [Export("cutoutConfigurationFromJsonFile:")]
+        [return: NullAllowed]
+        ALBasicConfig CutoutConfigurationFromJsonFile(string jsonFile);
+
+        // -(instancetype _Nullable)initWithDictionary:(NSDictionary * _Nonnull)dictionary;
+        [Export("initWithDictionary:")]
+        IntPtr Constructor(NSDictionary dictionary);
+
+        // -(instancetype _Nullable)initWithJsonFile:(NSString * _Nonnull)jsonFile;
+        [Export("initWithJsonFile:")]
+        IntPtr Constructor(string jsonFile);
+
+        // -(instancetype _Nullable)initWithCameraConfig:(ALCameraConfig * _Nonnull)cameraConfig flashButtonConfig:(ALFlashButtonConfig * _Nonnull)flashButtonConfig scanViewPluginConfig:(ALScanViewPluginConfig * _Nonnull)scanViewPluginConfig;
+        [Export("initWithCameraConfig:flashButtonConfig:scanViewPluginConfig:")]
+        IntPtr Constructor(ALCameraConfig cameraConfig, ALFlashButtonConfig flashButtonConfig, ALScanViewPluginConfig scanViewPluginConfig);
+    }
+
+    // @interface ALUIConfiguration : ALBasicConfig
+    [BaseType(typeof(ALBasicConfig))]
     interface ALUIConfiguration
     {
-        // @property (nonatomic, strong) NSString * defaultCamera;
-        [Export("defaultCamera", ArgumentSemantic.Strong)]
+        // @property (nonatomic, strong) NSString * _Nullable defaultCamera;
+        [NullAllowed, Export("defaultCamera", ArgumentSemantic.Strong)]
         string DefaultCamera { get; set; }
 
         // @property (assign, nonatomic) CGFloat cutoutWidthPercent;
@@ -411,8 +530,8 @@ namespace AnylineXamarinSDK.iOS
         [Export("cutoutOffset", ArgumentSemantic.Assign)]
         CGPoint CutoutOffset { get; set; }
 
-        // @property (copy, nonatomic) UIBezierPath * cutoutPath;
-        [Export("cutoutPath", ArgumentSemantic.Copy)]
+        // @property (copy, nonatomic) UIBezierPath * _Nullable cutoutPath;
+        [NullAllowed, Export("cutoutPath", ArgumentSemantic.Copy)]
         UIBezierPath CutoutPath { get; set; }
 
         // @property (assign, nonatomic) CGSize cutoutCropPadding;
@@ -423,16 +542,16 @@ namespace AnylineXamarinSDK.iOS
         [Export("cutoutCropOffset", ArgumentSemantic.Assign)]
         CGPoint CutoutCropOffset { get; set; }
 
-        // @property (nonatomic, strong) UIColor * cutoutBackgroundColor;
-        [Export("cutoutBackgroundColor", ArgumentSemantic.Strong)]
+        // @property (nonatomic, strong) UIColor * _Nullable cutoutBackgroundColor;
+        [NullAllowed, Export("cutoutBackgroundColor", ArgumentSemantic.Strong)]
         UIColor CutoutBackgroundColor { get; set; }
 
-        // @property (nonatomic, strong) UIImage * overlayImage;
-        [Export("overlayImage", ArgumentSemantic.Strong)]
+        // @property (nonatomic, strong) UIImage * _Nullable overlayImage;
+        [NullAllowed, Export("overlayImage", ArgumentSemantic.Strong)]
         UIImage OverlayImage { get; set; }
 
-        // @property (nonatomic, strong) UIColor * strokeColor;
-        [Export("strokeColor", ArgumentSemantic.Strong)]
+        // @property (nonatomic, strong) UIColor * _Nullable strokeColor;
+        [NullAllowed, Export("strokeColor", ArgumentSemantic.Strong)]
         UIColor StrokeColor { get; set; }
 
         // @property (assign, nonatomic) NSInteger strokeWidth;
@@ -443,8 +562,8 @@ namespace AnylineXamarinSDK.iOS
         [Export("cornerRadius")]
         nint CornerRadius { get; set; }
 
-        // @property (nonatomic, strong) UIColor * feedbackStrokeColor;
-        [Export("feedbackStrokeColor", ArgumentSemantic.Strong)]
+        // @property (nonatomic, strong) UIColor * _Nullable feedbackStrokeColor;
+        [NullAllowed, Export("feedbackStrokeColor", ArgumentSemantic.Strong)]
         UIColor FeedbackStrokeColor { get; set; }
 
         // @property (assign, nonatomic) ALUIFeedbackStyle feedbackStyle;
@@ -455,12 +574,12 @@ namespace AnylineXamarinSDK.iOS
         [Export("visualFeedbackAnimation", ArgumentSemantic.Assign)]
         ALUIVisualFeedbackAnimation VisualFeedbackAnimation { get; set; }
 
-        // @property (nonatomic, strong) UIColor * visualFeedbackStrokeColor;
-        [Export("visualFeedbackStrokeColor", ArgumentSemantic.Strong)]
+        // @property (nonatomic, strong) UIColor * _Nullable visualFeedbackStrokeColor;
+        [NullAllowed, Export("visualFeedbackStrokeColor", ArgumentSemantic.Strong)]
         UIColor VisualFeedbackStrokeColor { get; set; }
 
-        // @property (nonatomic, strong) UIColor * visualFeedbackFillColor;
-        [Export("visualFeedbackFillColor", ArgumentSemantic.Strong)]
+        // @property (nonatomic, strong) UIColor * _Nullable visualFeedbackFillColor;
+        [NullAllowed, Export("visualFeedbackFillColor", ArgumentSemantic.Strong)]
         UIColor VisualFeedbackFillColor { get; set; }
 
         // @property (assign, nonatomic) NSInteger visualFeedbackStrokeWidth;
@@ -479,8 +598,8 @@ namespace AnylineXamarinSDK.iOS
         [Export("visualFeedbackRedrawTimeout")]
         nint VisualFeedbackRedrawTimeout { get; set; }
 
-        // @property (nonatomic, strong) UIColor * backgroundColorWithoutAlpha;
-        [Export("backgroundColorWithoutAlpha", ArgumentSemantic.Strong)]
+        // @property (nonatomic, strong) UIColor * _Nullable backgroundColorWithoutAlpha;
+        [NullAllowed, Export("backgroundColorWithoutAlpha", ArgumentSemantic.Strong)]
         UIColor BackgroundColorWithoutAlpha { get; set; }
 
         // @property (assign, nonatomic) CGFloat backgroundAlpha;
@@ -495,8 +614,8 @@ namespace AnylineXamarinSDK.iOS
         [Export("flashAlignment", ArgumentSemantic.Assign)]
         ALFlashAlignment FlashAlignment { get; set; }
 
-        // @property (nonatomic, strong) UIImage * flashImage;
-        [Export("flashImage", ArgumentSemantic.Strong)]
+        // @property (nonatomic, strong) UIImage * _Nullable flashImage;
+        [NullAllowed, Export("flashImage", ArgumentSemantic.Strong)]
         UIImage FlashImage { get; set; }
 
         // @property (assign, nonatomic) CGPoint flashOffset;
@@ -519,15 +638,6 @@ namespace AnylineXamarinSDK.iOS
         [Export("cancelOnResult")]
         bool CancelOnResult { get; set; }
 
-        // +(instancetype)cutoutConfigurationFromJsonFile:(NSString *)jsonFile;
-        [Static]
-        [Export("cutoutConfigurationFromJsonFile:")]
-        ALUIConfiguration CutoutConfigurationFromJsonFile(string jsonFile);
-
-        // -(instancetype)initWithDictionary:(NSDictionary *)dictionary bundlePath:(NSString *)bundlePath;
-        [Export("initWithDictionary:bundlePath:")]
-        IntPtr Constructor(NSDictionary dictionary, string bundlePath);
-
         // -(void)setCutoutPathForWidth:(CGFloat)width height:(CGFloat)height;
         [Export("setCutoutPathForWidth:height:")]
         void SetCutoutPathForWidth(nfloat width, nfloat height);
@@ -542,9 +652,9 @@ namespace AnylineXamarinSDK.iOS
     [BaseType(typeof(ALUIConfiguration))]
     interface ALUIConfiguration_Paths
     {
-        // +(UIBezierPath *)AL_lugPath;
+        // +(UIBezierPath * _Nullable)AL_lugPath;
         [Static]
-        [Export("AL_lugPath")]
+        [NullAllowed, Export("AL_lugPath")]
         UIBezierPath AL_lugPath { get; }
     }
 
@@ -578,8 +688,8 @@ namespace AnylineXamarinSDK.iOS
         UIImage UiImage { get; set; }
 
         // -(UIImage *)uiImageWithSpecOverlay:(ALROISpec *)displaySpec;
-        [Export("uiImageWithSpecOverlay:")]
-        UIImage UiImageWithSpecOverlay(ALROISpec displaySpec);
+        //[Export("uiImageWithSpecOverlay:")]
+        //UIImage UiImageWithSpecOverlay(ALROISpec displaySpec);
 
         // -(UIImage *)uiImageWithDisplayResults:(ALDisplayResult *)displayResult;
         [Export("uiImageWithDisplayResults:")]
@@ -613,17 +723,17 @@ namespace AnylineXamarinSDK.iOS
         [Export("initWithUIImage:")]
         IntPtr Constructor(UIImage uiImage);
 
-        //// -(instancetype)initWithBGRAImageBuffer:(CVImageBufferRef)imageBuffer rotate:(CGFloat)degrees;
+        // -(instancetype)initWithBGRAImageBuffer:(CVImageBufferRef)imageBuffer rotate:(CGFloat)degrees;
         //[Export("initWithBGRAImageBuffer:rotate:")]
-        //unsafe IntPtr Constructor(NSObject* imageBuffer, nfloat degrees);
+        //unsafe IntPtr Constructor(CVImageBufferRef* imageBuffer, nfloat degrees);
 
-        //// -(instancetype)initWithBGRAImageBuffer:(CVImageBufferRef)imageBuffer rotate:(CGFloat)degrees cutout:(CGRect)cutout;
+        // -(instancetype)initWithBGRAImageBuffer:(CVImageBufferRef)imageBuffer rotate:(CGFloat)degrees cutout:(CGRect)cutout;
         //[Export("initWithBGRAImageBuffer:rotate:cutout:")]
-        //unsafe IntPtr Constructor(NSObject* imageBuffer, nfloat degrees, CGRect cutout);
+        //unsafe IntPtr Constructor(CVImageBufferRef* imageBuffer, nfloat degrees, CGRect cutout);
 
         // -(BOOL)isEmpy;
         [Export("isEmpy")]
-        bool IsEmpty { get; }
+        bool IsEmpy { get; }
     }
 
     // @interface ALContours : NSObject
@@ -662,18 +772,22 @@ namespace AnylineXamarinSDK.iOS
 
         // -(CGFloat)boundingX;
         [Export("boundingX")]
+
         nfloat BoundingX { get; }
 
         // -(CGFloat)boundingY;
         [Export("boundingY")]
+
         nfloat BoundingY { get; }
 
         // -(CGFloat)boundingWidth;
         [Export("boundingWidth")]
+
         nfloat BoundingWidth { get; }
 
         // -(CGFloat)boundingHeight;
         [Export("boundingHeight")]
+
         nfloat BoundingHeight { get; }
 
         // -(ALSquare *)squareWithPointOffset:(CGPoint)offset;
@@ -686,21 +800,26 @@ namespace AnylineXamarinSDK.iOS
 
         // -(CGFloat)area;
         [Export("area")]
+
         nfloat Area { get; }
 
         // -(CGFloat)area2;
         [Export("area2")]
+
         nfloat Area2 { get; }
 
         // -(float)ratio;
         [Export("ratio")]
+
         float Ratio { get; }
 
         // -(CGRect)boxRect;
         [Export("boxRect")]
+
         CGRect BoxRect { get; }
     }
 
+    /*
     // @interface ALROISpec : NSObject
     [BaseType(typeof(NSObject))]
     interface ALROISpec
@@ -711,10 +830,12 @@ namespace AnylineXamarinSDK.iOS
 
         // @property (nonatomic, strong) NSArray * dataPoints;
         [Export("dataPoints", ArgumentSemantic.Strong)]
+
         NSObject[] DataPoints { get; set; }
 
         // -(instancetype)initWithDataPoints:(NSArray *)dataPoints size:(CGSize)size;
         [Export("initWithDataPoints:size:")]
+
         IntPtr Constructor(NSObject[] dataPoints, CGSize size);
 
         // -(instancetype)initWithDictionary:(NSDictionary *)dictionary;
@@ -722,8 +843,8 @@ namespace AnylineXamarinSDK.iOS
         IntPtr Constructor(NSDictionary dictionary);
 
         // -(instancetype)initWithJSonFileName:(NSString *)filename;
-        //[Export("initWithJSonFileName:")]
-        //IntPtr Constructor(string filename);
+        [Export("initWithJSonFileName:")]
+        IntPtr Constructor(string filename);
 
         // -(instancetype)initWithJSonString:(NSString *)jsonString;
         [Export("initWithJSonString:")]
@@ -735,12 +856,13 @@ namespace AnylineXamarinSDK.iOS
 
         // -(NSArray *)dataPointsForLine:(NSInteger)line;
         [Export("dataPointsForLine:")]
+
         NSObject[] DataPointsForLine(nint line);
 
         // -(NSArray *)lineNumbers;
         [Export("lineNumbers")]
         NSObject[] LineNumbers { get; }
-    }
+    }*/
 
     // @interface ALSegmentSpec : NSObject
     [BaseType(typeof(NSObject))]
@@ -795,10 +917,12 @@ namespace AnylineXamarinSDK.iOS
     {
         // @property (readonly, nonatomic, strong) NSArray * segments;
         [Export("segments", ArgumentSemantic.Strong)]
+
         NSObject[] Segments { get; }
 
         // @property (readonly, nonatomic, strong) NSArray * qualitySegments;
         [Export("qualitySegments", ArgumentSemantic.Strong)]
+
         NSObject[] QualitySegments { get; }
 
         // @property (readonly, nonatomic, strong) NSDictionary * segmentResultPattern;
@@ -811,6 +935,7 @@ namespace AnylineXamarinSDK.iOS
 
         // -(instancetype)initWithArea:(CGRect)area indexPath:(ALIndexPath *)indexPath identifier:(NSString *)identifier italicOffset:(NSInteger)italicOffset segments:(NSArray *)segments qualitySegments:(NSArray *)qualitySegments segmentResultPattern:(NSDictionary *)segmentResultPattern;
         [Export("initWithArea:indexPath:identifier:italicOffset:segments:qualitySegments:segmentResultPattern:")]
+
         IntPtr Constructor(CGRect area, ALIndexPath indexPath, string identifier, nint italicOffset, NSObject[] segments, NSObject[] qualitySegments, NSDictionary segmentResultPattern);
 
         // -(instancetype)initWithArea:(CGRect)area indexPath:(ALIndexPath *)indexPath identifier:(NSString *)identifier italicOffset:(NSInteger)italicOffset segmentResultPattern:(NSDictionary *)segmentResultPattern;
@@ -840,6 +965,7 @@ namespace AnylineXamarinSDK.iOS
 
         // @property (readonly, nonatomic, strong) NSArray * languages;
         [Export("languages", ArgumentSemantic.Strong)]
+
         NSObject[] Languages { get; }
 
         // @property (nonatomic) ALCharacterRange characterCount;
@@ -848,10 +974,12 @@ namespace AnylineXamarinSDK.iOS
 
         // -(instancetype)initWithArea:(CGRect)area indexPath:(ALIndexPath *)indexPath identifier:(NSString *)identifier languages:(NSArray *)languages tesseractParameter:(NSDictionary *)tesseractParameter;
         [Export("initWithArea:indexPath:identifier:languages:tesseractParameter:")]
+
         IntPtr Constructor(CGRect area, ALIndexPath indexPath, string identifier, NSObject[] languages, NSDictionary tesseractParameter);
 
         // -(instancetype)initWithArea:(CGRect)area indexPath:(ALIndexPath *)indexPath identifier:(NSString *)identifier languages:(NSArray *)languages tesseractParameter:(NSDictionary *)tesseractParameter characterRange:(ALCharacterRange)characterRange;
         [Export("initWithArea:indexPath:identifier:languages:tesseractParameter:characterRange:")]
+
         IntPtr Constructor(CGRect area, ALIndexPath indexPath, string identifier, NSObject[] languages, NSDictionary tesseractParameter, ALCharacterRange characterRange);
     }
 
@@ -860,8 +988,8 @@ namespace AnylineXamarinSDK.iOS
     interface ALResult
     {
         // @property (nonatomic, strong) ALROISpec * specs;
-        [Export("specs", ArgumentSemantic.Strong)]
-        ALROISpec Specs { get; set; }
+        //[Export("specs", ArgumentSemantic.Strong)]
+        //ALROISpec Specs { get; set; }
 
         // @property (nonatomic) BOOL valid;
         [Export("valid")]
@@ -907,10 +1035,12 @@ namespace AnylineXamarinSDK.iOS
 
         // @property (readonly, nonatomic, strong) NSArray * segments;
         [Export("segments", ArgumentSemantic.Strong)]
+
         NSObject[] Segments { get; }
 
         // @property (readonly, nonatomic, strong) NSArray * qualitySegments;
         [Export("qualitySegments", ArgumentSemantic.Strong)]
+
         NSObject[] QualitySegments { get; }
 
         // @property (readonly, nonatomic, strong) ALIndexPath * indexPath;
@@ -927,6 +1057,7 @@ namespace AnylineXamarinSDK.iOS
 
         // -(float)quality;
         [Export("quality")]
+
         float Quality { get; }
     }
 
@@ -936,10 +1067,12 @@ namespace AnylineXamarinSDK.iOS
     {
         // -(int)numberOfDigits;
         [Export("numberOfDigits")]
-        nint NumberOfDigits { get; }
+
+        int NumberOfDigits { get; }
 
         // -(NSArray *)digitsForIdentifier:(NSString *)identifier;
         [Export("digitsForIdentifier:")]
+
         NSObject[] DigitsForIdentifier(string identifier);
 
         // -(NSString *)stringRepresentationOfDigitsForIdentifier:(NSString *)identifier;
@@ -948,6 +1081,7 @@ namespace AnylineXamarinSDK.iOS
 
         // -(float)quality;
         [Export("quality")]
+
         float Quality { get; }
 
         // -(NSArray *)digitIdentifiers;
@@ -997,6 +1131,7 @@ namespace AnylineXamarinSDK.iOS
 
         // -(id)newResult;
         [Export("newResult")]
+
         NSObject NewResult { get; }
     }
 
@@ -1016,7 +1151,7 @@ namespace AnylineXamarinSDK.iOS
     // @protocol ALImageProvider <NSObject>
     [Protocol, Model]
     [BaseType(typeof(NSObject))]
-    interface ALImageProvider
+    interface IALImageProvider
     {
         // @required -(void)provideNewImageWithCompletionBlock:(ALImageProviderBlock)completionHandler;
         [Abstract]
@@ -1055,7 +1190,7 @@ namespace AnylineXamarinSDK.iOS
 
         [Wrap("WeakDelegate")]
         [NullAllowed]
-        ALCoreControllerDelegate Delegate { get; set; }
+        IALCoreControllerDelegate Delegate { get; set; }
 
         // @property (nonatomic, weak) id<ALCoreControllerDelegate> _Nullable delegate;
         [NullAllowed, Export("delegate", ArgumentSemantic.Weak)]
@@ -1067,27 +1202,27 @@ namespace AnylineXamarinSDK.iOS
 
         // -(instancetype _Nullable)initWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<ALCoreControllerDelegate> _Nullable)delegate;
         [Export("initWithLicenseKey:delegate:")]
-        IntPtr Constructor(string licenseKey, [NullAllowed] ALCoreControllerDelegate @delegate);
+        IntPtr Constructor(string licenseKey, [NullAllowed] IALCoreControllerDelegate @delegate);
 
-        // -(void)loadScript:(NSString * _Nonnull)script bundlePath:(NSString * _Nonnull)bundlePath finished:(void (^ _Nonnull)(BOOL, NSError * _Nullable))finished;
-        [Export("loadScript:bundlePath:finished:")]
-        void LoadScript(string script, string bundlePath, Action<bool, NSError> finished);
+        // -(BOOL)loadScript:(NSString * _Nonnull)script bundlePath:(NSString * _Nonnull)bundlePath error:(NSError * _Nullable * _Nullable)error;
+        [Export("loadScript:bundlePath:error:")]
+        bool LoadScript(string script, string bundlePath, [NullAllowed] out NSError error);
 
-        // -(void)loadScript:(NSString * _Nonnull)script scriptName:(NSString * _Nonnull)scriptName bundlePath:(NSString * _Nonnull)bundlePath finished:(void (^ _Nonnull)(BOOL, NSError * _Nullable))finished;
-        [Export("loadScript:scriptName:bundlePath:finished:")]
-        void LoadScript(string script, string scriptName, string bundlePath, Action<bool, NSError> finished);
+        // -(BOOL)loadScript:(NSString * _Nonnull)script scriptName:(NSString * _Nonnull)scriptName bundlePath:(NSString * _Nonnull)bundlePath error:(NSError * _Nullable * _Nullable)error;
+        [Export("loadScript:scriptName:bundlePath:error:")]
+        bool LoadScript(string script, string scriptName, string bundlePath, [NullAllowed] out NSError error);
 
-        // -(void)loadCmdFile:(NSString * _Nonnull)cmdFileName bundlePath:(NSString * _Nonnull)bundlePath finished:(void (^ _Nonnull)(BOOL, NSError * _Nullable))finished;
-        [Export("loadCmdFile:bundlePath:finished:")]
-        void LoadCmdFile(string cmdFileName, string bundlePath, Action<bool, NSError> finished);
+        // -(BOOL)loadCmdFile:(NSString * _Nonnull)cmdFileName bundlePath:(NSString * _Nonnull)bundlePath error:(NSError * _Nullable * _Nullable)error;
+        [Export("loadCmdFile:bundlePath:error:")]
+        bool LoadCmdFile(string cmdFileName, string bundlePath, [NullAllowed] out NSError error);
 
         // -(BOOL)startWithImageProvider:(id<ALImageProvider> _Nonnull)imageProvider error:(NSError * _Nullable * _Nullable)error;
         [Export("startWithImageProvider:error:")]
-        bool StartWithImageProvider(ALImageProvider imageProvider, [NullAllowed] out NSError error);
+        bool StartWithImageProvider(IALImageProvider imageProvider, [NullAllowed] out NSError error);
 
         // -(BOOL)startWithImageProvider:(id<ALImageProvider> _Nonnull)imageProvider startVariables:(NSDictionary * _Nullable)variables error:(NSError * _Nullable * _Nullable)error;
         [Export("startWithImageProvider:startVariables:error:")]
-        bool StartWithImageProvider(ALImageProvider imageProvider, [NullAllowed] NSDictionary variables, [NullAllowed] out NSError error);
+        bool StartWithImageProvider(IALImageProvider imageProvider, [NullAllowed] NSDictionary variables, [NullAllowed] out NSError error);
 
         // -(BOOL)stopAndReturnError:(NSError * _Nullable * _Nullable)error;
         [Export("stopAndReturnError:")]
@@ -1116,11 +1251,13 @@ namespace AnylineXamarinSDK.iOS
         // +(NSString * _Nonnull)versionNumber;
         [Static]
         [Export("versionNumber")]
+
         string VersionNumber { get; }
 
         // +(NSString * _Nonnull)buildNumber;
         [Static]
         [Export("buildNumber")]
+
         string BuildNumber { get; }
 
         // +(NSString * _Nullable)licenseExpirationDateForLicense:(NSString * _Nullable)licenseKey error:(NSError * _Nullable * _Nullable)error;
@@ -1132,6 +1269,7 @@ namespace AnylineXamarinSDK.iOS
         // +(NSBundle * _Nonnull)frameworkBundle;
         [Static]
         [Export("frameworkBundle")]
+
         NSBundle FrameworkBundle { get; }
 
         // -(void)enableReporting:(BOOL)enable;
@@ -1150,32 +1288,32 @@ namespace AnylineXamarinSDK.iOS
     // @protocol ALCoreControllerDelegate <NSObject>
     [Protocol, Model]
     [BaseType(typeof(NSObject))]
-    interface ALCoreControllerDelegate
+    interface IALCoreControllerDelegate
     {
-        // @required -(void)anylineCoreController:(ALCoreController *)coreController didFinishWithOutput:(id)object;
+        // @required -(void)anylineCoreController:(ALCoreController * _Nonnull)coreController didFinishWithOutput:(id _Nonnull)object;
         [Abstract]
         [Export("anylineCoreController:didFinishWithOutput:")]
         void DidFinishWithOutput(ALCoreController coreController, NSObject @object);
 
-        // @optional -(void)anylineCoreController:(ALCoreController *)coreController didAbortRun:(NSError *)reason;
+        // @optional -(void)anylineCoreController:(ALCoreController * _Nonnull)coreController didAbortRun:(NSError * _Nonnull)reason;
         [Export("anylineCoreController:didAbortRun:")]
         void DidAbortRun(ALCoreController coreController, NSError reason);
 
-        // @optional -(void)anylineCoreController:(ALCoreController *)coreController reportsVariable:(NSString *)variableName value:(id)value;
+        // @optional -(void)anylineCoreController:(ALCoreController * _Nonnull)coreController reportsVariable:(NSString * _Nonnull)variableName value:(id _Nonnull)value;
         [Export("anylineCoreController:reportsVariable:value:")]
         void ReportsVariable(ALCoreController coreController, string variableName, NSObject value);
 
-        // @optional -(void)anylineCoreController:(ALCoreController *)coreController parserError:(NSError *)error;
+        // @optional -(void)anylineCoreController:(ALCoreController * _Nonnull)coreController parserError:(NSError * _Nonnull)error;
         [Export("anylineCoreController:parserError:")]
         void ParserError(ALCoreController coreController, NSError error);
     }
 
     // @interface ALTorchManager : NSObject <ALFlashButtonStatusDelegate>
     [BaseType(typeof(NSObject))]
-    interface ALTorchManager : ALFlashButtonStatusDelegate
+    interface ALTorchManager : IALFlashButtonStatusDelegate
     {
-        // @property (nonatomic, weak) AVCaptureDevice * captureDevice;
-        [Export("captureDevice", ArgumentSemantic.Weak)]
+        // @property (nonatomic, weak) AVCaptureDevice * _Nullable captureDevice;
+        [NullAllowed, Export("captureDevice", ArgumentSemantic.Weak)]
         AVCaptureDevice CaptureDevice { get; set; }
 
         // @property (assign, nonatomic) ALFlashStatus flashStatus;
@@ -1184,11 +1322,11 @@ namespace AnylineXamarinSDK.iOS
 
         // -(void)setLevelForAutoFlash:(int)brightness;
         [Export("setLevelForAutoFlash:")]
-        void SetLevelForAutoFlash(nint brightness);
+        void SetLevelForAutoFlash(int brightness);
 
         // -(void)setCountForAutoFlash:(int)brightnessCount;
         [Export("setCountForAutoFlash:")]
-        void SetCountForAutoFlash(nint brightnessCount);
+        void SetCountForAutoFlash(int brightnessCount);
 
         // -(void)resetLightLevelCounter;
         [Export("resetLightLevelCounter")]
@@ -1204,7 +1342,16 @@ namespace AnylineXamarinSDK.iOS
 
         // -(BOOL)torchAvailable;
         [Export("torchAvailable")]
+
         bool TorchAvailable { get; }
+
+        // -(BOOL)setTorchModeOnWithLevel:(float)torchLevel error:(NSError * _Nullable * _Nullable)error;
+        [Export("setTorchModeOnWithLevel:error:")]
+        bool SetTorchModeOnWithLevel(float torchLevel, [NullAllowed] out NSError error);
+
+        // -(instancetype _Nullable)initWithCaptureDevice:(AVCaptureDevice * _Nullable)captureDevice;
+        [Export("initWithCaptureDevice:")]
+        IntPtr Constructor([NullAllowed] AVCaptureDevice captureDevice);
     }
 
     // @protocol ALMotionDetectorDelegate <NSObject>
@@ -1276,7 +1423,7 @@ namespace AnylineXamarinSDK.iOS
     }
 
     [Static]
-    partial interface ALScanInfoConstants
+    partial interface Constants
     {
         // extern NSString *const _Nonnull kBrightnessVariableName;
         [Field("kBrightnessVariableName", "__Internal")]
@@ -1353,48 +1500,222 @@ namespace AnylineXamarinSDK.iOS
         IntPtr Constructor(ALRunFailure reason, string pluginID);
     }
 
-    // @interface ALCaptureDeviceManager : NSObject <ALImageProvider>
+    // @interface ALCaptureDeviceManager : NSObject
     [BaseType(typeof(NSObject))]
-    interface ALCaptureDeviceManager : ALImageProvider
+    interface ALCaptureDeviceManager
     {
-        // -(instancetype)initWithCaptureResolution:(ALCaptureViewResolution)captureResolution pictureResolution:(ALPictureResolution)pictureResolution cutoutScreen:(CGRect)cutoutScreen cutoutPadding:(CGSize)cutoutPadding cutoutOffset:(CGPoint)cutoutOffset defaultDevice:(NSString *)defaultDevice;
-        [Export("initWithCaptureResolution:pictureResolution:cutoutScreen:cutoutPadding:cutoutOffset:defaultDevice:")]
-        IntPtr Constructor(ALCaptureViewResolution captureResolution, ALPictureResolution pictureResolution, CGRect cutoutScreen, CGSize cutoutPadding, CGPoint cutoutOffset, string defaultDevice);
+        // -(instancetype _Nullable)initWithCameraConfig:(ALCameraConfig * _Nonnull)cameraConfig;
+        [Export("initWithCameraConfig:")]
+        IntPtr Constructor(ALCameraConfig cameraConfig);
 
         // @property (readonly, nonatomic, strong) NSHashTable<AnylineNativeBarcodeDelegate> * _Nullable barcodeDelegates;
         [NullAllowed, Export("barcodeDelegates", ArgumentSemantic.Strong)]
-        NSSet BarcodeDelegates { get; }
+        AnylineNativeBarcodeDelegate BarcodeDelegates { get; }
 
-        // -(void)addBarcodeDelegate:(id<AnylineNativeBarcodeDelegate> _Nonnull)delegate;
-        [Export("addBarcodeDelegate:")]
-        void AddBarcodeDelegate(NSObject @delegate);
+        // @property (readonly, nonatomic, strong) NSHashTable<AnylineVideoDataSampleBufferDelegate> * _Nullable sampleBufferDelegates;
+        [NullAllowed, Export("sampleBufferDelegates", ArgumentSemantic.Strong)]
+        IAnylineVideoDataSampleBufferDelegate SampleBufferDelegates { get; }
 
-        // -(void)removeBarcodeDelegate:(id<AnylineNativeBarcodeDelegate> _Nonnull)delegate;
-        [Export("removeBarcodeDelegate:")]
-        void RemoveBarcodeDelegate (NSObject @delegate);
+        // @property (nonatomic, strong) ALCameraConfig * _Nullable cameraConfig;
+        [NullAllowed, Export("cameraConfig", ArgumentSemantic.Strong)]
+        ALCameraConfig CameraConfig { get; set; }
 
-        //[Wrap("WeakSampleBufferDelegate")]
-        //AnylineVideoDataSampleBufferDelegate SampleBufferDelegate { get; set; }
+        // @property (nonatomic, strong) AVCaptureVideoPreviewLayer * _Nullable previewLayer;
+        [NullAllowed, Export("previewLayer", ArgumentSemantic.Strong)]
+        AVCaptureVideoPreviewLayer PreviewLayer { get; set; }
 
-        //// @property (nonatomic, weak) id<AnylineVideoDataSampleBufferDelegate> sampleBufferDelegate;
-        //[NullAllowed, Export("sampleBufferDelegate", ArgumentSemantic.Weak)]
-        //NSObject WeakSampleBufferDelegate { get; set; }
+        // @property (nonatomic, strong) AVCaptureDevice * _Nullable captureDevice;
+        [NullAllowed, Export("captureDevice", ArgumentSemantic.Strong)]
+        AVCaptureDevice CaptureDevice { get; set; }
 
-        // @property (assign, nonatomic) ALCaptureViewResolution captureResolution;
-        [Export("captureResolution", ArgumentSemantic.Assign)]
-        ALCaptureViewResolution CaptureResolution { get; set; }
-
-        // @property (assign, nonatomic) ALPictureResolution pictureResolution;
-        [Export("pictureResolution", ArgumentSemantic.Assign)]
-        ALPictureResolution PictureResolution { get; set; }
+        // @property (nonatomic, strong) AVCaptureSession * _Nullable session;
+        [NullAllowed, Export("session", ArgumentSemantic.Strong)]
+        AVCaptureSession Session { get; set; }
 
         // @property (assign, nonatomic) CGSize videoResolution;
         [Export("videoResolution", ArgumentSemantic.Assign)]
         CGSize VideoResolution { get; set; }
 
-        // @property (assign, nonatomic) CGRect cutoutFrame;
+        // -(void)addBarcodeDelegate:(id<AnylineNativeBarcodeDelegate> _Nonnull)delegate __attribute__((deprecated("Deprecated since 4. Use method addBarcodeDelegate:error: instead.")));
+        [Export("addBarcodeDelegate:")]
+        void AddBarcodeDelegate(AnylineNativeBarcodeDelegate @delegate);
+
+        // -(BOOL)addBarcodeDelegate:(id<AnylineNativeBarcodeDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
+        [Export("addBarcodeDelegate:error:")]
+        bool AddBarcodeDelegate(AnylineNativeBarcodeDelegate @delegate, [NullAllowed] out NSError error);
+
+        // -(void)removeBarcodeDelegate:(id<AnylineNativeBarcodeDelegate> _Nonnull)delegate;
+        [Export("removeBarcodeDelegate:")]
+        void RemoveBarcodeDelegate(AnylineNativeBarcodeDelegate @delegate);
+
+        // -(void)addSampleBufferDelegate:(id<AnylineVideoDataSampleBufferDelegate> _Nonnull)delegate;
+        [Export("addSampleBufferDelegate:")]
+        void AddSampleBufferDelegate(IAnylineVideoDataSampleBufferDelegate @delegate);
+
+        // -(void)removeSampleBufferDelegate:(id<AnylineVideoDataSampleBufferDelegate> _Nonnull)delegate;
+        [Export("removeSampleBufferDelegate:")]
+        void RemoveSampleBufferDelegate(IAnylineVideoDataSampleBufferDelegate @delegate);
+
+        // -(void)addVideoLayerOnView:(UIView * _Nonnull)view;
+        [Export("addVideoLayerOnView:")]
+        void AddVideoLayerOnView(UIView view);
+
+        // -(void)updateVideoLayer:(UIView * _Nonnull)view;
+        [Export("updateVideoLayer:")]
+        void UpdateVideoLayer(UIView view);
+
+        // -(void)setFocusAndExposurePoint:(CGPoint)point;
+        [Export("setFocusAndExposurePoint:")]
+        void SetFocusAndExposurePoint(CGPoint point);
+
+        // -(void)setZoomLevel:(CGFloat)zoomFactor;
+        [Export("setZoomLevel:")]
+        void SetZoomLevel(nfloat zoomFactor);
+
+        // -(void)startSession;
+        [Export("startSession")]
+        void StartSession();
+
+        // -(void)stopSession;
+        [Export("stopSession")]
+        void StopSession();
+
+        // -(BOOL)isRunning;
+        [Export("isRunning")]
+
+        bool IsRunning { get; }
+
+        // -(CGPoint)fullResolutionPointForPointInPreview:(CGPoint)inPoint;
+        [Export("fullResolutionPointForPointInPreview:")]
+        CGPoint FullResolutionPointForPointInPreview(CGPoint inPoint);
+
+        // -(UIInterfaceOrientation)currentInterfaceOrientation;
+        [Export("currentInterfaceOrientation")]
+
+        UIInterfaceOrientation CurrentInterfaceOrientation { get; }
+
+        // -(AVCaptureConnection * _Nullable)getOrientationAdaptedCaptureConnection;
+        [NullAllowed, Export("getOrientationAdaptedCaptureConnection")]
+
+        AVCaptureConnection OrientationAdaptedCaptureConnection { get; }
+
+        // +(AVAuthorizationStatus)cameraPermissionStatus;
+        [Static]
+        [Export("cameraPermissionStatus")]
+
+        AVAuthorizationStatus CameraPermissionStatus { get; }
+
+        // +(void)requestCameraPermission:(void (^ _Nonnull)(BOOL))handler;
+        [Static]
+        [Export("requestCameraPermission:")]
+        void RequestCameraPermission(Action<bool> handler);
+
+        // -(void)captureStillImageAsynchronouslyWithCompletionHandler:(void (^ _Nonnull)(CMSampleBufferRef _Nullable, NSError * _Nullable))handler;
+        //[Export("captureStillImageAsynchronouslyWithCompletionHandler:")]
+        //unsafe void CaptureStillImageAsynchronouslyWithCompletionHandler(Action<CoreMedia.CMSampleBufferRef*, NSError> handler);
+    }
+
+    // @protocol AnylineVideoDataSampleBufferDelegate <NSObject>
+    [Protocol, Model]
+    [BaseType(typeof(NSObject))]
+    interface IAnylineVideoDataSampleBufferDelegate
+    {
+        // @required -(void)anylineCaptureDeviceManager:(ALCaptureDeviceManager * _Nonnull)captureDeviceManager didOutputSampleBuffer:(CMSampleBufferRef _Nonnull)sampleBuffer;
+        //[Abstract]
+        //[Export("anylineCaptureDeviceManager:didOutputSampleBuffer:")]
+        //unsafe void DidOutputSampleBuffer(ALCaptureDeviceManager captureDeviceManager, CMSampleBufferRef* sampleBuffer);
+    }
+
+    // @protocol AnylineNativeBarcodeDelegate <NSObject>
+    [Protocol, Model]
+    [BaseType(typeof(NSObject))]
+    interface AnylineNativeBarcodeDelegate
+    {
+        // @required -(void)anylineCaptureDeviceManager:(ALCaptureDeviceManager * _Nonnull)captureDeviceManager didFindBarcodeResult:(NSString * _Nonnull)scanResult type:(NSString * _Nonnull)barcodeType;
+        [Abstract]
+        [Export("anylineCaptureDeviceManager:didFindBarcodeResult:type:")]
+        void DidFindBarcodeResult(ALCaptureDeviceManager captureDeviceManager, string scanResult, string barcodeType);
+    }
+
+    // @interface ALAbstractScanPlugin : NSObject <ALCoreControllerDelegate>
+    [BaseType(typeof(NSObject))]
+    interface ALAbstractScanPlugin : IALCoreControllerDelegate
+    {
+        // @property (readonly, nonatomic, strong) NSHashTable<ALInfoDelegate> * _Nullable infoDelegates;
+        [NullAllowed, Export("infoDelegates", ArgumentSemantic.Strong)]
+        IALInfoDelegate InfoDelegates { get; }
+
+        // @property (nonatomic, strong) NSString * _Nullable pluginID;
+        [NullAllowed, Export("pluginID", ArgumentSemantic.Strong)]
+        string PluginID { get; set; }
+
+        // @property (assign, nonatomic) id<ALImageProvider> _Nullable imageProvider;
+        [NullAllowed, Export("imageProvider", ArgumentSemantic.Assign)]
+        IALImageProvider ImageProvider { get; set; }
+
+        // -(BOOL)start:(id<ALImageProvider> _Nonnull)imageProvider error:(NSError * _Nullable * _Nullable)error;
+        [Export("start:error:")]
+        bool Start(IALImageProvider imageProvider, [NullAllowed] out NSError error);
+
+        // -(BOOL)stopAndReturnError:(NSError * _Nullable * _Nullable)error;
+        [Export("stopAndReturnError:")]
+        bool StopAndReturnError([NullAllowed] out NSError error);
+
+        // -(void)enableReporting:(BOOL)enable;
+        [Export("enableReporting:")]
+        void EnableReporting(bool enable);
+
+        // -(BOOL)isRunning;
+        [Export("isRunning")]
+
+        bool IsRunning { get; }
+
+        // -(void)addInfoDelegate:(id<ALInfoDelegate> _Nonnull)infoDelegate;
+        [Export("addInfoDelegate:")]
+        void AddInfoDelegate(IALInfoDelegate infoDelegate);
+
+        // -(void)removeInfoDelegate:(id<ALInfoDelegate> _Nonnull)infoDelegate;
+        [Export("removeInfoDelegate:")]
+        void RemoveInfoDelegate(IALInfoDelegate infoDelegate);
+
+        // @property (assign, nonatomic) NSInteger confidence;
+        [Export("confidence")]
+        nint Confidence { get; set; }
+
+        // @property (readonly, nonatomic, strong) ALImage * _Nullable scanImage;
+        [NullAllowed, Export("scanImage", ArgumentSemantic.Strong)]
+        ALImage ScanImage { get; }
+
+        // @property (nonatomic, strong) ALCoreController * _Nullable coreController;
+        [NullAllowed, Export("coreController", ArgumentSemantic.Strong)]
+        ALCoreController CoreController { get; set; }
+    }
+
+    // @protocol ALInfoDelegate <NSObject>
+    [Protocol, Model]
+    [BaseType(typeof(NSObject))]
+    interface IALInfoDelegate
+    {
+        // @optional -(void)anylineScanPlugin:(ALAbstractScanPlugin * _Nonnull)anylineScanPlugin reportInfo:(ALScanInfo * _Nonnull)info;
+        [Export("anylineScanPlugin:reportInfo:")]
+        void ReportInfo(ALAbstractScanPlugin anylineScanPlugin, ALScanInfo info);
+
+        // @optional -(void)anylineScanPlugin:(ALAbstractScanPlugin * _Nonnull)anylineScanPlugin runSkipped:(ALRunSkippedReason * _Nonnull)runSkippedReason;
+        [Export("anylineScanPlugin:runSkipped:")]
+        void RunSkipped(ALAbstractScanPlugin anylineScanPlugin, ALRunSkippedReason runSkippedReason);
+    }
+
+    // @interface ALSampleBufferImageProvider : NSObject <ALImageProvider, AnylineVideoDataSampleBufferDelegate>
+    [BaseType(typeof(NSObject))]
+    interface ALSampleBufferImageProvider : IALImageProvider, IAnylineVideoDataSampleBufferDelegate
+    {
+        // @property (assign, atomic) CGRect cutoutFrame;
         [Export("cutoutFrame", ArgumentSemantic.Assign)]
         CGRect CutoutFrame { get; set; }
+
+        // @property (assign, nonatomic) CGSize cameraFrame;
+        [Export("cameraFrame", ArgumentSemantic.Assign)]
+        CGSize CameraFrame { get; set; }
 
         // @property (assign, nonatomic) CGRect cutoutScreen;
         [Export("cutoutScreen", ArgumentSemantic.Assign)]
@@ -1408,122 +1729,385 @@ namespace AnylineXamarinSDK.iOS
         [Export("cutoutOffset", ArgumentSemantic.Assign)]
         CGPoint CutoutOffset { get; set; }
 
-        // @property (nonatomic, strong) AVCaptureVideoPreviewLayer * previewLayer;
-        [Export("previewLayer", ArgumentSemantic.Strong)]
-        AVCaptureVideoPreviewLayer PreviewLayer { get; set; }
+        // -(instancetype _Nullable)initWithCutoutScreen:(CGRect)cutoutScreen cutoutPadding:(CGSize)cutoutPadding cutoutOffset:(CGPoint)cutoutOffset;
+        [Export("initWithCutoutScreen:cutoutPadding:cutoutOffset:")]
+        IntPtr Constructor(CGRect cutoutScreen, CGSize cutoutPadding, CGPoint cutoutOffset);
 
-        // -(void)addVideoLayerOnView:(UIView *)view;
-        [Export("addVideoLayerOnView:")]
-        void AddVideoLayerOnView(UIView view);
+        // -(CGPoint)convertPoint:(CGPoint)inPoint previewLayer:(AVCaptureVideoPreviewLayer * _Nonnull)previewLayer;
+        [Export("convertPoint:previewLayer:")]
+        CGPoint ConvertPoint(CGPoint inPoint, AVCaptureVideoPreviewLayer previewLayer);
 
-        // -(void)setFocusAndExposurePoint:(CGPoint)point;
-        [Export("setFocusAndExposurePoint:")]
-        void SetFocusAndExposurePoint(CGPoint point);
+        // -(CGPoint)convertPoint:(CGPoint)inPoint previewLayer:(AVCaptureVideoPreviewLayer * _Nonnull)previewLayer imageWidth:(CGFloat)inWidth;
+        [Export("convertPoint:previewLayer:imageWidth:")]
+        CGPoint ConvertPoint(CGPoint inPoint, AVCaptureVideoPreviewLayer previewLayer, nfloat inWidth);
 
-        // -(void)startSession;
-        [Export("startSession")]
-        void StartSession();
-
-        // -(void)stopSession;
-        [Export("stopSession")]
-        void StopSession();
-
-        // -(BOOL)isRunning;
-        [Export("isRunning")]
-        bool IsRunning { get; }
-
-        // -(CGPoint)convertPoint:(CGPoint)inPoint;
-        [Export("convertPoint:")]
-        CGPoint ConvertPoint(CGPoint inPoint);
-
-        // -(CGPoint)convertPoint:(CGPoint)inPoint imageWidth:(CGFloat)inWidth;
-        [Export("convertPoint:imageWidth:")]
-        CGPoint ConvertPoint(CGPoint inPoint, nfloat inWidth);
-
-        // -(CGPoint)fullResolutionPointForPointInPreview:(CGPoint)inPoint;
-        [Export("fullResolutionPointForPointInPreview:")]
-        CGPoint FullResolutionPointForPointInPreview(CGPoint inPoint);
-
-        // -(UIInterfaceOrientation)currentInterfaceOrientation;
-        [Export("currentInterfaceOrientation")]
-        UIInterfaceOrientation CurrentInterfaceOrientation { get; }
+        // -(void)updateCutoutScreen:(CGRect)rect;
+        [Export("updateCutoutScreen:")]
+        void UpdateCutoutScreen(CGRect rect);
     }
 
-    //// @protocol AnylineVideoDataSampleBufferDelegate <NSObject>
-    //[Protocol, Model]
-    //[BaseType(typeof(NSObject))]
-    //interface AnylineVideoDataSampleBufferDelegate
-    //{
-    //    // @required -(void)anylineCaptureDeviceManager:(ALCaptureDeviceManager *)captureDeviceManager didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer;
-    //    [Abstract]
-    //    [Export("anylineCaptureDeviceManager:didOutputSampleBuffer:")]
-    //    unsafe void DidOutputSampleBuffer(ALCaptureDeviceManager captureDeviceManager, NSObject* sampleBuffer);
-    //}
+    // @interface ALAbstractScanViewPlugin : UIView <ALInfoDelegate>
+    [BaseType(typeof(UIView))]
+    interface ALAbstractScanViewPlugin : IALInfoDelegate
+    {
+        // @property (nonatomic, strong) ALSampleBufferImageProvider * _Nullable sampleBufferImageProvider;
+        [NullAllowed, Export("sampleBufferImageProvider", ArgumentSemantic.Strong)]
+        ALSampleBufferImageProvider SampleBufferImageProvider { get; set; }
 
-    // @protocol AnylineNativeBarcodeDelegate <NSObject>
+        // @property (nonatomic, weak) ALScanView * _Nullable scanView;
+        [NullAllowed, Export("scanView", ArgumentSemantic.Weak)]
+        ALScanView ScanView { get; set; }
+
+        // @property (assign, nonatomic) CGRect cutoutRect;
+        [Export("cutoutRect", ArgumentSemantic.Assign)]
+        CGRect CutoutRect { get; set; }
+
+        // @property (copy, nonatomic) ALScanViewPluginConfig * _Nullable scanViewPluginConfig;
+        [NullAllowed, Export("scanViewPluginConfig", ArgumentSemantic.Copy)]
+        ALScanViewPluginConfig ScanViewPluginConfig { get; set; }
+
+        // +(instancetype _Nullable)scanViewPluginForConfigDict:(NSDictionary * _Nonnull)configDict licenseKey:(NSString * _Nonnull)licenseKey delegate:(id _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
+        [Static]
+        [Export("scanViewPluginForConfigDict:licenseKey:delegate:error:")]
+        [return: NullAllowed]
+        ALAbstractScanViewPlugin ScanViewPluginForConfigDict(NSDictionary configDict, string licenseKey, NSObject @delegate, [NullAllowed] out NSError error);
+
+        // -(BOOL)startAndReturnError:(NSError * _Nullable * _Nullable)error;
+        [Export("startAndReturnError:")]
+        bool StartAndReturnError([NullAllowed] out NSError error);
+
+        // -(BOOL)stopAndReturnError:(NSError * _Nullable * _Nullable)error;
+        [Export("stopAndReturnError:")]
+        bool StopAndReturnError([NullAllowed] out NSError error);
+
+        // @property (nonatomic, strong) ALSquare * _Nullable outline;
+        [NullAllowed, Export("outline", ArgumentSemantic.Strong)]
+        ALSquare Outline { get; set; }
+
+        // @property (nonatomic, strong) ALImage * _Nullable scanImage;
+        [NullAllowed, Export("scanImage", ArgumentSemantic.Strong)]
+        ALImage ScanImage { get; set; }
+
+        // @property (assign, nonatomic) CGFloat scale;
+        [Export("scale")]
+        nfloat Scale { get; set; }
+
+        // -(void)customInit;
+        [Export("customInit")]
+        void CustomInit();
+
+        // -(void)stopListeningForMotion;
+        [Export("stopListeningForMotion")]
+        void StopListeningForMotion();
+
+        // -(void)triggerScannedFeedback;
+        [Export("triggerScannedFeedback")]
+        void TriggerScannedFeedback();
+
+        // -(NSArray * _Nonnull)convertContours:(ALContours * _Nonnull)contoursValue;
+        [Export("convertContours:")]
+
+        NSObject[] ConvertContours(ALContours contoursValue);
+
+        // -(ALSquare * _Nonnull)convertCGRect:(NSValue * _Nonnull)concreteValue;
+        [Export("convertCGRect:")]
+        ALSquare ConvertCGRect(NSValue concreteValue);
+
+        // -(void)updateCutoutRect:(CGRect)rect;
+        [Export("updateCutoutRect:")]
+        void UpdateCutoutRect(CGRect rect);
+    }
+
+    // @interface ALPolygon : NSObject
+    [BaseType(typeof(NSObject))]
+    interface ALPolygon
+    {
+        // @property (readonly, nonatomic, strong) NSArray * points;
+        [Export("points", ArgumentSemantic.Strong)]
+
+        NSObject[] Points { get; }
+
+        // -(instancetype)initWithPoints:(NSArray *)points;
+        [Export("initWithPoints:")]
+
+        IntPtr Constructor(NSObject[] points);
+
+        // -(ALPolygon *)polygonWithScale:(CGFloat)scale;
+        [Export("polygonWithScale:")]
+        ALPolygon PolygonWithScale(nfloat scale);
+    }
+
+    // @interface ALVisualFeedbackOverlay : UIView
+    [BaseType(typeof(UIView))]
+    interface ALVisualFeedbackOverlay
+    {
+        // @property (copy, nonatomic) ALPolygon * _Nullable polygon;
+        [NullAllowed, Export("polygon", ArgumentSemantic.Copy)]
+        ALPolygon Polygon { get; set; }
+
+        // @property (copy, nonatomic) ALSquare * _Nullable square;
+        [NullAllowed, Export("square", ArgumentSemantic.Copy)]
+        ALSquare Square { get; set; }
+
+        // @property (copy, nonatomic) NSArray * _Nullable contours;
+        [NullAllowed, Export("contours", ArgumentSemantic.Copy)]
+
+        NSObject[] Contours { get; set; }
+
+        // @property (assign, nonatomic) NSInteger visualFeedbackCornerRadius;
+        [Export("visualFeedbackCornerRadius")]
+        nint VisualFeedbackCornerRadius { get; set; }
+
+        // @property (assign, nonatomic) NSInteger visualFeedbackRedrawTimeout;
+        [Export("visualFeedbackRedrawTimeout")]
+        nint VisualFeedbackRedrawTimeout { get; set; }
+
+        // @property (assign, nonatomic) ALUIFeedbackStyle feedbackStyle;
+        [Export("feedbackStyle", ArgumentSemantic.Assign)]
+        ALUIFeedbackStyle FeedbackStyle { get; set; }
+
+        // @property (assign, nonatomic) ALUIVisualFeedbackAnimation visualFeedbackAnimation;
+        [Export("visualFeedbackAnimation", ArgumentSemantic.Assign)]
+        ALUIVisualFeedbackAnimation VisualFeedbackAnimation { get; set; }
+
+        // @property (nonatomic, strong) UIColor * _Nullable visualFeedbackStrokeColor;
+        [NullAllowed, Export("visualFeedbackStrokeColor", ArgumentSemantic.Strong)]
+        UIColor VisualFeedbackStrokeColor { get; set; }
+
+        // @property (nonatomic, strong) UIColor * _Nullable visualFeedbackFillColor;
+        [NullAllowed, Export("visualFeedbackFillColor", ArgumentSemantic.Strong)]
+        UIColor VisualFeedbackFillColor { get; set; }
+
+        // @property (assign, nonatomic) NSInteger visualFeedbackAnimationDuration;
+        [Export("visualFeedbackAnimationDuration")]
+        nint VisualFeedbackAnimationDuration { get; set; }
+
+        // @property (copy, nonatomic) UIBezierPath * _Nullable cutoutPath;
+        [NullAllowed, Export("cutoutPath", ArgumentSemantic.Copy)]
+        UIBezierPath CutoutPath { get; set; }
+
+        // @property (assign, nonatomic) NSInteger visualFeedbackStrokeWidth;
+        [Export("visualFeedbackStrokeWidth")]
+        nint VisualFeedbackStrokeWidth { get; set; }
+
+        // -(instancetype _Nullable)initWithFrame:(CGRect)frame visualFeedbackCornerRadius:(NSInteger)visualFeedbackCornerRadius visualFeedbackRedrawTimeout:(NSInteger)visualFeedbackRedrawTimeout feedbackStyle:(ALUIFeedbackStyle)feedbackStyle visualFeedbackAnimation:(ALUIVisualFeedbackAnimation)visualFeedbackAnimation visualFeedbackStrokeColor:(UIColor * _Nonnull)visualFeedbackStrokeColor visualFeedbackFillColor:(UIColor * _Nonnull)visualFeedbackFillColor visualFeedbackAnimationDuration:(NSInteger)visualFeedbackAnimationDuration cutoutPath:(UIBezierPath * _Nonnull)cutoutPath visualFeedbackStrokeWidth:(NSInteger)visualFeedbackStrokeWidth;
+        [Export("initWithFrame:visualFeedbackCornerRadius:visualFeedbackRedrawTimeout:feedbackStyle:visualFeedbackAnimation:visualFeedbackStrokeColor:visualFeedbackFillColor:visualFeedbackAnimationDuration:cutoutPath:visualFeedbackStrokeWidth:")]
+        IntPtr Constructor(CGRect frame, nint visualFeedbackCornerRadius, nint visualFeedbackRedrawTimeout, ALUIFeedbackStyle feedbackStyle, ALUIVisualFeedbackAnimation visualFeedbackAnimation, UIColor visualFeedbackStrokeColor, UIColor visualFeedbackFillColor, nint visualFeedbackAnimationDuration, UIBezierPath cutoutPath, nint visualFeedbackStrokeWidth);
+
+        // -(void)cancelFeedback;
+        [Export("cancelFeedback")]
+        void CancelFeedback();
+    }
+
+    // @interface ALUIFeedback : UIView
+    [BaseType(typeof(UIView))]
+    interface ALUIFeedback
+    {
+        // @property (nonatomic, strong) ALSquare * _Nonnull square;
+        [Export("square", ArgumentSemantic.Strong)]
+        ALSquare Square { get; set; }
+
+        // @property (nonatomic, strong) ALPolygon * _Nonnull polygon;
+        [Export("polygon", ArgumentSemantic.Strong)]
+        ALPolygon Polygon { get; set; }
+
+        // @property (nonatomic, strong) NSArray * _Nonnull contours;
+        [Export("contours", ArgumentSemantic.Strong)]
+
+        NSObject[] Contours { get; set; }
+
+        // @property (readonly, nonatomic, strong) NSHashTable<ALCutoutDelegate> * _Nullable cutoutDelegates;
+        [NullAllowed, Export("cutoutDelegates", ArgumentSemantic.Strong)]
+        ALCutoutDelegate CutoutDelegates { get; }
+
+        // -(instancetype _Nullable)initWithFrame:(CGRect)frame pluginConfig:(ALScanViewPluginConfig * _Nonnull)pluginConfig;
+        [Export("initWithFrame:pluginConfig:")]
+        IntPtr Constructor(CGRect frame, ALScanViewPluginConfig pluginConfig);
+
+        // -(void)cancelFeedback;
+        [Export("cancelFeedback")]
+        void CancelFeedback();
+
+        // -(void)changeVisualFeedbackStrokeColor:(UIColor * _Nonnull)color;
+        [Export("changeVisualFeedbackStrokeColor:")]
+        void ChangeVisualFeedbackStrokeColor(UIColor color);
+
+        // -(void)updateConfiguration:(ALScanViewPluginConfig * _Nonnull)pluginConfig;
+        [Export("updateConfiguration:")]
+        void UpdateConfiguration(ALScanViewPluginConfig pluginConfig);
+
+        // -(void)setVisualFeedbackStrokeColor:(UIColor * _Nonnull)color;
+        [Export("setVisualFeedbackStrokeColor:")]
+        void SetVisualFeedbackStrokeColor(UIColor color);
+
+        // -(CGRect)cutout;
+        [Export("cutout")]
+
+        CGRect Cutout { get; }
+
+        // -(void)addCutoutDelegate:(id<ALCutoutDelegate> _Nonnull)infoDelegate;
+        [Export("addCutoutDelegate:")]
+        void AddCutoutDelegate(ALCutoutDelegate infoDelegate);
+
+        // -(void)removeCutoutDelegate:(id<ALCutoutDelegate> _Nonnull)infoDelegate;
+        [Export("removeCutoutDelegate:")]
+        void RemoveCutoutDelegate(ALCutoutDelegate infoDelegate);
+    }
+
+    // @protocol ALCutoutDelegate <NSObject>
     [Protocol, Model]
     [BaseType(typeof(NSObject))]
-    interface AnylineNativeBarcodeDelegate
+    interface ALCutoutDelegate
     {
-        // @required -(void)anylineCaptureDeviceManager:(ALCaptureDeviceManager *)captureDeviceManager didFindBarcodeResult:(NSString *)scanResult type:(NSString *)barcodeType;
+        // @required -(void)alUIFeedback:(ALUIFeedback * _Nonnull)alUIFeedback updatedCutout:(CGRect)cutoutRect;
         [Abstract]
-        [Export("anylineCaptureDeviceManager:didFindBarcodeResult:type:")]
-        void DidFindBarcodeResult(ALCaptureDeviceManager captureDeviceManager, string scanResult, string barcodeType);
+        [Export("alUIFeedback:updatedCutout:")]
+        void UpdatedCutout(ALUIFeedback alUIFeedback, CGRect cutoutRect);
     }
-    
+
+    // @interface ALScanView : UIView
+    [BaseType(typeof(UIView))]
+    interface ALScanView
+    {
+        // @property (nonatomic, strong) ALUIFeedback * _Nullable uiOverlayView;
+        [NullAllowed, Export("uiOverlayView", ArgumentSemantic.Strong)]
+        ALUIFeedback UiOverlayView { get; set; }
+
+        // @property (nonatomic, strong) ALCameraConfig * _Nullable cameraConfig;
+        [NullAllowed, Export("cameraConfig", ArgumentSemantic.Strong)]
+        ALCameraConfig CameraConfig { get; set; }
+
+        // @property (nonatomic, strong) ALFlashButtonConfig * _Nullable flashButtonConfig;
+        [NullAllowed, Export("flashButtonConfig", ArgumentSemantic.Strong)]
+        ALFlashButtonConfig FlashButtonConfig { get; set; }
+
+        // @property (nonatomic, strong) ALFlashButton * _Nullable flashButton;
+        [NullAllowed, Export("flashButton", ArgumentSemantic.Strong)]
+        ALFlashButton FlashButton { get; set; }
+
+        // @property (nonatomic, strong) ALTorchManager * _Nullable torchManager;
+        [NullAllowed, Export("torchManager", ArgumentSemantic.Strong)]
+        ALTorchManager TorchManager { get; set; }
+
+        // @property (nonatomic, strong) ALCaptureDeviceManager * _Nullable captureDeviceManager;
+        [NullAllowed, Export("captureDeviceManager", ArgumentSemantic.Strong)]
+        ALCaptureDeviceManager CaptureDeviceManager { get; set; }
+
+        // @property (nonatomic, strong) ALAbstractScanViewPlugin * _Nullable scanViewPlugin;
+        [NullAllowed, Export("scanViewPlugin", ArgumentSemantic.Strong)]
+        ALAbstractScanViewPlugin ScanViewPlugin { get; set; }
+
+        // @property (readonly, nonatomic) CGRect watermarkRect;
+        [Export("watermarkRect")]
+        CGRect WatermarkRect { get; }
+
+        // -(instancetype _Nullable)initWithFrame:(CGRect)frame scanViewPlugin:(ALAbstractScanViewPlugin * _Nullable)scanViewPlugin;
+        [Export("initWithFrame:scanViewPlugin:")]
+        IntPtr Constructor(CGRect frame, [NullAllowed] ALAbstractScanViewPlugin scanViewPlugin);
+
+        // -(instancetype _Nullable)initWithFrame:(CGRect)frame scanViewPlugin:(ALAbstractScanViewPlugin * _Nullable)scanViewPlugin cameraConfig:(ALCameraConfig * _Nonnull)cameraConfig flashButtonConfig:(ALFlashButtonConfig * _Nonnull)flashButtonConfig;
+        [Export("initWithFrame:scanViewPlugin:cameraConfig:flashButtonConfig:")]
+        IntPtr Constructor(CGRect frame, [NullAllowed] ALAbstractScanViewPlugin scanViewPlugin, ALCameraConfig cameraConfig, ALFlashButtonConfig flashButtonConfig);
+
+        // +(instancetype _Nullable)scanViewForFrame:(CGRect)frame configPath:(NSString * _Nonnull)configPath licenseKey:(NSString * _Nonnull)licenseKey delegate:(id _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
+        [Static]
+        [Export("scanViewForFrame:configPath:licenseKey:delegate:error:")]
+        [return: NullAllowed]
+        ALScanView ScanViewForFrame(CGRect frame, string configPath, string licenseKey, NSObject @delegate, [NullAllowed] out NSError error);
+
+        // +(instancetype _Nullable)scanViewForFrame:(CGRect)frame configDict:(NSDictionary * _Nonnull)configDict licenseKey:(NSString * _Nonnull)licenseKey delegate:(id _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
+        [Static]
+        [Export("scanViewForFrame:configDict:licenseKey:delegate:error:")]
+        [return: NullAllowed]
+        ALScanView ScanViewForFrame(CGRect frame, NSDictionary configDict, string licenseKey, NSObject @delegate, [NullAllowed] out NSError error);
+
+        // -(void)startCamera;
+        [Export("startCamera")]
+        void StartCamera();
+
+        // -(void)stopCamera;
+        [Export("stopCamera")]
+        void StopCamera();
+
+        // -(void)updateDispatchTimer;
+        [Export("updateDispatchTimer")]
+        void UpdateDispatchTimer();
+
+        // -(void)updateTextRect:(ALSquare * _Nonnull)square;
+        [Export("updateTextRect:")]
+        void UpdateTextRect(ALSquare square);
+
+        // -(void)updateCutoutView:(ALCutoutConfig * _Nonnull)cutoutConfig;
+        [Export("updateCutoutView:")]
+        void UpdateCutoutView(ALCutoutConfig cutoutConfig);
+
+        // -(void)updateVisualFeedbackView:(ALScanFeedbackConfig * _Nonnull)scanFeedbackConfig;
+        [Export("updateVisualFeedbackView:")]
+        void UpdateVisualFeedbackView(ALScanFeedbackConfig scanFeedbackConfig);
+
+        // -(void)updateWebView:(ALScanViewPluginConfig * _Nonnull)config;
+        [Export("updateWebView:")]
+        void UpdateWebView(ALScanViewPluginConfig config);
+    }
+
     // @interface AnylineAbstractModuleView : UIView
     [BaseType(typeof(UIView))]
     interface AnylineAbstractModuleView
     {
         [Wrap("WeakDebugDelegate")]
+        [NullAllowed]
         AnylineDebugDelegate DebugDelegate { get; set; }
 
-        // @property (nonatomic, weak) id<AnylineDebugDelegate> debugDelegate;
+        // @property (nonatomic, weak) id<AnylineDebugDelegate> _Nullable debugDelegate;
         [NullAllowed, Export("debugDelegate", ArgumentSemantic.Weak)]
         NSObject WeakDebugDelegate { get; set; }
-        
-        // @property (nonatomic, strong) ALCaptureDeviceManager * _Nullable captureDeviceManager;
-        [NullAllowed, Export("captureDeviceManager", ArgumentSemantic.Strong)]
-        ALCaptureDeviceManager CaptureDeviceManager { get; set; }
 
-        // @property (nonatomic, strong) ALCutoutView * cutoutView;
-        [Export("cutoutView", ArgumentSemantic.Strong)]
+        // @property (nonatomic, strong) ALScanView * _Nullable cameraView;
+        [NullAllowed, Export("cameraView", ArgumentSemantic.Strong)]
+        ALScanView CameraView { get; set; }
+
+        // @property (readonly, nonatomic, strong) ALCaptureDeviceManager * _Nullable captureDeviceManager;
+        [NullAllowed, Export("captureDeviceManager", ArgumentSemantic.Strong)]
+        ALCaptureDeviceManager CaptureDeviceManager { get; }
+
+        // @property (nonatomic, strong) ALCutoutView * _Nullable cutoutView;
+        [NullAllowed, Export("cutoutView", ArgumentSemantic.Strong)]
         ALCutoutView CutoutView { get; set; }
 
-        // @property (nonatomic, strong) ALFlashButton * flashButton;
-        [Export("flashButton", ArgumentSemantic.Strong)]
+        // @property (nonatomic, strong) ALFlashButton * _Nullable flashButton;
+        [NullAllowed, Export("flashButton", ArgumentSemantic.Strong)]
         ALFlashButton FlashButton { get; set; }
 
-        // @property (nonatomic, strong) ALTorchManager * torchManager;
-        [Export("torchManager", ArgumentSemantic.Strong)]
+        // @property (nonatomic, strong) ALTorchManager * _Nullable torchManager;
+        [NullAllowed, Export("torchManager", ArgumentSemantic.Strong)]
         ALTorchManager TorchManager { get; set; }
 
-        // @property (nonatomic, strong) ALUIConfiguration * currentConfiguration;
-        [Export("currentConfiguration", ArgumentSemantic.Strong)]
+        // @property (copy, nonatomic) ALUIConfiguration * _Nullable currentConfiguration;
+        [NullAllowed, Export("currentConfiguration", ArgumentSemantic.Copy)]
         ALUIConfiguration CurrentConfiguration { get; set; }
 
         // @property (nonatomic) NSInteger strokeWidth;
         [Export("strokeWidth")]
         nint StrokeWidth { get; set; }
 
-        // @property (nonatomic, strong) UIColor * strokeColor;
-        [Export("strokeColor", ArgumentSemantic.Strong)]
+        // @property (nonatomic, strong) UIColor * _Nullable strokeColor;
+        [NullAllowed, Export("strokeColor", ArgumentSemantic.Strong)]
         UIColor StrokeColor { get; set; }
 
         // @property (nonatomic) NSInteger cornerRadius;
         [Export("cornerRadius")]
         nint CornerRadius { get; set; }
 
-        // @property (nonatomic, strong) UIColor * outerColor;
-        [Export("outerColor", ArgumentSemantic.Strong)]
+        // @property (nonatomic, strong) UIColor * _Nullable outerColor;
+        [NullAllowed, Export("outerColor", ArgumentSemantic.Strong)]
         UIColor OuterColor { get; set; }
 
         // @property (nonatomic) CGFloat outerAlpha;
         [Export("outerAlpha")]
         nfloat OuterAlpha { get; set; }
 
-        // @property (nonatomic, strong) UIImage * flashImage;
-        [Export("flashImage", ArgumentSemantic.Strong)]
+        // @property (nonatomic, strong) UIImage * _Nullable flashImage;
+        [NullAllowed, Export("flashImage", ArgumentSemantic.Strong)]
         UIImage FlashImage { get; set; }
 
         // @property (nonatomic) ALFlashAlignment flashButtonAlignment;
@@ -1562,13 +2146,13 @@ namespace AnylineXamarinSDK.iOS
         [Export("watermarkRect")]
         CGRect WatermarkRect { get; }
 
-        // -(BOOL)startScanningAndReturnError:(NSError **)error;
+        // -(BOOL)startScanningAndReturnError:(NSError * _Nullable * _Nullable)error;
         [Export("startScanningAndReturnError:")]
-        bool StartScanningAndReturnError(out NSError error);
+        bool StartScanningAndReturnError([NullAllowed] out NSError error);
 
-        // -(BOOL)cancelScanningAndReturnError:(NSError **)error;
+        // -(BOOL)cancelScanningAndReturnError:(NSError * _Nullable * _Nullable)error;
         [Export("cancelScanningAndReturnError:")]
-        bool CancelScanningAndReturnError(out NSError error);
+        bool CancelScanningAndReturnError([NullAllowed] out NSError error);
 
         // -(void)enableReporting:(BOOL)enable;
         [Export("enableReporting:")]
@@ -1576,6 +2160,7 @@ namespace AnylineXamarinSDK.iOS
 
         // -(BOOL)isRunning;
         [Export("isRunning")]
+
         bool IsRunning { get; }
 
         // -(void)stopListeningForMotion;
@@ -1588,11 +2173,11 @@ namespace AnylineXamarinSDK.iOS
     [BaseType(typeof(NSObject))]
     interface AnylineDebugDelegate
     {
-        // @optional -(void)anylineModuleView:(AnylineAbstractModuleView *)anylineModuleView reportDebugVariable:(NSString *)variableName value:(id)value;
+        // @optional -(void)anylineModuleView:(AnylineAbstractModuleView * _Nonnull)anylineModuleView reportDebugVariable:(NSString * _Nonnull)variableName value:(id _Nonnull)value;
         [Export("anylineModuleView:reportDebugVariable:value:")]
         void ReportDebugVariable(AnylineAbstractModuleView anylineModuleView, string variableName, NSObject value);
 
-        // @optional -(void)anylineModuleView:(AnylineAbstractModuleView *)anylineModuleView runSkipped:(ALRunFailure)runFailure;
+        // @optional -(void)anylineModuleView:(AnylineAbstractModuleView * _Nonnull)anylineModuleView runSkipped:(ALRunFailure)runFailure;
         [Export("anylineModuleView:runSkipped:")]
         void RunSkipped(AnylineAbstractModuleView anylineModuleView, ALRunFailure runFailure);
     }
@@ -1616,82 +2201,15 @@ namespace AnylineXamarinSDK.iOS
     {
     }
 
-    // @interface ALAbstractScanPlugin : NSObject <ALCoreControllerDelegate>
-    [BaseType(typeof(NSObject))]
-    interface ALAbstractScanPlugin : ALCoreControllerDelegate
-    {
-        // @property (readonly, nonatomic, strong) NSHashTable<ALInfoDelegate> * _Nullable infoDelegates;
-        [NullAllowed, Export("infoDelegates", ArgumentSemantic.Strong)]
-        ALInfoDelegate InfoDelegates { get; }
-
-        // @property (readonly, nonatomic, strong) NSString * _Nullable pluginID;
-        [NullAllowed, Export("pluginID", ArgumentSemantic.Strong)]
-        string PluginID { get; }
-
-        // @property (readonly, assign, nonatomic) NSInteger confidence;
-        [Export("confidence")]
-        nint Confidence { get; }
-
-        // @property (readonly, nonatomic, strong) ALImage * _Nullable scanImage;
-        [NullAllowed, Export("scanImage", ArgumentSemantic.Strong)]
-        ALImage ScanImage { get; }
-
-        // @property (nonatomic, strong) ALCoreController * _Nullable coreController;
-        [NullAllowed, Export("coreController", ArgumentSemantic.Strong)]
-        ALCoreController CoreController { get; set; }
-
-        // @property (assign, nonatomic) id<ALImageProvider> _Nullable imageProvider;
-        [NullAllowed, Export("imageProvider", ArgumentSemantic.Assign)]
-        ALImageProvider ImageProvider { get; set; }
-
-        // -(instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID __attribute__((objc_designated_initializer));
-        [Export("initWithPluginID:")]
-        [DesignatedInitializer]
-        IntPtr Constructor([NullAllowed] string pluginID);
-
-        // -(BOOL)start:(id<ALImageProvider> _Nonnull)imageProvider error:(NSError * _Nullable * _Nullable)error;
-        [Export("start:error:")]
-        bool Start(ALImageProvider imageProvider, [NullAllowed] out NSError error);
-
-        // -(BOOL)stopAndReturnError:(NSError * _Nullable * _Nullable)error;
-        [Export("stopAndReturnError:")]
-        bool StopAndReturnError([NullAllowed] out NSError error);
-
-        // -(void)enableReporting:(BOOL)enable;
-        [Export("enableReporting:")]
-        void EnableReporting(bool enable);
-
-        // -(BOOL)isRunning;
-        [Export("isRunning")]
-        bool IsRunning { get; }
-
-        // -(void)addInfoDelegate:(id<ALInfoDelegate> _Nonnull)infoDelegate;
-        [Export("addInfoDelegate:")]
-        void AddInfoDelegate(ALInfoDelegate infoDelegate);
-
-        // -(void)removeInfoDelegate:(id<ALInfoDelegate> _Nonnull)infoDelegate;
-        [Export("removeInfoDelegate:")]
-        void RemoveInfoDelegate(ALInfoDelegate infoDelegate);
-    }
-
-    // @protocol ALInfoDelegate <NSObject>
-    [Protocol, Model]
-    [BaseType(typeof(NSObject))]
-    interface ALInfoDelegate
-    {
-        // @optional -(void)anylineScanPlugin:(ALAbstractScanPlugin * _Nonnull)anylineScanPlugin reportInfo:(ALScanInfo * _Nonnull)info;
-        [Export("anylineScanPlugin:reportInfo:")]
-        void ReportInfo(ALAbstractScanPlugin anylineScanPlugin, ALScanInfo info);
-
-        // @optional -(void)anylineScanPlugin:(ALAbstractScanPlugin * _Nonnull)anylineScanPlugin runSkipped:(ALRunSkippedReason * _Nonnull)runSkippedReason;
-        [Export("anylineScanPlugin:runSkipped:")]
-        void RunSkipped(ALAbstractScanPlugin anylineScanPlugin, ALRunSkippedReason runSkippedReason);
-    }
-
     // @interface ALMeterScanPlugin : ALAbstractScanPlugin
     [BaseType(typeof(ALAbstractScanPlugin))]
+    [DisableDefaultCtor]
     interface ALMeterScanPlugin
     {
+        // -(instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID licenseKey:(NSString * _Nonnull)licenseKey delegate:(id<ALMeterScanPluginDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
+        [Export("initWithPluginID:licenseKey:delegate:error:")]
+        IntPtr Constructor([NullAllowed] string pluginID, string licenseKey, ALMeterScanPluginDelegate @delegate, [NullAllowed] out NSError error);
+
         // @property (readonly, nonatomic, strong) NSHashTable<ALMeterScanPluginDelegate> * _Nullable delegates;
         [NullAllowed, Export("delegates", ArgumentSemantic.Strong)]
         ALMeterScanPluginDelegate Delegates { get; }
@@ -1700,13 +2218,17 @@ namespace AnylineXamarinSDK.iOS
         [Export("scanMode", ArgumentSemantic.Assign)]
         ALScanMode ScanMode { get; }
 
+        // @property (nonatomic, strong) NSString * _Nullable serialNumberValidationRegex;
+        [NullAllowed, Export("serialNumberValidationRegex", ArgumentSemantic.Strong)]
+        string SerialNumberValidationRegex { get; set; }
+
+        // @property (nonatomic, strong) NSString * _Nullable serialNumberCharWhitelist;
+        [NullAllowed, Export("serialNumberCharWhitelist", ArgumentSemantic.Strong)]
+        string SerialNumberCharWhitelist { get; set; }
+
         // -(BOOL)setScanMode:(ALScanMode)scanMode error:(NSError * _Nullable * _Nullable)error;
         [Export("setScanMode:error:")]
         bool SetScanMode(ALScanMode scanMode, [NullAllowed] out NSError error);
-
-        // -(BOOL)setupWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<ALMeterScanPluginDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
-        [Export("setupWithLicenseKey:delegate:error:")]
-        bool SetupWithLicenseKey(string licenseKey, NSObject @delegate, [NullAllowed] out NSError error);
 
         // -(void)addDelegate:(id<ALMeterScanPluginDelegate> _Nonnull)delegate;
         [Export("addDelegate:")]
@@ -1715,6 +2237,10 @@ namespace AnylineXamarinSDK.iOS
         // -(void)removeDelegate:(id<ALMeterScanPluginDelegate> _Nonnull)delegate;
         [Export("removeDelegate:")]
         void RemoveDelegate(ALMeterScanPluginDelegate @delegate);
+
+        // -(ALScanMode)parseScanModeString:(NSString * _Nonnull)scanMode;
+        [Export("parseScanModeString:")]
+        ALScanMode ParseScanModeString(string scanMode);
     }
 
     // @protocol ALMeterScanPluginDelegate <NSObject>
@@ -1728,8 +2254,7 @@ namespace AnylineXamarinSDK.iOS
         void DidFindResult(ALMeterScanPlugin anylineMeterScanPlugin, ALMeterResult scanResult);
     }
 
-    [Static]
-    partial interface BarcodeConstants
+    partial interface Constants
     {
         // extern NSString *const _Nonnull kCodeTypeAztec;
         [Field("kCodeTypeAztec", "__Internal")]
@@ -1811,8 +2336,13 @@ namespace AnylineXamarinSDK.iOS
 
     // @interface ALBarcodeScanPlugin : ALAbstractScanPlugin
     [BaseType(typeof(ALAbstractScanPlugin))]
+    [DisableDefaultCtor]
     interface ALBarcodeScanPlugin
     {
+        // -(instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID licenseKey:(NSString * _Nonnull)licenseKey delegate:(id<ALBarcodeScanPluginDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
+        [Export("initWithPluginID:licenseKey:delegate:error:")]
+        IntPtr Constructor([NullAllowed] string pluginID, string licenseKey, ALBarcodeScanPluginDelegate @delegate, [NullAllowed] out NSError error);
+
         // @property (readonly, nonatomic, strong) NSHashTable<ALBarcodeScanPluginDelegate> * _Nullable delegates;
         [NullAllowed, Export("delegates", ArgumentSemantic.Strong)]
         ALBarcodeScanPluginDelegate Delegates { get; }
@@ -1820,10 +2350,6 @@ namespace AnylineXamarinSDK.iOS
         // @property (assign, nonatomic) ALBarcodeFormatOptions barcodeFormatOptions;
         [Export("barcodeFormatOptions", ArgumentSemantic.Assign)]
         ALBarcodeFormat BarcodeFormatOptions { get; set; }
-
-        // -(BOOL)setupWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<ALBarcodeScanPluginDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
-        [Export("setupWithLicenseKey:delegate:error:")]
-        bool SetupWithLicenseKey(string licenseKey, NSObject @delegate, [NullAllowed] out NSError error);
 
         // -(ALBarcodeFormat)barcodeFormatForString:(NSString * _Nullable)barcodeFormatString;
         [Export("barcodeFormatForString:")]
@@ -1849,169 +2375,6 @@ namespace AnylineXamarinSDK.iOS
         void DidFindResult(ALBarcodeScanPlugin anylineBarcodeScanPlugin, ALBarcodeResult scanResult);
     }
 
-    // @interface ALPolygon : NSObject
-    [BaseType(typeof(NSObject))]
-    interface ALPolygon
-    {
-        // @property (readonly, nonatomic, strong) NSArray * points;
-        [Export("points", ArgumentSemantic.Strong)]
-        NSObject[] Points { get; }
-
-        // -(instancetype)initWithPoints:(NSArray *)points;
-        [Export("initWithPoints:")]
-        IntPtr Constructor(NSObject[] points);
-
-        // -(ALPolygon *)polygonWithScale:(CGFloat)scale;
-        [Export("polygonWithScale:")]
-        ALPolygon PolygonWithScale(nfloat scale);
-    }
-
-    // @interface ALVisualFeedbackOverlay : UIView
-    [BaseType(typeof(UIView))]
-    interface ALVisualFeedbackOverlay
-    {
-        // @property (copy, nonatomic) ALPolygon * polygon;
-        [Export("polygon", ArgumentSemantic.Copy)]
-        ALPolygon Polygon { get; set; }
-
-        // @property (copy, nonatomic) ALSquare * square;
-        [Export("square", ArgumentSemantic.Copy)]
-        ALSquare Square { get; set; }
-
-        // @property (copy, nonatomic) NSArray * contours;
-        [Export("contours", ArgumentSemantic.Copy)]
-        NSObject[] Contours { get; set; }
-
-        // @property (assign, nonatomic) NSInteger visualFeedbackCornerRadius;
-        [Export("visualFeedbackCornerRadius")]
-        nint VisualFeedbackCornerRadius { get; set; }
-
-        // @property (assign, nonatomic) NSInteger cornerRadius;
-        [Export("cornerRadius")]
-        nint CornerRadius { get; set; }
-
-        // @property (assign, nonatomic) NSInteger visualFeedbackRedrawTimeout;
-        [Export("visualFeedbackRedrawTimeout")]
-        nint VisualFeedbackRedrawTimeout { get; set; }
-
-        // @property (assign, nonatomic) ALUIFeedbackStyle feedbackStyle;
-        [Export("feedbackStyle", ArgumentSemantic.Assign)]
-        ALUIFeedbackStyle FeedbackStyle { get; set; }
-
-        // @property (assign, nonatomic) ALUIVisualFeedbackAnimation visualFeedbackAnimation;
-        [Export("visualFeedbackAnimation", ArgumentSemantic.Assign)]
-        ALUIVisualFeedbackAnimation VisualFeedbackAnimation { get; set; }
-
-        // @property (nonatomic, strong) UIColor * visualFeedbackStrokeColor;
-        [Export("visualFeedbackStrokeColor", ArgumentSemantic.Strong)]
-        UIColor VisualFeedbackStrokeColor { get; set; }
-
-        // @property (nonatomic, strong) UIColor * visualFeedbackFillColor;
-        [Export("visualFeedbackFillColor", ArgumentSemantic.Strong)]
-        UIColor VisualFeedbackFillColor { get; set; }
-
-        // @property (assign, nonatomic) NSInteger visualFeedbackAnimationDuration;
-        [Export("visualFeedbackAnimationDuration")]
-        nint VisualFeedbackAnimationDuration { get; set; }
-
-        // @property (copy, nonatomic) UIBezierPath * cutoutPath;
-        [Export("cutoutPath", ArgumentSemantic.Copy)]
-        UIBezierPath CutoutPath { get; set; }
-
-        // @property (assign, nonatomic) NSInteger visualFeedbackStrokeWidth;
-        [Export("visualFeedbackStrokeWidth")]
-        nint VisualFeedbackStrokeWidth { get; set; }
-
-        // -(instancetype)initWithFrame:(CGRect)frame visualFeedbackCornerRadius:(NSInteger)visualFeedbackCornerRadius cornerRadius:(NSInteger)cornerRadius visualFeedbackRedrawTimeout:(NSInteger)visualFeedbackRedrawTimeout feedbackStyle:(ALUIFeedbackStyle)feedbackStyle visualFeedbackAnimation:(ALUIVisualFeedbackAnimation)visualFeedbackAnimation visualFeedbackStrokeColor:(UIColor *)visualFeedbackStrokeColor visualFeedbackFillColor:(UIColor *)visualFeedbackFillColor visualFeedbackAnimationDuration:(NSInteger)visualFeedbackAnimationDuration cutoutPath:(UIBezierPath *)cutoutPath visualFeedbackStrokeWidth:(NSInteger)visualFeedbackStrokeWidth;
-        [Export("initWithFrame:visualFeedbackCornerRadius:cornerRadius:visualFeedbackRedrawTimeout:feedbackStyle:visualFeedbackAnimation:visualFeedbackStrokeColor:visualFeedbackFillColor:visualFeedbackAnimationDuration:cutoutPath:visualFeedbackStrokeWidth:")]
-        IntPtr Constructor(CGRect frame, nint visualFeedbackCornerRadius, nint cornerRadius, nint visualFeedbackRedrawTimeout, ALUIFeedbackStyle feedbackStyle, ALUIVisualFeedbackAnimation visualFeedbackAnimation, UIColor visualFeedbackStrokeColor, UIColor visualFeedbackFillColor, nint visualFeedbackAnimationDuration, UIBezierPath cutoutPath, nint visualFeedbackStrokeWidth);
-
-        // -(void)cancelFeedback;
-        [Export("cancelFeedback")]
-        void CancelFeedback();
-    }
-
-    // @interface ALAbstractScanViewPlugin : UIView <ALInfoDelegate>
-    [BaseType(typeof(UIView))]
-    interface ALAbstractScanViewPlugin : ALInfoDelegate
-    {
-        // @property (nonatomic, strong) ALCaptureDeviceManager * captureDeviceManager;
-        [Export("captureDeviceManager", ArgumentSemantic.Strong)]
-        ALCaptureDeviceManager CaptureDeviceManager { get; set; }
-
-        // @property (nonatomic, strong) ALCutoutView * cutoutView;
-        [Export("cutoutView", ArgumentSemantic.Strong)]
-        ALCutoutView CutoutView { get; set; }
-
-        // @property (nonatomic, strong) ALFlashButton * flashButton;
-        [Export("flashButton", ArgumentSemantic.Strong)]
-        ALFlashButton FlashButton { get; set; }
-
-        // @property (nonatomic, strong) ALTorchManager * torchManager;
-        [Export("torchManager", ArgumentSemantic.Strong)]
-        ALTorchManager TorchManager { get; set; }
-
-        // @property (nonatomic, strong) ALVisualFeedbackOverlay * visualFeedbackOverlay;
-        [Export("visualFeedbackOverlay", ArgumentSemantic.Strong)]
-        ALVisualFeedbackOverlay VisualFeedbackOverlay { get; set; }
-
-        // @property (nonatomic, strong) ALSquare * outline;
-        [Export("outline", ArgumentSemantic.Strong)]
-        ALSquare Outline { get; set; }
-
-        // @property (nonatomic, strong) ALImage * scanImage;
-        [Export("scanImage", ArgumentSemantic.Strong)]
-        ALImage ScanImage { get; set; }
-
-        // @property (nonatomic, strong) ALUIConfiguration * currentConfiguration;
-        [Export("currentConfiguration", ArgumentSemantic.Strong)]
-        ALUIConfiguration CurrentConfiguration { get; set; }
-
-        // @property (readonly, nonatomic) CGRect watermarkRect;
-        [Export("watermarkRect")]
-        CGRect WatermarkRect { get; }
-
-        // @property (assign, nonatomic) CGFloat scale;
-        [Export("scale")]
-        nfloat Scale { get; set; }
-
-        // @property (nonatomic, strong) NSArray * uiConfigs;
-        [Export("uiConfigs", ArgumentSemantic.Strong)]
-        NSObject[] UiConfigs { get; set; }
-
-        // -(void)customInit;
-        [Export("customInit")]
-        void CustomInit();
-
-        // -(BOOL)startAndReturnError:(NSError * _Nullable * _Nullable)error;
-        [Export("startAndReturnError:")]
-        bool StartAndReturnError([NullAllowed] out NSError error);
-
-        // -(BOOL)stopAndReturnError:(NSError * _Nullable * _Nullable)error;
-        [Export("stopAndReturnError:")]
-        bool StopAndReturnError([NullAllowed] out NSError error);
-
-        // -(void)stopListeningForMotion;
-        [Export("stopListeningForMotion")]
-        void StopListeningForMotion();
-
-        // -(void)triggerScannedFeedback;
-        [Export("triggerScannedFeedback")]
-        void TriggerScannedFeedback();
-
-        // -(NSArray *)convertContours:(NSValue *)contoursValue;
-        [Export("convertContours:")]
-        NSObject[] ConvertContours(NSValue contoursValue);
-
-        // -(ALSquare *)convertCGRect:(NSValue *)concreteValue;
-        [Export("convertCGRect:")]
-        ALSquare ConvertCGRect(NSValue concreteValue);
-
-        // -(void)updateDispatchTimer;
-        [Export("updateDispatchTimer")]
-        void UpdateDispatchTimer();
-    }
-
     // @interface ALMeterScanViewPlugin : ALAbstractScanViewPlugin
     [BaseType(typeof(ALAbstractScanViewPlugin))]
     interface ALMeterScanViewPlugin
@@ -2020,61 +2383,54 @@ namespace AnylineXamarinSDK.iOS
         [NullAllowed, Export("meterScanPlugin", ArgumentSemantic.Strong)]
         ALMeterScanPlugin MeterScanPlugin { get; set; }
 
-        // -(instancetype _Nullable)initWithFrame:(CGRect)frame scanPlugin:(ALMeterScanPlugin * _Nonnull)meterScanPlugin;
-        [Export("initWithFrame:scanPlugin:")]
-        IntPtr Constructor(CGRect frame, ALMeterScanPlugin meterScanPlugin);
+        // -(instancetype _Nullable)initWithScanPlugin:(ALMeterScanPlugin * _Nonnull)meterScanPlugin;
+        [Export("initWithScanPlugin:")]
+        IntPtr Constructor(ALMeterScanPlugin meterScanPlugin);
 
-        // @property (readonly, assign, nonatomic) ALScanMode scanMode;
-        [Export("scanMode", ArgumentSemantic.Assign)]
-        ALScanMode ScanMode { get; }
-
-        // -(BOOL)setScanMode:(ALScanMode)scanMode error:(NSError * _Nullable * _Nullable)error;
-        [Export("setScanMode:error:")]
-        bool SetScanMode(ALScanMode scanMode, [NullAllowed] out NSError error);
+        // -(instancetype _Nullable)initWithScanPlugin:(ALMeterScanPlugin * _Nonnull)meterScanPlugin scanViewPluginConfig:(ALScanViewPluginConfig * _Nonnull)scanViewPluginConfig;
+        [Export("initWithScanPlugin:scanViewPluginConfig:")]
+        IntPtr Constructor(ALMeterScanPlugin meterScanPlugin, ALScanViewPluginConfig scanViewPluginConfig);
     }
 
     // @interface AnylineEnergyModuleView : AnylineAbstractModuleView
     [BaseType(typeof(AnylineAbstractModuleView))]
     interface AnylineEnergyModuleView
-    {        
-        // @property (nonatomic, strong) ALMeterScanViewPlugin * meterScanViewPlugin;
-        [Export("meterScanViewPlugin", ArgumentSemantic.Strong)]
+    {
+        // @property (nonatomic, strong) ALMeterScanViewPlugin * _Nullable meterScanViewPlugin;
+        [NullAllowed, Export("meterScanViewPlugin", ArgumentSemantic.Strong)]
         ALMeterScanViewPlugin MeterScanViewPlugin { get; set; }
 
-        // @property (nonatomic, strong) ALMeterScanPlugin * meterScanPlugin;
-        [Export("meterScanPlugin", ArgumentSemantic.Strong)]
+        // @property (nonatomic, strong) ALMeterScanPlugin * _Nullable meterScanPlugin;
+        [NullAllowed, Export("meterScanPlugin", ArgumentSemantic.Strong)]
         ALMeterScanPlugin MeterScanPlugin { get; set; }
 
-        // @property (nonatomic, strong) ALBarcodeScanPlugin * barcodeScanPlugin;
-        [Export("barcodeScanPlugin", ArgumentSemantic.Strong)]
+        // @property (nonatomic, strong) ALBarcodeScanPlugin * _Nullable barcodeScanPlugin;
+        [NullAllowed, Export("barcodeScanPlugin", ArgumentSemantic.Strong)]
         ALBarcodeScanPlugin BarcodeScanPlugin { get; set; }
 
         // @property (readonly, assign, nonatomic) ALScanMode scanMode;
         [Export("scanMode", ArgumentSemantic.Assign)]
         ALScanMode ScanMode { get; }
 
-        // -(BOOL)setScanMode:(ALScanMode)scanMode error:(NSError **)error;
-        [Export("setScanMode:error:")]
-        bool SetScanMode(ALScanMode scanMode, out NSError error);
-
-        // -(BOOL)setupWithLicenseKey:(NSString *)licenseKey delegate:(id<AnylineEnergyModuleDelegate>)delegate error:(NSError **)error;
-        [Export("setupWithLicenseKey:delegate:error:")]
-        bool SetupWithLicenseKey(string licenseKey, NSObject @delegate, out NSError error);
-
-        // -(void)setupAsyncWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<AnylineEnergyModuleDelegate> _Nonnull)delegate finished:(void (^ _Nonnull)(BOOL, NSError * _Nullable))finished;
-        [Export("setupAsyncWithLicenseKey:delegate:finished:")]
-        void SetupAsyncWithLicenseKey(string licenseKey, NSObject @delegate, Action<bool, NSError> finished);
-
-        // added in 3.21
         // @property (nonatomic, strong) NSString * _Nullable serialNumberValidationRegex;
         [NullAllowed, Export("serialNumberValidationRegex", ArgumentSemantic.Strong)]
         string SerialNumberValidationRegex { get; set; }
 
-        // added in 3.21
         // @property (nonatomic, strong) NSString * _Nullable serialNumberCharWhitelist;
         [NullAllowed, Export("serialNumberCharWhitelist", ArgumentSemantic.Strong)]
         string SerialNumberCharWhitelist { get; set; }
 
+        // -(BOOL)setScanMode:(ALScanMode)scanMode error:(NSError * _Nullable * _Nullable)error;
+        [Export("setScanMode:error:")]
+        bool SetScanMode(ALScanMode scanMode, [NullAllowed] out NSError error);
+
+        // -(BOOL)setupWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<AnylineEnergyModuleDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
+        [Export("setupWithLicenseKey:delegate:error:")]
+        bool SetupWithLicenseKey(string licenseKey, AnylineEnergyModuleDelegate @delegate, [NullAllowed] out NSError error);
+
+        // -(void)setupAsyncWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<AnylineEnergyModuleDelegate> _Nonnull)delegate finished:(void (^ _Nonnull)(BOOL, NSError * _Nullable))finished;
+        [Export("setupAsyncWithLicenseKey:delegate:finished:")]
+        void SetupAsyncWithLicenseKey(string licenseKey, AnylineEnergyModuleDelegate @delegate, Action<bool, NSError> finished);
     }
 
     // @protocol AnylineEnergyModuleDelegate <NSObject>
@@ -2082,12 +2438,12 @@ namespace AnylineXamarinSDK.iOS
     [BaseType(typeof(NSObject))]
     interface AnylineEnergyModuleDelegate
     {
-        // @required -(void)anylineEnergyModuleView:(AnylineEnergyModuleView *)anylineEnergyModuleView didFindResult:(ALEnergyResult *)scanResult;
+        // @required -(void)anylineEnergyModuleView:(AnylineEnergyModuleView * _Nonnull)anylineEnergyModuleView didFindResult:(ALEnergyResult * _Nonnull)scanResult;
         [Abstract]
         [Export("anylineEnergyModuleView:didFindResult:")]
         void DidFindResult(AnylineEnergyModuleView anylineEnergyModuleView, ALEnergyResult scanResult);
 
-        // @optional -(void)anylineEnergyModuleView:(AnylineEnergyModuleView *)anylineEnergyModuleView didFindScanResult:(NSString *)scanResult cropImage:(UIImage *)image fullImage:(UIImage *)fullImage inMode:(ALScanMode)scanMode __attribute__((deprecated("Deprecated since 3.10 Use AnylineDebugDelegate instead.")));
+        // @optional -(void)anylineEnergyModuleView:(AnylineEnergyModuleView * _Nonnull)anylineEnergyModuleView didFindScanResult:(NSString * _Nonnull)scanResult cropImage:(UIImage * _Nonnull)image fullImage:(UIImage * _Nonnull)fullImage inMode:(ALScanMode)scanMode __attribute__((deprecated("Deprecated since 3.10 Use AnylineDebugDelegate instead.")));
         [Export("anylineEnergyModuleView:didFindScanResult:cropImage:fullImage:inMode:")]
         void DidFindScanResult(AnylineEnergyModuleView anylineEnergyModuleView, string scanResult, UIImage image, UIImage fullImage, ALScanMode scanMode);
     }
@@ -2100,9 +2456,13 @@ namespace AnylineXamarinSDK.iOS
         [NullAllowed, Export("barcodeScanPlugin", ArgumentSemantic.Strong)]
         ALBarcodeScanPlugin BarcodeScanPlugin { get; set; }
 
-        // -(instancetype _Nullable)initWithFrame:(CGRect)frame scanPlugin:(ALBarcodeScanPlugin * _Nonnull)barcodeScanPlugin;
-        [Export("initWithFrame:scanPlugin:")]
-        IntPtr Constructor(CGRect frame, ALBarcodeScanPlugin barcodeScanPlugin);
+        // -(instancetype _Nullable)initWithScanPlugin:(ALBarcodeScanPlugin * _Nonnull)barcodeScanPlugin;
+        [Export("initWithScanPlugin:")]
+        IntPtr Constructor(ALBarcodeScanPlugin barcodeScanPlugin);
+
+        // -(instancetype _Nullable)initWithScanPlugin:(ALBarcodeScanPlugin * _Nonnull)barcodeScanPlugin scanViewPluginConfig:(ALScanViewPluginConfig * _Nonnull)scanViewPluginConfig;
+        [Export("initWithScanPlugin:scanViewPluginConfig:")]
+        IntPtr Constructor(ALBarcodeScanPlugin barcodeScanPlugin, ALScanViewPluginConfig scanViewPluginConfig);
 
         // @property (assign, nonatomic) BOOL useOnlyNativeBarcodeScanning;
         [Export("useOnlyNativeBarcodeScanning")]
@@ -2113,12 +2473,12 @@ namespace AnylineXamarinSDK.iOS
     [BaseType(typeof(AnylineAbstractModuleView))]
     interface AnylineBarcodeModuleView
     {
-        // @property (nonatomic, strong) ALBarcodeScanPlugin * barcodeScanPlugin;
-        [Export("barcodeScanPlugin", ArgumentSemantic.Strong)]
+        // @property (nonatomic, strong) ALBarcodeScanPlugin * _Nullable barcodeScanPlugin;
+        [NullAllowed, Export("barcodeScanPlugin", ArgumentSemantic.Strong)]
         ALBarcodeScanPlugin BarcodeScanPlugin { get; set; }
 
-        // @property (nonatomic, strong) ALBarcodeScanViewPlugin * barcodeScanViewPlugin;
-        [Export("barcodeScanViewPlugin", ArgumentSemantic.Strong)]
+        // @property (nonatomic, strong) ALBarcodeScanViewPlugin * _Nullable barcodeScanViewPlugin;
+        [NullAllowed, Export("barcodeScanViewPlugin", ArgumentSemantic.Strong)]
         ALBarcodeScanViewPlugin BarcodeScanViewPlugin { get; set; }
 
         // @property (assign, nonatomic) ALBarcodeFormatOptions barcodeFormatOptions;
@@ -2129,13 +2489,13 @@ namespace AnylineXamarinSDK.iOS
         [Export("useOnlyNativeBarcodeScanning")]
         bool UseOnlyNativeBarcodeScanning { get; set; }
 
-        // -(BOOL)setupWithLicenseKey:(NSString *)licenseKey delegate:(id<AnylineBarcodeModuleDelegate>)delegate error:(NSError **)error;
+        // -(BOOL)setupWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<AnylineBarcodeModuleDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
         [Export("setupWithLicenseKey:delegate:error:")]
-        bool SetupWithLicenseKey(string licenseKey, NSObject @delegate, out NSError error);
+        bool SetupWithLicenseKey(string licenseKey, AnylineBarcodeModuleDelegate @delegate, [NullAllowed] out NSError error);
 
         // -(void)setupAsyncWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<AnylineBarcodeModuleDelegate> _Nonnull)delegate finished:(void (^ _Nonnull)(BOOL, NSError * _Nullable))finished;
         [Export("setupAsyncWithLicenseKey:delegate:finished:")]
-        void SetupAsyncWithLicenseKey(string licenseKey, NSObject @delegate, Action<bool, NSError> finished);
+        void SetupAsyncWithLicenseKey(string licenseKey, AnylineBarcodeModuleDelegate @delegate, Action<bool, NSError> finished);
     }
 
     // @protocol AnylineBarcodeModuleDelegate <NSObject>
@@ -2143,10 +2503,51 @@ namespace AnylineXamarinSDK.iOS
     [BaseType(typeof(NSObject))]
     interface AnylineBarcodeModuleDelegate
     {
-        // @required -(void)anylineBarcodeModuleView:(AnylineBarcodeModuleView *)anylineBarcodeModuleView didFindResult:(ALBarcodeResult *)scanResult;
+        // @required -(void)anylineBarcodeModuleView:(AnylineBarcodeModuleView * _Nonnull)anylineBarcodeModuleView didFindResult:(ALBarcodeResult * _Nonnull)scanResult;
         [Abstract]
         [Export("anylineBarcodeModuleView:didFindResult:")]
         void DidFindResult(AnylineBarcodeModuleView anylineBarcodeModuleView, ALBarcodeResult scanResult);
+    }
+
+    // @interface ALDrivingLicenseIdentification : NSObject
+    [BaseType(typeof(NSObject))]
+    interface ALDrivingLicenseIdentification
+    {
+        // @property (readonly, nonatomic, strong) NSString * _Nonnull documentNumber;
+        [Export("documentNumber", ArgumentSemantic.Strong)]
+        string DocumentNumber { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nonnull surNames;
+        [Export("surNames", ArgumentSemantic.Strong)]
+        string SurNames { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nonnull givenNames;
+        [Export("givenNames", ArgumentSemantic.Strong)]
+        string GivenNames { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nonnull dayOfBirth;
+        [Export("dayOfBirth", ArgumentSemantic.Strong)]
+        string DayOfBirth { get; }
+
+        // @property (readonly, nonatomic, strong) NSDate * _Nullable dayOfBirthDateObject;
+        [NullAllowed, Export("dayOfBirthDateObject", ArgumentSemantic.Strong)]
+        NSDate DayOfBirthDateObject { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nonnull drivingLicenseString;
+        [Export("drivingLicenseString", ArgumentSemantic.Strong)]
+        string DrivingLicenseString { get; }
+
+        // @property (nonatomic, strong) UIImage * _Nullable faceImage;
+        [NullAllowed, Export("faceImage", ArgumentSemantic.Strong)]
+        UIImage FaceImage { get; set; }
+
+        // -(instancetype _Nullable)initWithDocumentNumber:(NSString * _Nonnull)documentNumber surNames:(NSString * _Nonnull)surNames givenNames:(NSString * _Nonnull)givenNames dayOfBirth:(NSString * _Nonnull)dayOfBirth drivingLicenseString:(NSString * _Nonnull)drivingLicenseString;
+        [Export("initWithDocumentNumber:surNames:givenNames:dayOfBirth:drivingLicenseString:")]
+        IntPtr Constructor(string documentNumber, string surNames, string givenNames, string dayOfBirth, string drivingLicenseString);
+
+        // -(instancetype _Nullable)initWithDrivingLicenseString:(NSString * _Nonnull)drivingLicenseString;
+        [Export("initWithDrivingLicenseString:")]
+        IntPtr Constructor(string drivingLicenseString);
     }
 
     // @interface ALMRZIdentification : NSObject
@@ -2328,20 +2729,20 @@ namespace AnylineXamarinSDK.iOS
         [NullAllowed, Export("idScanPlugin", ArgumentSemantic.Strong)]
         ALIDScanPlugin IdScanPlugin { get; set; }
 
-        // -(instancetype _Nullable)initWithFrame:(CGRect)frame scanPlugin:(ALIDScanPlugin * _Nonnull)idScanPlugin;
-        [Export("initWithFrame:scanPlugin:")]
-        IntPtr Constructor(CGRect frame, ALIDScanPlugin idScanPlugin);
+        // -(instancetype _Nullable)initWithScanPlugin:(ALIDScanPlugin * _Nonnull)idScanPlugin;
+        [Export("initWithScanPlugin:")]
+        IntPtr Constructor(ALIDScanPlugin idScanPlugin);
 
-        // -(instancetype _Nullable)initWithFrame:(CGRect)frame scanPlugin:(ALIDScanPlugin * _Nonnull)idScanPlugin scanViewPluginConfig:(ALScanViewPluginConfig * _Nonnull)scanViewPluginConfig;
-        [Export("initWithFrame:scanPlugin:scanViewPluginConfig:")]
-        IntPtr Constructor(CGRect frame, ALIDScanPlugin idScanPlugin, ALScanViewPluginConfig scanViewPluginConfig);
+        // -(instancetype _Nullable)initWithScanPlugin:(ALIDScanPlugin * _Nonnull)idScanPlugin scanViewPluginConfig:(ALScanViewPluginConfig * _Nonnull)scanViewPluginConfig;
+        [Export("initWithScanPlugin:scanViewPluginConfig:")]
+        IntPtr Constructor(ALIDScanPlugin idScanPlugin, ALScanViewPluginConfig scanViewPluginConfig);
     }
 
     // @interface AnylineMRZModuleView : AnylineAbstractModuleView
     [BaseType(typeof(AnylineAbstractModuleView))]
     interface AnylineMRZModuleView
-
-    {   // @property (nonatomic, strong) ALIDScanViewPlugin * _Nullable mrzScanViewPlugin;
+    {
+        // @property (nonatomic, strong) ALIDScanViewPlugin * _Nullable mrzScanViewPlugin;
         [NullAllowed, Export("mrzScanViewPlugin", ArgumentSemantic.Strong)]
         ALIDScanViewPlugin MrzScanViewPlugin { get; set; }
 
@@ -2349,21 +2750,21 @@ namespace AnylineXamarinSDK.iOS
         [NullAllowed, Export("mrzScanPlugin", ArgumentSemantic.Strong)]
         ALIDScanPlugin MrzScanPlugin { get; set; }
 
-        // @property(nonatomic) BOOL strictMode;
+        // @property (nonatomic) BOOL strictMode;
         [Export("strictMode")]
         bool StrictMode { get; set; }
-        
-        // @property(nonatomic) BOOL cropAndTransformID;
+
+        // @property (nonatomic) BOOL cropAndTransformID;
         [Export("cropAndTransformID")]
         bool CropAndTransformID { get; set; }
 
-        // -(BOOL)setupWithLicenseKey:(NSString *)licenseKey delegate:(id<AnylineMRZModuleDelegate>)delegate error:(NSError **)error;
+        // -(BOOL)setupWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<AnylineMRZModuleDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
         [Export("setupWithLicenseKey:delegate:error:")]
-        bool SetupWithLicenseKey(string licenseKey, NSObject @delegate, out NSError error);
+        bool SetupWithLicenseKey(string licenseKey, AnylineMRZModuleDelegate @delegate, [NullAllowed] out NSError error);
 
         // -(void)setupAsyncWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<AnylineMRZModuleDelegate> _Nonnull)delegate finished:(void (^ _Nonnull)(BOOL, NSError * _Nullable))finished;
         [Export("setupAsyncWithLicenseKey:delegate:finished:")]
-        void SetupAsyncWithLicenseKey(string licenseKey, NSObject @delegate, Action<bool, NSError> finished);
+        void SetupAsyncWithLicenseKey(string licenseKey, AnylineMRZModuleDelegate @delegate, Action<bool, NSError> finished);
     }
 
     // @protocol AnylineMRZModuleDelegate <NSObject>
@@ -2371,11 +2772,11 @@ namespace AnylineXamarinSDK.iOS
     [BaseType(typeof(NSObject))]
     interface AnylineMRZModuleDelegate
     {
-        // @optional -(void)anylineMRZModuleView:(AnylineMRZModuleView *)anylineMRZModuleView didFindScanResult:(ALIdentification *)scanResult allCheckDigitsValid:(BOOL)allCheckDigitsValid atImage:(UIImage *)image __attribute__((deprecated("Deprecated since 3.10. Use method anylineMRZModuleView:didFindScanResult: instead.")));
+        // @optional -(void)anylineMRZModuleView:(AnylineMRZModuleView * _Nonnull)anylineMRZModuleView didFindScanResult:(ALIdentification * _Nonnull)scanResult allCheckDigitsValid:(BOOL)allCheckDigitsValid atImage:(UIImage * _Nonnull)image __attribute__((deprecated("Deprecated since 3.10. Use method anylineMRZModuleView:didFindScanResult: instead.")));
         [Export("anylineMRZModuleView:didFindScanResult:allCheckDigitsValid:atImage:")]
         void DidFindScanResult(AnylineMRZModuleView anylineMRZModuleView, ALMRZIdentification scanResult, bool allCheckDigitsValid, UIImage image);
 
-        // @required -(void)anylineMRZModuleView:(AnylineMRZModuleView *)anylineMRZModuleView didFindResult:(ALMRZResult *)scanResult;
+        // @required -(void)anylineMRZModuleView:(AnylineMRZModuleView * _Nonnull)anylineMRZModuleView didFindResult:(ALMRZResult * _Nonnull)scanResult;
         [Abstract]
         [Export("anylineMRZModuleView:didFindResult:")]
         void DidFindResult(AnylineMRZModuleView anylineMRZModuleView, ALIDResult scanResult);
@@ -2402,56 +2803,55 @@ namespace AnylineXamarinSDK.iOS
         IntPtr Constructor(string result, UIImage image, [NullAllowed] UIImage fullImage, nint confidence, string pluginID, [NullAllowed] UIImage thresholdedImage);
     }
 
-    [Static]
-    partial interface ALOCRConstants
+    partial interface Constants
     {
         // extern NSString *const _Nonnull regexForEmail;
         [Field("regexForEmail", "__Internal")]
-        NSString RegexForEmail { get; }
+        NSString regexForEmail { get; }
 
         // extern NSString *const _Nonnull regexForURL;
         [Field("regexForURL", "__Internal")]
-        NSString RegexForURL { get; }
+        NSString regexForURL { get; }
 
         // extern NSString *const _Nonnull regexForPriceTag;
         [Field("regexForPriceTag", "__Internal")]
-        NSString RegexForPriceTag { get; }
+        NSString regexForPriceTag { get; }
 
         // extern NSString *const _Nonnull regexForISBN;
         [Field("regexForISBN", "__Internal")]
-        NSString RegexForISBN { get; }
+        NSString regexForISBN { get; }
 
         // extern NSString *const _Nonnull regexForVIN;
         [Field("regexForVIN", "__Internal")]
-        NSString RegexForVIN { get; }
+        NSString regexForVIN { get; }
 
         // extern NSString *const _Nonnull regexForIMEI;
         [Field("regexForIMEI", "__Internal")]
-        NSString RegexForIMEI { get; }
+        NSString regexForIMEI { get; }
 
         // extern NSString *const _Nonnull charWhiteListForEmail;
         [Field("charWhiteListForEmail", "__Internal")]
-        NSString CharWhiteListForEmail { get; }
+        NSString charWhiteListForEmail { get; }
 
         // extern NSString *const _Nonnull charWhiteListForURL;
         [Field("charWhiteListForURL", "__Internal")]
-        NSString CharWhiteListForURL { get; }
+        NSString charWhiteListForURL { get; }
 
         // extern NSString *const _Nonnull charWhiteListForPriceTag;
         [Field("charWhiteListForPriceTag", "__Internal")]
-        NSString CharWhiteListForPriceTag { get; }
+        NSString charWhiteListForPriceTag { get; }
 
         // extern NSString *const _Nonnull charWhiteListForISBN;
         [Field("charWhiteListForISBN", "__Internal")]
-        NSString CharWhiteListForISBN { get; }
+        NSString charWhiteListForISBN { get; }
 
         // extern NSString *const _Nonnull charWhiteListForVIN;
         [Field("charWhiteListForVIN", "__Internal")]
-        NSString CharWhiteListForVIN { get; }
+        NSString charWhiteListForVIN { get; }
 
         // extern NSString *const _Nonnull charWhiteListForIMEI;
         [Field("charWhiteListForIMEI", "__Internal")]
-        NSString CharWhiteListForIMEI { get; }
+        NSString charWhiteListForIMEI { get; }
     }
 
     // @interface ALOCRLanguage : NSObject
@@ -2474,9 +2874,9 @@ namespace AnylineXamarinSDK.iOS
         [NullAllowed, Export("fileExtension", ArgumentSemantic.Strong)]
         string FileExtension { get; set; }
 
-        // -(instancetype _Nullable)initWithPath:(NSString * _Nonnull)path;
-        [Export("initWithPath:")]
-        IntPtr Constructor(string path);
+        // -(instancetype _Nullable)initWithPath:(NSString * _Nonnull)path error:(NSError * _Nullable * _Nullable)error;
+        [Export("initWithPath:error:")]
+        IntPtr Constructor(string path, [NullAllowed] out NSError error);
 
         // +(BOOL)copyLanguage:(NSString * _Nonnull)path toPath:(NSString * _Nonnull)toPath fileHash:(NSString * _Nullable)hash error:(NSError * _Nullable * _Nullable)error;
         [Static]
@@ -2491,6 +2891,10 @@ namespace AnylineXamarinSDK.iOS
         // -(instancetype _Nullable)initWithJsonDictionary:(NSDictionary * _Nonnull)configDict;
         [Export("initWithJsonDictionary:")]
         IntPtr Constructor(NSDictionary configDict);
+
+        // -(instancetype _Nullable)initWithJsonDictionary:(NSDictionary * _Nonnull)configDict error:(NSError * _Nullable * _Nullable)error;
+        [Export("initWithJsonDictionary:error:")]
+        IntPtr Constructor(NSDictionary configDict, [NullAllowed] out NSError error);
 
         // @property (assign, nonatomic) ALOCRScanMode scanMode;
         [Export("scanMode", ArgumentSemantic.Assign)]
@@ -2510,9 +2914,20 @@ namespace AnylineXamarinSDK.iOS
 
         // @property (nonatomic, strong) NSArray<NSString *> * _Nullable tesseractLanguages __attribute__((deprecated("Deprecated since 3.20. Use languages instead! This method still requires a copy of the traineddata.")));
         [NullAllowed, Export("tesseractLanguages", ArgumentSemantic.Strong)]
-        [System.Obsolete("Deprecated since 3.20.Use languages instead! This method still requires a copy of the traineddata.")]
         string[] TesseractLanguages { get; set; }
-        
+
+        // @property (readonly, copy, nonatomic) NSArray<NSString *> * _Nullable languages;
+        [NullAllowed, Export("languages", ArgumentSemantic.Copy)]
+        string[] Languages { get; }
+
+        // -(void)setLanguages:(NSArray<NSString *> * _Nonnull)languages __attribute__((deprecated("Deprecated since 4. Use languages - (BOOL)setLanguages:(NSArray<NSString *> *)languages error:(NSError *)error")));
+        [Export("setLanguages:")]
+        void SetLanguages(string[] languages);
+
+        // -(BOOL)setLanguages:(NSArray<NSString *> * _Nonnull)languages error:(NSError * _Nullable * _Nullable)error;
+        [Export("setLanguages:error:")]
+        bool SetLanguages(string[] languages, [NullAllowed] out NSError error);
+
         // @property (nonatomic, strong) NSString * _Nullable charWhiteList;
         [NullAllowed, Export("charWhiteList", ArgumentSemantic.Strong)]
         string CharWhiteList { get; set; }
@@ -2564,23 +2979,24 @@ namespace AnylineXamarinSDK.iOS
 
         // -(NSString * _Nullable)toJsonString;
         [NullAllowed, Export("toJsonString")]
+
         string ToJsonString { get; }
 
-        // added in 3.20        
-        // @property (copy, nonatomic) NSArray<NSString *> * _Nullable languages;
-        [NullAllowed, Export("languages", ArgumentSemantic.Copy)]
-        string[] Languages { get; set; }
-
-        // added in 3.20
         // -(BOOL)allLanguagesAnyFiles;
-        [Export("allLanguagesAnyFiles")]        
+        [Export("allLanguagesAnyFiles")]
+
         bool AllLanguagesAnyFiles { get; }
     }
 
     // @interface ALOCRScanPlugin : ALAbstractScanPlugin
     [BaseType(typeof(ALAbstractScanPlugin))]
+    [DisableDefaultCtor]
     interface ALOCRScanPlugin
     {
+        // -(instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID licenseKey:(NSString * _Nonnull)licenseKey delegate:(id<ALOCRScanPluginDelegate> _Nonnull)delegate ocrConfig:(ALOCRConfig * _Nonnull)ocrConfig error:(NSError * _Nullable * _Nullable)error;
+        [Export("initWithPluginID:licenseKey:delegate:ocrConfig:error:")]
+        IntPtr Constructor([NullAllowed] string pluginID, string licenseKey, ALOCRScanPluginDelegate @delegate, ALOCRConfig ocrConfig, [NullAllowed] out NSError error);
+
         // @property (readonly, nonatomic, strong) NSHashTable<ALOCRScanPluginDelegate> * _Nullable delegates;
         [NullAllowed, Export("delegates", ArgumentSemantic.Strong)]
         ALOCRScanPluginDelegate Delegates { get; }
@@ -2589,17 +3005,12 @@ namespace AnylineXamarinSDK.iOS
         [NullAllowed, Export("ocrConfig", ArgumentSemantic.Strong)]
         ALOCRConfig OcrConfig { get; }
 
-        // -(BOOL)setupWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<ALOCRScanPluginDelegate> _Nonnull)delegate ocrConfig:(ALOCRConfig * _Nonnull)ocrConfig error:(NSError * _Nullable * _Nullable)error;
-        [Export("setupWithLicenseKey:delegate:ocrConfig:error:")]
-        bool SetupWithLicenseKey(string licenseKey, NSObject @delegate, ALOCRConfig ocrConfig, [NullAllowed] out NSError error);
-
         // -(BOOL)setOCRConfig:(ALOCRConfig * _Nonnull)ocrConfig error:(NSError * _Nullable * _Nullable)error;
         [Export("setOCRConfig:error:")]
         bool SetOCRConfig(ALOCRConfig ocrConfig, [NullAllowed] out NSError error);
 
-        // -(BOOL)copyTrainedData:(NSString * _Nonnull)trainedDataPath fileHash:(NSString * _Nullable)hash error:(NSError * _Nullable * _Nullable)error;
+        // -(BOOL)copyTrainedData:(NSString * _Nonnull)trainedDataPath fileHash:(NSString * _Nullable)hash error:(NSError * _Nullable * _Nullable)error __attribute__((deprecated("Deprecated since 3.20. Copy of traineddata's is not needed anymore with new languages property.")));
         [Export("copyTrainedData:fileHash:error:")]
-        [System.Obsolete("CopyTrainedData is deprecated, please use ALOCRConfig.Languages instead.")]
         bool CopyTrainedData(string trainedDataPath, [NullAllowed] string hash, [NullAllowed] out NSError error);
 
         // -(void)addDelegate:(id<ALOCRScanPluginDelegate> _Nonnull)delegate;
@@ -2630,42 +3041,46 @@ namespace AnylineXamarinSDK.iOS
         [NullAllowed, Export("ocrScanPlugin", ArgumentSemantic.Strong)]
         ALOCRScanPlugin OcrScanPlugin { get; set; }
 
-        // -(instancetype _Nullable)initWithFrame:(CGRect)frame scanPlugin:(ALOCRScanPlugin * _Nonnull)ocrScanPlugin;
-        [Export("initWithFrame:scanPlugin:")]
-        IntPtr Constructor(CGRect frame, ALOCRScanPlugin ocrScanPlugin);
+        // -(instancetype _Nullable)initWithScanPlugin:(ALOCRScanPlugin * _Nonnull)ocrScanPlugin;
+        [Export("initWithScanPlugin:")]
+        IntPtr Constructor(ALOCRScanPlugin ocrScanPlugin);
+
+        // -(instancetype _Nullable)initWithScanPlugin:(ALOCRScanPlugin * _Nonnull)ocrScanPlugin scanViewPluginConfig:(ALScanViewPluginConfig * _Nonnull)scanViewPluginConfig;
+        [Export("initWithScanPlugin:scanViewPluginConfig:")]
+        IntPtr Constructor(ALOCRScanPlugin ocrScanPlugin, ALScanViewPluginConfig scanViewPluginConfig);
     }
 
     // @interface AnylineOCRModuleView : AnylineAbstractModuleView
     [BaseType(typeof(AnylineAbstractModuleView))]
     interface AnylineOCRModuleView
     {
-        // @property (nonatomic, strong) ALOCRScanViewPlugin * ocrScanViewPlugin;
-        [Export("ocrScanViewPlugin", ArgumentSemantic.Strong)]
+        // @property (nonatomic, strong) ALOCRScanViewPlugin * _Nullable ocrScanViewPlugin;
+        [NullAllowed, Export("ocrScanViewPlugin", ArgumentSemantic.Strong)]
         ALOCRScanViewPlugin OcrScanViewPlugin { get; set; }
 
-        // @property (nonatomic, strong) ALOCRScanPlugin * ocrScanPlugin;
-        [Export("ocrScanPlugin", ArgumentSemantic.Strong)]
+        // @property (nonatomic, strong) ALOCRScanPlugin * _Nullable ocrScanPlugin;
+        [NullAllowed, Export("ocrScanPlugin", ArgumentSemantic.Strong)]
         ALOCRScanPlugin OcrScanPlugin { get; set; }
 
-        // @property (readonly, nonatomic, strong) ALOCRConfig * ocrConfig;
-        [Export("ocrConfig", ArgumentSemantic.Strong)]
+        // @property (readonly, nonatomic, strong) ALOCRConfig * _Nullable ocrConfig;
+        [NullAllowed, Export("ocrConfig", ArgumentSemantic.Strong)]
         ALOCRConfig OcrConfig { get; }
 
-        // -(BOOL)setupWithLicenseKey:(NSString *)licenseKey delegate:(id<AnylineOCRModuleDelegate>)delegate ocrConfig:(ALOCRConfig *)ocrConfig error:(NSError **)error;
+        // -(BOOL)setupWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<AnylineOCRModuleDelegate> _Nonnull)delegate ocrConfig:(ALOCRConfig * _Nonnull)ocrConfig error:(NSError * _Nullable * _Nullable)error;
         [Export("setupWithLicenseKey:delegate:ocrConfig:error:")]
-        bool SetupWithLicenseKey(string licenseKey, NSObject @delegate, ALOCRConfig ocrConfig, out NSError error);
+        bool SetupWithLicenseKey(string licenseKey, AnylineOCRModuleDelegate @delegate, ALOCRConfig ocrConfig, [NullAllowed] out NSError error);
 
         // -(void)setupAsyncWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<AnylineOCRModuleDelegate> _Nonnull)delegate ocrConfig:(ALOCRConfig * _Nonnull)ocrConfig finished:(void (^ _Nonnull)(BOOL, NSError * _Nullable))finished;
         [Export("setupAsyncWithLicenseKey:delegate:ocrConfig:finished:")]
-        void SetupAsyncWithLicenseKey(string licenseKey, NSObject @delegate, ALOCRConfig ocrConfig, Action<bool, NSError> finished);
+        void SetupAsyncWithLicenseKey(string licenseKey, AnylineOCRModuleDelegate @delegate, ALOCRConfig ocrConfig, Action<bool, NSError> finished);
 
-        // -(BOOL)setOCRConfig:(ALOCRConfig *)ocrConfig error:(NSError **)error;
+        // -(BOOL)setOCRConfig:(ALOCRConfig * _Nonnull)ocrConfig error:(NSError * _Nullable * _Nullable)error;
         [Export("setOCRConfig:error:")]
-        bool SetOCRConfig(ALOCRConfig ocrConfig, out NSError error);
+        bool SetOCRConfig(ALOCRConfig ocrConfig, [NullAllowed] out NSError error);
 
-        // -(BOOL)copyTrainedData:(NSString *)trainedDataPath fileHash:(NSString *)hash error:(NSError **)error;
+        // -(BOOL)copyTrainedData:(NSString * _Nonnull)trainedDataPath fileHash:(NSString * _Nonnull)hash error:(NSError * _Nullable * _Nullable)error;
         [Export("copyTrainedData:fileHash:error:")]
-        bool CopyTrainedData(string trainedDataPath, string hash, out NSError error);
+        bool CopyTrainedData(string trainedDataPath, string hash, [NullAllowed] out NSError error);
     }
 
     // @protocol AnylineOCRModuleDelegate <NSObject>
@@ -2673,29 +3088,25 @@ namespace AnylineXamarinSDK.iOS
     [BaseType(typeof(NSObject))]
     interface AnylineOCRModuleDelegate
     {
-        // @required -(void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView didFindResult:(ALOCRResult *)result;
+        // @required -(void)anylineOCRModuleView:(AnylineOCRModuleView * _Nonnull)anylineOCRModuleView didFindResult:(ALOCRResult * _Nonnull)result;
+        [Abstract]
         [Export("anylineOCRModuleView:didFindResult:")]
-        [Abstract]
-        void DidFindResult(AnylineOCRModuleView anylineOCRModuleView, ALOCRResult result);
+        void AnylineOCRModuleView(AnylineOCRModuleView anylineOCRModuleView, ALOCRResult result);
 
-        // @optional -(void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView reportsVariable:(NSString *)variableName value:(id)value __attribute__((deprecated("Deprecated since 3.10 Use AnylineDebugDelegate instead.")));
+        // @optional -(void)anylineOCRModuleView:(AnylineOCRModuleView * _Nonnull)anylineOCRModuleView reportsVariable:(NSString * _Nonnull)variableName value:(id _Nonnull)value __attribute__((deprecated("Deprecated since 3.10 Use AnylineDebugDelegate instead.")));
         [Export("anylineOCRModuleView:reportsVariable:value:")]
-        [Abstract]
-        void ReportsVariable(AnylineOCRModuleView anylineOCRModuleView, string variableName, NSObject value);
+        void AnylineOCRModuleView(AnylineOCRModuleView anylineOCRModuleView, string variableName, NSObject value);
 
-        // @optional -(void)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView reportsRunFailure:(ALOCRError)error __attribute__((deprecated("Deprecated since 3.10 Use AnylineDebugDelegate instead.")));
+        // @optional -(void)anylineOCRModuleView:(AnylineOCRModuleView * _Nonnull)anylineOCRModuleView reportsRunFailure:(ALOCRError)error __attribute__((deprecated("Deprecated since 3.10 Use AnylineDebugDelegate instead.")));
         [Export("anylineOCRModuleView:reportsRunFailure:")]
-        [Abstract]
-        void ReportsRunFailure(AnylineOCRModuleView anylineOCRModuleView, ALOCRError error);
+        void AnylineOCRModuleView(AnylineOCRModuleView anylineOCRModuleView, ALOCRError error);
 
-        // @optional -(BOOL)anylineOCRModuleView:(AnylineOCRModuleView *)anylineOCRModuleView textOutlineDetected:(ALSquare *)outline __attribute__((deprecated("Deprecated since 3.10 Use AnylineDebugDelegate instead.")));
+        // @optional -(BOOL)anylineOCRModuleView:(AnylineOCRModuleView * _Nonnull)anylineOCRModuleView textOutlineDetected:(ALSquare * _Nonnull)outline __attribute__((deprecated("Deprecated since 3.10 Use AnylineDebugDelegate instead.")));
         [Export("anylineOCRModuleView:textOutlineDetected:")]
-        [Abstract]
-        bool TextOutlineDetected(AnylineOCRModuleView anylineOCRModuleView, ALSquare outline);
+        bool AnylineOCRModuleView(AnylineOCRModuleView anylineOCRModuleView, ALSquare outline);
     }
 
-    [Static]
-    partial interface ALDocumentConstants
+    partial interface Constants
     {
         // extern const CGFloat ALDocumentRatioDINAXLandscape;
         [Field("ALDocumentRatioDINAXLandscape", "__Internal")]
@@ -2732,6 +3143,7 @@ namespace AnylineXamarinSDK.iOS
 
     // @interface ALDocumentScanPlugin : NSObject
     [BaseType(typeof(NSObject))]
+    [DisableDefaultCtor]
     interface ALDocumentScanPlugin
     {
         // @property (readonly, nonatomic, strong) NSHashTable<ALDocumentScanPluginDelegate> * _Nullable delegates;
@@ -2756,24 +3168,20 @@ namespace AnylineXamarinSDK.iOS
 
         // @property (assign, nonatomic) id<ALImageProvider> _Nullable imageProvider;
         [NullAllowed, Export("imageProvider", ArgumentSemantic.Assign)]
-        ALImageProvider ImageProvider { get; set; }
+        IALImageProvider ImageProvider { get; set; }
 
-        // @property (assign, nonatomic) BOOL justDetectCornersIfPossible;
+        // @property (assign, atomic) BOOL justDetectCornersIfPossible;
         [Export("justDetectCornersIfPossible")]
         bool JustDetectCornersIfPossible { get; set; }
 
-        // @property (assign, nonatomic) BOOL postProcessingEnabled;
-        [Export("postProcessingEnabled")]
-        bool PostProcessingEnabled { get; set; }
-
-        // -(instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID __attribute__((objc_designated_initializer));
-        [Export("initWithPluginID:")]
+        // -(instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID licenseKey:(NSString * _Nonnull)licenseKey delegate:(id<ALDocumentScanPluginDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error __attribute__((objc_designated_initializer));
+        [Export("initWithPluginID:licenseKey:delegate:error:")]
         [DesignatedInitializer]
-        IntPtr Constructor([NullAllowed] string pluginID);
+        IntPtr Constructor([NullAllowed] string pluginID, string licenseKey, ALDocumentScanPluginDelegate @delegate, [NullAllowed] out NSError error);
 
         // -(BOOL)start:(id<ALImageProvider> _Nonnull)imageProvider error:(NSError * _Nullable * _Nullable)error;
         [Export("start:error:")]
-        bool Start(ALImageProvider imageProvider, [NullAllowed] out NSError error);
+        bool Start(IALImageProvider imageProvider, [NullAllowed] out NSError error);
 
         // -(BOOL)stopAndReturnError:(NSError * _Nullable * _Nullable)error;
         [Export("stopAndReturnError:")]
@@ -2785,6 +3193,7 @@ namespace AnylineXamarinSDK.iOS
 
         // -(BOOL)isRunning;
         [Export("isRunning")]
+
         bool IsRunning { get; }
 
         // -(BOOL)triggerPictureCornerDetectionAndReturnError:(NSError * _Nullable * _Nullable)error;
@@ -2799,17 +3208,21 @@ namespace AnylineXamarinSDK.iOS
         [Export("transformALImageWithSquare:image:error:")]
         bool TransformALImageWithSquare([NullAllowed] ALSquare square, [NullAllowed] ALImage image, [NullAllowed] out NSError error);
 
-        // -(BOOL)setupWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<ALDocumentScanPluginDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
-        [Export("setupWithLicenseKey:delegate:error:")]
-        bool SetupWithLicenseKey(string licenseKey, NSObject @delegate, [NullAllowed] out NSError error);
-
         // @property (nonatomic, strong) NSNumber * _Nonnull maxDocumentRatioDeviation;
         [Export("maxDocumentRatioDeviation", ArgumentSemantic.Strong)]
         NSNumber MaxDocumentRatioDeviation { get; set; }
 
+        // @property (assign, nonatomic) CGSize maxOutputResolution;
+        [Export("maxOutputResolution", ArgumentSemantic.Assign)]
+        CGSize MaxOutputResolution { get; set; }
+
         // @property (nonatomic, strong) NSArray<NSNumber *> * _Nullable documentRatios;
         [NullAllowed, Export("documentRatios", ArgumentSemantic.Strong)]
         NSNumber[] DocumentRatios { get; set; }
+
+        // @property (assign, nonatomic) BOOL postProcessingEnabled;
+        [Export("postProcessingEnabled")]
+        bool PostProcessingEnabled { get; set; }
 
         // -(void)addDelegate:(id<ALDocumentScanPluginDelegate> _Nonnull)delegate;
         [Export("addDelegate:")]
@@ -2873,42 +3286,54 @@ namespace AnylineXamarinSDK.iOS
         [NullAllowed, Export("documentScanPlugin", ArgumentSemantic.Strong)]
         ALDocumentScanPlugin DocumentScanPlugin { get; set; }
 
-        // -(instancetype _Nullable)initWithFrame:(CGRect)frame scanPlugin:(ALDocumentScanPlugin * _Nonnull)documentScanPlugin;
-        [Export("initWithFrame:scanPlugin:")]
-        IntPtr Constructor(CGRect frame, ALDocumentScanPlugin documentScanPlugin);
+        // -(instancetype _Nullable)initWithScanPlugin:(ALDocumentScanPlugin * _Nonnull)documentScanPlugin;
+        [Export("initWithScanPlugin:")]
+        IntPtr Constructor(ALDocumentScanPlugin documentScanPlugin);
+
+        // -(instancetype _Nullable)initWithScanPlugin:(ALDocumentScanPlugin * _Nonnull)documentScanPlugin scanViewPluginConfig:(ALScanViewPluginConfig * _Nonnull)scanViewPluginConfig;
+        [Export("initWithScanPlugin:scanViewPluginConfig:")]
+        IntPtr Constructor(ALDocumentScanPlugin documentScanPlugin, ALScanViewPluginConfig scanViewPluginConfig);
     }
 
     // @interface AnylineDocumentModuleView : AnylineAbstractModuleView
     [BaseType(typeof(AnylineAbstractModuleView))]
     interface AnylineDocumentModuleView
     {
-        // @property (nonatomic, strong) ALDocumentScanViewPlugin * documentScanViewPlugin;
-        [Export("documentScanViewPlugin", ArgumentSemantic.Strong)]
+        // @property (nonatomic, strong) ALDocumentScanViewPlugin * _Nullable documentScanViewPlugin;
+        [NullAllowed, Export("documentScanViewPlugin", ArgumentSemantic.Strong)]
         ALDocumentScanViewPlugin DocumentScanViewPlugin { get; set; }
 
-        // @property (nonatomic, strong) ALDocumentScanPlugin * documentScanPlugin;
-        [Export("documentScanPlugin", ArgumentSemantic.Strong)]
+        // @property (nonatomic, strong) ALDocumentScanPlugin * _Nullable documentScanPlugin;
+        [NullAllowed, Export("documentScanPlugin", ArgumentSemantic.Strong)]
         ALDocumentScanPlugin DocumentScanPlugin { get; set; }
 
-        // -(BOOL)setupWithLicenseKey:(NSString *)licenseKey delegate:(id<AnylineDocumentModuleDelegate>)delegate error:(NSError **)error;
+        // -(BOOL)setupWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<AnylineDocumentModuleDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
         [Export("setupWithLicenseKey:delegate:error:")]
-        bool SetupWithLicenseKey(string licenseKey, NSObject @delegate, out NSError error);
+        bool SetupWithLicenseKey(string licenseKey, AnylineDocumentModuleDelegate @delegate, [NullAllowed] out NSError error);
 
         // -(void)setupAsyncWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<AnylineDocumentModuleDelegate> _Nonnull)delegate finished:(void (^ _Nonnull)(BOOL, NSError * _Nullable))finished;
         [Export("setupAsyncWithLicenseKey:delegate:finished:")]
-        void SetupAsyncWithLicenseKey(string licenseKey, NSObject @delegate, Action<bool, NSError> finished);
+        void SetupAsyncWithLicenseKey(string licenseKey, AnylineDocumentModuleDelegate @delegate, Action<bool, NSError> finished);
 
-        // @property (nonatomic, strong) NSNumber * maxDocumentRatioDeviation;
-        [Export("maxDocumentRatioDeviation", ArgumentSemantic.Strong)]
+        // @property (nonatomic, strong) NSNumber * _Nullable maxDocumentRatioDeviation;
+        [NullAllowed, Export("maxDocumentRatioDeviation", ArgumentSemantic.Strong)]
         NSNumber MaxDocumentRatioDeviation { get; set; }
 
-        // -(void)setDocumentRatios:(NSArray<NSNumber *> *)ratios;
+        // @property (assign, nonatomic) CGSize maxOutputResolution;
+        [Export("maxOutputResolution", ArgumentSemantic.Assign)]
+        CGSize MaxOutputResolution { get; set; }
+
+        // @property (assign, nonatomic) BOOL postProcessingEnabled;
+        [Export("postProcessingEnabled")]
+        bool PostProcessingEnabled { get; set; }
+
+        // -(void)setDocumentRatios:(NSArray<NSNumber *> * _Nonnull)ratios;
         [Export("setDocumentRatios:")]
         void SetDocumentRatios(NSNumber[] ratios);
 
-        // -(BOOL)triggerPictureCornerDetectionAndReturnError:(NSError **)error;
+        // -(BOOL)triggerPictureCornerDetectionAndReturnError:(NSError * _Nullable * _Nullable)error;
         [Export("triggerPictureCornerDetectionAndReturnError:")]
-        bool TriggerPictureCornerDetectionAndReturnError(out NSError error);
+        bool TriggerPictureCornerDetectionAndReturnError([NullAllowed] out NSError error);
 
         // -(BOOL)transformImageWithSquare:(ALSquare * _Nullable)square image:(UIImage * _Nullable)image error:(NSError * _Nullable * _Nullable)error;
         [Export("transformImageWithSquare:image:error:")]
@@ -2917,14 +3342,6 @@ namespace AnylineXamarinSDK.iOS
         // -(BOOL)transformALImageWithSquare:(ALSquare * _Nullable)square image:(ALImage * _Nullable)image error:(NSError * _Nullable * _Nullable)error;
         [Export("transformALImageWithSquare:image:error:")]
         bool TransformALImageWithSquare([NullAllowed] ALSquare square, [NullAllowed] ALImage image, [NullAllowed] out NSError error);
-
-        // since 3.19: @property(nonatomic, assign) CGSize maxOutputResolution;
-        [Export("maxOutputResolution")]
-        CGSize MaxOutputResolution { get; set; }
-        
-        // @property (assign, nonatomic) BOOL postProcessingEnabled;
-        [Export("postProcessingEnabled")]
-        bool PostProcessingEnabled { get; set; }
     }
 
     // @protocol AnylineDocumentModuleDelegate <NSObject>
@@ -2993,11 +3410,13 @@ namespace AnylineXamarinSDK.iOS
 
     // @interface ALLicensePlateScanPlugin : ALAbstractScanPlugin
     [BaseType(typeof(ALAbstractScanPlugin))]
+    [DisableDefaultCtor]
     interface ALLicensePlateScanPlugin
     {
-        // -(BOOL)setupWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<ALLicensePlateScanPluginDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
-        [Export("setupWithLicenseKey:delegate:error:")]
-        bool SetupWithLicenseKey(string licenseKey, NSObject @delegate, [NullAllowed] out NSError error);
+        // -(instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID licenseKey:(NSString * _Nonnull)licenseKey delegate:(id<ALLicensePlateScanPluginDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error __attribute__((objc_designated_initializer));
+        [Export("initWithPluginID:licenseKey:delegate:error:")]
+        [DesignatedInitializer]
+        IntPtr Constructor([NullAllowed] string pluginID, string licenseKey, ALLicensePlateScanPluginDelegate @delegate, [NullAllowed] out NSError error);
 
         // -(void)addDelegate:(id<ALLicensePlateScanPluginDelegate> _Nonnull)delegate;
         [Export("addDelegate:")]
@@ -3013,10 +3432,10 @@ namespace AnylineXamarinSDK.iOS
     [BaseType(typeof(NSObject))]
     interface ALLicensePlateScanPluginDelegate
     {
-        // @required -(void)anylineLicensePlateScanPlugin:(ALLicensePlateScanPlugin * _Nonnull)anylineLicensePlateScanPlugin didFindResult:(ALLicensePlateResult * _Nonnull)result;
+        // @required -(void)anylineLicensePlateScanPlugin:(ALLicensePlateScanPlugin * _Nonnull)anylineLicensePlateScanPlugin didFindResult:(ALLicensePlateResult * _Nonnull)scanResult;
         [Abstract]
         [Export("anylineLicensePlateScanPlugin:didFindResult:")]
-        void DidFindResult(ALLicensePlateScanPlugin anylineLicensePlateScanPlugin, ALLicensePlateResult result);
+        void DidFindResult(ALLicensePlateScanPlugin anylineLicensePlateScanPlugin, ALLicensePlateResult scanResult);
     }
 
     // @interface ALLicensePlateScanViewPlugin : ALAbstractScanViewPlugin
@@ -3027,30 +3446,34 @@ namespace AnylineXamarinSDK.iOS
         [NullAllowed, Export("licensePlateScanPlugin", ArgumentSemantic.Strong)]
         ALLicensePlateScanPlugin LicensePlateScanPlugin { get; set; }
 
-        // -(instancetype _Nullable)initWithFrame:(CGRect)frame scanPlugin:(ALLicensePlateScanPlugin * _Nonnull)licensePlateScanPlugin;
-        [Export("initWithFrame:scanPlugin:")]
-        IntPtr Constructor(CGRect frame, ALLicensePlateScanPlugin licensePlateScanPlugin);
+        // -(instancetype _Nullable)initWithScanPlugin:(ALLicensePlateScanPlugin * _Nonnull)licensePlateScanPlugin;
+        [Export("initWithScanPlugin:")]
+        IntPtr Constructor(ALLicensePlateScanPlugin licensePlateScanPlugin);
+
+        // -(instancetype _Nullable)initWithScanPlugin:(ALLicensePlateScanPlugin * _Nonnull)licensePlateScanPlugin scanViewPluginConfig:(ALScanViewPluginConfig * _Nonnull)scanViewPluginConfig;
+        [Export("initWithScanPlugin:scanViewPluginConfig:")]
+        IntPtr Constructor(ALLicensePlateScanPlugin licensePlateScanPlugin, ALScanViewPluginConfig scanViewPluginConfig);
     }
 
     // @interface AnylineLicensePlateModuleView : AnylineAbstractModuleView
     [BaseType(typeof(AnylineAbstractModuleView))]
     interface AnylineLicensePlateModuleView
     {
-        // @property (nonatomic, strong) ALLicensePlateScanPlugin * licensePlateScanPlugin;
-        [Export("licensePlateScanPlugin", ArgumentSemantic.Strong)]
+        // @property (nonatomic, strong) ALLicensePlateScanPlugin * _Nullable licensePlateScanPlugin;
+        [NullAllowed, Export("licensePlateScanPlugin", ArgumentSemantic.Strong)]
         ALLicensePlateScanPlugin LicensePlateScanPlugin { get; set; }
 
-        // @property (nonatomic, strong) ALLicensePlateScanViewPlugin * licensePlateScanViewPlugin;
-        [Export("licensePlateScanViewPlugin", ArgumentSemantic.Strong)]
+        // @property (nonatomic, strong) ALLicensePlateScanViewPlugin * _Nullable licensePlateScanViewPlugin;
+        [NullAllowed, Export("licensePlateScanViewPlugin", ArgumentSemantic.Strong)]
         ALLicensePlateScanViewPlugin LicensePlateScanViewPlugin { get; set; }
 
-        // -(BOOL)setupWithLicenseKey:(NSString *)licenseKey delegate:(id<AnylineLicensePlateModuleDelegate>)delegate error:(NSError **)error;
+        // -(BOOL)setupWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<AnylineLicensePlateModuleDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
         [Export("setupWithLicenseKey:delegate:error:")]
-        bool SetupWithLicenseKey(string licenseKey, NSObject @delegate, out NSError error);
+        bool SetupWithLicenseKey(string licenseKey, AnylineLicensePlateModuleDelegate @delegate, [NullAllowed] out NSError error);
 
         // -(void)setupAsyncWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<AnylineLicensePlateModuleDelegate> _Nonnull)delegate finished:(void (^ _Nonnull)(BOOL, NSError * _Nullable))finished;
         [Export("setupAsyncWithLicenseKey:delegate:finished:")]
-        void SetupAsyncWithLicenseKey(string licenseKey, NSObject @delegate, Action<bool, NSError> finished);
+        void SetupAsyncWithLicenseKey(string licenseKey, AnylineLicensePlateModuleDelegate @delegate, Action<bool, NSError> finished);
     }
 
     // @protocol AnylineLicensePlateModuleDelegate <NSObject>
@@ -3058,7 +3481,7 @@ namespace AnylineXamarinSDK.iOS
     [BaseType(typeof(NSObject))]
     interface AnylineLicensePlateModuleDelegate
     {
-        // @required -(void)anylineLicensePlateModuleView:(AnylineLicensePlateModuleView *)anylineLicensePlateModuleView didFindResult:(ALLicensePlateResult *)scanResult;
+        // @required -(void)anylineLicensePlateModuleView:(AnylineLicensePlateModuleView * _Nonnull)anylineLicensePlateModuleView didFindResult:(ALLicensePlateResult * _Nonnull)scanResult;
         [Abstract]
         [Export("anylineLicensePlateModuleView:didFindResult:")]
         void DidFindResult(AnylineLicensePlateModuleView anylineLicensePlateModuleView, ALLicensePlateResult scanResult);
