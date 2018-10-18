@@ -167,19 +167,14 @@ namespace AnylineXamarinSDK.iOS
     public struct ALCharacterRange
     {
         public int minCharacterCount;
-
         public int maxCharacterCount;
     }
 
-    static class CFunctions
+    [StructLayout(LayoutKind.Sequential)]
+    public struct ALRange
     {
-        // extern ALCharacterRange ALCharacterRangeMake (int minCharacterCount, int maxCharacterCount);
-        [DllImport("__Internal")]
-        static extern ALCharacterRange ALCharacterRangeMake(int minCharacterCount, int maxCharacterCount);
-
-        // ALRange ALRangeMake (NSUInteger min, NSUInteger max);
-        [DllImport("__Internal")]
-        static extern ALRange ALRangeMake(uint min, uint max);
+        public nuint min;
+        public nuint max;
     }
 
     [Native]
@@ -256,15 +251,7 @@ namespace AnylineXamarinSDK.iOS
         Mrz,
         DrivingLicense
     }
-
-    [StructLayout(LayoutKind.Sequential)]
-    public struct ALRange
-    {
-        public uint min;
-
-        public uint max;
-    }
-
+    
     [Native]
     public enum ALOCRScanMode : long
     {
