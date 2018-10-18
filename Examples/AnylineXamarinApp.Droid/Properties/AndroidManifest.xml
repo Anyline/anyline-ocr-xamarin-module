@@ -1,19 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="AT.Anyline.Xamarin.App.Droid" android:versionCode="104" 
-          android:versionName="1.0" android:installLocation="preferExternal">
-	<uses-sdk />
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="AT.Anyline.Xamarin.App.Droid" android:installLocation="auto" android:versionCode="105" android:versionName="1">
+	<uses-sdk android:targetSdkVersion="25" />
 	<!--add android:hardwareAccelerated="true" for camera2 api support-->
-	<application android:label="Anyline Examples (Xamarin.Android)" android:icon="@drawable/ic_launcher" android:theme="@style/AppTheme" android:hardwareAccelerated="true">
+	<application android:label="Anyline Examples (Xamarin.Android)" android:hardwareAccelerated="true" android:icon="@drawable/ic_launcher" android:theme="@style/AppTheme">
 		<!--add this for simultaneous barcode scanning-->
 		<meta-data android:name="com.google.android.gms.vision.DEPENDENCIES" android:value="barcode" />
 	</application>
-	<uses-permission android:name="android.permission.CAMERA" />
-	<uses-permission android:name="android.permission.VIBRATE" />
-	<uses-permission android:name="android.permission.INTERNET" />
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="18" />
-	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
-	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="18" />
-	<uses-permission android:name="android.permission.WAKE_LOCK" />
 	<uses-feature android:name="android.hardware.camera" android:required="false" />
 	<uses-feature android:name="android.hardware.camera.flash" />
 	<uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />

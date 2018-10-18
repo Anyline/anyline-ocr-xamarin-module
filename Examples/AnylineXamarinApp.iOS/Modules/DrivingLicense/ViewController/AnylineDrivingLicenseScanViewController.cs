@@ -43,7 +43,10 @@ namespace AnylineXamarinApp.iOS.Modules.DrivingLicense.ViewController
             
             string engTraineddata = NSBundle.MainBundle.PathForResource(@"Modules/OCR/eng_no_dict", @"traineddata");
             string deuTraineddata = NSBundle.MainBundle.PathForResource(@"Modules/OCR/deu", @"traineddata");
-            _ocrConfig.Languages = new[] { engTraineddata, deuTraineddata };
+            _error = null;
+            _ocrConfig.SetLanguages(new[] { engTraineddata, deuTraineddata }, out _error);
+            if (_error != null)
+                (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
 
             _ocrConfig.CustomCmdFilePath = NSBundle.MainBundle.PathForResource(@"Modules/DrivingLicense/anyline_austrian_driving_license", @"ale");
 

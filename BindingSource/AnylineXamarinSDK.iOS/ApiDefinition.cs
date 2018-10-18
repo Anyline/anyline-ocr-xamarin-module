@@ -645,6 +645,11 @@ namespace AnylineXamarinSDK.iOS
         // -(void)updateCutoutWidth:(CGFloat)width;
         [Export("updateCutoutWidth:")]
         void UpdateCutoutWidth(nfloat width);
+
+        // +(instancetype)cutoutConfigurationFromJsonFile:(NSString *)jsonFile;
+        [Static]
+        [Export("cutoutConfigurationFromJsonFile:")]
+        ALUIConfiguration CutoutConfigurationFromJsonFile(string jsonFile);
     }
 
     // @interface Paths (ALUIConfiguration)
@@ -1202,7 +1207,7 @@ namespace AnylineXamarinSDK.iOS
 
         // -(instancetype _Nullable)initWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<ALCoreControllerDelegate> _Nullable)delegate;
         [Export("initWithLicenseKey:delegate:")]
-        IntPtr Constructor(string licenseKey, [NullAllowed] IALCoreControllerDelegate @delegate);
+        IntPtr Constructor(string licenseKey, [NullAllowed] NSObject @delegate);
 
         // -(BOOL)loadScript:(NSString * _Nonnull)script bundlePath:(NSString * _Nonnull)bundlePath error:(NSError * _Nullable * _Nullable)error;
         [Export("loadScript:bundlePath:error:")]
@@ -1510,11 +1515,11 @@ namespace AnylineXamarinSDK.iOS
 
         // @property (readonly, nonatomic, strong) NSHashTable<AnylineNativeBarcodeDelegate> * _Nullable barcodeDelegates;
         [NullAllowed, Export("barcodeDelegates", ArgumentSemantic.Strong)]
-        AnylineNativeBarcodeDelegate BarcodeDelegates { get; }
+        NSSet BarcodeDelegates { get; }
 
         // @property (readonly, nonatomic, strong) NSHashTable<AnylineVideoDataSampleBufferDelegate> * _Nullable sampleBufferDelegates;
         [NullAllowed, Export("sampleBufferDelegates", ArgumentSemantic.Strong)]
-        IAnylineVideoDataSampleBufferDelegate SampleBufferDelegates { get; }
+        NSSet SampleBufferDelegates { get; }
 
         // @property (nonatomic, strong) ALCameraConfig * _Nullable cameraConfig;
         [NullAllowed, Export("cameraConfig", ArgumentSemantic.Strong)]
@@ -1538,23 +1543,23 @@ namespace AnylineXamarinSDK.iOS
 
         // -(void)addBarcodeDelegate:(id<AnylineNativeBarcodeDelegate> _Nonnull)delegate __attribute__((deprecated("Deprecated since 4. Use method addBarcodeDelegate:error: instead.")));
         [Export("addBarcodeDelegate:")]
-        void AddBarcodeDelegate(AnylineNativeBarcodeDelegate @delegate);
+        void AddBarcodeDelegate(NSObject @delegate);
 
         // -(BOOL)addBarcodeDelegate:(id<AnylineNativeBarcodeDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
         [Export("addBarcodeDelegate:error:")]
-        bool AddBarcodeDelegate(AnylineNativeBarcodeDelegate @delegate, [NullAllowed] out NSError error);
+        bool AddBarcodeDelegate(NSObject @delegate, [NullAllowed] out NSError error);
 
         // -(void)removeBarcodeDelegate:(id<AnylineNativeBarcodeDelegate> _Nonnull)delegate;
         [Export("removeBarcodeDelegate:")]
-        void RemoveBarcodeDelegate(AnylineNativeBarcodeDelegate @delegate);
+        void RemoveBarcodeDelegate(NSObject @delegate);
 
         // -(void)addSampleBufferDelegate:(id<AnylineVideoDataSampleBufferDelegate> _Nonnull)delegate;
         [Export("addSampleBufferDelegate:")]
-        void AddSampleBufferDelegate(IAnylineVideoDataSampleBufferDelegate @delegate);
+        void AddSampleBufferDelegate(NSObject @delegate);
 
         // -(void)removeSampleBufferDelegate:(id<AnylineVideoDataSampleBufferDelegate> _Nonnull)delegate;
         [Export("removeSampleBufferDelegate:")]
-        void RemoveSampleBufferDelegate(IAnylineVideoDataSampleBufferDelegate @delegate);
+        void RemoveSampleBufferDelegate(NSObject @delegate);
 
         // -(void)addVideoLayerOnView:(UIView * _Nonnull)view;
         [Export("addVideoLayerOnView:")]
@@ -1643,7 +1648,7 @@ namespace AnylineXamarinSDK.iOS
     {
         // @property (readonly, nonatomic, strong) NSHashTable<ALInfoDelegate> * _Nullable infoDelegates;
         [NullAllowed, Export("infoDelegates", ArgumentSemantic.Strong)]
-        IALInfoDelegate InfoDelegates { get; }
+        NSSet InfoDelegates { get; }
 
         // @property (nonatomic, strong) NSString * _Nullable pluginID;
         [NullAllowed, Export("pluginID", ArgumentSemantic.Strong)]
@@ -1918,7 +1923,7 @@ namespace AnylineXamarinSDK.iOS
 
         // @property (readonly, nonatomic, strong) NSHashTable<ALCutoutDelegate> * _Nullable cutoutDelegates;
         [NullAllowed, Export("cutoutDelegates", ArgumentSemantic.Strong)]
-        ALCutoutDelegate CutoutDelegates { get; }
+        NSSet CutoutDelegates { get; }
 
         // -(instancetype _Nullable)initWithFrame:(CGRect)frame pluginConfig:(ALScanViewPluginConfig * _Nonnull)pluginConfig;
         [Export("initWithFrame:pluginConfig:")]
@@ -2208,11 +2213,11 @@ namespace AnylineXamarinSDK.iOS
     {
         // -(instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID licenseKey:(NSString * _Nonnull)licenseKey delegate:(id<ALMeterScanPluginDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
         [Export("initWithPluginID:licenseKey:delegate:error:")]
-        IntPtr Constructor([NullAllowed] string pluginID, string licenseKey, ALMeterScanPluginDelegate @delegate, [NullAllowed] out NSError error);
+        IntPtr Constructor([NullAllowed] string pluginID, string licenseKey, NSObject @delegate, [NullAllowed] out NSError error);
 
         // @property (readonly, nonatomic, strong) NSHashTable<ALMeterScanPluginDelegate> * _Nullable delegates;
         [NullAllowed, Export("delegates", ArgumentSemantic.Strong)]
-        ALMeterScanPluginDelegate Delegates { get; }
+        NSSet Delegates { get; }
 
         // @property (readonly, assign, nonatomic) ALScanMode scanMode;
         [Export("scanMode", ArgumentSemantic.Assign)]
@@ -2232,11 +2237,11 @@ namespace AnylineXamarinSDK.iOS
 
         // -(void)addDelegate:(id<ALMeterScanPluginDelegate> _Nonnull)delegate;
         [Export("addDelegate:")]
-        void AddDelegate(ALMeterScanPluginDelegate @delegate);
+        void AddDelegate(NSObject @delegate);
 
         // -(void)removeDelegate:(id<ALMeterScanPluginDelegate> _Nonnull)delegate;
         [Export("removeDelegate:")]
-        void RemoveDelegate(ALMeterScanPluginDelegate @delegate);
+        void RemoveDelegate(NSObject @delegate);
 
         // -(ALScanMode)parseScanModeString:(NSString * _Nonnull)scanMode;
         [Export("parseScanModeString:")]
@@ -2345,7 +2350,7 @@ namespace AnylineXamarinSDK.iOS
 
         // @property (readonly, nonatomic, strong) NSHashTable<ALBarcodeScanPluginDelegate> * _Nullable delegates;
         [NullAllowed, Export("delegates", ArgumentSemantic.Strong)]
-        ALBarcodeScanPluginDelegate Delegates { get; }
+        NSSet Delegates { get; }
 
         // @property (assign, nonatomic) ALBarcodeFormatOptions barcodeFormatOptions;
         [Export("barcodeFormatOptions", ArgumentSemantic.Assign)]
@@ -2357,11 +2362,11 @@ namespace AnylineXamarinSDK.iOS
 
         // -(void)addDelegate:(id<ALBarcodeScanPluginDelegate> _Nonnull)delegate;
         [Export("addDelegate:")]
-        void AddDelegate(ALBarcodeScanPluginDelegate @delegate);
+        void AddDelegate(NSObject @delegate);
 
         // -(void)removeDelegate:(id<ALBarcodeScanPluginDelegate> _Nonnull)delegate;
         [Export("removeDelegate:")]
-        void RemoveDelegate(ALBarcodeScanPluginDelegate @delegate);
+        void RemoveDelegate(NSObject @delegate);
     }
 
     // @protocol ALBarcodeScanPluginDelegate <NSObject>
@@ -2426,11 +2431,11 @@ namespace AnylineXamarinSDK.iOS
 
         // -(BOOL)setupWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<AnylineEnergyModuleDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
         [Export("setupWithLicenseKey:delegate:error:")]
-        bool SetupWithLicenseKey(string licenseKey, AnylineEnergyModuleDelegate @delegate, [NullAllowed] out NSError error);
+        bool SetupWithLicenseKey(string licenseKey, NSObject @delegate, [NullAllowed] out NSError error);
 
         // -(void)setupAsyncWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<AnylineEnergyModuleDelegate> _Nonnull)delegate finished:(void (^ _Nonnull)(BOOL, NSError * _Nullable))finished;
         [Export("setupAsyncWithLicenseKey:delegate:finished:")]
-        void SetupAsyncWithLicenseKey(string licenseKey, AnylineEnergyModuleDelegate @delegate, Action<bool, NSError> finished);
+        void SetupAsyncWithLicenseKey(string licenseKey, NSObject @delegate, Action<bool, NSError> finished);
     }
 
     // @protocol AnylineEnergyModuleDelegate <NSObject>
@@ -2491,11 +2496,11 @@ namespace AnylineXamarinSDK.iOS
 
         // -(BOOL)setupWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<AnylineBarcodeModuleDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
         [Export("setupWithLicenseKey:delegate:error:")]
-        bool SetupWithLicenseKey(string licenseKey, AnylineBarcodeModuleDelegate @delegate, [NullAllowed] out NSError error);
+        bool SetupWithLicenseKey(string licenseKey, NSObject @delegate, [NullAllowed] out NSError error);
 
         // -(void)setupAsyncWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<AnylineBarcodeModuleDelegate> _Nonnull)delegate finished:(void (^ _Nonnull)(BOOL, NSError * _Nullable))finished;
         [Export("setupAsyncWithLicenseKey:delegate:finished:")]
-        void SetupAsyncWithLicenseKey(string licenseKey, AnylineBarcodeModuleDelegate @delegate, Action<bool, NSError> finished);
+        void SetupAsyncWithLicenseKey(string licenseKey, NSObject @delegate, Action<bool, NSError> finished);
     }
 
     // @protocol AnylineBarcodeModuleDelegate <NSObject>
@@ -2687,19 +2692,19 @@ namespace AnylineXamarinSDK.iOS
     {
         // -(instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID licenseKey:(NSString * _Nonnull)licenseKey delegate:(id<ALIDPluginDelegate> _Nonnull)delegate idConfig:(ALIDConfig * _Nonnull)config error:(NSError * _Nullable * _Nullable)error;
         [Export("initWithPluginID:licenseKey:delegate:idConfig:error:")]
-        IntPtr Constructor([NullAllowed] string pluginID, string licenseKey, ALIDPluginDelegate @delegate, ALIDConfig config, [NullAllowed] out NSError error);
+        IntPtr Constructor([NullAllowed] string pluginID, string licenseKey, NSObject @delegate, ALIDConfig config, [NullAllowed] out NSError error);
 
         // @property (readonly, nonatomic, strong) NSHashTable<ALIDPluginDelegate> * _Nullable delegates;
         [NullAllowed, Export("delegates", ArgumentSemantic.Strong)]
-        ALIDPluginDelegate Delegates { get; }
+        NSSet Delegates { get; }
 
         // -(void)addDelegate:(id<ALIDPluginDelegate> _Nonnull)delegate;
         [Export("addDelegate:")]
-        void AddDelegate(ALIDPluginDelegate @delegate);
+        void AddDelegate(NSObject @delegate);
 
         // -(void)removeDelegate:(id<ALIDPluginDelegate> _Nonnull)delegate;
         [Export("removeDelegate:")]
-        void RemoveDelegate(ALIDPluginDelegate @delegate);
+        void RemoveDelegate(NSObject @delegate);
 
         // @property (readonly, nonatomic, strong) ALIDConfig * _Nullable idConfig;
         [NullAllowed, Export("idConfig", ArgumentSemantic.Strong)]
@@ -2760,11 +2765,11 @@ namespace AnylineXamarinSDK.iOS
 
         // -(BOOL)setupWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<AnylineMRZModuleDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
         [Export("setupWithLicenseKey:delegate:error:")]
-        bool SetupWithLicenseKey(string licenseKey, AnylineMRZModuleDelegate @delegate, [NullAllowed] out NSError error);
+        bool SetupWithLicenseKey(string licenseKey, NSObject @delegate, [NullAllowed] out NSError error);
 
         // -(void)setupAsyncWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<AnylineMRZModuleDelegate> _Nonnull)delegate finished:(void (^ _Nonnull)(BOOL, NSError * _Nullable))finished;
         [Export("setupAsyncWithLicenseKey:delegate:finished:")]
-        void SetupAsyncWithLicenseKey(string licenseKey, AnylineMRZModuleDelegate @delegate, Action<bool, NSError> finished);
+        void SetupAsyncWithLicenseKey(string licenseKey, NSObject @delegate, Action<bool, NSError> finished);
     }
 
     // @protocol AnylineMRZModuleDelegate <NSObject>
@@ -2999,7 +3004,7 @@ namespace AnylineXamarinSDK.iOS
 
         // @property (readonly, nonatomic, strong) NSHashTable<ALOCRScanPluginDelegate> * _Nullable delegates;
         [NullAllowed, Export("delegates", ArgumentSemantic.Strong)]
-        ALOCRScanPluginDelegate Delegates { get; }
+        NSSet Delegates { get; }
 
         // @property (readonly, nonatomic, strong) ALOCRConfig * _Nullable ocrConfig;
         [NullAllowed, Export("ocrConfig", ArgumentSemantic.Strong)]
@@ -3015,11 +3020,11 @@ namespace AnylineXamarinSDK.iOS
 
         // -(void)addDelegate:(id<ALOCRScanPluginDelegate> _Nonnull)delegate;
         [Export("addDelegate:")]
-        void AddDelegate(ALOCRScanPluginDelegate @delegate);
+        void AddDelegate(NSObject @delegate);
 
         // -(void)removeDelegate:(id<ALOCRScanPluginDelegate> _Nonnull)delegate;
         [Export("removeDelegate:")]
-        void RemoveDelegate(ALOCRScanPluginDelegate @delegate);
+        void RemoveDelegate(NSObject @delegate);
     }
 
     // @protocol ALOCRScanPluginDelegate <NSObject>
@@ -3068,11 +3073,11 @@ namespace AnylineXamarinSDK.iOS
 
         // -(BOOL)setupWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<AnylineOCRModuleDelegate> _Nonnull)delegate ocrConfig:(ALOCRConfig * _Nonnull)ocrConfig error:(NSError * _Nullable * _Nullable)error;
         [Export("setupWithLicenseKey:delegate:ocrConfig:error:")]
-        bool SetupWithLicenseKey(string licenseKey, AnylineOCRModuleDelegate @delegate, ALOCRConfig ocrConfig, [NullAllowed] out NSError error);
+        bool SetupWithLicenseKey(string licenseKey, NSObject @delegate, ALOCRConfig ocrConfig, [NullAllowed] out NSError error);
 
         // -(void)setupAsyncWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<AnylineOCRModuleDelegate> _Nonnull)delegate ocrConfig:(ALOCRConfig * _Nonnull)ocrConfig finished:(void (^ _Nonnull)(BOOL, NSError * _Nullable))finished;
         [Export("setupAsyncWithLicenseKey:delegate:ocrConfig:finished:")]
-        void SetupAsyncWithLicenseKey(string licenseKey, AnylineOCRModuleDelegate @delegate, ALOCRConfig ocrConfig, Action<bool, NSError> finished);
+        void SetupAsyncWithLicenseKey(string licenseKey, NSObject @delegate, ALOCRConfig ocrConfig, Action<bool, NSError> finished);
 
         // -(BOOL)setOCRConfig:(ALOCRConfig * _Nonnull)ocrConfig error:(NSError * _Nullable * _Nullable)error;
         [Export("setOCRConfig:error:")]
@@ -3091,19 +3096,22 @@ namespace AnylineXamarinSDK.iOS
         // @required -(void)anylineOCRModuleView:(AnylineOCRModuleView * _Nonnull)anylineOCRModuleView didFindResult:(ALOCRResult * _Nonnull)result;
         [Abstract]
         [Export("anylineOCRModuleView:didFindResult:")]
-        void AnylineOCRModuleView(AnylineOCRModuleView anylineOCRModuleView, ALOCRResult result);
+        void DidFindResult(AnylineOCRModuleView anylineOCRModuleView, ALOCRResult result);
 
         // @optional -(void)anylineOCRModuleView:(AnylineOCRModuleView * _Nonnull)anylineOCRModuleView reportsVariable:(NSString * _Nonnull)variableName value:(id _Nonnull)value __attribute__((deprecated("Deprecated since 3.10 Use AnylineDebugDelegate instead.")));
         [Export("anylineOCRModuleView:reportsVariable:value:")]
-        void AnylineOCRModuleView(AnylineOCRModuleView anylineOCRModuleView, string variableName, NSObject value);
+        [Abstract]
+        void ReportsVariable(AnylineOCRModuleView anylineOCRModuleView, string variableName, NSObject value);
 
         // @optional -(void)anylineOCRModuleView:(AnylineOCRModuleView * _Nonnull)anylineOCRModuleView reportsRunFailure:(ALOCRError)error __attribute__((deprecated("Deprecated since 3.10 Use AnylineDebugDelegate instead.")));
         [Export("anylineOCRModuleView:reportsRunFailure:")]
-        void AnylineOCRModuleView(AnylineOCRModuleView anylineOCRModuleView, ALOCRError error);
+        [Abstract]
+        void ReportsRunFailure(AnylineOCRModuleView anylineOCRModuleView, ALOCRError error);
 
         // @optional -(BOOL)anylineOCRModuleView:(AnylineOCRModuleView * _Nonnull)anylineOCRModuleView textOutlineDetected:(ALSquare * _Nonnull)outline __attribute__((deprecated("Deprecated since 3.10 Use AnylineDebugDelegate instead.")));
         [Export("anylineOCRModuleView:textOutlineDetected:")]
-        bool AnylineOCRModuleView(AnylineOCRModuleView anylineOCRModuleView, ALSquare outline);
+        [Abstract]
+        bool TextOutlineDetected(AnylineOCRModuleView anylineOCRModuleView, ALSquare outline);
     }
 
     partial interface Constants
@@ -3148,11 +3156,11 @@ namespace AnylineXamarinSDK.iOS
     {
         // @property (readonly, nonatomic, strong) NSHashTable<ALDocumentScanPluginDelegate> * _Nullable delegates;
         [NullAllowed, Export("delegates", ArgumentSemantic.Strong)]
-        ALDocumentScanPluginDelegate Delegates { get; }
+        NSSet Delegates { get; }
 
         // @property (readonly, nonatomic, strong) NSHashTable<ALDocumentInfoDelegate> * _Nullable infoDelegates;
         [NullAllowed, Export("infoDelegates", ArgumentSemantic.Strong)]
-        ALDocumentInfoDelegate InfoDelegates { get; }
+        NSSet InfoDelegates { get; }
 
         // @property (readonly, nonatomic, strong) NSString * _Nullable pluginID;
         [NullAllowed, Export("pluginID", ArgumentSemantic.Strong)]
@@ -3177,7 +3185,7 @@ namespace AnylineXamarinSDK.iOS
         // -(instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID licenseKey:(NSString * _Nonnull)licenseKey delegate:(id<ALDocumentScanPluginDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error __attribute__((objc_designated_initializer));
         [Export("initWithPluginID:licenseKey:delegate:error:")]
         [DesignatedInitializer]
-        IntPtr Constructor([NullAllowed] string pluginID, string licenseKey, ALDocumentScanPluginDelegate @delegate, [NullAllowed] out NSError error);
+        IntPtr Constructor([NullAllowed] string pluginID, string licenseKey, NSObject @delegate, [NullAllowed] out NSError error);
 
         // -(BOOL)start:(id<ALImageProvider> _Nonnull)imageProvider error:(NSError * _Nullable * _Nullable)error;
         [Export("start:error:")]
@@ -3226,11 +3234,11 @@ namespace AnylineXamarinSDK.iOS
 
         // -(void)addDelegate:(id<ALDocumentScanPluginDelegate> _Nonnull)delegate;
         [Export("addDelegate:")]
-        void AddDelegate(ALDocumentScanPluginDelegate @delegate);
+        void AddDelegate(NSObject @delegate);
 
         // -(void)removeDelegate:(id<ALDocumentScanPluginDelegate> _Nonnull)delegate;
         [Export("removeDelegate:")]
-        void RemoveDelegate(ALDocumentScanPluginDelegate @delegate);
+        void RemoveDelegate(NSObject @delegate);
 
         // -(void)addInfoDelegate:(id<ALDocumentInfoDelegate> _Nonnull)infoDelegate;
         [Export("addInfoDelegate:")]
@@ -3309,11 +3317,11 @@ namespace AnylineXamarinSDK.iOS
 
         // -(BOOL)setupWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<AnylineDocumentModuleDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
         [Export("setupWithLicenseKey:delegate:error:")]
-        bool SetupWithLicenseKey(string licenseKey, AnylineDocumentModuleDelegate @delegate, [NullAllowed] out NSError error);
+        bool SetupWithLicenseKey(string licenseKey, NSObject @delegate, [NullAllowed] out NSError error);
 
         // -(void)setupAsyncWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<AnylineDocumentModuleDelegate> _Nonnull)delegate finished:(void (^ _Nonnull)(BOOL, NSError * _Nullable))finished;
         [Export("setupAsyncWithLicenseKey:delegate:finished:")]
-        void SetupAsyncWithLicenseKey(string licenseKey, AnylineDocumentModuleDelegate @delegate, Action<bool, NSError> finished);
+        void SetupAsyncWithLicenseKey(string licenseKey, NSObject @delegate, Action<bool, NSError> finished);
 
         // @property (nonatomic, strong) NSNumber * _Nullable maxDocumentRatioDeviation;
         [NullAllowed, Export("maxDocumentRatioDeviation", ArgumentSemantic.Strong)]
@@ -3416,15 +3424,15 @@ namespace AnylineXamarinSDK.iOS
         // -(instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID licenseKey:(NSString * _Nonnull)licenseKey delegate:(id<ALLicensePlateScanPluginDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error __attribute__((objc_designated_initializer));
         [Export("initWithPluginID:licenseKey:delegate:error:")]
         [DesignatedInitializer]
-        IntPtr Constructor([NullAllowed] string pluginID, string licenseKey, ALLicensePlateScanPluginDelegate @delegate, [NullAllowed] out NSError error);
+        IntPtr Constructor([NullAllowed] string pluginID, string licenseKey, NSObject @delegate, [NullAllowed] out NSError error);
 
         // -(void)addDelegate:(id<ALLicensePlateScanPluginDelegate> _Nonnull)delegate;
         [Export("addDelegate:")]
-        void AddDelegate(ALLicensePlateScanPluginDelegate @delegate);
+        void AddDelegate(NSObject @delegate);
 
         // -(void)removeDelegate:(id<ALLicensePlateScanPluginDelegate> _Nonnull)delegate;
         [Export("removeDelegate:")]
-        void RemoveDelegate(ALLicensePlateScanPluginDelegate @delegate);
+        void RemoveDelegate(NSObject @delegate);
     }
 
     // @protocol ALLicensePlateScanPluginDelegate <NSObject>
@@ -3469,11 +3477,11 @@ namespace AnylineXamarinSDK.iOS
 
         // -(BOOL)setupWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<AnylineLicensePlateModuleDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
         [Export("setupWithLicenseKey:delegate:error:")]
-        bool SetupWithLicenseKey(string licenseKey, AnylineLicensePlateModuleDelegate @delegate, [NullAllowed] out NSError error);
+        bool SetupWithLicenseKey(string licenseKey, NSObject @delegate, [NullAllowed] out NSError error);
 
         // -(void)setupAsyncWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<AnylineLicensePlateModuleDelegate> _Nonnull)delegate finished:(void (^ _Nonnull)(BOOL, NSError * _Nullable))finished;
         [Export("setupAsyncWithLicenseKey:delegate:finished:")]
-        void SetupAsyncWithLicenseKey(string licenseKey, AnylineLicensePlateModuleDelegate @delegate, Action<bool, NSError> finished);
+        void SetupAsyncWithLicenseKey(string licenseKey, NSObject @delegate, Action<bool, NSError> finished);
     }
 
     // @protocol AnylineLicensePlateModuleDelegate <NSObject>

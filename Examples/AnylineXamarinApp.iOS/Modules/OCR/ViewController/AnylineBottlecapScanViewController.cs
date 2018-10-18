@@ -44,9 +44,11 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
 
             // as of 3.20, we use Languages instead of TesseractLanguages as it doesn't require to copy the traineddata file
             string bottlecap = NSBundle.MainBundle.PathForResource(@"Modules/OCR/bottlecap", @"traineddata");
-            _ocrConfig.Languages = new[] { bottlecap };
-            //_ocrConfig.TesseractLanguages = new[] { "bottlecap" };
-
+            _error = null;
+            _ocrConfig.SetLanguages(new[] { bottlecap }, out _error);
+            if (_error != null)
+                (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
+            
             _ocrConfig.CharWhiteList = "123456789ABCDEFGHJKLMNPRSTUVWXYZ";
             _ocrConfig.MinConfidence = 75;
             _ocrConfig.ScanMode = ALOCRScanMode.Grid;

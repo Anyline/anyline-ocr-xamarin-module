@@ -49,8 +49,12 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
             string deu = NSBundle.MainBundle.PathForResource(@"Modules/OCR/deu", @"traineddata");
 
             string ibanScannerAny = NSBundle.MainBundle.PathForResource(@"Modules/OCR/USNr", @"any");
+
+            _error = null;
+            _ocrConfig.SetLanguages(new[] { ibanScannerAny }, out _error);
+            if (_error != null)
+                (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             
-            _ocrConfig.Languages = new[] { ibanScannerAny };
             _ocrConfig.CharWhiteList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
             _ocrConfig.MinConfidence = 70;
             _ocrConfig.ScanMode = ALOCRScanMode.Line;

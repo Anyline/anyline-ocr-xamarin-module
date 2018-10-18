@@ -23,6 +23,8 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
         public AnylineVoucherScanViewController(string name)
         {
             Title = name;
+
+            AnylineOCRModuleDelegate del;
         }
         
         public override void ViewDidLoad()
@@ -43,7 +45,7 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
 
             // as of 3.20, we use Languages instead of TesseractLanguages as it doesn't require to copy the traineddata file
             string anylineCapitals = NSBundle.MainBundle.PathForResource(@"Modules/OCR/anyline_capitals", @"traineddata");
-            _ocrConfig.Languages = new[] { anylineCapitals };
+            _ocrConfig.SetLanguages(new[] { anylineCapitals });
             //_ocrConfig.TesseractLanguages = new[] { @"anyline_capitals" };
             _ocrConfig.CharWhiteList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
             _ocrConfig.ScanMode = ALOCRScanMode.Auto;

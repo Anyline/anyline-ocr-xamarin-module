@@ -46,9 +46,13 @@ namespace AnylineXamarinApp.iOS.Modules.OCR.ViewController
 
             _ocrConfig.ScanMode = ALOCRScanMode.Auto;
             string anyFile = NSBundle.MainBundle.PathForResource(@"Modules/OCR/USNr", @"any");
-            _ocrConfig.Languages = new[] { anyFile };
+            _error = null;
+            _ocrConfig.SetLanguages(new[] { anyFile }, out _error);
+            if (_error != null)
+                (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
+
             _ocrConfig.ValidationRegex = "[A-Z0-9]{4,}";
-            
+
             // We tell the module to bootstrap itself with the license key and delegate. The delegate will later get called
             // by the module once we start receiving results.
             _error = null;
