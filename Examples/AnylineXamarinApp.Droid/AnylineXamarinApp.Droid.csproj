@@ -171,7 +171,7 @@
     <AndroidAsset Include="Assets\EnergyConfigAll.json" />
     <AndroidAsset Include="Assets\LicensePlateConfig.json" />
     <AndroidAsset Include="Assets\tessdata\eng_no_dict.traineddata" />
-    <AndroidAsset Include="Assets\DriverLicenseConfig.json" />
+    <AndroidAsset Include="Assets\driving_license_view_config.json" />
     <AndroidAsset Include="Assets\vin.ale" />
     <AndroidAsset Include="Assets\VIN.any" />
     <AndroidAsset Include="Assets\VinViewConfig.json" />
@@ -264,7 +264,10 @@
     <AndroidResource Include="Resources\drawable\license_plate_background.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="THIRD-PARTY-NOTICES.txt" />
+    <AndroidResource Include="Resources\layout\DrivingLicenseActivity.axml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <PropertyGroup>

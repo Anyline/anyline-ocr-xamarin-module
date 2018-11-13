@@ -7,6 +7,9 @@ using Android.Widget;
 using AnylineXamarinApp.Energy;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using Android.Support.V4.Content;
+using Android.Content.PM;
+using Android.Support.V4.App;
 
 namespace AnylineXamarinApp
 {
@@ -44,6 +47,37 @@ namespace AnylineXamarinApp
 
             listView.ItemClick -= ListView_ItemClick;
             listView.ItemClick += ListView_ItemClick;
+
+            int REQUEST_CAMERA = 0;
+
+            if (ContextCompat.CheckSelfPermission(this, Android.Manifest.Permission.Camera) != Permission.Granted)
+                {
+                // Should we show an explanation?
+                if (ActivityCompat.ShouldShowRequestPermissionRationale(this, Android.Manifest.Permission.Camera))
+                {
+                    // Provide an additional rationale to the user if the permission was not granted
+                    // and the user would benefit from additional context for the use of the permission.
+                    // For example if the user has previously denied the permission.
+
+                    // Show an explanation to the user *asynchronously* -- don't block
+                    // this thread waiting for the user's response! After the user
+                    // sees the explanation, try again to request the permission.
+
+                    // Log.Info(TAG, "Displaying camera permission rationale to provide additional context.");
+                }
+                else
+                {
+                    // No explanation needed, we can request the permission.
+                    ActivityCompat.RequestPermissions(this, new string[] { Android.Manifest.Permission.Camera }, REQUEST_CAMERA);
+
+                    // REQUEST_CAMERA is an app-defined int constant. The callback method gets the
+                    // result of the request.
+                }
+            }
+                else
+                {
+                System.Diagnostics.Debug.WriteLine("Permission Granted!");
+            }
         }
 
         private void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs a)

@@ -8,6 +8,9 @@ using Android.Widget;
 using AT.Nineyards.Anyline.Camera;
 using AT.Nineyards.Anyline.Modules.Ocr;
 using AT.Nineyards.Anylinexamarin.Support.Modules.Ocr;
+using IO.Anyline.Plugin.ID;
+using IO.Anyline.View;
+using Java.Lang;
 #pragma warning disable 618
 
 namespace AnylineXamarinApp.DrivingLicense
@@ -17,11 +20,11 @@ namespace AnylineXamarinApp.DrivingLicense
         Icon = "@drawable/ic_launcher", 
         ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait, 
         HardwareAccelerated = true)]
-    public class DrivingLicenseActivity : Activity, IAnylineOcrResultListener
+    public class DrivingLicenseActivity : Activity, IO.Anyline.Plugin.IScanResultListener
     {
         public static string TAG = typeof(DrivingLicenseActivity).Name;
 
-        private AnylineOcrScanView _scanView;
+        private ScanView _scanView;
         private DrivingLicenseResultView _driverLicenseResultView;
         
         protected override void OnCreate(Bundle bundle)
@@ -35,15 +38,13 @@ namespace AnylineXamarinApp.DrivingLicense
 
             Window.SetFlags(WindowManagerFlags.KeepScreenOn, WindowManagerFlags.KeepScreenOn);
 
-            SetContentView(Resource.Layout.OCRActivity);
+            SetContentView(Resource.Layout.DrivingLicenseActivity);
 
             InitDriverLicenseResultView();
 
-            _scanView = FindViewById<AnylineOcrScanView>(Resource.Id.ocr_scan_view);
+            _scanView = FindViewById<ScanView>(Resource.Id.scan_view);
 
-            _scanView.SetConfigFromAsset("DriverLicenseConfig.json");
-            
-            SetOcrConfig(_scanView);
+            _scanView.SetScanConfig("driving_license_view_config.json");
             
             // set an individual focus configuration for this example
             FocusConfig focusConfig = new FocusConfig.Builder()
@@ -54,26 +55,19 @@ namespace AnylineXamarinApp.DrivingLicense
                 .SetEnableFocusAreas(true)  // enable focus areas to coincide with the cutout
                 .Build();
 
-            _scanView.SetFocusConfig(focusConfig);
+            _scanView.CameraView.SetFocusConfig(focusConfig);
+            
+            IdScanViewPlugin scanViewPlugin = new IdScanViewPlugin(ApplicationContext, 
+                MainActivity.LicenseKey, _scanView.ScanViewPluginConfig, new DrivingLicenseConfig());
 
-            _scanView.InitAnyline(MainActivity.LicenseKey, this);
+            scanViewPlugin.AddScanResultListener(this);
+            _scanView.ScanViewPlugin = scanViewPlugin;
 
             _scanView.CameraOpened += (s, e) => { Log.Debug(TAG, "Camera opened successfully. Frame resolution " + e.Width + " x " + e.Height); };
             _scanView.CameraError += (s, e) => { Log.Error(TAG, "OnCameraError: " + e.Event.Message); };
 
         }
-
-        private static void SetOcrConfig(AnylineOcrScanView scanView)
-        {
-            //Configure the OCR for Driver Licenses
-            AnylineOcrConfig anylineOcrConfig = new AnylineOcrConfig();
-
-            anylineOcrConfig.CustomCmdFile = "anyline_austrian_driving_license.ale";
-            anylineOcrConfig.SetLanguages("tessdata/eng_no_dict.traineddata", "tessdata/deu.traineddata");
-            
-            scanView.SetAnylineOcrConfig(anylineOcrConfig);
-        }
-
+        
         private void InitDriverLicenseResultView()
         {
             RelativeLayout mainLayout = (RelativeLayout)FindViewById(Resource.Id.main_layout);
@@ -87,7 +81,7 @@ namespace AnylineXamarinApp.DrivingLicense
             _driverLicenseResultView.Click += (sender, args) =>
             {
                 _driverLicenseResultView.Visibility = ViewStates.Invisible;
-                _scanView.StartScanning();                
+                _scanView.Start();                
             };
             
             //center the result in the parent
@@ -117,13 +111,13 @@ namespace AnylineXamarinApp.DrivingLicense
         {
             base.OnResume();
             _driverLicenseResultView.Visibility = ViewStates.Invisible;
-            _scanView.StartScanning();
+            _scanView.Start();
         }
 
         protected override void OnPause()
         {
             base.OnPause();
-            _scanView.CancelScanning();
+            _scanView.Stop();
             _scanView.ReleaseCameraInBackground();
         }
 
@@ -146,21 +140,22 @@ namespace AnylineXamarinApp.DrivingLicense
             GC.Collect(GC.MaxGeneration);
         }
 
-        void IAnylineOcrResultListener.OnResult(AnylineOcrResult scanResult)
+        public void OnResult(Java.Lang.Object result)
         {
+            var scanResult = result as IO.Anyline.Plugin.ScanResult;
+
             _driverLicenseResultView.Visibility = ViewStates.Visible;
-            
+
             // This is called when a result is found.
             // The Identification includes all the data read from the driving license
             // as scanned and the given image shows the scanned driving license
             string resultString = scanResult.Result.ToString();
             string[] results = resultString.Split('|');
-            
+
             _driverLicenseResultView.SetDocumentNumber(results[3]);
             _driverLicenseResultView.SetDayOfBirth(results[2]);
 
             _driverLicenseResultView.SetName(results[0] + " " + results[1]);
-
         }
     }
 }
