@@ -7,7 +7,7 @@
 			<title>Anyline Xamarin SDK</title>
 			
 			<!-- The package version number that is used when resolving dependencies -->
-			<version>4.0.0</version>
+			<version>5.0.0</version>
 
 			<!-- Authors contain text that appears directly on the gallery -->
 			<authors>Anyline GmbH</authors>
@@ -53,8 +53,8 @@
 
 			<!-- Dependencies are automatically installed when the package is installed -->
 			<dependencies>
-				<dependency id="Anyline.Xamarin.SDK.Droid" version="4.0.0" />
-				<dependency id="Anyline.Xamarin.SDK.iOS" version="4.0.0" />
+				<dependency id="Anyline.Xamarin.SDK.Droid" version="5.0.0" />
+				<dependency id="Anyline.Xamarin.SDK.iOS" version="5.0.0" />
 			</dependencies>
 			
 		</metadata>

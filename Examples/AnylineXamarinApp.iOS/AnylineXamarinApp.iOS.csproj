@@ -306,10 +306,14 @@
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\trained_models\CNN_serialnumbers_combined.enc"/>
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\trained_models\CNN_SNr_w_CL_special_whiteList.enc"/>
     <BundleResource Include="Resources\AnylineResources.bundle\module_id\anyline_austrian_driving_license.ale"/>
+    <BundleResource Include="Resources\AnylineResources.bundle\module_id\anyline_driving_license.ale"/>
     <BundleResource Include="Resources\AnylineResources.bundle\module_id\mrz_scanning.ale"/>
     <BundleResource Include="Resources\AnylineResources.bundle\module_id\tessdata\deu.traineddata"/>
     <BundleResource Include="Resources\AnylineResources.bundle\module_id\tessdata\eng_no_dict.traineddata"/>
+    <BundleResource Include="Resources\AnylineResources.bundle\module_id\trained_models\DL.any"/>
+    <BundleResource Include="Resources\AnylineResources.bundle\module_id\trained_models\DL_2.any"/>
     <BundleResource Include="Resources\AnylineResources.bundle\module_id\trained_models\mrz_retrain3_17500.enc"/>
+    <BundleResource Include="Resources\AnylineResources.bundle\module_id\trained_models\USNr.any"/>
     <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\license_plates_combined.ale"/>
     <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\aut_nice.traineddata"/>
     <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\ch_nice.traineddata"/>

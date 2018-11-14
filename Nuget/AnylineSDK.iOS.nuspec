@@ -5,7 +5,7 @@
 			<id>Anyline.Xamarin.SDK.iOS</id>
 
 			<!-- The package version number that is used when resolving dependencies -->
-			<version>4.0.0</version>
+			<version>5.0.0</version>
 
 			<title>Anyline Xamarin SDK (iOS)</title>
 			
@@ -100,10 +100,14 @@
 			<file src="..\AnylineResources.bundle\module_energy\trained_models\CNN_serialnumbers_combined.enc" target="..\..\..\AnylineResources.bundle\module_energy\trained_models\"/>
 			<file src="..\AnylineResources.bundle\module_energy\trained_models\CNN_SNr_w_CL_special_whiteList.enc" target="..\..\..\AnylineResources.bundle\module_energy\trained_models\"/>
 			<file src="..\AnylineResources.bundle\module_id\anyline_austrian_driving_license.ale" target="..\..\..\AnylineResources.bundle\module_id\"/>
+			<file src="..\AnylineResources.bundle\module_id\anyline_driving_license.ale" target="..\..\..\AnylineResources.bundle\module_id\"/>
 			<file src="..\AnylineResources.bundle\module_id\mrz_scanning.ale" target="..\..\..\AnylineResources.bundle\module_id\"/>
 			<file src="..\AnylineResources.bundle\module_id\tessdata\deu.traineddata" target="..\..\..\AnylineResources.bundle\module_id\tessdata\"/>
 			<file src="..\AnylineResources.bundle\module_id\tessdata\eng_no_dict.traineddata" target="..\..\..\AnylineResources.bundle\module_id\tessdata\"/>
+			<file src="..\AnylineResources.bundle\module_id\trained_models\DL.any" target="..\..\..\AnylineResources.bundle\module_id\trained_models\"/>
+			<file src="..\AnylineResources.bundle\module_id\trained_models\DL_2.any" target="..\..\..\AnylineResources.bundle\module_id\trained_models\"/>
 			<file src="..\AnylineResources.bundle\module_id\trained_models\mrz_retrain3_17500.enc" target="..\..\..\AnylineResources.bundle\module_id\trained_models\"/>
+			<file src="..\AnylineResources.bundle\module_id\trained_models\USNr.any" target="..\..\..\AnylineResources.bundle\module_id\trained_models\"/>
 			<file src="..\AnylineResources.bundle\module_license_plate\license_plates_combined.ale" target="..\..\..\AnylineResources.bundle\module_license_plate\"/>
 			<file src="..\AnylineResources.bundle\module_license_plate\tessdata\aut_nice.traineddata" target="..\..\..\AnylineResources.bundle\module_license_plate\tessdata\"/>
 			<file src="..\AnylineResources.bundle\module_license_plate\tessdata\ch_nice.traineddata" target="..\..\..\AnylineResources.bundle\module_license_plate\tessdata\"/>

@@ -22,7 +22,7 @@ namespace AnylineXamarinForms
 
             button.Clicked += (s, e) => 
             {
-                Navigation.PushAsync(new EnergyPage());
+                Navigation.PushAsync(new MrzPage());
             };
 
             Content = new StackLayout

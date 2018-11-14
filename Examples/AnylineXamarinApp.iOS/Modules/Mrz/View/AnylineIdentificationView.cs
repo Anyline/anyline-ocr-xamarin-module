@@ -19,6 +19,7 @@ namespace AnylineXamarinApp.iOS
         UILabel dayOfBirth;
         UILabel expirationDate;
         UILabel sex;
+        UILabel address;
         UILabel line0;
         UILabel line1;
         UILabel line2;
@@ -55,8 +56,13 @@ namespace AnylineXamarinApp.iOS
 
             nr = new AL2();
             nr.Text = @"NRNRNRNR";
-            nr.Frame = new CGRect(Frame.Size.Width-80,7,80,30);
+            nr.Frame = new CGRect(Frame.Size.Width - 80, 7, 80, 30);
             AddSubview(nr);
+
+            address = new AL2();
+            address.Text = @"NRNRNRNR";
+            address.Frame = new CGRect(Frame.Size.Width - 80, 32, 80, 30);
+            AddSubview(address);
 
             surname = new AL2();
             surname.Text = @"SURNAME";
@@ -137,6 +143,11 @@ namespace AnylineXamarinApp.iOS
             dayOfBirth.Text = GetDateStringFromObject(aId.DayOfBirthDateObject, aId.DayOfBirth);
             expirationDate.Text = GetDateStringFromObject(aId.ExpirationDateObject, aId.ExpirationDate);
             sex.Text = aId.Sex;
+
+            if (aId.DocumentType == "ID" && aId.IssuingCountryCode == "D")
+                address.Text = aId.Address;
+            else
+                address.Text = "";
 
             var mrzString = aId.MRZString.Replace("\\n", "\n");
             var splitString = mrzString.Split('\n');

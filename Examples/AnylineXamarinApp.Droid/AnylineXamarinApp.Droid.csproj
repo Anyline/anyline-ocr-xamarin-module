@@ -74,7 +74,7 @@
     <AndroidSupportedAbis />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AnylineXamarinSDK.Droid, Version=3.27.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="AnylineXamarinSDK.Droid, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\AnylineXamarinSDK.Droid.dll</HintPath>
     </Reference>

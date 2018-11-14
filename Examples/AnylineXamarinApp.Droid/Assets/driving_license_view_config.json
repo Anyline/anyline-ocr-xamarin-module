@@ -1,24 +1,21 @@
 ﻿{
-  "camera" : {
-    "captureResolution" : "720",
-    "defaultCamera" : "BACK"
+  "camera": {
+    "captureResolution": "720",
+    "defaultCamera": "BACK"
   },
-  "flash" : {
+  "flash": {
     "mode": "manual",
-    "alignment": "bottom_right",
-    "imageOn": "flash_on",
-    "imageOff": "flash_off"
+    "alignment": "bottom_right"
   },
-
-  "viewPlugin" : {
-    "cutoutConfig" : {
+  "viewPlugin": {
+    "cutoutConfig": {
       "style": "rect",
       "maxWidthPercent": "100%",
       "maxHeightPercent": "100%",
       "alignment": "center",
-      "ratioFromSize" : {
-        "width": 125,
-        "height": 85
+      "ratioFromSize": {
+        "width": 560,
+        "height": 354
       },
       "strokeWidth": 2,
       "cornerRadius": 4,
@@ -36,7 +33,6 @@
       "beepOnResult": true,
       "vibrateOnResult": true
     },
-    "cancelOnResult" : true
-
+    "cancelOnResult": true
   }
 }

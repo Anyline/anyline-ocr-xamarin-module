@@ -27,7 +27,8 @@
   <remove-node path="/api/package[@name='at.nineyards.anyline.core.custom']"/>
   <remove-node path="/api/package[@name='at.nineyards.anyline.reporter']"/>
 
-  <!--<remove-node path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']"/>-->
+  <remove-node path="/api/package[@name='io.anyline.view']/class[@name='BrightnessHelper']" />
+
   <remove-node path="/api/package[@name='at.nineyards.anyline']/class[@name='BuildConfig']"/>
   <remove-node path="/api/package[@name='at.nineyards.anyline']/class[@name='SimpleImageProvider']"/>
   <remove-node path="/api/package[@name='at.nineyards.anyline']/interface[@name='AnylineListener']"/>
@@ -119,9 +120,10 @@
   <!-- License Plate -->
   <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.licenseplate']/interface[@name='LicensePlateResultListener']/method[@name='onResult']/parameter[1]" name="managedName">scanResult</attr>
 
-  <!-- MRZ -->
+  <!-- MRZ/ID -->
   <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.mrz']/interface[@name='MrzResultListener']/method[@name='onResult']/parameter[1]" name="managedName">scanResult</attr>
-  
+  <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.mrz']/interface[@name='IdResultListener']/method[@name='onResult']/parameter[1]" name="managedName">scanResult</attr>
+
   <!-- OCR -->
   <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.ocr']/interface[@name='AnylineOcrResultListener']/method[@name='onResult']/parameter[1]" name="managedName">scanResult</attr>
   
@@ -134,4 +136,10 @@
     Deprecated. AnylineOcrConfig.SetLanguages(String...) should be used instead.
   </attr>
 
+  <!-- ANYLINE 4+ Support API -->
+
+  <!-- ID-->
+  <attr path="/api/package[@name='io.anyline.xamarin.plugins.id']/interface[@name='IdResultListener']/method[@name='onResult' and count(parameter)=1 and parameter[1][@type='io.anyline.xamarin.plugins.id.IdScanResult']]/parameter[1]" name="managedName">scanResult</attr>
+  <attr path="/api/package[@name='io.anyline.xamarin.plugins.id']/class[@name='IdScanViewPlugin']/method[@name='addResultListener' and count(parameter)=1 and parameter[1][@type='io.anyline.xamarin.plugins.id.IdResultListener']]/parameter[1]" name="managedName">resultListener</attr>
+	
 </metadata>

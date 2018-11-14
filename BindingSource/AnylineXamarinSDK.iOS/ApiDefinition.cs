@@ -2595,6 +2595,10 @@ namespace AnylineXamarinSDK.iOS
         [Export("sex", ArgumentSemantic.Strong)]
         string Sex { get; }
 
+        // @property (readonly, nonatomic, strong) NSString * _Nonnull address;
+        [Export("address", ArgumentSemantic.Strong)]
+        string Address { get; }
+
         // @property (readonly, nonatomic, strong) NSString * _Nonnull checkdigitNumber;
         [Export("checkdigitNumber", ArgumentSemantic.Strong)]
         string CheckdigitNumber { get; }

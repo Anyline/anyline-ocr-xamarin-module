@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnylineXamarinApp.Droid", "AnylineXamarinApp.Droid\AnylineXamarinApp.Droid.csproj", "{922FED8D-BDDD-47BC-BC88-705FF802115D}"
 EndProject
@@ -244,5 +244,8 @@ Global
 		{DCD299E5-925A-45EA-986E-D1A349047AFA} = {03F48895-32BA-47FA-86DC-A10DC779C0FE}
 		{5A01C6BD-9B84-40CB-9B66-CDBDD3BF1618} = {03F48895-32BA-47FA-86DC-A10DC779C0FE}
 		{03F48895-32BA-47FA-86DC-A10DC779C0FE} = {BA604D36-E0A9-4949-85E7-7C5066A30C85}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AEF2E1D1-1460-43AB-BE53-E8A8DE9415B0}
 	EndGlobalSection
 EndGlobal

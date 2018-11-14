@@ -20,7 +20,7 @@
   <string name="scan_iban">IBAN</string>
   <string name="scan_bottlecaps">Bottlecap</string>
   <string name="scan_license_plates">EU License Plate</string>
-  <string name="scan_driving_licenses">Austrian Driving License</string>
+  <string name="scan_driving_licenses">AUT/GER Driving License</string>
   <string name="scan_vin_number">Vehicle Identification Number</string>
   <string name="scan_shipping_container">Shipping Container</string>
 

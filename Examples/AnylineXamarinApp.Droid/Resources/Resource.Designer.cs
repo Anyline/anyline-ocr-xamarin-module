@@ -485,8 +485,8 @@ namespace AnylineXamarinApp
 			// aapt resource value: 0x7f0a0002
 			public const int none = 2131361794;
 			
-			// aapt resource value: 0x7f0a0049
-			public const int ocr_scan_view = 2131361865;
+			// aapt resource value: 0x7f0a004a
+			public const int ocr_scan_view = 2131361866;
 			
 			// aapt resource value: 0x7f0a000f
 			public const int pulse = 2131361807;
@@ -521,6 +521,9 @@ namespace AnylineXamarinApp
 			// aapt resource value: 0x7f0a0024
 			public const int text = 2131361828;
 			
+			// aapt resource value: 0x7f0a0045
+			public const int text_address = 2131361861;
+			
 			// aapt resource value: 0x7f0a0038
 			public const int text_country = 2131361848;
 			
@@ -530,8 +533,8 @@ namespace AnylineXamarinApp
 			// aapt resource value: 0x7f0a002b
 			public const int text_day_of_birth = 2131361835;
 			
-			// aapt resource value: 0x7f0a0046
-			public const int text_expiration_date = 2131361862;
+			// aapt resource value: 0x7f0a0047
+			public const int text_expiration_date = 2131361863;
 			
 			// aapt resource value: 0x7f0a0026
 			public const int text_feedback = 2131361830;
@@ -539,8 +542,8 @@ namespace AnylineXamarinApp
 			// aapt resource value: 0x7f0a002a
 			public const int text_given_names = 2131361834;
 			
-			// aapt resource value: 0x7f0a0048
-			public const int text_mrz = 2131361864;
+			// aapt resource value: 0x7f0a0049
+			public const int text_mrz = 2131361865;
 			
 			// aapt resource value: 0x7f0a0029
 			public const int text_number = 2131361833;
@@ -551,11 +554,11 @@ namespace AnylineXamarinApp
 			// aapt resource value: 0x7f0a0023
 			public const int text_result = 2131361827;
 			
-			// aapt resource value: 0x7f0a0047
-			public const int text_sex = 2131361863;
+			// aapt resource value: 0x7f0a0048
+			public const int text_sex = 2131361864;
 			
-			// aapt resource value: 0x7f0a0045
-			public const int text_surnames = 2131361861;
+			// aapt resource value: 0x7f0a0046
+			public const int text_surnames = 2131361862;
 			
 			// aapt resource value: 0x7f0a0043
 			public const int text_type = 2131361859;

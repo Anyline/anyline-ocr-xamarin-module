@@ -32,6 +32,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="12dp" />
+	<TextView
+        style="@style/MrzResultText"
+        android:id="@+id/text_address"
+        android:layout_alignParentRight="true"
+        android:text="1020 VIENNA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:layout_marginTop="18dp"
+        android:layout_marginRight="12dp" />
     <TextView
         style="@style/MrzResultText"
         android:id="@+id/text_surnames"

@@ -9,6 +9,11 @@ using UIKit;
 
 namespace AnylineXamarinSDK.iOS
 {
+    public partial class ALScanView : UIView
+    {
+        public ALScanView(CGRect frame) : base(frame) { }
+    }
+
     public partial class AnylineAbstractModuleView : UIView
     {
         public AnylineAbstractModuleView(CGRect frame) : base(frame) { }        

@@ -6,9 +6,8 @@ using Android.Util;
 using Android.Views;
 using Android.Widget;
 using AT.Nineyards.Anyline.Camera;
-using AT.Nineyards.Anyline.Modules.Ocr;
-using AT.Nineyards.Anylinexamarin.Support.Modules.Ocr;
-using IO.Anyline.Plugin.ID;
+using IO.Anyline.Xamarin.Plugins.ID;
+using IO.Anyline.Plugin;
 using IO.Anyline.View;
 using Java.Lang;
 #pragma warning disable 618
@@ -20,10 +19,10 @@ namespace AnylineXamarinApp.DrivingLicense
         Icon = "@drawable/ic_launcher", 
         ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait, 
         HardwareAccelerated = true)]
-    public class DrivingLicenseActivity : Activity, IO.Anyline.Plugin.IScanResultListener
+    public class DrivingLicenseActivity : Activity, IIdResultListener
     {
         public static string TAG = typeof(DrivingLicenseActivity).Name;
-
+        
         private ScanView _scanView;
         private DrivingLicenseResultView _driverLicenseResultView;
         
@@ -58,9 +57,9 @@ namespace AnylineXamarinApp.DrivingLicense
             _scanView.CameraView.SetFocusConfig(focusConfig);
             
             IdScanViewPlugin scanViewPlugin = new IdScanViewPlugin(ApplicationContext, 
-                MainActivity.LicenseKey, _scanView.ScanViewPluginConfig, new DrivingLicenseConfig());
+                MainActivity.LicenseKey, _scanView.ScanViewPluginConfig, new IO.Anyline.Plugin.ID.DrivingLicenseConfig());
 
-            scanViewPlugin.AddScanResultListener(this);
+            scanViewPlugin.AddResultListener(this);
             _scanView.ScanViewPlugin = scanViewPlugin;
 
             _scanView.CameraOpened += (s, e) => { Log.Debug(TAG, "Camera opened successfully. Frame resolution " + e.Width + " x " + e.Height); };
@@ -139,23 +138,17 @@ namespace AnylineXamarinApp.DrivingLicense
             // explicitly free memory
             GC.Collect(GC.MaxGeneration);
         }
-
-        public void OnResult(Java.Lang.Object result)
+        
+        public void OnResult(IdScanResult scanResult)
         {
-            var scanResult = result as IO.Anyline.Plugin.ScanResult;
-
             _driverLicenseResultView.Visibility = ViewStates.Visible;
 
-            // This is called when a result is found.
-            // The Identification includes all the data read from the driving license
-            // as scanned and the given image shows the scanned driving license
-            string resultString = scanResult.Result.ToString();
-            string[] results = resultString.Split('|');
+            var result = scanResult.Result as IO.Anyline.Plugin.ID.DrivingLicenseResult;
+            
+            _driverLicenseResultView.SetDocumentNumber(result.LicenseNumber);
+            _driverLicenseResultView.SetDayOfBirth(result.DateOfBirth);
 
-            _driverLicenseResultView.SetDocumentNumber(results[3]);
-            _driverLicenseResultView.SetDayOfBirth(results[2]);
-
-            _driverLicenseResultView.SetName(results[0] + " " + results[1]);
+            _driverLicenseResultView.SetName(result.SurName + " " + result.GivenName);
         }
     }
 }

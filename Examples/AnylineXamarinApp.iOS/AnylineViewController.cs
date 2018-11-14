@@ -36,7 +36,7 @@ namespace AnylineXamarinApp.iOS
                 }},
             { "Identification Documents", new[] {
                     "Passport / MRZ",
-                    "AT Driving License"
+                    "AUT/GER Driving License"
                 }},
             { "Barcodes", new[] {
                     "Barcode / QR-Code"

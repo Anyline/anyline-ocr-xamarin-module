@@ -18,7 +18,8 @@ namespace AnylineXamarinApp.Mrz
         private TextView _dayOfBirthText;
         private TextView _expirationDateText;
         private TextView _sexText;
-        private TextView _mrzText;        
+        private TextView _addressText;
+        private TextView _mrzText;
 
         public MrzResultView(Context context) : base(context) { Init(); }
 
@@ -39,7 +40,8 @@ namespace AnylineXamarinApp.Mrz
             _dayOfBirthText = FindViewById<TextView>(Resource.Id.text_day_of_birth);
             _expirationDateText = FindViewById<TextView>(Resource.Id.text_expiration_date);
             _sexText = FindViewById<TextView>(Resource.Id.text_sex);
-            _mrzText = FindViewById<TextView>(Resource.Id.text_mrz);            
+            _addressText = FindViewById<TextView>(Resource.Id.text_address);
+            _mrzText = FindViewById<TextView>(Resource.Id.text_mrz);
         }
 
         public void SetIdentification(Identification identification)
@@ -52,8 +54,13 @@ namespace AnylineXamarinApp.Mrz
             _dayOfBirthText.SetText(GetStringFromDateObject(identification.DayOfBirthObject, identification.DayOfBirth), TextView.BufferType.Normal);
             _expirationDateText.SetText(GetStringFromDateObject(identification.ExpirationDateObject, identification.ExpirationDate), TextView.BufferType.Normal);
             _sexText.SetText(identification.Sex, TextView.BufferType.Normal);
+            
+            if (identification.DocumentType == "ID" && identification.IssuingCountryCode == "D")
+            {
+                _addressText.SetText(identification.Address, TextView.BufferType.Normal);
+            }
 
-            string mrzString = identification.MrzString.Replace("\\n", "\n");            
+            string mrzString = identification.MrzString.Replace("\\n", "\n");
             _mrzText.SetText(mrzString, TextView.BufferType.Normal);
         }
 

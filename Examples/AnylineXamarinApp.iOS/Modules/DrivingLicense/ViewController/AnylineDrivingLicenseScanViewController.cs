@@ -6,14 +6,14 @@ using UIKit;
 
 namespace AnylineXamarinApp.iOS.Modules.DrivingLicense.ViewController
 {
-    public sealed class AnylineDrivingLicenseScanViewController : UIViewController, IAnylineOCRModuleDelegate
+    public sealed class AnylineDrivingLicenseScanViewController : UIViewController, IALIDPluginDelegate
     {
         readonly string _licenseKey = AnylineViewController.LicenseKey;
 
-        AnylineOCRModuleView _scanView;
+        ALScanView _scanView;
         DrivingLicenseResultOverlayView _drivingLicenseResultView;
-
-        ALOCRConfig _ocrConfig;
+        ALIDScanViewPlugin _scanViewPlugin;
+        ALIDScanPlugin _scanPlugin;
         
         NSError _error;
         bool _success;
@@ -35,39 +35,20 @@ namespace AnylineXamarinApp.iOS.Modules.DrivingLicense.ViewController
                 frame.Y + NavigationController.NavigationBar.Frame.Size.Height,
                 frame.Width,
                 frame.Height - NavigationController.NavigationBar.Frame.Size.Height);
-
-            _scanView = new AnylineOCRModuleView(frame);
-
-            // We'll define the OCR Config here:
-            _ocrConfig = new ALOCRConfig();
             
-            string engTraineddata = NSBundle.MainBundle.PathForResource(@"Modules/OCR/eng_no_dict", @"traineddata");
-            string deuTraineddata = NSBundle.MainBundle.PathForResource(@"Modules/OCR/deu", @"traineddata");
             _error = null;
-            _ocrConfig.SetLanguages(new[] { engTraineddata, deuTraineddata }, out _error);
+            _scanPlugin = new ALIDScanPlugin("ModuleID", _licenseKey, Self, new ALDrivingLicenseConfig(), out _error);
+            _scanViewPlugin = new ALIDScanViewPlugin(_scanPlugin);
+
             if (_error != null)
-                (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
-
-            _ocrConfig.CustomCmdFilePath = NSBundle.MainBundle.PathForResource(@"Modules/DrivingLicense/anyline_austrian_driving_license", @"ale");
-
-            // We tell the module to bootstrap itself with the license key and delegate. The delegate will later get called
-            // by the module once we start receiving results.
-            _error = null;
-            _success = _scanView.SetupWithLicenseKey(_licenseKey, Self, _ocrConfig, out _error);
-            // SetupWithLicenseKey:delegate:error returns true if everything went fine. In the case something wrong
-            // we have to check the error object for the error message.
-            if (!_success)
             {
                 // Something went wrong. The error object contains the error description
                 (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
 
-            // We stop scanning manually
-            _scanView.CancelOnResult = false;
+            _scanView = new ALScanView(frame, _scanViewPlugin);
 
-            // We load the UI config for our DrivingLicense view from a .json file.
-            string configFile = NSBundle.MainBundle.PathForResource(@"Modules/DrivingLicense/drivinglicense_capture_config", @"json");
-            _scanView.CurrentConfiguration = ALUIConfiguration.CutoutConfigurationFromJsonFile(configFile);
+            _scanView.FlashButtonConfig.FlashAlignment = ALFlashAlignment.TopLeft;
             
             // After setup is complete we add the module to the view of this view controller
             View.AddSubview(_scanView);
@@ -85,6 +66,8 @@ namespace AnylineXamarinApp.iOS.Modules.DrivingLicense.ViewController
             _drivingLicenseResultView.Alpha = 0;
             
             View.AddSubview(_drivingLicenseResultView);
+
+            _scanView.StartCamera();
         }
 
         /*
@@ -117,7 +100,7 @@ namespace AnylineXamarinApp.iOS.Modules.DrivingLicense.ViewController
             View.SendSubviewToBack(_drivingLicenseResultView);
 
             _error = null;
-            _success = _scanView.StartScanningAndReturnError(out _error);
+            _success = _scanViewPlugin.StartAndReturnError(out _error);
             if (!_success)
             {
                 (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
@@ -134,7 +117,7 @@ namespace AnylineXamarinApp.iOS.Modules.DrivingLicense.ViewController
             if (_drivingLicenseResultView == null || _scanView == null) return;
 
             _error = null;
-            if (!_scanView.CancelScanningAndReturnError(out _error))
+            if (!_scanViewPlugin.StopAndReturnError(out _error))
             {
                 (Alert = new UIAlertView("Error", _error.DebugDescription, (IUIAlertViewDelegate)null, "OK", null)).Show();
             }
@@ -177,8 +160,6 @@ namespace AnylineXamarinApp.iOS.Modules.DrivingLicense.ViewController
         }
 
         /*
-        This is the main delegate method Anyline uses to report its results
-        */
         void IAnylineOCRModuleDelegate.DidFindResult(AnylineOCRModuleView anylineOCRModuleView, ALOCRResult result)
         {
             StopAnyline();
@@ -246,5 +227,43 @@ namespace AnylineXamarinApp.iOS.Modules.DrivingLicense.ViewController
         void IAnylineOCRModuleDelegate.ReportsVariable(AnylineOCRModuleView anylineOCRModuleView, string variableName, NSObject value) { }
 
         bool IAnylineOCRModuleDelegate.TextOutlineDetected(AnylineOCRModuleView anylineOCRModuleView, ALSquare outline) { return false; }
+        */
+
+        /*
+        This is the main delegate method Anyline uses to report its results
+        */
+        public void DidFindResult(ALIDScanPlugin anylineIDScanPlugin, ALIDResult scanResult)
+        {
+            StopAnyline();
+            if (_drivingLicenseResultView != null)
+                View.BringSubviewToFront(_drivingLicenseResultView);
+
+            var result = scanResult.Result as ALDrivingLicenseIdentification;
+            
+            string[] surNamesComps = result.SurNames.Split(' ');
+
+            if (surNamesComps.Length == 2)
+            {
+                _drivingLicenseResultView.Surname.Text = surNamesComps[0];
+                _drivingLicenseResultView.Surname2.Text = surNamesComps[1];
+                _drivingLicenseResultView.GivenNames.Text = result.GivenNames;
+            }
+            else
+            {
+                _drivingLicenseResultView.Surname.Text = surNamesComps[0];
+                _drivingLicenseResultView.GivenNames.Text = result.GivenNames;
+                _drivingLicenseResultView.Surname2.Text = "";
+            }
+
+            string[] birthdateIDComps = result.DayOfBirth.Split(' ');
+
+            string birthday = birthdateIDComps[0];
+
+            _drivingLicenseResultView.Birthdate.Text = birthday;
+            _drivingLicenseResultView.IDNumber.Text = result.DocumentNumber;
+
+            // Present the information to the user
+            _drivingLicenseResultView?.AnimateFadeIn(View);
+        }
     }
 }
