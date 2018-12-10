@@ -106,6 +106,7 @@
 			<file src="..\AnylineResources.bundle\module_id\tessdata\eng_no_dict.traineddata" target="..\..\..\AnylineResources.bundle\module_id\tessdata\"/>
 			<file src="..\AnylineResources.bundle\module_id\trained_models\DL.any" target="..\..\..\AnylineResources.bundle\module_id\trained_models\"/>
 			<file src="..\AnylineResources.bundle\module_id\trained_models\DL_2.any" target="..\..\..\AnylineResources.bundle\module_id\trained_models\"/>
+			<file src="..\AnylineResources.bundle\module_id\trained_models\DL_AT.any" target="..\..\..\AnylineResources.bundle\module_id\trained_models\"/>
 			<file src="..\AnylineResources.bundle\module_id\trained_models\mrz_retrain3_17500.enc" target="..\..\..\AnylineResources.bundle\module_id\trained_models\"/>
 			<file src="..\AnylineResources.bundle\module_id\trained_models\USNr.any" target="..\..\..\AnylineResources.bundle\module_id\trained_models\"/>
 			<file src="..\AnylineResources.bundle\module_license_plate\license_plates_combined.ale" target="..\..\..\AnylineResources.bundle\module_license_plate\"/>

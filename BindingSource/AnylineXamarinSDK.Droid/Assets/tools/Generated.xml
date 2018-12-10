@@ -860,6 +860,8 @@
 <attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setGivenNames' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">givenNames</attr>
 <!-- Identification.setIssuingCountryCode(java.lang.String) -->
 <attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setIssuingCountryCode' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">issuingCountryCode</attr>
+<!-- Identification.setIssuingDate(java.lang.String) -->
+<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setIssuingDate' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">issuingDate</attr>
 <!-- Identification.setMrzString(java.lang.String) -->
 <attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setMrzString' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">mrzString</attr>
 <!-- Identification.setNationalityCountryCode(java.lang.String) -->
@@ -1123,18 +1125,6 @@
 <!-- LicensePlateScanView.initAnyline(java.lang.String, at.nineyards.anylinexamarin.support.modules.licenseplate.LicensePlateResultListener) -->
 <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.licenseplate']/class[@name='LicensePlateScanView']/method[@name='initAnyline' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='at.nineyards.anylinexamarin.support.modules.licenseplate.LicensePlateResultListener']]/parameter[1]" name="managedName">licenseKey</attr>
 <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.licenseplate']/class[@name='LicensePlateScanView']/method[@name='initAnyline' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='at.nineyards.anylinexamarin.support.modules.licenseplate.LicensePlateResultListener']]/parameter[2]" name="managedName">licensePlateResultListener</attr>
-<!-- File: AT.Nineyards.Anylinexamarin.Support.Modules.Mrz.IdScanResult.cs -->
-<!-- IdScanResult.IdScanResult(io.anyline.plugin.ScanResult) -->
-<!-- IdScanResult.IdScanResult(java.lang.String, java.util.List&lt;android.graphics.PointF&gt;, java.lang.Integer, at.nineyards.anyline.models.AnylineImage, at.nineyards.anyline.models.AnylineImage, io.anyline.plugin.id.ID) -->
-<!-- File: AT.Nineyards.Anylinexamarin.Support.Modules.Mrz.IdScanViewPlugin.cs -->
-<!-- IdScanViewPlugin.IdScanViewPlugin(android.content.Context, java.lang.String, io.anyline.view.ScanViewPluginConfig, io.anyline.plugin.id.IdConfig) -->
-<attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.mrz']/class[@name='IdScanViewPlugin']/constructor[@name='IdScanViewPlugin' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='io.anyline.plugin.id.IdConfig']]/parameter[1]" name="managedName">context</attr>
-<attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.mrz']/class[@name='IdScanViewPlugin']/constructor[@name='IdScanViewPlugin' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='io.anyline.plugin.id.IdConfig']]/parameter[2]" name="managedName">licenseKey</attr>
-<attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.mrz']/class[@name='IdScanViewPlugin']/constructor[@name='IdScanViewPlugin' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='io.anyline.plugin.id.IdConfig']]/parameter[3]" name="managedName">scanViewPluginConfig</attr>
-<attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.mrz']/class[@name='IdScanViewPlugin']/constructor[@name='IdScanViewPlugin' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='io.anyline.plugin.id.IdConfig']]/parameter[4]" name="managedName">idConfig</attr>
-<!-- IdScanViewPlugin.addResultListener(at.nineyards.anylinexamarin.support.modules.mrz.IdResultListener) -->
-<!-- File: AT.Nineyards.Anylinexamarin.Support.Modules.Mrz.IIdResultListener.cs -->
-<!-- IdResultListener.onResult(at.nineyards.anylinexamarin.support.modules.mrz.IdScanResult) -->
 <!-- File: AT.Nineyards.Anylinexamarin.Support.Modules.Mrz.IMrzResultListener.cs -->
 <!-- MrzResultListener.onResult(at.nineyards.anyline.modules.mrz.MrzResult) -->
 <!-- File: AT.Nineyards.Anylinexamarin.Support.Modules.Mrz.MrzScanView.cs -->
@@ -1844,15 +1834,68 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewUtil']/method[@name='transformOutlineToPointListRelativeToFullFrame' and count(parameter)=7 and parameter[1][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[2][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[3][@type='float'] and parameter[4][@type='float'] and parameter[5][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[6][@type='float'] and parameter[7][@type='int']]/parameter[5]" name="managedName">fullImage</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewUtil']/method[@name='transformOutlineToPointListRelativeToFullFrame' and count(parameter)=7 and parameter[1][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[2][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[3][@type='float'] and parameter[4][@type='float'] and parameter[5][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[6][@type='float'] and parameter[7][@type='int']]/parameter[6]" name="managedName">resizeWidth</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewUtil']/method[@name='transformOutlineToPointListRelativeToFullFrame' and count(parameter)=7 and parameter[1][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[2][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[3][@type='float'] and parameter[4][@type='float'] and parameter[5][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[6][@type='float'] and parameter[7][@type='int']]/parameter[7]" name="managedName">contourBorder</attr>
-<!-- File: IO.Anyline.Xamarin.Plugins.ID.IdScanResult.cs -->
+<!-- File: IO.Anyline.Xamarin.Support.Plugins.Barcode.BarcodeScanResult.cs -->
+<!-- BarcodeScanResult.BarcodeScanResult(io.anyline.plugin.ScanResult) -->
+<!-- File: IO.Anyline.Xamarin.Support.Plugins.Barcode.BarcodeScanViewPlugin.cs -->
+<!-- BarcodeScanViewPlugin.BarcodeScanViewPlugin(android.content.Context, java.lang.String, io.anyline.view.ScanViewPluginConfig) -->
+<!-- BarcodeScanViewPlugin.addResultListener(io.anyline.xamarin.support.plugins.barcode.BarcodeResultListener) -->
+<!-- File: IO.Anyline.Xamarin.Support.Plugins.Barcode.IBarcodeResultListener.cs -->
+<!-- BarcodeResultListener.onResult(io.anyline.xamarin.support.plugins.barcode.BarcodeScanResult) -->
+<!-- File: IO.Anyline.Xamarin.Support.Plugins.Document.DocumentScanResult.cs -->
+<!-- DocumentScanResult.DocumentScanResult(io.anyline.plugin.ScanResult) -->
+<!-- File: IO.Anyline.Xamarin.Support.Plugins.Document.DocumentScanViewPlugin.cs -->
+<!-- DocumentScanViewPlugin.DocumentScanViewPlugin(android.content.Context, java.lang.String, io.anyline.view.ScanViewPluginConfig) -->
+<!-- DocumentScanViewPlugin.addResultListener(io.anyline.xamarin.support.plugins.document.DocumentResultListener) -->
+<!-- File: IO.Anyline.Xamarin.Support.Plugins.Document.IDocumentResultListener.cs -->
+<!-- DocumentResultListener.onDocumentOutlineDetected(java.util.List, boolean) -->
+<attr path="/api/package[@name='io.anyline.xamarin.support.plugins.document']/interface[@name='DocumentResultListener']/method[@name='onDocumentOutlineDetected' and count(parameter)=2 and parameter[1][@type='java.util.List'] and parameter[2][@type='boolean']]/parameter[1]" name="managedName">corners</attr>
+<attr path="/api/package[@name='io.anyline.xamarin.support.plugins.document']/interface[@name='DocumentResultListener']/method[@name='onDocumentOutlineDetected' and count(parameter)=2 and parameter[1][@type='java.util.List'] and parameter[2][@type='boolean']]/parameter[2]" name="managedName">documentShapeAndBrightnessValid</attr>
+<!-- DocumentResultListener.onPictureCornersDetected(at.nineyards.anyline.models.AnylineImage, java.util.List) -->
+<attr path="/api/package[@name='io.anyline.xamarin.support.plugins.document']/interface[@name='DocumentResultListener']/method[@name='onPictureCornersDetected' and count(parameter)=2 and parameter[1][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[2][@type='java.util.List']]/parameter[1]" name="managedName">fullFrame</attr>
+<attr path="/api/package[@name='io.anyline.xamarin.support.plugins.document']/interface[@name='DocumentResultListener']/method[@name='onPictureCornersDetected' and count(parameter)=2 and parameter[1][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[2][@type='java.util.List']]/parameter[2]" name="managedName">corners</attr>
+<!-- DocumentResultListener.onPictureProcessingFailure(io.anyline.plugin.document.DocumentScanViewPlugin.DocumentError) -->
+<attr path="/api/package[@name='io.anyline.xamarin.support.plugins.document']/interface[@name='DocumentResultListener']/method[@name='onPictureProcessingFailure' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.document.DocumentScanViewPlugin.DocumentError']]/parameter[1]" name="managedName">error</attr>
+<!-- DocumentResultListener.onPictureTransformError(io.anyline.plugin.document.DocumentScanViewPlugin.DocumentError) -->
+<attr path="/api/package[@name='io.anyline.xamarin.support.plugins.document']/interface[@name='DocumentResultListener']/method[@name='onPictureTransformError' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.document.DocumentScanViewPlugin.DocumentError']]/parameter[1]" name="managedName">error</attr>
+<!-- DocumentResultListener.onPictureTransformed(at.nineyards.anyline.models.AnylineImage) -->
+<attr path="/api/package[@name='io.anyline.xamarin.support.plugins.document']/interface[@name='DocumentResultListener']/method[@name='onPictureTransformed' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.models.AnylineImage']]/parameter[1]" name="managedName">transformedImage</attr>
+<!-- DocumentResultListener.onPreviewProcessingFailure(io.anyline.plugin.document.DocumentScanViewPlugin.DocumentError) -->
+<attr path="/api/package[@name='io.anyline.xamarin.support.plugins.document']/interface[@name='DocumentResultListener']/method[@name='onPreviewProcessingFailure' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.document.DocumentScanViewPlugin.DocumentError']]/parameter[1]" name="managedName">error</attr>
+<!-- DocumentResultListener.onPreviewProcessingSuccess(at.nineyards.anyline.models.AnylineImage) -->
+<attr path="/api/package[@name='io.anyline.xamarin.support.plugins.document']/interface[@name='DocumentResultListener']/method[@name='onPreviewProcessingSuccess' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.models.AnylineImage']]/parameter[1]" name="managedName">anylineImage</attr>
+<!-- DocumentResultListener.onResult(io.anyline.plugin.ScanResult) -->
+<!-- DocumentResultListener.onTakePictureError(java.lang.Throwable) -->
+<attr path="/api/package[@name='io.anyline.xamarin.support.plugins.document']/interface[@name='DocumentResultListener']/method[@name='onTakePictureError' and count(parameter)=1 and parameter[1][@type='java.lang.Throwable']]/parameter[1]" name="managedName">error</attr>
+<!-- File: IO.Anyline.Xamarin.Support.Plugins.ID.IdScanResult.cs -->
 <!-- IdScanResult.IdScanResult(io.anyline.plugin.ScanResult) -->
-<!-- File: IO.Anyline.Xamarin.Plugins.ID.IdScanViewPlugin.cs -->
+<!-- File: IO.Anyline.Xamarin.Support.Plugins.ID.IdScanViewPlugin.cs -->
 <!-- IdScanViewPlugin.IdScanViewPlugin(android.content.Context, java.lang.String, io.anyline.view.ScanViewPluginConfig, io.anyline.plugin.id.IdConfig) -->
-<attr path="/api/package[@name='io.anyline.xamarin.plugins.id']/class[@name='IdScanViewPlugin']/constructor[@name='IdScanViewPlugin' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='io.anyline.plugin.id.IdConfig']]/parameter[1]" name="managedName">context</attr>
-<attr path="/api/package[@name='io.anyline.xamarin.plugins.id']/class[@name='IdScanViewPlugin']/constructor[@name='IdScanViewPlugin' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='io.anyline.plugin.id.IdConfig']]/parameter[2]" name="managedName">licenseKey</attr>
-<attr path="/api/package[@name='io.anyline.xamarin.plugins.id']/class[@name='IdScanViewPlugin']/constructor[@name='IdScanViewPlugin' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='io.anyline.plugin.id.IdConfig']]/parameter[3]" name="managedName">scanViewPluginConfig</attr>
-<attr path="/api/package[@name='io.anyline.xamarin.plugins.id']/class[@name='IdScanViewPlugin']/constructor[@name='IdScanViewPlugin' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='io.anyline.plugin.id.IdConfig']]/parameter[4]" name="managedName">idConfig</attr>
-<!-- IdScanViewPlugin.addResultListener(io.anyline.xamarin.plugins.id.IdResultListener) -->
-<!-- File: IO.Anyline.Xamarin.Plugins.ID.IIdResultListener.cs -->
-<!-- IdResultListener.onResult(io.anyline.xamarin.plugins.id.IdScanResult) -->
+<attr path="/api/package[@name='io.anyline.xamarin.support.plugins.id']/class[@name='IdScanViewPlugin']/constructor[@name='IdScanViewPlugin' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='io.anyline.plugin.id.IdConfig']]/parameter[1]" name="managedName">context</attr>
+<attr path="/api/package[@name='io.anyline.xamarin.support.plugins.id']/class[@name='IdScanViewPlugin']/constructor[@name='IdScanViewPlugin' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='io.anyline.plugin.id.IdConfig']]/parameter[2]" name="managedName">licenseKey</attr>
+<attr path="/api/package[@name='io.anyline.xamarin.support.plugins.id']/class[@name='IdScanViewPlugin']/constructor[@name='IdScanViewPlugin' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='io.anyline.plugin.id.IdConfig']]/parameter[3]" name="managedName">scanViewPluginConfig</attr>
+<attr path="/api/package[@name='io.anyline.xamarin.support.plugins.id']/class[@name='IdScanViewPlugin']/constructor[@name='IdScanViewPlugin' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='io.anyline.plugin.id.IdConfig']]/parameter[4]" name="managedName">idConfig</attr>
+<!-- IdScanViewPlugin.addResultListener(io.anyline.xamarin.support.plugins.id.IdResultListener) -->
+<!-- File: IO.Anyline.Xamarin.Support.Plugins.ID.IIdResultListener.cs -->
+<!-- IdResultListener.onResult(io.anyline.xamarin.support.plugins.id.IdScanResult) -->
+<!-- File: IO.Anyline.Xamarin.Support.Plugins.Licenseplate.ILicensePlateResultListener.cs -->
+<!-- LicensePlateResultListener.onResult(io.anyline.xamarin.support.plugins.licenseplate.LicensePlateScanResult) -->
+<!-- File: IO.Anyline.Xamarin.Support.Plugins.Licenseplate.LicensePlateScanResult.cs -->
+<!-- LicensePlateScanResult.LicensePlateScanResult(io.anyline.plugin.ScanResult) -->
+<!-- File: IO.Anyline.Xamarin.Support.Plugins.Licenseplate.LicensePlateScanViewPlugin.cs -->
+<!-- LicensePlateScanViewPlugin.LicensePlateScanViewPlugin(android.content.Context, java.lang.String, io.anyline.view.ScanViewPluginConfig) -->
+<!-- LicensePlateScanViewPlugin.addResultListener(io.anyline.xamarin.support.plugins.licenseplate.LicensePlateResultListener) -->
+<!-- File: IO.Anyline.Xamarin.Support.Plugins.Meter.IMeterResultListener.cs -->
+<!-- MeterResultListener.onResult(io.anyline.xamarin.support.plugins.meter.MeterScanResult) -->
+<!-- File: IO.Anyline.Xamarin.Support.Plugins.Meter.MeterScanResult.cs -->
+<!-- MeterScanResult.MeterScanResult(io.anyline.plugin.ScanResult) -->
+<!-- File: IO.Anyline.Xamarin.Support.Plugins.Meter.MeterScanViewPlugin.cs -->
+<!-- MeterScanViewPlugin.MeterScanViewPlugin(android.content.Context, java.lang.String, io.anyline.view.ScanViewPluginConfig) -->
+<!-- MeterScanViewPlugin.addResultListener(io.anyline.xamarin.support.plugins.meter.MeterResultListener) -->
+<!-- File: IO.Anyline.Xamarin.Support.Plugins.Ocr.AnylineOcrScanResult.cs -->
+<!-- AnylineOcrScanResult.AnylineOcrScanResult(io.anyline.plugin.ScanResult) -->
+<!-- File: IO.Anyline.Xamarin.Support.Plugins.Ocr.AnylineOcrScanViewPlugin.cs -->
+<!-- AnylineOcrScanViewPlugin.AnylineOcrScanViewPlugin(android.content.Context, java.lang.String, at.nineyards.anyline.modules.ocr.AnylineOcrConfig, io.anyline.view.ScanViewPluginConfig) -->
+<!-- AnylineOcrScanViewPlugin.addResultListener(io.anyline.xamarin.support.plugins.ocr.AnylineOcrResultListener) -->
+<!-- File: IO.Anyline.Xamarin.Support.Plugins.Ocr.IAnylineOcrResultListener.cs -->
+<!-- AnylineOcrResultListener.onResult(io.anyline.xamarin.support.plugins.ocr.AnylineOcrScanResult) -->
 </metadata>

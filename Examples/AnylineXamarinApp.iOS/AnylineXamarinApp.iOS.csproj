@@ -312,6 +312,7 @@
     <BundleResource Include="Resources\AnylineResources.bundle\module_id\tessdata\eng_no_dict.traineddata"/>
     <BundleResource Include="Resources\AnylineResources.bundle\module_id\trained_models\DL.any"/>
     <BundleResource Include="Resources\AnylineResources.bundle\module_id\trained_models\DL_2.any"/>
+    <BundleResource Include="Resources\AnylineResources.bundle\module_id\trained_models\DL_AT.any"/>
     <BundleResource Include="Resources\AnylineResources.bundle\module_id\trained_models\mrz_retrain3_17500.enc"/>
     <BundleResource Include="Resources\AnylineResources.bundle\module_id\trained_models\USNr.any"/>
     <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\license_plates_combined.ale"/>
