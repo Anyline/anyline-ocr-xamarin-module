@@ -6,7 +6,7 @@ using Android.Util;
 using Android.Views;
 using Android.Widget;
 using AT.Nineyards.Anyline.Camera;
-using IO.Anyline.Xamarin.Plugins.ID;
+using IO.Anyline.Xamarin.Support.Plugins.ID;
 using IO.Anyline.Plugin;
 using IO.Anyline.View;
 using Java.Lang;

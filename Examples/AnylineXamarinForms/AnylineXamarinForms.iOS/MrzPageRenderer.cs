@@ -68,7 +68,7 @@ namespace AnylineXamarinForms.iOS
                 string configurationPath = NSBundle.MainBundle.PathForResource(@"mrz_config", @"json");
                 var configuration = ALUIConfiguration.CutoutConfigurationFromJsonFile(configurationPath);
                 configuration.FlashAlignment = ALFlashAlignment.TopRight;
-                configuration.StrokeColor = new UIColor(0f, 1f, 1f, 1f);
+                configuration.StrokeColor = new UIColor(0f, 1f, 1f, .2f);
                 configuration.FeedbackStrokeColor = new UIColor(0f, 1f, 1f, .2f);
                 _scanView.CurrentConfiguration = configuration;
 
@@ -80,7 +80,7 @@ namespace AnylineXamarinForms.iOS
                 UIImage cutoutImage = UIImage.FromBundle(@"cutoutImage.jpg");
                 imageView = new UIImageView(_scanView.CutoutRect);
                 imageView.Image = cutoutImage;
-                View.AddSubview(imageView);
+                //View.AddSubview(imageView);
 
                 // Start scanning
                 StartScanning();
@@ -91,12 +91,15 @@ namespace AnylineXamarinForms.iOS
             }
         }
 
-
         public void DidFindResult(AnylineMRZModuleView anylineMRZModuleView, ALIDResult scanResult)
         {
             Debug.WriteLine(scanResult.Result.ToString(), @"Result: ");
 
-            _alert = new UIAlertView("Result", scanResult.Result.ToString(), (IUIAlertViewDelegate)null, "OK", null);
+            var res = scanResult.Result as ALMRZIdentification;
+            var str = "";
+            if (res.IssuingDate != null)
+                str = res.IssuingDate + "\n" + res.IssuingDateObject.ToString();
+            _alert = new UIAlertView("Result", str, (IUIAlertViewDelegate)null, "OK", null);
             _alert.Clicked += (e, a) => {
                 StartScanning();
             };

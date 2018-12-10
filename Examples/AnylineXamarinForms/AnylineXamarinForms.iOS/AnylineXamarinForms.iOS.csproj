@@ -46,7 +46,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <MtouchArch>ARMv7</MtouchArch>
+    <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>True</MtouchDebug>
     <MtouchLink>Full</MtouchLink>
@@ -115,6 +115,7 @@
     <ITunesArtwork Include="iTunesArtwork" />
     <ITunesArtwork Include="iTunesArtwork@2x" />
     <None Include="packages.config" />
+    <BundleResource Include="Resources\mrz_config.json" />
     <BundleResource Include="Resources\AnylineResources.bundle\Anyline-Info.plist" />
     <BundleResource Include="Resources\AnylineResources.bundle\threshold_all.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\images\anyline_logo_white.dat" />
@@ -155,6 +156,7 @@
     <BundleResource Include="Resources\AnylineResources.bundle\module_id\tessdata\eng_no_dict.traineddata" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_id\trained_models\DL.any" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_id\trained_models\DL_2.any" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_id\trained_models\DL_AT.any" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_id\trained_models\mrz_retrain3_17500.enc" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_id\trained_models\USNr.any" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\license_plates_combined.ale" />
@@ -169,7 +171,6 @@
     <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\polish_nice.traineddata" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\sk_nice.traineddata" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\standard.traineddata" />
-    <BundleResource Include="Resources\mrz_config.json" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AnylineXamarinForms\AnylineXamarinForms.csproj">
@@ -220,6 +221,9 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
+    <BundleResource Include="Resources\cutoutImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <BundleResource Include="Resources\AnylineResources.bundle\images\flash_white.png" />
   </ItemGroup>
   <ItemGroup>
@@ -239,9 +243,6 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\AnylineResources.bundle\ui\frontend.min.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\cutoutImage.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

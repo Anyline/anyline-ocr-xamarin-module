@@ -2627,6 +2627,16 @@ namespace AnylineXamarinSDK.iOS
         [Export("personalNumber2", ArgumentSemantic.Strong)]
         string PersonalNumber2 { get; }
 
+        // added in 6.0
+        // @property (readonly, nonatomic, strong, nullable) NSString * _Nullable issuingDate;
+        [Export("issuingDate", ArgumentSemantic.Strong)]
+        string IssuingDate { get; }
+
+        // added in 6.0
+        // @property (readonly, nonatomic, strong, nullable) NSDate * _Nullable issuingDateObject;
+        [Export("issuingDateObject", ArgumentSemantic.Strong)]
+        NSDate IssuingDateObject { get; }
+
         // @property (readonly, nonatomic, strong) NSDate * _Nullable expirationDateObject;
         [NullAllowed, Export("expirationDateObject", ArgumentSemantic.Strong)]
         NSDate ExpirationDateObject { get; }
