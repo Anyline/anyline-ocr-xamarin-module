@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata minClientVersion="3.3">
+    <id>Anyline.Xamarin.SDK.iOS</id>
+    <version>6.1.0</version>
+    <title>Anyline Xamarin SDK (iOS)</title>
+    <authors>Anyline GmbH</authors>
+    <owners>peteranyline</owners>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <licenseUrl>https://raw.githubusercontent.com/Anyline/anyline-ocr-xamarin-module/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://documentation.anyline.io/toc/platforms/xamarin/index.html</projectUrl>
+    <iconUrl>https://anylinewebsiteresource.blob.core.windows.net/wordpressmedia/2015/11/logo-300x138.png</iconUrl>
+    <description>Anyline provides an easy-to-use SDK for applications to enable Optical Character Recognition (OCR) on mobile devices.
+            
+            For detailed integration guides, see https://documentation.anyline.com/toc/platforms/xamarin/xamarin.ios/xamarin.ios_quickstart.html and https://documentation.anyline.com/toc/platforms/xamarin/xamarin.android/xamarin.android_quickstart.html</description>
+    <summary>An easy-to-use SDK for applications to enable Optical Character Recognition (OCR) on mobile devices.</summary>
+    <releaseNotes>https://documentation.anyline.com/toc/platforms/xamarin/release_guide/index.html</releaseNotes>
+    <copyright>Copyright © 2019 Anyline GmbH</copyright>
+    <tags>ocr scanning meter barcode mrz qr document camera anyline license plate</tags>
+    <contentFiles>
+      <files include="**\xamarin.ios*\**\*.*" buildAction="BundleResource" />
+    </contentFiles>
+  </metadata>
+  <files>
+    <file src="AnylineResources.bundle\**\*.*" target="contentFiles\any\xamarin.ios10\AnylineResources.bundle" />
+    <file src="lib\Xamarin.iOS10\AnylineXamarinSDK.iOS.dll" target="lib\Xamarin.iOS10" />
+    <file src="README.md" target="README.md" />
+	<file src="LICENSE.md" target="LICENSE.md" />
+	<file src="build\Anyline.Xamarin.SDK.iOS.targets" target="build" />
+  </files>
+</package>

@@ -9,6 +9,8 @@
     <RootNamespace>AnylineXamarinApp.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>AnylineXamarinAppiOS</AssemblyName>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -122,10 +124,6 @@
     <AppExtensionDebugBundleId />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AnylineXamarinSDK.iOS, Version=3.10.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\AnylineXamarinSDK.iOS.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -269,71 +267,14 @@
     <BundleResource Include="Modules\DrivingLicense\anyline_austrian_driving_license.ale" />
     <BundleResource Include="Modules\OCR\shipping_container_config.json" />
     <BundleResource Include="Modules\OCR\container_scanner.ale" />
-    <BundleResource Include="Resources\AnylineResources.bundle\Anyline-Info.plist"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\threshold_all.ale"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\images\anyline_logo_white.dat"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\images\flash_white.png"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\images\flash_white%402x.png"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\images\flash_white%403x.png"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_auto.ale"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_auto_any.ale"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_grid.ale"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_grid_any.ale"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_line.ale"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_line_any.ale"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\container_scanner.ale"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\vin.ale"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\trained_models\USNr.any"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\trained_models\VIN.any"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_barcode\ean.ale"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_document\document.ale"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_document\document_crop.ale"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_document\trained_models\doc_model_3_25.any"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_document\trained_models\doc_model_3_27.any"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\analog_digital_auto_mode.ale"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\analog_meter.ale"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\dial_meter.ale"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\digital_heat_meter.ale"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\digital_meter.ale"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\dot_matrix_meter.ale"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\energy_serial.ale"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\energy_serial_alnum_3_letters.ale"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\energy_serial_capital_letters.ale"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\patternMulti9AndE.json"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\smart_meter_ger.ale"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\smart_meter_ger_spec.json"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\trained_models\CNN_energy_detection_full_half.enc"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\trained_models\CNN_serialnumbers_combined.enc"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\trained_models\CNN_SNr_w_CL_special_whiteList.enc"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_id\anyline_austrian_driving_license.ale"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_id\anyline_driving_license.ale"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_id\mrz_scanning.ale"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_id\tessdata\deu.traineddata"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_id\tessdata\eng_no_dict.traineddata"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_id\trained_models\DL.any"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_id\trained_models\DL_2.any"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_id\trained_models\DL_AT.any"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_id\trained_models\mrz_retrain3_17500.enc"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_id\trained_models\USNr.any"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\license_plates_combined.ale"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\aut_nice.traineddata"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\ch_nice.traineddata"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\cz_nice.traineddata"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\deu.traineddata"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\de_umlaut.traineddata"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\hr_nice.traineddata"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\italy_nice.traineddata"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\old.traineddata"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\polish_nice.traineddata"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\sk_nice.traineddata"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\standard.traineddata"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\sounds\beep.wav"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\ui\configuration.html"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\ui\cutout.css"/>
-    <BundleResource Include="Resources\AnylineResources.bundle\ui\frontend.min.js"/>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Anyline.Xamarin.SDK.iOS">
+      <Version>6.1.0</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
-  <PropertyGroup>
+  <!--<PropertyGroup>
     <PreBuildEvent>$(SolutionDir)tools\dist\IncrementBuildNumber.exe $(ProjectDir)Info.plist</PreBuildEvent>
-  </PropertyGroup>
+  </PropertyGroup>-->
 </Project>

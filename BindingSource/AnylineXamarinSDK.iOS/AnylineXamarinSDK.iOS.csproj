@@ -55,9 +55,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy $(TargetPath) $(SolutionDir)..\ /Y</PostBuildEvent>
-  </PropertyGroup>
-  <PropertyGroup>
-    <PreBuildEvent>$(ProjectDir)\tools\dist\update-ios-example-app.exe ..\..\..\..\AnylineResources.bundle ..\..\..\..\Examples\AnylineXamarinApp.iOS\Resources\AnylineResources.bundle ..\..\..\..\Examples\AnylineXamarinApp.iOS\AnylineXamarinApp.iOS.csproj ..\..\..\..\Nuget\AnylineSDK.iOS.nuspec</PreBuildEvent>
+    <PostBuildEvent>xcopy $(TargetPath) $(SolutionDir)Nuget\lib\Xamarin.iOS10\ /Y</PostBuildEvent>
   </PropertyGroup>
 </Project>

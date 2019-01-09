@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+	<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+		<metadata>
+			<id>Anyline.Xamarin.SDK.Droid</id>
+			<version>6.1.0</version>
+			<title>Anyline Xamarin SDK (Android)</title>
+			<authors>Anyline GmbH</authors>
+			<owners>peteranyline</owners>
+			<licenseUrl>https://raw.githubusercontent.com/Anyline/anyline-ocr-xamarin-module/master/LICENSE.md</licenseUrl>
+			<iconUrl>https://anylinewebsiteresource.blob.core.windows.net/wordpressmedia/2015/11/logo-300x138.png</iconUrl>
+			<requireLicenseAcceptance>true</requireLicenseAcceptance>
+			<releaseNotes>https://documentation.anyline.com/toc/platforms/xamarin/release_guide/index.html</releaseNotes>
+			<summary>An easy-to-use SDK for applications to enable Optical Character Recognition (OCR) on mobile devices.</summary>
+			<description>
+			Anyline provides an easy-to-use SDK for applications to enable Optical Character Recognition (OCR) on mobile devices.
+			
+			For detailed integration guides, see https://documentation.anyline.com/toc/platforms/xamarin/xamarin.ios/xamarin.ios_quickstart.html and https://documentation.anyline.com/toc/platforms/xamarin/xamarin.android/xamarin.android_quickstart.html 
+			</description>
+			<projectUrl>https://documentation.anyline.io/toc/platforms/xamarin/index.html</projectUrl>
+			<copyright>Copyright © 2019 Anyline GmbH</copyright>
+			<tags>ocr scanning meter barcode mrz qr document camera anyline license plate </tags>			
+		</metadata>
+
+		<files>
+			<file src="lib\MonoAndroid10\AnylineXamarinSDK.Droid.dll" target="lib\MonoAndroid10" />
+			<file src="README.md" target="README.md" />
+			<file src="LICENSE.md" target="LICENSE.md" />
+		</files>
+				
+    </package>
