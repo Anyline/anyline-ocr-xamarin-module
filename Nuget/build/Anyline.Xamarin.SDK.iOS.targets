@@ -1,0 +1,21 @@
+<Project>
+
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+  </PropertyGroup>
+
+  <Target Name="_Anyline_AddLinkMetadataToNuGetBundleResources" BeforeTargets="_CompileInterfaceDefinitions" DependsOnTargets="ResolveReferences">
+
+    <PropertyGroup>
+      <_ContentFilePathPattern>^.*\\contentFiles\\\w*\\[\w.]*\\</_ContentFilePathPattern>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <BundleResource Update="@(BundleResource)" Condition="'%(BundleResource.NuGetItemType)' != '' And '%(BundleResource.Link)' == ''">
+        <Link>$([System.Text.RegularExpressions.Regex]::Replace(%(BundleResource.FullPath), $(_ContentFilePathPattern), '', System.Text.RegularExpressions.RegexOptions.IgnoreCase))</Link>
+      </BundleResource>
+    </ItemGroup>
+
+  </Target>
+
+</Project>
