@@ -146,7 +146,7 @@ namespace AnylineXamarinApp.DrivingLicense
             var result = scanResult.Result as IO.Anyline.Plugin.ID.DrivingLicenseResult;
             
             _driverLicenseResultView.SetDocumentNumber(result.LicenseNumber);
-            _driverLicenseResultView.SetDayOfBirth(result.DateOfBirth);
+            _driverLicenseResultView.SetDayOfBirth(result.DayOfBirth);
 
             _driverLicenseResultView.SetName(result.SurName + " " + result.GivenName);
         }

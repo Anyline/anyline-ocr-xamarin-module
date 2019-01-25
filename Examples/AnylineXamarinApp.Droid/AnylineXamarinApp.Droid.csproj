@@ -74,9 +74,9 @@
     <AndroidSupportedAbis />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AnylineXamarinSDK.Droid, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="AnylineXamarinSDK.Droid, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\AnylineXamarinSDK.Droid.dll</HintPath>
+      <HintPath>..\..\Nuget\lib\MonoAndroid10\AnylineXamarinSDK.Droid.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />

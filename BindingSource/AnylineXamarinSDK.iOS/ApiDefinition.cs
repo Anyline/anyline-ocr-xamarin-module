@@ -2601,19 +2601,19 @@ namespace AnylineXamarinSDK.iOS
 
         // @property (readonly, nonatomic, strong) NSString * _Nonnull checkdigitNumber;
         [Export("checkdigitNumber", ArgumentSemantic.Strong)]
-        string CheckdigitNumber { get; }
+        string CheckDigitNumber { get; }
 
         // @property (readonly, nonatomic, strong) NSString * _Nonnull checkdigitExpirationDate;
         [Export("checkdigitExpirationDate", ArgumentSemantic.Strong)]
-        string CheckdigitExpirationDate { get; }
+        string CheckDigitExpirationDate { get; }
 
         // @property (readonly, nonatomic, strong) NSString * _Nonnull checkdigitDayOfBirth;
         [Export("checkdigitDayOfBirth", ArgumentSemantic.Strong)]
-        string CheckdigitDayOfBirth { get; }
+        string CheckDigitDayOfBirth { get; }
 
         // @property (readonly, nonatomic, strong) NSString * _Nonnull checkdigitFinal;
         [Export("checkdigitFinal", ArgumentSemantic.Strong)]
-        string CheckdigitFinal { get; }
+        string CheckDigitFinal { get; }
 
         // @property (readonly, nonatomic, strong) NSString * _Nonnull personalNumber;
         [Export("personalNumber", ArgumentSemantic.Strong)]
@@ -2647,7 +2647,7 @@ namespace AnylineXamarinSDK.iOS
 
         // @property (readonly, nonatomic, strong) NSString * _Nonnull MRZString;
         [Export("MRZString", ArgumentSemantic.Strong)]
-        string MRZString { get; }
+        string MrzString { get; }
 
         // @property (nonatomic, strong) UIImage * _Nullable faceImage;
         [NullAllowed, Export("faceImage", ArgumentSemantic.Strong)]

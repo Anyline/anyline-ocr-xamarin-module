@@ -149,7 +149,7 @@ namespace AnylineXamarinApp.iOS
             else
                 address.Text = "";
 
-            var mrzString = aId.MRZString.Replace("\\n", "\n");
+            var mrzString = aId.MrzString.Replace("\\n", "\n");
             var splitString = mrzString.Split('\n');
             
             if (splitString.Length == 2)

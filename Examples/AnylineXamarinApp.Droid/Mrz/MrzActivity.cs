@@ -6,6 +6,8 @@ using Android.Views;
 using AT.Nineyards.Anyline.Modules.Mrz;
 using AT.Nineyards.Anylinexamarin.Support.Modules.Mrz;
 using Android.Widget;
+using static AT.Nineyards.Anyline.Camera.CameraController;
+using AT.Nineyards.Anyline.Camera;
 
 namespace AnylineXamarinApp.Mrz
 {
@@ -22,8 +24,6 @@ namespace AnylineXamarinApp.Mrz
         private Switch _strictModeSwitch;
         private Switch _cropResultSwitch;
         private ImageView _mrzResultImageView;
-
-        
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -49,7 +49,7 @@ namespace AnylineXamarinApp.Mrz
             _resultView.SetOnClickListener(this);
             
             _scanView.SetConfigFromAsset("MrzConfig.json");
-
+            
             _scanView.InitAnyline(MainActivity.LicenseKey, this);
                         
             _scanView.SetCancelOnResult(true);
@@ -120,6 +120,7 @@ namespace AnylineXamarinApp.Mrz
         protected override void OnResume()
         {
             base.OnResume();
+            
             _scanView.StartScanning();
         }
 

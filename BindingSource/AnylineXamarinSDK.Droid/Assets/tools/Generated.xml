@@ -38,6 +38,20 @@
 <attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setStartVariable' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.Object']]/parameter[2]" name="managedName">value</attr>
 <!-- AnylineController.setWorkerThreadUncaughtExceptionHandler(java.lang.Thread.UncaughtExceptionHandler) -->
 <attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setWorkerThreadUncaughtExceptionHandler' and count(parameter)=1 and parameter[1][@type='java.lang.Thread.UncaughtExceptionHandler']]/parameter[1]" name="managedName">handler</attr>
+<!-- File: AT.Nineyards.Anyline.Camera.AbstractZoomHandler.cs -->
+<!-- AbstractZoomHandler.AbstractZoomHandler(android.view.View) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AbstractZoomHandler']/constructor[@name='AbstractZoomHandler' and count(parameter)=1 and parameter[1][@type='android.view.View']]/parameter[1]" name="managedName">touchableView</attr>
+<!-- AbstractZoomHandler.notifyZoomChanged(int) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AbstractZoomHandler']/method[@name='notifyZoomChanged' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">zoom</attr>
+<!-- AbstractZoomHandler.onTouch(android.view.View, android.view.MotionEvent) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AbstractZoomHandler']/method[@name='onTouch' and count(parameter)=2 and parameter[1][@type='android.view.View'] and parameter[2][@type='android.view.MotionEvent']]/parameter[1]" name="managedName">v</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AbstractZoomHandler']/method[@name='onTouch' and count(parameter)=2 and parameter[1][@type='android.view.View'] and parameter[2][@type='android.view.MotionEvent']]/parameter[2]" name="managedName">event</attr>
+<!-- AbstractZoomHandler.setMaxZoom(float) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AbstractZoomHandler']/method[@name='setMaxZoom' and count(parameter)=1 and parameter[1][@type='float']]/parameter[1]" name="managedName">maxZoom</attr>
+<!-- AbstractZoomHandler.setZoomHardness(float) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AbstractZoomHandler']/method[@name='setZoomHardness' and count(parameter)=1 and parameter[1][@type='float']]/parameter[1]" name="managedName">zoomHardness</attr>
+<!-- AbstractZoomHandler.notifyZoomChanged(int) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AbstractZoomHandler']/method[@name='notifyZoomChanged' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">zoom</attr>
 <!-- File: AT.Nineyards.Anyline.Camera.AnylineBaseView.cs -->
 <!-- AnylineBaseView.AnylineBaseView(android.content.Context, android.util.AttributeSet, int) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/constructor[@name='AnylineBaseView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[1]" name="managedName">context</attr>
@@ -221,7 +235,11 @@
 <!-- CameraConfig.setHighResolutionPictureSize(at.nineyards.anyline.camera.CameraSize) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/method[@name='setHighResolutionPictureSize' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.CameraSize']]/parameter[1]" name="managedName">highResImageSize</attr>
 <!-- File: AT.Nineyards.Anyline.Camera.CameraController.cs -->
-<!-- CameraController.setPreferredCameraConfig(at.nineyards.anyline.camera.CameraConfig) -->
+<!-- CameraController.CameraOrientation.fromDegrees(int) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController.CameraOrientation']/method[@name='fromDegrees' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">degrees</attr>
+<!-- CameraController.CameraOrientation.valueOf(java.lang.String) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController.CameraOrientation']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
+<!-- CameraController.setPreferredCameraConfig(at.nineyards.anyline.camera.CameraConfig) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setPreferredCameraConfig' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.CameraConfig']]/parameter[1]" name="managedName">preferredCameraConfig</attr>
 <!-- CameraController.getNewImage(int, int, int, int, boolean) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='getNewImage' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='boolean']]/parameter[1]" name="managedName">cropX</attr>
@@ -232,6 +250,8 @@
 <!-- CameraController.reportCameraError(java.lang.Exception) -->
 <!-- CameraController.setCameraOpenListener(at.nineyards.anyline.camera.CameraOpenListener) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setCameraOpenListener' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.CameraOpenListener']]/parameter[1]" name="managedName">listener</attr>
+<!-- CameraController.setCameraOrientation(at.nineyards.anyline.camera.CameraController.CameraOrientation) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setCameraOrientation' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.CameraController.CameraOrientation']]/parameter[1]" name="managedName">cameraOrientation</attr>
 <!-- CameraController.setFlashOn(boolean) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setFlashOn' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">isOn</attr>
 <!-- CameraController.setFocusRegionToCutout(android.content.Context, android.graphics.RectF, float, float) -->
@@ -249,6 +269,8 @@
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='getNewImage' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='boolean']]/parameter[3]" name="managedName">cropWidth</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='getNewImage' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='boolean']]/parameter[4]" name="managedName">cropHeight</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='getNewImage' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='boolean']]/parameter[5]" name="managedName">isGrayOnly</attr>
+<!-- CameraController.setCameraOrientation(at.nineyards.anyline.camera.CameraController.CameraOrientation) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setCameraOrientation' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.CameraController.CameraOrientation']]/parameter[1]" name="managedName">cameraOrientation</attr>
 <!-- CameraController.setFlashOn(boolean) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setFlashOn' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">isOn</attr>
 <!-- CameraController.setFocusRegionToCutout(android.content.Context, android.graphics.RectF, float, float) -->
@@ -257,12 +279,16 @@
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setFocusRegionToCutout' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.graphics.RectF'] and parameter[3][@type='float'] and parameter[4][@type='float']]/parameter[3]" name="managedName">surfaceWidth</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setFocusRegionToCutout' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.graphics.RectF'] and parameter[3][@type='float'] and parameter[4][@type='float']]/parameter[4]" name="managedName">surfaceHeight</attr>
 <!-- File: AT.Nineyards.Anyline.Camera.CameraController1.cs -->
-<!-- CameraController1.getNewImage(int, int, int, int, boolean) -->
+<!-- CameraController1.doZoom(float) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController1']/method[@name='doZoom' and count(parameter)=1 and parameter[1][@type='float']]/parameter[1]" name="managedName">scale</attr>
+<!-- CameraController1.getNewImage(int, int, int, int, boolean) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController1']/method[@name='getNewImage' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='boolean']]/parameter[1]" name="managedName">cropX</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController1']/method[@name='getNewImage' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='boolean']]/parameter[2]" name="managedName">cropY</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController1']/method[@name='getNewImage' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='boolean']]/parameter[3]" name="managedName">cropWidth</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController1']/method[@name='getNewImage' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='boolean']]/parameter[4]" name="managedName">cropHeight</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController1']/method[@name='getNewImage' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='boolean']]/parameter[5]" name="managedName">isGrayOnly</attr>
+<!-- CameraController1.setCameraOrientation(at.nineyards.anyline.camera.CameraController.CameraOrientation) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController1']/method[@name='setCameraOrientation' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.CameraController.CameraOrientation']]/parameter[1]" name="managedName">cameraOrientation</attr>
 <!-- CameraController1.setEpsonConfig(java.lang.String, java.lang.String, java.lang.String, java.lang.String, float) -->
 <!-- CameraController1.setFlashOn(boolean) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController1']/method[@name='setFlashOn' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">isOn</attr>
@@ -280,6 +306,8 @@
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController2']/method[@name='getNewImage' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='boolean']]/parameter[3]" name="managedName">cropWidth</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController2']/method[@name='getNewImage' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='boolean']]/parameter[4]" name="managedName">cropHeight</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController2']/method[@name='getNewImage' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='boolean']]/parameter[5]" name="managedName">isGreyOnly</attr>
+<!-- CameraController2.setCameraOrientation(at.nineyards.anyline.camera.CameraController.CameraOrientation) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController2']/method[@name='setCameraOrientation' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.CameraController.CameraOrientation']]/parameter[1]" name="managedName">cameraOrientation</attr>
 <!-- CameraController2.setFlashOn(boolean) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController2']/method[@name='setFlashOn' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">isOn</attr>
 <!-- CameraController2.setFocusRegionToCutout(android.content.Context, android.graphics.RectF, float, float) -->
@@ -551,6 +579,20 @@
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='SimpleFlashView']/method[@name='setFlashResources' and count(parameter)=3 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int']]/parameter[3]" name="managedName">autoImageId</attr>
 <!-- SimpleFlashView.setMode(at.nineyards.anyline.camera.FlashControl.Mode) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='SimpleFlashView']/method[@name='setMode' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.FlashControl.Mode']]/parameter[1]" name="managedName">mode</attr>
+<!-- File: AT.Nineyards.Anyline.Camera.SimpleZoomHandler.cs -->
+<!-- SimpleZoomHandler.IZoomHandlerListener.onZoomChanged(int) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/interface[@name='SimpleZoomHandler.IZoomHandlerListener']/method[@name='onZoomChanged' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">newZoom</attr>
+<!-- SimpleZoomHandler.notifyZoomChanged(int) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='SimpleZoomHandler']/method[@name='notifyZoomChanged' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">zoom</attr>
+<!-- SimpleZoomHandler.setZoomHandlerListener(at.nineyards.anyline.camera.SimpleZoomHandler.IZoomHandlerListener) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='SimpleZoomHandler']/method[@name='setZoomHandlerListener' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.SimpleZoomHandler.IZoomHandlerListener']]/parameter[1]" name="managedName">zoomHandlerListener</attr>
+<!-- File: AT.Nineyards.Anyline.Camera.SimpleZoomHandlerBuilder.cs -->
+<!-- SimpleZoomHandlerBuilder.forView(android.view.View) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='SimpleZoomHandlerBuilder']/method[@name='forView' and count(parameter)=1 and parameter[1][@type='android.view.View']]/parameter[1]" name="managedName">touchableView</attr>
+<!-- SimpleZoomHandlerBuilder.setMaxZoom(float) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='SimpleZoomHandlerBuilder']/method[@name='setMaxZoom' and count(parameter)=1 and parameter[1][@type='float']]/parameter[1]" name="managedName">maxZoom</attr>
+<!-- SimpleZoomHandlerBuilder.setZoomListener(at.nineyards.anyline.camera.SimpleZoomHandler.IZoomHandlerListener) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='SimpleZoomHandlerBuilder']/method[@name='setZoomListener' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.SimpleZoomHandler.IZoomHandlerListener']]/parameter[1]" name="managedName">listener</attr>
 <!-- File: AT.Nineyards.Anyline.Camera.VisualFeedbackConfig.cs -->
 <!-- VisualFeedbackConfig.AnimationStyle.fromInt(int) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='VisualFeedbackConfig.AnimationStyle']/method[@name='fromInt' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">style</attr>
@@ -1303,8 +1345,8 @@
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseResult']/method[@name='setAuthority' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">authority</attr>
 <!-- DrivingLicenseResult.setCategories(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseResult']/method[@name='setCategories' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">categories</attr>
-<!-- DrivingLicenseResult.setDateOfBirth(java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseResult']/method[@name='setDateOfBirth' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">dateOfBirth</attr>
+<!-- DrivingLicenseResult.setDayOfBirth(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseResult']/method[@name='setDayOfBirth' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">dayOfBirth</attr>
 <!-- DrivingLicenseResult.setExpirationDate(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseResult']/method[@name='setExpirationDate' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">expirationDate</attr>
 <!-- DrivingLicenseResult.setGivenName(java.lang.String) -->
@@ -1319,6 +1361,7 @@
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseResult']/method[@name='setSurName' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">surName</attr>
 <!-- File: IO.Anyline.Plugin.ID.ID.cs -->
 <!-- ID.parseDateObject(java.lang.String) -->
+<!-- ID.parseDateObjectDrivingLicense(java.lang.String) -->
 <!-- File: IO.Anyline.Plugin.ID.IdConfig.cs -->
 <!-- File: IO.Anyline.Plugin.ID.IdScanPlugin.cs -->
 <!-- IdScanPlugin.ScanMode.valueOf(java.lang.String) -->
