@@ -1,5 +1,5 @@
 ﻿{
-    "captureResolution": "720p",
+  "captureResolution": "720p",
   "cutout": {
     "style": "rect",
     "width": 540,
@@ -14,6 +14,7 @@
     "strokeWidth": 2,
     "strokeColor": "FFFFFF",
     "cornerRadius": 4,
+    "feedbackStrokeColor": "0099FF",
     "offset": {
       "x": 0,
       "y": 0
@@ -28,19 +29,20 @@
     },
     "outerColor": "000000",
     "outerAlpha": 0.3
-    },
-    "flash": {
+  },
+  "flash": {
     "mode": "auto",
     "alignment": "bottom_left",
     "imageOn": "ic_flash_on",
     "imageOff": "ic_flash_off",
     "imageAuto": "ic_flash_auto"
-    },
-    "beepOnResult": false,
-    "vibrateOnResult": true,
-    "blinkAnimationOnResult": true,
-    "cancelOnResult": true,
-    "visualFeedback": {
-        "style": "contour_rect"
-    }
+  },
+  "beepOnResult": false,
+  "vibrateOnResult": true,
+  "blinkAnimationOnResult": true,
+  "cancelOnResult": true,
+  "visualFeedback": {
+    "style": "contour_rect",
+    "strokeColor": "0099FF"
+  }
 }

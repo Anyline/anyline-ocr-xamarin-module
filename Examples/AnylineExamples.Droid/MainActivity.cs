@@ -25,12 +25,12 @@ namespace AnylineExamples.Droid
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            
             SetContentView(Resource.Layout.activity_main);
-
+            
             Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
-
-
+            
             listView = FindViewById<ListView>(Resource.Id.listView);
 
             listAdapter = new ActivityListAdapter(this);
@@ -84,6 +84,7 @@ namespace AnylineExamples.Droid
             {
                 var intent = new Intent(ApplicationContext, typeof(ScanActivity));
                 intent.PutExtra("jsonPath", jsonPath);
+                intent.PutExtra("title", item.Name);
                 StartActivity(intent);
 
             }

@@ -5,21 +5,102 @@ using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using AT.Nineyards.Anyline.Camera;
+using IO.Anyline.View;
+
+using Android.Support.V7.App;
 
 namespace AnylineExamples.Droid
 {
-    [Activity(Label = "ScanActivity")]
-    public class ScanActivity : Activity
+    [Activity(Label = "",
+        MainLauncher = false,
+        ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait,
+        HardwareAccelerated = true)]
+    public class ScanActivity : AppCompatActivity
     {
-        protected override void OnCreate(Bundle savedInstanceState)
-        {
-            base.OnCreate(savedInstanceState);
+        public static readonly string TAG = typeof(ScanActivity).Name;
 
-            // Create your application here
+        //INSERT YOUR LICENSE KEY HERE
+        //AT.Anyline.Xamarin.App.Droid
+        public static readonly string LICENSE_KEY = "eyAiYW5kcm9pZElkZW50aWZpZXIiOiBbICJBVC5BbnlsaW5lLlhhbWFyaW4uQXBwLkRyb2lkIiwgIkFULkFueWxpbmUuWGFtYXJpbi5Gb3Jtcy5BcHAuRHJvaWQiIF0sICJkZWJ1Z1JlcG9ydGluZyI6ICJvbiIsICJpb3NJZGVudGlmaWVyIjogWyAiQVQuQW55bGluZS5YYW1hcmluLkFwcC5pT1MiLCAiQVQuQW55bGluZS5YYW1hcmluLkZvcm1zLkFwcC5pT1MiIF0sICJsaWNlbnNlS2V5VmVyc2lvbiI6IDIsICJtYWpvclZlcnNpb24iOiAiMyIsICJwaW5nUmVwb3J0aW5nIjogdHJ1ZSwgInBsYXRmb3JtIjogWyAiaU9TIiwgIkFuZHJvaWQiIF0sICJzY29wZSI6IFsgIkFMTCIgXSwgInNob3dXYXRlcm1hcmsiOiB0cnVlLCAidG9sZXJhbmNlRGF5cyI6IDkwLCAidmFsaWQiOiAiMjAyMC0wMS0wMSIgfQprcS9WL0wrSGlpN0NzL2tXa1E5VWRzbGxzd0hOanphelZEZ2Z2WU1LLytJN1VHYmlITy9SblMrdGZIeUZxQmlJCkN3QXkrdkk5RnJpOVc5MStGdjJTS2FJNS8vLzZhUVgyVXlSVC9CaVRKM1QzTXBVOEIrMWpFZTQxbCtXejRqaFgKMlZ6dENpT2E3cit3d2RlTm1GUFpxdGVUTG5BRmgxQWgycDZpMzgyMWhOb3FsVHNxcFlJdjN3cWdCbWg5clh2WgpBM01pRnpkZ0dab1gzbzNINzFGRUtJME9JSy9ZRkNJRk5nVEI0MFhBM3ZTOXk2ak1FR2E5bjVQRHY5MU5NZEFRCnlHTzcxRVVuZE9ndmJmTkJWbVJYNUR1MGVrZ0RGYUNFMUwweVpUQ3dhMFJVTStLSE9PcXA3TThYOWVFdjJ0RVkKVEcyejdydGQ5YytiRlBvTU5vcUpwZz09Cg==";
+        
+        private ScanView _scanView;
+        private string _jsonPath;
+        
+        protected override void OnCreate(Bundle bundle)
+        {
+            base.OnCreate(bundle);
+
+            try
+            {
+                SupportActionBar.SetHomeButtonEnabled(true);
+                SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+                
+
+                _jsonPath = Intent.GetStringExtra("jsonPath");
+                Title = Intent.GetStringExtra("title");
+                
+                Window.SetFlags(WindowManagerFlags.KeepScreenOn, WindowManagerFlags.KeepScreenOn);
+                SetContentView(Resource.Layout.scan_activity);
+
+                _scanView = FindViewById<ScanView>(Resource.Id.scan_view);
+                _scanView.Init(_jsonPath, LICENSE_KEY);
+                /*
+                scanViewPlugin.AddResultListener(this);
+                _scanView.ScanViewPlugin = scanViewPlugin;
+                */
+
+                _scanView.CameraOpened += ScanView_CameraOpened;
+                _scanView.CameraError += ScanView_CameraError;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+
+        private void ScanView_CameraError(object sender, CameraErrorEventArgs e)
+        {
+            Console.WriteLine(e);
+        }
+
+        private void ScanView_CameraOpened(object sender, CameraOpenedEventArgs args)
+        {
+            Console.WriteLine($"Camera opened with resolution {args.Width} x {args.Height}.");
+        }
+        
+        public override void OnBackPressed()
+        {
+            if (_scanView != null)
+            {
+                _scanView.CameraView.ReleaseCamera();
+                _scanView.Stop();
+
+                _scanView.Dispose();
+                _scanView = null;
+
+                GC.Collect();
+            }
+            Finish();
+            
+        }
+
+        protected override void OnResume()
+        {
+            base.OnResume();
+
+            try
+            {
+                _scanView.Start();
+            } catch(Exception e)
+            {
+                Console.WriteLine(e);
+            }
         }
     }
 }

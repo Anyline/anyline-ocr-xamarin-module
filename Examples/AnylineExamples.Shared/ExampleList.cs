@@ -62,25 +62,25 @@ namespace AnylineExamples.Shared
         public static List<ExampleModel> Items { get; } = new List<ExampleModel>
         {
             new ExampleModel(ItemType.Header, Category.Energy, Category.Energy, ""),
-            new ExampleModel(ItemType.Item, Example.AnalogDigital, Category.Energy, "Assets/energy_config_analog_digital.json"),
-            new ExampleModel(ItemType.Item, Example.DialMeter, Category.Energy, "Assets/energy_config_dial.json"),
+            new ExampleModel(ItemType.Item, Example.AnalogDigital, Category.Energy, "energy_config_analog_digital.json"),
+            new ExampleModel(ItemType.Item, Example.DialMeter, Category.Energy, "energy_config_dial.json"),
 
             new ExampleModel(ItemType.Header, Category.ID, Category.ID, ""),
-            new ExampleModel(ItemType.Item, Example.MRZ, Category.ID, "Assets/id_config_mrz.json"),
-            new ExampleModel(ItemType.Item, Example.DrivingLicense, Category.ID, "Assets/id_config_driving_license.json"),
+            new ExampleModel(ItemType.Item, Example.MRZ, Category.ID, "id_config_mrz.json"),
+            new ExampleModel(ItemType.Item, Example.DrivingLicense, Category.ID, "id_config_driving_license.json"),
             
             new ExampleModel(ItemType.Header, Category.Vehicle, Category.Vehicle, ""),
-            new ExampleModel(ItemType.Item, Example.LicensePlate, Category.Vehicle, "Assets/vehicle_config_license_plate.json"),
+            new ExampleModel(ItemType.Item, Example.LicensePlate, Category.Vehicle, "vehicle_config_license_plate.json"),
             
             new ExampleModel(ItemType.Header, Category.MRO, Category.MRO, ""),
-            new ExampleModel(ItemType.Item, Example.SerialNumber, Category.MRO, "Assets/mro_config_seial.json"),
-            new ExampleModel(ItemType.Item, Example.VIN, Category.MRO, "Assets/mro_config_vin.json"),
-            new ExampleModel(ItemType.Item, Example.ShippingContainer, Category.MRO, "Assets/mro_config_shipping_container.json"),
+            new ExampleModel(ItemType.Item, Example.SerialNumber, Category.MRO, "mro_config_seial.json"),
+            new ExampleModel(ItemType.Item, Example.VIN, Category.MRO, "mro_config_vin.json"),
+            new ExampleModel(ItemType.Item, Example.ShippingContainer, Category.MRO, "mro_config_shipping_container.json"),
             
             new ExampleModel(ItemType.Header, Category.Others, Category.Others, ""),
-            new ExampleModel(ItemType.Item, Example.Barcode, Category.Others, "Assets/others_config_barcode.json"),
-            new ExampleModel(ItemType.Item, Example.Bottlecap, Category.Others, "Assets/others_config_bottlecap.json"),
-            new ExampleModel(ItemType.Item, Example.VoucherCode, Category.Others, "Assets/others_config_voucher_code.json"),
+            new ExampleModel(ItemType.Item, Example.Barcode, Category.Others, "others_config_barcode.json"),
+            new ExampleModel(ItemType.Item, Example.Bottlecap, Category.Others, "others_config_bottlecap.json"),
+            new ExampleModel(ItemType.Item, Example.VoucherCode, Category.Others, "others_config_voucher_code.json"),
             
             new ExampleModel(ItemType.Header, Category.Version, Category.Version, ""),
         };
