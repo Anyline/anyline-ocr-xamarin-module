@@ -2771,20 +2771,20 @@ namespace AnylineExamples.Droid
 			// aapt resource value: 0x7f090075
 			public const int list_item = 2131296373;
 			
-			// aapt resource value: 0x7f0900c2
-			public const int main_layout = 2131296450;
+			// aapt resource value: 0x7f0900c4
+			public const int main_layout = 2131296452;
 			
 			// aapt resource value: 0x7f09006a
 			public const int manual = 2131296362;
 			
-			// aapt resource value: 0x7f0900c6
-			public const int masked = 2131296454;
+			// aapt resource value: 0x7f0900c8
+			public const int masked = 2131296456;
 			
 			// aapt resource value: 0x7f0900b5
 			public const int media_actions = 2131296437;
 			
-			// aapt resource value: 0x7f0900c4
-			public const int message = 2131296452;
+			// aapt resource value: 0x7f0900c6
+			public const int message = 2131296454;
 			
 			// aapt resource value: 0x7f090030
 			public const int middle = 2131296304;
@@ -2849,6 +2849,12 @@ namespace AnylineExamples.Droid
 			// aapt resource value: 0x7f090061
 			public const int resize = 2131296353;
 			
+			// aapt resource value: 0x7f0900c2
+			public const int result_layout = 2131296450;
+			
+			// aapt resource value: 0x7f0900c3
+			public const int result_list_view = 2131296451;
+			
 			// aapt resource value: 0x7f090049
 			public const int right = 2131296329;
 			
@@ -2867,8 +2873,8 @@ namespace AnylineExamples.Droid
 			// aapt resource value: 0x7f09000e
 			public const int save_scale_type = 2131296270;
 			
-			// aapt resource value: 0x7f0900c3
-			public const int scan_view = 2131296451;
+			// aapt resource value: 0x7f0900c5
+			public const int scan_view = 2131296453;
 			
 			// aapt resource value: 0x7f090027
 			public const int screen = 2131296295;
@@ -3062,8 +3068,8 @@ namespace AnylineExamples.Droid
 			// aapt resource value: 0x7f090016
 			public const int view_offset_helper = 2131296278;
 			
-			// aapt resource value: 0x7f0900c5
-			public const int visible = 2131296453;
+			// aapt resource value: 0x7f0900c7
+			public const int visible = 2131296455;
 			
 			// aapt resource value: 0x7f09003b
 			public const int withText = 2131296315;
@@ -3302,22 +3308,25 @@ namespace AnylineExamples.Droid
 			public const int notification_template_part_time = 2130968633;
 			
 			// aapt resource value: 0x7f04003a
-			public const int scan_activity = 2130968634;
+			public const int result_activity = 2130968634;
 			
 			// aapt resource value: 0x7f04003b
-			public const int select_dialog_item_material = 2130968635;
+			public const int scan_activity = 2130968635;
 			
 			// aapt resource value: 0x7f04003c
-			public const int select_dialog_multichoice_material = 2130968636;
+			public const int select_dialog_item_material = 2130968636;
 			
 			// aapt resource value: 0x7f04003d
-			public const int select_dialog_singlechoice_material = 2130968637;
+			public const int select_dialog_multichoice_material = 2130968637;
 			
 			// aapt resource value: 0x7f04003e
-			public const int support_simple_spinner_dropdown_item = 2130968638;
+			public const int select_dialog_singlechoice_material = 2130968638;
 			
 			// aapt resource value: 0x7f04003f
-			public const int tooltip = 2130968639;
+			public const int support_simple_spinner_dropdown_item = 2130968639;
+			
+			// aapt resource value: 0x7f040040
+			public const int tooltip = 2130968640;
 			
 			static Layout()
 			{
