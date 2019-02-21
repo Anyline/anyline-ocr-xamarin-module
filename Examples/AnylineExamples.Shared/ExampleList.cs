@@ -19,7 +19,7 @@ namespace AnylineExamples.Shared
         public static readonly string Vehicle = "Vehicle";
         public static readonly string MRO = "MRO";
         public static readonly string Others = "Others";
-        public static readonly string Version = ""; // special category
+        public static readonly string Version = "";
 
         public static List<string> GetItems()
         {

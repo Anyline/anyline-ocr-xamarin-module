@@ -17,7 +17,8 @@
 			<ListView
 				android:layout_width="fill_parent"
 				android:layout_height="fill_parent"
-				android:id="@+id/result_list_view" />
+				android:id="@+id/result_list_view">
+				</ListView>
 		</LinearLayout>
 	</ScrollView>
 

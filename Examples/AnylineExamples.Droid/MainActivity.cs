@@ -37,7 +37,7 @@ namespace AnylineExamples.Droid
             listView.Adapter = listAdapter;
 
             //adapt height of listView so it fits.
-            Util.SetListViewHeightBasedOnChildren(listView);
+            Util.SetListViewHeightBasedOnChildren(listView, this);
 
             listView.ItemClick -= ListView_ItemClick;
             listView.ItemClick += ListView_ItemClick;
@@ -60,7 +60,8 @@ namespace AnylineExamples.Droid
         }
 
         private void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs a)
-        {// unregister first
+        {
+            // unregister first
             listView.ItemClick -= ListView_ItemClick;
 
 #pragma warning disable CS4014
@@ -103,11 +104,6 @@ namespace AnylineExamples.Droid
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             int id = item.ItemId;
-            /*if (id == Resource.Id.action_settings)
-            {
-                return true;
-            }*/
-
             return base.OnOptionsItemSelected(item);
         }
 	}

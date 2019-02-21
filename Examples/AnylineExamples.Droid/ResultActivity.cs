@@ -43,17 +43,14 @@ namespace AnylineExamples.Droid
             if (scanResult != null)
             {
                 Title = scanResult.GetType().Name;
-                
 
-                /*
-                // a list where the filtered result properties are stored
-                Dictionary<string, object> properties = new Dictionary<string, object>();
-
+                var list = new List<Java.Lang.Object>();
                 foreach (var prop in scanResult.GetType().GetProperties())
                 {
 
                     switch (prop.Name)
                     {
+                        // filter out properties that we don't want to display
                         case "JniPeerMembers":
                         case "JniIdentityHashCode":
                         case "Handle":
@@ -65,42 +62,30 @@ namespace AnylineExamples.Droid
                             var value = prop.GetValue(scanResult, null);
 
                             Log.Debug(TAG, "{0}: {1}", prop.Name, value);
-
-                            if (value.GetType().Equals(typeof(AnylineImage)))
+                            if (value != null)
                             {
-                                var bitmap = (value as AnylineImage).Clone().Bitmap;
-                                properties.Add(prop.Name, bitmap);
-                            }
-                            else
-                            {
-                                properties.Add(prop.Name, value);
+                                if (value.GetType().Equals(typeof(AnylineImage)))
+                                {
+                                    var bitmap = (value as AnylineImage).Clone().Bitmap;
+                                    list.Add(prop.Name);
+                                    list.Add(bitmap);
+                                }
+                                else
+                                {
+                                    list.Add(prop.Name);
+                                    list.Add(value.ToString());
+                                }
                             }
                             break;
                     }
 
-                }*/
-
-
-                /*
-                    JniPeerMembers: Android.Runtime.XAPeerMembers
-                    ScanMode: AUTO_ANALOG_DIGITAL_METER
-                    PluginId: plugin
-                    Confidence: 99
-                    CutoutImage: Mat: h: 540 w: 240
-                    FullImage: YuvImage: h: 1080 w: 1920
-                    Outline: 
-                    Result: 00059.666
-                    Class: class io.anyline.plugin.meter.MeterScanResult
-                    JniIdentityHashCode: 127769470
-                    PeerReference: 0x200c2e/G
-                    Handle: 2100270
-                */
-
+                }
+                
+                var listAdapter = new ResultListAdapter(this, list);
+                _resultListView.Adapter = listAdapter;
+                Util.SetListViewHeightBasedOnChildren(_resultListView, this);
             }
-
         }
-
-
 
         #region going back & cleanup
         public override bool OnOptionsItemSelected(IMenuItem item)
