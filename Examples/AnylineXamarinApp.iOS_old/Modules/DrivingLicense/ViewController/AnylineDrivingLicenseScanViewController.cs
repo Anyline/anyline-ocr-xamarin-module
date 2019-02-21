@@ -158,77 +158,7 @@ namespace AnylineXamarinApp.iOS.Modules.DrivingLicense.ViewController
             base.Dispose();
             
         }
-
-        /*
-        void IAnylineOCRModuleDelegate.DidFindResult(AnylineOCRModuleView anylineOCRModuleView, ALOCRResult result)
-        {
-            StopAnyline();
-            if (_drivingLicenseResultView != null)
-                View.BringSubviewToFront(_drivingLicenseResultView);
-
-            string[] comps = result.Result.ToString().Split('|');
-
-            string surNames = comps[0];
-            string givenNames = comps[1];
-            string birthdateID = comps[2];
-            string idNumber = comps[3];
-
-            string[] surNamesComps = surNames.Split(' ');
-
-            if (surNamesComps.Length == 2)
-            {
-                _drivingLicenseResultView.Surname.Text = surNamesComps[0];
-                _drivingLicenseResultView.Surname2.Text = surNamesComps[1];
-                _drivingLicenseResultView.GivenNames.Text = givenNames;
-            }
-            else
-            {
-                _drivingLicenseResultView.Surname.Text = surNamesComps[0];
-                _drivingLicenseResultView.GivenNames.Text = givenNames;
-                _drivingLicenseResultView.Surname2.Text = "";
-            }
-            
-            string[] birthdateIDComps = birthdateID.Split(' ');
-
-            string birthday = birthdateIDComps[0];
-            
-            _drivingLicenseResultView.Birthdate.Text = birthday;
-            _drivingLicenseResultView.IDNumber.Text = idNumber;
-
-            // Present the information to the user
-            _drivingLicenseResultView?.AnimateFadeIn(View);            
-        }
-
-        void IAnylineOCRModuleDelegate.ReportsRunFailure(AnylineOCRModuleView anylineOCRModuleView, ALOCRError error)
-        {
-            switch (error)
-            {
-                case ALOCRError.ConfidenceNotReached:
-                    Console.WriteLine("Confidence not reached.");
-                    break;
-                case ALOCRError.NoLinesFound:
-                    Console.WriteLine("No lines found.");
-                    break;
-                case ALOCRError.NoTextFound:
-                    Console.WriteLine("No text found.");
-                    break;
-                case ALOCRError.ResultNotValid:
-                    Console.WriteLine("Result is not valid.");
-                    break;
-                case ALOCRError.SharpnessNotReached:
-                    Console.WriteLine("Sharpness is not reached.");
-                    break;
-                case ALOCRError.Unkown:
-                    Console.WriteLine("Unknown run error.");
-                    break;
-            }
-        }
-
-        void IAnylineOCRModuleDelegate.ReportsVariable(AnylineOCRModuleView anylineOCRModuleView, string variableName, NSObject value) { }
-
-        bool IAnylineOCRModuleDelegate.TextOutlineDetected(AnylineOCRModuleView anylineOCRModuleView, ALSquare outline) { return false; }
-        */
-
+        
         /*
         This is the main delegate method Anyline uses to report its results
         */

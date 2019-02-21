@@ -4,6 +4,7 @@ using Android.App;
 using Android.Content;
 using Android.Graphics.Drawables;
 using Android.Runtime;
+using Android.Util;
 using Android.Views;
 using Android.Widget;
 
@@ -49,21 +50,15 @@ namespace AnylineExamples.Droid
 
                     int screenWidth = display.Width;
                     float textWidth = t.Paint.MeasureText(t.Text);
-                    int numberOfLines = ((int)textWidth/screenWidth) + 1;
+                    int numberOfLines = Math.Max(1, ((int)textWidth/screenWidth) + 1);
+
+                    // fixes a glitch with long result strings
+                    if (numberOfLines > 2)
+                    {
+                        numberOfLines++;
+                    }
                     t.SetLines(numberOfLines);
-                    /*WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
-Display display = wm.getDefaultDisplay();
-int screenWidth = display.getWidth(); // Get full screen width
-int eightyPercent = (screenWidth * 80) / 100; // Calculate 80% of it
-// as my adapter was having almost 80% of the whole screen width
-
-float textWidth = textView.getPaint().measureText(fullString);
-// this method will give you the total width required to display total String
-
-int numberOfLines = ((int) textWidth/eightyPercent) + 1;
-// calculate number of lines it might take
-
-textView.setLines(numberOfLines);*/
+                    
                 }
                 if (listItem.GetType() == typeof(ViewGroup))
                 {
@@ -74,6 +69,27 @@ textView.setLines(numberOfLines);*/
             }
 
             listView.LayoutParameters.Height = totalHeight + (listView.DividerHeight * (listView.Count - 1));
+        }
+
+        class DialogInterfaceOnClickListener : Java.Lang.Object, IDialogInterfaceOnClickListener
+        {
+            public void OnClick(IDialogInterface dialog, int which)
+            {
+                dialog.Dismiss();
+            }
+        }
+
+        public static void ShowError(string message, Context context)
+        {
+            Log.Debug("", message);
+
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+            alertDialogBuilder.SetMessage(message);
+            alertDialogBuilder.SetCancelable(false);
+            alertDialogBuilder.SetPositiveButton("OK", new DialogInterfaceOnClickListener());
+
+            var alert = alertDialogBuilder.Create();
+            alert.Show();
         }
     }
 }

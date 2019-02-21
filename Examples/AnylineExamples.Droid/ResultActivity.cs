@@ -14,6 +14,8 @@ using Android.Widget;
 using Android.Util;
 using AT.Nineyards.Anyline.Models;
 using IO.Anyline.Plugin;
+using AT.Nineyards.Anyline.Modules.Mrz;
+using IO.Anyline.Plugin.ID;
 
 namespace AnylineExamples.Droid
 {
@@ -44,47 +46,60 @@ namespace AnylineExamples.Droid
             {
                 Title = scanResult.GetType().Name;
 
-                var list = new List<Java.Lang.Object>();
-                foreach (var prop in scanResult.GetType().GetProperties())
-                {
-
-                    switch (prop.Name)
-                    {
-                        // filter out properties that we don't want to display
-                        case "JniPeerMembers":
-                        case "JniIdentityHashCode":
-                        case "Handle":
-                        case "PeerReference":
-                        case "Outline":
-                            break;
-                        default:
-
-                            var value = prop.GetValue(scanResult, null);
-
-                            Log.Debug(TAG, "{0}: {1}", prop.Name, value);
-                            if (value != null)
-                            {
-                                if (value.GetType().Equals(typeof(AnylineImage)))
-                                {
-                                    var bitmap = (value as AnylineImage).Clone().Bitmap;
-                                    list.Add(prop.Name);
-                                    list.Add(bitmap);
-                                }
-                                else
-                                {
-                                    list.Add(prop.Name);
-                                    list.Add(value.ToString());
-                                }
-                            }
-                            break;
-                    }
-
-                }
+                var list = CreatePropertyList(scanResult);
                 
                 var listAdapter = new ResultListAdapter(this, list);
                 _resultListView.Adapter = listAdapter;
                 Util.SetListViewHeightBasedOnChildren(_resultListView, this);
             }
+        }
+
+        private List<Java.Lang.Object> CreatePropertyList(Java.Lang.Object obj)
+        {
+            var list = new List<Java.Lang.Object>();
+            foreach (var prop in obj.GetType().GetProperties())
+            {
+
+                switch (prop.Name)
+                {
+                    // filter out properties that we don't want to display
+                    case "JniPeerMembers":
+                    case "JniIdentityHashCode":
+                    case "Handle":
+                    case "PeerReference":
+                    case "Outline":
+                    case "Class":
+                        break;
+                    default:
+
+                        var value = prop.GetValue(obj, null);
+
+                        Log.Debug(TAG, "{0}: {1}", prop.Name, value);
+                        if (value != null)
+                        {
+                            if (value is AnylineImage)
+                            {
+                                var bitmap = (value as AnylineImage).Clone().Bitmap;
+                                list.Add(prop.Name);
+                                list.Add(bitmap);
+                            }
+                            else if (value is ID)
+                            {
+                                var sublist = CreatePropertyList(value as ID);
+                                list = list.Concat(sublist).ToList();
+                            }
+                            else
+                            {
+                                list.Add(prop.Name);
+
+                                var str = new Java.Lang.String(value.ToString()).ReplaceAll("\\\\n", "\\\n");
+                                list.Add(str);
+                            }
+                        }
+                        break;
+                }
+            }
+            return list;
         }
 
         #region going back & cleanup

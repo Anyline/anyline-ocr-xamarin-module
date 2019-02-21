@@ -64,7 +64,7 @@ namespace AnylineExamples.Droid
             }
             catch (Exception e)
             {
-                Log.Debug(TAG, e.ToString());
+                Util.ShowError(e.ToString(), this);
             }
         }
 
@@ -112,19 +112,22 @@ namespace AnylineExamples.Droid
 
         private void GoBack()
         {
-            if (_scanView != null)
+            try
             {
-                _scanView.Stop();
-                _scanView.CameraView.ReleaseCamera();
+                if (_scanView != null)
+                {
+                    _scanView.Stop();
+                    _scanView.CameraView.ReleaseCamera();
 
-                _scanView.CameraOpened -= ScanView_CameraOpened;
-                _scanView.CameraError -= ScanView_CameraError;
+                    _scanView.CameraOpened -= ScanView_CameraOpened;
+                    _scanView.CameraError -= ScanView_CameraError;
 
-                _scanView.Dispose();
-                _scanView = null;
+                    _scanView.Dispose();
+                    _scanView = null;
 
-                GC.Collect();
-            }
+                    GC.Collect();
+                }
+            } catch (Exception) { }
             Finish();
         }
         #endregion

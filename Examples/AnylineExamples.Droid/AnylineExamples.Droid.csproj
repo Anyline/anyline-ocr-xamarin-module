@@ -72,6 +72,7 @@
   <ItemGroup>
     <AndroidAsset Include="Assets\energy_config_dial.json" />
     <AndroidAsset Include="Assets\energy_config_analog_digital.json" />
+    <AndroidAsset Include="Assets\id_config_mrz.json" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>

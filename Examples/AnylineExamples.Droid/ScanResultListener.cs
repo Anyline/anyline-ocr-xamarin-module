@@ -19,6 +19,11 @@ using AT.Nineyards.Anyline.Models;
 
 namespace AnylineExamples.Droid
 {
+    /// <summary>
+    /// This scan result listener implements IScanResultListener 
+    /// in order to receive results and passes the JNI Handle to the 
+    /// result activity.
+    /// </summary>
     public class ScanResultListener : Java.Lang.Object, IScanResultListener
     {
         public static readonly string TAG = typeof(ScanResultListener).Name;
@@ -29,6 +34,10 @@ namespace AnylineExamples.Droid
             _activity = activity;
         }
 
+        /// <summary>
+        /// Since the native Java type is generic, the type of the parameter translates to 
+        /// </summary>
+        /// <param name="result"></param>
         public void OnResult(Java.Lang.Object result)
         {
             var scanResult = result as ScanResult;
