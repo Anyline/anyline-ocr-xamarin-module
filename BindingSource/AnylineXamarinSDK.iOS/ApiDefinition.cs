@@ -2002,7 +2002,7 @@ namespace AnylineXamarinSDK.iOS
 
         // @property (nonatomic, strong) ALAbstractScanViewPlugin * _Nullable scanViewPlugin;
         [NullAllowed, Export("scanViewPlugin", ArgumentSemantic.Strong)]
-        ALAbstractScanViewPlugin ScanViewPlugin { get; private set; }
+        ALAbstractScanViewPlugin ScanViewPlugin { get; }
 
         // @property (readonly, nonatomic) CGRect watermarkRect;
         [Export("watermarkRect")]
