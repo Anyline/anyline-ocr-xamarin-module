@@ -50,7 +50,8 @@
   <!--Metadata.xml XPath method reference: path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='takeHighResolutionImage' and count(parameter)=0]"-->
   <!--<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']" name="managedName">MyCameraController</attr>-->
   <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/interface[@name='CameraController.CameraControllerListener']"/>
-  	
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/interface[@name='CameraController.CameraControllerListener']"/>
+
   <!-- add AnylineController license expiration date API -->
   
   <!-- AnylineController.getLicenseExpirationDate(java.lang.String) -->

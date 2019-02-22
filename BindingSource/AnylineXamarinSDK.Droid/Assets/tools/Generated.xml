@@ -38,20 +38,6 @@
 <attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setStartVariable' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.Object']]/parameter[2]" name="managedName">value</attr>
 <!-- AnylineController.setWorkerThreadUncaughtExceptionHandler(java.lang.Thread.UncaughtExceptionHandler) -->
 <attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setWorkerThreadUncaughtExceptionHandler' and count(parameter)=1 and parameter[1][@type='java.lang.Thread.UncaughtExceptionHandler']]/parameter[1]" name="managedName">handler</attr>
-<!-- File: AT.Nineyards.Anyline.Camera.AbstractZoomHandler.cs -->
-<!-- AbstractZoomHandler.AbstractZoomHandler(android.view.View) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AbstractZoomHandler']/constructor[@name='AbstractZoomHandler' and count(parameter)=1 and parameter[1][@type='android.view.View']]/parameter[1]" name="managedName">touchableView</attr>
-<!-- AbstractZoomHandler.notifyZoomChanged(int) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AbstractZoomHandler']/method[@name='notifyZoomChanged' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">zoom</attr>
-<!-- AbstractZoomHandler.onTouch(android.view.View, android.view.MotionEvent) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AbstractZoomHandler']/method[@name='onTouch' and count(parameter)=2 and parameter[1][@type='android.view.View'] and parameter[2][@type='android.view.MotionEvent']]/parameter[1]" name="managedName">v</attr>
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AbstractZoomHandler']/method[@name='onTouch' and count(parameter)=2 and parameter[1][@type='android.view.View'] and parameter[2][@type='android.view.MotionEvent']]/parameter[2]" name="managedName">event</attr>
-<!-- AbstractZoomHandler.setMaxZoom(float) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AbstractZoomHandler']/method[@name='setMaxZoom' and count(parameter)=1 and parameter[1][@type='float']]/parameter[1]" name="managedName">maxZoom</attr>
-<!-- AbstractZoomHandler.setZoomHardness(float) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AbstractZoomHandler']/method[@name='setZoomHardness' and count(parameter)=1 and parameter[1][@type='float']]/parameter[1]" name="managedName">zoomHardness</attr>
-<!-- AbstractZoomHandler.notifyZoomChanged(int) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AbstractZoomHandler']/method[@name='notifyZoomChanged' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">zoom</attr>
 <!-- File: AT.Nineyards.Anyline.Camera.AnylineBaseView.cs -->
 <!-- AnylineBaseView.AnylineBaseView(android.content.Context, android.util.AttributeSet, int) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/constructor[@name='AnylineBaseView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[1]" name="managedName">context</attr>
@@ -85,7 +71,11 @@
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineView']/constructor[@name='AnylineView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[2]" name="managedName">attrs</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineView']/constructor[@name='AnylineView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[3]" name="managedName">defStyleAttr</attr>
 <!-- File: AT.Nineyards.Anyline.Camera.AnylineViewConfig.cs -->
-<!-- AnylineViewConfig.CutoutAlignment.fromInt(int) -->
+<!-- AnylineViewConfig.AnimationStyle.fromInt(int) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineViewConfig.AnimationStyle']/method[@name='fromInt' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">style</attr>
+<!-- AnylineViewConfig.AnimationStyle.valueOf(java.lang.String) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineViewConfig.AnimationStyle']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
+<!-- AnylineViewConfig.CutoutAlignment.fromInt(int) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineViewConfig.CutoutAlignment']/method[@name='fromInt' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">alignment</attr>
 <!-- AnylineViewConfig.CutoutAlignment.fromString(java.lang.String) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineViewConfig.CutoutAlignment']/method[@name='fromString' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">alignment</attr>
@@ -235,11 +225,7 @@
 <!-- CameraConfig.setHighResolutionPictureSize(at.nineyards.anyline.camera.CameraSize) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/method[@name='setHighResolutionPictureSize' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.CameraSize']]/parameter[1]" name="managedName">highResImageSize</attr>
 <!-- File: AT.Nineyards.Anyline.Camera.CameraController.cs -->
-<!-- CameraController.CameraOrientation.fromDegrees(int) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController.CameraOrientation']/method[@name='fromDegrees' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">degrees</attr>
-<!-- CameraController.CameraOrientation.valueOf(java.lang.String) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController.CameraOrientation']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
-<!-- CameraController.setPreferredCameraConfig(at.nineyards.anyline.camera.CameraConfig) -->
+<!-- CameraController.setPreferredCameraConfig(at.nineyards.anyline.camera.CameraConfig) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setPreferredCameraConfig' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.CameraConfig']]/parameter[1]" name="managedName">preferredCameraConfig</attr>
 <!-- CameraController.getNewImage(int, int, int, int, boolean) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='getNewImage' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='boolean']]/parameter[1]" name="managedName">cropX</attr>
@@ -250,8 +236,6 @@
 <!-- CameraController.reportCameraError(java.lang.Exception) -->
 <!-- CameraController.setCameraOpenListener(at.nineyards.anyline.camera.CameraOpenListener) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setCameraOpenListener' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.CameraOpenListener']]/parameter[1]" name="managedName">listener</attr>
-<!-- CameraController.setCameraOrientation(at.nineyards.anyline.camera.CameraController.CameraOrientation) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setCameraOrientation' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.CameraController.CameraOrientation']]/parameter[1]" name="managedName">cameraOrientation</attr>
 <!-- CameraController.setFlashOn(boolean) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setFlashOn' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">isOn</attr>
 <!-- CameraController.setFocusRegionToCutout(android.content.Context, android.graphics.RectF, float, float) -->
@@ -269,8 +253,6 @@
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='getNewImage' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='boolean']]/parameter[3]" name="managedName">cropWidth</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='getNewImage' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='boolean']]/parameter[4]" name="managedName">cropHeight</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='getNewImage' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='boolean']]/parameter[5]" name="managedName">isGrayOnly</attr>
-<!-- CameraController.setCameraOrientation(at.nineyards.anyline.camera.CameraController.CameraOrientation) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setCameraOrientation' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.CameraController.CameraOrientation']]/parameter[1]" name="managedName">cameraOrientation</attr>
 <!-- CameraController.setFlashOn(boolean) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setFlashOn' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">isOn</attr>
 <!-- CameraController.setFocusRegionToCutout(android.content.Context, android.graphics.RectF, float, float) -->
@@ -279,16 +261,12 @@
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setFocusRegionToCutout' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.graphics.RectF'] and parameter[3][@type='float'] and parameter[4][@type='float']]/parameter[3]" name="managedName">surfaceWidth</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setFocusRegionToCutout' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.graphics.RectF'] and parameter[3][@type='float'] and parameter[4][@type='float']]/parameter[4]" name="managedName">surfaceHeight</attr>
 <!-- File: AT.Nineyards.Anyline.Camera.CameraController1.cs -->
-<!-- CameraController1.doZoom(float) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController1']/method[@name='doZoom' and count(parameter)=1 and parameter[1][@type='float']]/parameter[1]" name="managedName">scale</attr>
-<!-- CameraController1.getNewImage(int, int, int, int, boolean) -->
+<!-- CameraController1.getNewImage(int, int, int, int, boolean) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController1']/method[@name='getNewImage' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='boolean']]/parameter[1]" name="managedName">cropX</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController1']/method[@name='getNewImage' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='boolean']]/parameter[2]" name="managedName">cropY</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController1']/method[@name='getNewImage' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='boolean']]/parameter[3]" name="managedName">cropWidth</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController1']/method[@name='getNewImage' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='boolean']]/parameter[4]" name="managedName">cropHeight</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController1']/method[@name='getNewImage' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='boolean']]/parameter[5]" name="managedName">isGrayOnly</attr>
-<!-- CameraController1.setCameraOrientation(at.nineyards.anyline.camera.CameraController.CameraOrientation) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController1']/method[@name='setCameraOrientation' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.CameraController.CameraOrientation']]/parameter[1]" name="managedName">cameraOrientation</attr>
 <!-- CameraController1.setEpsonConfig(java.lang.String, java.lang.String, java.lang.String, java.lang.String, float) -->
 <!-- CameraController1.setFlashOn(boolean) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController1']/method[@name='setFlashOn' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">isOn</attr>
@@ -306,8 +284,6 @@
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController2']/method[@name='getNewImage' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='boolean']]/parameter[3]" name="managedName">cropWidth</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController2']/method[@name='getNewImage' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='boolean']]/parameter[4]" name="managedName">cropHeight</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController2']/method[@name='getNewImage' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='boolean']]/parameter[5]" name="managedName">isGreyOnly</attr>
-<!-- CameraController2.setCameraOrientation(at.nineyards.anyline.camera.CameraController.CameraOrientation) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController2']/method[@name='setCameraOrientation' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.CameraController.CameraOrientation']]/parameter[1]" name="managedName">cameraOrientation</attr>
 <!-- CameraController2.setFlashOn(boolean) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController2']/method[@name='setFlashOn' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">isOn</attr>
 <!-- CameraController2.setFocusRegionToCutout(android.content.Context, android.graphics.RectF, float, float) -->
@@ -482,7 +458,8 @@
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='setSceneMode' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">sceneMode</attr>
 <!-- CameraView.setUseMaxFpsRange(boolean) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='setUseMaxFpsRange' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">isEnabled</attr>
-<!-- File: AT.Nineyards.Anyline.Camera.CutoutView.cs -->
+<!-- File: AT.Nineyards.Anyline.Camera.Cutout.cs -->
+<!-- File: AT.Nineyards.Anyline.Camera.CutoutView.cs -->
 <!-- CutoutView.CutoutView(android.content.Context, android.util.AttributeSet, int) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CutoutView']/constructor[@name='CutoutView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CutoutView']/constructor[@name='CutoutView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[2]" name="managedName">attrs</attr>
@@ -579,20 +556,6 @@
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='SimpleFlashView']/method[@name='setFlashResources' and count(parameter)=3 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int']]/parameter[3]" name="managedName">autoImageId</attr>
 <!-- SimpleFlashView.setMode(at.nineyards.anyline.camera.FlashControl.Mode) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='SimpleFlashView']/method[@name='setMode' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.FlashControl.Mode']]/parameter[1]" name="managedName">mode</attr>
-<!-- File: AT.Nineyards.Anyline.Camera.SimpleZoomHandler.cs -->
-<!-- SimpleZoomHandler.IZoomHandlerListener.onZoomChanged(int) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/interface[@name='SimpleZoomHandler.IZoomHandlerListener']/method[@name='onZoomChanged' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">newZoom</attr>
-<!-- SimpleZoomHandler.notifyZoomChanged(int) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='SimpleZoomHandler']/method[@name='notifyZoomChanged' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">zoom</attr>
-<!-- SimpleZoomHandler.setZoomHandlerListener(at.nineyards.anyline.camera.SimpleZoomHandler.IZoomHandlerListener) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='SimpleZoomHandler']/method[@name='setZoomHandlerListener' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.SimpleZoomHandler.IZoomHandlerListener']]/parameter[1]" name="managedName">zoomHandlerListener</attr>
-<!-- File: AT.Nineyards.Anyline.Camera.SimpleZoomHandlerBuilder.cs -->
-<!-- SimpleZoomHandlerBuilder.forView(android.view.View) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='SimpleZoomHandlerBuilder']/method[@name='forView' and count(parameter)=1 and parameter[1][@type='android.view.View']]/parameter[1]" name="managedName">touchableView</attr>
-<!-- SimpleZoomHandlerBuilder.setMaxZoom(float) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='SimpleZoomHandlerBuilder']/method[@name='setMaxZoom' and count(parameter)=1 and parameter[1][@type='float']]/parameter[1]" name="managedName">maxZoom</attr>
-<!-- SimpleZoomHandlerBuilder.setZoomListener(at.nineyards.anyline.camera.SimpleZoomHandler.IZoomHandlerListener) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='SimpleZoomHandlerBuilder']/method[@name='setZoomListener' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.SimpleZoomHandler.IZoomHandlerListener']]/parameter[1]" name="managedName">listener</attr>
 <!-- File: AT.Nineyards.Anyline.Camera.VisualFeedbackConfig.cs -->
 <!-- VisualFeedbackConfig.AnimationStyle.fromInt(int) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='VisualFeedbackConfig.AnimationStyle']/method[@name='fromInt' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">style</attr>
@@ -691,7 +654,6 @@
 <!-- AnylineBaseModuleView.calculateBrightnessCount(double) -->
 <!-- AnylineBaseModuleView.drawFeedback(java.lang.Object) -->
 <attr path="/api/package[@name='at.nineyards.anyline.modules']/class[@name='AnylineBaseModuleView']/method[@name='drawFeedback' and count(parameter)=1 and parameter[1][@type='java.lang.Object']]/parameter[1]" name="managedName">drawObject</attr>
-<!-- AnylineBaseModuleView.drawShape(java.util.List&lt;android.graphics.PointF&gt;, int, int, int, int) -->
 <!-- AnylineBaseModuleView.drawShape(java.util.List&lt;android.graphics.PointF&gt;, java.lang.String) -->
 <attr path="/api/package[@name='at.nineyards.anyline.modules']/class[@name='AnylineBaseModuleView']/method[@name='drawShape' and count(parameter)=2 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">outline</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.modules']/class[@name='AnylineBaseModuleView']/method[@name='drawShape' and count(parameter)=2 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[2][@type='java.lang.String']]/parameter[2]" name="managedName">color</attr>
@@ -1547,10 +1509,41 @@
 <attr path="/api/package[@name='io.anyline.plugin']/class[@name='ScanRunSkippedReason']/constructor[@name='ScanRunSkippedReason' and count(parameter)=3 and parameter[1][@type='java.lang.String'] and parameter[2][@type='int'] and parameter[3][@type='java.lang.String']]/parameter[1]" name="managedName">pluginId</attr>
 <attr path="/api/package[@name='io.anyline.plugin']/class[@name='ScanRunSkippedReason']/constructor[@name='ScanRunSkippedReason' and count(parameter)=3 and parameter[1][@type='java.lang.String'] and parameter[2][@type='int'] and parameter[3][@type='java.lang.String']]/parameter[2]" name="managedName">code</attr>
 <attr path="/api/package[@name='io.anyline.plugin']/class[@name='ScanRunSkippedReason']/constructor[@name='ScanRunSkippedReason' and count(parameter)=3 and parameter[1][@type='java.lang.String'] and parameter[2][@type='int'] and parameter[3][@type='java.lang.String']]/parameter[3]" name="managedName">text</attr>
+<!-- File: IO.Anyline.Util.JSUtil.cs -->
+<!-- JSUtil.setupConfig(android.content.Context, java.lang.String, at.nineyards.anyline.camera.AnylineViewConfig, at.nineyards.anyline.camera.VisualFeedbackConfig, android.graphics.Rect) -->
+<!-- JSUtil.setupConfig(android.content.Context, java.lang.String, io.anyline.view.CutoutConfig, at.nineyards.anyline.camera.VisualFeedbackConfig, android.graphics.Rect) -->
+<!-- JSUtil.setupMask(at.nineyards.anyline.camera.AnylineViewConfig) -->
+<!-- JSUtil.setupMask(io.anyline.view.CutoutConfig) -->
+<!-- JSUtil.updateDocumentColorsFeedback(at.nineyards.anyline.camera.VisualFeedbackConfig, java.lang.String) -->
+<!-- JSUtil.updateFeedback(java.util.ArrayList&lt;android.graphics.RectF&gt;, android.content.Context, java.lang.String) -->
+<!-- JSUtil.updateFeedbackShape(java.util.List&lt;android.graphics.PointF&gt;, android.content.Context, java.lang.String) -->
 <!-- File: IO.Anyline.Util.LicenseFeature.cs -->
 <!-- LicenseFeature.LicenseFeature(java.lang.String, java.lang.String, java.lang.String) -->
 <!-- LicenseFeature.LicenseFeature(java.lang.String, java.lang.String) -->
 <!-- LicenseFeature.LicenseFeature(java.lang.String) -->
+<!-- File: IO.Anyline.View.AbstractWebView.cs -->
+<!-- AbstractWebView.AbstractWebView(android.content.Context, at.nineyards.anyline.camera.VisualFeedbackConfig, float) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractWebView']/constructor[@name='AbstractWebView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='at.nineyards.anyline.camera.VisualFeedbackConfig'] and parameter[3][@type='float']]/parameter[1]" name="managedName">context</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractWebView']/constructor[@name='AbstractWebView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='at.nineyards.anyline.camera.VisualFeedbackConfig'] and parameter[3][@type='float']]/parameter[2]" name="managedName">visualFeedbackConfig</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractWebView']/constructor[@name='AbstractWebView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='at.nineyards.anyline.camera.VisualFeedbackConfig'] and parameter[3][@type='float']]/parameter[3]" name="managedName">resizeScale</attr>
+<!-- AbstractWebView.AbstractWebView(android.content.Context) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractWebView']/constructor[@name='AbstractWebView' and count(parameter)=1 and parameter[1][@type='android.content.Context']]/parameter[1]" name="managedName">context</attr>
+<!-- AbstractWebView.drawDocument(java.util.List&lt;android.graphics.PointF&gt;) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractWebView']/method[@name='drawDocument' and count(parameter)=1 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;']]/parameter[1]" name="managedName">reportedShape</attr>
+<!-- AbstractWebView.getScaleWebView(android.webkit.WebView) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractWebView']/method[@name='getScaleWebView' and count(parameter)=1 and parameter[1][@type='android.webkit.WebView']]/parameter[1]" name="managedName">webView</attr>
+<!-- AbstractWebView.getViewRelativePointListFromCutoutRelativeShape(java.util.List&lt;android.graphics.PointF&gt;) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractWebView']/method[@name='getViewRelativePointListFromCutoutRelativeShape' and count(parameter)=1 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;']]/parameter[1]" name="managedName">shape</attr>
+<!-- AbstractWebView.setAnimatableShapeRelativeToCutout(java.util.List&lt;io.anyline.view.AbstractWebView.AnimatablePointF&gt;, java.util.List&lt;android.graphics.PointF&gt;) -->
+<!-- AbstractWebView.setAnimatableShapeRelativeToCutoutREACT(java.util.List&lt;io.anyline.view.AbstractWebView.AnimatablePointF&gt;, java.util.List&lt;android.graphics.PointF&gt;) -->
+<!-- AbstractWebView.setCutoutInfo(android.graphics.Rect, float, int, int) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractWebView']/method[@name='setCutoutInfo' and count(parameter)=4 and parameter[1][@type='android.graphics.Rect'] and parameter[2][@type='float'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[1]" name="managedName">cutoutRectOnView</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractWebView']/method[@name='setCutoutInfo' and count(parameter)=4 and parameter[1][@type='android.graphics.Rect'] and parameter[2][@type='float'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[2]" name="managedName">frameToViewScale</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractWebView']/method[@name='setCutoutInfo' and count(parameter)=4 and parameter[1][@type='android.graphics.Rect'] and parameter[2][@type='float'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[3]" name="managedName">cutoutCropOffsetOnViewX</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractWebView']/method[@name='setCutoutInfo' and count(parameter)=4 and parameter[1][@type='android.graphics.Rect'] and parameter[2][@type='float'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[4]" name="managedName">cutoutCropOffsetOnViewY</attr>
+<!-- AbstractWebView.setCutoutRect(android.graphics.Rect, at.nineyards.anyline.camera.AnylineViewConfig) -->
+<!-- AbstractWebView.setCutoutRect(android.graphics.Rect, io.anyline.view.CutoutConfig) -->
+<!-- AbstractWebView.setUIVisualFeedbackConfig(at.nineyards.anyline.camera.VisualFeedbackConfig) -->
 <!-- File: IO.Anyline.View.AnylineViewConfig.cs -->
 <!-- AnylineViewConfig.AnylineViewConfig(android.content.Context, java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineViewConfig']/constructor[@name='AnylineViewConfig' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">context</attr>
@@ -1560,42 +1553,44 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/constructor[@name='AnylineWebView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='float'] and parameter[3][@type='at.nineyards.anyline.camera.VisualFeedbackConfig']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/constructor[@name='AnylineWebView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='float'] and parameter[3][@type='at.nineyards.anyline.camera.VisualFeedbackConfig']]/parameter[2]" name="managedName">resizeScale</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/constructor[@name='AnylineWebView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='float'] and parameter[3][@type='at.nineyards.anyline.camera.VisualFeedbackConfig']]/parameter[3]" name="managedName">visualFeedbackConfig</attr>
-<!-- AnylineWebView.drawDocument(java.util.List&lt;android.graphics.PointF&gt;) -->
-<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='drawDocument' and count(parameter)=1 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;']]/parameter[1]" name="managedName">reportedShape</attr>
+<!-- AnylineWebView.setVisualFeedbackConfig(at.nineyards.anyline.camera.VisualFeedbackConfig) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='setVisualFeedbackConfig' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.VisualFeedbackConfig']]/parameter[1]" name="managedName">visualFeedbackConfig</attr>
+<!-- AnylineWebView.drawDocument(java.util.List&lt;android.graphics.PointF&gt;, java.lang.String, java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='drawDocument' and count(parameter)=3 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[1]" name="managedName">reportedShape</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='drawDocument' and count(parameter)=3 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[2]" name="managedName">color</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='drawDocument' and count(parameter)=3 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[3]" name="managedName">id</attr>
 <!-- AnylineWebView.getScaleWebView(android.webkit.WebView) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='getScaleWebView' and count(parameter)=1 and parameter[1][@type='android.webkit.WebView']]/parameter[1]" name="managedName">webView</attr>
 <!-- AnylineWebView.getViewRelativePointListFromCutoutRelativeShape(java.util.List&lt;android.graphics.PointF&gt;) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='getViewRelativePointListFromCutoutRelativeShape' and count(parameter)=1 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;']]/parameter[1]" name="managedName">shape</attr>
-<!-- AnylineWebView.loadJavascript(java.lang.String, android.webkit.WebView) -->
-<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='loadJavascript' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='android.webkit.WebView']]/parameter[1]" name="managedName">javascript</attr>
-<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='loadJavascript' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='android.webkit.WebView']]/parameter[2]" name="managedName">anylineWebView</attr>
+<!-- AnylineWebView.initConfig(at.nineyards.anyline.camera.Cutout, at.nineyards.anyline.camera.VisualFeedbackConfig, java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='initConfig' and count(parameter)=3 and parameter[1][@type='at.nineyards.anyline.camera.Cutout'] and parameter[2][@type='at.nineyards.anyline.camera.VisualFeedbackConfig'] and parameter[3][@type='java.lang.String']]/parameter[1]" name="managedName">cutoutRect</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='initConfig' and count(parameter)=3 and parameter[1][@type='at.nineyards.anyline.camera.Cutout'] and parameter[2][@type='at.nineyards.anyline.camera.VisualFeedbackConfig'] and parameter[3][@type='java.lang.String']]/parameter[2]" name="managedName">visualFeedbackConfig</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='initConfig' and count(parameter)=3 and parameter[1][@type='at.nineyards.anyline.camera.Cutout'] and parameter[2][@type='at.nineyards.anyline.camera.VisualFeedbackConfig'] and parameter[3][@type='java.lang.String']]/parameter[3]" name="managedName">id</attr>
+<!-- AnylineWebView.initConfig(io.anyline.view.CutoutRect, at.nineyards.anyline.camera.VisualFeedbackConfig, java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='initConfig' and count(parameter)=3 and parameter[1][@type='io.anyline.view.CutoutRect'] and parameter[2][@type='at.nineyards.anyline.camera.VisualFeedbackConfig'] and parameter[3][@type='java.lang.String']]/parameter[1]" name="managedName">cutoutRect</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='initConfig' and count(parameter)=3 and parameter[1][@type='io.anyline.view.CutoutRect'] and parameter[2][@type='at.nineyards.anyline.camera.VisualFeedbackConfig'] and parameter[3][@type='java.lang.String']]/parameter[2]" name="managedName">visualFeedbackConfig</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='initConfig' and count(parameter)=3 and parameter[1][@type='io.anyline.view.CutoutRect'] and parameter[2][@type='at.nineyards.anyline.camera.VisualFeedbackConfig'] and parameter[3][@type='java.lang.String']]/parameter[3]" name="managedName">id</attr>
+<!-- AnylineWebView.loadJavascript(java.lang.String) -->
 <!-- AnylineWebView.setAnimatableShapeRelativeToCutout(java.util.List&lt;io.anyline.view.AnylineWebView.AnimatablePointF&gt;, java.util.List&lt;android.graphics.PointF&gt;) -->
 <!-- AnylineWebView.setCameraController(at.nineyards.anyline.camera.CameraController) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='setCameraController' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.CameraController']]/parameter[1]" name="managedName">cameraController</attr>
 <!-- AnylineWebView.setCameraView(at.nineyards.anyline.camera.CameraView) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='setCameraView' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.CameraView']]/parameter[1]" name="managedName">cameraView</attr>
-<!-- AnylineWebView.setCameraWidth(int) -->
-<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='setCameraWidth' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">cameraViewWidth</attr>
 <!-- AnylineWebView.setCutoutInfo(android.graphics.Rect, float, int, int) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='setCutoutInfo' and count(parameter)=4 and parameter[1][@type='android.graphics.Rect'] and parameter[2][@type='float'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[1]" name="managedName">cutoutRectOnView</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='setCutoutInfo' and count(parameter)=4 and parameter[1][@type='android.graphics.Rect'] and parameter[2][@type='float'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[2]" name="managedName">frameToViewScale</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='setCutoutInfo' and count(parameter)=4 and parameter[1][@type='android.graphics.Rect'] and parameter[2][@type='float'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[3]" name="managedName">cutoutCropOffsetOnViewX</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='setCutoutInfo' and count(parameter)=4 and parameter[1][@type='android.graphics.Rect'] and parameter[2][@type='float'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[4]" name="managedName">cutoutCropOffsetOnViewY</attr>
-<!-- AnylineWebView.setCutoutRect(android.graphics.Rect, android.graphics.Rect, at.nineyards.anyline.camera.AnylineViewConfig) -->
-<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='setCutoutRect' and count(parameter)=3 and parameter[1][@type='android.graphics.Rect'] and parameter[2][@type='android.graphics.Rect'] and parameter[3][@type='at.nineyards.anyline.camera.AnylineViewConfig']]/parameter[1]" name="managedName">rect</attr>
-<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='setCutoutRect' and count(parameter)=3 and parameter[1][@type='android.graphics.Rect'] and parameter[2][@type='android.graphics.Rect'] and parameter[3][@type='at.nineyards.anyline.camera.AnylineViewConfig']]/parameter[2]" name="managedName">watermark</attr>
-<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='setCutoutRect' and count(parameter)=3 and parameter[1][@type='android.graphics.Rect'] and parameter[2][@type='android.graphics.Rect'] and parameter[3][@type='at.nineyards.anyline.camera.AnylineViewConfig']]/parameter[3]" name="managedName">cutoutConfig</attr>
-<!-- AnylineWebView.setCutoutRect(android.graphics.Rect, android.graphics.Rect, io.anyline.view.CutoutConfig) -->
-<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='setCutoutRect' and count(parameter)=3 and parameter[1][@type='android.graphics.Rect'] and parameter[2][@type='android.graphics.Rect'] and parameter[3][@type='io.anyline.view.CutoutConfig']]/parameter[1]" name="managedName">rect</attr>
-<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='setCutoutRect' and count(parameter)=3 and parameter[1][@type='android.graphics.Rect'] and parameter[2][@type='android.graphics.Rect'] and parameter[3][@type='io.anyline.view.CutoutConfig']]/parameter[2]" name="managedName">watermark</attr>
-<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='setCutoutRect' and count(parameter)=3 and parameter[1][@type='android.graphics.Rect'] and parameter[2][@type='android.graphics.Rect'] and parameter[3][@type='io.anyline.view.CutoutConfig']]/parameter[3]" name="managedName">cutoutConfig</attr>
-<!-- AnylineWebView.setDim(int, int, int, int) -->
-<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='setDim' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[1]" name="managedName">left</attr>
-<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='setDim' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[2]" name="managedName">right</attr>
-<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='setDim' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[3]" name="managedName">top</attr>
-<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='setDim' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[4]" name="managedName">bottom</attr>
-<!-- AnylineWebView.setUIVisualFeedbackConfig(at.nineyards.anyline.camera.VisualFeedbackConfig) -->
-<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='setUIVisualFeedbackConfig' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.VisualFeedbackConfig']]/parameter[1]" name="managedName">visualFeedbackConfig</attr>
+<!-- AnylineWebView.setLayoutParam(int, int, int, int) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='setLayoutParam' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[1]" name="managedName">l</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='setLayoutParam' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[2]" name="managedName">t</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='setLayoutParam' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[3]" name="managedName">r</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='setLayoutParam' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[4]" name="managedName">b</attr>
+<!-- AnylineWebView.updateContours(java.lang.Object, float, java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='updateContours' and count(parameter)=3 and parameter[1][@type='java.lang.Object'] and parameter[2][@type='float'] and parameter[3][@type='java.lang.String']]/parameter[1]" name="managedName">contours</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='updateContours' and count(parameter)=3 and parameter[1][@type='java.lang.Object'] and parameter[2][@type='float'] and parameter[3][@type='java.lang.String']]/parameter[2]" name="managedName">scale</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='updateContours' and count(parameter)=3 and parameter[1][@type='java.lang.Object'] and parameter[2][@type='float'] and parameter[3][@type='java.lang.String']]/parameter[3]" name="managedName">id</attr>
 <!-- File: IO.Anyline.View.BaseScanViewConfig.cs -->
 <!-- BaseScanViewConfig.BaseScanViewConfig(android.content.Context, java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='BaseScanViewConfig']/constructor[@name='BaseScanViewConfig' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">context</attr>
@@ -1607,7 +1602,11 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='BaseScanViewConfig']/method[@name='init' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='org.json.JSONObject']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='BaseScanViewConfig']/method[@name='init' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='org.json.JSONObject']]/parameter[2]" name="managedName">json</attr>
 <!-- File: IO.Anyline.View.CutoutConfig.cs -->
-<!-- CutoutConfig.CutoutAlignment.fromString(java.lang.String) -->
+<!-- CutoutConfig.AnimationStyle.fromInt(int) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='CutoutConfig.AnimationStyle']/method[@name='fromInt' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">style</attr>
+<!-- CutoutConfig.AnimationStyle.valueOf(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='CutoutConfig.AnimationStyle']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
+<!-- CutoutConfig.CutoutAlignment.fromString(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='CutoutConfig.CutoutAlignment']/method[@name='fromString' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">alignment</attr>
 <!-- CutoutConfig.CutoutAlignment.valueOf(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='CutoutConfig.CutoutAlignment']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
@@ -1664,6 +1663,8 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='CutoutConfig']/method[@name='getCornerRadiusInPix' and count(parameter)=1 and parameter[1][@type='android.content.Context']]/parameter[1]" name="managedName">context</attr>
 <!-- CutoutConfig.getCutoutStrokeWidthInPix(android.content.Context) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='CutoutConfig']/method[@name='getCutoutStrokeWidthInPix' and count(parameter)=1 and parameter[1][@type='android.content.Context']]/parameter[1]" name="managedName">context</attr>
+<!-- CutoutConfig.setAnimationStyle(io.anyline.view.CutoutConfig.AnimationStyle) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='CutoutConfig']/method[@name='setAnimationStyle' and count(parameter)=1 and parameter[1][@type='io.anyline.view.CutoutConfig.AnimationStyle']]/parameter[1]" name="managedName">animationStyle</attr>
 <!-- File: IO.Anyline.View.CutoutRect.cs -->
 <!-- CutoutRect.CutoutRect(android.content.Context, io.anyline.view.CutoutConfig) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='CutoutRect']/constructor[@name='CutoutRect' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='io.anyline.view.CutoutConfig']]/parameter[1]" name="managedName">context</attr>

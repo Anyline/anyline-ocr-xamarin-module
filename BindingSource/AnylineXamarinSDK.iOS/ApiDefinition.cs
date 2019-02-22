@@ -1998,9 +1998,11 @@ namespace AnylineXamarinSDK.iOS
         [NullAllowed, Export("captureDeviceManager", ArgumentSemantic.Strong)]
         ALCaptureDeviceManager CaptureDeviceManager { get; set; }
 
+        // setter private because not supported natively yet.
+
         // @property (nonatomic, strong) ALAbstractScanViewPlugin * _Nullable scanViewPlugin;
         [NullAllowed, Export("scanViewPlugin", ArgumentSemantic.Strong)]
-        ALAbstractScanViewPlugin ScanViewPlugin { get; set; }
+        ALAbstractScanViewPlugin ScanViewPlugin { get; private set; }
 
         // @property (readonly, nonatomic) CGRect watermarkRect;
         [Export("watermarkRect")]
@@ -2534,9 +2536,37 @@ namespace AnylineXamarinSDK.iOS
         [Export("dayOfBirth", ArgumentSemantic.Strong)]
         string DayOfBirth { get; }
 
+        // @property (readonly, nonatomic, strong) NSString * _Nonnull placeOfBirth;
+        [Export("placeOfBirth", ArgumentSemantic.Strong)]
+        string PlaceOfBirth { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nonnull issuingDate;
+        [Export("issuingDate", ArgumentSemantic.Strong)]
+        string IssuingDate { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nonnull expirationDate;
+        [Export("expirationDate", ArgumentSemantic.Strong)]
+        string ExpirationDate { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nonnull authority;
+        [Export("authority", ArgumentSemantic.Strong)]
+        string Authority { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nonnull categories;
+        [Export("categories", ArgumentSemantic.Strong)]
+        string Categories { get; }
+
         // @property (readonly, nonatomic, strong) NSDate * _Nullable dayOfBirthDateObject;
         [NullAllowed, Export("dayOfBirthDateObject", ArgumentSemantic.Strong)]
         NSDate DayOfBirthDateObject { get; }
+
+        // @property (readonly, nonatomic, strong) NSDate * _Nullable issuingDateObject;
+        [NullAllowed, Export("issuingDateObject", ArgumentSemantic.Strong)]
+        NSDate IssuingDateObject { get; }
+
+        // @property (readonly, nonatomic, strong) NSDate * _Nullable expirationDateObject;
+        [NullAllowed, Export("expirationDateObject", ArgumentSemantic.Strong)]
+        NSDate ExpirationDateObject { get; }
 
         // @property (readonly, nonatomic, strong) NSString * _Nonnull drivingLicenseString;
         [Export("drivingLicenseString", ArgumentSemantic.Strong)]
@@ -2546,9 +2576,9 @@ namespace AnylineXamarinSDK.iOS
         [NullAllowed, Export("faceImage", ArgumentSemantic.Strong)]
         UIImage FaceImage { get; set; }
 
-        // -(instancetype _Nullable)initWithDocumentNumber:(NSString * _Nonnull)documentNumber surNames:(NSString * _Nonnull)surNames givenNames:(NSString * _Nonnull)givenNames dayOfBirth:(NSString * _Nonnull)dayOfBirth drivingLicenseString:(NSString * _Nonnull)drivingLicenseString;
-        [Export("initWithDocumentNumber:surNames:givenNames:dayOfBirth:drivingLicenseString:")]
-        IntPtr Constructor(string documentNumber, string surNames, string givenNames, string dayOfBirth, string drivingLicenseString);
+        // -(instancetype _Nullable)initWithDocumentNumber:(NSString * _Nonnull)documentNumber surNames:(NSString * _Nonnull)surNames givenNames:(NSString * _Nonnull)givenNames dayOfBirth:(NSString * _Nonnull)dayOfBirth placeOfBirth:(NSString * _Nonnull)placeOfBirth issuingDate:(NSString * _Nonnull)issuingDate expirationDate:(NSString * _Nonnull)expirationDate authority:(NSString * _Nonnull)authority categories:(NSString * _Nonnull)categories drivingLicenseString:(NSString * _Nonnull)drivingLicenseString;
+        [Export("initWithDocumentNumber:surNames:givenNames:dayOfBirth:placeOfBirth:issuingDate:expirationDate:authority:categories:drivingLicenseString:")]
+        IntPtr Constructor(string documentNumber, string surNames, string givenNames, string dayOfBirth, string placeOfBirth, string issuingDate, string expirationDate, string authority, string categories, string drivingLicenseString);
 
         // -(instancetype _Nullable)initWithDrivingLicenseString:(NSString * _Nonnull)drivingLicenseString;
         [Export("initWithDrivingLicenseString:")]
@@ -2595,25 +2625,21 @@ namespace AnylineXamarinSDK.iOS
         [Export("sex", ArgumentSemantic.Strong)]
         string Sex { get; }
 
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull address;
-        [Export("address", ArgumentSemantic.Strong)]
-        string Address { get; }
-
         // @property (readonly, nonatomic, strong) NSString * _Nonnull checkdigitNumber;
         [Export("checkdigitNumber", ArgumentSemantic.Strong)]
-        string CheckDigitNumber { get; }
+        string CheckdigitNumber { get; }
 
         // @property (readonly, nonatomic, strong) NSString * _Nonnull checkdigitExpirationDate;
         [Export("checkdigitExpirationDate", ArgumentSemantic.Strong)]
-        string CheckDigitExpirationDate { get; }
+        string CheckdigitExpirationDate { get; }
 
         // @property (readonly, nonatomic, strong) NSString * _Nonnull checkdigitDayOfBirth;
         [Export("checkdigitDayOfBirth", ArgumentSemantic.Strong)]
-        string CheckDigitDayOfBirth { get; }
+        string CheckdigitDayOfBirth { get; }
 
         // @property (readonly, nonatomic, strong) NSString * _Nonnull checkdigitFinal;
         [Export("checkdigitFinal", ArgumentSemantic.Strong)]
-        string CheckDigitFinal { get; }
+        string CheckdigitFinal { get; }
 
         // @property (readonly, nonatomic, strong) NSString * _Nonnull personalNumber;
         [Export("personalNumber", ArgumentSemantic.Strong)]
@@ -2627,14 +2653,16 @@ namespace AnylineXamarinSDK.iOS
         [Export("personalNumber2", ArgumentSemantic.Strong)]
         string PersonalNumber2 { get; }
 
-        // added in 6.0
-        // @property (readonly, nonatomic, strong, nullable) NSString * _Nullable issuingDate;
-        [Export("issuingDate", ArgumentSemantic.Strong)]
+        // @property (readonly, nonatomic, strong) NSString * _Nullable address;
+        [NullAllowed, Export("address", ArgumentSemantic.Strong)]
+        string Address { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable issuingDate;
+        [NullAllowed, Export("issuingDate", ArgumentSemantic.Strong)]
         string IssuingDate { get; }
 
-        // added in 6.0
-        // @property (readonly, nonatomic, strong, nullable) NSDate * _Nullable issuingDateObject;
-        [Export("issuingDateObject", ArgumentSemantic.Strong)]
+        // @property (readonly, nonatomic, strong) NSDate * _Nullable issuingDateObject;
+        [NullAllowed, Export("issuingDateObject", ArgumentSemantic.Strong)]
         NSDate IssuingDateObject { get; }
 
         // @property (readonly, nonatomic, strong) NSDate * _Nullable expirationDateObject;
@@ -2644,6 +2672,8 @@ namespace AnylineXamarinSDK.iOS
         // @property (readonly, nonatomic, strong) NSDate * _Nullable dayOfBirthDateObject;
         [NullAllowed, Export("dayOfBirthDateObject", ArgumentSemantic.Strong)]
         NSDate DayOfBirthDateObject { get; }
+        
+        // changed MRZ to Mrz in 6.0 because of a customer request
 
         // @property (readonly, nonatomic, strong) NSString * _Nonnull MRZString;
         [Export("MRZString", ArgumentSemantic.Strong)]
@@ -2653,9 +2683,9 @@ namespace AnylineXamarinSDK.iOS
         [NullAllowed, Export("faceImage", ArgumentSemantic.Strong)]
         UIImage FaceImage { get; set; }
 
-        // -(instancetype _Nullable)initWithDocumentType:(NSString * _Nonnull)documentType issuingCountryCode:(NSString * _Nonnull)issuingCountryCode nationalityCountryCode:(NSString * _Nonnull)nationalityCountryCode surNames:(NSString * _Nonnull)surNames givenNames:(NSString * _Nonnull)givenNames documentNumber:(NSString * _Nonnull)documentNumber checkDigitNumber:(NSString * _Nonnull)checkDigitNumber dayOfBirth:(NSString * _Nonnull)dayOfBirth checkDigitDayOfBirth:(NSString * _Nonnull)checkDigitDayOfBirth sex:(NSString * _Nonnull)sex expirationDate:(NSString * _Nonnull)expirationDate checkDigitExpirationDate:(NSString * _Nonnull)checkdigitExpirationDate personalNumber:(NSString * _Nonnull)personalNumber checkDigitPersonalNumber:(NSString * _Nonnull)checkDigitPersonalNumber checkDigitFinal:(NSString * _Nonnull)checkDigitFinal personalNumber2:(NSString * _Nonnull)personalNumber2 MRZString:(NSString * _Nonnull)MRZString;
-        [Export("initWithDocumentType:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:personalNumber2:MRZString:")]
-        IntPtr Constructor(string documentType, string issuingCountryCode, string nationalityCountryCode, string surNames, string givenNames, string documentNumber, string checkDigitNumber, string dayOfBirth, string checkDigitDayOfBirth, string sex, string expirationDate, string checkdigitExpirationDate, string personalNumber, string checkDigitPersonalNumber, string checkDigitFinal, string personalNumber2, string MRZString);
+        // -(instancetype _Nullable)initWithDocumentType:(NSString * _Nonnull)documentType issuingCountryCode:(NSString * _Nonnull)issuingCountryCode nationalityCountryCode:(NSString * _Nonnull)nationalityCountryCode surNames:(NSString * _Nonnull)surNames givenNames:(NSString * _Nonnull)givenNames documentNumber:(NSString * _Nonnull)documentNumber checkDigitNumber:(NSString * _Nonnull)checkDigitNumber dayOfBirth:(NSString * _Nonnull)dayOfBirth checkDigitDayOfBirth:(NSString * _Nonnull)checkDigitDayOfBirth sex:(NSString * _Nonnull)sex expirationDate:(NSString * _Nonnull)expirationDate checkDigitExpirationDate:(NSString * _Nonnull)checkdigitExpirationDate personalNumber:(NSString * _Nonnull)personalNumber checkDigitPersonalNumber:(NSString * _Nonnull)checkDigitPersonalNumber checkDigitFinal:(NSString * _Nonnull)checkDigitFinal personalNumber2:(NSString * _Nonnull)personalNumber2 address:(NSString * _Nullable)address issuingDate:(NSString * _Nullable)issuingDate MRZString:(NSString * _Nonnull)MRZString;
+        [Export("initWithDocumentType:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:personalNumber2:address:issuingDate:MRZString:")]
+        IntPtr Constructor(string documentType, string issuingCountryCode, string nationalityCountryCode, string surNames, string givenNames, string documentNumber, string checkDigitNumber, string dayOfBirth, string checkDigitDayOfBirth, string sex, string expirationDate, string checkdigitExpirationDate, string personalNumber, string checkDigitPersonalNumber, string checkDigitFinal, string personalNumber2, [NullAllowed] string address, [NullAllowed] string issuingDate, string MRZString);
     }
 
     // audit-objc-generics: @interface ALIDResult<__covariant ObjectType> : ALScanResult
