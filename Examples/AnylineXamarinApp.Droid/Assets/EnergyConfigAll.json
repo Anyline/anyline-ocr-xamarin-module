@@ -27,8 +27,9 @@
       "y": 0
     },
     "outerColor": "000000",
-    "outerAlpha": 0.3
-    },
+    "outerAlpha": 0.3,
+    "feedbackStrokeColor": "0099FF"
+  },
     "flash": {
     "mode": "auto",
     "alignment": "bottom_left",

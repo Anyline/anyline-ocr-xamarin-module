@@ -1,32 +1,33 @@
 ﻿{
     "captureResolution": "720p",
-    "cutout": {
-        "style": "rect",
-        "width": 540,
-        "alignment": "top",
-        "image": "Overlay",
-        "ratioFromSize": {
-            "width": 125,
-            "height": 85
-        },
-        "strokeWidth": 2,
-        "strokeColor": "FFFFFF",
-        "cornerRadius": 4,
-        "offset": {
-            "x": 0,
-            "y": 20
-        },
-        "cropPadding": {
-            "x": 0,
-            "y": 0
-        },
-        "cropOffset": {
-            "x": 0,
-            "y": 0
-        },
-        "outerColor": "000000",
-        "outerAlpha": 0.3
+  "cutout": {
+    "style": "rect",
+    "width": 540,
+    "alignment": "top",
+    "image": "Overlay",
+    "ratioFromSize": {
+      "width": 125,
+      "height": 85
     },
+    "strokeWidth": 2,
+    "strokeColor": "FFFFFF",
+    "cornerRadius": 4,
+    "offset": {
+      "x": 0,
+      "y": 20
+    },
+    "cropPadding": {
+      "x": 0,
+      "y": 0
+    },
+    "cropOffset": {
+      "x": 0,
+      "y": 0
+    },
+    "outerColor": "000000",
+    "outerAlpha": 0.3,
+    "feedbackStrokeColor": "0099FF"
+  },
     "flash": {
         "mode": "manual",
         "alignment": "bottom_right",
