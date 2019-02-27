@@ -16,6 +16,7 @@ using Java.Lang;
 using System.Reflection;
 using Android.Util;
 using AT.Nineyards.Anyline.Models;
+using IO.Anyline.Plugin.Document;
 
 namespace AnylineExamples.Droid
 {
@@ -27,27 +28,28 @@ namespace AnylineExamples.Droid
     public class ScanResultListener : Java.Lang.Object, IScanResultListener
     {
         public static readonly string TAG = typeof(ScanResultListener).Name;
-        private Activity _activity;
+        protected Activity Activity { get; set; }
 
         public ScanResultListener(Activity activity)
         {
-            _activity = activity;
+            Activity = activity;
         }
 
         /// <summary>
-        /// Since the native Java type is generic, the type of the parameter translates to 
+        /// This method is called when a scan result is found.
+        /// Since the native Java type is generic, the type of the parameter translates to Java.Lang.Object due to Xamarin.Android generic binding limitations.
         /// </summary>
-        /// <param name="result"></param>
+        /// <param name="result">The scan result</param>
         public void OnResult(Java.Lang.Object result)
         {
             var scanResult = result as ScanResult;
             if(scanResult != null)
             {
-                // because the scan result is a complex object, we'll pass the JNI handle & retrieve the object later
-                var intent = new Intent(_activity.ApplicationContext, typeof(ResultActivity));
+                // because we can't simply pass the object through the intent, we'll pass the JNI handle & retrieve the object in the other activity
+                var intent = new Intent(Activity.ApplicationContext, typeof(ResultActivity));
                 intent.PutExtra("handle", scanResult.Handle.ToInt32());
 
-                _activity.StartActivity(intent);
+                Activity.StartActivity(intent);
             }
         }
     }

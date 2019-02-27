@@ -15,6 +15,7 @@ using IO.Anyline.View;
 
 using Android.Support.V7.App;
 using Android.Util;
+using IO.Anyline.Plugin.Document;
 
 namespace AnylineExamples.Droid
 {
@@ -31,12 +32,14 @@ namespace AnylineExamples.Droid
         public static readonly string LICENSE_KEY = "eyAiYW5kcm9pZElkZW50aWZpZXIiOiBbICJBVC5BbnlsaW5lLlhhbWFyaW4uQXBwLkRyb2lkIiwgIkFULkFueWxpbmUuWGFtYXJpbi5Gb3Jtcy5BcHAuRHJvaWQiIF0sICJkZWJ1Z1JlcG9ydGluZyI6ICJvbiIsICJpb3NJZGVudGlmaWVyIjogWyAiQVQuQW55bGluZS5YYW1hcmluLkFwcC5pT1MiLCAiQVQuQW55bGluZS5YYW1hcmluLkZvcm1zLkFwcC5pT1MiIF0sICJsaWNlbnNlS2V5VmVyc2lvbiI6IDIsICJtYWpvclZlcnNpb24iOiAiMyIsICJwaW5nUmVwb3J0aW5nIjogdHJ1ZSwgInBsYXRmb3JtIjogWyAiaU9TIiwgIkFuZHJvaWQiIF0sICJzY29wZSI6IFsgIkFMTCIgXSwgInNob3dXYXRlcm1hcmsiOiB0cnVlLCAidG9sZXJhbmNlRGF5cyI6IDkwLCAidmFsaWQiOiAiMjAyMC0wMS0wMSIgfQprcS9WL0wrSGlpN0NzL2tXa1E5VWRzbGxzd0hOanphelZEZ2Z2WU1LLytJN1VHYmlITy9SblMrdGZIeUZxQmlJCkN3QXkrdkk5RnJpOVc5MStGdjJTS2FJNS8vLzZhUVgyVXlSVC9CaVRKM1QzTXBVOEIrMWpFZTQxbCtXejRqaFgKMlZ6dENpT2E3cit3d2RlTm1GUFpxdGVUTG5BRmgxQWgycDZpMzgyMWhOb3FsVHNxcFlJdjN3cWdCbWg5clh2WgpBM01pRnpkZ0dab1gzbzNINzFGRUtJME9JSy9ZRkNJRk5nVEI0MFhBM3ZTOXk2ak1FR2E5bjVQRHY5MU5NZEFRCnlHTzcxRVVuZE9ndmJmTkJWbVJYNUR1MGVrZ0RGYUNFMUwweVpUQ3dhMFJVTStLSE9PcXA3TThYOWVFdjJ0RVkKVEcyejdydGQ5YytiRlBvTU5vcUpwZz09Cg==";
         
         private ScanView _scanView;
+        private bool _isInitialized = false;
         
         private ScanResultListener _scanResultListener;
 
         public ScanActivity()
         {
-            _scanResultListener = new ScanResultListener(this);
+            //_scanResultListener = new ScanResultListener(this);
+            _scanResultListener = new DocumentScanResultListener(this);
         }
         
         protected override void OnCreate(Bundle bundle)
@@ -56,11 +59,13 @@ namespace AnylineExamples.Droid
 
                 _scanView = FindViewById<ScanView>(Resource.Id.scan_view);
                 _scanView.Init(jsonPath, LICENSE_KEY);
-
+                
                 _scanView.ScanViewPlugin.AddScanResultListener(_scanResultListener);
-
+                
                 _scanView.CameraOpened += ScanView_CameraOpened;
                 _scanView.CameraError += ScanView_CameraError;
+
+                _isInitialized = true;
             }
             catch (Exception e)
             {
@@ -74,7 +79,8 @@ namespace AnylineExamples.Droid
 
             try
             {
-                _scanView.Start();
+                if (_isInitialized)
+                    _scanView.Start();
             }
             catch (Exception e)
             {
@@ -114,6 +120,8 @@ namespace AnylineExamples.Droid
         {
             try
             {
+                _isInitialized = false;
+
                 if (_scanView != null)
                 {
                     _scanView.Stop();

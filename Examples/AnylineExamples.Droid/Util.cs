@@ -7,11 +7,13 @@ using Android.Runtime;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
+using AnylineExamples.Shared;
 
 namespace AnylineExamples.Droid
 {
     public static class Util
     {
+        
         /// <summary>
         /// Rescales button icons.
         /// </summary>
@@ -48,7 +50,10 @@ namespace AnylineExamples.Droid
                     IWindowManager wm = context.GetSystemService(Context.WindowService).JavaCast<IWindowManager>();
                     Display display = wm.DefaultDisplay;
 
-                    int screenWidth = display.Width;
+                    Android.Graphics.Rect r = new Android.Graphics.Rect();
+                    display.GetRectSize(r);
+
+                    int screenWidth = r.Width();
                     float textWidth = t.Paint.MeasureText(t.Text);
                     int numberOfLines = Math.Max(1, ((int)textWidth/screenWidth) + 1);
 
@@ -71,14 +76,11 @@ namespace AnylineExamples.Droid
             listView.LayoutParameters.Height = totalHeight + (listView.DividerHeight * (listView.Count - 1));
         }
 
-        class DialogInterfaceOnClickListener : Java.Lang.Object, IDialogInterfaceOnClickListener
+        private static void HandleButtonClick(object sender, EventArgs args)
         {
-            public void OnClick(IDialogInterface dialog, int which)
-            {
-                dialog.Dismiss();
-            }
+            (sender as AlertDialog)?.Dismiss();
         }
-
+        
         public static void ShowError(string message, Context context)
         {
             Log.Debug("", message);
@@ -86,7 +88,7 @@ namespace AnylineExamples.Droid
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
             alertDialogBuilder.SetMessage(message);
             alertDialogBuilder.SetCancelable(false);
-            alertDialogBuilder.SetPositiveButton("OK", new DialogInterfaceOnClickListener());
+            alertDialogBuilder.SetPositiveButton("OK", HandleButtonClick);
 
             var alert = alertDialogBuilder.Create();
             alert.Show();

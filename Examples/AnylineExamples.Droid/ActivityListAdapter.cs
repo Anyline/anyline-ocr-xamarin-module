@@ -16,7 +16,7 @@ namespace AnylineExamples.Droid
     {
         public const int TypeItem = 0;
         public const int TypeHeader = 1;
-        private readonly List<ExampleModel> _items;
+        private readonly List<AndroidExampleModelWrapper> _items;
         private readonly Context _context;
 
         public int GetBuildNumber()
@@ -33,21 +33,21 @@ namespace AnylineExamples.Droid
             _context = context;
             Resources res = context.Resources;
 
-            _items = ExampleList.Items;
+            _items = ExampleList.Items.ConvertAll(x => new AndroidExampleModelWrapper(x));
             
             Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
             var assembly = assemblies.Where(x => x.FullName.StartsWith("AnylineXamarinSDK")).FirstOrDefault();
             if (assembly != null)
             {
                 Version ver = assembly.GetName().Version;
-                _items.Where(x => x.Category.Equals(Category.Version)).FirstOrDefault().Name = $"Version: {ver} - Build: {GetBuildNumber()}";
+                _items.Where(x => x.Model.Category.Equals(Category.Version)).FirstOrDefault().Model.Name = $"Version: {ver} - Build: {GetBuildNumber()}";
             }
         }
 
         public override int GetItemViewType(int position)
         {
             var elem = _items.ElementAt(position);
-            return (int) elem.Type;
+            return (int) elem.Model.Type;
         }
 
         public int GetViewTypeCount()
@@ -62,7 +62,8 @@ namespace AnylineExamples.Droid
 
         public override Java.Lang.Object GetItem(int position)
         {
-            return _items.ElementAt(position);
+            var o = _items.ElementAt(position);
+            return o;
         }
         
         public override long GetItemId(int position)
@@ -95,7 +96,9 @@ namespace AnylineExamples.Droid
                 }
             }
 #pragma warning restore 0618
-            var txt = ((ExampleModel)GetItem(position)).Name;
+
+            var o = (AndroidExampleModelWrapper)GetItem(position);
+            var txt = o.Model.Name;
             ((TextView)convertView).SetText(txt, TextView.BufferType.Normal);
 
             return convertView;

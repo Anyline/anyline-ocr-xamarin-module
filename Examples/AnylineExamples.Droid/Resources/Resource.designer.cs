@@ -3488,9 +3488,6 @@ namespace AnylineExamples.Droid
 			// aapt resource value: 0x7f0a0012
 			public const int abc_toolbar_collapse_description = 2131361810;
 			
-			// aapt resource value: 0x7f0a0031
-			public const int action_settings = 2131361841;
-			
 			// aapt resource value: 0x7f0a0029
 			public const int allow_camera_permission = 2131361833;
 			

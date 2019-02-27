@@ -76,8 +76,8 @@ namespace AnylineExamples.Droid
             if (listAdapter.GetItemViewType(a.Position) == ActivityListAdapter.TypeHeader)
                 return;
 
-            var item = (ExampleModel)listAdapter.GetItem(a.Position);
-            var jsonPath = item.JsonPath;
+            var item = (AndroidExampleModelWrapper)listAdapter.GetItem(a.Position);
+            var jsonPath = item.Model.JsonPath;
 
             if (string.IsNullOrEmpty(jsonPath))
                 return;
@@ -85,7 +85,7 @@ namespace AnylineExamples.Droid
             {
                 var intent = new Intent(ApplicationContext, typeof(ScanActivity));
                 intent.PutExtra("jsonPath", jsonPath);
-                intent.PutExtra("title", item.Name);
+                intent.PutExtra("title", item.Model.Name);
                 StartActivity(intent);
 
             }

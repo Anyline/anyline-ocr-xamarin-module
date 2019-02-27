@@ -18,14 +18,15 @@ namespace AnylineExamples.Shared
         public static readonly string ID = "Identity Documents";
         public static readonly string Vehicle = "Vehicle";
         public static readonly string MRO = "MRO";
+        public static readonly string Document = "Documents";
         public static readonly string Others = "Others";
-        public static readonly string Version = "";
+        public static readonly string Version = "Version";
 
         public static List<string> GetItems()
         {
             return new List<string>
             {
-                Energy, ID, Vehicle, MRO, Others,
+                Energy, ID, Vehicle, MRO, Document, Others,
                 Version
 
             };
@@ -43,6 +44,7 @@ namespace AnylineExamples.Shared
         public static readonly string VIN = "Vehicle Identification Number";
         public static readonly string ShippingContainer = "Shipping Container";
         public static readonly string Barcode = "Barcode";
+        public static readonly string Document = "Document";
         public static readonly string Bottlecap = "Bottlecap";
         public static readonly string VoucherCode = "Voucher Code";
 
@@ -52,7 +54,7 @@ namespace AnylineExamples.Shared
             {
                 AnalogDigital, DialMeter, MRZ, DrivingLicense,
                 LicensePlate, SerialNumber, VIN, ShippingContainer,
-                Barcode, Bottlecap, VoucherCode
+                Document, Barcode, Bottlecap, VoucherCode
             };
         }
     }
@@ -76,7 +78,10 @@ namespace AnylineExamples.Shared
             new ExampleModel(ItemType.Item, Example.SerialNumber, Category.MRO, "mro_config_seial.json"),
             new ExampleModel(ItemType.Item, Example.VIN, Category.MRO, "mro_config_vin.json"),
             new ExampleModel(ItemType.Item, Example.ShippingContainer, Category.MRO, "mro_config_shipping_container.json"),
-            
+
+            new ExampleModel(ItemType.Header, Category.Document, Category.Document, ""),
+            new ExampleModel(ItemType.Item, Example.Document, Category.Document, "document_config.json"),
+
             new ExampleModel(ItemType.Header, Category.Others, Category.Others, ""),
             new ExampleModel(ItemType.Item, Example.Barcode, Category.Others, "others_config_barcode.json"),
             new ExampleModel(ItemType.Item, Example.Bottlecap, Category.Others, "others_config_bottlecap.json"),

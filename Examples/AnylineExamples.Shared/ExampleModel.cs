@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AnylineExamples.Shared
 {
-    public class ExampleModel : Java.Lang.Object
+    public class ExampleModel
     {
 
         /// <summary>
