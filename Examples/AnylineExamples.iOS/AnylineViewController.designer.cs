@@ -9,7 +9,7 @@ using System;
 using System.CodeDom.Compiler;
 using UIKit;
 
-namespace AnylineXamarinApp.iOS
+namespace AnylineExamples.iOS
 {
     [Register ("AnylineViewController")]
     partial class AnylineViewController

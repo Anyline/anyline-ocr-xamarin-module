@@ -5,19 +5,25 @@ using Foundation;
 using UIKit;
 using System.Reflection;
 using System.IO;
+using AnylineExamples.iOS;
 
-namespace AnylineXamarinApp.iOS
+namespace AnylineExamples.iOS
 {
-    public sealed class UIScanViewController : UIViewController//, IAnylineBarcodeModuleDelegate
+    public sealed class ScanViewController : UIViewController
     {
-        readonly string _licenseKey = AnylineViewController.LicenseKey;
+        readonly string LicenseKey = AnylineViewController.LicenseKey;
+
+        string _jsonPath;
+        CGRect _frame;
 
         ALScanView _scanView;
-        CGRect _frame;
-        
-        public UIScanViewController(string name, string json)
+        ScanResultDelegate resultDelegate;
+        public ScanViewController(string name, string jsonPath)
         {
             Title = name;
+            _jsonPath = jsonPath;
+
+            resultDelegate = new ScanResultDelegate(this);
         }
         
         public override void ViewDidLoad()
@@ -30,6 +36,19 @@ namespace AnylineXamarinApp.iOS
                 _frame.Y + NavigationController.NavigationBar.Frame.Size.Height,
                 _frame.Width,
                 _frame.Height - NavigationController.NavigationBar.Frame.Size.Height);
+
+            var config = NSBundle.MainBundle.PathForResource(@"Resource/" + _jsonPath, @"json");
+
+            NSError error = null;
+            _scanView = ALScanView.ScanViewForFrame(_frame, config, LicenseKey, resultDelegate, out error);
+
+            /*
+             * NSString *confPath = [[NSBundle mainBundle] pathForResource:@"vin_capture_config" ofType:@"json"];
+self.scanView = [ALScanView scanViewForFrame:frame configDict:confPath licenseKey:kVINLicenseKey delegate:self error:&error];
+             */
+
+            NSError error = null;
+            bool success = _scanView.Init(
 
             /*_anylineBarcodeView = new AnylineBarcodeModuleView(_frame);
 

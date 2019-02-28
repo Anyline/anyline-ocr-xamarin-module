@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Reflection;
 using AnylineExamples.Shared;
 
-namespace AnylineXamarinApp.iOS
+namespace AnylineExamples.iOS
 {
 	public partial class AnylineViewController : UITableViewController
 	{
@@ -16,7 +16,7 @@ namespace AnylineXamarinApp.iOS
 
         public UIViewController CurrentScanViewController { get; set; }
 
-        public Dictionary<string, string[]> TableItems = new Dictionary<string, string[]>();
+        public Dictionary<string, List<ExampleModel>> TableItems = new Dictionary<string, List<ExampleModel>>();
         
         public AnylineViewController (IntPtr handle) : base (handle){ }
 		
@@ -27,10 +27,13 @@ namespace AnylineXamarinApp.iOS
             var list = ExampleList.Items;
 
             string currentCategory = null;
-            string[] currentElements = new string[] { };
+            var currentElements = new List<ExampleModel> ();
 
             foreach (var item in list)
             {
+                if (item.JsonPath == "")
+                    continue;
+
                 if (item.Category != currentCategory)
                 {
                     if (currentCategory != null)
@@ -39,16 +42,14 @@ namespace AnylineXamarinApp.iOS
                     }
 
                     currentCategory = item.Category;
-                    currentElements = new string[] { };
+                    currentElements = new List<ExampleModel>();
                 }
 
-                var l = currentElements.ToList();
-                l.Add(item.Name);
-                currentElements = l.ToArray();
+                currentElements.Add(item);
             }
 
             // add last item
-            TableItems.Add(list.Last().Category, new string[] { });
+            TableItems.Add(list.Last().Category, new List<ExampleModel>());
 
             TableView = new UITableView(View.Bounds, UITableViewStyle.Grouped);
             TableView.Source = new TableSource(TableItems, this);
@@ -69,7 +70,7 @@ namespace AnylineXamarinApp.iOS
 
     public class TableSource : UITableViewSource
     {
-        protected Dictionary<string, string[]> TableItems;
+        protected Dictionary<string, List<ExampleModel>> TableItems;
 
         protected AnylineViewController AnylineViewController;
 
@@ -78,12 +79,17 @@ namespace AnylineXamarinApp.iOS
         private readonly object _lock = new object();
         private bool _isNavigating = false;
 
-        public TableSource(Dictionary<string, string[]> tableItems, AnylineViewController parent)
+        public TableSource(Dictionary<string, List<ExampleModel>> tableItems, AnylineViewController parent)
         {
             TableItems = tableItems;
             AnylineViewController = parent;            
         }
         
+        private string GetBuildVersion()
+        {
+            return typeof(AnylineViewController).Assembly.GetName().Version.ToString();
+        }
+
         public override string TitleForHeader(UITableView tableView, nint section)
         {
             try
@@ -94,7 +100,7 @@ namespace AnylineXamarinApp.iOS
                     var assembly = assemblies.Where(x => x.FullName.StartsWith("AnylineXamarinSDK")).FirstOrDefault();
                     if (assembly != null)
                     {
-                        return $"SDK: {assembly.GetName().Version} - Build: {NSBundle.MainBundle.InfoDictionary["CFBundleVersion"].ToString()}";               
+                        return $"SDK: {assembly.GetName().Version} - Build: {GetBuildVersion()}";               
                     }
                     return "";
                 }
@@ -130,7 +136,7 @@ namespace AnylineXamarinApp.iOS
             if (cell == null)
                 cell = new UITableViewCell(UITableViewCellStyle.Default, CellIdentifier);
 
-            cell.TextLabel.Text = TableItems.ToList().ElementAt(indexPath.Section).Value.ToList().ElementAt(indexPath.Row);
+            cell.TextLabel.Text = TableItems.ToList().ElementAt(indexPath.Section).Value.ToList().ElementAt(indexPath.Row).Name;
             cell.Accessory = UITableViewCellAccessory.DisclosureIndicator;
 
             return cell;
@@ -151,94 +157,11 @@ namespace AnylineXamarinApp.iOS
                 AnylineViewController.CurrentScanViewController.Dispose();
                 AnylineViewController.CurrentScanViewController = null;
             }
-
-            var name = TableItems.ElementAt(indexPath.Section).Value.ElementAt(indexPath.Row);
-
-            string json = ""; // TODOOOOOOOO
-
-            AnylineViewController.CurrentScanViewController = new UIScanViewController(name, json);
-
-
-            /*
-            switch (indexPath.Section)
-            {
-                case 0: //ENERGY
-                    var scanModeItems = new Dictionary<string,ALScanMode>();
-                    string labelText = "";
-                    int defaultIndex = 0;
-
-                    switch (indexPath.Row)
-                    {                        
-                        case 0: //Analog Water Meter Scan                            
-                            scanModeItems.Add("", ALScanMode.AnalogMeter);
-                            break;
-                        case 1: //Digital Meter Scan
-                            scanModeItems.Add("", ALScanMode.DigitalMeter);
-                            break;
-                        case 2: //Heat Meter Scan
-                            scanModeItems.Add("4 digits", ALScanMode.HeatMeter4);
-                            scanModeItems.Add("5 digits", ALScanMode.HeatMeter5);
-                            scanModeItems.Add("6 digits", ALScanMode.HeatMeter6);
-                            break;
-                        case 3: //Automatic Analog/Digital Meter Scan
-                            scanModeItems.Add("", ALScanMode.AutoAnalogDigitalMeter);
-                            break;
-                        case 4: //Automatic Serial Number Scan
-                            scanModeItems.Add("", ALScanMode.SerialNumber);
-                            break;
-                        case 5: //Dial Meter Scan
-                            scanModeItems.Add("", ALScanMode.DialMeter);
-                            break;
-                        case 6: //Dot Matrix Meter Scan
-                            scanModeItems.Add("", ALScanMode.DotMatrixMeter);
-                            break;
-                    }
-                    AnylineViewController.CurrentScanViewController = new AnylineEnergyScanViewController(name, scanModeItems, labelText, defaultIndex);
-                    break;
-
-                case 1: //Identification
-                    if (indexPath.Row == 0) //Passport / ID MRZ Scan
-                        AnylineViewController.CurrentScanViewController = new AnylineMrzScanViewController(name);
-                    if (indexPath.Row == 1) //Driving License Scan
-                        AnylineViewController.CurrentScanViewController = new AnylineDrivingLicenseScanViewController(name);
-                    break;
-
-                case 2: //Barcodes
-                    //Barcode Scan
-                    AnylineViewController.CurrentScanViewController = new AnylineBarcodeScanViewController(name);
-                    break;
-
-                case 3: //Serial Numbers
-                    if (indexPath.Row == 0) //Universal Serial Number
-                        AnylineViewController.CurrentScanViewController = new AnylineSerialNumberScanViewController(name);
-                    if (indexPath.Row == 1) //Shipping Container
-                        AnylineViewController.CurrentScanViewController = new AnylineShippingContainerScanViewController(name);
-                    if (indexPath.Row == 2) //VIN Scan
-                        AnylineViewController.CurrentScanViewController = new AnylineVinScanViewController(name);
-                    break;
-                case 4: //Fintech
-                    //Iban Scan
-                    AnylineViewController.CurrentScanViewController = new AnylineIBANScanViewController(name);
-                    break;
-
-                case 5: //Document
-                    //Document Scan
-                    AnylineViewController.CurrentScanViewController = new AnylineDocumentScanViewController(name);
-                    break;
-
-                case 6: //Loyalty
-                    if (indexPath.Row == 0) //Voucher Code Scan
-                        AnylineViewController.CurrentScanViewController = new AnylineVoucherScanViewController(name);
-                    if (indexPath.Row == 1) //Bottlecap Code Scan
-                        AnylineViewController.CurrentScanViewController = new AnylineBottlecapScanViewController(name);
-                    break;
-                case 7: //Vehicle
-                    AnylineViewController.CurrentScanViewController = new AnylineLicensePlateScanViewController(name);
-                    break;
-                default:
-                    break;
-            }*/
-
+            
+            var example = TableItems.ElementAt(indexPath.Section).Value.ElementAt(indexPath.Row);
+            
+            AnylineViewController.CurrentScanViewController = new ScanViewController(example.Name, example.JsonPath);
+            
             // navigate to the newly created scan view controller
             if (AnylineViewController.CurrentScanViewController != null)            
                 AnylineViewController.NavigationController.PushViewController(AnylineViewController.CurrentScanViewController, true);

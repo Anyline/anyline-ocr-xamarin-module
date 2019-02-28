@@ -1,7 +1,7 @@
 using System;
 using UIKit;
 
-namespace AnylineXamarinApp.iOS
+namespace AnylineExamples.iOS
 {
 	partial class MainController : UINavigationController
 	{
