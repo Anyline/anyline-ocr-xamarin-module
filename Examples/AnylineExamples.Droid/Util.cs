@@ -46,22 +46,12 @@ namespace AnylineExamples.Droid
                 if (listItem.GetType() == typeof(TextView))
                 {
                     var t = listItem as TextView;
+                    int numberOfLines = 0;
 
-                    IWindowManager wm = context.GetSystemService(Context.WindowService).JavaCast<IWindowManager>();
-                    Display display = wm.DefaultDisplay;
+                    // translante linebreaks in strings to number of lines
+                    var split = t.Text.Split('\n');
+                    numberOfLines += split.Length;
 
-                    Android.Graphics.Rect r = new Android.Graphics.Rect();
-                    display.GetRectSize(r);
-
-                    int screenWidth = r.Width();
-                    float textWidth = t.Paint.MeasureText(t.Text);
-                    int numberOfLines = Math.Max(1, ((int)textWidth/screenWidth) + 1);
-
-                    // fixes a glitch with long result strings
-                    if (numberOfLines > 2)
-                    {
-                        numberOfLines++;
-                    }
                     t.SetLines(numberOfLines);
                     
                 }

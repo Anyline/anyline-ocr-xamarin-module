@@ -40,7 +40,7 @@ namespace AnylineExamples.Shared
         public static readonly string MRZ = "Passport/MRZ";
         public static readonly string DrivingLicense = "AUT/GER Driving License";
         public static readonly string LicensePlate = "EU License Plate";
-        public static readonly string SerialNumber = "Universal Serial Number";
+        public static readonly string UniversalSerialNumber = "Universal Serial Number";
         public static readonly string VIN = "Vehicle Identification Number";
         public static readonly string ShippingContainer = "Shipping Container";
         public static readonly string Barcode = "Barcode";
@@ -53,7 +53,7 @@ namespace AnylineExamples.Shared
             return new List<string>
             {
                 AnalogDigital, DialMeter, MRZ, DrivingLicense,
-                LicensePlate, SerialNumber, VIN, ShippingContainer,
+                LicensePlate, UniversalSerialNumber, VIN, ShippingContainer,
                 Document, Barcode, Bottlecap, VoucherCode
             };
         }
@@ -75,7 +75,7 @@ namespace AnylineExamples.Shared
             new ExampleModel(ItemType.Item, Example.LicensePlate, Category.Vehicle, "vehicle_config_license_plate.json"),
             
             new ExampleModel(ItemType.Header, Category.MRO, Category.MRO, ""),
-            new ExampleModel(ItemType.Item, Example.SerialNumber, Category.MRO, "mro_config_seial.json"),
+            new ExampleModel(ItemType.Item, Example.UniversalSerialNumber, Category.MRO, "mro_config_usnr.json"),
             new ExampleModel(ItemType.Item, Example.VIN, Category.MRO, "mro_config_vin.json"),
             new ExampleModel(ItemType.Item, Example.ShippingContainer, Category.MRO, "mro_config_shipping_container.json"),
 

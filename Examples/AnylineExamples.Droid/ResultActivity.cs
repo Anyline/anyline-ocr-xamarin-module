@@ -91,7 +91,6 @@ namespace AnylineExamples.Droid
                             else
                             {
                                 list.Add(prop.Name);
-
                                 var str = new Java.Lang.String(value.ToString()).ReplaceAll("\\\\n", "\\\n");
                                 list.Add(str);
                             }

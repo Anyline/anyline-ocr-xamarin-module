@@ -77,6 +77,19 @@
     <AndroidAsset Include="Assets\id_config_mrz.json" />
     <AndroidAsset Include="Assets\document_config.json" />
     <AndroidAsset Include="Assets\id_config_driving_license.json" />
+    <AndroidAsset Include="Assets\mro_config_vin.json" />
+    <AndroidAsset Include="Assets\vin.ale" />
+    <AndroidAsset Include="Assets\VIN.any" />
+    <AndroidAsset Include="Assets\vehicle_config_license_plate.json" />
+    <AndroidAsset Include="Assets\mro_config_usnr.json" />
+    <AndroidAsset Include="Assets\USNr.any" />
+    <AndroidAsset Include="Assets\mro_config_shipping_container.json" />
+    <AndroidAsset Include="Assets\container_scanner.ale" />
+    <AndroidAsset Include="Assets\others_config_barcode.json" />
+    <AndroidAsset Include="Assets\others_config_bottlecap.json" />
+    <AndroidAsset Include="Assets\others_config_voucher_code.json" />
+    <AndroidAsset Include="Assets\anyline_capitals.traineddata" />
+    <AndroidAsset Include="Assets\bottlecap.traineddata" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>

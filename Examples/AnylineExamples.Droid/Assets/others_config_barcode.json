@@ -1,43 +1,40 @@
 ﻿{
   "camera": {
-    "captureResolution": "720",
-    "defaultCamera": "BACK"
+    "captureResolution": "1080p"
   },
   "flash": {
-    "mode": "manual",
+    "mode": "auto",
     "alignment": "bottom_right"
   },
-
   "viewPlugin": {
     "plugin": {
-      "id": "plugin",
-      "idPlugin": {
-        "drivingLicenseConfig": {
-          "scanMode": "AUTO"
-        }
+      "id": "Barcode_ID",
+      "barcodePlugin": {
+        "__comment": "remove the '__' to limit barcode formats like below ",
+        "__barcodeFormatOptions": [ "CODABAR", "EAN_13", "UPC_A" ]
       }
     },
     "cutoutConfig": {
       "style": "rect",
-      "maxWidthPercent": "99%",
-      "maxHeightPercent": "100%",
+      "maxWidthPercent": "80%",
+      "maxHeightPercent": "80%",
       "alignment": "center",
       "ratioFromSize": {
-        "width": 560,
-        "height": 354
+        "width": 100,
+        "height": 80
       },
-      "strokeWidth": 2,
-      "cornerRadius": 4,
+      "strokeWidth": 1,
+      "cornerRadius": 3,
       "strokeColor": "FFFFFF",
       "outerColor": "000000",
       "outerAlpha": 0.3,
       "feedbackStrokeColor": "0099FF"
     },
     "scanFeedback": {
-      "fillColor": "220099FF",
-      "style": "CONTOUR_POINT",
+      "style": "rect",
       "strokeColor": "0099FF",
-      "strokeWidth": 2,
+      "fillColor": "220099FF",
+      "animationDuration": 150,
       "blinkOnResult": true,
       "beepOnResult": true,
       "vibrateOnResult": true
@@ -45,4 +42,3 @@
     "cancelOnResult": true
   }
 }
-

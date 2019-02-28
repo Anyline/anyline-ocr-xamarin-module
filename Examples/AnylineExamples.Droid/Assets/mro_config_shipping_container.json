@@ -1,21 +1,29 @@
 ﻿{
   "camera": {
-    "captureResolution": "720p"
+    "captureResolution": "1080p"
   },
   "flash": {
-    "mode": "auto",
+    "mode": "manual",
     "alignment": "bottom_right"
   },
   "viewPlugin": {
     "plugin": {
-      "id": "plugin",
-      "meterPlugin": {
-        "scanMode": "DIAL_METER"
+      "id": "Container_ID",
+      "ocrPlugin": {
+        "scanMode": "AUTO",
+        "languages": [ "USNr.any" ],
+        "customCmdFile": "container_scanner.ale"
       }
     },
     "cutoutConfig": {
       "style": "rect",
-      "alignment": "top",
+      "width": 720,
+      "maxWidthPercent": "80%",
+      "alignment": "top_half",
+      "ratioFromSize": {
+        "width": 720,
+        "height": 144
+      },
       "strokeWidth": 2,
       "strokeColor": "FFFFFF",
       "cornerRadius": 4,
@@ -24,11 +32,11 @@
       "feedbackStrokeColor": "0099FF",
       "offset": {
         "x": 0,
-        "y": 120
+        "y": -15
       }
     },
     "scanFeedback": {
-      "style": "RECT",
+      "style": "CONTOUR_RECT",
       "strokeColor": "0099FF",
       "fillColor": "220099FF",
       "blinkOnResult": true,

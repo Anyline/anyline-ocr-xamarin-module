@@ -19,13 +19,9 @@ namespace AnylineExamples.Droid
         private readonly List<AndroidExampleModelWrapper> _items;
         private readonly Context _context;
 
-        public int GetBuildNumber()
+        public string GetBuildNumber()
         {
-            var context = global::Android.App.Application.Context;
-            PackageManager manager = context.PackageManager;
-            PackageInfo info = manager.GetPackageInfo(context.PackageName, 0);
-
-            return info.VersionCode;
+            return typeof(ActivityListAdapter).Assembly.GetName().Version.ToString();
         }
 
         public ActivityListAdapter(Context context)
