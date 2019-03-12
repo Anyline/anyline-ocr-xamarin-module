@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!-- textview names
+
+<string name="scan_analog_meter">Analog Meter</string>
+<string name="scan_digital_meter">Digital Meter</string>
+<string name="scan_heat_meter">Heat Meter</string>
+<string name="scan_analog_digital_meter">Analog/Digital Meter</string>
+<string name="scan_serial_numbers">Energy Serial Number</string>
+<string name="scan_dial_meters">Dial Meter (Alpha)</string>
+<string name="scan_dot_matrix_meters">Dot Matrix Meter</string>
+
+<string name="scan_barcode">Barcode / QR-Code</string>
+<string name="scan_universal_serial_number">Universal Serial Number</string>
+<string name="scan_mrz">MRZ / Passport</string>
+<string name="scan_document">Document</string>
+<string name="scan_voucher_code">Voucher Code</string>
+<string name="scan_iban">IBAN</string>
+<string name="scan_bottlecaps">Bottlecap</string>
+<string name="scan_license_plates">EU License Plate</string>
+<string name="scan_driving_licenses">AUT/GER Driving License</string>
+<string name="scan_vin_number">Vehicle Identification Number</string>
+<string name="scan_shipping_container">Shipping Container</string>
+
+<string name="heat_meter_4_3">4 pre-decimal places</string>
+<string name="heat_meter_5_3">5 pre-decimal places</string>
+<string name="heat_meter_6_3">6 pre-decimal places</string>
+
+<string name="category_energy">Meter Reading</string>
+<string name="category_identification">Identification Documents</string>
+<string name="category_fintech">Fintech</string>
+<string name="category_barcodes">Barcode / QR-Code</string>
+<string name="category_mro">MRO</string>
+<string name="category_documents">Document</string>
+<string name="category_loyality">Loyality</string>
+<string name="category_vehicle">Vehicles</string>
+
+
+<string name="version_info"></string>-->
+
+  <!--
+  <string name="version_info"></string>
+
+  <string-array
+      name="example_activity_names">
+    <item>Meter</item>
+    <item>Analog/Digital Meter</item>
+    
+    <item>Identification Documents</item>    
+    <item>MRZ / Passport</item>
+    <item>Driving License</item>
+    
+    <item>Barcode</item>    
+    <item>Barcode / QR-Code</item>
+    
+    <item>MRO</item>
+    <item>Universal Serial Number</item>
+    <item>Shipping Container</item>
+    <item>VIN Number</item>
+
+    <item>Fintech</item>    
+    <item>IBAN</item>
+    
+    <item>Document</item>
+    <item>Document</item>
+    
+    <item>Loyalty</item>
+    <item>Voucher Codes</item>
+    <item>Bottle Caps</item>
+
+    <item>Vehicle</item>
+    <item>License Plate</item>
+    
+    <item>@string/version_info</item>
+
+  </string-array>
+
+  <string-array
+      name="example_activity_classes">
+    <item>HEADER</item>
+    <item>AnylineXamarinApp.Energy.EnergyActivity</item>
+    <item>AnylineXamarinApp.Energy.EnergyActivity</item>
+    <item>AnylineXamarinApp.Energy.EnergyActivity</item>
+    <item>AnylineXamarinApp.Energy.EnergyActivity</item>
+    <item>AnylineXamarinApp.Energy.EnergyActivity</item>
+    <item>AnylineXamarinApp.Energy.EnergyActivity</item>
+    <item>AnylineXamarinApp.Energy.EnergyActivity</item>
+    <item>HEADER</item>
+    <item>AnylineXamarinApp.Mrz.MrzActivity</item>
+    <item>AnylineXamarinApp.DrivingLicense.DrivingLicenseActivity</item>
+    <item>HEADER</item>
+    <item>AnylineXamarinApp.Barcode.BarcodeActivity</item>
+    <item>HEADER</item>
+    <item>AnylineXamarinApp.Ocr.SerialNumberActivity</item>
+    <item>AnylineXamarinApp.Ocr.ShippingContainerActivity</item>
+    <item>AnylineXamarinApp.Ocr.VinActivity</item>
+    <item>HEADER</item>
+    <item>AnylineXamarinApp.Ocr.IbanActivity</item>
+    <item>HEADER</item>
+    <item>AnylineXamarinApp.Document.DocumentActivity</item>
+    <item>HEADER</item>
+    <item>AnylineXamarinApp.Ocr.VoucherCodeActivity</item>
+    <item>AnylineXamarinApp.Ocr.BottlecapActivity</item>
+    <item>HEADER</item>
+    <item>AnylineXamarinApp.LicensePlate.LicensePlateActivity</item>
+  <item>HEADER</item>
+  </string-array>-->
+</resources>

@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{1B7E7069-1386-4B26-93A7-7FE7F661B81F}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>AnylineXamarinApp.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>AnylineXamarinAppiOS</AssemblyName>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>i386</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchProfiling>true</MtouchProfiling>
+    <StartupObject>AnylineXamarinApp.iOS.Application</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <ConsolePause>False</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <StartupObject>AnylineXamarinApp.iOS.Application</StartupObject>
+    <MtouchSdkVersion>11.2</MtouchSdkVersion>
+    <MtouchLink>Full</MtouchLink>
+    <MtouchDebug>True</MtouchDebug>
+    <MtouchProfiling>False</MtouchProfiling>
+    <MtouchFastDev>False</MtouchFastDev>
+    <MtouchUseLlvm>False</MtouchUseLlvm>
+    <MtouchUseThumb>False</MtouchUseThumb>
+    <MtouchUseSGen>False</MtouchUseSGen>
+    <MtouchUseRefCounting>False</MtouchUseRefCounting>
+    <OptimizePNGs>True</OptimizePNGs>
+    <MtouchFloat32>False</MtouchFloat32>
+    <DeviceSpecificBuild>False</DeviceSpecificBuild>
+    <DefineConstants>DEBUG;__UNIFIED__;__MOBILE__;__IOS__;</DefineConstants>
+    <Commandlineparameters>-all_load</Commandlineparameters>
+    <Externalconsole>False</Externalconsole>
+    <MtouchEnableBitcode>False</MtouchEnableBitcode>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchExtraArgs>-gcc_flags -all_load</MtouchExtraArgs>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <StartupObject>AnylineXamarinApp.iOS.Application</StartupObject>
+    <MtouchSdkVersion>9.3</MtouchSdkVersion>
+    <MtouchDebug>True</MtouchDebug>
+    <MtouchProfiling>False</MtouchProfiling>
+    <MtouchFastDev>False</MtouchFastDev>
+    <MtouchUseLlvm>False</MtouchUseLlvm>
+    <MtouchUseThumb>False</MtouchUseThumb>
+    <MtouchUseSGen>False</MtouchUseSGen>
+    <MtouchUseRefCounting>False</MtouchUseRefCounting>
+    <OptimizePNGs>True</OptimizePNGs>
+    <MtouchFloat32>False</MtouchFloat32>
+    <MtouchI18n />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;__UNIFIED__;__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
+    <MtouchProfiling>False</MtouchProfiling>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>True</MtouchDebug>
+    <MtouchSdkVersion>12.1</MtouchSdkVersion>
+    <MtouchOptimizePNGs>False</MtouchOptimizePNGs>
+    <StartupObject>AnylineXamarinApp.iOS.Application</StartupObject>
+    <MtouchLink>Full</MtouchLink>
+    <MtouchFastDev>False</MtouchFastDev>
+    <MtouchEnableGenericValueTypeSharing>False</MtouchEnableGenericValueTypeSharing>
+    <MtouchUseLlvm>False</MtouchUseLlvm>
+    <MtouchUseThumb>False</MtouchUseThumb>
+    <MtouchUseSGen>True</MtouchUseSGen>
+    <MtouchUseRefCounting>False</MtouchUseRefCounting>
+    <Externalconsole>False</Externalconsole>
+    <MtouchEnableBitcode>False</MtouchEnableBitcode>
+    <OptimizePNGs>False</OptimizePNGs>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchFloat32>False</MtouchFloat32>
+    <DeviceSpecificBuild>True</DeviceSpecificBuild>
+    <CodesignProvision>
+    </CodesignProvision>
+    <IOSDebugOverWiFi>False</IOSDebugOverWiFi>
+    <IOSDebuggerPort>10000</IOSDebuggerPort>
+    <MtouchNoSymbolStrip>False</MtouchNoSymbolStrip>
+    <CodesignEntitlements>
+    </CodesignEntitlements>
+    <CodesignExtraArgs />
+    <CodesignResourceRules />
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>AnylineXamarinApp.iOS.Application</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
+    <AppExtensionDebugBundleId />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="MainStoryboard.storyboard" />
+    <ImageAsset Include="Resources\Images.xcassets\AnylineLogo.imageset\Anyline@2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AnylineLogo.imageset\Anyline@3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AnylineLogo.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\MeterScan.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\pass.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\blitz.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\flamme.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\kalender.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\ort.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnylineViewController.cs" />
+    <Compile Include="AnylineViewController.designer.cs">
+      <DependentUpon>AnylineViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="MainController.cs" />
+    <Compile Include="MainController.designer.cs">
+      <DependentUpon>MainController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Barcode\ViewController\AnylineBarcodeScanViewController.cs" />
+    <Compile Include="Modules\Document\ViewController\AnylineDocumentScanViewController.cs" />
+    <Compile Include="Modules\Document\View\NotificationView.cs" />
+    <Compile Include="Modules\DrivingLicense\ViewController\AnylineDrivingLicenseScanViewController.cs" />
+    <Compile Include="Modules\DrivingLicense\View\DrivingLicenseResultOverlayView.cs" />
+    <Compile Include="Modules\Energy\ViewController\AnylineEnergyScanViewController.cs" />
+    <Compile Include="Modules\Energy\ViewController\AnylineEnergyScanViewResultController.cs" />
+    <Compile Include="Modules\Energy\View\EnergyMeterReadingView.cs" />
+    <Compile Include="Modules\LicensePlate\View\LicensePlateResultOverlayView.cs" />
+    <Compile Include="Modules\Mrz\ViewController\AnylineMrzScanViewController.cs" />
+    <Compile Include="Modules\Mrz\View\AnylineIdentificationView.cs" />
+    <Compile Include="Modules\OCR\ViewController\AnylineBottlecapScanViewController.cs" />
+    <Compile Include="Modules\LicensePlate\ViewController\AnylineLicensePlateScanViewController.cs" />
+    <Compile Include="Modules\OCR\ViewController\AnylineShippingContainerScanViewController.cs" />
+    <Compile Include="Modules\OCR\ViewController\AnylineSerialNumberScanViewController.cs" />
+    <Compile Include="Modules\OCR\ViewController\AnylineVoucherScanViewController.cs" />
+    <Compile Include="Modules\OCR\ViewController\AnylineIBANScanViewController.cs" />
+    <Compile Include="Modules\OCR\ViewController\AnylineVinScanViewController.cs" />
+    <Compile Include="ResultOverlayView.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\drawable\Default-568h%402x.png" />
+    <BundleResource Include="Resources\drawable\ic_energy_old.png" />
+    <BundleResource Include="Resources\drawable\ic_launcher.png" />
+    <ImageAsset Include="Resources\Images.xcassets\MeterScan.imageset\Icon-60%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\MeterScan.imageset\Icon-60%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\pass.imageset\pass2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\pass.imageset\pass3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\blitz.imageset\blitz.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\blitz.imageset\blitz%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\flamme.imageset\flamme.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\flamme.imageset\flamme_2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\kalender.imageset\kalender.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\kalender.imageset\kalender%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\ort.imageset\ort.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\ort.imageset\ort%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <BundleResource Include="Resources\drawable\ic_mrz.png" />
+    <BundleResource Include="Resources\drawable\ic_barcode.png" />
+    <BundleResource Include="Resources\drawable\ic_energy.png" />
+    <BundleResource Include="Resources\drawable\iban_background.png" />
+    <BundleResource Include="Resources\drawable\gift_card_background.png" />
+    <BundleResource Include="Resources\drawable\bottle_background.png" />
+    <BundleResource Include="Resources\drawable\license_plate_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist">
+      <SubType>Designer</SubType>
+    </None>
+    <BundleResource Include="Modules\OCR\bottlecap.traineddata" />
+    <BundleResource Include="Modules\OCR\deu.traineddata" />
+    <BundleResource Include="Modules\OCR\eng_no_dict.traineddata" />
+    <BundleResource Include="Modules\OCR\anyline_capitals.traineddata" />
+    <BundleResource Include="Modules\DrivingLicense\drivinglicense_capture_config.json" />
+    <BundleResource Include="Modules\OCR\USNr.any" />
+    <BundleResource Include="Modules\OCR\serial_number_config.json" />
+    <BundleResource Include="Modules\OCR\vin.ale" />
+    <BundleResource Include="Modules\OCR\VIN.any" />
+    <BundleResource Include="Modules\OCR\vin_capture_config.json" />
+    <BundleResource Include="Modules\LicensePlate\license_plate_view_config.json" />
+    <BundleResource Include="Modules\OCR\iban_config.json" />
+    <BundleResource Include="Modules\OCR\voucher_code_config.json" />
+    <BundleResource Include="Modules\OCR\bottlecap_config.json" />
+    <BundleResource Include="Resources\drawable\driving_license_background.png" />
+    <BundleResource Include="Modules\OCR\shipping_container_config.json" />
+    <BundleResource Include="Modules\OCR\container_scanner.ale" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Anyline.Xamarin.SDK.iOS">
+      <Version>8.0.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <!--<PropertyGroup>
+    <PreBuildEvent>$(SolutionDir)tools\dist\IncrementBuildNumber.exe $(ProjectDir)Info.plist</PreBuildEvent>
+  </PropertyGroup>-->
+</Project>
