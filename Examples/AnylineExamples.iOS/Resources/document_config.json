@@ -30,7 +30,9 @@
       "alignment": "center",
       "strokeWidth": 2,
       "cornerRadius": 0,
-      "strokeColor": "00000000"
+      "strokeColor": "00000000",
+      "outerColor": "000000",
+      "outerAlpha": 0.0
     },
     "scanFeedback": {
       "beepOnResult": true,

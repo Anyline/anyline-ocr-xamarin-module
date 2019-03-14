@@ -9,9 +9,13 @@ using AnylineXamarinSDK.iOS;
 
 namespace AnylineExamples.iOS
 {
+    /// <summary>
+    /// This is the delegate class that implements all result callbacks for various scan plugins
+    /// </summary>
     public sealed class ScanResultDelegate : NSObject, 
         IALIDPluginDelegate, IALOCRScanPluginDelegate, IALMeterScanPluginDelegate,
-        IALDocumentScanPluginDelegate
+        IALDocumentScanPluginDelegate, IALLicensePlateScanPluginDelegate,
+        IALBarcodeScanPluginDelegate
     {
         private readonly ScanViewController _scanViewController;
 
@@ -43,7 +47,22 @@ namespace AnylineExamples.iOS
 
         public void HasResult(ALDocumentScanPlugin anylineDocumentScanPlugin, UIImage transformedImage, UIImage fullFrame, ALSquare corners)
         {
-            HandleResult(transformedImage);
+            Dictionary<string, object> results = new Dictionary<string, object>();
+            results.Add("transformedImage", transformedImage);
+            results.Add("fullFrame", fullFrame);
+            results.Add("corners", corners);
+            
+            HandleResult(results);
+        }
+
+        public void DidFindResult(ALLicensePlateScanPlugin anylineLicensePlateScanPlugin, ALLicensePlateResult scanResult)
+        {
+            HandleResult(scanResult);
+        }
+
+        public void DidFindResult(ALBarcodeScanPlugin anylineBarcodeScanPlugin, ALBarcodeResult scanResult)
+        {
+            HandleResult(scanResult);
         }
     }
 }

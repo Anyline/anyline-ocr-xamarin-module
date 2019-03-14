@@ -16,7 +16,6 @@ using Java.Lang;
 using System.Reflection;
 using Android.Util;
 using AT.Nineyards.Anyline.Models;
-using IO.Anyline.Xamarin.Support.Plugins.Document;
 using IO.Anyline.Plugin.Document;
 using System.Collections;
 using Android.Graphics;

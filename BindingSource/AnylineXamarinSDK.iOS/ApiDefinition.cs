@@ -449,6 +449,11 @@ namespace AnylineXamarinSDK.iOS
         [Export("defaultDrivingLicenseConfig")]
         ALScanViewPluginConfig DefaultDrivingLicenseConfig();
 
+        // +(instancetype _Nonnull)defaultGermanIDFrontConfig;
+        [Static]
+        [Export("defaultGermanIDFrontConfig")]
+        ALScanViewPluginConfig DefaultGermanIDFrontConfig();
+
         // +(instancetype _Nonnull)defaultMeterConfig;
         [Static]
         [Export("defaultMeterConfig")]
@@ -2688,6 +2693,63 @@ namespace AnylineXamarinSDK.iOS
         IntPtr Constructor(string documentType, string issuingCountryCode, string nationalityCountryCode, string surNames, string givenNames, string documentNumber, string checkDigitNumber, string dayOfBirth, string checkDigitDayOfBirth, string sex, string expirationDate, string checkdigitExpirationDate, string personalNumber, string checkDigitPersonalNumber, string checkDigitFinal, string personalNumber2, [NullAllowed] string address, [NullAllowed] string issuingDate, string MRZString);
     }
 
+    // @interface ALGermanIDFrontIdentification : NSObject
+    [BaseType(typeof(NSObject))]
+    interface ALGermanIDFrontIdentification
+    {
+        // @property (readonly, nonatomic, strong) NSString * _Nonnull documentNumber;
+        [Export("documentNumber", ArgumentSemantic.Strong)]
+        string DocumentNumber { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nonnull surNames;
+        [Export("surNames", ArgumentSemantic.Strong)]
+        string SurNames { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nonnull givenNames;
+        [Export("givenNames", ArgumentSemantic.Strong)]
+        string GivenNames { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nonnull dayOfBirth;
+        [Export("dayOfBirth", ArgumentSemantic.Strong)]
+        string DayOfBirth { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nonnull placeOfBirth;
+        [Export("placeOfBirth", ArgumentSemantic.Strong)]
+        string PlaceOfBirth { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nonnull nationality;
+        [Export("nationality", ArgumentSemantic.Strong)]
+        string Nationality { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nonnull cardAccessNumber;
+        [Export("cardAccessNumber", ArgumentSemantic.Strong)]
+        string CardAccessNumber { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nonnull expirationDate;
+        [Export("expirationDate", ArgumentSemantic.Strong)]
+        string ExpirationDate { get; }
+
+        // @property (readonly, nonatomic, strong) NSDate * _Nullable dayOfBirthDateObject;
+        [NullAllowed, Export("dayOfBirthDateObject", ArgumentSemantic.Strong)]
+        NSDate DayOfBirthDateObject { get; }
+
+        // @property (readonly, nonatomic, strong) NSDate * _Nullable expirationDateObject;
+        [NullAllowed, Export("expirationDateObject", ArgumentSemantic.Strong)]
+        NSDate ExpirationDateObject { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nonnull germanIdFrontString;
+        [Export("germanIdFrontString", ArgumentSemantic.Strong)]
+        string GermanIdFrontString { get; }
+
+        // @property (nonatomic, strong) UIImage * _Nullable faceImage;
+        [NullAllowed, Export("faceImage", ArgumentSemantic.Strong)]
+        UIImage FaceImage { get; set; }
+
+        // -(instancetype _Nullable)initWithDocumentNumber:(NSString * _Nonnull)documentNumber surNames:(NSString * _Nonnull)surNames givenNames:(NSString * _Nonnull)givenNames dayOfBirth:(NSString * _Nonnull)dayOfBirth placeOfBirth:(NSString * _Nonnull)placeOfBirth nationality:(NSString * _Nonnull)nationality cardAccessNumber:(NSString * _Nonnull)cardAccessNumber expirationDate:(NSString * _Nonnull)expirationDate germanIdFrontString:(NSString * _Nonnull)germanIdFrontString;
+        [Export("initWithDocumentNumber:surNames:givenNames:dayOfBirth:placeOfBirth:nationality:cardAccessNumber:expirationDate:germanIdFrontString:")]
+        IntPtr Constructor(string documentNumber, string surNames, string givenNames, string dayOfBirth, string placeOfBirth, string nationality, string cardAccessNumber, string expirationDate, string germanIdFrontString);
+    }
+
     // audit-objc-generics: @interface ALIDResult<__covariant ObjectType> : ALScanResult
     [BaseType(typeof(ALScanResult))]
     interface ALIDResult
@@ -2726,6 +2788,15 @@ namespace AnylineXamarinSDK.iOS
     // @interface ALDrivingLicenseConfig : ALIDConfig
     [BaseType(typeof(ALIDConfig))]
     interface ALDrivingLicenseConfig
+    {
+        // @property (assign, nonatomic) ALDrivingLicenseScanMode scanMode;
+        [Export("scanMode", ArgumentSemantic.Assign)]
+        ALDrivingLicenseScanMode ScanMode { get; set; }
+    }
+
+    // @interface ALGermanIDFrontConfig : ALIDConfig
+    [BaseType(typeof(ALIDConfig))]
+    interface ALGermanIDFrontConfig
     {
     }
 

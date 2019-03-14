@@ -6,6 +6,8 @@ using UIKit;
 using System.Reflection;
 using System.IO;
 using AnylineExamples.iOS;
+using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace AnylineExamples.iOS
 {
@@ -57,13 +59,18 @@ namespace AnylineExamples.iOS
                     _frame.Height - NavigationController.NavigationBar.Frame.Size.Height);
 
                 var config = NSBundle.MainBundle.PathForResource(@"" + _jsonPath.Replace(".json", ""), @"json");
-
+                
                 _scanView = ALScanView.ScanViewForFrame(_frame, config, LicenseKey, _resultDelegate, out error);
                 
+                if (error != null)
+                {
+                    throw new Exception(error.LocalizedDescription);
+                }
+
+                // TODO: known issue that the result delegate has to be added specifically to the scan plugin
                 ConnectDelegateToScanPlugin();
-
+                
                 View.AddSubview(_scanView);
-
                 _scanView.StartCamera();
 
                 _initialized = true;

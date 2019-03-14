@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnylineXamarinApp.Droid", "AnylineXamarinApp.Droid_old\AnylineXamarinApp.Droid.csproj", "{922FED8D-BDDD-47BC-BC88-705FF802115D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Example Apps", "Example Apps", "{30119889-A33A-4489-BFBE-9D767B1C43EA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Legacy", "Legacy", "{30119889-A33A-4489-BFBE-9D767B1C43EA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnylineXamarinApp.iOS", "AnylineXamarinApp.iOS_old\AnylineXamarinApp.iOS.csproj", "{1B7E7069-1386-4B26-93A7-7FE7F661B81F}"
 EndProject

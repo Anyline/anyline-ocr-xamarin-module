@@ -169,7 +169,7 @@ namespace AnylineXamarinSDK.iOS
         public int minCharacterCount;
         public int maxCharacterCount;
     }
-
+    
     [StructLayout(LayoutKind.Sequential)]
     public struct ALRange
     {
@@ -251,7 +251,15 @@ namespace AnylineXamarinSDK.iOS
         Mrz,
         DrivingLicense
     }
-    
+
+    [Native]
+    public enum ALDrivingLicenseScanMode : long
+    {
+        At,
+        De,
+        Auto
+    }
+
     [Native]
     public enum ALOCRScanMode : long
     {

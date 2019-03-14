@@ -53,8 +53,8 @@
       "animationDuration": 75,
       "blinkOnResult": true,
       "beepOnResult": true,
-      "vibrateOnResult": true,
-      "cancelOnResult": true
-    }
+      "vibrateOnResult": true
+    },
+    "cancelOnResult": true
   }
 }

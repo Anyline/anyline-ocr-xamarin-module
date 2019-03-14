@@ -27,21 +27,31 @@ namespace AnylineExamples.iOS
             TableView = new UITableView(View.Bounds, UITableViewStyle.Grouped);
             TableView.Source = new TableSource(_scanResult, this);
         }
-        
+
+        public override void ViewDidDisappear(bool animated)
+        {
+            base.ViewDidDisappear(animated);
+            Dispose();
+        }
+
+        new void Dispose()
+        {
+            TableView.Source.Dispose();
+            TableView.Source = null;
+            TableView.Dispose();
+            base.Dispose();
+        }
+
         public class TableSource : UITableViewSource
         {
-            protected Dictionary<string, object> TableItems; // <header string, <result property string or image>
+            protected Dictionary<string, object> TableItems;
             protected ResultViewController ResultViewController;
             protected string CellIdentifier = "TableCell";
             
             public TableSource(object scanResult, ResultViewController parent)
             {
-                Dictionary<string, object> tableItems = CreatePropertyListFromObject(scanResult);
-                
-                TableItems = tableItems;
+                TableItems = scanResult.CreatePropertyDictionary();
                 ResultViewController = parent;
-
-                   
             }
 
             public override string TitleForHeader(UITableView tableView, nint section)
@@ -66,112 +76,77 @@ namespace AnylineExamples.iOS
                 return (nint)TableItems.Keys.Count;
             }
             
+            public override nfloat GetHeightForRow(UITableView tableView, NSIndexPath indexPath)
+            {
+                var o = TableItems.ElementAt(indexPath.Section).Value;
+
+                if (o is UIImage)
+                {
+                    var img = o as UIImage;
+
+                    var w = tableView.Bounds.Width;
+                    var h = (float)tableView.Bounds.Width / ((float)img.CGImage.Width / (float)img.CGImage.Height);
+
+                    return h;
+                } else
+                {
+                    var fontSize = GetCell(tableView, indexPath).TextLabel.Font.PointSize;
+                    var rows = o.ToString().Split(Environment.NewLine).Length;
+                    return 44 + (rows - 1) * fontSize;
+                }
+            }
+
             public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
             {
                 var o = TableItems.ElementAt(indexPath.Section).Value;
-                
-                UITableViewCell cell = new UITableViewCell();
-                
-                cell = new UITableViewCell(UITableViewCellStyle.Default, CellIdentifier);
-                cell.SelectionStyle = UITableViewCellSelectionStyle.None;
-                cell.Accessory = UITableViewCellAccessory.None;
 
-                if (o.GetType() == typeof(UIImage)) // for image presentation
+                var cell = tableView.DequeueReusableCell(CellIdentifier);
+                if (cell == null)
+                {
+                    cell = new UITableViewCell(UITableViewCellStyle.Default, CellIdentifier);
+                    cell.SelectionStyle = UITableViewCellSelectionStyle.None;
+                    cell.Accessory = UITableViewCellAccessory.None;
+                    cell.AccessoryView = null;
+                }
+
+                if (o is UIImage) // for image presentation
                 {
                     var image = o as UIImage;
-
-                    var w = cell.Bounds.Width;
-                    var h = cell.Bounds.Width / (image.CGImage.Width / image.CGImage.Height);
-                    cell.Bounds = new CoreGraphics.CGRect(cell.Bounds.X, cell.Bounds.Y, w, h);
-
-                    // set image view
-                    cell.ImageView.Image = image;
-                    cell.ImageView.ContentMode = UIViewContentMode.ScaleAspectFit;
+                    cell.BackgroundView = new UIImageView(image);
+                    cell.TextLabel.Text = "";
+                    cell.TextLabel.Lines = 1;
 
                 }
                 else // for text presentation
                 {
+                    cell.BackgroundView = null;
+
                     // set text label
                     cell.TextLabel.Text = o.ToString();
                     cell.TextLabel.LineBreakMode = UILineBreakMode.WordWrap;
 
                     // translante linebreaks in strings to number of lines
-                    var split = o.ToString().Split('\n');
-                    var numberOfLines = split.Length;
-
+                    var split = o.ToString().Split(Environment.NewLine);
+                    var numberOfLines = cell.TextLabel.Lines + split.Length;
                     cell.TextLabel.Lines = numberOfLines;
                 }
-
-                cell.Accessory = UITableViewCellAccessory.DisclosureIndicator;
-
+                
                 return cell;
             }
             
             public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
             {
             }
-            
-            // dynamically creates the result dictionary for the table view from any object
-            private Dictionary<string, object> CreatePropertyListFromObject(object obj)
+
+            new void Dispose()
             {
-                Dictionary<string, object> dict = new Dictionary<string, object>();
-
-                if (obj is UIImage)
+                foreach(var i in TableItems)
                 {
-                    dict.Add("UIImage", obj);
+                    (i.Value as NSObject).Dispose();
                 }
-                else
-                {
-                    foreach (var prop in obj.GetType().GetProperties())
-                    {
-                        switch (prop.Name)
-                        {
-                            // filter out properties that we don't want to display
-                            case "Handle":
-                            case "PeerReference":
-                            case "Outline":
-                            case "Class":
-                            case "Self":
-                            case "ClassHandle":
-                            case "Description":
-                            case "DebugDescription":
-                            case "IsProxy":
-                            case "RetainCount":
-                            case "Superclass":
-                            case "Zone":
-                            case "SuperHandle":
-                                break;
-                            default:
-
-                                var value = prop.GetValue(obj, null);
-
-                                Debug.WriteLine("{0}: {1}", prop.Name, value);
-                                if (value != null)
-                                {
-                                    if (value is ALMRZIdentification || value is ALDrivingLicenseIdentification)
-                                    //|| value is ALGERMANFRONTIDIDENTIFICATON!!!)
-                                    {
-                                        var subDict = CreatePropertyListFromObject(value);
-                                        foreach (var sd in subDict)
-                                        {
-                                            dict.Add(sd.Key, sd.Value);
-                                        }
-                                    }
-                                    else if (value is UIImage && value != null)
-                                    {
-                                        dict.Add(prop.Name, value);
-                                    }
-                                    else if (value.ToString() != "")
-                                    {
-                                        var str = value.ToString().Replace("\\n", Environment.NewLine);
-                                        dict.Add(prop.Name, str);
-                                    }
-                                }
-                                break;
-                        }
-                    }
-                }
-                    return dict;
+                TableItems.Clear();
+                TableItems = null;
+                base.Dispose();
             }
         };
 

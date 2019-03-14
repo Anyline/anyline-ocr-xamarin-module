@@ -49,21 +49,19 @@ namespace AnylineExamples.iOS
             }
 
             TableItems.Add(currentCategory, currentElements);
-
-            // add last item
             TableItems.Add(list.Last().Category, new List<ExampleModel>());
 
             TableView = new UITableView(View.Bounds, UITableViewStyle.Grouped);
             TableView.Source = new TableSource(TableItems, this);
         }
 
-        //lock orientation to portrait
+        // Lock orientation to portrait
         public override UIInterfaceOrientationMask GetSupportedInterfaceOrientations ()
         {
             return UIInterfaceOrientationMask.Portrait;
         }
 
-        //stop rotating away from portrait
+        // Don't allow rotation
         public override bool ShouldAutorotate()
         {
             return false;
@@ -74,7 +72,7 @@ namespace AnylineExamples.iOS
     {
         protected Dictionary<string, List<ExampleModel>> TableItems;
 
-        protected AnylineViewController AnylineViewController;
+        protected AnylineViewController AnylineScanViewController;
 
         protected string CellIdentifier = "TableCell";
 
@@ -84,7 +82,7 @@ namespace AnylineExamples.iOS
         public TableSource(Dictionary<string, List<ExampleModel>> tableItems, AnylineViewController parent)
         {
             TableItems = tableItems;
-            AnylineViewController = parent;            
+            AnylineScanViewController = parent;            
         }
         
         private string GetBuildVersion()
@@ -128,7 +126,7 @@ namespace AnylineExamples.iOS
 
         public override nint NumberOfSections(UITableView tableView)
         {
-            return (nint)TableItems.Keys.Count;
+            return TableItems.Keys.Count;
         }
 
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
@@ -154,19 +152,20 @@ namespace AnylineExamples.iOS
             if (_isNavigating) return;
             lock (_lock) _isNavigating = true;
             
-            if (AnylineViewController.CurrentScanViewController != null)
+            // free resources of old controller instances
+            if (AnylineScanViewController.CurrentScanViewController != null)
             {
-                AnylineViewController.CurrentScanViewController.Dispose();
-                AnylineViewController.CurrentScanViewController = null;
+                AnylineScanViewController.CurrentScanViewController.Dispose();
+                AnylineScanViewController.CurrentScanViewController = null;
             }
             
+            // create a new ScanViewController with the correct json config
             var example = TableItems.ElementAt(indexPath.Section).Value.ElementAt(indexPath.Row);
-            
-            AnylineViewController.CurrentScanViewController = new ScanViewController(example.Name, example.JsonPath);
+            AnylineScanViewController.CurrentScanViewController = new ScanViewController(example.Name, example.JsonPath);
             
             // navigate to the newly created scan view controller
-            if (AnylineViewController.CurrentScanViewController != null)            
-                AnylineViewController.NavigationController.PushViewController(AnylineViewController.CurrentScanViewController, true);
+            if (AnylineScanViewController.CurrentScanViewController != null)            
+                AnylineScanViewController.NavigationController.PushViewController(AnylineScanViewController.CurrentScanViewController, true);
 
             // workaround so the row selection is not creating a scanViewController twice
             await Task.Delay(200);
