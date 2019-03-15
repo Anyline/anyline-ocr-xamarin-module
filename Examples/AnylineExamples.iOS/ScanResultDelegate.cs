@@ -27,7 +27,7 @@ namespace AnylineExamples.iOS
         void HandleResult(object result)
         {
             var resultViewController = new ResultViewController(result);
-            _scanViewController.NavigationController?.PushViewController(resultViewController, true);
+            _scanViewController.NavigationController?.PushViewController(resultViewController, false);
         }
         
         public void DidFindResult(ALIDScanPlugin anylineIDScanPlugin, ALIDResult scanResult)

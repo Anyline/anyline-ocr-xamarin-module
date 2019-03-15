@@ -8,10 +8,8 @@
   },
   "viewPlugin": {
     "plugin": {
-      "id": "Barcode_ID",
+      "id": "BARCODE_PLUGIN",
       "barcodePlugin": {
-        "__comment": "remove the '__' to limit barcode formats like below ",
-        "__barcodeFormatOptions": [ "CODABAR", "EAN_13", "UPC_A" ]
       }
     },
     "cutoutConfig": {

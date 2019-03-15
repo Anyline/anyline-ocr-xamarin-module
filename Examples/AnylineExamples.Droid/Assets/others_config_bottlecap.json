@@ -1,6 +1,6 @@
 ﻿{
-  "camera":{
-  "captureResolution":"720"
+  "camera": {
+    "captureResolution": "1080"
   },
   "flash": {
     "mode": "manual",
@@ -8,13 +8,13 @@
   },
   "viewPlugin": {
     "plugin": {
-      "id": "plugin",
+      "id": "OCR_BOTTLECAP_PLUGIN",
       "ocrPlugin": {
         "scanMode": "GRID",
         "languages": [ "bottlecap.traineddata" ],
-        "charWhitelist": "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
+        "charWhitelist": "123456789ABCDEFGHJKLMNPRSTUVWXYZ",
         "minCharHeight": 14,
-        "maxCharHeight": 65,
+        "maxCharHeight": 95,
         "minConfidence": 75,
         "validationRegex": "^[0-9A-Z]{3}\n[0-9A-Z]{3}\n[0-9A-Z]{3}",
         "charCountX": 3,
@@ -29,7 +29,7 @@
       "maxWidthPercent": "80%",
       "maxHeightPercent": "80%",
       "alignment": "center",
-      "width": 300,
+      "width": 450,
       "ratioFromSize": {
         "width": 1,
         "height": 1
@@ -39,30 +39,22 @@
       "strokeColor": "FFFFFF",
       "outerColor": "000000",
       "outerAlpha": 0.3,
-      "offset": {
-        "x": 0,
-        "y": 0
-      },
-      "cropOffset": {
-        "x": 0,
-        "y": 0
-      },
       "cropPadding": {
         "x": 10,
         "y": 10
       },
       "feedbackStrokeColor": "0099FF"
     },
-    "cancelOnResult": true,
     "scanFeedback": {
       "style": "rect",
-      "strokeWidth": 2,
+      "strokeWidth": 1,
       "strokeColor": "0099FF",
       "fillColor": "220099FF",
       "cornerRadius": 10,
       "beepOnResult": true,
       "vibrateOnResult": true,
       "blinkAnimationOnResult": true
-    }
+    },
+    "cancelOnResult": true
   }
 }

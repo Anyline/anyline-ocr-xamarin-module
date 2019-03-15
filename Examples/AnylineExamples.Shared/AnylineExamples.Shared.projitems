@@ -11,5 +11,6 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)ExampleModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ExampleList.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ExampleHelper.cs" />
   </ItemGroup>
 </Project>

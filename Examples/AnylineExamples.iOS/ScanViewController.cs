@@ -58,16 +58,43 @@ namespace AnylineExamples.iOS
                     _frame.Width,
                     _frame.Height - NavigationController.NavigationBar.Frame.Size.Height);
 
-                var config = NSBundle.MainBundle.PathForResource(@"" + _jsonPath.Replace(".json", ""), @"json");
-                
-                _scanView = ALScanView.ScanViewForFrame(_frame, config, LicenseKey, _resultDelegate, out error);
+                var configPath = NSBundle.MainBundle.PathForResource(@"" + _jsonPath.Replace(".json", ""), @"json");
+                _scanView = ALScanView.ScanViewForFrame(_frame, configPath, LicenseKey, _resultDelegate, out error);
                 
                 if (error != null)
                 {
                     throw new Exception(error.LocalizedDescription);
                 }
 
-                // TODO: known issue that the result delegate has to be added specifically to the scan plugin
+                // KNOWN ISSUE (OCRScanPlugin only): the customCmdFile is not loading the file correctly. therefore, it has to be added via code:
+                if (_scanView.ScanViewPlugin is ALOCRScanViewPlugin)
+                {
+                    
+                    var file = File.ReadAllText(configPath);
+                    NSData data = NSData.FromString(file);
+                    NSDictionary dict = NSJsonSerialization.Deserialize(data, 0, out error) as NSDictionary;
+
+                    var customCmdFileName = dict.ValueForKeyPath(new NSString(@"viewPlugin.plugin.ocrPlugin.customCmdFile"));
+
+                    if (customCmdFileName != null)
+                    {
+                        var name = customCmdFileName.ToString().Split('.');
+                        if (name.Length == 2)
+                        {
+                            var config = (_scanView.ScanViewPlugin as ALOCRScanViewPlugin).OcrScanPlugin.OcrConfig;
+                            config.CustomCmdFilePath = NSBundle.MainBundle.PathForResource(name[0], name[1]);
+
+                            // explicitly call this method so everything is updated internally
+                            (_scanView.ScanViewPlugin as ALOCRScanViewPlugin).OcrScanPlugin.SetOCRConfig(config, out error);
+
+                            if (error != null)
+                                ShowAlert("OCR Config Error", error.DebugDescription);
+                        }
+                    }
+                }
+                
+                // KNOWN ISSUE: the result delegate has to be added specifically to the scan plugin.
+                // this should be automatically done already with the ScanViewForFrame call.
                 ConnectDelegateToScanPlugin();
                 
                 View.AddSubview(_scanView);

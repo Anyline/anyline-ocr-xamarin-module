@@ -16,6 +16,7 @@ using AT.Nineyards.Anyline.Models;
 using IO.Anyline.Plugin;
 using AT.Nineyards.Anyline.Modules.Mrz;
 using IO.Anyline.Plugin.ID;
+using AnylineExamples.Shared;
 
 namespace AnylineExamples.Droid
 {
@@ -46,17 +47,17 @@ namespace AnylineExamples.Droid
             {
                 Title = scanResult.GetType().Name;
 
-                var list = CreatePropertyList(scanResult);
+                var dict = CreatePropertyList(scanResult);
                 
-                var listAdapter = new ResultListAdapter(this, list);
+                var listAdapter = new ResultListAdapter(this, dict);
                 _resultListView.Adapter = listAdapter;
                 Util.SetListViewHeightBasedOnChildren(_resultListView, this);
             }
         }
 
-        private List<Java.Lang.Object> CreatePropertyList(Java.Lang.Object obj)
+        private Dictionary<string, Java.Lang.Object> CreatePropertyList(Java.Lang.Object obj)
         {
-            var list = new List<Java.Lang.Object>();
+            var dict = new Dictionary<string, Java.Lang.Object>();
             foreach (var prop in obj.GetType().GetProperties())
             {
 
@@ -80,25 +81,27 @@ namespace AnylineExamples.Droid
                             if (value is AnylineImage)
                             {
                                 var bitmap = (value as AnylineImage).Clone().Bitmap;
-                                list.Add(prop.Name);
-                                list.Add(bitmap);
+                                dict.Add(prop.Name, bitmap);
                             }
                             else if (value is ID)
                             {
                                 var sublist = CreatePropertyList(value as ID);
-                                list = list.Concat(sublist).ToList();
+                                sublist.ToList().ForEach(x => dict.Add(x.Key, x.Value));
                             }
                             else
                             {
-                                list.Add(prop.Name);
                                 var str = new Java.Lang.String(value.ToString()).ReplaceAll("\\\\n", "\\\n");
-                                list.Add(str);
+                                dict.Add(prop.Name, str);
                             }
                         }
                         break;
                 }
             }
-            return list;
+            
+            // quick hack to re-order the list so that the result will be presented first:
+            dict.MoveElementToIndex("Result", 0);
+
+            return dict;
         }
 
         #region going back & cleanup

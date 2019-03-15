@@ -26,8 +26,12 @@ namespace AnylineExamples.iOS
 
             TableView = new UITableView(View.Bounds, UITableViewStyle.Grouped);
             TableView.Source = new TableSource(_scanResult, this);
-        }
 
+            NavigationItem.LeftBarButtonItem = new UIBarButtonItem(UIBarButtonSystemItem.Done, (sender, args) => {
+                NavigationController?.PopViewController(false);
+            });            
+        }
+        
         public override void ViewDidDisappear(bool animated)
         {
             base.ViewDidDisappear(animated);

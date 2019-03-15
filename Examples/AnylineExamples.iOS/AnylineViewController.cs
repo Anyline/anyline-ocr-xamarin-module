@@ -165,7 +165,7 @@ namespace AnylineExamples.iOS
             
             // navigate to the newly created scan view controller
             if (AnylineScanViewController.CurrentScanViewController != null)            
-                AnylineScanViewController.NavigationController.PushViewController(AnylineScanViewController.CurrentScanViewController, true);
+                AnylineScanViewController.NavigationController.PushViewController(AnylineScanViewController.CurrentScanViewController, false);
 
             // workaround so the row selection is not creating a scanViewController twice
             await Task.Delay(200);

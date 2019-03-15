@@ -10,7 +10,7 @@
 
   "viewPlugin": {
     "plugin": {
-      "id": "plugin",
+      "id": "ID_PLUGIN",
       "idPlugin": {
         "germanIdFrontConfig": {
         }

@@ -8,7 +8,7 @@
   },
   "viewPlugin": {
     "plugin": {
-      "id": "plugin",
+      "id": "OCR_BOTTLECAP_PLUGIN",
       "ocrPlugin": {
         "scanMode": "GRID",
         "languages": [ "bottlecap.traineddata" ],

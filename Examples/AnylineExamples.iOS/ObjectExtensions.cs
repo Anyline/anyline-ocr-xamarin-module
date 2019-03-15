@@ -64,6 +64,21 @@ namespace AnylineExamples.iOS
                     }
                 }
             }
+
+            // we want to present "Result" always first, so:
+            if (dict.ContainsKey("Result"))
+            {
+                var list = dict.ToList();
+
+                var currentIndex = list.FindIndex(x => x.Key == "Result");
+                var currentElement = list.ElementAt(currentIndex);
+
+                list.Remove(currentElement);
+                list.Insert(0, currentElement);
+
+                dict = list.ToDictionary(x => x.Key, x => x.Value);
+            }
+
             return dict;
         }
 

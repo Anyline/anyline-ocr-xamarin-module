@@ -9,38 +9,23 @@
   },
   "viewPlugin": {
     "plugin": {
-      "id": "plugin",
+      "id": "METER_PLUGIN",
       "meterPlugin": {
         "scanMode": "AUTO_ANALOG_DIGITAL_METER"
       }
     },
-    "cutoutConfig": {
-      "style": "rect",
-      "width": 700,
-      "alignment": "top_half",
-      "ratioFromSize": {
-        "width": 125,
-        "height": 200
-      },
-      "strokeWidth": 2,
-      "strokeColor": "FFFFFF",
-      "cornerRadius": 4,
-      "outerColor": "000000",
-      "outerAlpha": 0.5,
-      "feedbackStrokeColor": "0099FF",
-      "maxWidthPercent": "100%",
-      "maxHeightPercent": "100%",
+    "cutoutConfig" : {
+      "style" : "rect",
+      "alignment" : "top",
+      "strokeWidth" : 2,
+      "strokeColor" : "FFFFFF",
+      "cornerRadius" : 4,
+      "outerColor" : "000000",
+      "outerAlpha" : 0.5,
+      "feedbackStrokeColor" : "0099FF",
       "offset": {
         "x": 0,
-        "y": 0
-      },
-      "cropPadding": {
-        "x": 0,
-        "y": 0
-      },
-      "cropOffset": {
-        "x": 0,
-        "y": 0
+        "y": 120
       }
     },
     "scanFeedback": {

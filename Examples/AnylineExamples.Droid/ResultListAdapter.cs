@@ -21,12 +21,14 @@ namespace AnylineExamples.Droid
         private readonly List<Java.Lang.Object> _items;
         private readonly Context _context;
         
-        public ResultListAdapter(Context context, List<Java.Lang.Object> items)
+        public ResultListAdapter(Context context, Dictionary<string, Java.Lang.Object> items)
         {
             _context = context;
             Resources res = context.Resources;
 
-            _items = items;
+            _items = new List<Java.Lang.Object>();
+            items.ToList().ForEach(x => { _items.Add(x.Key); _items.Add(x.Value); });
+            
         }
 
         public override int GetItemViewType(int position)
@@ -51,8 +53,7 @@ namespace AnylineExamples.Droid
 
         public override Java.Lang.Object GetItem(int position)
         {
-            var item = _items.ElementAt(position);
-            return item;
+            return _items.ElementAt(position);
         }
         
         public override long GetItemId(int position)

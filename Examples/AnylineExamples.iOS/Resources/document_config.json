@@ -15,7 +15,7 @@
 
   "viewPlugin": {
     "plugin": {
-      "id": "DOCUMENT",
+      "id": "DOCUMENT_PLUGIN",
       "documentPlugin": {
       }
     },

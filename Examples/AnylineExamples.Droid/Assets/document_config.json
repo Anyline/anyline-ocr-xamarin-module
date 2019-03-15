@@ -15,7 +15,7 @@
 
   "viewPlugin": {
     "plugin": {
-      "id": "DOCUMENT",
+      "id": "DOCUMENT_PLUGIN",
       "documentPlugin": {
       }
     },
@@ -23,15 +23,16 @@
       "style": "rect",
       "maxWidthPercent": "100%",
       "maxHeightPercent": "100%",
-      "width": 720,
       "ratioFromSize": {
         "width": 10,
-        "height": 15
+        "height": 18
       },
       "alignment": "center",
       "strokeWidth": 2,
       "cornerRadius": 0,
-      "strokeColor": "00000000"
+      "strokeColor": "00000000",
+      "outerColor": "000000",
+      "outerAlpha": 0.0
     },
     "scanFeedback": {
       "beepOnResult": true,

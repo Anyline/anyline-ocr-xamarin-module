@@ -8,7 +8,7 @@
   },
   "viewPlugin": {
     "plugin": {
-      "id": "Container_ID",
+      "id": "OCR_CONTAINER_PLUGIN",
       "ocrPlugin": {
         "scanMode": "AUTO",
         "languages": [ "USNr.any" ],

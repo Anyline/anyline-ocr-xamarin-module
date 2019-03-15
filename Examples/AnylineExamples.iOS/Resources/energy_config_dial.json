@@ -8,7 +8,7 @@
   },
   "viewPlugin": {
     "plugin": {
-      "id": "plugin",
+      "id": "METER_PLUGIN",
       "meterPlugin": {
         "scanMode": "DIAL_METER"
       }

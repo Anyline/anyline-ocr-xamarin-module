@@ -8,7 +8,7 @@
   },
   "viewPlugin": {
     "plugin": {
-      "id": "OCR_COW",
+      "id": "OCR_COW_TAG_PLUGIN",
       "ocrPlugin": {
         "scanMode": "AUTO",
         "languages": [ "USNr.any" ],

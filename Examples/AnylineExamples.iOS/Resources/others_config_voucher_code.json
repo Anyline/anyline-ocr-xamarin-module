@@ -8,7 +8,7 @@
   },
   "viewPlugin": {
     "plugin": {
-      "id": "OCR_VC",
+      "id": "OCR_VOUCHER_PLUGIN",
       "ocrPlugin": {
         "scanMode": "AUTO",
         "languages": [ "anyline_capitals.traineddata" ],
