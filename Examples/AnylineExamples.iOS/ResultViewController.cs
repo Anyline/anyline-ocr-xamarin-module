@@ -29,7 +29,7 @@ namespace AnylineExamples.iOS
 
             NavigationItem.LeftBarButtonItem = new UIBarButtonItem(UIBarButtonSystemItem.Done, (sender, args) => {
                 NavigationController?.PopViewController(false);
-            });            
+            });
         }
         
         public override void ViewDidDisappear(bool animated)
