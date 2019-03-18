@@ -31,10 +31,12 @@
       "strokeWidth": 2,
       "cornerRadius": 0,
       "strokeColor": "00000000",
-      "outerColor": "000000",
-      "outerAlpha": 0.0
+      "outerColor": "00000000",
+      "outerAlpha": 0.0,
+      "feedbackStrokeColor": "00000000"
     },
     "scanFeedback": {
+      "strokeColor": "00000000",
       "beepOnResult": true,
       "vibrateOnResult": true,
       "blinkAnimationOnResult": true

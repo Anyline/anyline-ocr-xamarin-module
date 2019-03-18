@@ -47,7 +47,7 @@ namespace AnylineExamples.Shared
         public static readonly string Document = "Document";
         public static readonly string Bottlecap = "Bottlecap";
         public static readonly string VoucherCode = "Voucher Code";
-        public static readonly string CowTag = "Cow Tag";
+        public static readonly string CowTag = "Cattle Tag";
 
         public static List<string> GetItems()
         {

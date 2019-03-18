@@ -3491,8 +3491,8 @@ namespace AnylineExamples.Droid
 			// aapt resource value: 0x7f0a0029
 			public const int allow_camera_permission = 2131361833;
 			
-			// aapt resource value: 0x7f0a0030
-			public const int app_name = 2131361840;
+			// aapt resource value: 0x7f0a0038
+			public const int app_name = 2131361848;
 			
 			// aapt resource value: 0x7f0a0021
 			public const int appbar_scrolling_view_behavior = 2131361825;
@@ -3507,19 +3507,40 @@ namespace AnylineExamples.Droid
 			public const int contact_info = 2131361834;
 			
 			// aapt resource value: 0x7f0a002b
-			public const int flash_auto = 2131361835;
+			public const int default_web_client_id = 2131361835;
 			
 			// aapt resource value: 0x7f0a002c
-			public const int flash_off = 2131361836;
+			public const int firebase_database_url = 2131361836;
 			
 			// aapt resource value: 0x7f0a002d
-			public const int flash_on = 2131361837;
+			public const int flash_auto = 2131361837;
 			
 			// aapt resource value: 0x7f0a002e
-			public const int license_expiry_info = 2131361838;
+			public const int flash_off = 2131361838;
 			
 			// aapt resource value: 0x7f0a002f
-			public const int open_permission_settings = 2131361839;
+			public const int flash_on = 2131361839;
+			
+			// aapt resource value: 0x7f0a0030
+			public const int gcm_defaultSenderId = 2131361840;
+			
+			// aapt resource value: 0x7f0a0031
+			public const int google_api_key = 2131361841;
+			
+			// aapt resource value: 0x7f0a0032
+			public const int google_app_id = 2131361842;
+			
+			// aapt resource value: 0x7f0a0033
+			public const int google_crash_reporting_api_key = 2131361843;
+			
+			// aapt resource value: 0x7f0a0034
+			public const int google_storage_bucket = 2131361844;
+			
+			// aapt resource value: 0x7f0a0035
+			public const int license_expiry_info = 2131361845;
+			
+			// aapt resource value: 0x7f0a0036
+			public const int open_permission_settings = 2131361846;
 			
 			// aapt resource value: 0x7f0a0024
 			public const int password_toggle_content_description = 2131361828;
@@ -3535,6 +3556,9 @@ namespace AnylineExamples.Droid
 			
 			// aapt resource value: 0x7f0a0028
 			public const int path_password_strike_through = 2131361832;
+			
+			// aapt resource value: 0x7f0a0037
+			public const int project_id = 2131361847;
 			
 			// aapt resource value: 0x7f0a0013
 			public const int search_menu_title = 2131361811;
