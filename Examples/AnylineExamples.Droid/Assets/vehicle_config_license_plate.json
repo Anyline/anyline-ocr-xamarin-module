@@ -31,6 +31,7 @@
       "feedbackStrokeColor": "0099FF"
     },
     "cancelOnResult": true,
+    "delayStartScanTime": 2000,
     "scanFeedback": {
       "style": "rect",
       "strokeWidth": 2,

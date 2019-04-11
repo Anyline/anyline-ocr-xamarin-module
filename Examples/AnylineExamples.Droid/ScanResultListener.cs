@@ -42,6 +42,13 @@ namespace AnylineExamples.Droid
         /// <param name="result">The scan result</param>
         public void OnResult(Java.Lang.Object result)
         {
+            /*
+             * In every case, the base type of the result is ScanResult.
+             * For every use case, except document, you will find the type of result in the corresponding IO.Anyline.Plugin.* namespace;
+             * E.g. IO.Anyline.Plugin.Meter.MeterScanResult for meter scanning.
+             * 
+             * For document scanning, it is simply of type ScanResult.
+            */
             var scanResult = result as ScanResult;
             if(scanResult != null)
             {

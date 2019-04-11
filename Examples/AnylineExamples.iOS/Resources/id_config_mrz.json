@@ -11,6 +11,10 @@
       "id": "ID_PLUGIN",
       "idPlugin": {
         "mrzConfig": {
+          "mrzFieldScanOptions": {
+            "address": "optional",
+            "dateOfIssue": "optional"
+          }
         }
       }
     },
