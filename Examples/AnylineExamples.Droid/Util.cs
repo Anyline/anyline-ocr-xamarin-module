@@ -49,7 +49,16 @@ namespace AnylineExamples.Droid
                     
                     // translante linebreaks in strings to number of lines
                     var split = t.Text.Split('\n');
+                    
                     var numberOfLines = split.Length;
+
+                    // just an estimate. should be calculated precisely
+                    var MAX_CHAR_LENGTH_PER_LINE = 35f;
+
+                    foreach(var s in split)
+                    {
+                        numberOfLines += (int)Math.Floor(s.Length / MAX_CHAR_LENGTH_PER_LINE);
+                    }
 
                     t.SetLines(numberOfLines);
                     

@@ -59,6 +59,9 @@ namespace AnylineExamples.iOS
 
                             var value = prop.GetValue(obj, null);
 
+                            if (prop.GetCustomAttributes(typeof(ObsoleteAttribute), true).ToArray().Length > 0)
+                                continue;
+
                             dict.AddProperty(prop.Name, value);
                             break;
                     }

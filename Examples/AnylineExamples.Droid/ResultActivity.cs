@@ -74,6 +74,10 @@ namespace AnylineExamples.Droid
                     default:
 
                         var value = prop.GetValue(obj, null);
+                        
+                        // filter out deprecated fields
+                        if (prop.GetCustomAttributes(typeof(ObsoleteAttribute), true).ToArray().Length > 0)
+                            continue;
 
                         Log.Debug(TAG, "{0}: {1}", prop.Name, value);
                         if (value != null)

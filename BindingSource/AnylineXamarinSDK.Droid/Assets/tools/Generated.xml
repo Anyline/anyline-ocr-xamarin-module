@@ -29,6 +29,9 @@
 <attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setAssetJsonPaths' and count(parameter)=1 and parameter[1][@type='java.lang.String...']]/parameter[1]" name="managedName">assetJsonPaths</attr>
 <!-- AnylineController.setCancelOnResult(boolean) -->
 <attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setCancelOnResult' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">isCancelOnResult</attr>
+<!-- AnylineController.setDelayScanTime(double, double) -->
+<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setDelayScanTime' and count(parameter)=2 and parameter[1][@type='double'] and parameter[2][@type='double']]/parameter[1]" name="managedName">delayScanTime</attr>
+<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setDelayScanTime' and count(parameter)=2 and parameter[1][@type='double'] and parameter[2][@type='double']]/parameter[2]" name="managedName">startTime</attr>
 <!-- AnylineController.setImageProvider(at.nineyards.anyline.ImageProvider) -->
 <attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setImageProvider' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.ImageProvider']]/parameter[1]" name="managedName">imageProvider</attr>
 <!-- AnylineController.setReportingEnabled(boolean) -->
@@ -309,6 +312,13 @@
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setZoomGestureEnabled' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">isZoomEnabled</attr>
 <!-- CameraController.setupZoomHandler(android.view.View) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setupZoomHandler' and count(parameter)=1 and parameter[1][@type='android.view.View']]/parameter[1]" name="managedName">view</attr>
+<!-- CameraController.takeHighResolutionImage(int, int, int, int, int, int) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[1]" name="managedName">top</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[2]" name="managedName">left</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[3]" name="managedName">right</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[4]" name="managedName">bottom</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[5]" name="managedName">viewWidth</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[6]" name="managedName">viewHeight</attr>
 <!-- CameraController.setZoomRatio(double) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setZoomRatio' and count(parameter)=1 and parameter[1][@type='double']]/parameter[1]" name="managedName">zoomLevelRatio</attr>
 <!-- CameraController.getNewImage(int, int, int, int, boolean) -->
@@ -334,6 +344,13 @@
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setMaxZoomRatio' and count(parameter)=1 and parameter[1][@type='double']]/parameter[1]" name="managedName">maxZoomRatio</attr>
 <!-- CameraController.setupZoomHandler(android.view.View) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setupZoomHandler' and count(parameter)=1 and parameter[1][@type='android.view.View']]/parameter[1]" name="managedName">view</attr>
+<!-- CameraController.takeHighResolutionImage(int, int, int, int, int, int) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[1]" name="managedName">top</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[2]" name="managedName">left</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[3]" name="managedName">right</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[4]" name="managedName">bottom</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[5]" name="managedName">viewWidth</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[6]" name="managedName">viewHeight</attr>
 <!-- File: AT.Nineyards.Anyline.Camera.CameraController1.cs -->
 <!-- CameraController1.setZoomRatio(double) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController1']/method[@name='setZoomRatio' and count(parameter)=1 and parameter[1][@type='double']]/parameter[1]" name="managedName">zoomLevelRatio</attr>
@@ -363,6 +380,13 @@
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController1']/method[@name='setMaxZoomRatio' and count(parameter)=1 and parameter[1][@type='double']]/parameter[1]" name="managedName">maxZoomRatio</attr>
 <!-- CameraController1.setupZoomHandler(android.view.View) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController1']/method[@name='setupZoomHandler' and count(parameter)=1 and parameter[1][@type='android.view.View']]/parameter[1]" name="managedName">view</attr>
+<!-- CameraController1.takeHighResolutionImage(int, int, int, int, int, int) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController1']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[1]" name="managedName">top</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController1']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[2]" name="managedName">left</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController1']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[3]" name="managedName">right</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController1']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[4]" name="managedName">bottom</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController1']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[5]" name="managedName">scanViewWidth</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController1']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[6]" name="managedName">scanViewHeight</attr>
 <!-- File: AT.Nineyards.Anyline.Camera.CameraController2.cs -->
 <!-- CameraController2.State.valueOf(java.lang.String) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController2.State']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
@@ -393,6 +417,13 @@
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController2']/method[@name='setMaxZoomRatio' and count(parameter)=1 and parameter[1][@type='double']]/parameter[1]" name="managedName">maxZoomRatio</attr>
 <!-- CameraController2.setupZoomHandler(android.view.View) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController2']/method[@name='setupZoomHandler' and count(parameter)=1 and parameter[1][@type='android.view.View']]/parameter[1]" name="managedName">view</attr>
+<!-- CameraController2.takeHighResolutionImage(int, int, int, int, int, int) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController2']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[1]" name="managedName">top</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController2']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[2]" name="managedName">left</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController2']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[3]" name="managedName">right</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController2']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[4]" name="managedName">bottom</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController2']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[5]" name="managedName">viewWidth</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController2']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[6]" name="managedName">viewHeight</attr>
 <!-- File: AT.Nineyards.Anyline.Camera.CameraFeatures.cs -->
 <!-- CameraFeatures.FocusMode.fromCamera1(java.lang.String) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraFeatures.FocusMode']/method[@name='fromCamera1' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">mode</attr>
@@ -557,6 +588,8 @@
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='setPreferredPreviewSize' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='int']]/parameter[2]" name="managedName">height</attr>
 <!-- CameraView.setPreviewCropGravity(int) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='setPreviewCropGravity' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">cropGravity</attr>
+<!-- CameraView.setRectOnVisibleView(android.graphics.Rect) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='setRectOnVisibleView' and count(parameter)=1 and parameter[1][@type='android.graphics.Rect']]/parameter[1]" name="managedName">rect</attr>
 <!-- CameraView.setSceneMode(java.lang.String) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='setSceneMode' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">sceneMode</attr>
 <!-- CameraView.setUseMaxFpsRange(boolean) -->
@@ -980,8 +1013,14 @@
 <!-- File: AT.Nineyards.Anyline.Modules.Mrz.Identification.cs -->
 <!-- Identification.setAddress(java.lang.String) -->
 <attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setAddress' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">address</attr>
+<!-- Identification.setCheckDigitDateOfBirth(java.lang.String) -->
+<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setCheckDigitDateOfBirth' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">checkDigitDateOfBirth</attr>
+<!-- Identification.setCheckDigitDateOfExpiry(java.lang.String) -->
+<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setCheckDigitDateOfExpiry' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">checkDigitDateOfExpiry</attr>
 <!-- Identification.setCheckDigitDayOfBirth(java.lang.String) -->
 <attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setCheckDigitDayOfBirth' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">checkDigitDayOfBirth</attr>
+<!-- Identification.setCheckDigitDocumentNumber(java.lang.String) -->
+<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setCheckDigitDocumentNumber' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">checkDigitDocumentNumber</attr>
 <!-- Identification.setCheckDigitExpirationDate(java.lang.String) -->
 <attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setCheckDigitExpirationDate' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">checkDigitExpirationDate</attr>
 <!-- Identification.setCheckDigitFinal(java.lang.String) -->
@@ -992,6 +1031,12 @@
 <attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setCheckDigitPersonalNumber' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">checkDigitPersonalNumber</attr>
 <!-- Identification.setCountryCode(java.lang.String) -->
 <attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setCountryCode' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">countryCode</attr>
+<!-- Identification.setDateOfBirth(java.lang.String) -->
+<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setDateOfBirth' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">dateOfBirth</attr>
+<!-- Identification.setDateOfExpiry(java.lang.String) -->
+<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setDateOfExpiry' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">dateOfExpiry</attr>
+<!-- Identification.setDateOfIssue(java.lang.String) -->
+<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setDateOfIssue' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">dateOfIssue</attr>
 <!-- Identification.setDayOfBirth(java.lang.String) -->
 <attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setDayOfBirth' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">dayOfBirth</attr>
 <!-- Identification.setDocumentNumber(java.lang.String) -->
@@ -1010,6 +1055,8 @@
 <attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setMrzString' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">mrzString</attr>
 <!-- Identification.setNationalityCountryCode(java.lang.String) -->
 <attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setNationalityCountryCode' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">nationalityCountryCode</attr>
+<!-- Identification.setOptionalData(java.lang.String) -->
+<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setOptionalData' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">optionalData</attr>
 <!-- Identification.setPersonalNumber(java.lang.String) -->
 <attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setPersonalNumber' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">personalNumber</attr>
 <!-- Identification.setPersonalNumber2(java.lang.String) -->
@@ -1018,6 +1065,8 @@
 <attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setSex' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">sex</attr>
 <!-- Identification.setSurNames(java.lang.String) -->
 <attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setSurNames' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">surNames</attr>
+<!-- Identification.setSurname(java.lang.String) -->
+<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setSurname' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">surname</attr>
 <!-- Identification.setAllCheckDigitsValid(boolean) -->
 <attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setAllCheckDigitsValid' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">allCheckDigitsValid</attr>
 <!-- File: AT.Nineyards.Anyline.Modules.Mrz.MrzResult.cs -->
@@ -1326,6 +1375,8 @@
 <attr path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/method[@name='setCancelOnResult' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">isCancelOnResult</attr>
 <!-- AbstractScanPlugin.setDebug(boolean) -->
 <attr path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/method[@name='setDebug' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">isDebug</attr>
+<!-- AbstractScanPlugin.setDelayScanTime(double) -->
+<attr path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/method[@name='setDelayScanTime' and count(parameter)=1 and parameter[1][@type='double']]/parameter[1]" name="managedName">delayScanTime</attr>
 <!-- AbstractScanPlugin.setReportingEnabled(boolean) -->
 <attr path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/method[@name='setReportingEnabled' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">isReportingEnabled</attr>
 <!-- AbstractScanPlugin.onFinishedWithOutput(java.lang.Object) -->
@@ -1444,61 +1495,124 @@
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseConfig.DrivingLicenseCountry']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
 <!-- DrivingLicenseConfig.setScanMode(io.anyline.plugin.id.DrivingLicenseConfig.DrivingLicenseCountry) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseConfig']/method[@name='setScanMode' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.DrivingLicenseConfig.DrivingLicenseCountry']]/parameter[1]" name="managedName">scanMode</attr>
-<!-- File: IO.Anyline.Plugin.ID.DrivingLicenseResult.cs -->
-<!-- DrivingLicenseResult.setAuthority(java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseResult']/method[@name='setAuthority' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">authority</attr>
-<!-- DrivingLicenseResult.setCategories(java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseResult']/method[@name='setCategories' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">categories</attr>
-<!-- DrivingLicenseResult.setDayOfBirth(java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseResult']/method[@name='setDayOfBirth' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">dayOfBirth</attr>
-<!-- DrivingLicenseResult.setDocumentNumber(java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseResult']/method[@name='setDocumentNumber' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">documentNumber</attr>
-<!-- DrivingLicenseResult.setDrivingLicenseResultString(java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseResult']/method[@name='setDrivingLicenseResultString' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">drivingLicenseResultString</attr>
-<!-- DrivingLicenseResult.setExpirationDate(java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseResult']/method[@name='setExpirationDate' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">expirationDate</attr>
-<!-- DrivingLicenseResult.setGivenName(java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseResult']/method[@name='setGivenName' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">givenNames</attr>
-<!-- DrivingLicenseResult.setGivenNames(java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseResult']/method[@name='setGivenNames' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">givenNames</attr>
-<!-- DrivingLicenseResult.setIssuingDate(java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseResult']/method[@name='setIssuingDate' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">issuingDate</attr>
-<!-- DrivingLicenseResult.setLicenseNumber(java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseResult']/method[@name='setLicenseNumber' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">documentNumber</attr>
-<!-- DrivingLicenseResult.setPlaceOfBirth(java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseResult']/method[@name='setPlaceOfBirth' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">placeOfBirth</attr>
-<!-- DrivingLicenseResult.setSurName(java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseResult']/method[@name='setSurName' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">surName</attr>
+<!-- File: IO.Anyline.Plugin.ID.DrivingLicenseFieldScanOption.cs -->
+<!-- DrivingLicenseFieldScanOption.setAuthority(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOption']/method[@name='setAuthority' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">authority</attr>
+<!-- DrivingLicenseFieldScanOption.setCategories(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOption']/method[@name='setCategories' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">categories</attr>
+<!-- DrivingLicenseFieldScanOption.setDateOfBirth(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOption']/method[@name='setDateOfBirth' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">dateOfBirth</attr>
+<!-- DrivingLicenseFieldScanOption.setDateOfExpiry(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOption']/method[@name='setDateOfExpiry' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">dateOfExpiry</attr>
+<!-- DrivingLicenseFieldScanOption.setDateOfIssue(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOption']/method[@name='setDateOfIssue' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">dateOfIssue</attr>
+<!-- DrivingLicenseFieldScanOption.setDocumentNumber(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOption']/method[@name='setDocumentNumber' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">documentNumber</attr>
+<!-- DrivingLicenseFieldScanOption.setGivenNames(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOption']/method[@name='setGivenNames' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">givenNames</attr>
+<!-- DrivingLicenseFieldScanOption.setPlaceOfBirth(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOption']/method[@name='setPlaceOfBirth' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">placeOfBirth</attr>
+<!-- DrivingLicenseFieldScanOption.setSurname(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOption']/method[@name='setSurname' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">surname</attr>
+<!-- File: IO.Anyline.Plugin.ID.DrivingLicenseIdentification.cs -->
+<!-- DrivingLicenseIdentification.setAuthority(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseIdentification']/method[@name='setAuthority' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">authority</attr>
+<!-- DrivingLicenseIdentification.setCategories(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseIdentification']/method[@name='setCategories' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">categories</attr>
+<!-- DrivingLicenseIdentification.setDateOfBirth(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseIdentification']/method[@name='setDateOfBirth' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">dateOfBirth</attr>
+<!-- DrivingLicenseIdentification.setDateOfExpiry(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseIdentification']/method[@name='setDateOfExpiry' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">dateOfExpiry</attr>
+<!-- DrivingLicenseIdentification.setDateOfIssue(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseIdentification']/method[@name='setDateOfIssue' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">dateOfIssue</attr>
+<!-- DrivingLicenseIdentification.setDayOfBirth(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseIdentification']/method[@name='setDayOfBirth' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">dayOfBirth</attr>
+<!-- DrivingLicenseIdentification.setDocumentNumber(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseIdentification']/method[@name='setDocumentNumber' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">documentNumber</attr>
+<!-- DrivingLicenseIdentification.setDrivingLicenseResultString(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseIdentification']/method[@name='setDrivingLicenseResultString' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">drivingLicenseResultString</attr>
+<!-- DrivingLicenseIdentification.setDrivingLicenseString(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseIdentification']/method[@name='setDrivingLicenseString' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">drivingLicenseString</attr>
+<!-- DrivingLicenseIdentification.setExpirationDate(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseIdentification']/method[@name='setExpirationDate' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">expirationDate</attr>
+<!-- DrivingLicenseIdentification.setGivenName(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseIdentification']/method[@name='setGivenName' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">givenNames</attr>
+<!-- DrivingLicenseIdentification.setGivenNames(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseIdentification']/method[@name='setGivenNames' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">givenNames</attr>
+<!-- DrivingLicenseIdentification.setIssuingDate(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseIdentification']/method[@name='setIssuingDate' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">issuingDate</attr>
+<!-- DrivingLicenseIdentification.setLicenseNumber(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseIdentification']/method[@name='setLicenseNumber' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">documentNumber</attr>
+<!-- DrivingLicenseIdentification.setPlaceOfBirth(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseIdentification']/method[@name='setPlaceOfBirth' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">placeOfBirth</attr>
+<!-- DrivingLicenseIdentification.setSurName(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseIdentification']/method[@name='setSurName' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">surName</attr>
+<!-- DrivingLicenseIdentification.setSurname(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseIdentification']/method[@name='setSurname' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">surname</attr>
 <!-- File: IO.Anyline.Plugin.ID.GermanIdFrontConfig.cs -->
-<!-- File: IO.Anyline.Plugin.ID.GermanIdFrontResult.cs -->
-<!-- GermanIdFrontResult.setCardAccessNumber(java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontResult']/method[@name='setCardAccessNumber' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">cardAccessNumber</attr>
-<!-- GermanIdFrontResult.setDayOfBirth(java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontResult']/method[@name='setDayOfBirth' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">dayOfBirth</attr>
-<!-- GermanIdFrontResult.setDocumentNumber(java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontResult']/method[@name='setDocumentNumber' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">documentNumber</attr>
-<!-- GermanIdFrontResult.setExpirationDate(java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontResult']/method[@name='setExpirationDate' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">expirationDate</attr>
-<!-- GermanIdFrontResult.setGermanIdFrontString(java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontResult']/method[@name='setGermanIdFrontString' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">germanIdFrontString</attr>
-<!-- GermanIdFrontResult.setGivenName(java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontResult']/method[@name='setGivenName' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">givenNames</attr>
-<!-- GermanIdFrontResult.setGivenNames(java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontResult']/method[@name='setGivenNames' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">givenNames</attr>
-<!-- GermanIdFrontResult.setNationality(java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontResult']/method[@name='setNationality' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">nationality</attr>
-<!-- GermanIdFrontResult.setPlaceOfBirth(java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontResult']/method[@name='setPlaceOfBirth' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">placeOfBirth</attr>
-<!-- GermanIdFrontResult.setSurName(java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontResult']/method[@name='setSurName' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">surName</attr>
+<!-- File: IO.Anyline.Plugin.ID.GermanIdFrontFieldScanOptions.cs -->
+<!-- GermanIdFrontFieldScanOptions.setCardAccessNumber(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontFieldScanOptions']/method[@name='setCardAccessNumber' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">cardAccessNumber</attr>
+<!-- GermanIdFrontFieldScanOptions.setDateOfBirth(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontFieldScanOptions']/method[@name='setDateOfBirth' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">dateOfBirth</attr>
+<!-- GermanIdFrontFieldScanOptions.setDateOfExpiry(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontFieldScanOptions']/method[@name='setDateOfExpiry' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">dateOfExpiry</attr>
+<!-- GermanIdFrontFieldScanOptions.setDocumentNumber(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontFieldScanOptions']/method[@name='setDocumentNumber' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">documentNumber</attr>
+<!-- GermanIdFrontFieldScanOptions.setGivenNames(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontFieldScanOptions']/method[@name='setGivenNames' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">givenNames</attr>
+<!-- GermanIdFrontFieldScanOptions.setNationality(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontFieldScanOptions']/method[@name='setNationality' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">nationality</attr>
+<!-- GermanIdFrontFieldScanOptions.setPlaceOfBirth(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontFieldScanOptions']/method[@name='setPlaceOfBirth' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">placeOfBirth</attr>
+<!-- GermanIdFrontFieldScanOptions.setSurname(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontFieldScanOptions']/method[@name='setSurname' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">surname</attr>
+<!-- File: IO.Anyline.Plugin.ID.GermanIdFrontIdentification.cs -->
+<!-- GermanIdFrontIdentification.setCardAccessNumber(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontIdentification']/method[@name='setCardAccessNumber' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">cardAccessNumber</attr>
+<!-- GermanIdFrontIdentification.setDateOfBirth(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontIdentification']/method[@name='setDateOfBirth' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">dateOfBirth</attr>
+<!-- GermanIdFrontIdentification.setDateOfExpiry(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontIdentification']/method[@name='setDateOfExpiry' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">dateOfExpiry</attr>
+<!-- GermanIdFrontIdentification.setDayOfBirth(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontIdentification']/method[@name='setDayOfBirth' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">dayOfBirth</attr>
+<!-- GermanIdFrontIdentification.setDocumentNumber(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontIdentification']/method[@name='setDocumentNumber' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">documentNumber</attr>
+<!-- GermanIdFrontIdentification.setExpirationDate(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontIdentification']/method[@name='setExpirationDate' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">expirationDate</attr>
+<!-- GermanIdFrontIdentification.setGermanIdFrontString(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontIdentification']/method[@name='setGermanIdFrontString' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">germanIdFrontString</attr>
+<!-- GermanIdFrontIdentification.setGivenName(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontIdentification']/method[@name='setGivenName' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">givenNames</attr>
+<!-- GermanIdFrontIdentification.setGivenNames(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontIdentification']/method[@name='setGivenNames' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">givenNames</attr>
+<!-- GermanIdFrontIdentification.setNationality(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontIdentification']/method[@name='setNationality' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">nationality</attr>
+<!-- GermanIdFrontIdentification.setPlaceOfBirth(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontIdentification']/method[@name='setPlaceOfBirth' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">placeOfBirth</attr>
+<!-- GermanIdFrontIdentification.setSurName(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontIdentification']/method[@name='setSurName' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">surName</attr>
+<!-- GermanIdFrontIdentification.setSurname(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontIdentification']/method[@name='setSurname' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">surname</attr>
 <!-- File: IO.Anyline.Plugin.ID.ID.cs -->
 <!-- ID.setFaceImage(android.graphics.Bitmap) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='ID']/method[@name='setFaceImage' and count(parameter)=1 and parameter[1][@type='android.graphics.Bitmap']]/parameter[1]" name="managedName">faceImage</attr>
 <!-- ID.parseDateObject(java.lang.String) -->
-<!-- ID.parseDateObjectDrivingLicense(java.lang.String) -->
 <!-- File: IO.Anyline.Plugin.ID.IdConfig.cs -->
-<!-- IdConfig.enableFaceDetection(boolean) -->
+<!-- IdConfig.setIdFieldScanOptions(io.anyline.plugin.id.IDFieldScanOptions) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdConfig']/method[@name='setIdFieldScanOptions' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions']]/parameter[1]" name="managedName">idFieldScanOptions</attr>
+<!-- IdConfig.enableFaceDetection(boolean) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdConfig']/method[@name='enableFaceDetection' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">faceDetectionEnabled</attr>
+<!-- File: IO.Anyline.Plugin.ID.IDFieldScanOptions.cs -->
+<!-- IDFieldScanOptions.FieldScanOption.fromInt(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IDFieldScanOptions.FieldScanOption']/method[@name='fromInt' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">fieldScanOption</attr>
+<!-- IDFieldScanOptions.FieldScanOption.valueOf(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IDFieldScanOptions.FieldScanOption']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
+<!-- IDFieldScanOptions.initDictionaryStartVariableFromJsonObject(android.content.Context, org.json.JSONObject, java.lang.Object) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IDFieldScanOptions']/method[@name='initDictionaryStartVariableFromJsonObject' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='org.json.JSONObject'] and parameter[3][@type='java.lang.Object']]/parameter[1]" name="managedName">context</attr>
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IDFieldScanOptions']/method[@name='initDictionaryStartVariableFromJsonObject' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='org.json.JSONObject'] and parameter[3][@type='java.lang.Object']]/parameter[2]" name="managedName">json</attr>
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IDFieldScanOptions']/method[@name='initDictionaryStartVariableFromJsonObject' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='org.json.JSONObject'] and parameter[3][@type='java.lang.Object']]/parameter[3]" name="managedName">object</attr>
+<!-- IDFieldScanOptions.setIdFieldScanOptionsStartVariable(io.anyline.plugin.id.IDFieldScanOptions) -->
 <!-- File: IO.Anyline.Plugin.ID.IdScanPlugin.cs -->
 <!-- IdScanPlugin.ScanMode.valueOf(java.lang.String) -->
 <!-- IdScanPlugin.IdScanPlugin(android.content.Context, java.lang.String, java.lang.String, io.anyline.plugin.id.IdConfig) -->
@@ -1528,6 +1642,11 @@
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzConfig']/method[@name='setCropAndTransformID' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">cropAndTransformID</attr>
 <!-- MrzConfig.setStrictMode(boolean) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzConfig']/method[@name='setStrictMode' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">strictMode</attr>
+<!-- File: IO.Anyline.Plugin.ID.MrzFieldScanOption.cs -->
+<!-- MrzFieldScanOption.setAddress(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldScanOption']/method[@name='setAddress' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">address</attr>
+<!-- MrzFieldScanOption.setDateOfIssue(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldScanOption']/method[@name='setDateOfIssue' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">dateOfIssue</attr>
 <!-- File: IO.Anyline.Plugin.IScanInfoListener.cs -->
 <!-- ScanInfoListener.onInfo(io.anyline.plugin.ScanInfo) -->
 <attr path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanInfoListener']/method[@name='onInfo' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanInfo']]/parameter[1]" name="managedName">info</attr>
@@ -1698,6 +1817,7 @@
 <!-- File: IO.Anyline.Util.JSUtil.cs -->
 <!-- JSUtil.setupConfig(android.content.Context, java.lang.String, at.nineyards.anyline.camera.AnylineViewConfig, at.nineyards.anyline.camera.VisualFeedbackConfig, android.graphics.Rect) -->
 <!-- JSUtil.setupConfig(android.content.Context, java.lang.String, io.anyline.view.CutoutConfig, at.nineyards.anyline.camera.VisualFeedbackConfig, android.graphics.Rect) -->
+<!-- JSUtil.setupDelayTime(double, java.lang.String) -->
 <!-- JSUtil.setupMask(at.nineyards.anyline.camera.AnylineViewConfig) -->
 <!-- JSUtil.setupMask(io.anyline.view.CutoutConfig) -->
 <!-- JSUtil.updateDocumentColorsFeedback(at.nineyards.anyline.camera.VisualFeedbackConfig, java.lang.String) -->
@@ -1773,6 +1893,9 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='setLayoutParam' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[2]" name="managedName">t</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='setLayoutParam' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[3]" name="managedName">r</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='setLayoutParam' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[4]" name="managedName">b</attr>
+<!-- AnylineWebView.setScanDelayTime(double, java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='setScanDelayTime' and count(parameter)=2 and parameter[1][@type='double'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">delayTime</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='setScanDelayTime' and count(parameter)=2 and parameter[1][@type='double'] and parameter[2][@type='java.lang.String']]/parameter[2]" name="managedName">id</attr>
 <!-- AnylineWebView.updateContours(java.lang.Object, float, java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='updateContours' and count(parameter)=3 and parameter[1][@type='java.lang.Object'] and parameter[2][@type='float'] and parameter[3][@type='java.lang.String']]/parameter[1]" name="managedName">contours</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='updateContours' and count(parameter)=3 and parameter[1][@type='java.lang.Object'] and parameter[2][@type='float'] and parameter[3][@type='java.lang.String']]/parameter[2]" name="managedName">scale</attr>
@@ -1825,6 +1948,8 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='CutoutConfig']/method[@name='setFeedbackStrokeColor' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">feedbackStrokeColor</attr>
 <!-- CutoutConfig.setFeedbackStrokeColorString(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='CutoutConfig']/method[@name='setFeedbackStrokeColorString' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">feedbackStrokeColorString</attr>
+<!-- CutoutConfig.setInactiveStrokeColorForDelay(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='CutoutConfig']/method[@name='setInactiveStrokeColorForDelay' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">inactiveStrokeColorForDelay</attr>
 <!-- CutoutConfig.setMaxHeightPercent(int) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='CutoutConfig']/method[@name='setMaxHeightPercent' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">maxHeightPercent</attr>
 <!-- CutoutConfig.setMaxWidthPercent(int) -->
@@ -2056,6 +2181,8 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPluginConfig']/constructor[@name='ScanViewPluginConfig' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String']]/parameter[2]" name="managedName">configFileName</attr>
 <!-- ScanViewPluginConfig.setCancelOnResult(boolean) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPluginConfig']/method[@name='setCancelOnResult' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">isCancelOnResult</attr>
+<!-- ScanViewPluginConfig.setDelayStartScanTime(double) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPluginConfig']/method[@name='setDelayStartScanTime' and count(parameter)=1 and parameter[1][@type='double']]/parameter[1]" name="managedName">delayStartScanTime</attr>
 <!-- ScanViewPluginConfig.setVisualFeedbackConfig(at.nineyards.anyline.camera.VisualFeedbackConfig) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPluginConfig']/method[@name='setVisualFeedbackConfig' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.VisualFeedbackConfig']]/parameter[1]" name="managedName">visualFeedbackConfig</attr>
 <!-- ScanViewPluginConfig.init(android.content.Context, org.json.JSONObject) -->

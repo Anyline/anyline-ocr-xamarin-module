@@ -67,7 +67,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <LibraryProjectZip Include="Jars\anylinesdk-9.aar" />
+    <LibraryProjectZip Include="Jars\anylinesdk-10-RC2.aar" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
   <PropertyGroup>
