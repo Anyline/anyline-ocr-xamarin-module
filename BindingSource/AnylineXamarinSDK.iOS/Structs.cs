@@ -246,6 +246,15 @@ namespace AnylineXamarinSDK.iOS
     }
 
     [Native]
+    public enum ALFieldScanOption : long
+    {
+        Mandatory = 0,
+        Optional = 1,
+        Disabled = 2,
+        Default = 3
+    }
+
+    [Native]
     public enum ALIdentityDocumentScanMode : long
     {
         Mrz,

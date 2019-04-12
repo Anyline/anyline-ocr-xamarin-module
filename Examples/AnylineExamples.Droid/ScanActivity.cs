@@ -9,6 +9,7 @@ using IO.Anyline.View;
 
 using Android.Support.V7.App;
 using Android.Util;
+using IO.Anyline.Plugin.ID;
 
 namespace AnylineExamples.Droid
 {
@@ -144,7 +145,5 @@ namespace AnylineExamples.Droid
             Finish();
         }
         #endregion
-
-        
     }
 }

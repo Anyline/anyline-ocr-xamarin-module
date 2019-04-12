@@ -1357,8 +1357,6 @@
 <attr path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/method[@name='setImageProvider' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.ImageProvider']]/parameter[1]" name="managedName">imageProvider</attr>
 <!-- AbstractScanPlugin.addScanInfoListener(io.anyline.plugin.ScanInfoListener) -->
 <attr path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/method[@name='addScanInfoListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanInfoListener']]/parameter[1]" name="managedName">listener</attr>
-<!-- AbstractScanPlugin.addScanResultListener(io.anyline.plugin.ScanResultListener&lt;ResultType&gt;) -->
-<attr path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/method[@name='addScanResultListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanResultListener&lt;ResultType&gt;']]/parameter[1]" name="managedName">listener</attr>
 <!-- AbstractScanPlugin.addScanRunSkippedListener(io.anyline.plugin.ScanRunSkippedListener) -->
 <attr path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/method[@name='addScanRunSkippedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanRunSkippedListener']]/parameter[1]" name="managedName">listener</attr>
 <!-- AbstractScanPlugin.invokeOnInfo(java.lang.String, java.lang.Object) -->
@@ -1367,8 +1365,6 @@
 <!-- AbstractScanPlugin.onReportsVariable(java.lang.String, java.lang.Object) -->
 <!-- AbstractScanPlugin.removeScanInfoListener(io.anyline.plugin.ScanInfoListener) -->
 <attr path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/method[@name='removeScanInfoListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanInfoListener']]/parameter[1]" name="managedName">listener</attr>
-<!-- AbstractScanPlugin.removeScanResultListener(io.anyline.plugin.ScanResultListener&lt;ResultType&gt;) -->
-<attr path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/method[@name='removeScanResultListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanResultListener&lt;ResultType&gt;']]/parameter[1]" name="managedName">listener</attr>
 <!-- AbstractScanPlugin.removeScanRunSkippedListener(io.anyline.plugin.ScanRunSkippedListener) -->
 <attr path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/method[@name='removeScanRunSkippedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanRunSkippedListener']]/parameter[1]" name="managedName">listener</attr>
 <!-- AbstractScanPlugin.setCancelOnResult(boolean) -->
@@ -1471,25 +1467,6 @@
 <!-- DocumentScanViewPlugin.transformPicture(at.nineyards.anyline.models.AnylineImage, java.util.List&lt;android.graphics.PointF&gt;) -->
 <attr path="/api/package[@name='io.anyline.plugin.document']/class[@name='DocumentScanViewPlugin']/method[@name='transformPicture' and count(parameter)=2 and parameter[1][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[2][@type='java.util.List&lt;android.graphics.PointF&gt;']]/parameter[1]" name="managedName">fullImage</attr>
 <attr path="/api/package[@name='io.anyline.plugin.document']/class[@name='DocumentScanViewPlugin']/method[@name='transformPicture' and count(parameter)=2 and parameter[1][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[2][@type='java.util.List&lt;android.graphics.PointF&gt;']]/parameter[2]" name="managedName">corners</attr>
-<!-- File: IO.Anyline.Plugin.Document.IDocumentScanResultListener.cs -->
-<!-- DocumentScanResultListener.onDocumentOutlineDetected(java.util.List&lt;android.graphics.PointF&gt;, boolean) -->
-<attr path="/api/package[@name='io.anyline.plugin.document']/interface[@name='DocumentScanResultListener']/method[@name='onDocumentOutlineDetected' and count(parameter)=2 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[2][@type='boolean']]/parameter[1]" name="managedName">corners</attr>
-<attr path="/api/package[@name='io.anyline.plugin.document']/interface[@name='DocumentScanResultListener']/method[@name='onDocumentOutlineDetected' and count(parameter)=2 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[2][@type='boolean']]/parameter[2]" name="managedName">documentShapeAndBrightnessValid</attr>
-<!-- DocumentScanResultListener.onPictureCornersDetected(at.nineyards.anyline.models.AnylineImage, java.util.List&lt;android.graphics.PointF&gt;) -->
-<attr path="/api/package[@name='io.anyline.plugin.document']/interface[@name='DocumentScanResultListener']/method[@name='onPictureCornersDetected' and count(parameter)=2 and parameter[1][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[2][@type='java.util.List&lt;android.graphics.PointF&gt;']]/parameter[1]" name="managedName">fullFrame</attr>
-<attr path="/api/package[@name='io.anyline.plugin.document']/interface[@name='DocumentScanResultListener']/method[@name='onPictureCornersDetected' and count(parameter)=2 and parameter[1][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[2][@type='java.util.List&lt;android.graphics.PointF&gt;']]/parameter[2]" name="managedName">corners</attr>
-<!-- DocumentScanResultListener.onPictureProcessingFailure(io.anyline.plugin.document.DocumentScanViewPlugin.DocumentError) -->
-<attr path="/api/package[@name='io.anyline.plugin.document']/interface[@name='DocumentScanResultListener']/method[@name='onPictureProcessingFailure' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.document.DocumentScanViewPlugin.DocumentError']]/parameter[1]" name="managedName">error</attr>
-<!-- DocumentScanResultListener.onPictureTransformError(io.anyline.plugin.document.DocumentScanViewPlugin.DocumentError) -->
-<attr path="/api/package[@name='io.anyline.plugin.document']/interface[@name='DocumentScanResultListener']/method[@name='onPictureTransformError' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.document.DocumentScanViewPlugin.DocumentError']]/parameter[1]" name="managedName">error</attr>
-<!-- DocumentScanResultListener.onPictureTransformed(at.nineyards.anyline.models.AnylineImage) -->
-<attr path="/api/package[@name='io.anyline.plugin.document']/interface[@name='DocumentScanResultListener']/method[@name='onPictureTransformed' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.models.AnylineImage']]/parameter[1]" name="managedName">transformedImage</attr>
-<!-- DocumentScanResultListener.onPreviewProcessingFailure(io.anyline.plugin.document.DocumentScanViewPlugin.DocumentError) -->
-<attr path="/api/package[@name='io.anyline.plugin.document']/interface[@name='DocumentScanResultListener']/method[@name='onPreviewProcessingFailure' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.document.DocumentScanViewPlugin.DocumentError']]/parameter[1]" name="managedName">error</attr>
-<!-- DocumentScanResultListener.onPreviewProcessingSuccess(at.nineyards.anyline.models.AnylineImage) -->
-<attr path="/api/package[@name='io.anyline.plugin.document']/interface[@name='DocumentScanResultListener']/method[@name='onPreviewProcessingSuccess' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.models.AnylineImage']]/parameter[1]" name="managedName">anylineImage</attr>
-<!-- DocumentScanResultListener.onTakePictureError(java.lang.Throwable) -->
-<attr path="/api/package[@name='io.anyline.plugin.document']/interface[@name='DocumentScanResultListener']/method[@name='onTakePictureError' and count(parameter)=1 and parameter[1][@type='java.lang.Throwable']]/parameter[1]" name="managedName">error</attr>
 <!-- File: IO.Anyline.Plugin.ID.DrivingLicenseConfig.cs -->
 <!-- DrivingLicenseConfig.DrivingLicenseCountry.valueOf(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseConfig.DrivingLicenseCountry']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
@@ -1650,24 +1627,6 @@
 <!-- File: IO.Anyline.Plugin.IScanInfoListener.cs -->
 <!-- ScanInfoListener.onInfo(io.anyline.plugin.ScanInfo) -->
 <attr path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanInfoListener']/method[@name='onInfo' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanInfo']]/parameter[1]" name="managedName">info</attr>
-<!-- File: IO.Anyline.Plugin.IScanPlugin.cs -->
-<!-- ScanPlugin.setImageProvider(at.nineyards.anyline.ImageProvider) -->
-<attr path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanPlugin']/method[@name='setImageProvider' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.ImageProvider']]/parameter[1]" name="managedName">imageProvider</attr>
-<!-- ScanPlugin.addScanInfoListener(io.anyline.plugin.ScanInfoListener) -->
-<attr path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanPlugin']/method[@name='addScanInfoListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanInfoListener']]/parameter[1]" name="managedName">listener</attr>
-<!-- ScanPlugin.addScanResultListener(io.anyline.plugin.ScanResultListener&lt;ResultType&gt;) -->
-<attr path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanPlugin']/method[@name='addScanResultListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanResultListener&lt;ResultType&gt;']]/parameter[1]" name="managedName">listener</attr>
-<!-- ScanPlugin.addScanRunSkippedListener(io.anyline.plugin.ScanRunSkippedListener) -->
-<attr path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanPlugin']/method[@name='addScanRunSkippedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanRunSkippedListener']]/parameter[1]" name="managedName">listener</attr>
-<!-- ScanPlugin.removeScanInfoListener(io.anyline.plugin.ScanInfoListener) -->
-<attr path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanPlugin']/method[@name='removeScanInfoListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanInfoListener']]/parameter[1]" name="managedName">listener</attr>
-<!-- ScanPlugin.removeScanResultListener(io.anyline.plugin.ScanResultListener&lt;ResultType&gt;) -->
-<attr path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanPlugin']/method[@name='removeScanResultListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanResultListener&lt;ResultType&gt;']]/parameter[1]" name="managedName">listener</attr>
-<!-- ScanPlugin.removeScanRunSkippedListener(io.anyline.plugin.ScanRunSkippedListener) -->
-<attr path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanPlugin']/method[@name='removeScanRunSkippedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanRunSkippedListener']]/parameter[1]" name="managedName">listener</attr>
-<!-- File: IO.Anyline.Plugin.IScanResultListener.cs -->
-<!-- ScanResultListener.onResult(T) -->
-<attr path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanResultListener']/method[@name='onResult' and count(parameter)=1 and parameter[1][@type='T']]/parameter[1]" name="managedName">result</attr>
 <!-- File: IO.Anyline.Plugin.IScanRunSkippedListener.cs -->
 <!-- ScanRunSkippedListener.onRunSkipped(io.anyline.plugin.ScanRunSkippedReason) -->
 <attr path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanRunSkippedListener']/method[@name='onRunSkipped' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanRunSkippedReason']]/parameter[1]" name="managedName">reason</attr>
@@ -2148,8 +2107,6 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPlugin']/method[@name='addCutoutConfigChangedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.view.CutoutConfigChangedListener']]/parameter[1]" name="managedName">listener</attr>
 <!-- ScanViewPlugin.addScanInfoListener(io.anyline.plugin.ScanInfoListener) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPlugin']/method[@name='addScanInfoListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanInfoListener']]/parameter[1]" name="managedName">listener</attr>
-<!-- ScanViewPlugin.addScanResultListener(io.anyline.plugin.ScanResultListener&lt;ResultType&gt;) -->
-<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPlugin']/method[@name='addScanResultListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanResultListener&lt;ResultType&gt;']]/parameter[1]" name="managedName">listener</attr>
 <!-- ScanViewPlugin.addScanRunSkippedListener(io.anyline.plugin.ScanRunSkippedListener) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPlugin']/method[@name='addScanRunSkippedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanRunSkippedListener']]/parameter[1]" name="managedName">listener</attr>
 <!-- ScanViewPlugin.calcCutOutAndImageCropBounds(android.content.Context, int, int, int, int, float) -->
@@ -2164,8 +2121,6 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPlugin']/method[@name='removeCutoutConfigChangedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.view.CutoutConfigChangedListener']]/parameter[1]" name="managedName">listener</attr>
 <!-- ScanViewPlugin.removeScanInfoListener(io.anyline.plugin.ScanInfoListener) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPlugin']/method[@name='removeScanInfoListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanInfoListener']]/parameter[1]" name="managedName">listener</attr>
-<!-- ScanViewPlugin.removeScanResultListener(io.anyline.plugin.ScanResultListener&lt;ResultType&gt;) -->
-<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPlugin']/method[@name='removeScanResultListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanResultListener&lt;ResultType&gt;']]/parameter[1]" name="managedName">listener</attr>
 <!-- ScanViewPlugin.removeScanRunSkippedListener(io.anyline.plugin.ScanRunSkippedListener) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPlugin']/method[@name='removeScanRunSkippedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanRunSkippedListener']]/parameter[1]" name="managedName">listener</attr>
 <!-- ScanViewPlugin.reportDebugVariable(java.lang.String, java.lang.Object) -->

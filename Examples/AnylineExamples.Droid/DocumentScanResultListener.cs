@@ -30,11 +30,6 @@ namespace AnylineExamples.Droid
     public class DocumentScanResultListener : ScanResultListener, IDocumentScanResultListener
     {
         public DocumentScanResultListener(Activity activity) : base(activity) { }
-
-        public void OnResult(ScanResult scanResult)
-        {
-            base.OnResult(scanResult);
-        }
         
         public void OnPictureProcessingFailure(IO.Anyline.Plugin.Document.DocumentScanViewPlugin.DocumentError error) { }
 

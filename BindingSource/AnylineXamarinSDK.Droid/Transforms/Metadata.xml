@@ -138,11 +138,10 @@
   </attr>
 
   <!-- ANYLINE 4+ Support API -->
-
-  <!-- ID-->
-  <!--
-  <attr path="/api/package[@name='io.anyline.xamarin.plugins.id']/interface[@name='IdResultListener']/method[@name='onResult' and count(parameter)=1 and parameter[1][@type='io.anyline.xamarin.plugins.id.IdScanResult']]/parameter[1]" name="managedName">scanResult</attr>
-  <attr path="/api/package[@name='io.anyline.xamarin.plugins.id']/class[@name='IdScanViewPlugin']/method[@name='addResultListener' and count(parameter)=1 and parameter[1][@type='io.anyline.xamarin.plugins.id.IdResultListener']]/parameter[1]" name="managedName">resultListener</attr>
-	-->
   
+  <remove-node path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanResultListener']"/>
+  
+  <!--<attr path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanResultListener']/method[@name='onResult' and count(parameter)=1 and parameter[1][@type='T']]/parameter[1]" name="managedType">IO.Anyline.Plugin.ScanResult</attr>
+  -->
+
 </metadata>

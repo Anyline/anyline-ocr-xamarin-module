@@ -1,22 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using IO.Anyline.Plugin;
-using IO.Anyline.Plugin.Meter;
-using Java.Lang;
-
-using System.Reflection;
-using Android.Util;
-using AT.Nineyards.Anyline.Models;
-using IO.Anyline.Plugin.Document;
 
 namespace AnylineExamples.Droid
 {
@@ -37,10 +21,10 @@ namespace AnylineExamples.Droid
 
         /// <summary>
         /// This method is called when a scan result is found.
-        /// Since the native Java type is generic, the type of the parameter translates to Java.Lang.Object due to Xamarin.Android generic binding limitations.
+        /// Since the native Java type is generic, we translated the type of the parameter to ScanResult due to Xamarin.Android generic binding limitations.
         /// </summary>
         /// <param name="result">The scan result</param>
-        public void OnResult(Java.Lang.Object result)
+        public void OnResult(ScanResult result)
         {
             /*
              * In every case, the base type of the result is ScanResult.
@@ -49,12 +33,11 @@ namespace AnylineExamples.Droid
              * 
              * For document scanning, it is simply of type ScanResult.
             */
-            var scanResult = result as ScanResult;
-            if(scanResult != null)
+            if(result != null)
             {
                 // because we can't simply pass the object through the intent, we'll pass the JNI handle & retrieve the object in the other activity
                 var intent = new Intent(Activity.ApplicationContext, typeof(ResultActivity));
-                intent.PutExtra("handle", scanResult.Handle.ToInt32());
+                intent.PutExtra("handle", result.Handle.ToInt32());
 
                 Activity.StartActivity(intent);
             }

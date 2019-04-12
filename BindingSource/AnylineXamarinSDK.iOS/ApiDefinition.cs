@@ -1424,6 +1424,7 @@ namespace AnylineXamarinSDK.iOS
         nint Confidence { get; }
 
         // @property (nonatomic, strong) ALSquare * _Nullable outline __attribute__((deprecated("Deprecated since 3.18.0 You can get the outline as a property from the ScanViewPlugin.")));
+        [Obsolete("Deprecated since 3.18.0 You can get the outline as a property from the ScanViewPlugin.")]
         [NullAllowed, Export("outline", ArgumentSemantic.Strong)]
         ALSquare Outline { get; set; }
 
@@ -1545,11 +1546,7 @@ namespace AnylineXamarinSDK.iOS
         // @property (assign, nonatomic) CGSize videoResolution;
         [Export("videoResolution", ArgumentSemantic.Assign)]
         CGSize VideoResolution { get; set; }
-
-        // -(void)addBarcodeDelegate:(id<AnylineNativeBarcodeDelegate> _Nonnull)delegate __attribute__((deprecated("Deprecated since 4. Use method addBarcodeDelegate:error: instead.")));
-        [Export("addBarcodeDelegate:")]
-        void AddBarcodeDelegate(NSObject @delegate);
-
+        
         // -(BOOL)addBarcodeDelegate:(id<AnylineNativeBarcodeDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
         [Export("addBarcodeDelegate:error:")]
         bool AddBarcodeDelegate(NSObject @delegate, [NullAllowed] out NSError error);
@@ -2456,6 +2453,7 @@ namespace AnylineXamarinSDK.iOS
         void DidFindResult(AnylineEnergyModuleView anylineEnergyModuleView, ALEnergyResult scanResult);
 
         // @optional -(void)anylineEnergyModuleView:(AnylineEnergyModuleView * _Nonnull)anylineEnergyModuleView didFindScanResult:(NSString * _Nonnull)scanResult cropImage:(UIImage * _Nonnull)image fullImage:(UIImage * _Nonnull)fullImage inMode:(ALScanMode)scanMode __attribute__((deprecated("Deprecated since 3.10 Use AnylineDebugDelegate instead.")));
+        [Obsolete("Deprecated since 3.10 Use AnylineDebugDelegate instead.")]
         [Export("anylineEnergyModuleView:didFindScanResult:cropImage:fullImage:inMode:")]
         void DidFindScanResult(AnylineEnergyModuleView anylineEnergyModuleView, string scanResult, UIImage image, UIImage fullImage, ALScanMode scanMode);
     }
@@ -2521,174 +2519,276 @@ namespace AnylineXamarinSDK.iOS
         void DidFindResult(AnylineBarcodeModuleView anylineBarcodeModuleView, ALBarcodeResult scanResult);
     }
 
+
     // @interface ALDrivingLicenseIdentification : NSObject
     [BaseType(typeof(NSObject))]
     interface ALDrivingLicenseIdentification
     {
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull documentNumber;
-        [Export("documentNumber", ArgumentSemantic.Strong)]
-        string DocumentNumber { get; }
+        // @property (readonly, nonatomic, strong) NSString * _Nullable surname;
+        [NullAllowed, Export("surname", ArgumentSemantic.Strong)]
+        string Surname { get; }
 
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull surNames;
-        [Export("surNames", ArgumentSemantic.Strong)]
-        string SurNames { get; }
-
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull givenNames;
-        [Export("givenNames", ArgumentSemantic.Strong)]
+        // @property (readonly, nonatomic, strong) NSString * _Nullable givenNames;
+        [NullAllowed, Export("givenNames", ArgumentSemantic.Strong)]
         string GivenNames { get; }
 
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull dayOfBirth;
-        [Export("dayOfBirth", ArgumentSemantic.Strong)]
-        string DayOfBirth { get; }
+        // @property (readonly, nonatomic, strong) NSString * _Nullable dateOfBirth;
+        [NullAllowed, Export("dateOfBirth", ArgumentSemantic.Strong)]
+        string DateOfBirth { get; }
 
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull placeOfBirth;
-        [Export("placeOfBirth", ArgumentSemantic.Strong)]
+        // @property (readonly, nonatomic, strong) NSString * _Nullable placeOfBirth;
+        [NullAllowed, Export("placeOfBirth", ArgumentSemantic.Strong)]
         string PlaceOfBirth { get; }
 
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull issuingDate;
-        [Export("issuingDate", ArgumentSemantic.Strong)]
-        string IssuingDate { get; }
+        // @property (readonly, nonatomic, strong) NSString * _Nullable dateOfIssue;
+        [NullAllowed, Export("dateOfIssue", ArgumentSemantic.Strong)]
+        string DateOfIssue { get; }
 
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull expirationDate;
-        [Export("expirationDate", ArgumentSemantic.Strong)]
-        string ExpirationDate { get; }
+        // @property (readonly, nonatomic, strong) NSString * _Nullable dateOfExpiry;
+        [NullAllowed, Export("dateOfExpiry", ArgumentSemantic.Strong)]
+        string DateOfExpiry { get; }
 
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull authority;
-        [Export("authority", ArgumentSemantic.Strong)]
+        // @property (readonly, nonatomic, strong) NSString * _Nullable authority;
+        [NullAllowed, Export("authority", ArgumentSemantic.Strong)]
         string Authority { get; }
 
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull categories;
-        [Export("categories", ArgumentSemantic.Strong)]
+        // @property (readonly, nonatomic, strong) NSString * _Nullable documentNumber;
+        [NullAllowed, Export("documentNumber", ArgumentSemantic.Strong)]
+        string DocumentNumber { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable categories;
+        [NullAllowed, Export("categories", ArgumentSemantic.Strong)]
         string Categories { get; }
-
-        // @property (readonly, nonatomic, strong) NSDate * _Nullable dayOfBirthDateObject;
-        [NullAllowed, Export("dayOfBirthDateObject", ArgumentSemantic.Strong)]
-        NSDate DayOfBirthDateObject { get; }
-
-        // @property (readonly, nonatomic, strong) NSDate * _Nullable issuingDateObject;
-        [NullAllowed, Export("issuingDateObject", ArgumentSemantic.Strong)]
-        NSDate IssuingDateObject { get; }
-
-        // @property (readonly, nonatomic, strong) NSDate * _Nullable expirationDateObject;
-        [NullAllowed, Export("expirationDateObject", ArgumentSemantic.Strong)]
-        NSDate ExpirationDateObject { get; }
 
         // @property (readonly, nonatomic, strong) NSString * _Nonnull drivingLicenseString;
         [Export("drivingLicenseString", ArgumentSemantic.Strong)]
         string DrivingLicenseString { get; }
 
+        // @property (readonly, nonatomic, strong) NSDate * _Nullable dateOfBirthObject;
+        [NullAllowed, Export("dateOfBirthObject", ArgumentSemantic.Strong)]
+        NSDate DateOfBirthObject { get; }
+
+        // @property (readonly, nonatomic, strong) NSDate * _Nullable dateOfIssueObject;
+        [NullAllowed, Export("dateOfIssueObject", ArgumentSemantic.Strong)]
+        NSDate DateOfIssueObject { get; }
+
+        // @property (readonly, nonatomic, strong) NSDate * _Nullable dateOfExpiryObject;
+        [NullAllowed, Export("dateOfExpiryObject", ArgumentSemantic.Strong)]
+        NSDate DateOfExpiryObject { get; }
+
         // @property (nonatomic, strong) UIImage * _Nullable faceImage;
         [NullAllowed, Export("faceImage", ArgumentSemantic.Strong)]
         UIImage FaceImage { get; set; }
 
-        // -(instancetype _Nullable)initWithDocumentNumber:(NSString * _Nonnull)documentNumber surNames:(NSString * _Nonnull)surNames givenNames:(NSString * _Nonnull)givenNames dayOfBirth:(NSString * _Nonnull)dayOfBirth placeOfBirth:(NSString * _Nonnull)placeOfBirth issuingDate:(NSString * _Nonnull)issuingDate expirationDate:(NSString * _Nonnull)expirationDate authority:(NSString * _Nonnull)authority categories:(NSString * _Nonnull)categories drivingLicenseString:(NSString * _Nonnull)drivingLicenseString;
+        // @property (readonly, nonatomic, strong) NSString * _Nullable surNames __attribute__((deprecated("Deprecated since Version 10. Please use the property "surname" instead.")));
+        [Obsolete]
+        [NullAllowed, Export("surNames", ArgumentSemantic.Strong)]
+        string SurNames { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable dayOfBirth __attribute__((deprecated("Deprecated since Version 10. Please use the property "dayOfBirth" instead.")));
+        [Obsolete]
+        [NullAllowed, Export("dayOfBirth", ArgumentSemantic.Strong)]
+        string DayOfBirth { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable issuingDate __attribute__((deprecated("Deprecated since Version 10. Please use the property "issuingDate" instead.")));
+        [Obsolete]
+        [NullAllowed, Export("issuingDate", ArgumentSemantic.Strong)]
+        string IssuingDate { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable expirationDate __attribute__((deprecated("Deprecated since Version 10. Please use the property "expirationDate" instead.")));
+        [Obsolete]
+        [NullAllowed, Export("expirationDate", ArgumentSemantic.Strong)]
+        string ExpirationDate { get; }
+
+        // @property (readonly, nonatomic, strong) NSDate * _Nullable dayOfBirthDateObject __attribute__((deprecated("Deprecated since Version 10. Please use the property "dateOfBirthObject" instead.")));
+        [Obsolete]
+        [NullAllowed, Export("dayOfBirthDateObject", ArgumentSemantic.Strong)]
+        NSDate DayOfBirthDateObject { get; }
+
+        // @property (readonly, nonatomic, strong) NSDate * _Nullable issuingDateObject __attribute__((deprecated("Deprecated since Version 10. Please use the property "dateOfIssueObject" instead.")));
+        [Obsolete]
+        [NullAllowed, Export("issuingDateObject", ArgumentSemantic.Strong)]
+        NSDate IssuingDateObject { get; }
+
+        // @property (readonly, nonatomic, strong) NSDate * _Nullable expirationDateObject __attribute__((deprecated("Deprecated since Version 10. Please use the property "dateOfExpiryObject" instead.")));
+        [Obsolete]
+        [NullAllowed, Export("expirationDateObject", ArgumentSemantic.Strong)]
+        NSDate ExpirationDateObject { get; }
+
+        // -(instancetype _Nullable)initWithSurname:(NSString * _Nullable)surname givenNames:(NSString * _Nullable)givenNames dateOfBirth:(NSString * _Nullable)dateOfBirth placeOfBirth:(NSString * _Nullable)placeOfBirth dateOfIssue:(NSString * _Nullable)dateOfIssue dateOfExpiry:(NSString * _Nullable)dateOfExpiry authority:(NSString * _Nullable)authority documentNumber:(NSString * _Nullable)documentNumber categories:(NSString * _Nullable)categories drivingLicenseString:(NSString * _Nullable)drivingLicenseString formattedDateOfExpiry:(NSString * _Nullable)formattedDateOfExpiry formattedDateOfBirth:(NSString * _Nullable)formattedDateOfBirth formattedDateOfIssue:(NSString * _Nullable)formattedDateOfIssue;
+        [Export("initWithSurname:givenNames:dateOfBirth:placeOfBirth:dateOfIssue:dateOfExpiry:authority:documentNumber:categories:drivingLicenseString:formattedDateOfExpiry:formattedDateOfBirth:formattedDateOfIssue:")]
+        IntPtr Constructor([NullAllowed] string surname, [NullAllowed] string givenNames, [NullAllowed] string dateOfBirth, [NullAllowed] string placeOfBirth, [NullAllowed] string dateOfIssue, [NullAllowed] string dateOfExpiry, [NullAllowed] string authority, [NullAllowed] string documentNumber, [NullAllowed] string categories, [NullAllowed] string drivingLicenseString, [NullAllowed] string formattedDateOfExpiry, [NullAllowed] string formattedDateOfBirth, [NullAllowed] string formattedDateOfIssue);
+
+        // -(instancetype _Nullable)initWithDocumentNumber:(NSString * _Nonnull)documentNumber surNames:(NSString * _Nonnull)surNames givenNames:(NSString * _Nonnull)givenNames dayOfBirth:(NSString * _Nonnull)dayOfBirth placeOfBirth:(NSString * _Nonnull)placeOfBirth issuingDate:(NSString * _Nonnull)issuingDate expirationDate:(NSString * _Nonnull)expirationDate authority:(NSString * _Nonnull)authority categories:(NSString * _Nonnull)categories drivingLicenseString:(NSString * _Nonnull)drivingLicenseString __attribute__((deprecated("Deprecated since Version 10. Please use initWithSurname:givenNames:dateOfBirth:dateOfExpiry:documentNumber:documentType:... instead")));
         [Export("initWithDocumentNumber:surNames:givenNames:dayOfBirth:placeOfBirth:issuingDate:expirationDate:authority:categories:drivingLicenseString:")]
         IntPtr Constructor(string documentNumber, string surNames, string givenNames, string dayOfBirth, string placeOfBirth, string issuingDate, string expirationDate, string authority, string categories, string drivingLicenseString);
-
-        // -(instancetype _Nullable)initWithDrivingLicenseString:(NSString * _Nonnull)drivingLicenseString;
-        [Export("initWithDrivingLicenseString:")]
-        IntPtr Constructor(string drivingLicenseString);
     }
 
     // @interface ALMRZIdentification : NSObject
     [BaseType(typeof(NSObject))]
     interface ALMRZIdentification
     {
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull documentType;
-        [Export("documentType", ArgumentSemantic.Strong)]
-        string DocumentType { get; }
+        // @property (readonly, nonatomic, strong) NSString * _Nullable surname;
+        [NullAllowed, Export("surname", ArgumentSemantic.Strong)]
+        string Surname { get; }
 
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull documentNumber;
-        [Export("documentNumber", ArgumentSemantic.Strong)]
-        string DocumentNumber { get; }
-
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull surNames;
-        [Export("surNames", ArgumentSemantic.Strong)]
-        string SurNames { get; }
-
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull givenNames;
-        [Export("givenNames", ArgumentSemantic.Strong)]
+        // @property (readonly, nonatomic, strong) NSString * _Nullable givenNames;
+        [NullAllowed, Export("givenNames", ArgumentSemantic.Strong)]
         string GivenNames { get; }
 
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull issuingCountryCode;
-        [Export("issuingCountryCode", ArgumentSemantic.Strong)]
+        // @property (readonly, nonatomic, strong) NSString * _Nullable dateOfBirth;
+        [NullAllowed, Export("dateOfBirth", ArgumentSemantic.Strong)]
+        string DateOfBirth { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable dateOfExpiry;
+        [NullAllowed, Export("dateOfExpiry", ArgumentSemantic.Strong)]
+        string DateOfExpiry { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable documentNumber;
+        [NullAllowed, Export("documentNumber", ArgumentSemantic.Strong)]
+        string DocumentNumber { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable documentType;
+        [NullAllowed, Export("documentType", ArgumentSemantic.Strong)]
+        string DocumentType { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable issuingCountryCode;
+        [NullAllowed, Export("issuingCountryCode", ArgumentSemantic.Strong)]
         string IssuingCountryCode { get; }
 
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull nationalityCountryCode;
-        [Export("nationalityCountryCode", ArgumentSemantic.Strong)]
+        // @property (readonly, nonatomic, strong) NSString * _Nullable nationalityCountryCode;
+        [NullAllowed, Export("nationalityCountryCode", ArgumentSemantic.Strong)]
         string NationalityCountryCode { get; }
 
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull dayOfBirth;
-        [Export("dayOfBirth", ArgumentSemantic.Strong)]
-        string DayOfBirth { get; }
-
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull expirationDate;
-        [Export("expirationDate", ArgumentSemantic.Strong)]
-        string ExpirationDate { get; }
-
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull sex;
-        [Export("sex", ArgumentSemantic.Strong)]
+        // @property (readonly, nonatomic, strong) NSString * _Nullable sex;
+        [NullAllowed, Export("sex", ArgumentSemantic.Strong)]
         string Sex { get; }
 
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull checkdigitNumber;
-        [Export("checkdigitNumber", ArgumentSemantic.Strong)]
-        string CheckdigitNumber { get; }
-
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull checkdigitExpirationDate;
-        [Export("checkdigitExpirationDate", ArgumentSemantic.Strong)]
-        string CheckdigitExpirationDate { get; }
-
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull checkdigitDayOfBirth;
-        [Export("checkdigitDayOfBirth", ArgumentSemantic.Strong)]
-        string CheckdigitDayOfBirth { get; }
-
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull checkdigitFinal;
-        [Export("checkdigitFinal", ArgumentSemantic.Strong)]
-        string CheckdigitFinal { get; }
-
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull personalNumber;
-        [Export("personalNumber", ArgumentSemantic.Strong)]
+        // @property (readonly, nonatomic, strong) NSString * _Nullable personalNumber;
+        [NullAllowed, Export("personalNumber", ArgumentSemantic.Strong)]
         string PersonalNumber { get; }
 
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull checkDigitPersonalNumber;
-        [Export("checkDigitPersonalNumber", ArgumentSemantic.Strong)]
-        string CheckDigitPersonalNumber { get; }
+        // @property (readonly, nonatomic, strong) NSString * _Nullable optionalData;
+        [NullAllowed, Export("optionalData", ArgumentSemantic.Strong)]
+        string OptionalData { get; }
 
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull personalNumber2;
-        [Export("personalNumber2", ArgumentSemantic.Strong)]
-        string PersonalNumber2 { get; }
+        // @property (readonly, nonatomic, strong) NSString * _Nullable mrzString;
+        [NullAllowed, Export("mrzString", ArgumentSemantic.Strong)]
+        string MRZString { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable dateOfIssue;
+        [NullAllowed, Export("dateOfIssue", ArgumentSemantic.Strong)]
+        string DateOfIssue { get; }
 
         // @property (readonly, nonatomic, strong) NSString * _Nullable address;
         [NullAllowed, Export("address", ArgumentSemantic.Strong)]
         string Address { get; }
 
-        // @property (readonly, nonatomic, strong) NSString * _Nullable issuingDate;
-        [NullAllowed, Export("issuingDate", ArgumentSemantic.Strong)]
-        string IssuingDate { get; }
-
-        // @property (readonly, nonatomic, strong) NSDate * _Nullable issuingDateObject;
-        [NullAllowed, Export("issuingDateObject", ArgumentSemantic.Strong)]
-        NSDate IssuingDateObject { get; }
-
-        // @property (readonly, nonatomic, strong) NSDate * _Nullable expirationDateObject;
-        [NullAllowed, Export("expirationDateObject", ArgumentSemantic.Strong)]
-        NSDate ExpirationDateObject { get; }
-
-        // @property (readonly, nonatomic, strong) NSDate * _Nullable dayOfBirthDateObject;
-        [NullAllowed, Export("dayOfBirthDateObject", ArgumentSemantic.Strong)]
-        NSDate DayOfBirthDateObject { get; }
-        
-        // changed MRZ to Mrz in 6.0 because of a customer request
-
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull MRZString;
-        [Export("MRZString", ArgumentSemantic.Strong)]
-        string MrzString { get; }
-
         // @property (nonatomic, strong) UIImage * _Nullable faceImage;
         [NullAllowed, Export("faceImage", ArgumentSemantic.Strong)]
         UIImage FaceImage { get; set; }
 
-        // -(instancetype _Nullable)initWithDocumentType:(NSString * _Nonnull)documentType issuingCountryCode:(NSString * _Nonnull)issuingCountryCode nationalityCountryCode:(NSString * _Nonnull)nationalityCountryCode surNames:(NSString * _Nonnull)surNames givenNames:(NSString * _Nonnull)givenNames documentNumber:(NSString * _Nonnull)documentNumber checkDigitNumber:(NSString * _Nonnull)checkDigitNumber dayOfBirth:(NSString * _Nonnull)dayOfBirth checkDigitDayOfBirth:(NSString * _Nonnull)checkDigitDayOfBirth sex:(NSString * _Nonnull)sex expirationDate:(NSString * _Nonnull)expirationDate checkDigitExpirationDate:(NSString * _Nonnull)checkdigitExpirationDate personalNumber:(NSString * _Nonnull)personalNumber checkDigitPersonalNumber:(NSString * _Nonnull)checkDigitPersonalNumber checkDigitFinal:(NSString * _Nonnull)checkDigitFinal personalNumber2:(NSString * _Nonnull)personalNumber2 address:(NSString * _Nullable)address issuingDate:(NSString * _Nullable)issuingDate MRZString:(NSString * _Nonnull)MRZString;
+        // @property (readonly, nonatomic, strong) NSString * _Nullable checkDigitDateOfExpiry;
+        [NullAllowed, Export("checkDigitDateOfExpiry", ArgumentSemantic.Strong)]
+        string CheckDigitDateOfExpiry { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable checkDigitDocumentNumber;
+        [NullAllowed, Export("checkDigitDocumentNumber", ArgumentSemantic.Strong)]
+        string CheckDigitDocumentNumber { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable checkDigitDateOfBirth;
+        [NullAllowed, Export("checkDigitDateOfBirth", ArgumentSemantic.Strong)]
+        string CheckDigitDateOfBirth { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable checkDigitFinal;
+        [NullAllowed, Export("checkDigitFinal", ArgumentSemantic.Strong)]
+        string CheckDigitFinal { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable checkDigitPersonalNumber;
+        [NullAllowed, Export("checkDigitPersonalNumber", ArgumentSemantic.Strong)]
+        string CheckDigitPersonalNumber { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable allCheckDigitsValid;
+        [NullAllowed, Export("allCheckDigitsValid", ArgumentSemantic.Strong)]
+        string AllCheckDigitsValid { get; }
+
+        // @property (readonly, nonatomic, strong) NSDate * _Nullable dateOfBirthObject;
+        [NullAllowed, Export("dateOfBirthObject", ArgumentSemantic.Strong)]
+        NSDate DateOfBirthObject { get; }
+
+        // @property (readonly, nonatomic, strong) NSDate * _Nullable dateOfExpiryObject;
+        [NullAllowed, Export("dateOfExpiryObject", ArgumentSemantic.Strong)]
+        NSDate DateOfExpiryObject { get; }
+
+        // @property (readonly, nonatomic, strong) NSDate * _Nullable dateOfIssueObject;
+        [NullAllowed, Export("dateOfIssueObject", ArgumentSemantic.Strong)]
+        NSDate DateOfIssueObject { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable surNames __attribute__((deprecated("Deprecated since Version 10. Please use the property "surname" instead.")));
+        [Obsolete]
+        [NullAllowed, Export("surNames", ArgumentSemantic.Strong)]
+        string SurNames { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable dayOfBirth __attribute__((deprecated("Deprecated since Version 10. Please use the property "dateOfBirth" instead.")));
+        [Obsolete]
+        [NullAllowed, Export("dayOfBirth", ArgumentSemantic.Strong)]
+        string DayOfBirth { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable expirationDate __attribute__((deprecated("Deprecated since Version 10. Please use the property "dateOfExpiry" instead.")));
+        [Obsolete]
+        [NullAllowed, Export("expirationDate", ArgumentSemantic.Strong)]
+        string ExpirationDate { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable checkdigitNumber __attribute__((deprecated("Deprecated since Version 10. Please use the property "checkDigitDocumentNumber" instead.")));
+        [Obsolete]
+        [NullAllowed, Export("checkdigitNumber", ArgumentSemantic.Strong)]
+        string CheckdigitNumber { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable checkdigitExpirationDate __attribute__((deprecated("Deprecated since Version 10. Please use the property "checkDigitDateOfExpiry" instead.")));
+        [Obsolete]
+        [NullAllowed, Export("checkdigitExpirationDate", ArgumentSemantic.Strong)]
+        string CheckdigitExpirationDate { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable checkdigitDayOfBirth __attribute__((deprecated("Deprecated since Version 10. Please use the property "checkDigitDateOfBirth" instead.")));
+        [Obsolete]
+        [NullAllowed, Export("checkdigitDayOfBirth", ArgumentSemantic.Strong)]
+        string CheckdigitDayOfBirth { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable checkdigitFinal __attribute__((deprecated("Deprecated since Version 10. Please use the property "checkDigitFinal" instead.")));
+        [Obsolete]
+        [NullAllowed, Export("checkdigitFinal", ArgumentSemantic.Strong)]
+        string CheckdigitFinal { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable issuingDate __attribute__((deprecated("Deprecated since Version 10. Please use the property "dateOfIssue" instead.")));
+        [Obsolete]
+        [NullAllowed, Export("issuingDate", ArgumentSemantic.Strong)]
+        string IssuingDate { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable personalNumber2 __attribute__((deprecated("Deprecated since Version 10. Please use the property "optionalData" instead.")));
+        [Obsolete]
+        [NullAllowed, Export("personalNumber2", ArgumentSemantic.Strong)]
+        string PersonalNumber2 { get; }
+
+        // @property (readonly, nonatomic, strong) NSDate * _Nullable expirationDateObject __attribute__((deprecated("Deprecated since Version 10. Please use the property "dateOfExpiryObject" instead.")));
+        [Obsolete]
+        [NullAllowed, Export("expirationDateObject", ArgumentSemantic.Strong)]
+        NSDate ExpirationDateObject { get; }
+
+        // @property (readonly, nonatomic, strong) NSDate * _Nullable dayOfBirthDateObject __attribute__((deprecated("Deprecated since Version 10. Please use the property "dateOfBirthObject" instead.")));
+        [Obsolete]
+        [NullAllowed, Export("dayOfBirthDateObject", ArgumentSemantic.Strong)]
+        NSDate DayOfBirthDateObject { get; }
+
+        // @property (readonly, nonatomic, strong) NSDate * _Nullable issuingDateObject __attribute__((deprecated("Deprecated since Version 10. Please use the property "dateOfIssueObject" instead.")));
+        [Obsolete]
+        [NullAllowed, Export("issuingDateObject", ArgumentSemantic.Strong)]
+        NSDate IssuingDateObject { get; }
+        
+        // -(instancetype _Nullable)initWithSurname:(NSString * _Nullable)surname givenNames:(NSString * _Nullable)givenNames dateOfBirth:(NSString * _Nullable)dateOfBirth dateOfExpiry:(NSString * _Nullable)dateOfExpiry documentNumber:(NSString * _Nullable)documentNumber documentType:(NSString * _Nullable)documentType issuingCountryCode:(NSString * _Nullable)issuingCountryCode nationalityCountryCode:(NSString * _Nullable)nationalityCountryCode sex:(NSString * _Nullable)sex personalNumber:(NSString * _Nullable)personalNumber optionalData:(NSString * _Nullable)optionalData checkDigitDateOfExpiry:(NSString * _Nullable)checkDigitDateOfExpiry checkDigitDocumentNumber:(NSString * _Nullable)checkDigitDocumentNumber checkDigitDateOfBirth:(NSString * _Nullable)checkDigitDateOfBirth checkDigitFinal:(NSString * _Nullable)checkDigitFinal checkDigitPersonalNumber:(NSString * _Nullable)checkDigitPersonalNumber allCheckDigitsValid:(NSString * _Nullable)allCheckDigitsValid address:(NSString * _Nullable)address dateOfIssue:(NSString * _Nullable)dateOfIssue mrzString:(NSString * _Nullable)mrzString formattedDateOfExpiry:(NSString * _Nullable)formattedDateOfExpiry formattedDateOfBirth:(NSString * _Nullable)formattedDateOfBirth formattedDateOfIssue:(NSString * _Nullable)formattedDateOfIssue;
+        [Export("initWithSurname:givenNames:dateOfBirth:dateOfExpiry:documentNumber:documentType:issuingCountryCode:nationalityCountryCode:sex:personalNumber:optionalData:checkDigitDateOfExpiry:checkDigitDocumentNumber:checkDigitDateOfBirth:checkDigitFinal:checkDigitPersonalNumber:allCheckDigitsValid:address:dateOfIssue:mrzString:formattedDateOfExpiry:formattedDateOfBirth:formattedDateOfIssue:")]
+        IntPtr Constructor([NullAllowed] string surname, [NullAllowed] string givenNames, [NullAllowed] string dateOfBirth, [NullAllowed] string dateOfExpiry, [NullAllowed] string documentNumber, [NullAllowed] string documentType, [NullAllowed] string issuingCountryCode, [NullAllowed] string nationalityCountryCode, [NullAllowed] string sex, [NullAllowed] string personalNumber, [NullAllowed] string optionalData, [NullAllowed] string checkDigitDateOfExpiry, [NullAllowed] string checkDigitDocumentNumber, [NullAllowed] string checkDigitDateOfBirth, [NullAllowed] string checkDigitFinal, [NullAllowed] string checkDigitPersonalNumber, [NullAllowed] string allCheckDigitsValid, [NullAllowed] string address, [NullAllowed] string dateOfIssue, [NullAllowed] string mrzString, [NullAllowed] string formattedDateOfExpiry, [NullAllowed] string formattedDateOfBirth, [NullAllowed] string formattedDateOfIssue);
+
+        // -(instancetype _Nullable)initWithDocumentType:(NSString * _Nonnull)documentType issuingCountryCode:(NSString * _Nonnull)issuingCountryCode nationalityCountryCode:(NSString * _Nonnull)nationalityCountryCode surNames:(NSString * _Nonnull)surNames givenNames:(NSString * _Nonnull)givenNames documentNumber:(NSString * _Nonnull)documentNumber checkDigitNumber:(NSString * _Nonnull)checkDigitNumber dayOfBirth:(NSString * _Nonnull)dayOfBirth checkDigitDayOfBirth:(NSString * _Nonnull)checkDigitDayOfBirth sex:(NSString * _Nonnull)sex expirationDate:(NSString * _Nonnull)expirationDate checkDigitExpirationDate:(NSString * _Nonnull)checkdigitExpirationDate personalNumber:(NSString * _Nonnull)personalNumber checkDigitPersonalNumber:(NSString * _Nonnull)checkDigitPersonalNumber checkDigitFinal:(NSString * _Nonnull)checkDigitFinal personalNumber2:(NSString * _Nonnull)personalNumber2 address:(NSString * _Nullable)address issuingDate:(NSString * _Nullable)issuingDate MRZString:(NSString * _Nonnull)MRZString __attribute__((deprecated("Deprecated since Version 10. Please use initWithSurname:givenNames:dateOfBirth:dateOfExpiry:documentNumber:documentType:... instead")));
         [Export("initWithDocumentType:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:personalNumber2:address:issuingDate:MRZString:")]
         IntPtr Constructor(string documentType, string issuingCountryCode, string nationalityCountryCode, string surNames, string givenNames, string documentNumber, string checkDigitNumber, string dayOfBirth, string checkDigitDayOfBirth, string sex, string expirationDate, string checkdigitExpirationDate, string personalNumber, string checkDigitPersonalNumber, string checkDigitFinal, string personalNumber2, [NullAllowed] string address, [NullAllowed] string issuingDate, string MRZString);
     }
@@ -2697,57 +2797,82 @@ namespace AnylineXamarinSDK.iOS
     [BaseType(typeof(NSObject))]
     interface ALGermanIDFrontIdentification
     {
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull documentNumber;
-        [Export("documentNumber", ArgumentSemantic.Strong)]
-        string DocumentNumber { get; }
+        // @property (readonly, nonatomic, strong) NSString * _Nullable surname;
+        [NullAllowed, Export("surname", ArgumentSemantic.Strong)]
+        string Surname { get; }
 
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull surNames;
-        [Export("surNames", ArgumentSemantic.Strong)]
-        string SurNames { get; }
-
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull givenNames;
-        [Export("givenNames", ArgumentSemantic.Strong)]
+        // @property (readonly, nonatomic, strong) NSString * _Nullable givenNames;
+        [NullAllowed, Export("givenNames", ArgumentSemantic.Strong)]
         string GivenNames { get; }
 
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull dayOfBirth;
-        [Export("dayOfBirth", ArgumentSemantic.Strong)]
-        string DayOfBirth { get; }
+        // @property (readonly, nonatomic, strong) NSString * _Nullable dateOfBirth;
+        [NullAllowed, Export("dateOfBirth", ArgumentSemantic.Strong)]
+        string DateOfBirth { get; }
 
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull placeOfBirth;
-        [Export("placeOfBirth", ArgumentSemantic.Strong)]
-        string PlaceOfBirth { get; }
-
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull nationality;
-        [Export("nationality", ArgumentSemantic.Strong)]
+        // @property (readonly, nonatomic, strong) NSString * _Nullable nationality;
+        [NullAllowed, Export("nationality", ArgumentSemantic.Strong)]
         string Nationality { get; }
 
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull cardAccessNumber;
-        [Export("cardAccessNumber", ArgumentSemantic.Strong)]
+        // @property (readonly, nonatomic, strong) NSString * _Nullable placeOfBirth;
+        [NullAllowed, Export("placeOfBirth", ArgumentSemantic.Strong)]
+        string PlaceOfBirth { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable dateOfExpiry;
+        [NullAllowed, Export("dateOfExpiry", ArgumentSemantic.Strong)]
+        string DateOfExpiry { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable documentNumber;
+        [NullAllowed, Export("documentNumber", ArgumentSemantic.Strong)]
+        string DocumentNumber { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable cardAccessNumber;
+        [NullAllowed, Export("cardAccessNumber", ArgumentSemantic.Strong)]
         string CardAccessNumber { get; }
 
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull expirationDate;
-        [Export("expirationDate", ArgumentSemantic.Strong)]
-        string ExpirationDate { get; }
-
-        // @property (readonly, nonatomic, strong) NSDate * _Nullable dayOfBirthDateObject;
-        [NullAllowed, Export("dayOfBirthDateObject", ArgumentSemantic.Strong)]
-        NSDate DayOfBirthDateObject { get; }
-
-        // @property (readonly, nonatomic, strong) NSDate * _Nullable expirationDateObject;
-        [NullAllowed, Export("expirationDateObject", ArgumentSemantic.Strong)]
-        NSDate ExpirationDateObject { get; }
-
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull germanIdFrontString;
-        [Export("germanIdFrontString", ArgumentSemantic.Strong)]
+        // @property (readonly, nonatomic, strong) NSString * _Nullable germanIdFrontString;
+        [NullAllowed, Export("germanIdFrontString", ArgumentSemantic.Strong)]
         string GermanIdFrontString { get; }
+
+        // @property (readonly, nonatomic, strong) NSDate * _Nullable dateOfBirthObject;
+        [NullAllowed, Export("dateOfBirthObject", ArgumentSemantic.Strong)]
+        NSDate DateOfBirthObject { get; }
+
+        // @property (readonly, nonatomic, strong) NSDate * _Nullable dateOfExpiryObject;
+        [NullAllowed, Export("dateOfExpiryObject", ArgumentSemantic.Strong)]
+        NSDate DateOfExpiryObject { get; }
 
         // @property (nonatomic, strong) UIImage * _Nullable faceImage;
         [NullAllowed, Export("faceImage", ArgumentSemantic.Strong)]
         UIImage FaceImage { get; set; }
 
-        // -(instancetype _Nullable)initWithDocumentNumber:(NSString * _Nonnull)documentNumber surNames:(NSString * _Nonnull)surNames givenNames:(NSString * _Nonnull)givenNames dayOfBirth:(NSString * _Nonnull)dayOfBirth placeOfBirth:(NSString * _Nonnull)placeOfBirth nationality:(NSString * _Nonnull)nationality cardAccessNumber:(NSString * _Nonnull)cardAccessNumber expirationDate:(NSString * _Nonnull)expirationDate germanIdFrontString:(NSString * _Nonnull)germanIdFrontString;
-        [Export("initWithDocumentNumber:surNames:givenNames:dayOfBirth:placeOfBirth:nationality:cardAccessNumber:expirationDate:germanIdFrontString:")]
-        IntPtr Constructor(string documentNumber, string surNames, string givenNames, string dayOfBirth, string placeOfBirth, string nationality, string cardAccessNumber, string expirationDate, string germanIdFrontString);
+        // @property (readonly, nonatomic, strong) NSString * _Nullable surNames __attribute__((deprecated("Deprecated since Version 10. Please use the property "surname" instead.")));
+        [Obsolete]
+        [NullAllowed, Export("surNames", ArgumentSemantic.Strong)]
+        string SurNames { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable dayOfBirth __attribute__((deprecated("Deprecated since Version 10. Please use the property "dateOfBirth" instead.")));
+        [Obsolete]
+        [NullAllowed, Export("dayOfBirth", ArgumentSemantic.Strong)]
+        string DayOfBirth { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable expirationDate __attribute__((deprecated("Deprecated since Version 10. Please use the property "dateOfExpiry" instead.")));
+        [Obsolete]
+        [NullAllowed, Export("expirationDate", ArgumentSemantic.Strong)]
+        string ExpirationDate { get; }
+
+        // @property (readonly, nonatomic, strong) NSDate * _Nullable dayOfBirthDateObject __attribute__((deprecated("Deprecated since Version 10. Please use the property "dateOfBirthObject" instead.")));
+        [Obsolete]
+        [NullAllowed, Export("dayOfBirthDateObject", ArgumentSemantic.Strong)]
+        NSDate DayOfBirthDateObject { get; }
+
+        // @property (readonly, nonatomic, strong) NSDate * _Nullable expirationDateObject __attribute__((deprecated("Deprecated since Version 10. Please use the property "dateOfExpiryObject" instead.")));
+        [Obsolete]
+        [NullAllowed, Export("expirationDateObject", ArgumentSemantic.Strong)]
+        NSDate ExpirationDateObject { get; }
+
+        // -(instancetype _Nullable)initWithSurname:(NSString * _Nonnull)surname givenNames:(NSString * _Nonnull)givenNames dateOfBirth:(NSString * _Nonnull)dateOfBirth nationality:(NSString * _Nonnull)nationality placeOfBirth:(NSString * _Nonnull)placeOfBirth dateOfExpiry:(NSString * _Nonnull)dateOfExpiry documentNumber:(NSString * _Nonnull)documentNumber cardAccessNumber:(NSString * _Nonnull)cardAccessNumber germanIdFrontString:(NSString * _Nonnull)germanIdFrontString;
+        [Export("initWithSurname:givenNames:dateOfBirth:nationality:placeOfBirth:dateOfExpiry:documentNumber:cardAccessNumber:germanIdFrontString:")]
+        IntPtr Constructor(string surname, string givenNames, string dateOfBirth, string nationality, string placeOfBirth, string dateOfExpiry, string documentNumber, string cardAccessNumber, string germanIdFrontString);
     }
 
     // audit-objc-generics: @interface ALIDResult<__covariant ObjectType> : ALScanResult
@@ -2770,6 +2895,19 @@ namespace AnylineXamarinSDK.iOS
         // -(instancetype _Nullable)initWithJsonDictionary:(NSDictionary * _Nonnull)configDict;
         [Export("initWithJsonDictionary:")]
         IntPtr Constructor(NSDictionary configDict);
+
+        // @property (nonatomic, strong) ALIDFieldScanOptions * _Nullable idFieldScanOptions;
+        [NullAllowed, Export("idFieldScanOptions", ArgumentSemantic.Strong)]
+        ALIDFieldScanOptions IdFieldScanOptions { get; set; }
+    }
+
+    // @interface ALIDFieldScanOptions : NSObject
+    [BaseType(typeof(NSObject))]
+    interface ALIDFieldScanOptions
+    {
+        // -(instancetype _Nullable)initWithJsonDictionary:(NSDictionary * _Nonnull)configDict;
+        [Export("initWithJsonDictionary:")]
+        IntPtr Constructor(NSDictionary configDict);
     }
 
     // @interface ALMRZConfig : ALIDConfig
@@ -2785,6 +2923,19 @@ namespace AnylineXamarinSDK.iOS
         bool CropAndTransformID { get; set; }
     }
 
+    // @interface ALMRZFieldScanOptions : ALIDFieldScanOptions
+    [BaseType(typeof(ALIDFieldScanOptions))]
+    interface ALMRZFieldScanOptions
+    {
+        // @property (nonatomic) ALFieldScanOption dateOfIssue;
+        [Export("dateOfIssue", ArgumentSemantic.Assign)]
+        ALFieldScanOption DateOfIssue { get; set; }
+
+        // @property (nonatomic) ALFieldScanOption address;
+        [Export("address", ArgumentSemantic.Assign)]
+        ALFieldScanOption Address { get; set; }
+    }
+
     // @interface ALDrivingLicenseConfig : ALIDConfig
     [BaseType(typeof(ALIDConfig))]
     interface ALDrivingLicenseConfig
@@ -2794,10 +2945,88 @@ namespace AnylineXamarinSDK.iOS
         ALDrivingLicenseScanMode ScanMode { get; set; }
     }
 
+    // @interface ALDrivingLicenseFieldScanOptions : ALIDFieldScanOptions
+    [BaseType(typeof(ALIDFieldScanOptions))]
+    interface ALDrivingLicenseFieldScanOptions
+    {
+        // @property (nonatomic) ALFieldScanOption surname;
+        [Export("surname", ArgumentSemantic.Assign)]
+        ALFieldScanOption Surname { get; set; }
+
+        // @property (nonatomic) ALFieldScanOption givenNames;
+        [Export("givenNames", ArgumentSemantic.Assign)]
+        ALFieldScanOption GivenNames { get; set; }
+
+        // @property (nonatomic) ALFieldScanOption dateOfBirth;
+        [Export("dateOfBirth", ArgumentSemantic.Assign)]
+        ALFieldScanOption DateOfBirth { get; set; }
+
+        // @property (nonatomic) ALFieldScanOption placeOfBirth;
+        [Export("placeOfBirth", ArgumentSemantic.Assign)]
+        ALFieldScanOption PlaceOfBirth { get; set; }
+
+        // @property (nonatomic) ALFieldScanOption dateOfIssue;
+        [Export("dateOfIssue", ArgumentSemantic.Assign)]
+        ALFieldScanOption DateOfIssue { get; set; }
+
+        // @property (nonatomic) ALFieldScanOption dateOfExpiry;
+        [Export("dateOfExpiry", ArgumentSemantic.Assign)]
+        ALFieldScanOption DateOfExpiry { get; set; }
+
+        // @property (nonatomic) ALFieldScanOption authority;
+        [Export("authority", ArgumentSemantic.Assign)]
+        ALFieldScanOption Authority { get; set; }
+
+        // @property (nonatomic) ALFieldScanOption documentNumber;
+        [Export("documentNumber", ArgumentSemantic.Assign)]
+        ALFieldScanOption DocumentNumber { get; set; }
+
+        // @property (nonatomic) ALFieldScanOption categories;
+        [Export("categories", ArgumentSemantic.Assign)]
+        ALFieldScanOption Categories { get; set; }
+    }
+
     // @interface ALGermanIDFrontConfig : ALIDConfig
     [BaseType(typeof(ALIDConfig))]
     interface ALGermanIDFrontConfig
     {
+    }
+
+    // @interface ALGermanIDFrontFieldScanOptions : ALIDFieldScanOptions
+    [BaseType(typeof(ALIDFieldScanOptions))]
+    interface ALGermanIDFrontFieldScanOptions
+    {
+        // @property (nonatomic) ALFieldScanOption surname;
+        [Export("surname", ArgumentSemantic.Assign)]
+        ALFieldScanOption Surname { get; set; }
+
+        // @property (nonatomic) ALFieldScanOption givenNames;
+        [Export("givenNames", ArgumentSemantic.Assign)]
+        ALFieldScanOption GivenNames { get; set; }
+
+        // @property (nonatomic) ALFieldScanOption dateOfBirth;
+        [Export("dateOfBirth", ArgumentSemantic.Assign)]
+        ALFieldScanOption DateOfBirth { get; set; }
+
+        // @property (nonatomic) ALFieldScanOption nationality;
+        [Export("nationality", ArgumentSemantic.Assign)]
+        ALFieldScanOption Nationality { get; set; }
+
+        // @property (nonatomic) ALFieldScanOption placeOfBirth;
+        [Export("placeOfBirth", ArgumentSemantic.Assign)]
+        ALFieldScanOption PlaceOfBirth { get; set; }
+
+        // @property (nonatomic) ALFieldScanOption dateOfExpiry;
+        [Export("dateOfExpiry", ArgumentSemantic.Assign)]
+        ALFieldScanOption DateOfExpiry { get; set; }
+
+        // @property (nonatomic) ALFieldScanOption documentNumber;
+        [Export("documentNumber", ArgumentSemantic.Assign)]
+        ALFieldScanOption DocumentNumber { get; set; }
+
+        // @property (nonatomic) ALFieldScanOption cardAccessNumber;
+        [Export("cardAccessNumber", ArgumentSemantic.Assign)]
+        ALFieldScanOption CardAccessNumber { get; set; }
     }
 
     // @interface ALIDScanPlugin : ALAbstractScanPlugin
@@ -2807,19 +3036,19 @@ namespace AnylineXamarinSDK.iOS
     {
         // -(instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID licenseKey:(NSString * _Nonnull)licenseKey delegate:(id<ALIDPluginDelegate> _Nonnull)delegate idConfig:(ALIDConfig * _Nonnull)config error:(NSError * _Nullable * _Nullable)error;
         [Export("initWithPluginID:licenseKey:delegate:idConfig:error:")]
-        IntPtr Constructor([NullAllowed] string pluginID, string licenseKey, NSObject @delegate, ALIDConfig config, [NullAllowed] out NSError error);
+        IntPtr Constructor([NullAllowed] string pluginID, string licenseKey, ALIDPluginDelegate @delegate, ALIDConfig config, [NullAllowed] out NSError error);
 
         // @property (readonly, nonatomic, strong) NSHashTable<ALIDPluginDelegate> * _Nullable delegates;
         [NullAllowed, Export("delegates", ArgumentSemantic.Strong)]
-        NSSet Delegates { get; }
+        ALIDPluginDelegate Delegates { get; }
 
         // -(void)addDelegate:(id<ALIDPluginDelegate> _Nonnull)delegate;
         [Export("addDelegate:")]
-        void AddDelegate(NSObject @delegate);
+        void AddDelegate(ALIDPluginDelegate @delegate);
 
         // -(void)removeDelegate:(id<ALIDPluginDelegate> _Nonnull)delegate;
         [Export("removeDelegate:")]
-        void RemoveDelegate(NSObject @delegate);
+        void RemoveDelegate(ALIDPluginDelegate @delegate);
 
         // @property (readonly, nonatomic, strong) ALIDConfig * _Nullable idConfig;
         [NullAllowed, Export("idConfig", ArgumentSemantic.Strong)]
@@ -2907,6 +3136,7 @@ namespace AnylineXamarinSDK.iOS
     interface ALOCRResult
     {
         // @property (readonly, nonatomic, strong) NSString * _Nullable text __attribute__((deprecated("Deprecated since 3.10 Use result property instead.")));
+        [Obsolete]
         [NullAllowed, Export("text", ArgumentSemantic.Strong)]
         string Text { get; }
 
@@ -3033,6 +3263,7 @@ namespace AnylineXamarinSDK.iOS
         ALRange CharHeight { get; set; }
 
         // @property (nonatomic, strong) NSArray<NSString *> * _Nullable tesseractLanguages __attribute__((deprecated("Deprecated since 3.20. Use languages instead! This method still requires a copy of the traineddata.")));
+        [Obsolete]
         [NullAllowed, Export("tesseractLanguages", ArgumentSemantic.Strong)]
         string[] TesseractLanguages { get; set; }
 
@@ -3041,6 +3272,7 @@ namespace AnylineXamarinSDK.iOS
         string[] Languages { get; }
 
         // -(void)setLanguages:(NSArray<NSString *> * _Nonnull)languages __attribute__((deprecated("Deprecated since 4. Use languages - (BOOL)setLanguages:(NSArray<NSString *> *)languages error:(NSError *)error")));
+        [Obsolete]
         [Export("setLanguages:")]
         void SetLanguages(string[] languages);
 
@@ -3130,6 +3362,7 @@ namespace AnylineXamarinSDK.iOS
         bool SetOCRConfig(ALOCRConfig ocrConfig, [NullAllowed] out NSError error);
 
         // -(BOOL)copyTrainedData:(NSString * _Nonnull)trainedDataPath fileHash:(NSString * _Nullable)hash error:(NSError * _Nullable * _Nullable)error __attribute__((deprecated("Deprecated since 3.20. Copy of traineddata's is not needed anymore with new languages property.")));
+        [Obsolete]
         [Export("copyTrainedData:fileHash:error:")]
         bool CopyTrainedData(string trainedDataPath, [NullAllowed] string hash, [NullAllowed] out NSError error);
 
@@ -3214,16 +3447,19 @@ namespace AnylineXamarinSDK.iOS
         void DidFindResult(AnylineOCRModuleView anylineOCRModuleView, ALOCRResult result);
 
         // @optional -(void)anylineOCRModuleView:(AnylineOCRModuleView * _Nonnull)anylineOCRModuleView reportsVariable:(NSString * _Nonnull)variableName value:(id _Nonnull)value __attribute__((deprecated("Deprecated since 3.10 Use AnylineDebugDelegate instead.")));
+        [Obsolete]
         [Export("anylineOCRModuleView:reportsVariable:value:")]
         [Abstract]
         void ReportsVariable(AnylineOCRModuleView anylineOCRModuleView, string variableName, NSObject value);
 
         // @optional -(void)anylineOCRModuleView:(AnylineOCRModuleView * _Nonnull)anylineOCRModuleView reportsRunFailure:(ALOCRError)error __attribute__((deprecated("Deprecated since 3.10 Use AnylineDebugDelegate instead.")));
+        [Obsolete]
         [Export("anylineOCRModuleView:reportsRunFailure:")]
         [Abstract]
         void ReportsRunFailure(AnylineOCRModuleView anylineOCRModuleView, ALOCRError error);
 
         // @optional -(BOOL)anylineOCRModuleView:(AnylineOCRModuleView * _Nonnull)anylineOCRModuleView textOutlineDetected:(ALSquare * _Nonnull)outline __attribute__((deprecated("Deprecated since 3.10 Use AnylineDebugDelegate instead.")));
+        [Obsolete]
         [Export("anylineOCRModuleView:textOutlineDetected:")]
         [Abstract]
         bool TextOutlineDetected(AnylineOCRModuleView anylineOCRModuleView, ALSquare outline);
@@ -3476,12 +3712,7 @@ namespace AnylineXamarinSDK.iOS
         [Export("anylineDocumentModuleView:hasResult:fullImage:documentCorners:")]
         [Abstract]
         void HasResult(AnylineDocumentModuleView anylineDocumentModuleView, UIImage transformedImage, UIImage fullFrame, ALSquare corners);
-
-        // @optional -(void)anylineDocumentModuleView:(AnylineDocumentModuleView *)anylineDocumentModuleView hasResult:(UIImage *)transformedImage fullImage:(UIImage *)fullFrame __attribute__((deprecated("Deprecated since 3.6.1 Use method anylineDocumentModuleView:hasResult:fullImage:documentCorners: instead.")));
-        //[Export("anylineDocumentModuleView:hasResult:fullImage:")]
-        //[Abstract]
-        //void HasResult(AnylineDocumentModuleView anylineDocumentModuleView, UIImage transformedImage, UIImage fullFrame);
-
+        
         // @optional -(void)anylineDocumentModuleView:(AnylineDocumentModuleView *)anylineDocumentModuleView detectedPictureCorners:(ALSquare *)corners inImage:(UIImage *)image;
         [Export("anylineDocumentModuleView:detectedPictureCorners:inImage:")]
         [Abstract]
