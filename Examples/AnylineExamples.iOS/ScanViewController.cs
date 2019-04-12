@@ -32,21 +32,7 @@ namespace AnylineExamples.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-        }
 
-        private void ConnectDelegateToScanPlugin()
-        {
-            (_scanView.ScanViewPlugin as ALIDScanViewPlugin)?.IdScanPlugin.AddDelegate(_resultDelegate);
-            (_scanView.ScanViewPlugin as ALBarcodeScanViewPlugin)?.BarcodeScanPlugin.AddDelegate(_resultDelegate);
-            (_scanView.ScanViewPlugin as ALOCRScanViewPlugin)?.OcrScanPlugin.AddDelegate(_resultDelegate);
-            (_scanView.ScanViewPlugin as ALMeterScanViewPlugin)?.MeterScanPlugin.AddDelegate(_resultDelegate);
-            (_scanView.ScanViewPlugin as ALDocumentScanViewPlugin)?.DocumentScanPlugin.AddDelegate(_resultDelegate);
-            (_scanView.ScanViewPlugin as ALLicensePlateScanViewPlugin)?.LicensePlateScanPlugin.AddDelegate(_resultDelegate);
-        }
-
-        public override void ViewDidAppear(bool animated)
-        {
-            base.ViewDidAppear(animated);
 
             NSError error = null;
 
@@ -60,7 +46,7 @@ namespace AnylineExamples.iOS
 
                 var configPath = NSBundle.MainBundle.PathForResource(@"" + _jsonPath.Replace(".json", ""), @"json");
                 _scanView = ALScanView.ScanViewForFrame(_frame, configPath, LicenseKey, _resultDelegate, out error);
-                
+
                 if (error != null)
                 {
                     throw new Exception(error.LocalizedDescription);
@@ -69,7 +55,7 @@ namespace AnylineExamples.iOS
                 // KNOWN ISSUE (OCRScanPlugin only): the customCmdFile is not loading the file correctly. therefore, it has to be added via code:
                 if (_scanView.ScanViewPlugin is ALOCRScanViewPlugin)
                 {
-                    
+
                     var file = File.ReadAllText(configPath);
                     NSData data = NSData.FromString(file);
                     NSDictionary dict = NSJsonSerialization.Deserialize(data, 0, out error) as NSDictionary;
@@ -92,11 +78,11 @@ namespace AnylineExamples.iOS
                         }
                     }
                 }
-                
+
                 // KNOWN ISSUE: the result delegate has to be added specifically to the scan plugin.
                 // this should be automatically done already with the ScanViewForFrame call.
                 ConnectDelegateToScanPlugin();
-                
+
                 View.AddSubview(_scanView);
                 _scanView.StartCamera();
 
@@ -107,9 +93,25 @@ namespace AnylineExamples.iOS
                 ShowAlert("Init Error", e.Message);
             }
 
+        }
+
+        private void ConnectDelegateToScanPlugin()
+        {
+            (_scanView.ScanViewPlugin as ALIDScanViewPlugin)?.IdScanPlugin.AddDelegate(_resultDelegate);
+            (_scanView.ScanViewPlugin as ALBarcodeScanViewPlugin)?.BarcodeScanPlugin.AddDelegate(_resultDelegate);
+            (_scanView.ScanViewPlugin as ALOCRScanViewPlugin)?.OcrScanPlugin.AddDelegate(_resultDelegate);
+            (_scanView.ScanViewPlugin as ALMeterScanViewPlugin)?.MeterScanPlugin.AddDelegate(_resultDelegate);
+            (_scanView.ScanViewPlugin as ALDocumentScanViewPlugin)?.DocumentScanPlugin.AddDelegate(_resultDelegate);
+            (_scanView.ScanViewPlugin as ALLicensePlateScanViewPlugin)?.LicensePlateScanPlugin.AddDelegate(_resultDelegate);
+        }
+
+        public override void ViewDidAppear(bool animated)
+        {
+            base.ViewDidAppear(animated);
+
             if (!_initialized) return;
 
-            error = null;
+            NSError error = null;
             var success = _scanView.ScanViewPlugin.StartAndReturnError(out error);
             if (!success)
             {

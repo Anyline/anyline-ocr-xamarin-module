@@ -36,7 +36,8 @@ namespace AnylineExamples.iOS
             {
                 if (obj is UIImage) return new Dictionary<string, object>() { { "Image", obj } }.CreatePropertyDictionary();
 
-                foreach (var prop in obj.GetType().GetProperties())
+                var props = obj.GetType().GetProperties();
+                foreach (var prop in props)
                 {
                     switch (prop.Name)
                     {
@@ -59,10 +60,17 @@ namespace AnylineExamples.iOS
 
                             var value = prop.GetValue(obj, null);
 
-                            if (prop.GetCustomAttributes(typeof(ObsoleteAttribute), true).ToArray().Length > 0)
-                                continue;
+                            if (value != null)
+                            {
+                                var attribs = prop.GetCustomAttributes(typeof(ObsoleteAttribute), true);
 
-                            dict.AddProperty(prop.Name, value);
+                                var allAttribs = prop.GetCustomAttributesData();
+
+                                if (attribs.ToArray().Length > 0)
+                                    continue;
+
+                                dict.AddProperty(prop.Name, value);
+                            }
                             break;
                     }
                 }

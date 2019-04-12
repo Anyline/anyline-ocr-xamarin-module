@@ -396,6 +396,10 @@ namespace AnylineXamarinSDK.iOS
         [Export("cancelOnResult")]
         bool CancelOnResult { get; set; }
 
+        // @property (assign, nonatomic) int delayStartScanTime;
+        [Export("delayStartScanTime")]
+        int DelayStartScanTime { get; set; }
+
         // -(instancetype _Nullable)initWithDictionary:(NSDictionary * _Nonnull)configDict;
         [Export("initWithDictionary:")]
         IntPtr Constructor(NSDictionary configDict);
@@ -409,6 +413,10 @@ namespace AnylineXamarinSDK.iOS
         // -(instancetype _Nullable)initWithJsonFilePath:(NSString * _Nonnull)jsonFile;
         [Export("initWithJsonFilePath:")]
         IntPtr Constructor(string jsonFile);
+
+        // -(instancetype _Nullable)initWithScanFeedbackConfig:(ALScanFeedbackConfig * _Nonnull)scanFeedbackConfig cutoutConfig:(ALCutoutConfig * _Nonnull)cutoutConfig cancelOnResult:(BOOL)cancelOnResult delayStartScanTime:(int)delayStartScanTime;
+        [Export("initWithScanFeedbackConfig:cutoutConfig:cancelOnResult:delayStartScanTime:")]
+        IntPtr Constructor(ALScanFeedbackConfig scanFeedbackConfig, ALCutoutConfig cutoutConfig, bool cancelOnResult, int delayStartScanTime);
 
         // -(instancetype _Nullable)initWithScanFeedbackConfig:(ALScanFeedbackConfig * _Nonnull)scanFeedbackConfig cutoutConfig:(ALCutoutConfig * _Nonnull)cutoutConfig cancelOnResult:(BOOL)cancelOnResult;
         [Export("initWithScanFeedbackConfig:cutoutConfig:cancelOnResult:")]
@@ -1546,7 +1554,7 @@ namespace AnylineXamarinSDK.iOS
         // @property (assign, nonatomic) CGSize videoResolution;
         [Export("videoResolution", ArgumentSemantic.Assign)]
         CGSize VideoResolution { get; set; }
-        
+
         // -(BOOL)addBarcodeDelegate:(id<AnylineNativeBarcodeDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
         [Export("addBarcodeDelegate:error:")]
         bool AddBarcodeDelegate(NSObject @delegate, [NullAllowed] out NSError error);
@@ -1662,7 +1670,7 @@ namespace AnylineXamarinSDK.iOS
 
         // -(BOOL)start:(id<ALImageProvider> _Nonnull)imageProvider error:(NSError * _Nullable * _Nullable)error;
         [Export("start:error:")]
-        bool Start(IALImageProvider imageProvider, [NullAllowed] out NSError error);
+        bool Start(NSObject imageProvider, [NullAllowed] out NSError error);
 
         // -(BOOL)stopAndReturnError:(NSError * _Nullable * _Nullable)error;
         [Export("stopAndReturnError:")]
@@ -1674,7 +1682,6 @@ namespace AnylineXamarinSDK.iOS
 
         // -(BOOL)isRunning;
         [Export("isRunning")]
-
         bool IsRunning { get; }
 
         // -(void)addInfoDelegate:(id<ALInfoDelegate> _Nonnull)infoDelegate;
@@ -1684,6 +1691,18 @@ namespace AnylineXamarinSDK.iOS
         // -(void)removeInfoDelegate:(id<ALInfoDelegate> _Nonnull)infoDelegate;
         [Export("removeInfoDelegate:")]
         void RemoveInfoDelegate(IALInfoDelegate infoDelegate);
+
+        // @property (nonatomic) int delayStartScanTime;
+        [Export("delayStartScanTime")]
+        int DelayStartScanTime { get; set; }
+
+        // -(BOOL)delayedScanTimeFulfilled;
+        [Export("delayedScanTimeFulfilled")]
+        bool DelayedScanTimeFulfilled { get; }
+
+        // -(void)setCurrentScanStartTime;
+        [Export("setCurrentScanStartTime")]
+        void SetCurrentScanStartTime();
 
         // @property (assign, nonatomic) NSInteger confidence;
         [Export("confidence")]
@@ -2453,9 +2472,9 @@ namespace AnylineXamarinSDK.iOS
         void DidFindResult(AnylineEnergyModuleView anylineEnergyModuleView, ALEnergyResult scanResult);
 
         // @optional -(void)anylineEnergyModuleView:(AnylineEnergyModuleView * _Nonnull)anylineEnergyModuleView didFindScanResult:(NSString * _Nonnull)scanResult cropImage:(UIImage * _Nonnull)image fullImage:(UIImage * _Nonnull)fullImage inMode:(ALScanMode)scanMode __attribute__((deprecated("Deprecated since 3.10 Use AnylineDebugDelegate instead.")));
-        [Obsolete("Deprecated since 3.10 Use AnylineDebugDelegate instead.")]
-        [Export("anylineEnergyModuleView:didFindScanResult:cropImage:fullImage:inMode:")]
-        void DidFindScanResult(AnylineEnergyModuleView anylineEnergyModuleView, string scanResult, UIImage image, UIImage fullImage, ALScanMode scanMode);
+        //[Obsolete("Deprecated since 3.10 Use AnylineDebugDelegate instead.")]
+        //[Export("anylineEnergyModuleView:didFindScanResult:cropImage:fullImage:inMode:")]
+        //void DidFindScanResult(AnylineEnergyModuleView anylineEnergyModuleView, string scanResult, UIImage image, UIImage fullImage, ALScanMode scanMode);
     }
 
     // @interface ALBarcodeScanViewPlugin : ALAbstractScanViewPlugin
@@ -2581,39 +2600,39 @@ namespace AnylineXamarinSDK.iOS
         UIImage FaceImage { get; set; }
 
         // @property (readonly, nonatomic, strong) NSString * _Nullable surNames __attribute__((deprecated("Deprecated since Version 10. Please use the property "surname" instead.")));
-        [Obsolete]
-        [NullAllowed, Export("surNames", ArgumentSemantic.Strong)]
-        string SurNames { get; }
+        //[Obsolete("", false)]
+        //[NullAllowed, Export("surNames", ArgumentSemantic.Strong)]
+        //string SurNames { get; }
 
         // @property (readonly, nonatomic, strong) NSString * _Nullable dayOfBirth __attribute__((deprecated("Deprecated since Version 10. Please use the property "dayOfBirth" instead.")));
-        [Obsolete]
-        [NullAllowed, Export("dayOfBirth", ArgumentSemantic.Strong)]
-        string DayOfBirth { get; }
+        //[Obsolete("", false)]
+        //[NullAllowed, Export("dayOfBirth", ArgumentSemantic.Strong)]
+        //string DayOfBirth { get; }
 
         // @property (readonly, nonatomic, strong) NSString * _Nullable issuingDate __attribute__((deprecated("Deprecated since Version 10. Please use the property "issuingDate" instead.")));
-        [Obsolete]
-        [NullAllowed, Export("issuingDate", ArgumentSemantic.Strong)]
-        string IssuingDate { get; }
+        //[Obsolete("", false)]
+        //[NullAllowed, Export("issuingDate", ArgumentSemantic.Strong)]
+        //string IssuingDate { get; }
 
         // @property (readonly, nonatomic, strong) NSString * _Nullable expirationDate __attribute__((deprecated("Deprecated since Version 10. Please use the property "expirationDate" instead.")));
-        [Obsolete]
-        [NullAllowed, Export("expirationDate", ArgumentSemantic.Strong)]
-        string ExpirationDate { get; }
+        //[Obsolete("", false)]
+        //[NullAllowed, Export("expirationDate", ArgumentSemantic.Strong)]
+        //string ExpirationDate { get; }
 
         // @property (readonly, nonatomic, strong) NSDate * _Nullable dayOfBirthDateObject __attribute__((deprecated("Deprecated since Version 10. Please use the property "dateOfBirthObject" instead.")));
-        [Obsolete]
-        [NullAllowed, Export("dayOfBirthDateObject", ArgumentSemantic.Strong)]
-        NSDate DayOfBirthDateObject { get; }
+        //[Obsolete("", false)]
+        //[NullAllowed, Export("dayOfBirthDateObject", ArgumentSemantic.Strong)]
+        //NSDate DayOfBirthDateObject { get; }
 
         // @property (readonly, nonatomic, strong) NSDate * _Nullable issuingDateObject __attribute__((deprecated("Deprecated since Version 10. Please use the property "dateOfIssueObject" instead.")));
-        [Obsolete]
-        [NullAllowed, Export("issuingDateObject", ArgumentSemantic.Strong)]
-        NSDate IssuingDateObject { get; }
+        //[Obsolete("", false)]
+        //[NullAllowed, Export("issuingDateObject", ArgumentSemantic.Strong)]
+        //NSDate IssuingDateObject { get; }
 
         // @property (readonly, nonatomic, strong) NSDate * _Nullable expirationDateObject __attribute__((deprecated("Deprecated since Version 10. Please use the property "dateOfExpiryObject" instead.")));
-        [Obsolete]
-        [NullAllowed, Export("expirationDateObject", ArgumentSemantic.Strong)]
-        NSDate ExpirationDateObject { get; }
+        //[Obsolete("", false)]
+        //[NullAllowed, Export("expirationDateObject", ArgumentSemantic.Strong)]
+        //NSDate ExpirationDateObject { get; }
 
         // -(instancetype _Nullable)initWithSurname:(NSString * _Nullable)surname givenNames:(NSString * _Nullable)givenNames dateOfBirth:(NSString * _Nullable)dateOfBirth placeOfBirth:(NSString * _Nullable)placeOfBirth dateOfIssue:(NSString * _Nullable)dateOfIssue dateOfExpiry:(NSString * _Nullable)dateOfExpiry authority:(NSString * _Nullable)authority documentNumber:(NSString * _Nullable)documentNumber categories:(NSString * _Nullable)categories drivingLicenseString:(NSString * _Nullable)drivingLicenseString formattedDateOfExpiry:(NSString * _Nullable)formattedDateOfExpiry formattedDateOfBirth:(NSString * _Nullable)formattedDateOfBirth formattedDateOfIssue:(NSString * _Nullable)formattedDateOfIssue;
         [Export("initWithSurname:givenNames:dateOfBirth:placeOfBirth:dateOfIssue:dateOfExpiry:authority:documentNumber:categories:drivingLicenseString:formattedDateOfExpiry:formattedDateOfBirth:formattedDateOfIssue:")]
@@ -2708,9 +2727,9 @@ namespace AnylineXamarinSDK.iOS
         [NullAllowed, Export("checkDigitPersonalNumber", ArgumentSemantic.Strong)]
         string CheckDigitPersonalNumber { get; }
 
-        // @property (readonly, nonatomic, strong) NSString * _Nullable allCheckDigitsValid;
+        // @property (readonly, nonatomic, strong) BOOL * _Nullable allCheckDigitsValid;
         [NullAllowed, Export("allCheckDigitsValid", ArgumentSemantic.Strong)]
-        string AllCheckDigitsValid { get; }
+        bool AllCheckDigitsValid { get; }
 
         // @property (readonly, nonatomic, strong) NSDate * _Nullable dateOfBirthObject;
         [NullAllowed, Export("dateOfBirthObject", ArgumentSemantic.Strong)]
@@ -2725,65 +2744,65 @@ namespace AnylineXamarinSDK.iOS
         NSDate DateOfIssueObject { get; }
 
         // @property (readonly, nonatomic, strong) NSString * _Nullable surNames __attribute__((deprecated("Deprecated since Version 10. Please use the property "surname" instead.")));
-        [Obsolete]
-        [NullAllowed, Export("surNames", ArgumentSemantic.Strong)]
-        string SurNames { get; }
+        //[Obsolete("", false)]
+        //[NullAllowed, Export("surNames", ArgumentSemantic.Strong)]
+        //string SurNames { get; }
 
         // @property (readonly, nonatomic, strong) NSString * _Nullable dayOfBirth __attribute__((deprecated("Deprecated since Version 10. Please use the property "dateOfBirth" instead.")));
-        [Obsolete]
-        [NullAllowed, Export("dayOfBirth", ArgumentSemantic.Strong)]
-        string DayOfBirth { get; }
+        //[Obsolete("", false)]
+        //[NullAllowed, Export("dayOfBirth", ArgumentSemantic.Strong)]
+        //string DayOfBirth { get; }
 
         // @property (readonly, nonatomic, strong) NSString * _Nullable expirationDate __attribute__((deprecated("Deprecated since Version 10. Please use the property "dateOfExpiry" instead.")));
-        [Obsolete]
-        [NullAllowed, Export("expirationDate", ArgumentSemantic.Strong)]
-        string ExpirationDate { get; }
+        //[Obsolete("", false)]
+        //[NullAllowed, Export("expirationDate", ArgumentSemantic.Strong)]
+        //string ExpirationDate { get; }
 
         // @property (readonly, nonatomic, strong) NSString * _Nullable checkdigitNumber __attribute__((deprecated("Deprecated since Version 10. Please use the property "checkDigitDocumentNumber" instead.")));
-        [Obsolete]
-        [NullAllowed, Export("checkdigitNumber", ArgumentSemantic.Strong)]
-        string CheckdigitNumber { get; }
+        //[Obsolete("", false)]
+        //[NullAllowed, Export("checkdigitNumber", ArgumentSemantic.Strong)]
+        //string CheckdigitNumber { get; }
 
         // @property (readonly, nonatomic, strong) NSString * _Nullable checkdigitExpirationDate __attribute__((deprecated("Deprecated since Version 10. Please use the property "checkDigitDateOfExpiry" instead.")));
-        [Obsolete]
-        [NullAllowed, Export("checkdigitExpirationDate", ArgumentSemantic.Strong)]
-        string CheckdigitExpirationDate { get; }
+        //[Obsolete("", false)]
+        //[NullAllowed, Export("checkdigitExpirationDate", ArgumentSemantic.Strong)]
+        //string CheckdigitExpirationDate { get; }
 
         // @property (readonly, nonatomic, strong) NSString * _Nullable checkdigitDayOfBirth __attribute__((deprecated("Deprecated since Version 10. Please use the property "checkDigitDateOfBirth" instead.")));
-        [Obsolete]
-        [NullAllowed, Export("checkdigitDayOfBirth", ArgumentSemantic.Strong)]
-        string CheckdigitDayOfBirth { get; }
+        //[Obsolete("", false)]
+        //[NullAllowed, Export("checkdigitDayOfBirth", ArgumentSemantic.Strong)]
+        //string CheckdigitDayOfBirth { get; }
 
         // @property (readonly, nonatomic, strong) NSString * _Nullable checkdigitFinal __attribute__((deprecated("Deprecated since Version 10. Please use the property "checkDigitFinal" instead.")));
-        [Obsolete]
-        [NullAllowed, Export("checkdigitFinal", ArgumentSemantic.Strong)]
-        string CheckdigitFinal { get; }
+        //[Obsolete("", false)]
+        //[NullAllowed, Export("checkdigitFinal", ArgumentSemantic.Strong)]
+        //string CheckdigitFinal { get; }
 
         // @property (readonly, nonatomic, strong) NSString * _Nullable issuingDate __attribute__((deprecated("Deprecated since Version 10. Please use the property "dateOfIssue" instead.")));
-        [Obsolete]
-        [NullAllowed, Export("issuingDate", ArgumentSemantic.Strong)]
-        string IssuingDate { get; }
+        //[Obsolete("", false)]
+        //[NullAllowed, Export("issuingDate", ArgumentSemantic.Strong)]
+        //string IssuingDate { get; }
 
         // @property (readonly, nonatomic, strong) NSString * _Nullable personalNumber2 __attribute__((deprecated("Deprecated since Version 10. Please use the property "optionalData" instead.")));
-        [Obsolete]
-        [NullAllowed, Export("personalNumber2", ArgumentSemantic.Strong)]
-        string PersonalNumber2 { get; }
+        //[Obsolete("", false)]
+        //[NullAllowed, Export("personalNumber2", ArgumentSemantic.Strong)]
+        //string PersonalNumber2 { get; }
 
         // @property (readonly, nonatomic, strong) NSDate * _Nullable expirationDateObject __attribute__((deprecated("Deprecated since Version 10. Please use the property "dateOfExpiryObject" instead.")));
-        [Obsolete]
-        [NullAllowed, Export("expirationDateObject", ArgumentSemantic.Strong)]
-        NSDate ExpirationDateObject { get; }
+        //[Obsolete("", false)]
+        //[NullAllowed, Export("expirationDateObject", ArgumentSemantic.Strong)]
+        //NSDate ExpirationDateObject { get; }
 
         // @property (readonly, nonatomic, strong) NSDate * _Nullable dayOfBirthDateObject __attribute__((deprecated("Deprecated since Version 10. Please use the property "dateOfBirthObject" instead.")));
-        [Obsolete]
-        [NullAllowed, Export("dayOfBirthDateObject", ArgumentSemantic.Strong)]
-        NSDate DayOfBirthDateObject { get; }
+        //[Obsolete("", false)]
+        //[NullAllowed, Export("dayOfBirthDateObject", ArgumentSemantic.Strong)]
+        //NSDate DayOfBirthDateObject { get; }
 
         // @property (readonly, nonatomic, strong) NSDate * _Nullable issuingDateObject __attribute__((deprecated("Deprecated since Version 10. Please use the property "dateOfIssueObject" instead.")));
-        [Obsolete]
-        [NullAllowed, Export("issuingDateObject", ArgumentSemantic.Strong)]
-        NSDate IssuingDateObject { get; }
-        
+        //[Obsolete("", false)]
+        //[NullAllowed, Export("issuingDateObject", ArgumentSemantic.Strong)]
+        //NSDate IssuingDateObject { get; }
+
         // -(instancetype _Nullable)initWithSurname:(NSString * _Nullable)surname givenNames:(NSString * _Nullable)givenNames dateOfBirth:(NSString * _Nullable)dateOfBirth dateOfExpiry:(NSString * _Nullable)dateOfExpiry documentNumber:(NSString * _Nullable)documentNumber documentType:(NSString * _Nullable)documentType issuingCountryCode:(NSString * _Nullable)issuingCountryCode nationalityCountryCode:(NSString * _Nullable)nationalityCountryCode sex:(NSString * _Nullable)sex personalNumber:(NSString * _Nullable)personalNumber optionalData:(NSString * _Nullable)optionalData checkDigitDateOfExpiry:(NSString * _Nullable)checkDigitDateOfExpiry checkDigitDocumentNumber:(NSString * _Nullable)checkDigitDocumentNumber checkDigitDateOfBirth:(NSString * _Nullable)checkDigitDateOfBirth checkDigitFinal:(NSString * _Nullable)checkDigitFinal checkDigitPersonalNumber:(NSString * _Nullable)checkDigitPersonalNumber allCheckDigitsValid:(NSString * _Nullable)allCheckDigitsValid address:(NSString * _Nullable)address dateOfIssue:(NSString * _Nullable)dateOfIssue mrzString:(NSString * _Nullable)mrzString formattedDateOfExpiry:(NSString * _Nullable)formattedDateOfExpiry formattedDateOfBirth:(NSString * _Nullable)formattedDateOfBirth formattedDateOfIssue:(NSString * _Nullable)formattedDateOfIssue;
         [Export("initWithSurname:givenNames:dateOfBirth:dateOfExpiry:documentNumber:documentType:issuingCountryCode:nationalityCountryCode:sex:personalNumber:optionalData:checkDigitDateOfExpiry:checkDigitDocumentNumber:checkDigitDateOfBirth:checkDigitFinal:checkDigitPersonalNumber:allCheckDigitsValid:address:dateOfIssue:mrzString:formattedDateOfExpiry:formattedDateOfBirth:formattedDateOfIssue:")]
         IntPtr Constructor([NullAllowed] string surname, [NullAllowed] string givenNames, [NullAllowed] string dateOfBirth, [NullAllowed] string dateOfExpiry, [NullAllowed] string documentNumber, [NullAllowed] string documentType, [NullAllowed] string issuingCountryCode, [NullAllowed] string nationalityCountryCode, [NullAllowed] string sex, [NullAllowed] string personalNumber, [NullAllowed] string optionalData, [NullAllowed] string checkDigitDateOfExpiry, [NullAllowed] string checkDigitDocumentNumber, [NullAllowed] string checkDigitDateOfBirth, [NullAllowed] string checkDigitFinal, [NullAllowed] string checkDigitPersonalNumber, [NullAllowed] string allCheckDigitsValid, [NullAllowed] string address, [NullAllowed] string dateOfIssue, [NullAllowed] string mrzString, [NullAllowed] string formattedDateOfExpiry, [NullAllowed] string formattedDateOfBirth, [NullAllowed] string formattedDateOfIssue);
@@ -2846,29 +2865,29 @@ namespace AnylineXamarinSDK.iOS
         UIImage FaceImage { get; set; }
 
         // @property (readonly, nonatomic, strong) NSString * _Nullable surNames __attribute__((deprecated("Deprecated since Version 10. Please use the property "surname" instead.")));
-        [Obsolete]
-        [NullAllowed, Export("surNames", ArgumentSemantic.Strong)]
-        string SurNames { get; }
+        //[Obsolete("", false)]
+        //[NullAllowed, Export("surNames", ArgumentSemantic.Strong)]
+        //string SurNames { get; }
 
         // @property (readonly, nonatomic, strong) NSString * _Nullable dayOfBirth __attribute__((deprecated("Deprecated since Version 10. Please use the property "dateOfBirth" instead.")));
-        [Obsolete]
-        [NullAllowed, Export("dayOfBirth", ArgumentSemantic.Strong)]
-        string DayOfBirth { get; }
+        //[Obsolete("", false)]
+        //[NullAllowed, Export("dayOfBirth", ArgumentSemantic.Strong)]
+        //string DayOfBirth { get; }
 
         // @property (readonly, nonatomic, strong) NSString * _Nullable expirationDate __attribute__((deprecated("Deprecated since Version 10. Please use the property "dateOfExpiry" instead.")));
-        [Obsolete]
-        [NullAllowed, Export("expirationDate", ArgumentSemantic.Strong)]
-        string ExpirationDate { get; }
+        //[Obsolete("", false)]
+        //[NullAllowed, Export("expirationDate", ArgumentSemantic.Strong)]
+        //string ExpirationDate { get; }
 
         // @property (readonly, nonatomic, strong) NSDate * _Nullable dayOfBirthDateObject __attribute__((deprecated("Deprecated since Version 10. Please use the property "dateOfBirthObject" instead.")));
-        [Obsolete]
-        [NullAllowed, Export("dayOfBirthDateObject", ArgumentSemantic.Strong)]
-        NSDate DayOfBirthDateObject { get; }
+        //[Obsolete("", false)]
+        //[NullAllowed, Export("dayOfBirthDateObject", ArgumentSemantic.Strong)]
+        //NSDate DayOfBirthDateObject { get; }
 
         // @property (readonly, nonatomic, strong) NSDate * _Nullable expirationDateObject __attribute__((deprecated("Deprecated since Version 10. Please use the property "dateOfExpiryObject" instead.")));
-        [Obsolete]
-        [NullAllowed, Export("expirationDateObject", ArgumentSemantic.Strong)]
-        NSDate ExpirationDateObject { get; }
+        //[Obsolete("", false)]
+        //[NullAllowed, Export("expirationDateObject", ArgumentSemantic.Strong)]
+        //NSDate ExpirationDateObject { get; }
 
         // -(instancetype _Nullable)initWithSurname:(NSString * _Nonnull)surname givenNames:(NSString * _Nonnull)givenNames dateOfBirth:(NSString * _Nonnull)dateOfBirth nationality:(NSString * _Nonnull)nationality placeOfBirth:(NSString * _Nonnull)placeOfBirth dateOfExpiry:(NSString * _Nonnull)dateOfExpiry documentNumber:(NSString * _Nonnull)documentNumber cardAccessNumber:(NSString * _Nonnull)cardAccessNumber germanIdFrontString:(NSString * _Nonnull)germanIdFrontString;
         [Export("initWithSurname:givenNames:dateOfBirth:nationality:placeOfBirth:dateOfExpiry:documentNumber:cardAccessNumber:germanIdFrontString:")]
@@ -2880,8 +2899,9 @@ namespace AnylineXamarinSDK.iOS
     interface ALIDResult
     {
         // @property (readonly, assign, nonatomic) BOOL allCheckDigitsValid;
-        [Export("allCheckDigitsValid")]
-        bool AllCheckDigitsValid { get; }
+        //[Obsolete("", false)]
+        //[Export("allCheckDigitsValid")]
+        //bool AllCheckDigitsValid { get; }
 
         // -(instancetype _Nullable)initWithResult:(ObjectType _Nonnull)result image:(UIImage * _Nonnull)image fullImage:(UIImage * _Nullable)fullImage confidence:(NSInteger)confidence pluginID:(NSString * _Nonnull)pluginID allCheckDigitsValid:(BOOL)allCheckDigitsValid;
         [Export("initWithResult:image:fullImage:confidence:pluginID:allCheckDigitsValid:")]
@@ -3044,11 +3064,11 @@ namespace AnylineXamarinSDK.iOS
 
         // -(void)addDelegate:(id<ALIDPluginDelegate> _Nonnull)delegate;
         [Export("addDelegate:")]
-        void AddDelegate(ALIDPluginDelegate @delegate);
+        void AddDelegate(NSObject @delegate);
 
         // -(void)removeDelegate:(id<ALIDPluginDelegate> _Nonnull)delegate;
         [Export("removeDelegate:")]
-        void RemoveDelegate(ALIDPluginDelegate @delegate);
+        void RemoveDelegate(NSObject @delegate);
 
         // @property (readonly, nonatomic, strong) ALIDConfig * _Nullable idConfig;
         [NullAllowed, Export("idConfig", ArgumentSemantic.Strong)]
@@ -3136,9 +3156,9 @@ namespace AnylineXamarinSDK.iOS
     interface ALOCRResult
     {
         // @property (readonly, nonatomic, strong) NSString * _Nullable text __attribute__((deprecated("Deprecated since 3.10 Use result property instead.")));
-        [Obsolete]
-        [NullAllowed, Export("text", ArgumentSemantic.Strong)]
-        string Text { get; }
+        //[Obsolete("", false)]
+        //[NullAllowed, Export("text", ArgumentSemantic.Strong)]
+        //string Text { get; }
 
         // @property (readonly, nonatomic, strong) UIImage * _Nullable thresholdedImage;
         [NullAllowed, Export("thresholdedImage", ArgumentSemantic.Strong)]
@@ -3263,18 +3283,18 @@ namespace AnylineXamarinSDK.iOS
         ALRange CharHeight { get; set; }
 
         // @property (nonatomic, strong) NSArray<NSString *> * _Nullable tesseractLanguages __attribute__((deprecated("Deprecated since 3.20. Use languages instead! This method still requires a copy of the traineddata.")));
-        [Obsolete]
-        [NullAllowed, Export("tesseractLanguages", ArgumentSemantic.Strong)]
-        string[] TesseractLanguages { get; set; }
+        //[Obsolete("", false)]
+        //[NullAllowed, Export("tesseractLanguages", ArgumentSemantic.Strong)]
+        //string[] TesseractLanguages { get; set; }
 
         // @property (readonly, copy, nonatomic) NSArray<NSString *> * _Nullable languages;
         [NullAllowed, Export("languages", ArgumentSemantic.Copy)]
         string[] Languages { get; }
 
         // -(void)setLanguages:(NSArray<NSString *> * _Nonnull)languages __attribute__((deprecated("Deprecated since 4. Use languages - (BOOL)setLanguages:(NSArray<NSString *> *)languages error:(NSError *)error")));
-        [Obsolete]
-        [Export("setLanguages:")]
-        void SetLanguages(string[] languages);
+        //[Obsolete("", false)]
+        //[Export("setLanguages:")]
+        //void SetLanguages(string[] languages);
 
         // -(BOOL)setLanguages:(NSArray<NSString *> * _Nonnull)languages error:(NSError * _Nullable * _Nullable)error;
         [Export("setLanguages:error:")]
@@ -3362,9 +3382,9 @@ namespace AnylineXamarinSDK.iOS
         bool SetOCRConfig(ALOCRConfig ocrConfig, [NullAllowed] out NSError error);
 
         // -(BOOL)copyTrainedData:(NSString * _Nonnull)trainedDataPath fileHash:(NSString * _Nullable)hash error:(NSError * _Nullable * _Nullable)error __attribute__((deprecated("Deprecated since 3.20. Copy of traineddata's is not needed anymore with new languages property.")));
-        [Obsolete]
-        [Export("copyTrainedData:fileHash:error:")]
-        bool CopyTrainedData(string trainedDataPath, [NullAllowed] string hash, [NullAllowed] out NSError error);
+        //[Obsolete("", false)]
+        //[Export("copyTrainedData:fileHash:error:")]
+        //bool CopyTrainedData(string trainedDataPath, [NullAllowed] string hash, [NullAllowed] out NSError error);
 
         // -(void)addDelegate:(id<ALOCRScanPluginDelegate> _Nonnull)delegate;
         [Export("addDelegate:")]
@@ -3447,22 +3467,22 @@ namespace AnylineXamarinSDK.iOS
         void DidFindResult(AnylineOCRModuleView anylineOCRModuleView, ALOCRResult result);
 
         // @optional -(void)anylineOCRModuleView:(AnylineOCRModuleView * _Nonnull)anylineOCRModuleView reportsVariable:(NSString * _Nonnull)variableName value:(id _Nonnull)value __attribute__((deprecated("Deprecated since 3.10 Use AnylineDebugDelegate instead.")));
-        [Obsolete]
-        [Export("anylineOCRModuleView:reportsVariable:value:")]
-        [Abstract]
-        void ReportsVariable(AnylineOCRModuleView anylineOCRModuleView, string variableName, NSObject value);
+        //[Obsolete("", false)]
+        //[Export("anylineOCRModuleView:reportsVariable:value:")]
+        //[Abstract]
+        //void ReportsVariable(AnylineOCRModuleView anylineOCRModuleView, string variableName, NSObject value);
 
         // @optional -(void)anylineOCRModuleView:(AnylineOCRModuleView * _Nonnull)anylineOCRModuleView reportsRunFailure:(ALOCRError)error __attribute__((deprecated("Deprecated since 3.10 Use AnylineDebugDelegate instead.")));
-        [Obsolete]
-        [Export("anylineOCRModuleView:reportsRunFailure:")]
-        [Abstract]
-        void ReportsRunFailure(AnylineOCRModuleView anylineOCRModuleView, ALOCRError error);
+        //[Obsolete("", false)]
+        //[Export("anylineOCRModuleView:reportsRunFailure:")]
+        //[Abstract]
+        //void ReportsRunFailure(AnylineOCRModuleView anylineOCRModuleView, ALOCRError error);
 
         // @optional -(BOOL)anylineOCRModuleView:(AnylineOCRModuleView * _Nonnull)anylineOCRModuleView textOutlineDetected:(ALSquare * _Nonnull)outline __attribute__((deprecated("Deprecated since 3.10 Use AnylineDebugDelegate instead.")));
-        [Obsolete]
-        [Export("anylineOCRModuleView:textOutlineDetected:")]
-        [Abstract]
-        bool TextOutlineDetected(AnylineOCRModuleView anylineOCRModuleView, ALSquare outline);
+        //[Obsolete("", false)]
+        //[Export("anylineOCRModuleView:textOutlineDetected:")]
+        //[Abstract]
+        //bool TextOutlineDetected(AnylineOCRModuleView anylineOCRModuleView, ALSquare outline);
     }
 
     partial interface Constants
@@ -3712,7 +3732,7 @@ namespace AnylineXamarinSDK.iOS
         [Export("anylineDocumentModuleView:hasResult:fullImage:documentCorners:")]
         [Abstract]
         void HasResult(AnylineDocumentModuleView anylineDocumentModuleView, UIImage transformedImage, UIImage fullFrame, ALSquare corners);
-        
+
         // @optional -(void)anylineDocumentModuleView:(AnylineDocumentModuleView *)anylineDocumentModuleView detectedPictureCorners:(ALSquare *)corners inImage:(UIImage *)image;
         [Export("anylineDocumentModuleView:detectedPictureCorners:inImage:")]
         [Abstract]
