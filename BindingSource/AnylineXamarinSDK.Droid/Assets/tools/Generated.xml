@@ -42,9 +42,10 @@
 <!-- AnylineController.setWorkerThreadUncaughtExceptionHandler(java.lang.Thread.UncaughtExceptionHandler) -->
 <attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setWorkerThreadUncaughtExceptionHandler' and count(parameter)=1 and parameter[1][@type='java.lang.Thread.UncaughtExceptionHandler']]/parameter[1]" name="managedName">handler</attr>
 <!-- File: AT.Nineyards.Anyline.Camera.AbstractZoomHandler.cs -->
-<!-- AbstractZoomHandler.AbstractZoomHandler(android.view.View, int) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AbstractZoomHandler']/constructor[@name='AbstractZoomHandler' and count(parameter)=2 and parameter[1][@type='android.view.View'] and parameter[2][@type='int']]/parameter[1]" name="managedName">touchableView</attr>
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AbstractZoomHandler']/constructor[@name='AbstractZoomHandler' and count(parameter)=2 and parameter[1][@type='android.view.View'] and parameter[2][@type='int']]/parameter[2]" name="managedName">currentZoomLevel</attr>
+<!-- AbstractZoomHandler.AbstractZoomHandler(android.view.View, int, at.nineyards.anyline.camera.CameraController) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AbstractZoomHandler']/constructor[@name='AbstractZoomHandler' and count(parameter)=3 and parameter[1][@type='android.view.View'] and parameter[2][@type='int'] and parameter[3][@type='at.nineyards.anyline.camera.CameraController']]/parameter[1]" name="managedName">touchableView</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AbstractZoomHandler']/constructor[@name='AbstractZoomHandler' and count(parameter)=3 and parameter[1][@type='android.view.View'] and parameter[2][@type='int'] and parameter[3][@type='at.nineyards.anyline.camera.CameraController']]/parameter[2]" name="managedName">currentZoomLevel</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AbstractZoomHandler']/constructor[@name='AbstractZoomHandler' and count(parameter)=3 and parameter[1][@type='android.view.View'] and parameter[2][@type='int'] and parameter[3][@type='at.nineyards.anyline.camera.CameraController']]/parameter[3]" name="managedName">cameraController</attr>
 <!-- AbstractZoomHandler.notifyZoomChanged(int) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AbstractZoomHandler']/method[@name='notifyZoomChanged' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">zoom</attr>
 <!-- AbstractZoomHandler.onTouch(android.view.View, android.view.MotionEvent) -->
@@ -66,9 +67,10 @@
 <!-- ActiveArrayZoomHandler.setZoomHandlerListener(at.nineyards.anyline.camera.ActiveArrayZoomHandler.IZoomHandlerListener) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='ActiveArrayZoomHandler']/method[@name='setZoomHandlerListener' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.ActiveArrayZoomHandler.IZoomHandlerListener']]/parameter[1]" name="managedName">zoomHandlerListener</attr>
 <!-- File: AT.Nineyards.Anyline.Camera.ActiveArrayZoomHandlerBuilder.cs -->
-<!-- ActiveArrayZoomHandlerBuilder.forView(android.view.View, int) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='ActiveArrayZoomHandlerBuilder']/method[@name='forView' and count(parameter)=2 and parameter[1][@type='android.view.View'] and parameter[2][@type='int']]/parameter[1]" name="managedName">touchableView</attr>
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='ActiveArrayZoomHandlerBuilder']/method[@name='forView' and count(parameter)=2 and parameter[1][@type='android.view.View'] and parameter[2][@type='int']]/parameter[2]" name="managedName">currentZoomLevel</attr>
+<!-- ActiveArrayZoomHandlerBuilder.forView(android.view.View, int, at.nineyards.anyline.camera.CameraController) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='ActiveArrayZoomHandlerBuilder']/method[@name='forView' and count(parameter)=3 and parameter[1][@type='android.view.View'] and parameter[2][@type='int'] and parameter[3][@type='at.nineyards.anyline.camera.CameraController']]/parameter[1]" name="managedName">touchableView</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='ActiveArrayZoomHandlerBuilder']/method[@name='forView' and count(parameter)=3 and parameter[1][@type='android.view.View'] and parameter[2][@type='int'] and parameter[3][@type='at.nineyards.anyline.camera.CameraController']]/parameter[2]" name="managedName">currentZoomLevel</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='ActiveArrayZoomHandlerBuilder']/method[@name='forView' and count(parameter)=3 and parameter[1][@type='android.view.View'] and parameter[2][@type='int'] and parameter[3][@type='at.nineyards.anyline.camera.CameraController']]/parameter[3]" name="managedName">cameraController</attr>
 <!-- ActiveArrayZoomHandlerBuilder.setActiveArraySize(android.graphics.Rect) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='ActiveArrayZoomHandlerBuilder']/method[@name='setActiveArraySize' and count(parameter)=1 and parameter[1][@type='android.graphics.Rect']]/parameter[1]" name="managedName">activeArraySize</attr>
 <!-- ActiveArrayZoomHandlerBuilder.setMaxZoom(float) -->
@@ -724,9 +726,10 @@
 <!-- SimpleZoomHandler.setZoomHandlerListener(at.nineyards.anyline.camera.SimpleZoomHandler.IZoomHandlerListener) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='SimpleZoomHandler']/method[@name='setZoomHandlerListener' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.SimpleZoomHandler.IZoomHandlerListener']]/parameter[1]" name="managedName">zoomHandlerListener</attr>
 <!-- File: AT.Nineyards.Anyline.Camera.SimpleZoomHandlerBuilder.cs -->
-<!-- SimpleZoomHandlerBuilder.forView(android.view.View, int) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='SimpleZoomHandlerBuilder']/method[@name='forView' and count(parameter)=2 and parameter[1][@type='android.view.View'] and parameter[2][@type='int']]/parameter[1]" name="managedName">touchableView</attr>
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='SimpleZoomHandlerBuilder']/method[@name='forView' and count(parameter)=2 and parameter[1][@type='android.view.View'] and parameter[2][@type='int']]/parameter[2]" name="managedName">currentZoomlevel</attr>
+<!-- SimpleZoomHandlerBuilder.forView(android.view.View, int, at.nineyards.anyline.camera.CameraController) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='SimpleZoomHandlerBuilder']/method[@name='forView' and count(parameter)=3 and parameter[1][@type='android.view.View'] and parameter[2][@type='int'] and parameter[3][@type='at.nineyards.anyline.camera.CameraController']]/parameter[1]" name="managedName">touchableView</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='SimpleZoomHandlerBuilder']/method[@name='forView' and count(parameter)=3 and parameter[1][@type='android.view.View'] and parameter[2][@type='int'] and parameter[3][@type='at.nineyards.anyline.camera.CameraController']]/parameter[2]" name="managedName">currentZoomlevel</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='SimpleZoomHandlerBuilder']/method[@name='forView' and count(parameter)=3 and parameter[1][@type='android.view.View'] and parameter[2][@type='int'] and parameter[3][@type='at.nineyards.anyline.camera.CameraController']]/parameter[3]" name="managedName">cameraController</attr>
 <!-- SimpleZoomHandlerBuilder.setMaxZoom(float) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='SimpleZoomHandlerBuilder']/method[@name='setMaxZoom' and count(parameter)=1 and parameter[1][@type='float']]/parameter[1]" name="managedName">maxZoom</attr>
 <!-- SimpleZoomHandlerBuilder.setZoomListener(at.nineyards.anyline.camera.SimpleZoomHandler.IZoomHandlerListener) -->
@@ -1472,25 +1475,25 @@
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseConfig.DrivingLicenseCountry']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
 <!-- DrivingLicenseConfig.setScanMode(io.anyline.plugin.id.DrivingLicenseConfig.DrivingLicenseCountry) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseConfig']/method[@name='setScanMode' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.DrivingLicenseConfig.DrivingLicenseCountry']]/parameter[1]" name="managedName">scanMode</attr>
-<!-- File: IO.Anyline.Plugin.ID.DrivingLicenseFieldScanOption.cs -->
-<!-- DrivingLicenseFieldScanOption.setAuthority(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOption']/method[@name='setAuthority' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">authority</attr>
-<!-- DrivingLicenseFieldScanOption.setCategories(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOption']/method[@name='setCategories' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">categories</attr>
-<!-- DrivingLicenseFieldScanOption.setDateOfBirth(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOption']/method[@name='setDateOfBirth' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">dateOfBirth</attr>
-<!-- DrivingLicenseFieldScanOption.setDateOfExpiry(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOption']/method[@name='setDateOfExpiry' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">dateOfExpiry</attr>
-<!-- DrivingLicenseFieldScanOption.setDateOfIssue(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOption']/method[@name='setDateOfIssue' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">dateOfIssue</attr>
-<!-- DrivingLicenseFieldScanOption.setDocumentNumber(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOption']/method[@name='setDocumentNumber' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">documentNumber</attr>
-<!-- DrivingLicenseFieldScanOption.setGivenNames(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOption']/method[@name='setGivenNames' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">givenNames</attr>
-<!-- DrivingLicenseFieldScanOption.setPlaceOfBirth(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOption']/method[@name='setPlaceOfBirth' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">placeOfBirth</attr>
-<!-- DrivingLicenseFieldScanOption.setSurname(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOption']/method[@name='setSurname' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">surname</attr>
+<!-- File: IO.Anyline.Plugin.ID.DrivingLicenseFieldScanOptions.cs -->
+<!-- DrivingLicenseFieldScanOptions.setAuthority(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOptions']/method[@name='setAuthority' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">authority</attr>
+<!-- DrivingLicenseFieldScanOptions.setCategories(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOptions']/method[@name='setCategories' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">categories</attr>
+<!-- DrivingLicenseFieldScanOptions.setDateOfBirth(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOptions']/method[@name='setDateOfBirth' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">dateOfBirth</attr>
+<!-- DrivingLicenseFieldScanOptions.setDateOfExpiry(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOptions']/method[@name='setDateOfExpiry' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">dateOfExpiry</attr>
+<!-- DrivingLicenseFieldScanOptions.setDateOfIssue(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOptions']/method[@name='setDateOfIssue' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">dateOfIssue</attr>
+<!-- DrivingLicenseFieldScanOptions.setDocumentNumber(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOptions']/method[@name='setDocumentNumber' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">documentNumber</attr>
+<!-- DrivingLicenseFieldScanOptions.setGivenNames(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOptions']/method[@name='setGivenNames' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">givenNames</attr>
+<!-- DrivingLicenseFieldScanOptions.setPlaceOfBirth(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOptions']/method[@name='setPlaceOfBirth' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">placeOfBirth</attr>
+<!-- DrivingLicenseFieldScanOptions.setSurname(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOptions']/method[@name='setSurname' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">surname</attr>
 <!-- File: IO.Anyline.Plugin.ID.DrivingLicenseIdentification.cs -->
 <!-- DrivingLicenseIdentification.setAuthority(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseIdentification']/method[@name='setAuthority' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">authority</attr>
@@ -1619,11 +1622,11 @@
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzConfig']/method[@name='setCropAndTransformID' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">cropAndTransformID</attr>
 <!-- MrzConfig.setStrictMode(boolean) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzConfig']/method[@name='setStrictMode' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">strictMode</attr>
-<!-- File: IO.Anyline.Plugin.ID.MrzFieldScanOption.cs -->
-<!-- MrzFieldScanOption.setAddress(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldScanOption']/method[@name='setAddress' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">address</attr>
-<!-- MrzFieldScanOption.setDateOfIssue(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldScanOption']/method[@name='setDateOfIssue' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">dateOfIssue</attr>
+<!-- File: IO.Anyline.Plugin.ID.MrzFieldScanOptions.cs -->
+<!-- MrzFieldScanOptions.setAddress(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldScanOptions']/method[@name='setAddress' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">address</attr>
+<!-- MrzFieldScanOptions.setDateOfIssue(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldScanOptions']/method[@name='setDateOfIssue' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">dateOfIssue</attr>
 <!-- File: IO.Anyline.Plugin.IScanInfoListener.cs -->
 <!-- ScanInfoListener.onInfo(io.anyline.plugin.ScanInfo) -->
 <attr path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanInfoListener']/method[@name='onInfo' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanInfo']]/parameter[1]" name="managedName">info</attr>

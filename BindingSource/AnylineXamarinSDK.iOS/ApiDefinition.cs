@@ -2419,7 +2419,7 @@ namespace AnylineXamarinSDK.iOS
 
         // @property (assign, nonatomic) ALBarcodeFormatOptions barcodeFormatOptions;
         [Export("barcodeFormatOptions", ArgumentSemantic.Assign)]
-        ALBarcodeFormat BarcodeFormatOptions { get; set; }
+        NSSet BarcodeFormatOptions { get; set; }
 
         // -(ALBarcodeFormat)barcodeFormatForString:(NSString * _Nullable)barcodeFormatString;
         [Export("barcodeFormatForString:")]
@@ -2443,6 +2443,10 @@ namespace AnylineXamarinSDK.iOS
         [Abstract]
         [Export("anylineBarcodeScanPlugin:didFindResult:")]
         void DidFindResult(ALBarcodeScanPlugin anylineBarcodeScanPlugin, ALBarcodeResult scanResult);
+
+        // @optional -(void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin * _Nonnull)anylineBarcodeScanPlugin updatedBarcodeFormats:(ALBarcodeFormatOptions)formats;
+        //[Export("anylineBarcodeScanPlugin:updatedBarcodeFormats:")]
+        //void UpdatedBarcodeFormats(ALBarcodeScanPlugin anylineBarcodeScanPlugin, NSSet formats);
     }
 
     // @interface ALMeterScanViewPlugin : ALAbstractScanViewPlugin

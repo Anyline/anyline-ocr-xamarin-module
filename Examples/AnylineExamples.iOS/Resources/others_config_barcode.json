@@ -10,7 +10,7 @@
     "plugin": {
       "id": "Barcode_ID",
       "barcodePlugin": {
-        "barcodeFormatOptions": [ "ALL" ]
+        
       }
     },
     "cutoutConfig": {
