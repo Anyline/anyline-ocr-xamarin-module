@@ -48,7 +48,9 @@ namespace AnylineExamples.iOS
                     _frame.Width,
                     _frame.Height - NavigationController.NavigationBar.Frame.Size.Height);
 
+                // Use the JSON file name that you want to load here
                 var configPath = NSBundle.MainBundle.PathForResource(@"" + _jsonPath.Replace(".json", ""), @"json");
+                // This is the main intialization method that will create our use case depending on the JSON configuration.
                 _scanView = ALScanView.ScanViewForFrame(_frame, configPath, LicenseKey, _resultDelegate, out error);
 
                 if (error != null)
