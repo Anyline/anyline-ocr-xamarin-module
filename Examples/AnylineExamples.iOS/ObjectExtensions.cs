@@ -62,13 +62,6 @@ namespace AnylineExamples.iOS
 
                             if (value != null)
                             {
-                                var attribs = prop.GetCustomAttributes(typeof(ObsoleteAttribute), true);
-
-                                var allAttribs = prop.GetCustomAttributesData();
-
-                                if (attribs.ToArray().Length > 0)
-                                    continue;
-
                                 dict.AddProperty(prop.Name, value);
                             }
                             break;

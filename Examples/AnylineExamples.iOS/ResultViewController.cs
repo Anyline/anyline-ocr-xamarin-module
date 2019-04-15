@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using AnylineXamarinSDK.iOS;
 using Foundation;
 using UIKit;
-using System.Reflection;
-using System.Diagnostics;
 
 namespace AnylineExamples.iOS
 {
     public class ResultViewController : UITableViewController
     {
 
+        // we store the scan result as an object
         object _scanResult;
 
         public ResultViewController(object scanResult)
@@ -26,7 +23,7 @@ namespace AnylineExamples.iOS
 
             TableView = new UITableView(View.Bounds, UITableViewStyle.Grouped);
             TableView.Source = new TableSource(_scanResult, this);
-
+            
             NavigationItem.LeftBarButtonItem = new UIBarButtonItem(UIBarButtonSystemItem.Done, (sender, args) => {
                 NavigationController?.PopViewController(false);
             });
@@ -46,16 +43,19 @@ namespace AnylineExamples.iOS
             base.Dispose();
         }
 
+        /// <summary>
+        /// This TableSource defines how the ResultViewController presents results in a visual way.
+        /// </summary>
         public class TableSource : UITableViewSource
         {
             protected Dictionary<string, object> TableItems;
-            protected ResultViewController ResultViewController;
             protected string CellIdentifier = "TableCell";
             
             public TableSource(object scanResult, ResultViewController parent)
             {
+                // in our example app, we dynamically extract result values from the object via reflection.
+                // Usually, you can just cast the result to the object type that matches your ScanPlugin type (e.g. ALMeterResult for ALMeterScanPlugin etc.)
                 TableItems = scanResult.CreatePropertyDictionary();
-                ResultViewController = parent;
             }
 
             public override string TitleForHeader(UITableView tableView, nint section)
@@ -83,7 +83,7 @@ namespace AnylineExamples.iOS
             public override nfloat GetHeightForRow(UITableView tableView, NSIndexPath indexPath)
             {
                 var o = TableItems.ElementAt(indexPath.Section).Value;
-
+                
                 if (o is UIImage)
                 {
                     var img = o as UIImage;

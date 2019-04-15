@@ -3,11 +3,7 @@ using AnylineXamarinSDK.iOS;
 using CoreGraphics;
 using Foundation;
 using UIKit;
-using System.Reflection;
 using System.IO;
-using AnylineExamples.iOS;
-using System.Collections.Generic;
-using System.Diagnostics;
 
 namespace AnylineExamples.iOS
 {
@@ -33,8 +29,16 @@ namespace AnylineExamples.iOS
         {
             base.ViewDidLoad();
 
+            InitializeAnyline();
 
+        }
+
+        private void InitializeAnyline()
+        {
             NSError error = null;
+
+            if (_initialized)
+                return;
 
             try
             {
@@ -51,7 +55,7 @@ namespace AnylineExamples.iOS
                 {
                     throw new Exception(error.LocalizedDescription);
                 }
-
+                
                 // KNOWN ISSUE (OCRScanPlugin only): the customCmdFile is not loading the file correctly. therefore, it has to be added via code:
                 if (_scanView.ScanViewPlugin is ALOCRScanViewPlugin)
                 {
@@ -92,7 +96,6 @@ namespace AnylineExamples.iOS
             {
                 ShowAlert("Init Error", e.Message);
             }
-
         }
 
         private void ConnectDelegateToScanPlugin()
@@ -108,6 +111,9 @@ namespace AnylineExamples.iOS
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
+
+            // initialize anyline if not already initialized
+            InitializeAnyline();
 
             if (!_initialized) return;
 

@@ -205,6 +205,10 @@ namespace AnylineXamarinSDK.iOS
         [Export("pictureResolution", ArgumentSemantic.Assign)]
         ALPictureResolution PictureResolution { get; set; }
 
+        // @property (assign, nonatomic) BOOL zoomGesture;
+        [Export("zoomGesture")]
+        bool ZoomGesture { get; set; }
+
         // +(instancetype _Nullable)configurationFromJsonFilePath:(NSString * _Nonnull)jsonFile;
         [Static]
         [Export("configurationFromJsonFilePath:")]
@@ -219,9 +223,19 @@ namespace AnylineXamarinSDK.iOS
         [Export("initWithDictionary:")]
         IntPtr Constructor(NSDictionary configDict);
 
+        /*
         // -(instancetype _Nullable)initWithDefaultCamera:(NSString * _Nonnull)defaultCamera captureResolution:(ALCaptureViewResolution)captureResolution pictureResolution:(ALPictureResolution)pictureResolution;
         [Export("initWithDefaultCamera:captureResolution:pictureResolution:")]
         IntPtr Constructor(string defaultCamera, ALCaptureViewResolution captureResolution, ALPictureResolution pictureResolution);
+
+        // -(instancetype _Nullable)initWithDefaultCamera:(NSString * _Nonnull)defaultCamera captureResolution:(ALCaptureViewResolution)captureResolution pictureResolution:(ALPictureResolution)pictureResolution zoomGesture:(BOOL)zoomGesture zoomRatio:(CGFloat)zoomRatio maxZoomRatio:(CGFloat)maxZoomRatio;
+        [Export("initWithDefaultCamera:captureResolution:pictureResolution:zoomGesture:zoomRatio:maxZoomRatio:")]
+        IntPtr Constructor(string defaultCamera, ALCaptureViewResolution captureResolution, ALPictureResolution pictureResolution, bool zoomGesture, nfloat zoomRatio, nfloat maxZoomRatio);
+
+        // -(instancetype _Nullable)initWithDefaultCamera:(NSString * _Nonnull)defaultCamera captureResolution:(ALCaptureViewResolution)captureResolution pictureResolution:(ALPictureResolution)pictureResolution zoomGesture:(BOOL)zoomGesture focalLength:(CGFloat)focalLength maxFocalLength:(CGFloat)maxFocalLength;
+        [Export("initWithDefaultCamera:captureResolution:pictureResolution:zoomGesture:focalLength:maxFocalLength:")]
+        IntPtr Constructor(string defaultCamera, ALCaptureViewResolution captureResolution, ALPictureResolution pictureResolution, bool zoomGesture, nfloat focalLength, nfloat maxFocalLength);
+        */
 
         // +(instancetype _Nullable)defaultCameraConfig;
         [Static]
@@ -234,6 +248,30 @@ namespace AnylineXamarinSDK.iOS
         [Export("defaultDocumentCameraConfig")]
         [return: NullAllowed]
         ALCameraConfig DefaultDocumentCameraConfig();
+
+        // -(void)setFocalLength:(CGFloat)focalLength;
+        [Export("setFocalLength:")]
+        void SetFocalLength(nfloat focalLength);
+
+        // -(void)setZoomRatio:(CGFloat)ratio;
+        [Export("setZoomRatio:")]
+        void SetZoomRatio(nfloat ratio);
+
+        // -(void)setMaxZoomRatio:(CGFloat)maxZoomRatio;
+        [Export("setMaxZoomRatio:")]
+        void SetMaxZoomRatio(nfloat maxZoomRatio);
+
+        // -(void)setMaxFocalLength:(CGFloat)maxFocalLength;
+        [Export("setMaxFocalLength:")]
+        void SetMaxFocalLength(nfloat maxFocalLength);
+
+        // -(CGFloat)maxZoomFactor;
+        [Export("maxZoomFactor")]
+        nfloat MaxZoomFactor { get; }
+
+        // -(CGFloat)zoomFactor;
+        [Export("zoomFactor")]
+        nfloat ZoomFactor { get; }
     }
 
     // @interface ALScanFeedbackConfig : NSObject
@@ -2076,6 +2114,10 @@ namespace AnylineXamarinSDK.iOS
         // -(void)updateWebView:(ALScanViewPluginConfig * _Nonnull)config;
         [Export("updateWebView:")]
         void UpdateWebView(ALScanViewPluginConfig config);
+
+        // -(void)enableZoomPinchGesture:(BOOL)enabled;
+        [Export("enableZoomPinchGesture:")]
+        void EnableZoomPinchGesture(bool enabled);
     }
 
     // @interface AnylineAbstractModuleView : UIView

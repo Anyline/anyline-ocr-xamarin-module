@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using AnylineExamples.iOS;
+﻿using System.Collections.Generic;
 using Foundation;
 using UIKit;
 using AnylineXamarinSDK.iOS;
@@ -10,13 +6,17 @@ using AnylineXamarinSDK.iOS;
 namespace AnylineExamples.iOS
 {
     /// <summary>
-    /// This is the delegate class that implements all result callbacks for various scan plugins
+    /// This is the delegate class that implements all result callbacks for various ScanPlugins
     /// </summary>
     public sealed class ScanResultDelegate : NSObject, 
-        IALIDPluginDelegate, IALOCRScanPluginDelegate, IALMeterScanPluginDelegate,
-        IALDocumentScanPluginDelegate, IALLicensePlateScanPluginDelegate,
+        IALIDPluginDelegate, 
+        IALOCRScanPluginDelegate, 
+        IALMeterScanPluginDelegate,
+        IALDocumentScanPluginDelegate, 
+        IALLicensePlateScanPluginDelegate,
         IALBarcodeScanPluginDelegate
     {
+        // we store the ScanViewController for navigation purposes
         private readonly ScanViewController _scanViewController;
 
         public ScanResultDelegate(ScanViewController scanViewController)
@@ -24,6 +24,7 @@ namespace AnylineExamples.iOS
             _scanViewController = scanViewController;
         }
 
+        // we call this method in every case a result is received and deal with processing that result in the ResultViewController
         void HandleResult(object result)
         {
             var resultViewController = new ResultViewController(result);
@@ -47,6 +48,9 @@ namespace AnylineExamples.iOS
 
         public void HasResult(ALDocumentScanPlugin anylineDocumentScanPlugin, UIImage transformedImage, UIImage fullFrame, ALSquare corners)
         {
+            // the DocumentScanPlugin is slightly different to the other plugins, it doesn't return a document result, but instead several parameters.
+            // we put together these parameters and pass them to the ResultViewController
+
             Dictionary<string, object> results = new Dictionary<string, object>();
             results.Add("transformedImage", transformedImage);
             results.Add("fullFrame", fullFrame);
