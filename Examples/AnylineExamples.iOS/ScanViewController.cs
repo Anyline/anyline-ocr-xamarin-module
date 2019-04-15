@@ -39,7 +39,7 @@ namespace AnylineExamples.iOS
 
             if (_initialized)
                 return;
-
+            
             try
             {
                 _frame = UIScreen.MainScreen.ApplicationFrame;
