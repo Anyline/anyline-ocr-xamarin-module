@@ -2412,11 +2412,11 @@ namespace AnylineXamarinSDK.iOS
         // -(instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID licenseKey:(NSString * _Nonnull)licenseKey delegate:(id<ALBarcodeScanPluginDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
         [Export("initWithPluginID:licenseKey:delegate:error:")]
         IntPtr Constructor([NullAllowed] string pluginID, string licenseKey, ALBarcodeScanPluginDelegate @delegate, [NullAllowed] out NSError error);
-
+        
         // @property (readonly, nonatomic, strong) NSHashTable<ALBarcodeScanPluginDelegate> * _Nullable delegates;
         [NullAllowed, Export("delegates", ArgumentSemantic.Strong)]
         NSSet Delegates { get; }
-
+        /*
         // @property (assign, nonatomic) ALBarcodeFormatOptions barcodeFormatOptions;
         [Export("barcodeFormatOptions", ArgumentSemantic.Assign)]
         NSSet BarcodeFormatOptions { get; set; }
@@ -2424,6 +2424,7 @@ namespace AnylineXamarinSDK.iOS
         // -(ALBarcodeFormat)barcodeFormatForString:(NSString * _Nullable)barcodeFormatString;
         [Export("barcodeFormatForString:")]
         ALBarcodeFormat BarcodeFormatForString([NullAllowed] string barcodeFormatString);
+        */
 
         // -(void)addDelegate:(id<ALBarcodeScanPluginDelegate> _Nonnull)delegate;
         [Export("addDelegate:")]

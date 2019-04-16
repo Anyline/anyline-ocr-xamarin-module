@@ -2,6 +2,7 @@
 using Foundation;
 using UIKit;
 using AnylineXamarinSDK.iOS;
+using System.Threading.Tasks;
 
 namespace AnylineExamples.iOS
 {
