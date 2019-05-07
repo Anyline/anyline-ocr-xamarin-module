@@ -53,7 +53,7 @@
   <ItemGroup>
     <Compile Include="Additions\IDocumentScanResultListener.cs" />
     <Compile Include="Additions\IScanResultListener.cs" />
-    <Compile Include="Additions\Identification.cs" />
+    <Compile Include="Additions\MrzIdentification.cs" />
     <Compile Include="Additions\ScanViewPlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -70,7 +70,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <LibraryProjectZip Include="Jars\anylinesdk-10.aar" />
+    <LibraryProjectZip Include="Jars\anylinesdk-10.1-RC1.aar" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
   <PropertyGroup>

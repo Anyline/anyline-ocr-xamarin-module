@@ -1,15 +1,15 @@
 @echo off
-IF EXIST Examples\AnylineXamarinApp.Droid\obj (
-rmdir Examples\AnylineXamarinApp.Droid\obj /S /Q
+IF EXIST Examples\AnylineExamples.Droid\obj (
+rmdir Examples\AnylineExamples.Droid\obj /S /Q
 )
-IF EXIST Examples\AnylineXamarinApp.Droid\bin (
-rmdir Examples\AnylineXamarinApp.Droid\bin /S /Q
+IF EXIST Examples\AnylineExamples.Droid\bin (
+rmdir Examples\AnylineExamples.Droid\bin /S /Q
 )
-IF EXIST Examples\AnylineXamarinApp.iOS\obj (
-rmdir Examples\AnylineXamarinApp.iOS\obj /S /Q
+IF EXIST Examples\AnylineExamples.iOS\obj (
+rmdir Examples\AnylineExamples.iOS\obj /S /Q
 )
-IF EXIST Examples\AnylineXamarinApp.iOS\bin (
-rmdir Examples\AnylineXamarinApp.iOS\bin /S /Q
+IF EXIST Examples\AnylineExamples.iOS\bin (
+rmdir Examples\AnylineExamples.iOS\bin /S /Q
 )
 IF EXIST BindingSource\AnylineXamarinSDK.Droid\bin (
 rmdir BindingSource\AnylineXamarinSDK.Droid\bin /S /Q

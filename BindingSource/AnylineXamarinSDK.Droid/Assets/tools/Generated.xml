@@ -1014,65 +1014,7 @@
 <!-- LicensePlateScanView.setReportingEnabled(boolean) -->
 <attr path="/api/package[@name='at.nineyards.anyline.modules.licenseplate']/class[@name='LicensePlateScanView']/method[@name='setReportingEnabled' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">isReportingEnabled</attr>
 <!-- File: AT.Nineyards.Anyline.Modules.Mrz.Identification.cs -->
-<!-- Identification.setAddress(java.lang.String) -->
-<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setAddress' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">address</attr>
-<!-- Identification.setCheckDigitDateOfBirth(java.lang.String) -->
-<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setCheckDigitDateOfBirth' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">checkDigitDateOfBirth</attr>
-<!-- Identification.setCheckDigitDateOfExpiry(java.lang.String) -->
-<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setCheckDigitDateOfExpiry' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">checkDigitDateOfExpiry</attr>
-<!-- Identification.setCheckDigitDayOfBirth(java.lang.String) -->
-<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setCheckDigitDayOfBirth' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">checkDigitDayOfBirth</attr>
-<!-- Identification.setCheckDigitDocumentNumber(java.lang.String) -->
-<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setCheckDigitDocumentNumber' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">checkDigitDocumentNumber</attr>
-<!-- Identification.setCheckDigitExpirationDate(java.lang.String) -->
-<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setCheckDigitExpirationDate' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">checkDigitExpirationDate</attr>
-<!-- Identification.setCheckDigitFinal(java.lang.String) -->
-<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setCheckDigitFinal' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">checkDigitFinal</attr>
-<!-- Identification.setCheckDigitNumber(java.lang.String) -->
-<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setCheckDigitNumber' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">checkDigitNumber</attr>
-<!-- Identification.setCheckDigitPersonalNumber(java.lang.String) -->
-<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setCheckDigitPersonalNumber' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">checkDigitPersonalNumber</attr>
-<!-- Identification.setCountryCode(java.lang.String) -->
-<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setCountryCode' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">countryCode</attr>
-<!-- Identification.setDateOfBirth(java.lang.String) -->
-<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setDateOfBirth' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">dateOfBirth</attr>
-<!-- Identification.setDateOfExpiry(java.lang.String) -->
-<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setDateOfExpiry' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">dateOfExpiry</attr>
-<!-- Identification.setDateOfIssue(java.lang.String) -->
-<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setDateOfIssue' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">dateOfIssue</attr>
-<!-- Identification.setDayOfBirth(java.lang.String) -->
-<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setDayOfBirth' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">dayOfBirth</attr>
-<!-- Identification.setDocumentNumber(java.lang.String) -->
-<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setDocumentNumber' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">documentNumber</attr>
-<!-- Identification.setDocumentType(java.lang.String) -->
-<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setDocumentType' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">documentType</attr>
-<!-- Identification.setExpirationDate(java.lang.String) -->
-<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setExpirationDate' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">expirationDate</attr>
-<!-- Identification.setGivenNames(java.lang.String) -->
-<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setGivenNames' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">givenNames</attr>
-<!-- Identification.setIssuingCountryCode(java.lang.String) -->
-<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setIssuingCountryCode' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">issuingCountryCode</attr>
-<!-- Identification.setIssuingDate(java.lang.String) -->
-<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setIssuingDate' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">issuingDate</attr>
-<!-- Identification.setMrzString(java.lang.String) -->
-<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setMrzString' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">mrzString</attr>
-<!-- Identification.setNationalityCountryCode(java.lang.String) -->
-<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setNationalityCountryCode' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">nationalityCountryCode</attr>
-<!-- Identification.setOptionalData(java.lang.String) -->
-<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setOptionalData' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">optionalData</attr>
-<!-- Identification.setPersonalNumber(java.lang.String) -->
-<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setPersonalNumber' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">personalNumber</attr>
-<!-- Identification.setPersonalNumber2(java.lang.String) -->
-<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setPersonalNumber2' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">personalNumber2</attr>
-<!-- Identification.setSex(java.lang.String) -->
-<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setSex' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">sex</attr>
-<!-- Identification.setSurNames(java.lang.String) -->
-<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setSurNames' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">surNames</attr>
-<!-- Identification.setSurname(java.lang.String) -->
-<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setSurname' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">surname</attr>
-<!-- Identification.setAllCheckDigitsValid(boolean) -->
-<attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='Identification']/method[@name='setAllCheckDigitsValid' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">allCheckDigitsValid</attr>
-<!-- File: AT.Nineyards.Anyline.Modules.Mrz.MrzResult.cs -->
+<!-- File: AT.Nineyards.Anyline.Modules.Mrz.MrzResult.cs -->
 <!-- MrzResult.MrzResult(java.util.List&lt;android.graphics.PointF&gt;, java.lang.Integer, at.nineyards.anyline.models.AnylineImage, at.nineyards.anyline.models.AnylineImage, at.nineyards.anyline.modules.mrz.Identification) -->
 <attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='MrzResult']/constructor[@name='MrzResult' and count(parameter)=5 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[2][@type='java.lang.Integer'] and parameter[3][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[4][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[5][@type='at.nineyards.anyline.modules.mrz.Identification']]/parameter[1]" name="managedName">boundingBox</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='MrzResult']/constructor[@name='MrzResult' and count(parameter)=5 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[2][@type='java.lang.Integer'] and parameter[3][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[4][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[5][@type='at.nineyards.anyline.modules.mrz.Identification']]/parameter[2]" name="managedName">confidence</attr>
@@ -1627,6 +1569,89 @@
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldScanOptions']/method[@name='setAddress' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">address</attr>
 <!-- MrzFieldScanOptions.setDateOfIssue(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldScanOptions']/method[@name='setDateOfIssue' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">dateOfIssue</attr>
+<!-- MrzFieldScanOptions.setVizAddress(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldScanOptions']/method[@name='setVizAddress' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">vizAddress</attr>
+<!-- MrzFieldScanOptions.setVizDateOfBirth(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldScanOptions']/method[@name='setVizDateOfBirth' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">vizDateOfBirth</attr>
+<!-- MrzFieldScanOptions.setVizDateOfExpiry(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldScanOptions']/method[@name='setVizDateOfExpiry' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">vizDateOfExpiry</attr>
+<!-- MrzFieldScanOptions.setVizDateOfIssue(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldScanOptions']/method[@name='setVizDateOfIssue' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">vizDateOfIssue</attr>
+<!-- MrzFieldScanOptions.setVizGivenNames(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldScanOptions']/method[@name='setVizGivenNames' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">vizGivenNames</attr>
+<!-- MrzFieldScanOptions.setVizSurname(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldScanOptions']/method[@name='setVizSurname' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">vizSurname</attr>
+<!-- File: IO.Anyline.Plugin.ID.MrzIdentification.cs -->
+<!-- MrzIdentification.setAddress(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setAddress' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">address</attr>
+<!-- MrzIdentification.setCheckDigitDateOfBirth(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setCheckDigitDateOfBirth' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">checkDigitDateOfBirth</attr>
+<!-- MrzIdentification.setCheckDigitDateOfExpiry(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setCheckDigitDateOfExpiry' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">checkDigitDateOfExpiry</attr>
+<!-- MrzIdentification.setCheckDigitDayOfBirth(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setCheckDigitDayOfBirth' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">checkDigitDayOfBirth</attr>
+<!-- MrzIdentification.setCheckDigitDocumentNumber(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setCheckDigitDocumentNumber' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">checkDigitDocumentNumber</attr>
+<!-- MrzIdentification.setCheckDigitExpirationDate(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setCheckDigitExpirationDate' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">checkDigitExpirationDate</attr>
+<!-- MrzIdentification.setCheckDigitFinal(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setCheckDigitFinal' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">checkDigitFinal</attr>
+<!-- MrzIdentification.setCheckDigitNumber(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setCheckDigitNumber' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">checkDigitNumber</attr>
+<!-- MrzIdentification.setCheckDigitPersonalNumber(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setCheckDigitPersonalNumber' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">checkDigitPersonalNumber</attr>
+<!-- MrzIdentification.setCountryCode(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setCountryCode' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">countryCode</attr>
+<!-- MrzIdentification.setDateOfBirth(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setDateOfBirth' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">dateOfBirth</attr>
+<!-- MrzIdentification.setDateOfExpiry(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setDateOfExpiry' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">dateOfExpiry</attr>
+<!-- MrzIdentification.setDateOfIssue(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setDateOfIssue' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">dateOfIssue</attr>
+<!-- MrzIdentification.setDayOfBirth(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setDayOfBirth' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">dayOfBirth</attr>
+<!-- MrzIdentification.setDocumentNumber(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setDocumentNumber' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">documentNumber</attr>
+<!-- MrzIdentification.setDocumentType(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setDocumentType' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">documentType</attr>
+<!-- MrzIdentification.setExpirationDate(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setExpirationDate' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">expirationDate</attr>
+<!-- MrzIdentification.setGivenNames(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setGivenNames' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">givenNames</attr>
+<!-- MrzIdentification.setIssuingCountryCode(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setIssuingCountryCode' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">issuingCountryCode</attr>
+<!-- MrzIdentification.setIssuingDate(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setIssuingDate' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">issuingDate</attr>
+<!-- MrzIdentification.setMrzString(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setMrzString' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">mrzString</attr>
+<!-- MrzIdentification.setNationalityCountryCode(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setNationalityCountryCode' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">nationalityCountryCode</attr>
+<!-- MrzIdentification.setOptionalData(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setOptionalData' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">optionalData</attr>
+<!-- MrzIdentification.setPersonalNumber(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setPersonalNumber' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">personalNumber</attr>
+<!-- MrzIdentification.setPersonalNumber2(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setPersonalNumber2' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">personalNumber2</attr>
+<!-- MrzIdentification.setSex(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setSex' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">sex</attr>
+<!-- MrzIdentification.setSurNames(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setSurNames' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">surNames</attr>
+<!-- MrzIdentification.setSurname(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setSurname' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">surname</attr>
+<!-- MrzIdentification.setVizAddress(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setVizAddress' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">vizAddress</attr>
+<!-- MrzIdentification.setVizDateOfBirth(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setVizDateOfBirth' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">vizDateOfBirth</attr>
+<!-- MrzIdentification.setVizDateOfExpiry(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setVizDateOfExpiry' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">vizDateOfExpiry</attr>
+<!-- MrzIdentification.setVizDateOfIssue(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setVizDateOfIssue' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">vizDateOfIssue</attr>
+<!-- MrzIdentification.setVizGivenNames(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setVizGivenNames' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">vizGivenNames</attr>
+<!-- MrzIdentification.setVizSurname(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setVizSurname' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">vizSurname</attr>
+<!-- MrzIdentification.setAllCheckDigitsValid(boolean) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setAllCheckDigitsValid' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">allCheckDigitsValid</attr>
 <!-- File: IO.Anyline.Plugin.IScanInfoListener.cs -->
 <!-- ScanInfoListener.onInfo(io.anyline.plugin.ScanInfo) -->
 <attr path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanInfoListener']/method[@name='onInfo' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanInfo']]/parameter[1]" name="managedName">info</attr>

@@ -73,30 +73,38 @@ namespace AnylineExamples.Droid
                         break;
                     default:
 
-                        var value = prop.GetValue(obj, null);
-                        
-                        // filter out deprecated fields
-                        if (prop.GetCustomAttributes(typeof(ObsoleteAttribute), true).ToArray().Length > 0)
-                            continue;
-
-                        Log.Debug(TAG, "{0}: {1}", prop.Name, value);
-                        if (value != null)
+                        try
                         {
-                            if (value is AnylineImage)
+                            var value = prop.GetValue(obj, null);
+
+
+                            // filter out deprecated fields
+                            if (prop.GetCustomAttributes(typeof(ObsoleteAttribute), true).ToArray().Length > 0)
+                                continue;
+
+                            Log.Debug(TAG, "{0}: {1}", prop.Name, value);
+                            if (value != null)
                             {
-                                var bitmap = (value as AnylineImage).Clone().Bitmap;
-                                dict.Add(prop.Name, bitmap);
+                                if (value is AnylineImage)
+                                {
+                                    var bitmap = (value as AnylineImage).Clone().Bitmap;
+                                    dict.Add(prop.Name, bitmap);
+                                }
+                                else if (value is ID)
+                                {
+                                    var sublist = CreatePropertyList(value as ID);
+                                    sublist.ToList().ForEach(x => dict.Add(x.Key, x.Value));
+                                }
+                                else
+                                {
+                                    var str = new Java.Lang.String(value.ToString()).ReplaceAll("\\\\n", "\\\n");
+                                    dict.Add(prop.Name, str);
+                                }
                             }
-                            else if (value is ID)
-                            {
-                                var sublist = CreatePropertyList(value as ID);
-                                sublist.ToList().ForEach(x => dict.Add(x.Key, x.Value));
-                            }
-                            else
-                            {
-                                var str = new Java.Lang.String(value.ToString()).ReplaceAll("\\\\n", "\\\n");
-                                dict.Add(prop.Name, str);
-                            }
+                        }
+                        catch (Exception e)
+                        {
+                            System.Diagnostics.Debug.WriteLine("Exception: " + e.Message);
                         }
                         break;
                 }
