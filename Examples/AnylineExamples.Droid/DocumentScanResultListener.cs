@@ -45,7 +45,7 @@ namespace AnylineExamples.Droid
 
         public void OnTakePictureSuccess() { }
 
-        public bool OnDocumentOutlineDetected(IList<PointF> corners, bool documentShapeAndBrightnessValid) { return true; }
+        public bool OnDocumentOutlineDetected(IList<PointF> corners, bool documentShapeAndBrightnessValid) { return false; }
 
         public void OnPictureCornersDetected(AnylineImage fullFrame, IList<PointF> corners) { }
     }
