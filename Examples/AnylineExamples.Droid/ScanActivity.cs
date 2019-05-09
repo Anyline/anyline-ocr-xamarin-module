@@ -10,6 +10,9 @@ using IO.Anyline.View;
 using Android.Support.V7.App;
 using Android.Util;
 using IO.Anyline.Plugin.ID;
+using IO.Anyline.Plugin.Barcode;
+using System.Collections;
+using Com.Google.Firebase.ML.Vision;
 
 namespace AnylineExamples.Droid
 {
@@ -47,7 +50,7 @@ namespace AnylineExamples.Droid
                 
                 // we pass the json path from the previous activity
                 var jsonPath = Intent.GetStringExtra("jsonPath");
-
+                
                 // we pass the title from the previous activity
                 Title = Intent.GetStringExtra("title");
 
@@ -56,15 +59,25 @@ namespace AnylineExamples.Droid
 
                 _scanView = FindViewById<ScanView>(Resource.Id.scan_view);
 
+                //com/google/android/gms/common/api/internal/BackgroundDetector$BackgroundStateChangeListener;
+
                 // the initialization parses the json configuration and builds the whole use-case
                 _scanView.Init(jsonPath, LICENSE_KEY);
+                
+                IO.Anyline.Xamarin.Support.Plugins.
+                //var bla = new Com.Google.Firebase.ML.Vision.Barcode.FirebaseVisionBarcode();
 
                 /*
                  * Depending on your config/use-case, the ScanViewPlugin is of a different type.
                  * You need to add your implementation of IO.Anyline.Plugin.IScanResultListener to retrieve scan results.
                  */
                 _scanView.ScanViewPlugin.AddScanResultListener(_scanResultListener);
-                
+
+                //var myBarcodeListener = new MyBarcodeListener();
+                //_scanView.CameraView.EnableBarcodeDetection(myBarcodeListener, null);
+
+                //var bar = new AT.Nineyards.Anyline.Modules.Barcode.NativeBarcodeScanView(ApplicationContext, null);
+
                 // handle camera open events
                 _scanView.CameraOpened += ScanView_CameraOpened;
 

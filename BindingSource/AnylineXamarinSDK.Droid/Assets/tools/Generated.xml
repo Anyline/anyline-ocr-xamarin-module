@@ -546,9 +546,6 @@
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=1 and parameter[1][@type='android.content.Context']]/parameter[1]" name="managedName">context</attr>
 <!-- CameraView.setPreferredCameraConfig(at.nineyards.anyline.camera.CameraConfig) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='setPreferredCameraConfig' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.CameraConfig']]/parameter[1]" name="managedName">preferredConfig</attr>
-<!-- CameraView.enableBarcodeDetection(at.nineyards.anyline.camera.NativeBarcodeResultListener, java.util.List&lt;io.anyline.plugin.barcode.BarcodeFormat&gt;) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='enableBarcodeDetection' and count(parameter)=2 and parameter[1][@type='at.nineyards.anyline.camera.NativeBarcodeResultListener'] and parameter[2][@type='java.util.List&lt;io.anyline.plugin.barcode.BarcodeFormat&gt;']]/parameter[1]" name="managedName">barcodeResultListener</attr>
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='enableBarcodeDetection' and count(parameter)=2 and parameter[1][@type='at.nineyards.anyline.camera.NativeBarcodeResultListener'] and parameter[2][@type='java.util.List&lt;io.anyline.plugin.barcode.BarcodeFormat&gt;']]/parameter[2]" name="managedName">format</attr>
 <!-- CameraView.onLayout(boolean, int, int, int, int) -->
 <!-- CameraView.setApi2Enabled(boolean) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='setApi2Enabled' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">enabled</attr>
@@ -681,20 +678,12 @@
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='ImageReceiver']/method[@name='getYuvImage' and count(parameter)=2 and parameter[1][@type='android.graphics.Rect'] and parameter[2][@type='boolean']]/parameter[2]" name="managedName">greyOnly</attr>
 <!-- ImageReceiver.getYuvImage(boolean) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='ImageReceiver']/method[@name='getYuvImage' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">greyOnly</attr>
-<!-- File: AT.Nineyards.Anyline.Camera.INativeBarcodeResultListener.cs -->
-<!-- NativeBarcodeResultListener.onFailure(java.lang.String) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/interface[@name='NativeBarcodeResultListener']/method[@name='onFailure' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">failureMessage</attr>
-<!-- NativeBarcodeResultListener.onSuccess(java.util.List) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/interface[@name='NativeBarcodeResultListener']/method[@name='onSuccess' and count(parameter)=1 and parameter[1][@type='java.util.List']]/parameter[1]" name="managedName">barcodes</attr>
 <!-- File: AT.Nineyards.Anyline.Camera.IZoomEventHandler.cs -->
 <!-- ZoomEventHandler.onZoomEventOccured(double) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/interface[@name='ZoomEventHandler']/method[@name='onZoomEventOccured' and count(parameter)=1 and parameter[1][@type='double']]/parameter[1]" name="managedName">currentZoomLevel</attr>
 <!-- File: AT.Nineyards.Anyline.Camera.NativeBarcodeDetectionThread.cs -->
 <!-- File: AT.Nineyards.Anyline.Camera.NativeBarcodeDetector.cs -->
-<!-- NativeBarcodeDetector.enableBarcodeDetection(at.nineyards.anyline.camera.NativeBarcodeResultListener, java.util.List&lt;io.anyline.plugin.barcode.BarcodeFormat&gt;) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='NativeBarcodeDetector']/method[@name='enableBarcodeDetection' and count(parameter)=2 and parameter[1][@type='at.nineyards.anyline.camera.NativeBarcodeResultListener'] and parameter[2][@type='java.util.List&lt;io.anyline.plugin.barcode.BarcodeFormat&gt;']]/parameter[1]" name="managedName">barcodeResultListener</attr>
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='NativeBarcodeDetector']/method[@name='enableBarcodeDetection' and count(parameter)=2 and parameter[1][@type='at.nineyards.anyline.camera.NativeBarcodeResultListener'] and parameter[2][@type='java.util.List&lt;io.anyline.plugin.barcode.BarcodeFormat&gt;']]/parameter[2]" name="managedName">format</attr>
-<!-- NativeBarcodeDetector.setCameraView(at.nineyards.anyline.camera.CameraView) -->
+<!-- NativeBarcodeDetector.setCameraView(at.nineyards.anyline.camera.CameraView) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='NativeBarcodeDetector']/method[@name='setCameraView' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.CameraView']]/parameter[1]" name="managedName">cameraView</attr>
 <!-- File: AT.Nineyards.Anyline.Camera.SimpleFlashView.cs -->
 <!-- SimpleFlashView.SimpleFlashView(android.content.Context, android.util.AttributeSet, int) -->
@@ -1289,6 +1278,92 @@
 <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.ocr']/class[@name='AnylineOcrScanView']/method[@name='initAnyline' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='at.nineyards.anylinexamarin.support.modules.ocr.AnylineOcrResultListener']]/parameter[2]" name="managedName">resultListener</attr>
 <!-- File: AT.Nineyards.Anylinexamarin.Support.Modules.Ocr.IAnylineOcrResultListener.cs -->
 <!-- AnylineOcrResultListener.onResult(at.nineyards.anyline.modules.ocr.AnylineOcrResult) -->
+<!-- File: Com.Google.Firebase.Annotations.IPublicApi.cs -->
+<!-- File: Com.Google.Firebase.Annotations.PublicApiAttribute.cs -->
+<!-- File: Com.Google.Firebase.Auth.GetTokenResult.cs -->
+<!-- GetTokenResult.GetTokenResult(java.lang.String, java.util.Map&lt;java.lang.String, java.lang.Object&gt;) -->
+<!-- File: Com.Google.Firebase.Components.Component.cs -->
+<!-- Component.Builder.add(com.google.firebase.components.Dependency) -->
+<!-- Component.Builder.factory(com.google.firebase.components.ComponentFactory&lt;T&gt;) -->
+<!-- Component.Builder.publishes(java.lang.Class&lt;?&gt;) -->
+<!-- Component.builder(java.lang.Class&lt;T&gt;) -->
+<!-- Component.builder(java.lang.Class&lt;T&gt;, java.lang.Class&lt;? super T&gt;...) -->
+<!-- Component.of(T, java.lang.Class&lt;T&gt;, java.lang.Class&lt;? super T&gt;...) -->
+<!-- Component.of(java.lang.Class&lt;T&gt;, T) -->
+<!-- File: Com.Google.Firebase.Components.ComponentDiscoveryService.cs -->
+<!-- ComponentDiscoveryService.onBind(android.content.Intent) -->
+<!-- File: Com.Google.Firebase.Components.Dependency.cs -->
+<!-- Dependency.equals(java.lang.Object) -->
+<!-- Dependency.optional(java.lang.Class&lt;?&gt;) -->
+<!-- Dependency.optionalProvider(java.lang.Class&lt;?&gt;) -->
+<!-- Dependency.required(java.lang.Class&lt;?&gt;) -->
+<!-- Dependency.requiredProvider(java.lang.Class&lt;?&gt;) -->
+<!-- File: Com.Google.Firebase.Components.DependencyCycleException.cs -->
+<!-- DependencyCycleException.DependencyCycleException(java.util.List&lt;com.google.firebase.components.Component&lt;?&gt;&gt;) -->
+<!-- File: Com.Google.Firebase.Components.DependencyException.cs -->
+<!-- DependencyException.DependencyException(java.lang.String) -->
+<!-- File: Com.Google.Firebase.Components.IComponentContainer.cs -->
+<!-- ComponentContainer.get(java.lang.Class&lt;T&gt;) -->
+<!-- ComponentContainer.getProvider(java.lang.Class&lt;T&gt;) -->
+<!-- File: Com.Google.Firebase.Components.IComponentFactory.cs -->
+<!-- ComponentFactory.create(com.google.firebase.components.ComponentContainer) -->
+<!-- File: Com.Google.Firebase.Components.IComponentRegistrar.cs -->
+<!-- File: Com.Google.Firebase.Components.MissingDependencyException.cs -->
+<!-- MissingDependencyException.MissingDependencyException(java.lang.String) -->
+<!-- File: Com.Google.Firebase.DataCollectionDefaultChange.cs -->
+<!-- DataCollectionDefaultChange.DataCollectionDefaultChange(boolean) -->
+<!-- File: Com.Google.Firebase.Events.Event.cs -->
+<!-- Event.Event(java.lang.Class&lt;T&gt;, T) -->
+<!-- File: Com.Google.Firebase.Events.IEventHandler.cs -->
+<!-- EventHandler.handle(com.google.firebase.events.Event&lt;T&gt;) -->
+<!-- File: Com.Google.Firebase.Events.IPublisher.cs -->
+<!-- Publisher.publish(com.google.firebase.events.Event&lt;?&gt;) -->
+<!-- File: Com.Google.Firebase.Events.ISubscriber.cs -->
+<!-- Subscriber.subscribe(java.lang.Class&lt;T&gt;, com.google.firebase.events.EventHandler&lt;? super T&gt;) -->
+<!-- Subscriber.subscribe(java.lang.Class&lt;T&gt;, java.util.concurrent.Executor, com.google.firebase.events.EventHandler&lt;? super T&gt;) -->
+<!-- Subscriber.unsubscribe(java.lang.Class&lt;T&gt;, com.google.firebase.events.EventHandler&lt;? super T&gt;) -->
+<!-- File: Com.Google.Firebase.FirebaseError.cs -->
+<!-- File: Com.Google.Firebase.FirebaseOptions.cs -->
+<!-- FirebaseOptions.Builder.FirebaseOptions.Builder(com.google.firebase.FirebaseOptions) -->
+<!-- FirebaseOptions.Builder.setApiKey(java.lang.String) -->
+<!-- FirebaseOptions.Builder.setApplicationId(java.lang.String) -->
+<!-- FirebaseOptions.Builder.setDatabaseUrl(java.lang.String) -->
+<!-- FirebaseOptions.Builder.setGaTrackingId(java.lang.String) -->
+<!-- FirebaseOptions.Builder.setGcmSenderId(java.lang.String) -->
+<!-- FirebaseOptions.Builder.setProjectId(java.lang.String) -->
+<!-- FirebaseOptions.Builder.setStorageBucket(java.lang.String) -->
+<!-- FirebaseOptions.equals(java.lang.Object) -->
+<!-- FirebaseOptions.fromResource(android.content.Context) -->
+<!-- File: Com.Google.Firebase.Inject.IProvider.cs -->
+<!-- File: Com.Google.Firebase.Internal.InternalTokenResult.cs -->
+<!-- InternalTokenResult.InternalTokenResult(java.lang.String) -->
+<!-- File: Com.Google.Firebase.ML.Vision.Cloud.FirebaseVisionCloudDetectorOptions.cs -->
+<!-- FirebaseVisionCloudDetectorOptions.Builder.setMaxResults(int) -->
+<!-- FirebaseVisionCloudDetectorOptions.Builder.setModelType(int) -->
+<!-- File: Com.Google.Firebase.ML.Vision.Common.FirebaseVisionImageMetadata.cs -->
+<!-- FirebaseVisionImageMetadata.Builder.setFormat(int) -->
+<!-- FirebaseVisionImageMetadata.Builder.setHeight(int) -->
+<!-- FirebaseVisionImageMetadata.Builder.setRotation(int) -->
+<!-- FirebaseVisionImageMetadata.Builder.setWidth(int) -->
+<!-- FirebaseVisionImageMetadata.FirebaseVisionImageMetadata(com.google.firebase.ml.vision.common.FirebaseVisionImageMetadata) -->
+<!-- File: Com.Google.Firebase.ML.Vision.Common.FirebaseVisionLatLng.cs -->
+<!-- FirebaseVisionLatLng.FirebaseVisionLatLng(double, double) -->
+<!-- File: Com.Google.Firebase.ML.Vision.Common.FirebaseVisionPoint.cs -->
+<!-- FirebaseVisionPoint.FirebaseVisionPoint(java.lang.Float, java.lang.Float, java.lang.Float) -->
+<!-- FirebaseVisionPoint.equals(java.lang.Object) -->
+<!-- File: Com.Google.Firebase.ML.Vision.Face.FirebaseVisionFaceContour.cs -->
+<!-- FirebaseVisionFaceContour.FirebaseVisionFaceContour(int, java.util.List&lt;com.google.firebase.ml.vision.common.FirebaseVisionPoint&gt;) -->
+<!-- File: Com.Google.Firebase.ML.Vision.Face.FirebaseVisionFaceLandmark.cs -->
+<!-- File: Com.Google.Firebase.ML.Vision.FirebaseVision.cs -->
+<!-- FirebaseVision.setStatsCollectionEnabled(boolean) -->
+<!-- File: Com.Google.Firebase.ML.Vision.Label.FirebaseVisionCloudImageLabelerOptions.cs -->
+<!-- FirebaseVisionCloudImageLabelerOptions.Builder.setConfidenceThreshold(float) -->
+<!-- File: Com.Google.Firebase.Provider.FirebaseInitProvider.cs -->
+<!-- FirebaseInitProvider.delete(android.net.Uri, java.lang.String, java.lang.String[]) -->
+<!-- FirebaseInitProvider.getType(android.net.Uri) -->
+<!-- FirebaseInitProvider.insert(android.net.Uri, android.content.ContentValues) -->
+<!-- FirebaseInitProvider.query(android.net.Uri, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String) -->
+<!-- FirebaseInitProvider.update(android.net.Uri, android.content.ContentValues, java.lang.String, java.lang.String[]) -->
 <!-- File: IO.Anyline.Plugin.AbstractScanPlugin.cs -->
 <!-- AbstractScanPlugin.AbstractScanPlugin(android.content.Context, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/constructor[@name='AbstractScanPlugin' and count(parameter)=7 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String'] and parameter[4][@type='java.lang.String'] and parameter[5][@type='java.lang.String'] and parameter[6][@type='java.lang.String'] and parameter[7][@type='java.lang.String']]/parameter[1]" name="managedName">context</attr>

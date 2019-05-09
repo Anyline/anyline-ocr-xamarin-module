@@ -10,6 +10,37 @@
   
   <!-- +++++++++++++ Removes +++++++++++++ -->
 
+  <!-- remove firebase components -->
+
+  <remove-node path="/api/package[starts-with(@name, 'com.google.android.gms.auth')]" />
+  <remove-node path="/api/package[starts-with(@name, 'com.google.android.gms.common.data')]" />
+  <remove-node path="/api/package[starts-with(@name, 'com.google.android.gms.common.image')]" />
+
+  <remove-node path="/api/package[starts-with(@name, 'com.google.android.gms.common.server')]" />
+  <!--<remove-node path="/api/package[starts-with(@name, 'com.google.android.gms.common.internal')]" />-->
+  <remove-node path="/api/package[starts-with(@name, 'com.google.android.gms.internal.base')]" />
+
+  <remove-node path="/api/package[@name='com.google.android.gms.common.internal']/class[@name='zaa']"/>
+  <remove-node path="/api/package[@name='com.google.android.gms.common.internal']/class[@name='zam']"/>
+  <remove-node path="/api/package[@name='com.google.android.gms.common.internal']/class[@name='zan']"/>
+  <remove-node path="/api/package[@name='com.google.android.gms.common.internal']/class[@name='zao']"/>
+  <remove-node path="/api/package[@name='com.google.android.gms.common.internal']/class[@name='zab']"/>
+
+  <remove-node path="/api/package[@name='com.google.android.gms.signin.internal']/class[@name='zai']"/>
+  <remove-node path="/api/package[@name='com.google.android.gms.signin.internal']/class[@name='zak']"/>
+  <remove-node path="/api/package[@name='com.google.android.gms.signin.internal']/class[@name='zab']"/>
+
+
+  <remove-node path="/api/package[starts-with(@name, 'com.google.firebase.ml.vision.document')]" />
+  <remove-node path="/api/package[starts-with(@name, 'com.google.firebase.ml.vision.text')]" />
+  <remove-node path="/api/package[starts-with(@name, 'com.google.firebase.ml.vision.text')]" />
+
+  <remove-node path="/api/package[@name='com.google.firebase']/interface[@name='FirebaseAppLifecycleListener']"/>
+  <!--<remove-node path="/api/package[@name='com.google.firebase']/interface[@name='FirebaseApp.BackgroundStateChangeListener']"/>-->
+  
+  <remove-node path="/api/package[@name='com.google.firebase']/interface[@name='FirebaseApp.IdTokenListener']"/>
+  <remove-node path="/api/package[@name='com.google.firebase']/interface[@name='FirebaseApp.IdTokenListenersCountChangedListener']"/>
+  
   <!-- remove opencv components -->
 
   <remove-node path="/api/package[@name='org.opencv.android']"/>
@@ -128,20 +159,12 @@
   <!-- OCR -->
   <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.ocr']/interface[@name='AnylineOcrResultListener']/method[@name='onResult']/parameter[1]" name="managedName">scanResult</attr>
   
-  <!-- make OCR copyTrainedData obsolete -->
-  <attr path="/api/package[@name='at.nineyards.anyline.modules.ocr']/class[@name='AnylineOcrScanView']/method[@name='copyTrainedData' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String']]" name="deprecated">
-    Deprecated. AnylineOcrConfig.SetLanguages(String...) should be used instead.
-  </attr>
-  <!-- make OCR setTesseractLanguages obsolete -->
-  <attr path="/api/package[@name='at.nineyards.anyline.modules.ocr']/class[@name='AnylineOcrConfig']/method[@name='setTesseractLanguages' and count(parameter)=1 and parameter[1][@type='java.lang.String...']]" name="deprecated">
-    Deprecated. AnylineOcrConfig.SetLanguages(String...) should be used instead.
-  </attr>
-
   <!-- ANYLINE 4+ Support API -->
   
   <remove-node path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanResultListener']"/>
   
-  <!--<attr path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanResultListener']/method[@name='onResult' and count(parameter)=1 and parameter[1][@type='T']]/parameter[1]" name="managedType">IO.Anyline.Plugin.ScanResult</attr>
+  <!--
+  <attr path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanResultListener']/method[@name='onResult' and count(parameter)=1 and parameter[1][@type='T']]/parameter[1]" name="managedType">IO.Anyline.Plugin.ScanResult</attr>
   -->
 
 </metadata>

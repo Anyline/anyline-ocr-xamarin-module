@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Additions\Deprecations.cs" />
     <Compile Include="Additions\IDocumentScanResultListener.cs" />
     <Compile Include="Additions\IScanResultListener.cs" />
     <Compile Include="Additions\MrzIdentification.cs" />
@@ -68,9 +69,8 @@
     <Content Include="Assets\raw\al_d6f3e042d13f4cc06b77dbdb2d2dcebaf46326e6.txt" />
     <TransformFile Include="Assets\tools\Generated.xml" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <LibraryProjectZip Include="Jars\anylinesdk-10.1-RC1.aar" />
+    <LibraryProjectZip Include="Jars\anylinesdk-10.1-RC2.aar" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
   <PropertyGroup>
