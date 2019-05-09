@@ -58,15 +58,10 @@ namespace AnylineExamples.Droid
                 SetContentView(Resource.Layout.scan_activity);
 
                 _scanView = FindViewById<ScanView>(Resource.Id.scan_view);
-
-                //com/google/android/gms/common/api/internal/BackgroundDetector$BackgroundStateChangeListener;
-
+                
                 // the initialization parses the json configuration and builds the whole use-case
                 _scanView.Init(jsonPath, LICENSE_KEY);
                 
-                IO.Anyline.Xamarin.Support.Plugins.
-                //var bla = new Com.Google.Firebase.ML.Vision.Barcode.FirebaseVisionBarcode();
-
                 /*
                  * Depending on your config/use-case, the ScanViewPlugin is of a different type.
                  * You need to add your implementation of IO.Anyline.Plugin.IScanResultListener to retrieve scan results.
