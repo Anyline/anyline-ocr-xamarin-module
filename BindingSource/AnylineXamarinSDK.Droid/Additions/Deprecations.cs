@@ -12,6 +12,7 @@ using Android.Widget;
 
 // all api's
 
+/*
 namespace AT.Nineyards.Anyline.Modules.Barcode
 {
     [Obsolete("As of Anyline 10.1, this class is deprecated and will be removed by November 2019.")]
@@ -70,7 +71,7 @@ namespace AT.Nineyards.Anyline.Camera
 {
     [Obsolete("As of Anyline 10.1, this class is deprecated and will be removed by November 2019.")]
     public partial class AnylineViewConfig : global::Java.Lang.Object { }
-}
+}*/
 
 // official anyline.xamarin api's
 
