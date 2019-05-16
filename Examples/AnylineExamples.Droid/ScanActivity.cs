@@ -12,7 +12,6 @@ using Android.Util;
 using IO.Anyline.Plugin.ID;
 using IO.Anyline.Plugin.Barcode;
 using System.Collections;
-using Com.Google.Firebase.ML.Vision;
 
 namespace AnylineExamples.Droid
 {
