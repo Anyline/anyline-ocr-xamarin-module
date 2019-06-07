@@ -10,9 +10,7 @@
     "plugin": {
       "id": "OCR_COW_TAG_PLUGIN",
       "ocrPlugin": {
-        "scanMode": "AUTO",
-        "languages": [ "USNr.any" ],
-        "customCmdFile": "cow_tag_scanner.ale"
+        "cattleTagConfig": {}
       }
     },
     "cutoutConfig": {

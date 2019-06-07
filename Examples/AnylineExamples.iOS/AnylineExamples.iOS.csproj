@@ -93,7 +93,6 @@
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
     <BundleResource Include="Resources\anyline_capitals.traineddata" />
     <BundleResource Include="Resources\bottlecap.traineddata" />
-    <BundleResource Include="Resources\container_scanner.ale" />
     <BundleResource Include="Resources\document_config.json" />
     <BundleResource Include="Resources\energy_config_analog_digital.json" />
     <BundleResource Include="Resources\energy_config_dial.json" />
@@ -105,13 +104,9 @@
     <BundleResource Include="Resources\others_config_barcode.json" />
     <BundleResource Include="Resources\others_config_bottlecap.json" />
     <BundleResource Include="Resources\others_config_voucher_code.json" />
-    <BundleResource Include="Resources\USNr.any" />
     <BundleResource Include="Resources\vehicle_config_license_plate.json" />
-    <BundleResource Include="Resources\vin.ale" />
-    <BundleResource Include="Resources\VIN.any" />
     <BundleResource Include="Resources\id_config_german_id_front.json" />
     <BundleResource Include="Resources\others_config_cow_tag.json" />
-    <BundleResource Include="Resources\cow_tag_scanner.ale" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -165,7 +160,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Anyline.Xamarin.SDK.iOS">
-      <Version>10.1.0</Version>
+      <Version>10.2.0</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="..\AnylineExamples.Shared\AnylineExamples.Shared.projitems" Label="Shared" />

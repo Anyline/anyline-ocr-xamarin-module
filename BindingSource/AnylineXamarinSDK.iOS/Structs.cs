@@ -255,13 +255,6 @@ namespace AnylineXamarinSDK.iOS
     }
 
     [Native]
-    public enum ALIdentityDocumentScanMode : long
-    {
-        Mrz,
-        DrivingLicense
-    }
-
-    [Native]
     public enum ALDrivingLicenseScanMode : long
     {
         At,
@@ -275,6 +268,13 @@ namespace AnylineXamarinSDK.iOS
         Line,
         Grid,
         Auto
+    }
+
+    [Native]
+    public enum ALContainerScanMode : long
+    {
+        Horizontal,
+        Vertical
     }
 
     [Native]

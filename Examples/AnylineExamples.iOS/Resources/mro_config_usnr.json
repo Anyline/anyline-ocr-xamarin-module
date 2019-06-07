@@ -1,6 +1,6 @@
 ﻿{
   "camera": {
-    "captureResolution": "1080p"
+    "captureResolution": "720"
   },
   "flash": {
     "mode": "manual",
@@ -8,41 +8,41 @@
   },
   "viewPlugin": {
     "plugin": {
-      "id": "OCR_USNR_PLUGIN",
+      "id": "USNR_ID",
       "ocrPlugin": {
-        "scanMode": "AUTO",
-        "languages": [ "USNr.any" ]
-      }
+        "ocrConfig":  {}
+      },
+      "delayStartScanTime": 1000
     },
     "cutoutConfig": {
       "style": "rect",
-      "maxWidthPercent": "70%",
+      "width": 720,
       "alignment": "top_half",
+      "maxWidthPercent": "80%",
       "ratioFromSize": {
-        "width": 62,
-        "height": 9
+        "width": 720,
+        "height": 144
       },
-      "outerColor": "000000",
-      "outerAlpha": 0.3,
       "strokeWidth": 2,
       "strokeColor": "FFFFFF",
       "cornerRadius": 4,
-      "feedbackStrokeColor": "0099FF"
+      "outerColor": "000000",
+      "outerAlpha": 0.5,
+      "feedbackStrokeColor": "0099FF",
+      "offset": {
+        "x": 0,
+        "y": -15
+      }
     },
     "scanFeedback": {
-      "animation": "traverse_multi",
-      "animationDuration": 250,
-      "style": "contour_rect",
-      "strokeWidth": 2,
+      "style": "CONTOUR_RECT",
       "strokeColor": "0099FF",
       "fillColor": "220099FF",
       "beepOnResult": true,
       "vibrateOnResult": true,
       "blinkAnimationOnResult": true
     },
-    "cancelOnResult": true,
-    "reportingEnabled": true
+    "cancelOnResult": true
   }
 
 }
-

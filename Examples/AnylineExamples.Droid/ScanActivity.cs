@@ -17,7 +17,7 @@ namespace AnylineExamples.Droid
 {
     [Activity(Label = "",
         MainLauncher = false,
-        ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait,
+        //ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait,
         HardwareAccelerated = true)]
     public class ScanActivity : AppCompatActivity
     {

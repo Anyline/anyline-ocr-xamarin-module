@@ -8,8 +8,9 @@
   },
   "viewPlugin": {
     "plugin": {
-      "id": "BARCODE_PLUGIN",
+      "id": "Barcode_ID",
       "barcodePlugin": {
+        
       }
     },
     "cutoutConfig": {

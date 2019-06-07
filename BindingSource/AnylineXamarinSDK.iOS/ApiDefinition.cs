@@ -485,6 +485,21 @@ namespace AnylineXamarinSDK.iOS
         [Export("defaultOCRConfig")]
         ALScanViewPluginConfig DefaultOCRConfig();
 
+        // +(instancetype _Nonnull)defaultVINConfig;
+        [Static]
+        [Export("defaultVINConfig")]
+        ALScanViewPluginConfig DefaultVINConfig();
+
+        // +(instancetype _Nonnull)defaultContainerConfig;
+        [Static]
+        [Export("defaultContainerConfig")]
+        ALScanViewPluginConfig DefaultContainerConfig();
+
+        // +(instancetype _Nonnull)defaultCattleTagConfig;
+        [Static]
+        [Export("defaultCattleTagConfig")]
+        ALScanViewPluginConfig DefaultCattleTagConfig();
+
         // +(instancetype _Nonnull)defaultMRZConfig;
         [Static]
         [Export("defaultMRZConfig")]
@@ -3253,6 +3268,15 @@ namespace AnylineXamarinSDK.iOS
         IntPtr Constructor(string result, UIImage image, [NullAllowed] UIImage fullImage, nint confidence, string pluginID, [NullAllowed] UIImage thresholdedImage);
     }
 
+    // @interface ALBaseOCRConfig : NSObject
+    [BaseType(typeof(NSObject))]
+    interface ALBaseOCRConfig
+    {
+        // -(instancetype _Nullable)initWithJsonDictionary:(NSDictionary * _Nonnull)configDict;
+        [Export("initWithJsonDictionary:")]
+        IntPtr Constructor(NSDictionary configDict);
+    }
+
     partial interface Constants
     {
         // extern NSString *const _Nonnull regexForEmail;
@@ -3334,8 +3358,8 @@ namespace AnylineXamarinSDK.iOS
         bool CopyLanguage(string path, string toPath, [NullAllowed] string hash, [NullAllowed] out NSError error);
     }
 
-    // @interface ALOCRConfig : NSObject
-    [BaseType(typeof(NSObject))]
+    // @interface ALOCRConfig : ALBaseOCRConfig
+    [BaseType(typeof(ALBaseOCRConfig))]
     interface ALOCRConfig
     {
         // -(instancetype _Nullable)initWithJsonDictionary:(NSDictionary * _Nonnull)configDict;
@@ -3438,6 +3462,27 @@ namespace AnylineXamarinSDK.iOS
         [Export("allLanguagesAnyFiles")]
 
         bool AllLanguagesAnyFiles { get; }
+    }
+
+    // @interface ALVINConfig : ALBaseOCRConfig
+    [BaseType(typeof(ALBaseOCRConfig))]
+    interface ALVINConfig
+    {
+    }
+
+    // @interface ALContainerConfig : ALBaseOCRConfig
+    [BaseType(typeof(ALBaseOCRConfig))]
+    interface ALContainerConfig
+    {
+        // @property (assign, nonatomic) ALContainerScanMode scanMode;
+        [Export("scanMode", ArgumentSemantic.Assign)]
+        ALContainerScanMode ScanMode { get; set; }
+    }
+
+    // @interface ALCattleTagConfig : ALBaseOCRConfig
+    [BaseType(typeof(ALBaseOCRConfig))]
+    interface ALCattleTagConfig
+    {
     }
 
     // @interface ALOCRScanPlugin : ALAbstractScanPlugin

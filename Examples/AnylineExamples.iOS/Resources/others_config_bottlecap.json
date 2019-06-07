@@ -10,18 +10,20 @@
     "plugin": {
       "id": "OCR_BOTTLECAP_PLUGIN",
       "ocrPlugin": {
-        "scanMode": "GRID",
-        "languages": [ "bottlecap.traineddata" ],
-        "charWhitelist": "123456789ABCDEFGHJKLMNPRSTUVWXYZ",
-        "minCharHeight": 14,
-        "maxCharHeight": 95,
-        "minConfidence": 75,
-        "validationRegex": "^[0-9A-Z]{3}\n[0-9A-Z]{3}\n[0-9A-Z]{3}",
-        "charCountX": 3,
-        "charCountY": 3,
-        "charPaddingXFactor": 0.3,
-        "charPaddingYFactor": 0.5,
-        "isBrightTextOnDark": true
+        "ocrConfig": {
+          "scanMode": "GRID",
+          "languages": [ "bottlecap.traineddata" ],
+          "charWhitelist": "123456789ABCDEFGHJKLMNPRSTUVWXYZ",
+          "minCharHeight": 14,
+          "maxCharHeight": 95,
+          "minConfidence": 75,
+          "validationRegex": "^[0-9A-Z]{3}\n[0-9A-Z]{3}\n[0-9A-Z]{3}",
+          "charCountX": 3,
+          "charCountY": 3,
+          "charPaddingXFactor": 0.3,
+          "charPaddingYFactor": 0.5,
+          "isBrightTextOnDark": true
+        }
       }
     },
     "cutoutConfig": {

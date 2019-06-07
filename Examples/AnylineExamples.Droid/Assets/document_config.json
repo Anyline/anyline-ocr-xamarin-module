@@ -36,10 +36,10 @@
       "feedbackStrokeColor": "00000000"
     },
     "scanFeedback": {
+      "strokeColor": "00000000",
       "beepOnResult": true,
       "vibrateOnResult": true,
-      "blinkAnimationOnResult": true,
-      "strokeColor": "00000000"
+      "blinkAnimationOnResult": true
     },
     "cancelOnResult": true
   }
