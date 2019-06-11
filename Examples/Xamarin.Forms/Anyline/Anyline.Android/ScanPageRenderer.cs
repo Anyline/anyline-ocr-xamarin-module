@@ -62,13 +62,12 @@ namespace Anyline.Droid
 
                     scanView.Init("id_config_mrz.json", licenseKey);
 
-                    //scanView.ScanViewPlugin.AddScanResultListener(this);
+                    scanView.ScanViewPlugin.AddScanResultListener(this);
 
                     scanView.CameraOpened += ScanView_CameraOpened;
 
                 }
-
-                // do stuff.
+                
             } catch(Exception e)
             {
                 // show error
@@ -77,48 +76,23 @@ namespace Anyline.Droid
 
         private void ScanView_CameraOpened(object sender, AT.Nineyards.Anyline.Camera.CameraOpenedEventArgs e)
         {
-            //scanView.ScanViewPlugin.Start();
-
-            cameraOpened = true;
+            scanView.ScanViewPlugin.Start();
         }
 
-        protected override async void OnLayout(bool changed, int l, int t, int r, int b)
+        protected override void OnLayout(bool changed, int l, int t, int r, int b)
         {
             base.OnLayout(changed, l, t, r, b);
-            
+
             var w = r - l;
             var h = b - t;
 
             var msw = MeasureSpec.MakeMeasureSpec(w, MeasureSpecMode.Exactly);
             var msh = MeasureSpec.MakeMeasureSpec(h, MeasureSpecMode.Exactly);
-
             view.Measure(msw, msh);
-            view.Layout(l, t, r, b);
+            view.Layout(0, 0, w, h);
 
-            if (cameraOpened)
-            {
-                scanView.CameraView.ReleaseCameraInBackground();
-
-                cameraOpened = false;
-
-                scanView.CameraView.OpenCameraInBackground();
-            }
+            Log.Debug("OnLayout", $"{w} x {h}");
         }
-
-        //protected override void OnLayout(bool changed, int l, int t, int r, int b)
-        //{
-        //    base.OnLayout(changed, l, t, r, b);
-
-        //    var w = r - l;
-        //    var h = b - t;
-
-        //    var msw = MeasureSpec.MakeMeasureSpec(w, MeasureSpecMode.Exactly);
-        //    var msh = MeasureSpec.MakeMeasureSpec(h, MeasureSpecMode.Exactly);
-        //    view.Measure(msw, msh);
-        //    view.Layout(0, 0, w, h);
-
-        //    Log.Debug("OnLayout", $"{w} x {h}");
-        //}
 
         public void OnResult(ScanResult result)
         {
