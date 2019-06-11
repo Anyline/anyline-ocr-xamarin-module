@@ -23,6 +23,23 @@ rmdir BindingSource\AnylineXamarinSDK.iOS\bin /S /Q
 IF EXIST BindingSource\AnylineXamarinSDK.iOS\obj (
 rmdir BindingSource\AnylineXamarinSDK.iOS\obj /S /Q
 )
-
+IF EXIST Examples\Xamarin.Forms\Anyline\Anyline.Android\bin (
+rmdir Examples\Xamarin.Forms\Anyline\Anyline.Android\bin /S /Q
+)
+IF EXIST Examples\Xamarin.Forms\Anyline\Anyline.Android\obj (
+rmdir Examples\Xamarin.Forms\Anyline\Anyline.Android\obj /S /Q
+)
+IF EXIST Examples\Xamarin.Forms\Anyline\Anyline.iOS\bin (
+rmdir Examples\Xamarin.Forms\Anyline\Anyline.iOS\bin /S /Q
+)
+IF EXIST Examples\Xamarin.Forms\Anyline\Anyline.iOS\obj (
+rmdir Examples\Xamarin.Forms\Anyline\Anyline.iOS\obj /S /Q
+)
+IF EXIST Examples\Xamarin.Forms\Anyline\Anyline.UWP\bin (
+rmdir EXIST Examples\Xamarin.Forms\Anyline\Anyline.UWP\bin /S /Q
+)
+IF EXIST Examples\Xamarin.Forms\Anyline\Anyline.UWP\obj (
+rmdir Examples\Xamarin.Forms\Anyline\Anyline.UWP\obj /S /Q
+)
 echo off
 pause
