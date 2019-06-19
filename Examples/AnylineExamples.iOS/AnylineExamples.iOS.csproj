@@ -107,8 +107,65 @@
     <BundleResource Include="Resources\vehicle_config_license_plate.json" />
     <BundleResource Include="Resources\id_config_german_id_front.json" />
     <BundleResource Include="Resources\others_config_cow_tag.json" />
+    <BundleResource Include="Resources\AnylineResources.bundle\Anyline-Info.plist" />
+    <BundleResource Include="Resources\AnylineResources.bundle\threshold_all.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\images\anyline_logo_white.dat" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_auto.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_auto_any.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_grid.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_grid_any.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_line.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\anyline_ocr_line_any.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\container_scanner.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\container_scanner_vertical.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\cow_tag_scanner.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\vin.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\trained_models\USNr.any" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_anyline_ocr\trained_models\VIN.any" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_barcode\ean.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_document\document.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_document\trained_models\doc_model_3_25.any" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_document\trained_models\doc_model_3_27.any" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\analog_digital_auto_mode.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\analog_meter.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\brightness.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\dial_meter.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\digital_heat_meter.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\digital_meter.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\dot_matrix_meter.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\energy_serial.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\energy_serial_alnum_3_letters.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\energy_serial_capital_letters.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\trained_models\CNN_analog_digital.any" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\trained_models\CNN_serialnumbers_combined.any" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\trained_models\CNN_SNr_w_CL_special_whiteList.any" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_energy\trained_models\digitalCommaSvmModel.any" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_id\anyline_driving_license.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_id\anyline_german_id_front.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_id\mrz_scanning.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_id\trained_models\DL_AT.any" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_id\trained_models\IDDe.any" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_id\trained_models\OCRb.any" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_id\trained_models\USNr.any" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\license_plates_combined.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\aut_nice.traineddata" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\ch_nice.traineddata" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\cz_nice.traineddata" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\de_umlaut.traineddata" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\deu.traineddata" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\hr_nice.traineddata" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\italy_nice.traineddata" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\old.traineddata" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\polish_nice.traineddata" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\sk_nice.traineddata" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\tessdata\standard.traineddata" />
+    <BundleResource Include="Resources\AnylineResources.bundle\ui\asset-manifest.json" />
+    <BundleResource Include="Resources\AnylineResources.bundle\ui\manifest.json" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="AnylineXamarinSDK.iOS">
+      <HintPath>..\..\Nuget\lib\Xamarin.iOS10\AnylineXamarinSDK.iOS.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -159,9 +216,46 @@
     </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Anyline.Xamarin.SDK.iOS">
-      <Version>10.2.0</Version>
-    </PackageReference>
+    <BundleResource Include="Resources\AnylineResources.bundle\images\flash_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AnylineResources.bundle\images\flash_white%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AnylineResources.bundle\images\flash_white%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AnylineResources.bundle\sounds\beep.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AnylineResources.bundle\ui\favicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AnylineResources.bundle\ui\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AnylineResources.bundle\ui\precache-manifest.ce26756c8a59c9a79b352ead99228ad1.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AnylineResources.bundle\ui\service-worker.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AnylineResources.bundle\ui\static\css\main.aad3df20.chunk.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AnylineResources.bundle\ui\static\js\1.42b14459.chunk.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AnylineResources.bundle\ui\static\js\2.8b8e9591.chunk.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AnylineResources.bundle\ui\static\js\3.10897e3c.chunk.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AnylineResources.bundle\ui\static\js\main.21e52887.chunk.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AnylineResources.bundle\ui\static\js\runtime~main.141b28a8.js" />
   </ItemGroup>
   <Import Project="..\AnylineExamples.Shared\AnylineExamples.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
