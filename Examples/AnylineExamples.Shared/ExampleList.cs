@@ -37,7 +37,7 @@ namespace AnylineExamples.Shared
         public static readonly string AnalogDigital = "Analog/Digital Meter";
         public static readonly string DialMeter = "Dial Meter";
         public static readonly string MRZ = "Passport/MRZ";
-        public static readonly string DrivingLicense = "AUT/GER Driving License";
+        public static readonly string DrivingLicense = "Driving License";
         public static readonly string GermanIDFront = "German ID Front";
         public static readonly string LicensePlate = "EU License Plate";
         public static readonly string UniversalSerialNumber = "Universal Serial Number";

@@ -98,10 +98,15 @@ namespace AnylineExamples.iOS
             Debug.WriteLine("{0}: {1}", name, value);
             if (value != null)
             {
-                if (value is ALMRZIdentification || value is ALDrivingLicenseIdentification
+                if (value is ALMRZIdentification 
+                    || value is ALDrivingLicenseIdentification
                     || value is ALGermanIDFrontIdentification)
                 {
                     value.CreatePropertyDictionary().ToList().ForEach(x => dict.Add(x.Key, x.Value));
+                }
+                else if (value is ALIDFieldConfidences)
+                {
+                    value.CreatePropertyDictionary().ToList().ForEach(x => dict.Add($"{x.Key} (field confidence)", x.Value));
                 }
                 else if (value is UIImage && value != null)
                 {

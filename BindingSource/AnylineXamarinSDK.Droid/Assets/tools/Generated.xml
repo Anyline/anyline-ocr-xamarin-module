@@ -1370,6 +1370,25 @@
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseConfig.DrivingLicenseCountry']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
 <!-- DrivingLicenseConfig.setScanMode(io.anyline.plugin.id.DrivingLicenseConfig.DrivingLicenseCountry) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseConfig']/method[@name='setScanMode' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.DrivingLicenseConfig.DrivingLicenseCountry']]/parameter[1]" name="managedName">scanMode</attr>
+<!-- File: IO.Anyline.Plugin.ID.DrivingLicenseFieldConfidences.cs -->
+<!-- DrivingLicenseFieldConfidences.setAuthority(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldConfidences']/method[@name='setAuthority' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">authority</attr>
+<!-- DrivingLicenseFieldConfidences.setCategories(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldConfidences']/method[@name='setCategories' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">categories</attr>
+<!-- DrivingLicenseFieldConfidences.setDateOfBirth(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldConfidences']/method[@name='setDateOfBirth' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">dateOfBirth</attr>
+<!-- DrivingLicenseFieldConfidences.setDateOfExpiry(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldConfidences']/method[@name='setDateOfExpiry' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">dateOfExpiry</attr>
+<!-- DrivingLicenseFieldConfidences.setDateOfIssue(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldConfidences']/method[@name='setDateOfIssue' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">dateOfIssue</attr>
+<!-- DrivingLicenseFieldConfidences.setDocumentNumber(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldConfidences']/method[@name='setDocumentNumber' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">documentNumber</attr>
+<!-- DrivingLicenseFieldConfidences.setGivenNames(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldConfidences']/method[@name='setGivenNames' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">givenNames</attr>
+<!-- DrivingLicenseFieldConfidences.setPlaceOfBirth(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldConfidences']/method[@name='setPlaceOfBirth' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">placeOfBirth</attr>
+<!-- DrivingLicenseFieldConfidences.setSurname(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldConfidences']/method[@name='setSurname' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">surname</attr>
 <!-- File: IO.Anyline.Plugin.ID.DrivingLicenseFieldScanOptions.cs -->
 <!-- DrivingLicenseFieldScanOptions.setAuthority(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOptions']/method[@name='setAuthority' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">authority</attr>
@@ -1425,7 +1444,24 @@
 <!-- DrivingLicenseIdentification.setSurname(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseIdentification']/method[@name='setSurname' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">surname</attr>
 <!-- File: IO.Anyline.Plugin.ID.GermanIdFrontConfig.cs -->
-<!-- File: IO.Anyline.Plugin.ID.GermanIdFrontFieldScanOptions.cs -->
+<!-- File: IO.Anyline.Plugin.ID.GermanIDFrontFieldConfidences.cs -->
+<!-- GermanIDFrontFieldConfidences.setCardAccessNumber(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIDFrontFieldConfidences']/method[@name='setCardAccessNumber' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">cardAccessNumber</attr>
+<!-- GermanIDFrontFieldConfidences.setDateOfBirth(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIDFrontFieldConfidences']/method[@name='setDateOfBirth' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">dateOfBirth</attr>
+<!-- GermanIDFrontFieldConfidences.setDateOfExpiry(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIDFrontFieldConfidences']/method[@name='setDateOfExpiry' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">dateOfExpiry</attr>
+<!-- GermanIDFrontFieldConfidences.setDocumentNumber(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIDFrontFieldConfidences']/method[@name='setDocumentNumber' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">documentNumber</attr>
+<!-- GermanIDFrontFieldConfidences.setGivenNames(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIDFrontFieldConfidences']/method[@name='setGivenNames' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">givenNames</attr>
+<!-- GermanIDFrontFieldConfidences.setNationality(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIDFrontFieldConfidences']/method[@name='setNationality' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">nationality</attr>
+<!-- GermanIDFrontFieldConfidences.setPlaceOfBirth(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIDFrontFieldConfidences']/method[@name='setPlaceOfBirth' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">placeOfBirth</attr>
+<!-- GermanIDFrontFieldConfidences.setSurname(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIDFrontFieldConfidences']/method[@name='setSurname' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">surname</attr>
+<!-- File: IO.Anyline.Plugin.ID.GermanIdFrontFieldScanOptions.cs -->
 <!-- GermanIdFrontFieldScanOptions.setCardAccessNumber(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontFieldScanOptions']/method[@name='setCardAccessNumber' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">cardAccessNumber</attr>
 <!-- GermanIdFrontFieldScanOptions.setDateOfBirth(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
@@ -1476,8 +1512,18 @@
 <!-- File: IO.Anyline.Plugin.ID.IdConfig.cs -->
 <!-- IdConfig.setIdFieldScanOptions(io.anyline.plugin.id.IDFieldScanOptions) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdConfig']/method[@name='setIdFieldScanOptions' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions']]/parameter[1]" name="managedName">idFieldScanOptions</attr>
+<!-- IdConfig.setIdMinFieldConfidences(io.anyline.plugin.id.IDFieldConfidences) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdConfig']/method[@name='setIdMinFieldConfidences' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldConfidences']]/parameter[1]" name="managedName">idMinFieldConfidences</attr>
+<!-- IdConfig.setMinConfidence(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdConfig']/method[@name='setMinConfidence' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">minConfidence</attr>
 <!-- IdConfig.enableFaceDetection(boolean) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdConfig']/method[@name='enableFaceDetection' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">faceDetectionEnabled</attr>
+<!-- File: IO.Anyline.Plugin.ID.IDFieldConfidences.cs -->
+<!-- IDFieldConfidences.initDictionaryStartVariableFromJsonObject(android.content.Context, org.json.JSONObject, java.lang.Object) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IDFieldConfidences']/method[@name='initDictionaryStartVariableFromJsonObject' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='org.json.JSONObject'] and parameter[3][@type='java.lang.Object']]/parameter[1]" name="managedName">context</attr>
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IDFieldConfidences']/method[@name='initDictionaryStartVariableFromJsonObject' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='org.json.JSONObject'] and parameter[3][@type='java.lang.Object']]/parameter[2]" name="managedName">json</attr>
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IDFieldConfidences']/method[@name='initDictionaryStartVariableFromJsonObject' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='org.json.JSONObject'] and parameter[3][@type='java.lang.Object']]/parameter[3]" name="managedName">object</attr>
+<!-- IDFieldConfidences.setIdMinFieldConfidenceStartVariable(io.anyline.plugin.id.IDFieldConfidences) -->
 <!-- File: IO.Anyline.Plugin.ID.IDFieldScanOptions.cs -->
 <!-- IDFieldScanOptions.FieldScanOption.fromInt(int) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IDFieldScanOptions.FieldScanOption']/method[@name='fromInt' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">fieldScanOption</attr>
@@ -1517,6 +1563,51 @@
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzConfig']/method[@name='setCropAndTransformID' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">cropAndTransformID</attr>
 <!-- MrzConfig.setStrictMode(boolean) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzConfig']/method[@name='setStrictMode' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">strictMode</attr>
+<!-- File: IO.Anyline.Plugin.ID.MrzFieldConfidences.cs -->
+<!-- MrzFieldConfidences.setCheckDigitDateOfBirth(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/method[@name='setCheckDigitDateOfBirth' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">checkDigitDateOfBirth</attr>
+<!-- MrzFieldConfidences.setCheckDigitDateOfExpiry(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/method[@name='setCheckDigitDateOfExpiry' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">checkDigitDateOfExpiry</attr>
+<!-- MrzFieldConfidences.setCheckDigitDocumentNumber(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/method[@name='setCheckDigitDocumentNumber' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">checkDigitDocumentNumber</attr>
+<!-- MrzFieldConfidences.setCheckDigitFinal(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/method[@name='setCheckDigitFinal' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">checkDigitFinal</attr>
+<!-- MrzFieldConfidences.setCheckDigitPersonalNumber(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/method[@name='setCheckDigitPersonalNumber' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">checkDigitPersonalNumber</attr>
+<!-- MrzFieldConfidences.setDateOfBirth(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/method[@name='setDateOfBirth' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">dateOfBirth</attr>
+<!-- MrzFieldConfidences.setDateOfExpiry(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/method[@name='setDateOfExpiry' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">dateOfExpiry</attr>
+<!-- MrzFieldConfidences.setDocumentNumber(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/method[@name='setDocumentNumber' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">documentNumber</attr>
+<!-- MrzFieldConfidences.setDocumentType(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/method[@name='setDocumentType' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">documentType</attr>
+<!-- MrzFieldConfidences.setGivenNames(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/method[@name='setGivenNames' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">givenNames</attr>
+<!-- MrzFieldConfidences.setIssuingCountryCode(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/method[@name='setIssuingCountryCode' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">issuingCountryCode</attr>
+<!-- MrzFieldConfidences.setNationalityCountryCode(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/method[@name='setNationalityCountryCode' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">nationalityCountryCode</attr>
+<!-- MrzFieldConfidences.setOptionalData(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/method[@name='setOptionalData' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">optionalData</attr>
+<!-- MrzFieldConfidences.setPersonalNumber(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/method[@name='setPersonalNumber' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">personalNumber</attr>
+<!-- MrzFieldConfidences.setSex(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/method[@name='setSex' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">sex</attr>
+<!-- MrzFieldConfidences.setSurname(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/method[@name='setSurname' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">surname</attr>
+<!-- MrzFieldConfidences.setVizAddress(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/method[@name='setVizAddress' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">vizAddress</attr>
+<!-- MrzFieldConfidences.setVizDateOfBirth(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/method[@name='setVizDateOfBirth' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">vizDateOfBirth</attr>
+<!-- MrzFieldConfidences.setVizDateOfExpiry(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/method[@name='setVizDateOfExpiry' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">vizDateOfExpiry</attr>
+<!-- MrzFieldConfidences.setVizDateOfIssue(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/method[@name='setVizDateOfIssue' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">vizDateOfIssue</attr>
+<!-- MrzFieldConfidences.setVizGivenNames(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/method[@name='setVizGivenNames' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">vizGivenNames</attr>
+<!-- MrzFieldConfidences.setVizSurname(int) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/method[@name='setVizSurname' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">vizSurname</attr>
 <!-- File: IO.Anyline.Plugin.ID.MrzFieldScanOptions.cs -->
 <!-- MrzFieldScanOptions.setAddress(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldScanOptions']/method[@name='setAddress' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">address</attr>
@@ -1611,11 +1702,16 @@
 <!-- File: IO.Anyline.Plugin.IScanRunSkippedListener.cs -->
 <!-- ScanRunSkippedListener.onRunSkipped(io.anyline.plugin.ScanRunSkippedReason) -->
 <attr path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanRunSkippedListener']/method[@name='onRunSkipped' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanRunSkippedReason']]/parameter[1]" name="managedName">reason</attr>
+<!-- File: IO.Anyline.Plugin.Licenseplate.LicensePlateScanMode.cs -->
+<!-- LicensePlateScanMode.valueOf(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.licenseplate']/class[@name='LicensePlateScanMode']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
 <!-- File: IO.Anyline.Plugin.Licenseplate.LicensePlateScanPlugin.cs -->
 <!-- LicensePlateScanPlugin.LicensePlateScanPlugin(android.content.Context, java.lang.String, java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.plugin.licenseplate']/class[@name='LicensePlateScanPlugin']/constructor[@name='LicensePlateScanPlugin' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='io.anyline.plugin.licenseplate']/class[@name='LicensePlateScanPlugin']/constructor[@name='LicensePlateScanPlugin' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[2]" name="managedName">id</attr>
 <attr path="/api/package[@name='io.anyline.plugin.licenseplate']/class[@name='LicensePlateScanPlugin']/constructor[@name='LicensePlateScanPlugin' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[3]" name="managedName">licenseKey</attr>
+<!-- LicensePlateScanPlugin.setScanMode(io.anyline.plugin.licenseplate.LicensePlateScanMode) -->
+<attr path="/api/package[@name='io.anyline.plugin.licenseplate']/class[@name='LicensePlateScanPlugin']/method[@name='setScanMode' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.licenseplate.LicensePlateScanMode']]/parameter[1]" name="managedName">scanMode</attr>
 <!-- LicensePlateScanPlugin.onFinishedWithOutput(java.lang.Object) -->
 <!-- File: IO.Anyline.Plugin.Licenseplate.LicensePlateScanResult.cs -->
 <!-- LicensePlateScanResult.LicensePlateScanResult(java.lang.String, java.util.List&lt;android.graphics.PointF&gt;, java.lang.Integer, at.nineyards.anyline.models.AnylineImage, at.nineyards.anyline.models.AnylineImage, java.lang.String, java.lang.String) -->
@@ -1801,6 +1897,8 @@
 <attr path="/api/package[@name='io.anyline.plugin']/class[@name='ScanRunSkippedReason']/constructor[@name='ScanRunSkippedReason' and count(parameter)=3 and parameter[1][@type='java.lang.String'] and parameter[2][@type='int'] and parameter[3][@type='java.lang.String']]/parameter[1]" name="managedName">pluginId</attr>
 <attr path="/api/package[@name='io.anyline.plugin']/class[@name='ScanRunSkippedReason']/constructor[@name='ScanRunSkippedReason' and count(parameter)=3 and parameter[1][@type='java.lang.String'] and parameter[2][@type='int'] and parameter[3][@type='java.lang.String']]/parameter[2]" name="managedName">code</attr>
 <attr path="/api/package[@name='io.anyline.plugin']/class[@name='ScanRunSkippedReason']/constructor[@name='ScanRunSkippedReason' and count(parameter)=3 and parameter[1][@type='java.lang.String'] and parameter[2][@type='int'] and parameter[3][@type='java.lang.String']]/parameter[3]" name="managedName">text</attr>
+<!-- File: IO.Anyline.Util.JSONUtil.cs -->
+<!-- JSONUtil.toMap(org.json.JSONObject) -->
 <!-- File: IO.Anyline.Util.JSUtil.cs -->
 <!-- JSUtil.setupConfig(android.content.Context, java.lang.String, at.nineyards.anyline.camera.AnylineViewConfig, at.nineyards.anyline.camera.VisualFeedbackConfig, android.graphics.Rect) -->
 <!-- JSUtil.setupConfig(android.content.Context, java.lang.String, io.anyline.view.CutoutConfig, at.nineyards.anyline.camera.VisualFeedbackConfig, android.graphics.Rect) -->

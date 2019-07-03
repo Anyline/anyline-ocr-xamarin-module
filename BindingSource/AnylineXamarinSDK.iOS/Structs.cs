@@ -6,7 +6,7 @@ using ObjCRuntime;
 namespace AnylineXamarinSDK.iOS
 {
     [Native]
-    public enum ALCutoutAlignment : long
+    public enum ALCutoutAlignment : ulong
     {
         Top = 0,
         TopHalf = 1,
@@ -16,7 +16,15 @@ namespace AnylineXamarinSDK.iOS
     }
 
     [Native]
-    public enum ALPictureResolution : long
+    public enum ALCutoutAnimation : ulong
+    {
+        None = 0,
+        Zoom = 1,
+        Fade = 2
+    }
+
+    [Native]
+    public enum ALPictureResolution : ulong
     {
         None = 0,
         Highest = 1,
@@ -26,7 +34,7 @@ namespace AnylineXamarinSDK.iOS
     }
 
     [Native]
-    public enum ALCaptureViewResolution : long
+    public enum ALCaptureViewResolution : ulong
     {
         ALCaptureViewResolution1080 = 0,
         ALCaptureViewResolution720 = 1,
@@ -34,14 +42,14 @@ namespace AnylineXamarinSDK.iOS
     }
 
     [Native]
-    public enum ALCaptureViewMode : long
+    public enum ALCaptureViewMode : ulong
     {
         Bgra = 0,
         Yuv = 1
     }
 
     [Native]
-    public enum ALFlashMode : long
+    public enum ALFlashMode : ulong
     {
         Manual = 0,
         None = 1,
@@ -49,7 +57,7 @@ namespace AnylineXamarinSDK.iOS
     }
 
     [Native]
-    public enum ALFlashAlignment : long
+    public enum ALFlashAlignment : ulong
     {
         Top = 0,
         TopLeft = 1,
@@ -65,7 +73,7 @@ namespace AnylineXamarinSDK.iOS
         Rect = 0,
         ContourRect = 1,
         ContourUnderline = 2,
-        ContourPoint = 3,
+        ContourPolong = 3,
         None = 4
     }
 
@@ -125,26 +133,26 @@ namespace AnylineXamarinSDK.iOS
         ArgumentIsNull = 4001,
         ArgumentIsEmpty = 4002,
         ArgumentNotValid = 4003,
-        InterpreterNotLoaded = 4004,
+        longerpreterNotLoaded = 4004,
         NotEnoughContoursFound = 5001,
         StackDidNotFoundResult = 5002,
         DigitFirstDistanceExceeded = 5003,
         DistanceBetweenDigitsExceeded = 5004,
         DistanceViolationsNotResolved = 5005,
         ResultNotValid = 5006,
-        InvalidDataPointIdentifier = 5007,
-        RegionOfInterestOutsideImageBounds = 5008,
-        NotEnoughPointsFound = 5009,
+        InvalidDataPolongIdentifier = 5007,
+        RegionOflongerestOutsideImageBounds = 5008,
+        NotEnoughPolongsFound = 5009,
         AnglesOutsideOfTolerance = 5010,
         ImageNotSharp = 5011,
         TooDark = 5012,
         TooMuchReflections = 5013,
         ConfidenceNotReached = 5014,
         StringPatternNotMatching = 5015,
-        IntAssertionFailed = 5016,
+        longAssertionFailed = 5016,
         DocumentRatioOutsideOfTolerance = 5019,
         DocumentBoundsOutsideOfTolerance = 5020,
-        PointsOutOfCutout = 5021,
+        PolongsOutOfCutout = 5021,
         OtherConditionNotMet = 5555,
         NoInformationFound = 6001,
         ImageColorConvertionProblem = 6002,
@@ -160,21 +168,22 @@ namespace AnylineXamarinSDK.iOS
         ModuleSimpleOCRConfigTextHeightNotSet = 9003,
         BarcodeModuleNativeDelegateWrong = 9004,
         EnergyScanPluginBarcodeNotSupported = 9005,
-        ModuleSimpleOCRConfigLanguagesConfigIsNil = 9006
+        ModuleSimpleOCRConfigLanguagesConfigIsNil = 9006,
+        InvalidConfigSet = 9007
     }
 
     [StructLayout(LayoutKind.Sequential)]
     public struct ALCharacterRange
     {
-        public int minCharacterCount;
-        public int maxCharacterCount;
+        public long minCharacterCount;
+        public long maxCharacterCount;
     }
     
     [StructLayout(LayoutKind.Sequential)]
     public struct ALRange
     {
-        public nuint min;
-        public nuint max;
+        public ulong min;
+        public ulong max;
     }
 
     [Native]
@@ -204,7 +213,7 @@ namespace AnylineXamarinSDK.iOS
         ConfidenceNotReached = -4,
         ResultNotValid = -5,
         SharpnessNotReached = -6,
-        PointsOutOfCutout = -7
+        PolongsOutOfCutout = -7
     }
 
     [Native]
@@ -259,6 +268,7 @@ namespace AnylineXamarinSDK.iOS
     {
         At,
         De,
+        Uk, // added in 11
         Auto
     }
 
@@ -300,5 +310,25 @@ namespace AnylineXamarinSDK.iOS
         ShakeDetected = -7,
         RatioOutsideOfTolerance = -8,
         BoundsOutsideOfTolerance = -9
+    }
+
+    // added in 11
+    [Native]
+    public enum ALLicensePlateScanMode : long
+    {
+        Auto = 0,
+        Norway = 1,
+        NorwaySpecial = 2,
+        Austria = 3,
+        Germany = 4,
+        Czech = 5,
+        Finland = 6,
+        Ireland = 7,
+        Hungary = 8,
+        Poland = 9,
+        Slovakia = 10,
+        Slovenia = 11,
+        GreatBritain = 12,
+        France = 13
     }
 }

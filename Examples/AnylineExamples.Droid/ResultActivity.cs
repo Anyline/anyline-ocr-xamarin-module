@@ -95,6 +95,11 @@ namespace AnylineExamples.Droid
                                     var sublist = CreatePropertyList(value as ID);
                                     sublist.ToList().ForEach(x => dict.Add(x.Key, x.Value));
                                 }
+                                else if (value is IDFieldConfidences)
+                                {
+                                    var sublist = CreatePropertyList(value as ID);
+                                    sublist.ToList().ForEach(x => dict.Add($"{x.Key} (field confidence)", x.Value));
+                                }
                                 else
                                 {
                                     var str = new Java.Lang.String(value.ToString()).ReplaceAll("\\\\n", "\\\n");

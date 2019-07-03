@@ -2600,111 +2600,6 @@ namespace AnylineXamarinSDK.iOS
         void DidFindResult(AnylineBarcodeModuleView anylineBarcodeModuleView, ALBarcodeResult scanResult);
     }
 
-
-    // @interface ALDrivingLicenseIdentification : NSObject
-    [BaseType(typeof(NSObject))]
-    interface ALDrivingLicenseIdentification
-    {
-        // @property (readonly, nonatomic, strong) NSString * _Nullable surname;
-        [NullAllowed, Export("surname", ArgumentSemantic.Strong)]
-        string Surname { get; }
-
-        // @property (readonly, nonatomic, strong) NSString * _Nullable givenNames;
-        [NullAllowed, Export("givenNames", ArgumentSemantic.Strong)]
-        string GivenNames { get; }
-
-        // @property (readonly, nonatomic, strong) NSString * _Nullable dateOfBirth;
-        [NullAllowed, Export("dateOfBirth", ArgumentSemantic.Strong)]
-        string DateOfBirth { get; }
-
-        // @property (readonly, nonatomic, strong) NSString * _Nullable placeOfBirth;
-        [NullAllowed, Export("placeOfBirth", ArgumentSemantic.Strong)]
-        string PlaceOfBirth { get; }
-
-        // @property (readonly, nonatomic, strong) NSString * _Nullable dateOfIssue;
-        [NullAllowed, Export("dateOfIssue", ArgumentSemantic.Strong)]
-        string DateOfIssue { get; }
-
-        // @property (readonly, nonatomic, strong) NSString * _Nullable dateOfExpiry;
-        [NullAllowed, Export("dateOfExpiry", ArgumentSemantic.Strong)]
-        string DateOfExpiry { get; }
-
-        // @property (readonly, nonatomic, strong) NSString * _Nullable authority;
-        [NullAllowed, Export("authority", ArgumentSemantic.Strong)]
-        string Authority { get; }
-
-        // @property (readonly, nonatomic, strong) NSString * _Nullable documentNumber;
-        [NullAllowed, Export("documentNumber", ArgumentSemantic.Strong)]
-        string DocumentNumber { get; }
-
-        // @property (readonly, nonatomic, strong) NSString * _Nullable categories;
-        [NullAllowed, Export("categories", ArgumentSemantic.Strong)]
-        string Categories { get; }
-
-        // @property (readonly, nonatomic, strong) NSString * _Nonnull drivingLicenseString;
-        [Export("drivingLicenseString", ArgumentSemantic.Strong)]
-        string DrivingLicenseString { get; }
-
-        // @property (readonly, nonatomic, strong) NSDate * _Nullable dateOfBirthObject;
-        [NullAllowed, Export("dateOfBirthObject", ArgumentSemantic.Strong)]
-        NSDate DateOfBirthObject { get; }
-
-        // @property (readonly, nonatomic, strong) NSDate * _Nullable dateOfIssueObject;
-        [NullAllowed, Export("dateOfIssueObject", ArgumentSemantic.Strong)]
-        NSDate DateOfIssueObject { get; }
-
-        // @property (readonly, nonatomic, strong) NSDate * _Nullable dateOfExpiryObject;
-        [NullAllowed, Export("dateOfExpiryObject", ArgumentSemantic.Strong)]
-        NSDate DateOfExpiryObject { get; }
-
-        // @property (nonatomic, strong) UIImage * _Nullable faceImage;
-        [NullAllowed, Export("faceImage", ArgumentSemantic.Strong)]
-        UIImage FaceImage { get; set; }
-
-        // @property (readonly, nonatomic, strong) NSString * _Nullable surNames __attribute__((deprecated("Deprecated since Version 10. Please use the property "surname" instead.")));
-        //[Obsolete("", false)]
-        //[NullAllowed, Export("surNames", ArgumentSemantic.Strong)]
-        //string SurNames { get; }
-
-        // @property (readonly, nonatomic, strong) NSString * _Nullable dayOfBirth __attribute__((deprecated("Deprecated since Version 10. Please use the property "dayOfBirth" instead.")));
-        //[Obsolete("", false)]
-        //[NullAllowed, Export("dayOfBirth", ArgumentSemantic.Strong)]
-        //string DayOfBirth { get; }
-
-        // @property (readonly, nonatomic, strong) NSString * _Nullable issuingDate __attribute__((deprecated("Deprecated since Version 10. Please use the property "issuingDate" instead.")));
-        //[Obsolete("", false)]
-        //[NullAllowed, Export("issuingDate", ArgumentSemantic.Strong)]
-        //string IssuingDate { get; }
-
-        // @property (readonly, nonatomic, strong) NSString * _Nullable expirationDate __attribute__((deprecated("Deprecated since Version 10. Please use the property "expirationDate" instead.")));
-        //[Obsolete("", false)]
-        //[NullAllowed, Export("expirationDate", ArgumentSemantic.Strong)]
-        //string ExpirationDate { get; }
-
-        // @property (readonly, nonatomic, strong) NSDate * _Nullable dayOfBirthDateObject __attribute__((deprecated("Deprecated since Version 10. Please use the property "dateOfBirthObject" instead.")));
-        //[Obsolete("", false)]
-        //[NullAllowed, Export("dayOfBirthDateObject", ArgumentSemantic.Strong)]
-        //NSDate DayOfBirthDateObject { get; }
-
-        // @property (readonly, nonatomic, strong) NSDate * _Nullable issuingDateObject __attribute__((deprecated("Deprecated since Version 10. Please use the property "dateOfIssueObject" instead.")));
-        //[Obsolete("", false)]
-        //[NullAllowed, Export("issuingDateObject", ArgumentSemantic.Strong)]
-        //NSDate IssuingDateObject { get; }
-
-        // @property (readonly, nonatomic, strong) NSDate * _Nullable expirationDateObject __attribute__((deprecated("Deprecated since Version 10. Please use the property "dateOfExpiryObject" instead.")));
-        //[Obsolete("", false)]
-        //[NullAllowed, Export("expirationDateObject", ArgumentSemantic.Strong)]
-        //NSDate ExpirationDateObject { get; }
-
-        // -(instancetype _Nullable)initWithSurname:(NSString * _Nullable)surname givenNames:(NSString * _Nullable)givenNames dateOfBirth:(NSString * _Nullable)dateOfBirth placeOfBirth:(NSString * _Nullable)placeOfBirth dateOfIssue:(NSString * _Nullable)dateOfIssue dateOfExpiry:(NSString * _Nullable)dateOfExpiry authority:(NSString * _Nullable)authority documentNumber:(NSString * _Nullable)documentNumber categories:(NSString * _Nullable)categories drivingLicenseString:(NSString * _Nullable)drivingLicenseString formattedDateOfExpiry:(NSString * _Nullable)formattedDateOfExpiry formattedDateOfBirth:(NSString * _Nullable)formattedDateOfBirth formattedDateOfIssue:(NSString * _Nullable)formattedDateOfIssue;
-        [Export("initWithSurname:givenNames:dateOfBirth:placeOfBirth:dateOfIssue:dateOfExpiry:authority:documentNumber:categories:drivingLicenseString:formattedDateOfExpiry:formattedDateOfBirth:formattedDateOfIssue:")]
-        IntPtr Constructor([NullAllowed] string surname, [NullAllowed] string givenNames, [NullAllowed] string dateOfBirth, [NullAllowed] string placeOfBirth, [NullAllowed] string dateOfIssue, [NullAllowed] string dateOfExpiry, [NullAllowed] string authority, [NullAllowed] string documentNumber, [NullAllowed] string categories, [NullAllowed] string drivingLicenseString, [NullAllowed] string formattedDateOfExpiry, [NullAllowed] string formattedDateOfBirth, [NullAllowed] string formattedDateOfIssue);
-
-        // -(instancetype _Nullable)initWithDocumentNumber:(NSString * _Nonnull)documentNumber surNames:(NSString * _Nonnull)surNames givenNames:(NSString * _Nonnull)givenNames dayOfBirth:(NSString * _Nonnull)dayOfBirth placeOfBirth:(NSString * _Nonnull)placeOfBirth issuingDate:(NSString * _Nonnull)issuingDate expirationDate:(NSString * _Nonnull)expirationDate authority:(NSString * _Nonnull)authority categories:(NSString * _Nonnull)categories drivingLicenseString:(NSString * _Nonnull)drivingLicenseString __attribute__((deprecated("Deprecated since Version 10. Please use initWithSurname:givenNames:dateOfBirth:dateOfExpiry:documentNumber:documentType:... instead")));
-        [Export("initWithDocumentNumber:surNames:givenNames:dayOfBirth:placeOfBirth:issuingDate:expirationDate:authority:categories:drivingLicenseString:")]
-        IntPtr Constructor(string documentNumber, string surNames, string givenNames, string dayOfBirth, string placeOfBirth, string issuingDate, string expirationDate, string authority, string categories, string drivingLicenseString);
-    }
-
     // @interface ALMRZIdentification : NSObject
     [BaseType(typeof(NSObject))]
     interface ALMRZIdentification
@@ -2828,6 +2723,11 @@ namespace AnylineXamarinSDK.iOS
         // @property (readonly, nonatomic, strong) NSDate * _Nullable vizDateOfExpiryObject;
         [NullAllowed, Export("vizDateOfExpiryObject", ArgumentSemantic.Strong)]
         NSDate VizDateOfExpiryObject { get; }
+
+        // @property (nonatomic, strong) ALMRZFieldConfidences * _Nullable fieldConfidences;
+        [NullAllowed, Export("fieldConfidences", ArgumentSemantic.Strong)]
+        ALMRZFieldConfidences FieldConfidences { get; set; }
+
         /*
         // @property (readonly, nonatomic, strong) NSString * _Nullable surNames __attribute__((deprecated("Deprecated since Version 10. Please use the property "surname" instead.")));
         [NullAllowed, Export("surNames", ArgumentSemantic.Strong)]
@@ -2897,14 +2797,6 @@ namespace AnylineXamarinSDK.iOS
         // -(instancetype _Nullable)initWithSurname:(NSString * _Nullable)surname givenNames:(NSString * _Nullable)givenNames dateOfBirth:(NSString * _Nullable)dateOfBirth dateOfExpiry:(NSString * _Nullable)dateOfExpiry documentNumber:(NSString * _Nullable)documentNumber documentType:(NSString * _Nullable)documentType issuingCountryCode:(NSString * _Nullable)issuingCountryCode nationalityCountryCode:(NSString * _Nullable)nationalityCountryCode sex:(NSString * _Nullable)sex personalNumber:(NSString * _Nullable)personalNumber optionalData:(NSString * _Nullable)optionalData checkDigitDateOfExpiry:(NSString * _Nullable)checkDigitDateOfExpiry checkDigitDocumentNumber:(NSString * _Nullable)checkDigitDocumentNumber checkDigitDateOfBirth:(NSString * _Nullable)checkDigitDateOfBirth checkDigitFinal:(NSString * _Nullable)checkDigitFinal checkDigitPersonalNumber:(NSString * _Nullable)checkDigitPersonalNumber allCheckDigitsValid:(BOOL)allCheckDigitsValid vizAddress:(NSString * _Nullable)vizAddress vizDateOfIssue:(NSString * _Nullable)vizDateOfIssue vizSurname:(NSString * _Nullable)vizSurname vizGivenNames:(NSString * _Nullable)vizGivenNames vizDateOfBirth:(NSString * _Nullable)vizDateOfBirth vizDateOfExpiry:(NSString * _Nullable)vizDateOfExpiry mrzString:(NSString * _Nullable)mrzString formattedDateOfExpiry:(NSString * _Nullable)formattedDateOfExpiry formattedDateOfBirth:(NSString * _Nullable)formattedDateOfBirth formattedVizDateOfIssue:(NSString * _Nullable)formattedVizDateOfIssue formattedVizDateOfBirth:(NSString * _Nullable)formattedVizDateOfBirth formattedVizDateOfExpiry:(NSString * _Nullable)formattedVizDateOfExpiry;
         [Export("initWithSurname:givenNames:dateOfBirth:dateOfExpiry:documentNumber:documentType:issuingCountryCode:nationalityCountryCode:sex:personalNumber:optionalData:checkDigitDateOfExpiry:checkDigitDocumentNumber:checkDigitDateOfBirth:checkDigitFinal:checkDigitPersonalNumber:allCheckDigitsValid:vizAddress:vizDateOfIssue:vizSurname:vizGivenNames:vizDateOfBirth:vizDateOfExpiry:mrzString:formattedDateOfExpiry:formattedDateOfBirth:formattedVizDateOfIssue:formattedVizDateOfBirth:formattedVizDateOfExpiry:")]
         IntPtr Constructor([NullAllowed] string surname, [NullAllowed] string givenNames, [NullAllowed] string dateOfBirth, [NullAllowed] string dateOfExpiry, [NullAllowed] string documentNumber, [NullAllowed] string documentType, [NullAllowed] string issuingCountryCode, [NullAllowed] string nationalityCountryCode, [NullAllowed] string sex, [NullAllowed] string personalNumber, [NullAllowed] string optionalData, [NullAllowed] string checkDigitDateOfExpiry, [NullAllowed] string checkDigitDocumentNumber, [NullAllowed] string checkDigitDateOfBirth, [NullAllowed] string checkDigitFinal, [NullAllowed] string checkDigitPersonalNumber, bool allCheckDigitsValid, [NullAllowed] string vizAddress, [NullAllowed] string vizDateOfIssue, [NullAllowed] string vizSurname, [NullAllowed] string vizGivenNames, [NullAllowed] string vizDateOfBirth, [NullAllowed] string vizDateOfExpiry, [NullAllowed] string mrzString, [NullAllowed] string formattedDateOfExpiry, [NullAllowed] string formattedDateOfBirth, [NullAllowed] string formattedVizDateOfIssue, [NullAllowed] string formattedVizDateOfBirth, [NullAllowed] string formattedVizDateOfExpiry);
-
-        // -(instancetype _Nullable)initWithSurname:(NSString * _Nullable)surname givenNames:(NSString * _Nullable)givenNames dateOfBirth:(NSString * _Nullable)dateOfBirth dateOfExpiry:(NSString * _Nullable)dateOfExpiry documentNumber:(NSString * _Nullable)documentNumber documentType:(NSString * _Nullable)documentType issuingCountryCode:(NSString * _Nullable)issuingCountryCode nationalityCountryCode:(NSString * _Nullable)nationalityCountryCode sex:(NSString * _Nullable)sex personalNumber:(NSString * _Nullable)personalNumber optionalData:(NSString * _Nullable)optionalData checkDigitDateOfExpiry:(NSString * _Nullable)checkDigitDateOfExpiry checkDigitDocumentNumber:(NSString * _Nullable)checkDigitDocumentNumber checkDigitDateOfBirth:(NSString * _Nullable)checkDigitDateOfBirth checkDigitFinal:(NSString * _Nullable)checkDigitFinal checkDigitPersonalNumber:(NSString * _Nullable)checkDigitPersonalNumber allCheckDigitsValid:(BOOL)allCheckDigitsValid address:(NSString * _Nullable)address dateOfIssue:(NSString * _Nullable)dateOfIssue mrzString:(NSString * _Nullable)mrzString formattedDateOfExpiry:(NSString * _Nullable)formattedDateOfExpiry formattedDateOfBirth:(NSString * _Nullable)formattedDateOfBirth formattedDateOfIssue:(NSString * _Nullable)formattedDateOfIssue __attribute__((deprecated("Deprecated since Version 10.1. Please use initWithSurname:givenNames:dateOfBirth:dateOfExpiry:documentNumber:documentType:...:formattedVizDateOfIssue:formattedVizDateOfBirth:formattedVizDateOfExpiry: instead")));
-        [Export("initWithSurname:givenNames:dateOfBirth:dateOfExpiry:documentNumber:documentType:issuingCountryCode:nationalityCountryCode:sex:personalNumber:optionalData:checkDigitDateOfExpiry:checkDigitDocumentNumber:checkDigitDateOfBirth:checkDigitFinal:checkDigitPersonalNumber:allCheckDigitsValid:vizAddress:dateOfIssue:mrzString:formattedDateOfExpiry:formattedDateOfBirth:formattedDateOfIssue:")]
-        IntPtr Constructor([NullAllowed] string surname, [NullAllowed] string givenNames, [NullAllowed] string dateOfBirth, [NullAllowed] string dateOfExpiry, [NullAllowed] string documentNumber, [NullAllowed] string documentType, [NullAllowed] string issuingCountryCode, [NullAllowed] string nationalityCountryCode, [NullAllowed] string sex, [NullAllowed] string personalNumber, [NullAllowed] string optionalData, [NullAllowed] string checkDigitDateOfExpiry, [NullAllowed] string checkDigitDocumentNumber, [NullAllowed] string checkDigitDateOfBirth, [NullAllowed] string checkDigitFinal, [NullAllowed] string checkDigitPersonalNumber, bool allCheckDigitsValid, [NullAllowed] string vizAddress, [NullAllowed] string dateOfIssue, [NullAllowed] string mrzString, [NullAllowed] string formattedDateOfExpiry, [NullAllowed] string formattedDateOfBirth, [NullAllowed] string formattedDateOfIssue);
-
-        // -(instancetype _Nullable)initWithDocumentType:(NSString * _Nonnull)documentType issuingCountryCode:(NSString * _Nonnull)issuingCountryCode nationalityCountryCode:(NSString * _Nonnull)nationalityCountryCode surNames:(NSString * _Nonnull)surNames givenNames:(NSString * _Nonnull)givenNames documentNumber:(NSString * _Nonnull)documentNumber checkDigitNumber:(NSString * _Nonnull)checkDigitNumber dayOfBirth:(NSString * _Nonnull)dayOfBirth checkDigitDayOfBirth:(NSString * _Nonnull)checkDigitDayOfBirth sex:(NSString * _Nonnull)sex expirationDate:(NSString * _Nonnull)expirationDate checkDigitExpirationDate:(NSString * _Nonnull)checkdigitExpirationDate personalNumber:(NSString * _Nonnull)personalNumber checkDigitPersonalNumber:(NSString * _Nonnull)checkDigitPersonalNumber checkDigitFinal:(NSString * _Nonnull)checkDigitFinal personalNumber2:(NSString * _Nonnull)personalNumber2 address:(NSString * _Nullable)address issuingDate:(NSString * _Nullable)issuingDate MRZString:(NSString * _Nonnull)MRZString __attribute__((deprecated("Deprecated since Version 10. Please use initWithSurname:givenNames:dateOfBirth:dateOfExpiry:documentNumber:documentType:... instead")));
-        [Export("initWithDocumentType:issuingCountryCode:nationalityCountryCode:surNames:givenNames:documentNumber:checkDigitNumber:dayOfBirth:checkDigitDayOfBirth:sex:expirationDate:checkDigitExpirationDate:personalNumber:checkDigitPersonalNumber:checkDigitFinal:personalNumber2:vizAddress:issuingDate:MRZString:")]
-        IntPtr Constructor(string documentType, string issuingCountryCode, string nationalityCountryCode, string surNames, string givenNames, string documentNumber, string checkDigitNumber, string dayOfBirth, string checkDigitDayOfBirth, string sex, string expirationDate, string checkdigitExpirationDate, string personalNumber, string checkDigitPersonalNumber, string checkDigitFinal, string personalNumber2, [NullAllowed] string vizAddress, [NullAllowed] string issuingDate, string MRZString);
     }
 
     // @interface ALGermanIDFrontIdentification : NSObject
@@ -2958,6 +2850,10 @@ namespace AnylineXamarinSDK.iOS
         // @property (nonatomic, strong) UIImage * _Nullable faceImage;
         [NullAllowed, Export("faceImage", ArgumentSemantic.Strong)]
         UIImage FaceImage { get; set; }
+
+        // @property (nonatomic, strong) ALGermanIDFrontFieldConfidences * _Nullable fieldConfidences;
+        [NullAllowed, Export("fieldConfidences", ArgumentSemantic.Strong)]
+        ALGermanIDFrontFieldConfidences FieldConfidences { get; set; }
 
         // @property (readonly, nonatomic, strong) NSString * _Nullable surNames __attribute__((deprecated("Deprecated since Version 10. Please use the property "surname" instead.")));
         //[Obsolete("", false)]
@@ -3014,11 +2910,28 @@ namespace AnylineXamarinSDK.iOS
         // @property (nonatomic, strong) ALIDFieldScanOptions * _Nullable idFieldScanOptions;
         [NullAllowed, Export("idFieldScanOptions", ArgumentSemantic.Strong)]
         ALIDFieldScanOptions IdFieldScanOptions { get; set; }
+
+        // @property (nonatomic, strong) ALIDFieldConfidences * _Nullable idFieldConfidences;
+        [NullAllowed, Export("idFieldConfidences", ArgumentSemantic.Strong)]
+        ALIDFieldConfidences IdFieldConfidences { get; set; }
+
+        // @property (nonatomic) int minConfidence;
+        [Export("minConfidence")]
+        int MinConfidence { get; set; }
     }
 
     // @interface ALIDFieldScanOptions : NSObject
     [BaseType(typeof(NSObject))]
     interface ALIDFieldScanOptions
+    {
+        // -(instancetype _Nullable)initWithJsonDictionary:(NSDictionary * _Nonnull)configDict;
+        [Export("initWithJsonDictionary:")]
+        IntPtr Constructor(NSDictionary configDict);
+    }
+
+    // @interface ALIDFieldConfidences : NSObject
+    [BaseType(typeof(NSObject))]
+    interface ALIDFieldConfidences
     {
         // -(instancetype _Nullable)initWithJsonDictionary:(NSDictionary * _Nonnull)configDict;
         [Export("initWithJsonDictionary:")]
@@ -3042,13 +2955,138 @@ namespace AnylineXamarinSDK.iOS
     [BaseType(typeof(ALIDFieldScanOptions))]
     interface ALMRZFieldScanOptions
     {
-        // @property (nonatomic) ALFieldScanOption dateOfIssue;
-        [Export("dateOfIssue", ArgumentSemantic.Assign)]
-        ALFieldScanOption DateOfIssue { get; set; }
+        // @property (nonatomic) ALFieldScanOption vizDateOfIssue;
+        [Export("vizDateOfIssue", ArgumentSemantic.Assign)]
+        ALFieldScanOption VizDateOfIssue { get; set; }
 
-        // @property (nonatomic) ALFieldScanOption address;
-        [Export("address", ArgumentSemantic.Assign)]
-        ALFieldScanOption Address { get; set; }
+        // @property (nonatomic) ALFieldScanOption vizAddress;
+        [Export("vizAddress", ArgumentSemantic.Assign)]
+        ALFieldScanOption VizAddress { get; set; }
+
+        // @property (nonatomic) ALFieldScanOption vizSurname;
+        [Export("vizSurname", ArgumentSemantic.Assign)]
+        ALFieldScanOption VizSurname { get; set; }
+
+        // @property (nonatomic) ALFieldScanOption vizGivenNames;
+        [Export("vizGivenNames", ArgumentSemantic.Assign)]
+        ALFieldScanOption VizGivenNames { get; set; }
+
+        // @property (nonatomic) ALFieldScanOption vizDateOfBirth;
+        [Export("vizDateOfBirth", ArgumentSemantic.Assign)]
+        ALFieldScanOption VizDateOfBirth { get; set; }
+
+        // @property (nonatomic) ALFieldScanOption vizDateOfExpiry;
+        [Export("vizDateOfExpiry", ArgumentSemantic.Assign)]
+        ALFieldScanOption VizDateOfExpiry { get; set; }
+
+        // @property (nonatomic) ALFieldScanOption dateOfIssue __attribute__((deprecated("Deprecated since Version 10.1. Please use vizDateOfIssue instead")));
+        //[Export("dateOfIssue", ArgumentSemantic.Assign)]
+        //ALFieldScanOption DateOfIssue { get; set; }
+
+        // @property (nonatomic) ALFieldScanOption address __attribute__((deprecated("Deprecated since Version 10.1. Please use vizAddress instead")));
+        //[Export("address", ArgumentSemantic.Assign)]
+        //ALFieldScanOption Address { get; set; }
+    }
+
+    // @interface ALMRZFieldConfidences : ALIDFieldConfidences
+    [BaseType(typeof(ALIDFieldConfidences))]
+    interface ALMRZFieldConfidences
+    {
+        // @property (nonatomic) ALFieldConfidence vizDateOfIssue;
+        [Export("vizDateOfIssue")]
+        int VizDateOfIssue { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence vizAddress;
+        [Export("vizAddress")]
+        int VizAddress { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence vizSurname;
+        [Export("vizSurname")]
+        int VizSurname { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence vizGivenNames;
+        [Export("vizGivenNames")]
+        int VizGivenNames { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence vizDateOfBirth;
+        [Export("vizDateOfBirth")]
+        int VizDateOfBirth { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence vizDateOfExpiry;
+        [Export("vizDateOfExpiry")]
+        int VizDateOfExpiry { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence surname;
+        [Export("surname")]
+        int Surname { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence givenNames;
+        [Export("givenNames")]
+        int GivenNames { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence dateOfBirth;
+        [Export("dateOfBirth")]
+        int DateOfBirth { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence dateOfExpiry;
+        [Export("dateOfExpiry")]
+        int DateOfExpiry { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence documentNumber;
+        [Export("documentNumber")]
+        int DocumentNumber { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence documentType;
+        [Export("documentType")]
+        int DocumentType { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence issuingCountryCode;
+        [Export("issuingCountryCode")]
+        int IssuingCountryCode { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence nationalityCountryCode;
+        [Export("nationalityCountryCode")]
+        int NationalityCountryCode { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence sex;
+        [Export("sex")]
+        int Sex { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence personalNumber;
+        [Export("personalNumber")]
+        int PersonalNumber { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence optionalData;
+        [Export("optionalData")]
+        int OptionalData { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence mrzString;
+        [Export("mrzString")]
+        int MrzString { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence checkDigitDateOfExpiry;
+        [Export("checkDigitDateOfExpiry")]
+        int CheckDigitDateOfExpiry { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence checkDigitDocumentNumber;
+        [Export("checkDigitDocumentNumber")]
+        int CheckDigitDocumentNumber { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence checkDigitDateOfBirth;
+        [Export("checkDigitDateOfBirth")]
+        int CheckDigitDateOfBirth { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence checkDigitFinal;
+        [Export("checkDigitFinal")]
+        int CheckDigitFinal { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence checkDigitPersonalNumber;
+        [Export("checkDigitPersonalNumber")]
+        int CheckDigitPersonalNumber { get; set; }
+
+        // -(instancetype _Nullable)initWithSurname:(ALFieldConfidence)surname givenNames:(ALFieldConfidence)givenNames dateOfBirth:(ALFieldConfidence)dateOfBirth dateOfExpiry:(ALFieldConfidence)dateOfExpiry documentNumber:(ALFieldConfidence)documentNumber documentType:(ALFieldConfidence)documentType issuingCountryCode:(ALFieldConfidence)issuingCountryCode nationalityCountryCode:(ALFieldConfidence)nationalityCountryCode sex:(ALFieldConfidence)sex personalNumber:(ALFieldConfidence)personalNumber optionalData:(ALFieldConfidence)optionalData checkDigitDateOfExpiry:(ALFieldConfidence)checkDigitDateOfExpiry checkDigitDocumentNumber:(ALFieldConfidence)checkDigitDocumentNumber checkDigitDateOfBirth:(ALFieldConfidence)checkDigitDateOfBirth checkDigitFinal:(ALFieldConfidence)checkDigitFinal checkDigitPersonalNumber:(ALFieldConfidence)checkDigitPersonalNumber vizAddress:(ALFieldConfidence)vizAddress vizDateOfIssue:(ALFieldConfidence)vizDateOfIssue vizSurname:(ALFieldConfidence)vizSurname vizGivenNames:(ALFieldConfidence)vizGivenNames vizDateOfBirth:(ALFieldConfidence)vizDateOfBirth vizDateOfExpiry:(ALFieldConfidence)vizDateOfExpiry mrzString:(ALFieldConfidence)mrzString;
+        [Export("initWithSurname:givenNames:dateOfBirth:dateOfExpiry:documentNumber:documentType:issuingCountryCode:nationalityCountryCode:sex:personalNumber:optionalData:checkDigitDateOfExpiry:checkDigitDocumentNumber:checkDigitDateOfBirth:checkDigitFinal:checkDigitPersonalNumber:vizAddress:vizDateOfIssue:vizSurname:vizGivenNames:vizDateOfBirth:vizDateOfExpiry:mrzString:")]
+        IntPtr Constructor(int surname, int givenNames, int dateOfBirth, int dateOfExpiry, int documentNumber, int documentType, int issuingCountryCode, int nationalityCountryCode, int sex, int personalNumber, int optionalData, int checkDigitDateOfExpiry, int checkDigitDocumentNumber, int checkDigitDateOfBirth, int checkDigitFinal, int checkDigitPersonalNumber, int vizAddress, int vizDateOfIssue, int vizSurname, int vizGivenNames, int vizDateOfBirth, int vizDateOfExpiry, int mrzString);
     }
 
     // @interface ALDrivingLicenseConfig : ALIDConfig
@@ -3101,6 +3139,159 @@ namespace AnylineXamarinSDK.iOS
         ALFieldScanOption Categories { get; set; }
     }
 
+    // @interface ALDrivingLicenseFieldConfidences : ALIDFieldConfidences
+    [BaseType(typeof(ALIDFieldConfidences))]
+    interface ALDrivingLicenseFieldConfidences
+    {
+        // @property (nonatomic) ALFieldConfidence surname;
+        [Export("surname")]
+        int Surname { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence givenNames;
+        [Export("givenNames")]
+        int GivenNames { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence dateOfBirth;
+        [Export("dateOfBirth")]
+        int DateOfBirth { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence placeOfBirth;
+        [Export("placeOfBirth")]
+        int PlaceOfBirth { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence dateOfIssue;
+        [Export("dateOfIssue")]
+        int DateOfIssue { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence dateOfExpiry;
+        [Export("dateOfExpiry")]
+        int DateOfExpiry { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence authority;
+        [Export("authority")]
+        int Authority { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence documentNumber;
+        [Export("documentNumber")]
+        int DocumentNumber { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence categories;
+        [Export("categories")]
+        int Categories { get; set; }
+
+        // @property (nonatomic) ALDrivingLicenseFieldConfidences * _Nonnull fieldConfidences;
+        [Export("fieldConfidences", ArgumentSemantic.Assign)]
+        ALDrivingLicenseFieldConfidences FieldConfidences { get; set; }
+
+        // -(instancetype _Nullable)initWithSurname:(ALFieldConfidence)surname givenNames:(ALFieldConfidence)givenNames dateOfBirth:(ALFieldConfidence)dateOfBirth placeOfBirth:(ALFieldConfidence)placeOfBirth dateOfIssue:(ALFieldConfidence)dateOfIssue dateOfExpiry:(ALFieldConfidence)dateOfExpiry authority:(ALFieldConfidence)authority documentNumber:(ALFieldConfidence)documentNumber categories:(ALFieldConfidence)categories;
+        [Export("initWithSurname:givenNames:dateOfBirth:placeOfBirth:dateOfIssue:dateOfExpiry:authority:documentNumber:categories:")]
+        IntPtr Constructor(int surname, int givenNames, int dateOfBirth, int placeOfBirth, int dateOfIssue, int dateOfExpiry, int authority, int documentNumber, int categories);
+    }
+
+    // @interface ALDrivingLicenseIdentification : NSObject
+    [BaseType(typeof(NSObject))]
+    interface ALDrivingLicenseIdentification
+    {
+        // @property (readonly, nonatomic, strong) NSString * _Nullable surname;
+        [NullAllowed, Export("surname", ArgumentSemantic.Strong)]
+        string Surname { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable givenNames;
+        [NullAllowed, Export("givenNames", ArgumentSemantic.Strong)]
+        string GivenNames { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable dateOfBirth;
+        [NullAllowed, Export("dateOfBirth", ArgumentSemantic.Strong)]
+        string DateOfBirth { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable placeOfBirth;
+        [NullAllowed, Export("placeOfBirth", ArgumentSemantic.Strong)]
+        string PlaceOfBirth { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable dateOfIssue;
+        [NullAllowed, Export("dateOfIssue", ArgumentSemantic.Strong)]
+        string DateOfIssue { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable dateOfExpiry;
+        [NullAllowed, Export("dateOfExpiry", ArgumentSemantic.Strong)]
+        string DateOfExpiry { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable authority;
+        [NullAllowed, Export("authority", ArgumentSemantic.Strong)]
+        string Authority { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable documentNumber;
+        [NullAllowed, Export("documentNumber", ArgumentSemantic.Strong)]
+        string DocumentNumber { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable categories;
+        [NullAllowed, Export("categories", ArgumentSemantic.Strong)]
+        string Categories { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nonnull drivingLicenseString;
+        [Export("drivingLicenseString", ArgumentSemantic.Strong)]
+        string DrivingLicenseString { get; }
+
+        // @property (readonly, nonatomic, strong) NSDate * _Nullable dateOfBirthObject;
+        [NullAllowed, Export("dateOfBirthObject", ArgumentSemantic.Strong)]
+        NSDate DateOfBirthObject { get; }
+
+        // @property (readonly, nonatomic, strong) NSDate * _Nullable dateOfIssueObject;
+        [NullAllowed, Export("dateOfIssueObject", ArgumentSemantic.Strong)]
+        NSDate DateOfIssueObject { get; }
+
+        // @property (readonly, nonatomic, strong) NSDate * _Nullable dateOfExpiryObject;
+        [NullAllowed, Export("dateOfExpiryObject", ArgumentSemantic.Strong)]
+        NSDate DateOfExpiryObject { get; }
+
+        // @property (nonatomic, strong) UIImage * _Nullable faceImage;
+        [NullAllowed, Export("faceImage", ArgumentSemantic.Strong)]
+        UIImage FaceImage { get; set; }
+
+        // @property (nonatomic, strong) ALDrivingLicenseFieldConfidences * _Nullable fieldConfidences;
+        [NullAllowed, Export("fieldConfidences", ArgumentSemantic.Strong)]
+        ALDrivingLicenseFieldConfidences FieldConfidences { get; set; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable surNames __attribute__((deprecated("Deprecated since Version 10. Please use the property "surname" instead.")));
+        //[Obsolete("", false)]
+        //[NullAllowed, Export("surNames", ArgumentSemantic.Strong)]
+        //string SurNames { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable dayOfBirth __attribute__((deprecated("Deprecated since Version 10. Please use the property "dayOfBirth" instead.")));
+        //[Obsolete("", false)]
+        //[NullAllowed, Export("dayOfBirth", ArgumentSemantic.Strong)]
+        //string DayOfBirth { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable issuingDate __attribute__((deprecated("Deprecated since Version 10. Please use the property "issuingDate" instead.")));
+        //[Obsolete("", false)]
+        //[NullAllowed, Export("issuingDate", ArgumentSemantic.Strong)]
+        //string IssuingDate { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nullable expirationDate __attribute__((deprecated("Deprecated since Version 10. Please use the property "expirationDate" instead.")));
+        //[Obsolete("", false)]
+        //[NullAllowed, Export("expirationDate", ArgumentSemantic.Strong)]
+        //string ExpirationDate { get; }
+
+        // @property (readonly, nonatomic, strong) NSDate * _Nullable dayOfBirthDateObject __attribute__((deprecated("Deprecated since Version 10. Please use the property "dateOfBirthObject" instead.")));
+        //[Obsolete("", false)]
+        //[NullAllowed, Export("dayOfBirthDateObject", ArgumentSemantic.Strong)]
+        //NSDate DayOfBirthDateObject { get; }
+
+        // @property (readonly, nonatomic, strong) NSDate * _Nullable issuingDateObject __attribute__((deprecated("Deprecated since Version 10. Please use the property "dateOfIssueObject" instead.")));
+        //[Obsolete("", false)]
+        //[NullAllowed, Export("issuingDateObject", ArgumentSemantic.Strong)]
+        //NSDate IssuingDateObject { get; }
+
+        // @property (readonly, nonatomic, strong) NSDate * _Nullable expirationDateObject __attribute__((deprecated("Deprecated since Version 10. Please use the property "dateOfExpiryObject" instead.")));
+        //[Obsolete("", false)]
+        //[NullAllowed, Export("expirationDateObject", ArgumentSemantic.Strong)]
+        //NSDate ExpirationDateObject { get; }
+
+        // -(instancetype _Nullable)initWithSurname:(NSString * _Nullable)surname givenNames:(NSString * _Nullable)givenNames dateOfBirth:(NSString * _Nullable)dateOfBirth placeOfBirth:(NSString * _Nullable)placeOfBirth dateOfIssue:(NSString * _Nullable)dateOfIssue dateOfExpiry:(NSString * _Nullable)dateOfExpiry authority:(NSString * _Nullable)authority documentNumber:(NSString * _Nullable)documentNumber categories:(NSString * _Nullable)categories drivingLicenseString:(NSString * _Nullable)drivingLicenseString formattedDateOfExpiry:(NSString * _Nullable)formattedDateOfExpiry formattedDateOfBirth:(NSString * _Nullable)formattedDateOfBirth formattedDateOfIssue:(NSString * _Nullable)formattedDateOfIssue;
+        [Export("initWithSurname:givenNames:dateOfBirth:placeOfBirth:dateOfIssue:dateOfExpiry:authority:documentNumber:categories:drivingLicenseString:formattedDateOfExpiry:formattedDateOfBirth:formattedDateOfIssue:")]
+        IntPtr Constructor([NullAllowed] string surname, [NullAllowed] string givenNames, [NullAllowed] string dateOfBirth, [NullAllowed] string placeOfBirth, [NullAllowed] string dateOfIssue, [NullAllowed] string dateOfExpiry, [NullAllowed] string authority, [NullAllowed] string documentNumber, [NullAllowed] string categories, [NullAllowed] string drivingLicenseString, [NullAllowed] string formattedDateOfExpiry, [NullAllowed] string formattedDateOfBirth, [NullAllowed] string formattedDateOfIssue);
+    }
+
     // @interface ALGermanIDFrontConfig : ALIDConfig
     [BaseType(typeof(ALIDConfig))]
     interface ALGermanIDFrontConfig
@@ -3142,6 +3333,47 @@ namespace AnylineXamarinSDK.iOS
         // @property (nonatomic) ALFieldScanOption cardAccessNumber;
         [Export("cardAccessNumber", ArgumentSemantic.Assign)]
         ALFieldScanOption CardAccessNumber { get; set; }
+    }
+
+    // @interface ALGermanIDFrontFieldConfidences : ALIDFieldConfidences
+    [BaseType(typeof(ALIDFieldConfidences))]
+    interface ALGermanIDFrontFieldConfidences
+    {
+        // @property (nonatomic) ALFieldConfidence surname;
+        [Export("surname")]
+        int Surname { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence givenNames;
+        [Export("givenNames")]
+        int GivenNames { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence dateOfBirth;
+        [Export("dateOfBirth")]
+        int DateOfBirth { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence nationality;
+        [Export("nationality")]
+        int Nationality { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence placeOfBirth;
+        [Export("placeOfBirth")]
+        int PlaceOfBirth { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence dateOfExpiry;
+        [Export("dateOfExpiry")]
+        int DateOfExpiry { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence documentNumber;
+        [Export("documentNumber")]
+        int DocumentNumber { get; set; }
+
+        // @property (nonatomic) ALFieldConfidence cardAccessNumber;
+        [Export("cardAccessNumber")]
+        int CardAccessNumber { get; set; }
+
+        // -(instancetype _Nullable)initWithSurname:(ALFieldConfidence)surname givenNames:(ALFieldConfidence)givenNames dateOfBirth:(ALFieldConfidence)dateOfBirth nationality:(ALFieldConfidence)nationality placeOfBirth:(ALFieldConfidence)placeOfBirth dateOfExpiry:(ALFieldConfidence)dateOfExpiry documentNumber:(ALFieldConfidence)documentNumber cardAccessNumber:(ALFieldConfidence)cardAccessNumber;
+        [Export("initWithSurname:givenNames:dateOfBirth:nationality:placeOfBirth:dateOfExpiry:documentNumber:cardAccessNumber:")]
+        IntPtr Constructor(int surname, int givenNames, int dateOfBirth, int nationality, int placeOfBirth, int dateOfExpiry, int documentNumber, int cardAccessNumber);
     }
 
     // @interface ALIDScanPlugin : ALAbstractScanPlugin
