@@ -17,9 +17,9 @@
 		<string>iPhoneOS</string>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1409</string>
+	<string>1408</string>
 	<key>GITHash</key>
-	<string>0cc0c97aaada8f38a66e90eceeb0a194d0200be0</string>
+	<string>baac6e3a3268e222a448f084cac38696643d6f1c</string>
 	<key>MinimumOSVersion</key>
 	<string>8.0</string>
 	<key>UIDeviceFamily</key>

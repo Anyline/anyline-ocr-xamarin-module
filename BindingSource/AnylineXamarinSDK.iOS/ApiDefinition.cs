@@ -2426,7 +2426,7 @@ namespace AnylineXamarinSDK.iOS
     {
         // -(instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID licenseKey:(NSString * _Nonnull)licenseKey delegate:(id<ALBarcodeScanPluginDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
         [Export("initWithPluginID:licenseKey:delegate:error:")]
-        IntPtr Constructor([NullAllowed] string pluginID, string licenseKey, ALBarcodeScanPluginDelegate @delegate, [NullAllowed] out NSError error);
+        IntPtr Constructor([NullAllowed] string pluginID, string licenseKey, NSObject @delegate, [NullAllowed] out NSError error);
         
         // @property (readonly, nonatomic, strong) NSHashTable<ALBarcodeScanPluginDelegate> * _Nullable delegates;
         [NullAllowed, Export("delegates", ArgumentSemantic.Strong)]
@@ -3383,11 +3383,11 @@ namespace AnylineXamarinSDK.iOS
     {
         // -(instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID licenseKey:(NSString * _Nonnull)licenseKey delegate:(id<ALIDPluginDelegate> _Nonnull)delegate idConfig:(ALIDConfig * _Nonnull)config error:(NSError * _Nullable * _Nullable)error;
         [Export("initWithPluginID:licenseKey:delegate:idConfig:error:")]
-        IntPtr Constructor([NullAllowed] string pluginID, string licenseKey, ALIDPluginDelegate @delegate, ALIDConfig config, [NullAllowed] out NSError error);
+        IntPtr Constructor([NullAllowed] string pluginID, string licenseKey, NSObject @delegate, ALIDConfig config, [NullAllowed] out NSError error);
 
         // @property (readonly, nonatomic, strong) NSHashTable<ALIDPluginDelegate> * _Nullable delegates;
         [NullAllowed, Export("delegates", ArgumentSemantic.Strong)]
-        ALIDPluginDelegate Delegates { get; }
+        NSSet Delegates { get; }
 
         // -(void)addDelegate:(id<ALIDPluginDelegate> _Nonnull)delegate;
         [Export("addDelegate:")]
@@ -3724,7 +3724,7 @@ namespace AnylineXamarinSDK.iOS
     {
         // -(instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID licenseKey:(NSString * _Nonnull)licenseKey delegate:(id<ALOCRScanPluginDelegate> _Nonnull)delegate ocrConfig:(ALOCRConfig * _Nonnull)ocrConfig error:(NSError * _Nullable * _Nullable)error;
         [Export("initWithPluginID:licenseKey:delegate:ocrConfig:error:")]
-        IntPtr Constructor([NullAllowed] string pluginID, string licenseKey, ALOCRScanPluginDelegate @delegate, ALOCRConfig ocrConfig, [NullAllowed] out NSError error);
+        IntPtr Constructor([NullAllowed] string pluginID, string licenseKey, NSObject @delegate, ALOCRConfig ocrConfig, [NullAllowed] out NSError error);
 
         // @property (readonly, nonatomic, strong) NSHashTable<ALOCRScanPluginDelegate> * _Nullable delegates;
         [NullAllowed, Export("delegates", ArgumentSemantic.Strong)]

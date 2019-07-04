@@ -1,4 +1,4 @@
-@echo off
+@echo on
 IF EXIST Examples\AnylineExamples.Droid\obj (
 rmdir Examples\AnylineExamples.Droid\obj /S /Q
 )

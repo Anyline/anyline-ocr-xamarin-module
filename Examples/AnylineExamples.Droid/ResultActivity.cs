@@ -97,7 +97,7 @@ namespace AnylineExamples.Droid
                                 }
                                 else if (value is IDFieldConfidences)
                                 {
-                                    var sublist = CreatePropertyList(value as ID);
+                                    var sublist = CreatePropertyList(value as IDFieldConfidences);
                                     sublist.ToList().ForEach(x => dict.Add($"{x.Key} (field confidence)", x.Value));
                                 }
                                 else
