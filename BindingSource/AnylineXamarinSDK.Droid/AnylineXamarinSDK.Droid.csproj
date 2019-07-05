@@ -70,7 +70,7 @@
     <TransformFile Include="Assets\tools\Generated.xml" />
   </ItemGroup>
   <ItemGroup>
-    <LibraryProjectZip Include="Jars\anylinesdk-11-RC3.aar" />
+    <LibraryProjectZip Include="Jars\anylinesdk-11.aar" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
   <PropertyGroup>
