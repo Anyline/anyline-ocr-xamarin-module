@@ -4149,6 +4149,14 @@ namespace AnylineXamarinSDK.iOS
         [DesignatedInitializer]
         IntPtr Constructor([NullAllowed] string pluginID, string licenseKey, NSObject @delegate, [NullAllowed] out NSError error);
 
+		// @property (readonly, assign, nonatomic) ALLicensePlateScanMode scanMode;
+		[Export ("scanMode", ArgumentSemantic.Assign)]
+		ALLicensePlateScanMode ScanMode { get; }
+
+		// -(BOOL)setScanMode:(ALLicensePlateScanMode)scanMode error:(NSError * _Nullable * _Nullable)error;
+		[Export ("setScanMode:error:")]
+		bool SetScanMode (ALLicensePlateScanMode scanMode, [NullAllowed] out NSError error);
+
         // -(void)addDelegate:(id<ALLicensePlateScanPluginDelegate> _Nonnull)delegate;
         [Export("addDelegate:")]
         void AddDelegate(NSObject @delegate);

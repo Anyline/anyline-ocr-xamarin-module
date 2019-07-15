@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata minClientVersion="3.3">
     <id>Anyline.Xamarin.SDK.iOS</id>
-    <version>11.0.0</version>
+    <version>11.0.1</version>
     <title>Anyline Xamarin SDK (iOS)</title>
     <authors>Anyline GmbH</authors>
     <owners>peteranyline</owners>
@@ -22,8 +22,7 @@
     </contentFiles>
   </metadata>
   <files>
-	<!--the following line is commented out because it doesn't work on Visual Studio for Mac -->
-    <!--<file src="AnylineResources.bundle\**\*.*" target="contentFiles\any\xamarin.ios10\AnylineResources.bundle" />-->
+    <file src="AnylineResources.bundle\**\*.*" target="contentFiles\any\xamarin.ios10\AnylineResources.bundle" />
     <file src="AnylineResources.bundle\**\*.*" target="content\Resources\AnylineResources.bundle" />
 	<file src="lib\Xamarin.iOS10\AnylineXamarinSDK.iOS.dll" target="lib\Xamarin.iOS10" />
 	<file src="README.md" target="README.md" />
