@@ -1828,6 +1828,11 @@
 <attr path="/api/package[@name='io.anyline.plugin.ocr']/class[@name='AnylineOcrConfig']/method[@name='setScanMode' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ocr.AnylineOcrConfig.ScanMode']]/parameter[1]" name="managedName">scanMode</attr>
 <!-- AnylineOcrConfig.setTesseractLanguages(java.lang.String...) -->
 <attr path="/api/package[@name='io.anyline.plugin.ocr']/class[@name='AnylineOcrConfig']/method[@name='setTesseractLanguages' and count(parameter)=1 and parameter[1][@type='java.lang.String...']]/parameter[1]" name="managedName">tesseractLanguages</attr>
+<!-- File: IO.Anyline.Plugin.Ocr.AnylineTINConfig.cs -->
+<!-- AnylineTINConfig.TINScanMode.valueOf(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.ocr']/class[@name='AnylineTINConfig.TINScanMode']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
+<!-- AnylineTINConfig.setScanMode(io.anyline.plugin.ocr.AnylineTINConfig.TINScanMode) -->
+<attr path="/api/package[@name='io.anyline.plugin.ocr']/class[@name='AnylineTINConfig']/method[@name='setScanMode' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ocr.AnylineTINConfig.TINScanMode']]/parameter[1]" name="managedName">scanMode</attr>
 <!-- File: IO.Anyline.Plugin.Ocr.AnylineVINConfig.cs -->
 <!-- File: IO.Anyline.Plugin.Ocr.OcrScanPlugin.cs -->
 <!-- OcrScanPlugin.ScanMode.valueOf(java.lang.String) -->
