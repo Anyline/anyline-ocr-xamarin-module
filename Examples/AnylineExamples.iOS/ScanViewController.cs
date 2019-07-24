@@ -88,7 +88,7 @@ namespace AnylineExamples.iOS
                 // KNOWN ISSUE: the result delegate has to be added specifically to the scan plugin.
                 // this should be automatically done already with the ScanViewForFrame call.
                 ConnectDelegateToScanPlugin();
-
+                
                 View.AddSubview(_scanView);
                 _scanView.StartCamera();
 

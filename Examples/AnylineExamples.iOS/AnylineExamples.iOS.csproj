@@ -165,8 +165,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="AnylineXamarinSDK.iOS, Version=11.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Anyline.Xamarin.SDK.iOS.11.0.0\lib\Xamarin.iOS10\AnylineXamarinSDK.iOS.dll</HintPath>
+    <Reference Include="AnylineXamarinSDK.iOS, Version=11.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Anyline.Xamarin.SDK.iOS.11.0.1\lib\Xamarin.iOS10\AnylineXamarinSDK.iOS.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
@@ -261,11 +261,11 @@
   </ItemGroup>
   <Import Project="..\AnylineExamples.Shared\AnylineExamples.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
-  <Import Project="..\packages\Anyline.Xamarin.SDK.iOS.11.0.0\build\Anyline.Xamarin.SDK.iOS.targets" Condition="Exists('..\packages\Anyline.Xamarin.SDK.iOS.11.0.0\build\Anyline.Xamarin.SDK.iOS.targets')" />
+  <Import Project="..\packages\Anyline.Xamarin.SDK.iOS.11.0.1\build\Anyline.Xamarin.SDK.iOS.targets" Condition="Exists('..\packages\Anyline.Xamarin.SDK.iOS.11.0.1\build\Anyline.Xamarin.SDK.iOS.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Anyline.Xamarin.SDK.iOS.11.0.0\build\Anyline.Xamarin.SDK.iOS.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Anyline.Xamarin.SDK.iOS.11.0.0\build\Anyline.Xamarin.SDK.iOS.targets'))" />
+    <Error Condition="!Exists('..\packages\Anyline.Xamarin.SDK.iOS.11.0.1\build\Anyline.Xamarin.SDK.iOS.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Anyline.Xamarin.SDK.iOS.11.0.1\build\Anyline.Xamarin.SDK.iOS.targets'))" />
   </Target>
 </Project>
