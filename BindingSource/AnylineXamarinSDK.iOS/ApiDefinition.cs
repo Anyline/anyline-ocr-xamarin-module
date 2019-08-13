@@ -1915,69 +1915,7 @@ namespace AnylineXamarinSDK.iOS
         [Export("polygonWithScale:")]
         ALPolygon PolygonWithScale(nfloat scale);
     }
-
-    // @interface ALVisualFeedbackOverlay : UIView
-    [BaseType(typeof(UIView))]
-    interface ALVisualFeedbackOverlay
-    {
-        // @property (copy, nonatomic) ALPolygon * _Nullable polygon;
-        [NullAllowed, Export("polygon", ArgumentSemantic.Copy)]
-        ALPolygon Polygon { get; set; }
-
-        // @property (copy, nonatomic) ALSquare * _Nullable square;
-        [NullAllowed, Export("square", ArgumentSemantic.Copy)]
-        ALSquare Square { get; set; }
-
-        // @property (copy, nonatomic) NSArray * _Nullable contours;
-        [NullAllowed, Export("contours", ArgumentSemantic.Copy)]
-
-        NSObject[] Contours { get; set; }
-
-        // @property (assign, nonatomic) NSInteger visualFeedbackCornerRadius;
-        [Export("visualFeedbackCornerRadius")]
-        nint VisualFeedbackCornerRadius { get; set; }
-
-        // @property (assign, nonatomic) NSInteger visualFeedbackRedrawTimeout;
-        [Export("visualFeedbackRedrawTimeout")]
-        nint VisualFeedbackRedrawTimeout { get; set; }
-
-        // @property (assign, nonatomic) ALUIFeedbackStyle feedbackStyle;
-        [Export("feedbackStyle", ArgumentSemantic.Assign)]
-        ALUIFeedbackStyle FeedbackStyle { get; set; }
-
-        // @property (assign, nonatomic) ALUIVisualFeedbackAnimation visualFeedbackAnimation;
-        [Export("visualFeedbackAnimation", ArgumentSemantic.Assign)]
-        ALUIVisualFeedbackAnimation VisualFeedbackAnimation { get; set; }
-
-        // @property (nonatomic, strong) UIColor * _Nullable visualFeedbackStrokeColor;
-        [NullAllowed, Export("visualFeedbackStrokeColor", ArgumentSemantic.Strong)]
-        UIColor VisualFeedbackStrokeColor { get; set; }
-
-        // @property (nonatomic, strong) UIColor * _Nullable visualFeedbackFillColor;
-        [NullAllowed, Export("visualFeedbackFillColor", ArgumentSemantic.Strong)]
-        UIColor VisualFeedbackFillColor { get; set; }
-
-        // @property (assign, nonatomic) NSInteger visualFeedbackAnimationDuration;
-        [Export("visualFeedbackAnimationDuration")]
-        nint VisualFeedbackAnimationDuration { get; set; }
-
-        // @property (copy, nonatomic) UIBezierPath * _Nullable cutoutPath;
-        [NullAllowed, Export("cutoutPath", ArgumentSemantic.Copy)]
-        UIBezierPath CutoutPath { get; set; }
-
-        // @property (assign, nonatomic) NSInteger visualFeedbackStrokeWidth;
-        [Export("visualFeedbackStrokeWidth")]
-        nint VisualFeedbackStrokeWidth { get; set; }
-
-        // -(instancetype _Nullable)initWithFrame:(CGRect)frame visualFeedbackCornerRadius:(NSInteger)visualFeedbackCornerRadius visualFeedbackRedrawTimeout:(NSInteger)visualFeedbackRedrawTimeout feedbackStyle:(ALUIFeedbackStyle)feedbackStyle visualFeedbackAnimation:(ALUIVisualFeedbackAnimation)visualFeedbackAnimation visualFeedbackStrokeColor:(UIColor * _Nonnull)visualFeedbackStrokeColor visualFeedbackFillColor:(UIColor * _Nonnull)visualFeedbackFillColor visualFeedbackAnimationDuration:(NSInteger)visualFeedbackAnimationDuration cutoutPath:(UIBezierPath * _Nonnull)cutoutPath visualFeedbackStrokeWidth:(NSInteger)visualFeedbackStrokeWidth;
-        [Export("initWithFrame:visualFeedbackCornerRadius:visualFeedbackRedrawTimeout:feedbackStyle:visualFeedbackAnimation:visualFeedbackStrokeColor:visualFeedbackFillColor:visualFeedbackAnimationDuration:cutoutPath:visualFeedbackStrokeWidth:")]
-        IntPtr Constructor(CGRect frame, nint visualFeedbackCornerRadius, nint visualFeedbackRedrawTimeout, ALUIFeedbackStyle feedbackStyle, ALUIVisualFeedbackAnimation visualFeedbackAnimation, UIColor visualFeedbackStrokeColor, UIColor visualFeedbackFillColor, nint visualFeedbackAnimationDuration, UIBezierPath cutoutPath, nint visualFeedbackStrokeWidth);
-
-        // -(void)cancelFeedback;
-        [Export("cancelFeedback")]
-        void CancelFeedback();
-    }
-
+    
     // @interface ALUIFeedback : UIView
     [BaseType(typeof(UIView))]
     interface ALUIFeedback
@@ -4224,5 +4162,60 @@ namespace AnylineXamarinSDK.iOS
         [Abstract]
         [Export("anylineLicensePlateModuleView:didFindResult:")]
         void DidFindResult(AnylineLicensePlateModuleView anylineLicensePlateModuleView, ALLicensePlateResult scanResult);
+    }
+
+    // @interface ALAbstractScanViewPluginComposite : ALAbstractScanViewPlugin
+    [BaseType(typeof(ALAbstractScanViewPlugin))]
+    interface ALAbstractScanViewPluginComposite
+    {
+        // @property BOOL isRunning;
+        [Export("isRunning")]
+        bool IsRunning { get; set; }
+
+        // -(void)addPlugin:(ALAbstractScanViewPlugin * _Nonnull)plugin;
+        [Export("addPlugin:")]
+        void AddPlugin(ALAbstractScanViewPlugin plugin);
+
+        // -(void)removePlugin:(NSString * _Nonnull)pluginID;
+        [Export("removePlugin:")]
+        void RemovePlugin(string pluginID);
+
+        // -(instancetype _Nonnull)initWithPluginID:(NSString * _Nonnull)pluginID;
+        [Export("initWithPluginID:")]
+        IntPtr Constructor(string pluginID);
+
+        // -(void)addDelegate:(id<ALCompositeScanPluginDelegate> _Nonnull)delegate;
+        [Export("addDelegate:")]
+        void AddDelegate(NSObject @delegate);
+
+        // -(void)removeDelegate:(id<ALCompositeScanPluginDelegate> _Nonnull)delegate;
+        [Export("removeDelegate:")]
+        void RemoveDelegate(NSObject @delegate);
+    }
+
+    // @interface ALSerialScanViewPluginComposite : ALAbstractScanViewPluginComposite
+    [BaseType(typeof(ALAbstractScanViewPluginComposite))]
+    interface ALSerialScanViewPluginComposite
+    {
+        // -(BOOL)startFromID:(NSString * _Nonnull)pluginID andReturnError:(NSError * _Nullable * _Nullable)error;
+        [Export("startFromID:andReturnError:")]
+        bool StartFromID(string pluginID, [NullAllowed] out NSError error);
+    }
+
+    // @interface ALCompositeResult : ALScanResult
+    [BaseType(typeof(ALScanResult))]
+    interface ALCompositeResult
+    {
+    }
+
+    // @protocol ALCompositeScanPluginDelegate <NSObject>
+    [Protocol, Model]
+    [BaseType(typeof(NSObject))]
+    interface ALCompositeScanPluginDelegate
+    {
+        // @required -(void)anylineCompositeScanPlugin:(ALAbstractScanViewPluginComposite * _Nonnull)anylineCompositeScanPlugin didFindResult:(ALCompositeResult * _Nonnull)scanResult;
+        [Abstract]
+        [Export("anylineCompositeScanPlugin:didFindResult:")]
+        void DidFindResult(ALAbstractScanViewPluginComposite anylineCompositeScanPlugin, ALCompositeResult scanResult);
     }
 }

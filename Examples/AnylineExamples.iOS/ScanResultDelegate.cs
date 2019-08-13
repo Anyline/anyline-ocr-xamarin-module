@@ -15,7 +15,8 @@ namespace AnylineExamples.iOS
         IALMeterScanPluginDelegate,
         IALDocumentScanPluginDelegate, 
         IALLicensePlateScanPluginDelegate,
-        IALBarcodeScanPluginDelegate
+        IALBarcodeScanPluginDelegate,
+        IALCompositeScanPluginDelegate
     {
         // we store the ScanViewController for navigation purposes
         private readonly ScanViewController _scanViewController;
@@ -66,6 +67,11 @@ namespace AnylineExamples.iOS
         }
 
         public void DidFindResult(ALBarcodeScanPlugin anylineBarcodeScanPlugin, ALBarcodeResult scanResult)
+        {
+            HandleResult(scanResult);
+        }
+
+        public void DidFindResult(ALAbstractScanViewPluginComposite anylineCompositeScanPlugin, ALCompositeResult scanResult)
         {
             HandleResult(scanResult);
         }

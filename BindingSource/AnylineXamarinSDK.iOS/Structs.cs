@@ -268,7 +268,9 @@ namespace AnylineXamarinSDK.iOS
     {
         At,
         De,
-        Uk, // added in 11
+        Uk,
+        Nl,
+        Be,
         Auto
     }
 
@@ -324,7 +326,7 @@ namespace AnylineXamarinSDK.iOS
         Czech = 5,
         Finland = 6,
         Ireland = 7,
-        Hungary = 8,
+        Croatia = 8,
         Poland = 9,
         Slovakia = 10,
         Slovenia = 11,

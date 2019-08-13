@@ -60,7 +60,7 @@ namespace Anyline.Droid
 
                     scanView = view.FindViewById<ScanView>(Resource.Id.scan_view);
 
-                    scanView.Init("id_config_mrz.json", licenseKey);
+                    scanView.Init("mro_config_shipping_container.json", licenseKey);
 
                     scanView.ScanViewPlugin.AddScanResultListener(this);
 

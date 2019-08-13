@@ -48,6 +48,7 @@ namespace AnylineExamples.Shared
         public static readonly string Bottlecap = "Bottlecap";
         public static readonly string VoucherCode = "Voucher Code";
         public static readonly string CowTag = "Cattle Tag";
+        public static readonly string SerialScanning = "Serial Scanning";
 
         public static List<string> GetItems()
         {
@@ -89,6 +90,7 @@ namespace AnylineExamples.Shared
             new ExampleModel(ItemType.Item, Example.Bottlecap, Category.Others, "others_config_bottlecap.json"),
             new ExampleModel(ItemType.Item, Example.VoucherCode, Category.Others, "others_config_voucher_code.json"),
             new ExampleModel(ItemType.Item, Example.CowTag, Category.Others, "others_config_cow_tag.json"),
+            new ExampleModel(ItemType.Item, Example.SerialScanning, Category.Others, "others_config_serial_scanning.json"),
 
             new ExampleModel(ItemType.Header, Category.Version, Category.Version, ""),
         };

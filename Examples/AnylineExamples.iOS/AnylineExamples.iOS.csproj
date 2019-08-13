@@ -107,6 +107,7 @@
     <BundleResource Include="Resources\vehicle_config_license_plate.json" />
     <BundleResource Include="Resources\id_config_german_id_front.json" />
     <BundleResource Include="Resources\others_config_cow_tag.json" />
+    <BundleResource Include="Resources\others_config_serial_scanning.json" />
     <BundleResource Include="Resources\AnylineResources.bundle\ui\manifest.json" />
     <BundleResource Include="Resources\AnylineResources.bundle\ui\asset-manifest.json" />
     <BundleResource Include="Resources\AnylineResources.bundle\threshold_all.ale" />
@@ -124,11 +125,14 @@
     <BundleResource Include="Resources\AnylineResources.bundle\module_license_plate\license_plates_combined.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_id\trained_models\USNr.any" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_id\trained_models\OCRb.any" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_id\trained_models\IDDeSticker.any" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_id\trained_models\IDDe.any" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_id\trained_models\DL_AT.any" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_id\mrz_scanning.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_id\card_detection.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_id\anyline_german_id_front.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_id\anyline_driving_license_netherlands.ale" />
+    <BundleResource Include="Resources\AnylineResources.bundle\module_id\anyline_driving_license_belgium.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_id\anyline_driving_license.ale" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\trained_models\digitalCommaSvmModel.any" />
     <BundleResource Include="Resources\AnylineResources.bundle\module_energy\trained_models\CNN_SNr_w_CL_special_whiteList.any" />
@@ -165,8 +169,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="AnylineXamarinSDK.iOS, Version=11.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Anyline.Xamarin.SDK.iOS.11.0.1\lib\Xamarin.iOS10\AnylineXamarinSDK.iOS.dll</HintPath>
+    <Reference Include="AnylineXamarinSDK.iOS, Version=12.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Anyline.Xamarin.SDK.iOS.12.1.0\lib\Xamarin.iOS10\AnylineXamarinSDK.iOS.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
@@ -261,11 +265,11 @@
   </ItemGroup>
   <Import Project="..\AnylineExamples.Shared\AnylineExamples.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
-  <Import Project="..\packages\Anyline.Xamarin.SDK.iOS.11.0.1\build\Anyline.Xamarin.SDK.iOS.targets" Condition="Exists('..\packages\Anyline.Xamarin.SDK.iOS.11.0.1\build\Anyline.Xamarin.SDK.iOS.targets')" />
+  <Import Project="..\packages\Anyline.Xamarin.SDK.iOS.12.1.0\build\Anyline.Xamarin.SDK.iOS.targets" Condition="Exists('..\packages\Anyline.Xamarin.SDK.iOS.12.1.0\build\Anyline.Xamarin.SDK.iOS.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Anyline.Xamarin.SDK.iOS.11.0.1\build\Anyline.Xamarin.SDK.iOS.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Anyline.Xamarin.SDK.iOS.11.0.1\build\Anyline.Xamarin.SDK.iOS.targets'))" />
+    <Error Condition="!Exists('..\packages\Anyline.Xamarin.SDK.iOS.12.1.0\build\Anyline.Xamarin.SDK.iOS.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Anyline.Xamarin.SDK.iOS.12.1.0\build\Anyline.Xamarin.SDK.iOS.targets'))" />
   </Target>
 </Project>
