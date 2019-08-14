@@ -161,10 +161,17 @@
   
   <!-- ANYLINE 4+ Support API -->
   
-  <remove-node path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanResultListener']"/>
-  
+  <!--<remove-node path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanResultListener']"/>-->
+
   <!--
   <attr path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanResultListener']/method[@name='onResult' and count(parameter)=1 and parameter[1][@type='T']]/parameter[1]" name="managedType">IO.Anyline.Plugin.ScanResult</attr>
   -->
+
+  <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='getScanViewPluginConfig' and count(parameter)=0]" name="visibility">public</attr>
+
+  <remove-node path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='setCancelOnResult' and count(parameter)=0]"/>
+
+  <!--Fixes Error CS0507 'SerialScanViewComposite.CutoutRect': cannot change access modifiers when overriding 'protected' inherited member 'ScanViewPluginComposite.CutoutRect'	AnylineXamarinSDK.Droid	D:\ANYLINE\anyline-ocr-xamarin-module\BindingSource\AnylineXamarinSDK.Droid\obj\Release\generated\src\IO.Anyline.View.SerialScanViewComposite.cs	71	Active-->
+  <attr path="/api/package[@name='io.anyline.view']/class[@name='SerialScanViewComposite']/method[@name='getCutoutRect' and count(parameter)=0]" name="visibility">protected</attr>
 
 </metadata>

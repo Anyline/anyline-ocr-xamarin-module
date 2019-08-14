@@ -20,13 +20,14 @@ namespace AnylineExamples.Shared
         public static readonly string MRO = "MRO";
         public static readonly string Document = "Documents";
         public static readonly string Others = "Others";
+        //public static readonly string Workflows = "Workflows";
         public static readonly string Version = "Version";
 
         public static List<string> GetItems()
         {
             return new List<string>
             {
-                Energy, ID, Vehicle, MRO, Document, Others,
+                Energy, ID, Vehicle, MRO, Document, Others, //Workflows,
                 Version
             };
         }
@@ -48,7 +49,7 @@ namespace AnylineExamples.Shared
         public static readonly string Bottlecap = "Bottlecap";
         public static readonly string VoucherCode = "Voucher Code";
         public static readonly string CowTag = "Cattle Tag";
-        public static readonly string SerialScanning = "Serial Scanning";
+        //public static readonly string SerialScanning = "Serial Scanning";
 
         public static List<string> GetItems()
         {
@@ -56,7 +57,7 @@ namespace AnylineExamples.Shared
             {
                 AnalogDigital, DialMeter, MRZ, DrivingLicense, GermanIDFront,
                 LicensePlate, UniversalSerialNumber, VIN, ShippingContainer,
-                Document, Barcode, Bottlecap, VoucherCode, CowTag
+                Document, Barcode, Bottlecap, VoucherCode, CowTag, //SerialScanning
             };
         }
     }
@@ -90,7 +91,9 @@ namespace AnylineExamples.Shared
             new ExampleModel(ItemType.Item, Example.Bottlecap, Category.Others, "others_config_bottlecap.json"),
             new ExampleModel(ItemType.Item, Example.VoucherCode, Category.Others, "others_config_voucher_code.json"),
             new ExampleModel(ItemType.Item, Example.CowTag, Category.Others, "others_config_cow_tag.json"),
-            new ExampleModel(ItemType.Item, Example.SerialScanning, Category.Others, "others_config_serial_scanning.json"),
+
+            //new ExampleModel(ItemType.Header, Category.Workflows, Category.Workflows, ""),
+            //new ExampleModel(ItemType.Item, Example.SerialScanning, Category.Workflows, "workflows_config_serial_scanning.json"),
 
             new ExampleModel(ItemType.Header, Category.Version, Category.Version, ""),
         };

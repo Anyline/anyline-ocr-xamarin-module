@@ -24,7 +24,7 @@ namespace AnylineExamples.Droid
         /// Since the native Java type is generic, we translated the type of the parameter to ScanResult due to Xamarin.Android generic binding limitations.
         /// </summary>
         /// <param name="result">The scan result</param>
-        public void OnResult(ScanResult result)
+        public void OnResult(Java.Lang.Object result)
         {
             /*
              * In every case, the base type of the result is ScanResult.

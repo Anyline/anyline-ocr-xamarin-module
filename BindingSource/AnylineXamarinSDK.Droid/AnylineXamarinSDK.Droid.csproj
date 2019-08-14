@@ -55,7 +55,7 @@
     <Compile Include="Additions\IDocumentScanResultListener.cs" />
     <Compile Include="Additions\IScanResultListener.cs" />
     <Compile Include="Additions\MrzIdentification.cs" />
-    <Compile Include="Additions\ScanViewPlugin.cs" />
+    <Compile Include="Additions\AbstractBaseScanViewPlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

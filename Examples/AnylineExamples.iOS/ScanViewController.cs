@@ -7,7 +7,7 @@ using System.IO;
 
 namespace AnylineExamples.iOS
 {
-    public sealed class ScanViewController : UIViewController
+    public sealed class ScanViewController : UIViewController, IALCompositeScanPluginDelegate
     {
         readonly string LicenseKey = AnylineViewController.LicenseKey;
 
@@ -51,7 +51,8 @@ namespace AnylineExamples.iOS
                 // Use the JSON file name that you want to load here
                 var configPath = NSBundle.MainBundle.PathForResource(@"" + _jsonPath.Replace(".json", ""), @"json");
                 // This is the main intialization method that will create our use case depending on the JSON configuration.
-                _scanView = ALScanView.ScanViewForFrame(_frame, configPath, LicenseKey, _resultDelegate, out error);
+                //_scanView = ALScanView.ScanViewForFrame(_frame, configPath, LicenseKey, _resultDelegate, out error);
+                _scanView = ALScanView.ScanViewForFrame(_frame, configPath, LicenseKey, Self, out error);
 
                 if (error != null)
                 {
@@ -121,7 +122,12 @@ namespace AnylineExamples.iOS
             if (!_initialized) return;
 
             NSError error = null;
-            var success = _scanView.ScanViewPlugin.StartAndReturnError(out error);
+
+            var s = _scanView.ScanViewPlugin.StopAndReturnError(out error);
+            
+            //var success = _scanView.ScanViewPlugin.StartAndReturnError(out error);
+            var success = (_scanView.ScanViewPlugin as ALSerialScanViewPluginComposite).StartFromID("VIN", out error);
+            
             if (!success)
             {
                 if (error != null)
@@ -165,6 +171,11 @@ namespace AnylineExamples.iOS
             _scanView?.Dispose();
             _scanView = null;
             base.Dispose();
+        }
+
+        public void DidFindResult(ALAbstractScanViewPluginComposite anylineCompositeScanPlugin, ALCompositeResult scanResult)
+        {
+            throw new NotImplementedException();
         }
     }
 }

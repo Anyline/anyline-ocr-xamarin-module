@@ -278,6 +278,8 @@
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController.CameraOrientation']/method[@name='fromDegrees' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">degrees</attr>
 <!-- CameraController.CameraOrientation.valueOf(java.lang.String) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController.CameraOrientation']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
+<!-- CameraController.setCameraConfig(at.nineyards.anyline.camera.CameraConfig) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setCameraConfig' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.CameraConfig']]/parameter[1]" name="managedName">cameraConfig</attr>
 <!-- CameraController.setPreferredCameraConfig(at.nineyards.anyline.camera.CameraConfig) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setPreferredCameraConfig' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.CameraConfig']]/parameter[1]" name="managedName">preferredCameraConfig</attr>
 <!-- CameraController.setZoomRatio(double) -->
@@ -833,7 +835,8 @@
 <!-- AnylineBaseModuleView.calculateBrightnessCount(double) -->
 <!-- AnylineBaseModuleView.drawFeedback(java.lang.Object) -->
 <attr path="/api/package[@name='at.nineyards.anyline.modules']/class[@name='AnylineBaseModuleView']/method[@name='drawFeedback' and count(parameter)=1 and parameter[1][@type='java.lang.Object']]/parameter[1]" name="managedName">drawObject</attr>
-<!-- AnylineBaseModuleView.drawShape(java.util.List&lt;android.graphics.PointF&gt;, java.lang.String) -->
+<!-- AnylineBaseModuleView.drawShape(java.util.List&lt;android.graphics.PointF&gt;) -->
+<attr path="/api/package[@name='at.nineyards.anyline.modules']/class[@name='AnylineBaseModuleView']/method[@name='drawShape' and count(parameter)=1 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;']]/parameter[1]" name="managedName">outline</attr>
 <!-- AnylineBaseModuleView.getViewRelativePointListFromCutoutRelativeObject(java.lang.Object) -->
 <!-- AnylineBaseModuleView.initAnyline(java.lang.String, T) -->
 <attr path="/api/package[@name='at.nineyards.anyline.modules']/class[@name='AnylineBaseModuleView']/method[@name='initAnyline' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='T']]/parameter[1]" name="managedName">licenseKey</attr>
@@ -1240,6 +1243,166 @@
 <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.ocr']/class[@name='AnylineOcrScanView']/method[@name='initAnyline' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='at.nineyards.anylinexamarin.support.modules.ocr.AnylineOcrResultListener']]/parameter[2]" name="managedName">resultListener</attr>
 <!-- File: AT.Nineyards.Anylinexamarin.Support.Modules.Ocr.IAnylineOcrResultListener.cs -->
 <!-- AnylineOcrResultListener.onResult(at.nineyards.anyline.modules.ocr.AnylineOcrResult) -->
+<!-- File: IO.Anyline.Nfc.Constants.MrtdConstants.cs -->
+<!-- File: IO.Anyline.Nfc.Converter.ASN1Converter.cs -->
+<!-- ASN1Converter.translateAsn1Oid(java.lang.String) -->
+<!-- File: IO.Anyline.Nfc.NFC.Apdu.cs -->
+<!-- Apdu.buildApduCommand(byte, byte, byte, byte, byte[]) -->
+<!-- Apdu.buildApduCommand(byte, byte, byte, byte, byte[], byte) -->
+<!-- Apdu.setApduWithLe(boolean) -->
+<!-- File: IO.Anyline.Nfc.NFC.DataGroup1.cs -->
+<!-- DataGroup1.DataGroup1(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String) -->
+<!-- DataGroup1.setDateOfBirth(java.lang.String) -->
+<!-- DataGroup1.setDateOfExpiry(java.lang.String) -->
+<!-- DataGroup1.setDocumentNumber(java.lang.String) -->
+<!-- DataGroup1.setDocumentType(java.lang.String) -->
+<!-- DataGroup1.setFirstName(java.lang.String) -->
+<!-- DataGroup1.setGender(java.lang.String) -->
+<!-- DataGroup1.setIssuingStateCode(java.lang.String) -->
+<!-- DataGroup1.setLastName(java.lang.String) -->
+<!-- DataGroup1.setNationality(java.lang.String) -->
+<!-- File: IO.Anyline.Nfc.NFC.DataGroup2.cs -->
+<!-- DataGroup2.DataGroup2(byte[]) -->
+<!-- DataGroup2.setFaceImage(android.graphics.Bitmap) -->
+<!-- File: IO.Anyline.Nfc.NFC.Doc9303Apdu.cs -->
+<!-- Doc9303Apdu.buildDO87(byte[]) -->
+<!-- Doc9303Apdu.buildDO8E(byte[]) -->
+<!-- Doc9303Apdu.buildDO97(int) -->
+<!-- File: IO.Anyline.Nfc.NFC.NFCResult.cs -->
+<!-- NFCResult.NFCResult(io.anyline.nfc.NFC.DataGroup1, io.anyline.nfc.NFC.DataGroup2, io.anyline.nfc.NFC.SOD) -->
+<!-- NFCResult.setDataGroup1(io.anyline.nfc.NFC.DataGroup1) -->
+<!-- NFCResult.setDataGroup2(io.anyline.nfc.NFC.DataGroup2) -->
+<!-- NFCResult.setSod(io.anyline.nfc.NFC.SOD) -->
+<!-- File: IO.Anyline.Nfc.NFC.SOD.cs -->
+<!-- SOD.SOD(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String) -->
+<!-- SOD.setIssuerCertificationAuthority(java.lang.String) -->
+<!-- SOD.setIssuerCountry(java.lang.String) -->
+<!-- SOD.setIssuerOrganization(java.lang.String) -->
+<!-- SOD.setIssuerOrganizationalUnit(java.lang.String) -->
+<!-- SOD.setLdsHashAlgorithm(java.lang.String) -->
+<!-- SOD.setSignatureAlgorithm(java.lang.String) -->
+<!-- SOD.setValidFromString(java.lang.String) -->
+<!-- SOD.setValidUntilString(java.lang.String) -->
+<!-- File: IO.Anyline.Nfc.NfcDetector.cs -->
+<!-- NfcDetector.NfcDetectionHandler.onDg1Success(io.anyline.nfc.NFC.DataGroup1) -->
+<!-- NfcDetector.NfcDetectionHandler.onDg2Success(io.anyline.nfc.NFC.DataGroup2) -->
+<!-- NfcDetector.NfcDetectionHandler.onNfcFailure(java.lang.String) -->
+<!-- NfcDetector.NfcDetectionHandler.onNfcSuccess(io.anyline.nfc.NFC.NFCResult) -->
+<!-- NfcDetector.NfcDetectionHandler.onSODSuccess(io.anyline.nfc.NFC.SOD) -->
+<!-- NfcDetector.NfcDetector(io.anyline.nfc.NfcDetector.NfcDetectionHandler) -->
+<!-- NfcDetector.startNfcDetection(java.lang.String, java.lang.String, java.lang.String) -->
+<!-- File: IO.Anyline.Nfc.Parser.DG1Parser.cs -->
+<!-- DG1Parser.DG1Parser(byte[]) -->
+<!-- DG1Parser.setDateOfBirth(java.lang.String) -->
+<!-- DG1Parser.setDateOfBirthCheckDigit(java.lang.String) -->
+<!-- DG1Parser.setDateOfExpiry(java.lang.String) -->
+<!-- DG1Parser.setDateOfExpiryCheckDigit(java.lang.String) -->
+<!-- DG1Parser.setDocumentCode(java.lang.String) -->
+<!-- DG1Parser.setDocumentNumber(java.lang.String) -->
+<!-- DG1Parser.setDocumentNumberCheckDigit(java.lang.String) -->
+<!-- DG1Parser.setGender(java.lang.String) -->
+<!-- DG1Parser.setGivenNames(java.lang.String) -->
+<!-- DG1Parser.setIssuingStateCode(java.lang.String) -->
+<!-- DG1Parser.setMRZ(java.lang.String) -->
+<!-- DG1Parser.setNationalityCode(java.lang.String) -->
+<!-- DG1Parser.setSurname(java.lang.String) -->
+<!-- File: IO.Anyline.Nfc.Parser.DG2Parser.cs -->
+<!-- DG2Parser.DG2Parser(byte[]) -->
+<!-- File: IO.Anyline.Nfc.Parser.Iso19794Parser.cs -->
+<!-- Iso19794Parser.Iso19794Parser(byte[]) -->
+<!-- File: IO.Anyline.Nfc.Parser.TagParser.cs -->
+<!-- TagParser.TagParser(byte[]) -->
+<!-- TagParser.geTag(java.lang.String) -->
+<!-- TagParser.parseElement(byte[]) -->
+<!-- File: IO.Anyline.Nfc.Reader.AbstractReader.cs -->
+<!-- AbstractReader.calculateEncryptionKey(byte[]) -->
+<!-- AbstractReader.calculateMac(byte[], byte[]) -->
+<!-- AbstractReader.calculateMac(byte[], byte[], boolean) -->
+<!-- AbstractReader.calculateSequenceCounter(byte[]) -->
+<!-- AbstractReader.decrypt(byte[], byte[]) -->
+<!-- AbstractReader.encrypt(byte[], byte[]) -->
+<!-- AbstractReader.initSession(int) -->
+<!-- AbstractReader.padData(byte[]) -->
+<!-- AbstractReader.readFile(byte[]) -->
+<!-- AbstractReader.setApduWithLe(boolean) -->
+<!-- AbstractReader.setBacInfo(io.anyline.nfc.Reader.BacInfo) -->
+<!-- AbstractReader.setMaxBlockSize(int) -->
+<!-- AbstractReader.setMutualAuthLe(byte) -->
+<!-- AbstractReader.setProgressListener(java.lang.ref.WeakReference&lt;java.lang.Object&gt;) -->
+<!-- AbstractReader.calculateEncryptionKey(byte[]) -->
+<!-- AbstractReader.calculateMac(byte[], byte[]) -->
+<!-- AbstractReader.calculateMac(byte[], byte[], boolean) -->
+<!-- AbstractReader.calculateSequenceCounter(byte[]) -->
+<!-- AbstractReader.decrypt(byte[], byte[]) -->
+<!-- AbstractReader.encrypt(byte[], byte[]) -->
+<!-- AbstractReader.padData(byte[]) -->
+<!-- File: IO.Anyline.Nfc.Reader.AesReader.cs -->
+<!-- AesReader.calculateEncryptionKey(byte[]) -->
+<!-- AesReader.calculateMac(byte[], byte[]) -->
+<!-- AesReader.calculateMac(byte[], byte[], boolean) -->
+<!-- AesReader.calculateSequenceCounter(byte[]) -->
+<!-- AesReader.decrypt(byte[], byte[]) -->
+<!-- AesReader.encrypt(byte[], byte[]) -->
+<!-- AesReader.padData(byte[]) -->
+<!-- File: IO.Anyline.Nfc.Reader.BacInfo.cs -->
+<!-- BacInfo.setDateOfBirth(java.lang.String) -->
+<!-- BacInfo.setDateOfExpiry(java.lang.String) -->
+<!-- BacInfo.setPassportNbr(java.lang.String) -->
+<!-- File: IO.Anyline.Nfc.Reader.DESedeReader.cs -->
+<!-- DESedeReader.calculateEncryptionKey(byte[]) -->
+<!-- DESedeReader.calculateMac(byte[], byte[]) -->
+<!-- DESedeReader.calculateMac(byte[], byte[], boolean) -->
+<!-- DESedeReader.calculateSequenceCounter(byte[]) -->
+<!-- DESedeReader.decrypt(byte[], byte[]) -->
+<!-- DESedeReader.encrypt(byte[], byte[]) -->
+<!-- DESedeReader.padData(byte[]) -->
+<!-- File: IO.Anyline.Nfc.Reader.IProgressListenerInterface.cs -->
+<!-- ProgressListenerInterface.updateProgress(int) -->
+<!-- File: IO.Anyline.Nfc.TagProvider.cs -->
+<!-- TagProvider.setTag(android.nfc.tech.IsoDep) -->
+<!-- TagProvider.setTimeout(int) -->
+<!-- TagProvider.transceive(byte[]) -->
+<!-- File: IO.Anyline.Nfc.Tools.AES.cs -->
+<!-- AES.decrypt(byte[], byte[], byte[]) -->
+<!-- AES.decrypt(byte[], byte[], byte[], int, int) -->
+<!-- AES.encrypt(byte[], byte[], byte[]) -->
+<!-- File: IO.Anyline.Nfc.Tools.AESCMAC.cs -->
+<!-- AESCMAC.get(byte[], byte[]) -->
+<!-- AESCMAC.get(byte[], byte[], byte[]) -->
+<!-- File: IO.Anyline.Nfc.Tools.Crypto.cs -->
+<!-- Crypto.calculate3DESEncryptionKey(byte[]) -->
+<!-- Crypto.calculate3DESMac(byte[], byte[], boolean) -->
+<!-- Crypto.calculateAESEncryptionKey(byte[]) -->
+<!-- Crypto.calculateAESMac(byte[], byte[], boolean) -->
+<!-- Crypto.calculateMacKey(byte[]) -->
+<!-- Crypto.calculateSeed(java.lang.String, java.lang.String, java.lang.String) -->
+<!-- Crypto.decrypt3DES(byte[], byte[]) -->
+<!-- Crypto.decryptAES(byte[], byte[]) -->
+<!-- Crypto.decryptUsingDES(byte[], byte[]) -->
+<!-- Crypto.encrypt3DES(byte[], byte[]) -->
+<!-- Crypto.encryptAES(byte[], byte[]) -->
+<!-- Crypto.encryptUsingDES(byte[], byte[]) -->
+<!-- Crypto.generateRandomBytes(int) -->
+<!-- Crypto.padData(byte[], int) -->
+<!-- Crypto.sha1(byte[]) -->
+<!-- File: IO.Anyline.Nfc.Tools.Tools.cs -->
+<!-- Tools.adjustParityBits(byte[]) -->
+<!-- Tools.byteToBytes(byte) -->
+<!-- Tools.bytesToString(byte[]) -->
+<!-- Tools.calculate2bytesInt(int) -->
+<!-- Tools.calculateAsn1Length(byte[]) -->
+<!-- Tools.calculateMrzCheckDigit(java.lang.String) -->
+<!-- Tools.concatByteArrays(byte[], byte[]) -->
+<!-- Tools.doXor(byte[], byte[]) -->
+<!-- Tools.getAsn1HeaderLength(byte[]) -->
+<!-- Tools.getIntFrom16bits(byte[]) -->
+<!-- Tools.getLengthFromAsn1(byte[]) -->
+<!-- Tools.getLengthFromFileHeader(byte[]) -->
+<!-- Tools.incrementBytesArray(byte[]) -->
+<!-- Tools.incrementBytesArray(byte[], int) -->
+<!-- Tools.inputStreamToByteArray(java.io.InputStream) -->
+<!-- Tools.invertBytes(byte[]) -->
+<!-- Tools.unpadData(byte[]) -->
 <!-- File: IO.Anyline.Plugin.AbstractScanPlugin.cs -->
 <!-- AbstractScanPlugin.AbstractScanPlugin(android.content.Context, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/constructor[@name='AbstractScanPlugin' and count(parameter)=7 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String'] and parameter[4][@type='java.lang.String'] and parameter[5][@type='java.lang.String'] and parameter[6][@type='java.lang.String'] and parameter[7][@type='java.lang.String']]/parameter[1]" name="managedName">context</attr>
@@ -1253,6 +1416,8 @@
 <attr path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/method[@name='setImageProvider' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.ImageProvider']]/parameter[1]" name="managedName">imageProvider</attr>
 <!-- AbstractScanPlugin.addScanInfoListener(io.anyline.plugin.ScanInfoListener) -->
 <attr path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/method[@name='addScanInfoListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanInfoListener']]/parameter[1]" name="managedName">listener</attr>
+<!-- AbstractScanPlugin.addScanResultListener(io.anyline.plugin.ScanResultListener&lt;ResultType&gt;) -->
+<attr path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/method[@name='addScanResultListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanResultListener&lt;ResultType&gt;']]/parameter[1]" name="managedName">listener</attr>
 <!-- AbstractScanPlugin.addScanRunSkippedListener(io.anyline.plugin.ScanRunSkippedListener) -->
 <attr path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/method[@name='addScanRunSkippedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanRunSkippedListener']]/parameter[1]" name="managedName">listener</attr>
 <!-- AbstractScanPlugin.invokeOnInfo(java.lang.String, java.lang.Object) -->
@@ -1261,6 +1426,8 @@
 <!-- AbstractScanPlugin.onReportsVariable(java.lang.String, java.lang.Object) -->
 <!-- AbstractScanPlugin.removeScanInfoListener(io.anyline.plugin.ScanInfoListener) -->
 <attr path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/method[@name='removeScanInfoListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanInfoListener']]/parameter[1]" name="managedName">listener</attr>
+<!-- AbstractScanPlugin.removeScanResultListener(io.anyline.plugin.ScanResultListener&lt;ResultType&gt;) -->
+<attr path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/method[@name='removeScanResultListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanResultListener&lt;ResultType&gt;']]/parameter[1]" name="managedName">listener</attr>
 <!-- AbstractScanPlugin.removeScanRunSkippedListener(io.anyline.plugin.ScanRunSkippedListener) -->
 <attr path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/method[@name='removeScanRunSkippedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanRunSkippedListener']]/parameter[1]" name="managedName">listener</attr>
 <!-- AbstractScanPlugin.setCancelOnResult(boolean) -->
@@ -1349,6 +1516,8 @@
 <attr path="/api/package[@name='io.anyline.plugin.document']/class[@name='DocumentScanViewPlugin']/constructor[@name='DocumentScanViewPlugin' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='java.lang.String']]/parameter[4]" name="managedName">id</attr>
 <!-- DocumentScanViewPlugin.setPostProcessingEnabled(boolean) -->
 <attr path="/api/package[@name='io.anyline.plugin.document']/class[@name='DocumentScanViewPlugin']/method[@name='setPostProcessingEnabled' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">enabled</attr>
+<!-- DocumentScanViewPlugin.setDocumentNotifierListener(io.anyline.plugin.document.DocumentNotifierListener) -->
+<attr path="/api/package[@name='io.anyline.plugin.document']/class[@name='DocumentScanViewPlugin']/method[@name='setDocumentNotifierListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.document.DocumentNotifierListener']]/parameter[1]" name="managedName">listener</attr>
 <!-- DocumentScanViewPlugin.setDocumentRatios(java.lang.Double...) -->
 <attr path="/api/package[@name='io.anyline.plugin.document']/class[@name='DocumentScanViewPlugin']/method[@name='setDocumentRatios' and count(parameter)=1 and parameter[1][@type='java.lang.Double...']]/parameter[1]" name="managedName">ratios</attr>
 <!-- DocumentScanViewPlugin.setMaxDocumentOutputResolution(java.lang.Double, java.lang.Double) -->
@@ -1363,6 +1532,29 @@
 <!-- DocumentScanViewPlugin.transformPicture(at.nineyards.anyline.models.AnylineImage, java.util.List&lt;android.graphics.PointF&gt;) -->
 <attr path="/api/package[@name='io.anyline.plugin.document']/class[@name='DocumentScanViewPlugin']/method[@name='transformPicture' and count(parameter)=2 and parameter[1][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[2][@type='java.util.List&lt;android.graphics.PointF&gt;']]/parameter[1]" name="managedName">fullImage</attr>
 <attr path="/api/package[@name='io.anyline.plugin.document']/class[@name='DocumentScanViewPlugin']/method[@name='transformPicture' and count(parameter)=2 and parameter[1][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[2][@type='java.util.List&lt;android.graphics.PointF&gt;']]/parameter[2]" name="managedName">corners</attr>
+<!-- File: IO.Anyline.Plugin.Document.IDocumentNotifierListener.cs -->
+<!-- DocumentNotifierListener.notifyDrawDocumentFeedback(java.util.List&lt;android.graphics.PointF&gt;, java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.document']/interface[@name='DocumentNotifierListener']/method[@name='notifyDrawDocumentFeedback' and count(parameter)=2 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">points</attr>
+<attr path="/api/package[@name='io.anyline.plugin.document']/interface[@name='DocumentNotifierListener']/method[@name='notifyDrawDocumentFeedback' and count(parameter)=2 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[2][@type='java.lang.String']]/parameter[2]" name="managedName">strokeColor</attr>
+<!-- File: IO.Anyline.Plugin.Document.IDocumentScanResultListener.cs -->
+<!-- DocumentScanResultListener.onDocumentOutlineDetected(java.util.List&lt;android.graphics.PointF&gt;, boolean) -->
+<attr path="/api/package[@name='io.anyline.plugin.document']/interface[@name='DocumentScanResultListener']/method[@name='onDocumentOutlineDetected' and count(parameter)=2 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[2][@type='boolean']]/parameter[1]" name="managedName">corners</attr>
+<attr path="/api/package[@name='io.anyline.plugin.document']/interface[@name='DocumentScanResultListener']/method[@name='onDocumentOutlineDetected' and count(parameter)=2 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[2][@type='boolean']]/parameter[2]" name="managedName">documentShapeAndBrightnessValid</attr>
+<!-- DocumentScanResultListener.onPictureCornersDetected(at.nineyards.anyline.models.AnylineImage, java.util.List&lt;android.graphics.PointF&gt;) -->
+<attr path="/api/package[@name='io.anyline.plugin.document']/interface[@name='DocumentScanResultListener']/method[@name='onPictureCornersDetected' and count(parameter)=2 and parameter[1][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[2][@type='java.util.List&lt;android.graphics.PointF&gt;']]/parameter[1]" name="managedName">fullFrame</attr>
+<attr path="/api/package[@name='io.anyline.plugin.document']/interface[@name='DocumentScanResultListener']/method[@name='onPictureCornersDetected' and count(parameter)=2 and parameter[1][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[2][@type='java.util.List&lt;android.graphics.PointF&gt;']]/parameter[2]" name="managedName">corners</attr>
+<!-- DocumentScanResultListener.onPictureProcessingFailure(io.anyline.plugin.document.DocumentScanViewPlugin.DocumentError) -->
+<attr path="/api/package[@name='io.anyline.plugin.document']/interface[@name='DocumentScanResultListener']/method[@name='onPictureProcessingFailure' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.document.DocumentScanViewPlugin.DocumentError']]/parameter[1]" name="managedName">error</attr>
+<!-- DocumentScanResultListener.onPictureTransformError(io.anyline.plugin.document.DocumentScanViewPlugin.DocumentError) -->
+<attr path="/api/package[@name='io.anyline.plugin.document']/interface[@name='DocumentScanResultListener']/method[@name='onPictureTransformError' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.document.DocumentScanViewPlugin.DocumentError']]/parameter[1]" name="managedName">error</attr>
+<!-- DocumentScanResultListener.onPictureTransformed(at.nineyards.anyline.models.AnylineImage) -->
+<attr path="/api/package[@name='io.anyline.plugin.document']/interface[@name='DocumentScanResultListener']/method[@name='onPictureTransformed' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.models.AnylineImage']]/parameter[1]" name="managedName">transformedImage</attr>
+<!-- DocumentScanResultListener.onPreviewProcessingFailure(io.anyline.plugin.document.DocumentScanViewPlugin.DocumentError) -->
+<attr path="/api/package[@name='io.anyline.plugin.document']/interface[@name='DocumentScanResultListener']/method[@name='onPreviewProcessingFailure' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.document.DocumentScanViewPlugin.DocumentError']]/parameter[1]" name="managedName">error</attr>
+<!-- DocumentScanResultListener.onPreviewProcessingSuccess(at.nineyards.anyline.models.AnylineImage) -->
+<attr path="/api/package[@name='io.anyline.plugin.document']/interface[@name='DocumentScanResultListener']/method[@name='onPreviewProcessingSuccess' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.models.AnylineImage']]/parameter[1]" name="managedName">anylineImage</attr>
+<!-- DocumentScanResultListener.onTakePictureError(java.lang.Throwable) -->
+<attr path="/api/package[@name='io.anyline.plugin.document']/interface[@name='DocumentScanResultListener']/method[@name='onTakePictureError' and count(parameter)=1 and parameter[1][@type='java.lang.Throwable']]/parameter[1]" name="managedName">error</attr>
 <!-- File: IO.Anyline.Plugin.ID.DrivingLicenseConfig.cs -->
 <!-- DrivingLicenseConfig.DrivingLicenseCountry.valueOf(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseConfig.DrivingLicenseCountry']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
@@ -1556,6 +1748,12 @@
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdScanViewPlugin']/constructor[@name='IdScanViewPlugin' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='io.anyline.plugin.id.IdConfig']]/parameter[2]" name="managedName">licenseKey</attr>
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdScanViewPlugin']/constructor[@name='IdScanViewPlugin' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='io.anyline.plugin.id.IdConfig']]/parameter[3]" name="managedName">scanViewPluginConfig</attr>
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdScanViewPlugin']/constructor[@name='IdScanViewPlugin' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='io.anyline.plugin.id.IdConfig']]/parameter[4]" name="managedName">idConfig</attr>
+<!-- IdScanViewPlugin.IdScanViewPlugin(android.content.Context, java.lang.String, io.anyline.view.ScanViewPluginConfig, io.anyline.plugin.id.IdConfig, java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdScanViewPlugin']/constructor[@name='IdScanViewPlugin' and count(parameter)=5 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='io.anyline.plugin.id.IdConfig'] and parameter[5][@type='java.lang.String']]/parameter[1]" name="managedName">context</attr>
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdScanViewPlugin']/constructor[@name='IdScanViewPlugin' and count(parameter)=5 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='io.anyline.plugin.id.IdConfig'] and parameter[5][@type='java.lang.String']]/parameter[2]" name="managedName">licenseKey</attr>
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdScanViewPlugin']/constructor[@name='IdScanViewPlugin' and count(parameter)=5 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='io.anyline.plugin.id.IdConfig'] and parameter[5][@type='java.lang.String']]/parameter[3]" name="managedName">scanViewPluginConfig</attr>
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdScanViewPlugin']/constructor[@name='IdScanViewPlugin' and count(parameter)=5 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='io.anyline.plugin.id.IdConfig'] and parameter[5][@type='java.lang.String']]/parameter[4]" name="managedName">idConfig</attr>
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdScanViewPlugin']/constructor[@name='IdScanViewPlugin' and count(parameter)=5 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='io.anyline.plugin.id.IdConfig'] and parameter[5][@type='java.lang.String']]/parameter[5]" name="managedName">id</attr>
 <!-- File: IO.Anyline.Plugin.ID.MrzConfig.cs -->
 <!-- MrzConfig.setCropAndTransformID(boolean) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzConfig']/method[@name='setCropAndTransformID' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">cropAndTransformID</attr>
@@ -1694,9 +1892,32 @@
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setVizSurname' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">vizSurname</attr>
 <!-- MrzIdentification.setAllCheckDigitsValid(boolean) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setAllCheckDigitsValid' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">allCheckDigitsValid</attr>
+<!-- File: IO.Anyline.Plugin.ID.NFCConfig.cs -->
+<!-- NFCConfig.NFCConfig(java.lang.String, java.lang.String, java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='NFCConfig']/constructor[@name='NFCConfig' and count(parameter)=3 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[1]" name="managedName">passportNumber</attr>
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='NFCConfig']/constructor[@name='NFCConfig' and count(parameter)=3 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[2]" name="managedName">dateOfBirth</attr>
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='NFCConfig']/constructor[@name='NFCConfig' and count(parameter)=3 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[3]" name="managedName">expirationDate</attr>
 <!-- File: IO.Anyline.Plugin.IScanInfoListener.cs -->
 <!-- ScanInfoListener.onInfo(io.anyline.plugin.ScanInfo) -->
 <attr path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanInfoListener']/method[@name='onInfo' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanInfo']]/parameter[1]" name="managedName">info</attr>
+<!-- File: IO.Anyline.Plugin.IScanPlugin.cs -->
+<!-- ScanPlugin.setImageProvider(at.nineyards.anyline.ImageProvider) -->
+<attr path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanPlugin']/method[@name='setImageProvider' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.ImageProvider']]/parameter[1]" name="managedName">imageProvider</attr>
+<!-- ScanPlugin.addScanInfoListener(io.anyline.plugin.ScanInfoListener) -->
+<attr path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanPlugin']/method[@name='addScanInfoListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanInfoListener']]/parameter[1]" name="managedName">listener</attr>
+<!-- ScanPlugin.addScanResultListener(io.anyline.plugin.ScanResultListener&lt;ResultType&gt;) -->
+<attr path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanPlugin']/method[@name='addScanResultListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanResultListener&lt;ResultType&gt;']]/parameter[1]" name="managedName">listener</attr>
+<!-- ScanPlugin.addScanRunSkippedListener(io.anyline.plugin.ScanRunSkippedListener) -->
+<attr path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanPlugin']/method[@name='addScanRunSkippedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanRunSkippedListener']]/parameter[1]" name="managedName">listener</attr>
+<!-- ScanPlugin.removeScanInfoListener(io.anyline.plugin.ScanInfoListener) -->
+<attr path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanPlugin']/method[@name='removeScanInfoListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanInfoListener']]/parameter[1]" name="managedName">listener</attr>
+<!-- ScanPlugin.removeScanResultListener(io.anyline.plugin.ScanResultListener&lt;ResultType&gt;) -->
+<attr path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanPlugin']/method[@name='removeScanResultListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanResultListener&lt;ResultType&gt;']]/parameter[1]" name="managedName">listener</attr>
+<!-- ScanPlugin.removeScanRunSkippedListener(io.anyline.plugin.ScanRunSkippedListener) -->
+<attr path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanPlugin']/method[@name='removeScanRunSkippedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanRunSkippedListener']]/parameter[1]" name="managedName">listener</attr>
+<!-- File: IO.Anyline.Plugin.IScanResultListener.cs -->
+<!-- ScanResultListener.onResult(T) -->
+<attr path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanResultListener']/method[@name='onResult' and count(parameter)=1 and parameter[1][@type='T']]/parameter[1]" name="managedName">result</attr>
 <!-- File: IO.Anyline.Plugin.IScanRunSkippedListener.cs -->
 <!-- ScanRunSkippedListener.onRunSkipped(io.anyline.plugin.ScanRunSkippedReason) -->
 <attr path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanRunSkippedListener']/method[@name='onRunSkipped' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanRunSkippedReason']]/parameter[1]" name="managedName">reason</attr>
@@ -1768,8 +1989,6 @@
 <attr path="/api/package[@name='io.anyline.plugin.meter']/class[@name='MeterScanViewPlugin']/constructor[@name='MeterScanViewPlugin' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='java.lang.String']]/parameter[4]" name="managedName">id</attr>
 <!-- MeterScanViewPlugin.setScanMode(io.anyline.plugin.meter.MeterScanMode) -->
 <attr path="/api/package[@name='io.anyline.plugin.meter']/class[@name='MeterScanViewPlugin']/method[@name='setScanMode' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.meter.MeterScanMode']]/parameter[1]" name="managedName">scanMode</attr>
-<!-- MeterScanViewPlugin.setCancelOnResult(boolean) -->
-<attr path="/api/package[@name='io.anyline.plugin.meter']/class[@name='MeterScanViewPlugin']/method[@name='setCancelOnResult' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">isCancelOnResult</attr>
 <!-- File: IO.Anyline.Plugin.Ocr.AnylineCattleTagConfig.cs -->
 <!-- File: IO.Anyline.Plugin.Ocr.AnylineContainerConfig.cs -->
 <!-- AnylineContainerConfig.ContainerScanMode.valueOf(java.lang.String) -->
@@ -1826,9 +2045,6 @@
 <attr path="/api/package[@name='io.anyline.plugin.ocr']/class[@name='AnylineOcrConfig']/method[@name='setScanMode' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ocr.AnylineOcrConfig.ScanMode']]/parameter[1]" name="managedName">scanMode</attr>
 <!-- AnylineOcrConfig.setTesseractLanguages(java.lang.String...) -->
 <attr path="/api/package[@name='io.anyline.plugin.ocr']/class[@name='AnylineOcrConfig']/method[@name='setTesseractLanguages' and count(parameter)=1 and parameter[1][@type='java.lang.String...']]/parameter[1]" name="managedName">tesseractLanguages</attr>
-<!-- File: IO.Anyline.Plugin.Ocr.AnylineTINConfig.cs -->
-<!-- AnylineTINConfig.TINScanMode.valueOf(java.lang.String) -->
-<!-- AnylineTINConfig.setScanMode(io.anyline.plugin.ocr.AnylineTINConfig.TINScanMode) -->
 <!-- File: IO.Anyline.Plugin.Ocr.AnylineVINConfig.cs -->
 <!-- File: IO.Anyline.Plugin.Ocr.OcrScanPlugin.cs -->
 <!-- OcrScanPlugin.ScanMode.valueOf(java.lang.String) -->
@@ -1906,6 +2122,7 @@
 <!-- JSUtil.setupDelayTime(double, java.lang.String) -->
 <!-- JSUtil.setupMask(at.nineyards.anyline.camera.AnylineViewConfig) -->
 <!-- JSUtil.setupMask(io.anyline.view.CutoutConfig) -->
+<!-- JSUtil.updateCutout(java.lang.String, boolean) -->
 <!-- JSUtil.updateDocumentColorsFeedback(at.nineyards.anyline.camera.VisualFeedbackConfig, java.lang.String) -->
 <!-- JSUtil.updateFeedback(java.util.ArrayList&lt;android.graphics.RectF&gt;, android.content.Context, java.lang.String) -->
 <!-- JSUtil.updateFeedbackShape(java.util.List&lt;android.graphics.PointF&gt;, android.content.Context, java.lang.String) -->
@@ -1913,6 +2130,86 @@
 <!-- LicenseFeature.LicenseFeature(java.lang.String, java.lang.String, java.lang.String) -->
 <!-- LicenseFeature.LicenseFeature(java.lang.String, java.lang.String) -->
 <!-- LicenseFeature.LicenseFeature(java.lang.String) -->
+<!-- File: IO.Anyline.View.AbstractBaseScanViewPlugin.cs -->
+<!-- AbstractBaseScanViewPlugin.setCancelOnResult(boolean) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='setCancelOnResult' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">cancelOnResult</attr>
+<!-- AbstractBaseScanViewPlugin.addScanInfoListener(io.anyline.plugin.ScanInfoListener) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='addScanInfoListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanInfoListener']]/parameter[1]" name="managedName">listener</attr>
+<!-- AbstractBaseScanViewPlugin.addScanResultListener(io.anyline.plugin.ScanResultListener&lt;ResultType&gt;) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='addScanResultListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanResultListener&lt;ResultType&gt;']]/parameter[1]" name="managedName">listener</attr>
+<!-- AbstractBaseScanViewPlugin.addScanRunSkippedListener(io.anyline.plugin.ScanRunSkippedListener) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='addScanRunSkippedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanRunSkippedListener']]/parameter[1]" name="managedName">listener</attr>
+<!-- AbstractBaseScanViewPlugin.calcCutOutAndImageCropBounds(android.content.Context, int, int, int, int, float) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=6 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='float']]/parameter[1]" name="managedName">context</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=6 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='float']]/parameter[2]" name="managedName">frameWidth</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=6 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='float']]/parameter[3]" name="managedName">frameHeight</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=6 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='float']]/parameter[4]" name="managedName">viewWidth</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=6 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='float']]/parameter[5]" name="managedName">viewHeight</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=6 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='float']]/parameter[6]" name="managedName">scale</attr>
+<!-- AbstractBaseScanViewPlugin.notifyCropRectUpdateListner(java.lang.Object) -->
+<!-- AbstractBaseScanViewPlugin.notifyScanFeedbackChange(java.lang.Object) -->
+<!-- AbstractBaseScanViewPlugin.notifyUIChangeListener(java.lang.Object, java.lang.String...) -->
+<!-- AbstractBaseScanViewPlugin.removeScanInfoListener(io.anyline.plugin.ScanInfoListener) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='removeScanInfoListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanInfoListener']]/parameter[1]" name="managedName">listener</attr>
+<!-- AbstractBaseScanViewPlugin.removeScanResultListener(io.anyline.plugin.ScanResultListener&lt;ResultType&gt;) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='removeScanResultListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanResultListener&lt;ResultType&gt;']]/parameter[1]" name="managedName">listener</attr>
+<!-- AbstractBaseScanViewPlugin.removeScanRunSkippedListener(io.anyline.plugin.ScanRunSkippedListener) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='removeScanRunSkippedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanRunSkippedListener']]/parameter[1]" name="managedName">listener</attr>
+<!-- AbstractBaseScanViewPlugin.reportDebugVariable(java.lang.String, java.lang.Object) -->
+<!-- AbstractBaseScanViewPlugin.setImageProvider(at.nineyards.anyline.ImageProvider) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='setImageProvider' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.ImageProvider']]/parameter[1]" name="managedName">imageProvider</attr>
+<!-- AbstractBaseScanViewPlugin.setupListenersForScanView(io.anyline.view.ScanView) -->
+<!-- AbstractBaseScanViewPlugin.setCancelOnResult(boolean) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='setCancelOnResult' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">cancelOnResult</attr>
+<!-- AbstractBaseScanViewPlugin.addScanInfoListener(io.anyline.plugin.ScanInfoListener) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='addScanInfoListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanInfoListener']]/parameter[1]" name="managedName">listener</attr>
+<!-- AbstractBaseScanViewPlugin.addScanResultListener(io.anyline.plugin.ScanResultListener&lt;ResultType&gt;) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='addScanResultListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanResultListener&lt;ResultType&gt;']]/parameter[1]" name="managedName">listener</attr>
+<!-- AbstractBaseScanViewPlugin.addScanRunSkippedListener(io.anyline.plugin.ScanRunSkippedListener) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='addScanRunSkippedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanRunSkippedListener']]/parameter[1]" name="managedName">listener</attr>
+<!-- AbstractBaseScanViewPlugin.calcCutOutAndImageCropBounds(android.content.Context, int, int, int, int, float) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=6 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='float']]/parameter[1]" name="managedName">context</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=6 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='float']]/parameter[2]" name="managedName">frameWidth</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=6 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='float']]/parameter[3]" name="managedName">frameHeight</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=6 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='float']]/parameter[4]" name="managedName">viewWidth</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=6 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='float']]/parameter[5]" name="managedName">viewHeight</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=6 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='float']]/parameter[6]" name="managedName">scale</attr>
+<!-- AbstractBaseScanViewPlugin.removeScanInfoListener(io.anyline.plugin.ScanInfoListener) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='removeScanInfoListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanInfoListener']]/parameter[1]" name="managedName">listener</attr>
+<!-- AbstractBaseScanViewPlugin.removeScanResultListener(io.anyline.plugin.ScanResultListener&lt;ResultType&gt;) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='removeScanResultListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanResultListener&lt;ResultType&gt;']]/parameter[1]" name="managedName">listener</attr>
+<!-- AbstractBaseScanViewPlugin.removeScanRunSkippedListener(io.anyline.plugin.ScanRunSkippedListener) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='removeScanRunSkippedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanRunSkippedListener']]/parameter[1]" name="managedName">listener</attr>
+<!-- AbstractBaseScanViewPlugin.setImageProvider(at.nineyards.anyline.ImageProvider) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='setImageProvider' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.ImageProvider']]/parameter[1]" name="managedName">imageProvider</attr>
+<!-- File: IO.Anyline.View.AbstractScanViewPlugin.cs -->
+<!-- AbstractScanViewPlugin.AbstractScanViewPlugin(android.content.Context, io.anyline.plugin.AbstractScanPlugin, io.anyline.view.ScanViewPluginConfig) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPlugin']/constructor[@name='AbstractScanViewPlugin' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='io.anyline.plugin.AbstractScanPlugin'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig']]/parameter[1]" name="managedName">context</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPlugin']/constructor[@name='AbstractScanViewPlugin' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='io.anyline.plugin.AbstractScanPlugin'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig']]/parameter[2]" name="managedName">scanPlugin</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPlugin']/constructor[@name='AbstractScanViewPlugin' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='io.anyline.plugin.AbstractScanPlugin'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig']]/parameter[3]" name="managedName">scanViewConfig</attr>
+<!-- AbstractScanViewPlugin.setCancelOnResult(boolean) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPlugin']/method[@name='setCancelOnResult' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">cancelOnResult</attr>
+<!-- AbstractScanViewPlugin.addScanInfoListener(io.anyline.plugin.ScanInfoListener) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPlugin']/method[@name='addScanInfoListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanInfoListener']]/parameter[1]" name="managedName">listener</attr>
+<!-- AbstractScanViewPlugin.addScanResultListener(io.anyline.plugin.ScanResultListener) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPlugin']/method[@name='addScanResultListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanResultListener']]/parameter[1]" name="managedName">listener</attr>
+<!-- AbstractScanViewPlugin.addScanRunSkippedListener(io.anyline.plugin.ScanRunSkippedListener) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPlugin']/method[@name='addScanRunSkippedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanRunSkippedListener']]/parameter[1]" name="managedName">listener</attr>
+<!-- AbstractScanViewPlugin.calcCutOutAndImageCropBounds(android.content.Context, int, int, int, int, float) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPlugin']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=6 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='float']]/parameter[1]" name="managedName">context</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPlugin']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=6 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='float']]/parameter[2]" name="managedName">frameWidth</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPlugin']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=6 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='float']]/parameter[3]" name="managedName">frameHeight</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPlugin']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=6 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='float']]/parameter[4]" name="managedName">viewWidth</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPlugin']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=6 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='float']]/parameter[5]" name="managedName">viewHeight</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPlugin']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=6 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='float']]/parameter[6]" name="managedName">scale</attr>
+<!-- AbstractScanViewPlugin.removeScanInfoListener(io.anyline.plugin.ScanInfoListener) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPlugin']/method[@name='removeScanInfoListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanInfoListener']]/parameter[1]" name="managedName">listener</attr>
+<!-- AbstractScanViewPlugin.removeScanResultListener(io.anyline.plugin.ScanResultListener) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPlugin']/method[@name='removeScanResultListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanResultListener']]/parameter[1]" name="managedName">listener</attr>
+<!-- AbstractScanViewPlugin.removeScanRunSkippedListener(io.anyline.plugin.ScanRunSkippedListener) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPlugin']/method[@name='removeScanRunSkippedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanRunSkippedListener']]/parameter[1]" name="managedName">listener</attr>
+<!-- AbstractScanViewPlugin.setImageProvider(at.nineyards.anyline.ImageProvider) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPlugin']/method[@name='setImageProvider' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.ImageProvider']]/parameter[1]" name="managedName">imageProvider</attr>
 <!-- File: IO.Anyline.View.AbstractWebView.cs -->
 <!-- AbstractWebView.AbstractWebView(android.content.Context, at.nineyards.anyline.camera.VisualFeedbackConfig, float) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractWebView']/constructor[@name='AbstractWebView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='at.nineyards.anyline.camera.VisualFeedbackConfig'] and parameter[3][@type='float']]/parameter[1]" name="managedName">context</attr>
@@ -1945,9 +2242,13 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/constructor[@name='AnylineWebView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='float'] and parameter[3][@type='at.nineyards.anyline.camera.VisualFeedbackConfig']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/constructor[@name='AnylineWebView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='float'] and parameter[3][@type='at.nineyards.anyline.camera.VisualFeedbackConfig']]/parameter[2]" name="managedName">resizeScale</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/constructor[@name='AnylineWebView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='float'] and parameter[3][@type='at.nineyards.anyline.camera.VisualFeedbackConfig']]/parameter[3]" name="managedName">visualFeedbackConfig</attr>
+<!-- AnylineWebView.AnylineWebView(android.content.Context) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/constructor[@name='AnylineWebView' and count(parameter)=1 and parameter[1][@type='android.content.Context']]/parameter[1]" name="managedName">context</attr>
 <!-- AnylineWebView.setVisualFeedbackConfig(at.nineyards.anyline.camera.VisualFeedbackConfig) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='setVisualFeedbackConfig' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.VisualFeedbackConfig']]/parameter[1]" name="managedName">visualFeedbackConfig</attr>
-<!-- AnylineWebView.drawDocument(java.util.List&lt;android.graphics.PointF&gt;, java.lang.String, java.lang.String) -->
+<!-- AnylineWebView.drawDocument(java.util.List&lt;android.graphics.PointF&gt;, java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='drawDocument' and count(parameter)=2 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">reportedShape</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='drawDocument' and count(parameter)=2 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[2][@type='java.lang.String']]/parameter[2]" name="managedName">id</attr>
 <!-- AnylineWebView.getScaleWebView(android.webkit.WebView) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='getScaleWebView' and count(parameter)=1 and parameter[1][@type='android.webkit.WebView']]/parameter[1]" name="managedName">webView</attr>
 <!-- AnylineWebView.getViewRelativePointListFromCutoutRelativeShape(java.util.List&lt;android.graphics.PointF&gt;) -->
@@ -1983,6 +2284,9 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='updateContours' and count(parameter)=3 and parameter[1][@type='java.lang.Object'] and parameter[2][@type='float'] and parameter[3][@type='java.lang.String']]/parameter[1]" name="managedName">contours</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='updateContours' and count(parameter)=3 and parameter[1][@type='java.lang.Object'] and parameter[2][@type='float'] and parameter[3][@type='java.lang.String']]/parameter[2]" name="managedName">scale</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='updateContours' and count(parameter)=3 and parameter[1][@type='java.lang.Object'] and parameter[2][@type='float'] and parameter[3][@type='java.lang.String']]/parameter[3]" name="managedName">id</attr>
+<!-- AnylineWebView.updateCutouts(java.lang.String, boolean) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='updateCutouts' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='boolean']]/parameter[1]" name="managedName">id</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='updateCutouts' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='boolean']]/parameter[2]" name="managedName">visible</attr>
 <!-- File: IO.Anyline.View.BaseScanViewConfig.cs -->
 <!-- BaseScanViewConfig.BaseScanViewConfig(android.content.Context, java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='BaseScanViewConfig']/constructor[@name='BaseScanViewConfig' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">context</attr>
@@ -2133,6 +2437,18 @@
 <!-- File: IO.Anyline.View.ICutoutConfigChangedListener.cs -->
 <!-- CutoutConfigChangedListener.onCutoutConfigChanged(io.anyline.view.CutoutConfig) -->
 <attr path="/api/package[@name='io.anyline.view']/interface[@name='CutoutConfigChangedListener']/method[@name='onCutoutConfigChanged' and count(parameter)=1 and parameter[1][@type='io.anyline.view.CutoutConfig']]/parameter[1]" name="managedName">cutoutConfig</attr>
+<!-- File: IO.Anyline.View.IObserver.cs -->
+<!-- Observer.update(io.anyline.view.AbstractScanViewPlugin) -->
+<attr path="/api/package[@name='io.anyline.view']/interface[@name='Observer']/method[@name='update' and count(parameter)=1 and parameter[1][@type='io.anyline.view.AbstractScanViewPlugin']]/parameter[1]" name="managedName">scanViewPlugin</attr>
+<!-- File: IO.Anyline.View.JsonParser.cs -->
+<!-- JsonParser.init(org.json.JSONObject, java.lang.String, android.content.Context) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='JsonParser']/method[@name='init' and count(parameter)=3 and parameter[1][@type='org.json.JSONObject'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='android.content.Context']]/parameter[1]" name="managedName">jsonObject</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='JsonParser']/method[@name='init' and count(parameter)=3 and parameter[1][@type='org.json.JSONObject'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='android.content.Context']]/parameter[2]" name="managedName">licenseKey</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='JsonParser']/method[@name='init' and count(parameter)=3 and parameter[1][@type='org.json.JSONObject'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='android.content.Context']]/parameter[3]" name="managedName">context</attr>
+<!-- JsonParser.parseViewPlugin(org.json.JSONObject, java.lang.String, android.content.Context) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='JsonParser']/method[@name='parseViewPlugin' and count(parameter)=3 and parameter[1][@type='org.json.JSONObject'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='android.content.Context']]/parameter[1]" name="managedName">jsonObject</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='JsonParser']/method[@name='parseViewPlugin' and count(parameter)=3 and parameter[1][@type='org.json.JSONObject'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='android.content.Context']]/parameter[2]" name="managedName">licenseKey</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='JsonParser']/method[@name='parseViewPlugin' and count(parameter)=3 and parameter[1][@type='org.json.JSONObject'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='android.content.Context']]/parameter[3]" name="managedName">context</attr>
 <!-- File: IO.Anyline.View.LightLevelHelper.cs -->
 <!-- LightLevelHelper.AmbientLightLevel.valueOf(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='LightLevelHelper.AmbientLightLevel']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
@@ -2153,6 +2469,11 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='LightLevelHelper']/method[@name='setBrightnessThreshold' and count(parameter)=3 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int']]/parameter[3]" name="managedName">duration</attr>
 <!-- LightLevelHelper.setCurrentBrightness(double) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='LightLevelHelper']/method[@name='setCurrentBrightness' and count(parameter)=1 and parameter[1][@type='double']]/parameter[1]" name="managedName">brightness</attr>
+<!-- File: IO.Anyline.View.ObservableDemo.cs -->
+<!-- ObservableDemo.ObservableDemo(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ObservableDemo']/constructor[@name='ObservableDemo' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">weather</attr>
+<!-- ObservableDemo.setWeather(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ObservableDemo']/method[@name='setWeather' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">weather</attr>
 <!-- File: IO.Anyline.View.ScanView.cs -->
 <!-- ScanView.ScanView(android.content.Context, android.util.AttributeSet, int) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/constructor[@name='ScanView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[1]" name="managedName">context</attr>
@@ -2163,13 +2484,14 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/constructor[@name='ScanView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]/parameter[2]" name="managedName">attrs</attr>
 <!-- ScanView.ScanView(android.content.Context) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/constructor[@name='ScanView' and count(parameter)=1 and parameter[1][@type='android.content.Context']]/parameter[1]" name="managedName">context</attr>
-<!-- ScanView.setScanViewPlugin(io.anyline.view.ScanViewPlugin) -->
-<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='setScanViewPlugin' and count(parameter)=1 and parameter[1][@type='io.anyline.view.ScanViewPlugin']]/parameter[1]" name="managedName">scanViewPlugin</attr>
+<!-- ScanView.setScanViewPlugin(io.anyline.view.AbstractBaseScanViewPlugin) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='setScanViewPlugin' and count(parameter)=1 and parameter[1][@type='io.anyline.view.AbstractBaseScanViewPlugin']]/parameter[1]" name="managedName">scanViewPlugin</attr>
 <!-- ScanView.calculateBrightnessCount(double) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='calculateBrightnessCount' and count(parameter)=1 and parameter[1][@type='double']]/parameter[1]" name="managedName">brightness</attr>
 <!-- ScanView.drawFeedback(java.lang.Object) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='drawFeedback' and count(parameter)=1 and parameter[1][@type='java.lang.Object']]/parameter[1]" name="managedName">drawObject</attr>
-<!-- ScanView.drawShape(java.util.List&lt;android.graphics.PointF&gt;, java.lang.String) -->
+<!-- ScanView.drawShape(java.util.List&lt;android.graphics.PointF&gt;) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='drawShape' and count(parameter)=1 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;']]/parameter[1]" name="managedName">outline</attr>
 <!-- ScanView.getViewRelativePointListFromCutoutRelativeObject(java.lang.Object) -->
 <!-- ScanView.init(java.lang.String, java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='init' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">jsonObject</attr>
@@ -2177,7 +2499,24 @@
 <!-- ScanView.init(org.json.JSONObject, java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='init' and count(parameter)=2 and parameter[1][@type='org.json.JSONObject'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">jsonObject</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='init' and count(parameter)=2 and parameter[1][@type='org.json.JSONObject'] and parameter[2][@type='java.lang.String']]/parameter[2]" name="managedName">licenseKey</attr>
+<!-- ScanView.initComposite(org.json.JSONObject, java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='initComposite' and count(parameter)=2 and parameter[1][@type='org.json.JSONObject'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">jsonObject</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='initComposite' and count(parameter)=2 and parameter[1][@type='org.json.JSONObject'] and parameter[2][@type='java.lang.String']]/parameter[2]" name="managedName">licenseKey</attr>
+<!-- ScanView.notifyDrawDocumentFeedback(java.util.List&lt;android.graphics.PointF&gt;, java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='notifyDrawDocumentFeedback' and count(parameter)=2 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">points</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='notifyDrawDocumentFeedback' and count(parameter)=2 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[2][@type='java.lang.String']]/parameter[2]" name="managedName">strokeColor</attr>
+<!-- ScanView.onCutoutChanged(io.anyline.view.CutoutRect) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='onCutoutChanged' and count(parameter)=1 and parameter[1][@type='io.anyline.view.CutoutRect']]/parameter[1]" name="managedName">cutoutRect</attr>
+<!-- ScanView.onCutoutConfigChanged(io.anyline.view.CutoutConfig) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='onCutoutConfigChanged' and count(parameter)=1 and parameter[1][@type='io.anyline.view.CutoutConfig']]/parameter[1]" name="managedName">cutoutConfig</attr>
+<!-- ScanView.onCutoutVisibility(java.lang.String, boolean) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='onCutoutVisibility' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='boolean']]/parameter[1]" name="managedName">id</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='onCutoutVisibility' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='boolean']]/parameter[2]" name="managedName">visible</attr>
 <!-- ScanView.onLayout(boolean, int, int, int, int) -->
+<!-- ScanView.onScaleUpdate(float) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='onScaleUpdate' and count(parameter)=1 and parameter[1][@type='float']]/parameter[1]" name="managedName">scale</attr>
+<!-- ScanView.onScanFeedbackConfigChanged(java.lang.Object) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='onScanFeedbackConfigChanged' and count(parameter)=1 and parameter[1][@type='java.lang.Object']]/parameter[1]" name="managedName">drawObject</attr>
 <!-- ScanView.setCameraOpenListener(at.nineyards.anyline.camera.CameraOpenListener) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='setCameraOpenListener' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.CameraOpenListener']]/parameter[1]" name="managedName">cameraOpenListener</attr>
 <!-- ScanView.setCountsForAutoFlash(int, int, int, int) -->
@@ -2218,20 +2557,43 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewCameraConfig']/method[@name='setZoomGestureEnabled' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">zoomGestureEnabled</attr>
 <!-- ScanViewCameraConfig.setZoomRatio(double) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewCameraConfig']/method[@name='setZoomRatio' and count(parameter)=1 and parameter[1][@type='double']]/parameter[1]" name="managedName">zoomRatio</attr>
-<!-- File: IO.Anyline.View.ScanViewPlugin.cs -->
-<!-- ScanViewPlugin.ScanViewPlugin(android.content.Context, io.anyline.plugin.AbstractScanPlugin, io.anyline.view.ScanViewPluginConfig) -->
-<!-- ScanViewPlugin.setImageProvider(at.nineyards.anyline.ImageProvider) -->
-<!-- ScanViewPlugin.addCutoutConfigChangedListener(io.anyline.view.CutoutConfigChangedListener) -->
-<!-- ScanViewPlugin.addScanInfoListener(io.anyline.plugin.ScanInfoListener) -->
-<!-- ScanViewPlugin.addScanRunSkippedListener(io.anyline.plugin.ScanRunSkippedListener) -->
-<!-- ScanViewPlugin.calcCutOutAndImageCropBounds(android.content.Context, int, int, int, int, float) -->
-<!-- ScanViewPlugin.invokeOnCutoutConfigChanged(io.anyline.view.CutoutConfig) -->
-<!-- ScanViewPlugin.removeCutoutConfigChangedListener(io.anyline.view.CutoutConfigChangedListener) -->
-<!-- ScanViewPlugin.removeScanInfoListener(io.anyline.plugin.ScanInfoListener) -->
-<!-- ScanViewPlugin.removeScanRunSkippedListener(io.anyline.plugin.ScanRunSkippedListener) -->
-<!-- ScanViewPlugin.reportDebugVariable(java.lang.String, java.lang.Object) -->
-<!-- ScanViewPlugin.setReportingEnabled(boolean) -->
-<!-- ScanViewPlugin.setupListenersForScanView(io.anyline.view.ScanView) -->
+<!-- File: IO.Anyline.View.ScanViewPluginComposite.cs -->
+<!-- ScanViewPluginComposite.ScanViewPluginComposite(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPluginComposite']/constructor[@name='ScanViewPluginComposite' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">id</attr>
+<!-- ScanViewPluginComposite.setCancelOnResult(boolean) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPluginComposite']/method[@name='setCancelOnResult' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">cancelOnResult</attr>
+<!-- ScanViewPluginComposite.add(io.anyline.view.AbstractScanViewPlugin) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPluginComposite']/method[@name='add' and count(parameter)=1 and parameter[1][@type='io.anyline.view.AbstractScanViewPlugin']]/parameter[1]" name="managedName">scanViewPlugin</attr>
+<!-- ScanViewPluginComposite.addResult(io.anyline.plugin.ScanResult) -->
+<!-- ScanViewPluginComposite.addScanInfoListener(io.anyline.plugin.ScanInfoListener) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPluginComposite']/method[@name='addScanInfoListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanInfoListener']]/parameter[1]" name="managedName">listener</attr>
+<!-- ScanViewPluginComposite.addScanResultListener(io.anyline.plugin.ScanResultListener) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPluginComposite']/method[@name='addScanResultListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanResultListener']]/parameter[1]" name="managedName">listener</attr>
+<!-- ScanViewPluginComposite.addScanRunSkippedListener(io.anyline.plugin.ScanRunSkippedListener) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPluginComposite']/method[@name='addScanRunSkippedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanRunSkippedListener']]/parameter[1]" name="managedName">listener</attr>
+<!-- ScanViewPluginComposite.calcCutOutAndImageCropBounds(android.content.Context, int, int, int, int, float) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPluginComposite']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=6 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='float']]/parameter[1]" name="managedName">context</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPluginComposite']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=6 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='float']]/parameter[2]" name="managedName">frameWidth</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPluginComposite']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=6 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='float']]/parameter[3]" name="managedName">frameHeight</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPluginComposite']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=6 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='float']]/parameter[4]" name="managedName">viewWidth</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPluginComposite']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=6 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='float']]/parameter[5]" name="managedName">viewHeight</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPluginComposite']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=6 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='float']]/parameter[6]" name="managedName">scale</attr>
+<!-- ScanViewPluginComposite.fireOnPluginInfo(io.anyline.plugin.ScanInfo) -->
+<!-- ScanViewPluginComposite.fireOnPluginResult(io.anyline.plugin.ScanResult) -->
+<!-- ScanViewPluginComposite.fireOnPluginScanRunSkipped(io.anyline.plugin.ScanRunSkippedReason) -->
+<!-- ScanViewPluginComposite.isFinalResult(io.anyline.plugin.ScanResult) -->
+<!-- ScanViewPluginComposite.notifyAllObservers(io.anyline.view.AbstractScanViewPlugin) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPluginComposite']/method[@name='notifyAllObservers' and count(parameter)=1 and parameter[1][@type='io.anyline.view.AbstractScanViewPlugin']]/parameter[1]" name="managedName">scanViewPlugin</attr>
+<!-- ScanViewPluginComposite.remove(io.anyline.plugin.ScanPlugin) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPluginComposite']/method[@name='remove' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanPlugin']]/parameter[1]" name="managedName">scanPlugin</attr>
+<!-- ScanViewPluginComposite.removeScanInfoListener(io.anyline.plugin.ScanInfoListener) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPluginComposite']/method[@name='removeScanInfoListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanInfoListener']]/parameter[1]" name="managedName">listener</attr>
+<!-- ScanViewPluginComposite.removeScanResultListener(io.anyline.plugin.ScanResultListener) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPluginComposite']/method[@name='removeScanResultListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanResultListener']]/parameter[1]" name="managedName">listener</attr>
+<!-- ScanViewPluginComposite.removeScanRunSkippedListener(io.anyline.plugin.ScanRunSkippedListener) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPluginComposite']/method[@name='removeScanRunSkippedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanRunSkippedListener']]/parameter[1]" name="managedName">listener</attr>
+<!-- ScanViewPluginComposite.setImageProvider(at.nineyards.anyline.ImageProvider) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPluginComposite']/method[@name='setImageProvider' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.ImageProvider']]/parameter[1]" name="managedName">imageProvider</attr>
 <!-- File: IO.Anyline.View.ScanViewPluginConfig.cs -->
 <!-- ScanViewPluginConfig.ScanViewPluginConfig(android.content.Context, org.json.JSONObject) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPluginConfig']/constructor[@name='ScanViewPluginConfig' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='org.json.JSONObject']]/parameter[1]" name="managedName">context</attr>
@@ -2248,8 +2610,13 @@
 <!-- ScanViewPluginConfig.init(android.content.Context, org.json.JSONObject) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPluginConfig']/method[@name='init' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='org.json.JSONObject']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPluginConfig']/method[@name='init' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='org.json.JSONObject']]/parameter[2]" name="managedName">json</attr>
-<!-- File: IO.Anyline.View.ScanViewUtil.cs -->
-<!-- ScanViewUtil.getFrameRectFromViewRect(android.graphics.Rect, at.nineyards.anyline.camera.CameraView) -->
+<!-- File: IO.Anyline.View.ScanViewRefactor.cs -->
+<!-- File: IO.Anyline.View.ScanViewUtil.cs -->
+<!-- ScanViewUtil.getFrameRectFromViewRect(android.graphics.Rect, int, int, float) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewUtil']/method[@name='getFrameRectFromViewRect' and count(parameter)=4 and parameter[1][@type='android.graphics.Rect'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='float']]/parameter[1]" name="managedName">viewRect</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewUtil']/method[@name='getFrameRectFromViewRect' and count(parameter)=4 and parameter[1][@type='android.graphics.Rect'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='float']]/parameter[2]" name="managedName">frameWidth</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewUtil']/method[@name='getFrameRectFromViewRect' and count(parameter)=4 and parameter[1][@type='android.graphics.Rect'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='float']]/parameter[3]" name="managedName">frameHeight</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewUtil']/method[@name='getFrameRectFromViewRect' and count(parameter)=4 and parameter[1][@type='android.graphics.Rect'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='float']]/parameter[4]" name="managedName">scale</attr>
 <!-- ScanViewUtil.getViewRectFromFrameRect(android.graphics.Rect, int, int, float) -->
 <!-- ScanViewUtil.transformOutlineToPointListRelativeToFullFrame(at.nineyards.anyline.models.AnylineImage, java.util.List&lt;android.graphics.PointF&gt;, float, float, at.nineyards.anyline.models.AnylineImage, float, int) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewUtil']/method[@name='transformOutlineToPointListRelativeToFullFrame' and count(parameter)=7 and parameter[1][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[2][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[3][@type='float'] and parameter[4][@type='float'] and parameter[5][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[6][@type='float'] and parameter[7][@type='int']]/parameter[1]" name="managedName">fullFrame</attr>
@@ -2259,4 +2626,9 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewUtil']/method[@name='transformOutlineToPointListRelativeToFullFrame' and count(parameter)=7 and parameter[1][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[2][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[3][@type='float'] and parameter[4][@type='float'] and parameter[5][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[6][@type='float'] and parameter[7][@type='int']]/parameter[5]" name="managedName">fullImage</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewUtil']/method[@name='transformOutlineToPointListRelativeToFullFrame' and count(parameter)=7 and parameter[1][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[2][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[3][@type='float'] and parameter[4][@type='float'] and parameter[5][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[6][@type='float'] and parameter[7][@type='int']]/parameter[6]" name="managedName">resizeWidth</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewUtil']/method[@name='transformOutlineToPointListRelativeToFullFrame' and count(parameter)=7 and parameter[1][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[2][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[3][@type='float'] and parameter[4][@type='float'] and parameter[5][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[6][@type='float'] and parameter[7][@type='int']]/parameter[7]" name="managedName">contourBorder</attr>
+<!-- File: IO.Anyline.View.SerialScanViewComposite.cs -->
+<!-- SerialScanViewComposite.SerialScanViewComposite(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='SerialScanViewComposite']/constructor[@name='SerialScanViewComposite' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">id</attr>
+<!-- SerialScanViewComposite.startWithId(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='SerialScanViewComposite']/method[@name='startWithId' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">id</attr>
 </metadata>

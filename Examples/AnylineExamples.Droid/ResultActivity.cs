@@ -17,6 +17,7 @@ using IO.Anyline.Plugin;
 using AT.Nineyards.Anyline.Modules.Mrz;
 using IO.Anyline.Plugin.ID;
 using AnylineExamples.Shared;
+using Java.Util;
 
 namespace AnylineExamples.Droid
 {
@@ -85,6 +86,18 @@ namespace AnylineExamples.Droid
                             Log.Debug(TAG, "{0}: {1}", prop.Name, value);
                             if (value != null)
                             {
+                                // TODO: iterate through every result and display them
+                                //if(value is JavaList)
+                                //{
+                                //    var i = 0;
+                                //    var resultList = (value as JavaList);
+                                //    foreach (Java.Lang.Object v in resultList)
+                                //    {
+                                //        var sublist = CreatePropertyList(v);
+                                //        sublist.ToList().ForEach(x => dict.Add(x.Key + $" ({i})", x.Value));
+                                //        i++;
+                                //    }
+                                //}
                                 if (value is AnylineImage)
                                 {
                                     var bitmap = (value as AnylineImage).Clone().Bitmap;
