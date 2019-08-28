@@ -20,7 +20,7 @@ namespace AnylineExamples.iOS
     {
         // we store the ScanViewController for navigation purposes
         private readonly ScanViewController _scanViewController;
-
+        
         public ScanResultDelegate(ScanViewController scanViewController)
         {
             _scanViewController = scanViewController;

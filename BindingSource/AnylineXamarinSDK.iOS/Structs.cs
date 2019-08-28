@@ -290,6 +290,12 @@ namespace AnylineXamarinSDK.iOS
     }
 
     [Native]
+    public enum ALTINScanMode : long
+    {
+        Standard,
+        Flexible
+    }
+    [Native]
     public enum ALOCRError : long
     {
         Unkown = -1,

@@ -490,6 +490,13 @@ namespace AnylineXamarinSDK.iOS
         [Export("defaultVINConfig")]
         ALScanViewPluginConfig DefaultVINConfig();
 
+        // added in 13:
+
+        // +(instancetype _Nonnull)defaultTINConfig;
+        [Static]
+        [Export("defaultTINConfig")]
+        ALScanViewPluginConfig DefaultTINConfig();
+
         // +(instancetype _Nonnull)defaultContainerConfig;
         [Static]
         [Export("defaultContainerConfig")]
@@ -3653,6 +3660,15 @@ namespace AnylineXamarinSDK.iOS
     [BaseType(typeof(ALBaseOCRConfig))]
     interface ALCattleTagConfig
     {
+    }
+
+    // @interface ALTINConfig : ALBaseOCRConfig
+    [BaseType(typeof(ALBaseOCRConfig))]
+    interface ALTINConfig
+    {
+        // @property (assign, nonatomic) ALTINScanMode scanMode;
+        [Export("scanMode", ArgumentSemantic.Assign)]
+        ALTINScanMode ScanMode { get; set; }
     }
 
     // @interface ALOCRScanPlugin : ALAbstractScanPlugin
