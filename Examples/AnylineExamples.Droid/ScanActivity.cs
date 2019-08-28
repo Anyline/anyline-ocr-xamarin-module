@@ -66,12 +66,7 @@ namespace AnylineExamples.Droid
                  * You need to add your implementation of IO.Anyline.Plugin.IScanResultListener to retrieve scan results.
                  */
                 _scanView.ScanViewPlugin.AddScanResultListener(_scanResultListener);
-
-                //var myBarcodeListener = new MyBarcodeListener();
-                //_scanView.CameraView.EnableBarcodeDetection(myBarcodeListener, null);
-
-                //var bar = new AT.Nineyards.Anyline.Modules.Barcode.NativeBarcodeScanView(ApplicationContext, null);
-
+                
                 // handle camera open events
                 _scanView.CameraOpened += ScanView_CameraOpened;
 

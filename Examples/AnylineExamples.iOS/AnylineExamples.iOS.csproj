@@ -108,6 +108,7 @@
     <BundleResource Include="Resources\id_config_german_id_front.json" />
     <BundleResource Include="Resources\others_config_cow_tag.json" />
     <BundleResource Include="Resources\workflows_config_serial_scanning.json" />
+    <BundleResource Include="Resources\mro_config_tin.json" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
