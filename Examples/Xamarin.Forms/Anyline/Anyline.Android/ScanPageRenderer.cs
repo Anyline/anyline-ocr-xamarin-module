@@ -45,9 +45,7 @@ namespace Anyline.Droid
             {
                 return;
             }
-
-            Log.Debug("", "HI");
-
+            
             try
             {
                 if (view == null)
@@ -94,9 +92,10 @@ namespace Anyline.Droid
             Log.Debug("OnLayout", $"{w} x {h}");
         }
 
-        public void OnResult(ScanResult result)
+        public void OnResult(Java.Lang.Object result)
         {
-            Log.Debug("Result", result.Result.ToString());
+
+            Log.Debug("Result", (result as ScanResult).Result.ToString());
         }
     }
 }

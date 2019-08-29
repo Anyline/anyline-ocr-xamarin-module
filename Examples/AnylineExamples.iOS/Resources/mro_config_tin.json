@@ -1,11 +1,11 @@
 ﻿{
-    "camera": {
-      "captureResolution": "720"
-    },
-    "flash": {
-      "mode": "manual",
-      "alignment": "bottom_left"
-    },
+  "camera": {
+    "captureResolution": "720"
+  },
+  "flash": {
+    "mode": "manual",
+    "alignment": "bottom_left"
+  },
   "viewPlugin": {
     "plugin": {
       "id": "TIN_ID",
@@ -15,13 +15,9 @@
     },
     "cutoutConfig": {
       "style": "rect",
-      "width": 720,
       "alignment": "top_half",
-      "maxWidthPercent": "70%",
-      "ratioFromSize": {
-        "width": 62,
-        "height": 9
-      },
+      "maxWidthPercent": "99%",
+      "maxHeightPercent": "99%",
       "strokeWidth": 1,
       "strokeColor": "FFFFFF",
       "cornerRadius": 2,
@@ -43,4 +39,4 @@
     "cancelOnResult": true,
     "reportingEnabled": true
   }
-  }
+}
