@@ -8,7 +8,7 @@
     },
   "viewPlugin": {
     "plugin": {
-      "id": "VIN_ID",
+      "id": "TIN_ID",
       "ocrPlugin": {
         "tinConfig": {}
       }

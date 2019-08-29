@@ -2274,12 +2274,12 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineViewConfig']/constructor[@name='AnylineViewConfig' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineViewConfig']/constructor[@name='AnylineViewConfig' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String']]/parameter[2]" name="managedName">configFileName</attr>
 <!-- File: IO.Anyline.View.AnylineWebView.cs -->
-<!-- AnylineWebView.AnylineWebView(android.content.Context, float, at.nineyards.anyline.camera.VisualFeedbackConfig) -->
+<!-- AnylineWebView.AnylineWebView(android.content.Context) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/constructor[@name='AnylineWebView' and count(parameter)=1 and parameter[1][@type='android.content.Context']]/parameter[1]" name="managedName">context</attr>
+<!-- AnylineWebView.AnylineWebView(android.content.Context, float, at.nineyards.anyline.camera.VisualFeedbackConfig) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/constructor[@name='AnylineWebView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='float'] and parameter[3][@type='at.nineyards.anyline.camera.VisualFeedbackConfig']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/constructor[@name='AnylineWebView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='float'] and parameter[3][@type='at.nineyards.anyline.camera.VisualFeedbackConfig']]/parameter[2]" name="managedName">resizeScale</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/constructor[@name='AnylineWebView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='float'] and parameter[3][@type='at.nineyards.anyline.camera.VisualFeedbackConfig']]/parameter[3]" name="managedName">visualFeedbackConfig</attr>
-<!-- AnylineWebView.AnylineWebView(android.content.Context) -->
-<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/constructor[@name='AnylineWebView' and count(parameter)=1 and parameter[1][@type='android.content.Context']]/parameter[1]" name="managedName">context</attr>
 <!-- AnylineWebView.setVisualFeedbackConfig(at.nineyards.anyline.camera.VisualFeedbackConfig) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='setVisualFeedbackConfig' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.VisualFeedbackConfig']]/parameter[1]" name="managedName">visualFeedbackConfig</attr>
 <!-- AnylineWebView.drawDocument(java.util.List&lt;android.graphics.PointF&gt;, java.lang.String) -->
