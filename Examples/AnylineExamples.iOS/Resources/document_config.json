@@ -12,10 +12,9 @@
       "y": 0
     }
   },
-
   "viewPlugin": {
     "plugin": {
-      "id": "DOCUMENT_PLUGIN",
+      "id": "DOCUMENT",
       "documentPlugin": {
       }
     },
@@ -23,6 +22,8 @@
       "style": "rect",
       "maxWidthPercent": "100%",
       "maxHeightPercent": "100%",
+      "widthPercent": "100%",
+      "width": 1080,
       "ratioFromSize": {
         "width": 10,
         "height": 18
@@ -30,13 +31,9 @@
       "alignment": "center",
       "strokeWidth": 2,
       "cornerRadius": 0,
-      "strokeColor": "00000000",
-      "outerColor": "00000000",
-      "outerAlpha": 0.0,
-      "feedbackStrokeColor": "00000000"
+      "strokeColor": "00000000"
     },
     "scanFeedback": {
-      "strokeColor": "00000000",
       "beepOnResult": true,
       "vibrateOnResult": true,
       "blinkAnimationOnResult": true
@@ -44,4 +41,3 @@
     "cancelOnResult": true
   }
 }
-
