@@ -1,5 +1,4 @@
-﻿using System;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,7 +11,11 @@ namespace Anyline
         {
             InitializeComponent();
 
-            MainPage = new ScanPage();
+            MainPage = new NavigationPage(new MainPage())
+            {
+                BarBackgroundColor = Color.FromHex("32ADFF"),
+                BarTextColor = Color.White
+            };
         }
 
         protected override void OnPropertyChanged([CallerMemberName] string propertyName = null)
