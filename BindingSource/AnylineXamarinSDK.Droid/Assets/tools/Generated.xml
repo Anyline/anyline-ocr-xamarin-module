@@ -1531,9 +1531,8 @@
 <attr path="/api/package[@name='io.anyline.plugin.document']/class[@name='DocumentScanViewPlugin']/method[@name='transformPicture' and count(parameter)=2 and parameter[1][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[2][@type='java.util.List&lt;android.graphics.PointF&gt;']]/parameter[1]" name="managedName">fullImage</attr>
 <attr path="/api/package[@name='io.anyline.plugin.document']/class[@name='DocumentScanViewPlugin']/method[@name='transformPicture' and count(parameter)=2 and parameter[1][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[2][@type='java.util.List&lt;android.graphics.PointF&gt;']]/parameter[2]" name="managedName">corners</attr>
 <!-- File: IO.Anyline.Plugin.Document.IDocumentNotifierListener.cs -->
-<!-- DocumentNotifierListener.notifyDrawDocumentFeedback(java.util.List&lt;android.graphics.PointF&gt;, java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.plugin.document']/interface[@name='DocumentNotifierListener']/method[@name='notifyDrawDocumentFeedback' and count(parameter)=2 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">points</attr>
-<attr path="/api/package[@name='io.anyline.plugin.document']/interface[@name='DocumentNotifierListener']/method[@name='notifyDrawDocumentFeedback' and count(parameter)=2 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[2][@type='java.lang.String']]/parameter[2]" name="managedName">strokeColor</attr>
+<!-- DocumentNotifierListener.notifyDrawDocumentFeedback(java.util.List&lt;android.graphics.PointF&gt;) -->
+<attr path="/api/package[@name='io.anyline.plugin.document']/interface[@name='DocumentNotifierListener']/method[@name='notifyDrawDocumentFeedback' and count(parameter)=1 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;']]/parameter[1]" name="managedName">points</attr>
 <!-- File: IO.Anyline.Plugin.Document.IDocumentScanResultListener.cs -->
 <!-- DocumentScanResultListener.onDocumentOutlineDetected(java.util.List&lt;android.graphics.PointF&gt;, boolean) -->
 <attr path="/api/package[@name='io.anyline.plugin.document']/interface[@name='DocumentScanResultListener']/method[@name='onDocumentOutlineDetected' and count(parameter)=2 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[2][@type='boolean']]/parameter[1]" name="managedName">corners</attr>
@@ -2528,9 +2527,8 @@
 <!-- ScanView.initComposite(org.json.JSONObject, java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='initComposite' and count(parameter)=2 and parameter[1][@type='org.json.JSONObject'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">jsonObject</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='initComposite' and count(parameter)=2 and parameter[1][@type='org.json.JSONObject'] and parameter[2][@type='java.lang.String']]/parameter[2]" name="managedName">licenseKey</attr>
-<!-- ScanView.notifyDrawDocumentFeedback(java.util.List&lt;android.graphics.PointF&gt;, java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='notifyDrawDocumentFeedback' and count(parameter)=2 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">points</attr>
-<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='notifyDrawDocumentFeedback' and count(parameter)=2 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[2][@type='java.lang.String']]/parameter[2]" name="managedName">strokeColor</attr>
+<!-- ScanView.notifyDrawDocumentFeedback(java.util.List&lt;android.graphics.PointF&gt;) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='notifyDrawDocumentFeedback' and count(parameter)=1 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;']]/parameter[1]" name="managedName">points</attr>
 <!-- ScanView.onCutoutChanged(io.anyline.view.CutoutRect) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='onCutoutChanged' and count(parameter)=1 and parameter[1][@type='io.anyline.view.CutoutRect']]/parameter[1]" name="managedName">cutoutRect</attr>
 <!-- ScanView.onCutoutConfigChanged(io.anyline.view.CutoutConfig) -->
