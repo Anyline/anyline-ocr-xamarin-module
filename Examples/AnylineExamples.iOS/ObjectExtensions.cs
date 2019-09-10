@@ -1,10 +1,8 @@
-﻿using System;
+﻿using AnylineXamarinSDK.iOS;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using AnylineXamarinSDK.iOS;
-using Foundation;
 using UIKit;
 
 namespace AnylineExamples.iOS
@@ -21,6 +19,7 @@ namespace AnylineExamples.iOS
         /// <returns></returns>
         public static Dictionary<string, object> CreatePropertyDictionary(this object obj)
         {
+            int serialScanningIndex = 0;
             Dictionary<string, object> dict = new Dictionary<string, object>();
 
             if (obj is Dictionary<string, object>)
@@ -62,7 +61,36 @@ namespace AnylineExamples.iOS
 
                             if (value != null)
                             {
-                                dict.AddProperty(prop.Name, value);
+                                if (value is Foundation.NSDictionary results)
+                                {
+                                    var mapResultsSerialScanning = new Dictionary<string, object>();
+                                    foreach (KeyValuePair<Foundation.NSObject, Foundation.NSObject> result in results)
+                                    {
+                                        var sublist = result.Value.CreatePropertyDictionary();
+                                        mapResultsSerialScanning.Add(result.Key.ToString(), sublist);
+                                    }
+                                    //dict.Add($"List {serialScanningIndex}", mapResultsSerialScanning);
+
+                                    // Change this in order to separate the results better
+                                    foreach (var scanningPlugin in mapResultsSerialScanning)
+                                    {
+                                        if (scanningPlugin.Value is Dictionary<string, object> pluginResults)
+                                        {
+                                            foreach (var property in pluginResults)
+                                            {
+                                                dict.AddProperty($"Serial {++serialScanningIndex} - {scanningPlugin.Key} - {property.Key}", property.Value);
+                                            }
+                                        }
+                                        else
+                                        {
+                                            dict.AddProperty($"Serial {++serialScanningIndex} - {scanningPlugin.Key}", scanningPlugin.Value);
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    dict.AddProperty(prop.Name, value);
+                                }
                             }
                             break;
                     }
@@ -98,7 +126,7 @@ namespace AnylineExamples.iOS
             Debug.WriteLine("{0}: {1}", name, value);
             if (value != null)
             {
-                if (value is ALMRZIdentification 
+                if (value is ALMRZIdentification
                     || value is ALDrivingLicenseIdentification
                     || value is ALGermanIDFrontIdentification)
                 {

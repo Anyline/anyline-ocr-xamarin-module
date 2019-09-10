@@ -1,26 +1,25 @@
-﻿using System.Collections.Generic;
+﻿using AnylineXamarinSDK.iOS;
 using Foundation;
+using System.Collections.Generic;
 using UIKit;
-using AnylineXamarinSDK.iOS;
-using System.Threading.Tasks;
 
 namespace AnylineExamples.iOS
 {
     /// <summary>
     /// This is the delegate class that implements all result callbacks for various ScanPlugins
     /// </summary>
-    public sealed class ScanResultDelegate : NSObject, 
-        IALIDPluginDelegate, 
-        IALOCRScanPluginDelegate, 
+    public sealed class ScanResultDelegate : NSObject,
+        IALIDPluginDelegate,
+        IALOCRScanPluginDelegate,
         IALMeterScanPluginDelegate,
-        IALDocumentScanPluginDelegate, 
+        IALDocumentScanPluginDelegate,
         IALLicensePlateScanPluginDelegate,
         IALBarcodeScanPluginDelegate,
         IALCompositeScanPluginDelegate
     {
         // we store the ScanViewController for navigation purposes
         private readonly ScanViewController _scanViewController;
-        
+
         public ScanResultDelegate(ScanViewController scanViewController)
         {
             _scanViewController = scanViewController;
@@ -32,7 +31,7 @@ namespace AnylineExamples.iOS
             var resultViewController = new ResultViewController(result);
             _scanViewController.NavigationController?.PushViewController(resultViewController, false);
         }
-        
+
         public void DidFindResult(ALIDScanPlugin anylineIDScanPlugin, ALIDResult scanResult)
         {
             HandleResult(scanResult);
@@ -57,7 +56,7 @@ namespace AnylineExamples.iOS
             results.Add("transformedImage", transformedImage);
             results.Add("fullFrame", fullFrame);
             results.Add("corners", corners);
-            
+
             HandleResult(results);
         }
 

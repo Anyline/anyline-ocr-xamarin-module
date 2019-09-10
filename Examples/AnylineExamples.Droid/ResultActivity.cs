@@ -103,7 +103,7 @@ namespace AnylineExamples.Droid
                                     dict.Add($"List {serialScanningIndex}", mapResultsSerialScanning);
                                     serialScanningIndex++;
                                 }
-                                if (value is AnylineImage)
+                                else if (value is AnylineImage)
                                 {
                                     var bitmap = (value as AnylineImage).Clone().Bitmap;
                                     dict.Add(prop.Name, bitmap);

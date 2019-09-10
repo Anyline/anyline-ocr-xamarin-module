@@ -1,9 +1,9 @@
-﻿using System;
-using AnylineXamarinSDK.iOS;
+﻿using AnylineXamarinSDK.iOS;
 using CoreGraphics;
 using Foundation;
-using UIKit;
+using System;
 using System.IO;
+using UIKit;
 
 namespace AnylineExamples.iOS
 {
@@ -24,7 +24,7 @@ namespace AnylineExamples.iOS
 
             _resultDelegate = new ScanResultDelegate(this);
         }
-        
+
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
@@ -39,7 +39,7 @@ namespace AnylineExamples.iOS
 
             if (_initialized)
                 return;
-            
+
             try
             {
                 _frame = UIScreen.MainScreen.ApplicationFrame;
@@ -50,15 +50,15 @@ namespace AnylineExamples.iOS
 
                 // Use the JSON file name that you want to load here
                 var configPath = NSBundle.MainBundle.PathForResource(@"" + _jsonPath.Replace(".json", ""), @"json");
-                
+
                 // This is the main intialization method that will create our use case depending on the JSON configuration.
                 _scanView = ALScanView.ScanViewForFrame(_frame, configPath, LicenseKey, _resultDelegate, out error);
-                
+
                 if (error != null)
                 {
                     throw new Exception(error.LocalizedDescription);
                 }
-                
+
                 // KNOWN ISSUE (OCRScanPlugin only): the customCmdFile is not loading the file correctly. therefore, it has to be added via code:
                 if (_scanView.ScanViewPlugin is ALOCRScanViewPlugin)
                 {
@@ -89,10 +89,9 @@ namespace AnylineExamples.iOS
                 // KNOWN ISSUE: the result delegate has to be added specifically to the scan plugin.
                 // this should be automatically done already with the ScanViewForFrame call.
                 ConnectDelegateToScanPlugin();
-                
+
                 View.AddSubview(_scanView);
                 _scanView.StartCamera();
-
                 _initialized = true;
             }
             catch (Exception e)
@@ -122,22 +121,26 @@ namespace AnylineExamples.iOS
             if (!_initialized) return;
 
             NSError error = null;
-            
-            var success = _scanView.ScanViewPlugin.StartAndReturnError(out error);
-            
-            if (!success)
-            {
-                if (error != null)
-                {
-                    ShowAlert("Start Scanning Error", error.DebugDescription);
 
-                } else
+            BeginInvokeOnMainThread(() =>
+            {
+                var success = _scanView.ScanViewPlugin.StartAndReturnError(out error);
+
+                if (!success)
                 {
-                    ShowAlert("Start Scanning Error", "error is null");
+                    if (error != null)
+                    {
+                        ShowAlert("Start Scanning Error", error.DebugDescription);
+
+                    }
+                    else
+                    {
+                        ShowAlert("Start Scanning Error", "error is null");
+                    }
                 }
-            }
+            });
         }
-        
+
         public override void ViewWillDisappear(bool animated)
         {
             base.ViewWillDisappear(animated);
@@ -156,7 +159,7 @@ namespace AnylineExamples.iOS
             base.ViewDidDisappear(animated);
             Dispose();
         }
-        
+
         private void ShowAlert(string title, string text)
         {
             new UIAlertView(title, text, (IUIAlertViewDelegate)null, "OK", null).Show();

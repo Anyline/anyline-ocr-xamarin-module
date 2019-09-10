@@ -10,11 +10,11 @@ namespace AnylineExamples.iOS
     {
 
         // we store the scan result as an object
-        object _scanResult;
+        Dictionary<string, object> _scanResult;
 
         public ResultViewController(object scanResult)
         {
-            _scanResult = scanResult;
+            _scanResult = scanResult.CreatePropertyDictionary();
         }
 
         public override void ViewDidLoad()
@@ -51,11 +51,11 @@ namespace AnylineExamples.iOS
             protected Dictionary<string, object> TableItems;
             protected string CellIdentifier = "TableCell";
             
-            public TableSource(object scanResult, ResultViewController parent)
+            public TableSource(Dictionary<string, object> scanResult, ResultViewController parent)
             {
                 // in our example app, we dynamically extract result values from the object via reflection.
                 // Usually, you can just cast the result to the object type that matches your ScanPlugin type (e.g. ALMeterResult for ALMeterScanPlugin etc.)
-                TableItems = scanResult.CreatePropertyDictionary();
+                TableItems = scanResult;
             }
 
             public override string TitleForHeader(UITableView tableView, nint section)

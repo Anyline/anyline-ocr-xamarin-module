@@ -102,6 +102,7 @@
     <BundleResource Include="Resources\energy_config_analog_digital.json" />
     <BundleResource Include="Resources\mro_config_usnr.json" />
     <BundleResource Include="Resources\others_config_barcode.json" />
+    <BundleResource Include="Resources\workflows_config_serial_scanning.json" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
