@@ -8,7 +8,7 @@
 
     <ItemGroup>
       <BundleResource Update="@(BundleResource)" Condition=" '%(BundleResource.NuGetPackageId)' == 'Anyline.Xamarin.SDK.iOS' And '%(BundleResource.NuGetItemType)' != '' And '%(BundleResource.Link)' == ''">
-        <Link>$([MSBuild]::MakeRelative($(MSBuildThisFileDirectory)/../contentFiles/any/xamarin.ios10/, %(BundleResource.FullPath)))</Link>
+        <Link>$([MSBuild]::MakeRelative($(MSBuildThisFileDirectory)\..\contentFiles\any\xamarin.ios10\, %(BundleResource.FullPath)))</Link>
       </BundleResource>
     </ItemGroup>
 
