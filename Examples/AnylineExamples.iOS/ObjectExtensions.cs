@@ -69,23 +69,9 @@ namespace AnylineExamples.iOS
                                         var sublist = result.Value.CreatePropertyDictionary();
                                         mapResultsSerialScanning.Add(result.Key.ToString(), sublist);
                                     }
-                                    //dict.Add($"List {serialScanningIndex}", mapResultsSerialScanning);
+                                    dict.Add($"Serial Scanning {serialScanningIndex}", mapResultsSerialScanning);
 
-                                    // Change this in order to separate the results better
-                                    foreach (var scanningPlugin in mapResultsSerialScanning)
-                                    {
-                                        if (scanningPlugin.Value is Dictionary<string, object> pluginResults)
-                                        {
-                                            foreach (var property in pluginResults)
-                                            {
-                                                dict.AddProperty($"Serial {++serialScanningIndex} - {scanningPlugin.Key} - {property.Key}", property.Value);
-                                            }
-                                        }
-                                        else
-                                        {
-                                            dict.AddProperty($"Serial {++serialScanningIndex} - {scanningPlugin.Key}", scanningPlugin.Value);
-                                        }
-                                    }
+                                    serialScanningIndex++;
                                 }
                                 else
                                 {
