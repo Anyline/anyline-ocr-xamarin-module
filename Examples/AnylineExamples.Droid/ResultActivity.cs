@@ -1,23 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Reflection;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.V7.App;
+using Android.Util;
 using Android.Views;
 using Android.Widget;
-using Android.Util;
+using AnylineExamples.Shared;
 using AT.Nineyards.Anyline.Models;
 using IO.Anyline.Plugin;
-using AT.Nineyards.Anyline.Modules.Mrz;
 using IO.Anyline.Plugin.ID;
-using AnylineExamples.Shared;
 using Java.Util;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace AnylineExamples.Droid
 {
@@ -40,16 +36,16 @@ namespace AnylineExamples.Droid
 
             SetContentView(Resource.Layout.result_activity);
             _resultListView = FindViewById<ListView>(Resource.Id.result_list_view);
-            
+
             var handle = new IntPtr(Intent.GetIntExtra("handle", 0));
             var scanResult = GetObject<ScanResult>(handle, JniHandleOwnership.DoNotTransfer);
-            
+
             if (scanResult != null)
             {
                 Title = scanResult.GetType().Name;
 
                 var dict = CreatePropertyList(scanResult);
-                
+
                 var listAdapter = new ResultListAdapter(this, dict);
                 _resultListView.Adapter = listAdapter;
                 Util.SetListViewHeightBasedOnChildren(_resultListView, this);
@@ -59,6 +55,7 @@ namespace AnylineExamples.Droid
         private Dictionary<string, Java.Lang.Object> CreatePropertyList(Java.Lang.Object obj)
         {
             var dict = new Dictionary<string, Java.Lang.Object>();
+            int serialScanningIndex = 0;
             foreach (var prop in obj.GetType().GetProperties())
             {
 
@@ -86,19 +83,27 @@ namespace AnylineExamples.Droid
                             Log.Debug(TAG, "{0}: {1}", prop.Name, value);
                             if (value != null)
                             {
-                                // TODO: iterate through every result and display them
-                                //if(value is JavaList)
-                                //{
-                                //    var i = 0;
-                                //    var resultList = (value as JavaList);
-                                //    foreach (Java.Lang.Object v in resultList)
-                                //    {
-                                //        var sublist = CreatePropertyList(v);
-                                //        sublist.ToList().ForEach(x => dict.Add(x.Key + $" ({i})", x.Value));
-                                //        i++;
-                                //    }
-                                //}
-                                if (value is AnylineImage)
+                                // Iterate through a list for Serial Scanning
+                                if (value is JavaList)
+                                {
+                                    var indexResult = 0;
+
+                                    var mapResultsSerialScanning = new LinkedHashMap();
+                                    foreach (Java.Lang.Object result in (value as JavaList))
+                                    {
+                                        var sublist = CreatePropertyList(result);
+                                        var mapPluginResults = new LinkedHashMap();
+                                        foreach (KeyValuePair<string, Java.Lang.Object> item in sublist)
+                                        {
+                                            mapPluginResults.Put(item.Key, item.Value);
+                                        }
+                                        mapResultsSerialScanning.Put(indexResult, mapPluginResults);
+                                        indexResult++;
+                                    }
+                                    dict.Add($"Serial Scanning {serialScanningIndex}", mapResultsSerialScanning);
+                                    serialScanningIndex++;
+                                }
+                                else if (value is AnylineImage)
                                 {
                                     var bitmap = (value as AnylineImage).Clone().Bitmap;
                                     dict.Add(prop.Name, bitmap);
@@ -127,7 +132,7 @@ namespace AnylineExamples.Droid
                         break;
                 }
             }
-            
+
             // quick hack to re-order the list so that the result will be presented first:
             dict.MoveElementToIndex("Result", 0);
 

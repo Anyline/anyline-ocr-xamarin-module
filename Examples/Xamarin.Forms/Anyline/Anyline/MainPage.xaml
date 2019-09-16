@@ -5,9 +5,11 @@
              BackgroundColor="#0D0D0D"
              Title = "Anyline Xamarin Module">
     <ContentPage.Content>
-        <StackLayout>
-            <Image Source="anyline_logo.png" Aspect="AspectFit" Margin="20,40,20,0" />
-            <StackLayout x:Name="slScanButtons" VerticalOptions="CenterAndExpand" Margin="20,0" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <Image Source="anyline_logo.png" Aspect="AspectFit" Margin="20,40,20,0" />
+                <StackLayout x:Name="slScanButtons" VerticalOptions="CenterAndExpand" Margin="20,0" />
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
