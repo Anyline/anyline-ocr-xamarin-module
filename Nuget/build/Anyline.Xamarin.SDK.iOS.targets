@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Project>
 
   <PropertyGroup>
@@ -6,9 +7,21 @@
 
   <Target Name="_Anyline_AddLinkMetadataToNuGetBundleResources" BeforeTargets="_CompileInterfaceDefinitions" DependsOnTargets="ResolveReferences">
 
-    <ItemGroup>
-      <BundleResource Update="@(BundleResource)" Condition=" '%(BundleResource.NuGetPackageId)' == 'Anyline.Xamarin.SDK.iOS' And '%(BundleResource.NuGetItemType)' != '' And '%(BundleResource.Link)' == ''">
-        <Link>$([MSBuild]::MakeRelative($(MSBuildThisFileDirectory)\..\contentFiles\any\xamarin.ios10\, %(BundleResource.FullPath)))</Link>
+
+    <PropertyGroup>
+      <_ContentFilePathPattern>^.*\\contentFiles\\\w*\\[\w.]*\\</_ContentFilePathPattern>
+    </PropertyGroup>
+
+    <ItemGroup Condition=" '$(OS)' == 'OSX' ">
+      <NativeLibs Include="$(MSBuildThisFileDirectory)contentFiles\**\*.*" />
+      <None Include="@(NativeLibs)">
+        <Link>\Resources\AnylineResources.bundle\%(RecursiveDir)%(FileName)%(Extension)</Link>
+      </None>
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(OS)' != 'OSX' ">
+      <BundleResource Update="@(BundleResource)" Condition=" '%(BundleResource.NuGetItemType)' != '' And '%(BundleResource.Link)' == ''">
+        <Link>$([System.Text.RegularExpressions.Regex]::Replace(%(BundleResource.FullPath), $(_ContentFilePathPattern), '', System.Text.RegularExpressions.RegexOptions.IgnoreCase))</Link>
       </BundleResource>
     </ItemGroup>
 
