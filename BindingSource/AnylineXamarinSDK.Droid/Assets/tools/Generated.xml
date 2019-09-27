@@ -78,15 +78,15 @@
 <!-- ActiveArrayZoomHandlerBuilder.setZoomListener(at.nineyards.anyline.camera.ActiveArrayZoomHandler.IZoomHandlerListener) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='ActiveArrayZoomHandlerBuilder']/method[@name='setZoomListener' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.ActiveArrayZoomHandler.IZoomHandlerListener']]/parameter[1]" name="managedName">listener</attr>
 <!-- File: AT.Nineyards.Anyline.Camera.AnylineBaseView.cs -->
-<!-- AnylineBaseView.AnylineBaseView(android.content.Context, android.util.AttributeSet, int) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/constructor[@name='AnylineBaseView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[1]" name="managedName">context</attr>
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/constructor[@name='AnylineBaseView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[2]" name="managedName">attrs</attr>
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/constructor[@name='AnylineBaseView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[3]" name="managedName">defStyleAttr</attr>
+<!-- AnylineBaseView.AnylineBaseView(android.content.Context) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/constructor[@name='AnylineBaseView' and count(parameter)=1 and parameter[1][@type='android.content.Context']]/parameter[1]" name="managedName">context</attr>
 <!-- AnylineBaseView.AnylineBaseView(android.content.Context, android.util.AttributeSet) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/constructor[@name='AnylineBaseView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/constructor[@name='AnylineBaseView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]/parameter[2]" name="managedName">attrs</attr>
-<!-- AnylineBaseView.AnylineBaseView(android.content.Context) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/constructor[@name='AnylineBaseView' and count(parameter)=1 and parameter[1][@type='android.content.Context']]/parameter[1]" name="managedName">context</attr>
+<!-- AnylineBaseView.AnylineBaseView(android.content.Context, android.util.AttributeSet, int) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/constructor[@name='AnylineBaseView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[1]" name="managedName">context</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/constructor[@name='AnylineBaseView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[2]" name="managedName">attrs</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/constructor[@name='AnylineBaseView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[3]" name="managedName">defStyleAttr</attr>
 <!-- AnylineBaseView.setConfig(at.nineyards.anyline.camera.AnylineViewConfig) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AnylineBaseView']/method[@name='setConfig' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.AnylineViewConfig']]/parameter[1]" name="managedName">config</attr>
 <!-- AnylineBaseView.setLicenseKey(java.lang.String) -->
@@ -794,7 +794,12 @@
 <!-- AnylineScanResult.setOutline(java.util.List&lt;android.graphics.PointF&gt;) -->
 <attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineScanResult']/method[@name='setOutline' and count(parameter)=1 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;']]/parameter[1]" name="managedName">outline</attr>
 <!-- File: AT.Nineyards.Anyline.Models.AnylineYuvImage.cs -->
-<!-- AnylineYuvImage.AnylineYuvImage(android.media.Image, int, int, int, int, int, boolean) -->
+<!-- AnylineYuvImage.AnylineYuvImage(int, int, int, int) -->
+<attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineYuvImage']/constructor[@name='AnylineYuvImage' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[1]" name="managedName">format</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineYuvImage']/constructor[@name='AnylineYuvImage' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[2]" name="managedName">width</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineYuvImage']/constructor[@name='AnylineYuvImage' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[3]" name="managedName">height</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineYuvImage']/constructor[@name='AnylineYuvImage' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[4]" name="managedName">targetOrientation</attr>
+<!-- AnylineYuvImage.AnylineYuvImage(android.media.Image, int, int, int, int, int, boolean) -->
 <attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineYuvImage']/constructor[@name='AnylineYuvImage' and count(parameter)=7 and parameter[1][@type='android.media.Image'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int'] and parameter[7][@type='boolean']]/parameter[1]" name="managedName">image</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineYuvImage']/constructor[@name='AnylineYuvImage' and count(parameter)=7 and parameter[1][@type='android.media.Image'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int'] and parameter[7][@type='boolean']]/parameter[2]" name="managedName">targetOrientation</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineYuvImage']/constructor[@name='AnylineYuvImage' and count(parameter)=7 and parameter[1][@type='android.media.Image'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int'] and parameter[7][@type='boolean']]/parameter[3]" name="managedName">cropX</attr>
@@ -809,11 +814,6 @@
 <attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineYuvImage']/constructor[@name='AnylineYuvImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='byte[]'] and parameter[5][@type='int'] and parameter[6][@type='boolean']]/parameter[4]" name="managedName">data</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineYuvImage']/constructor[@name='AnylineYuvImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='byte[]'] and parameter[5][@type='int'] and parameter[6][@type='boolean']]/parameter[5]" name="managedName">targetOrientation</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineYuvImage']/constructor[@name='AnylineYuvImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='byte[]'] and parameter[5][@type='int'] and parameter[6][@type='boolean']]/parameter[6]" name="managedName">isGreyOnly</attr>
-<!-- AnylineYuvImage.AnylineYuvImage(int, int, int, int) -->
-<attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineYuvImage']/constructor[@name='AnylineYuvImage' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[1]" name="managedName">format</attr>
-<attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineYuvImage']/constructor[@name='AnylineYuvImage' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[2]" name="managedName">width</attr>
-<attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineYuvImage']/constructor[@name='AnylineYuvImage' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[3]" name="managedName">height</attr>
-<attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineYuvImage']/constructor[@name='AnylineYuvImage' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[4]" name="managedName">targetOrientation</attr>
 <!-- AnylineYuvImage.crop(int, int, int, int, boolean) -->
 <attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineYuvImage']/method[@name='crop' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='boolean']]/parameter[1]" name="managedName">cropX</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineYuvImage']/method[@name='crop' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='boolean']]/parameter[2]" name="managedName">cropY</attr>
@@ -1289,7 +1289,7 @@
 <!-- NfcDetector.NfcDetectionHandler.onNfcFailure(java.lang.String) -->
 <!-- NfcDetector.NfcDetectionHandler.onNfcSuccess(io.anyline.nfc.NFC.NFCResult) -->
 <!-- NfcDetector.NfcDetectionHandler.onSODSuccess(io.anyline.nfc.NFC.SOD) -->
-<!-- NfcDetector.NfcDetector(io.anyline.nfc.NfcDetector.NfcDetectionHandler) -->
+<!-- NfcDetector.NfcDetector(io.anyline.nfc.NfcDetector.NfcDetectionHandler, java.lang.String) -->
 <!-- NfcDetector.startNfcDetection(java.lang.String, java.lang.String, java.lang.String) -->
 <!-- File: IO.Anyline.Nfc.Parser.DG1Parser.cs -->
 <!-- DG1Parser.DG1Parser(byte[]) -->
@@ -2273,12 +2273,12 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineViewConfig']/constructor[@name='AnylineViewConfig' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineViewConfig']/constructor[@name='AnylineViewConfig' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String']]/parameter[2]" name="managedName">configFileName</attr>
 <!-- File: IO.Anyline.View.AnylineWebView.cs -->
-<!-- AnylineWebView.AnylineWebView(android.content.Context) -->
-<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/constructor[@name='AnylineWebView' and count(parameter)=1 and parameter[1][@type='android.content.Context']]/parameter[1]" name="managedName">context</attr>
-<!-- AnylineWebView.AnylineWebView(android.content.Context, float, at.nineyards.anyline.camera.VisualFeedbackConfig) -->
+<!-- AnylineWebView.AnylineWebView(android.content.Context, float, at.nineyards.anyline.camera.VisualFeedbackConfig) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/constructor[@name='AnylineWebView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='float'] and parameter[3][@type='at.nineyards.anyline.camera.VisualFeedbackConfig']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/constructor[@name='AnylineWebView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='float'] and parameter[3][@type='at.nineyards.anyline.camera.VisualFeedbackConfig']]/parameter[2]" name="managedName">resizeScale</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/constructor[@name='AnylineWebView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='float'] and parameter[3][@type='at.nineyards.anyline.camera.VisualFeedbackConfig']]/parameter[3]" name="managedName">visualFeedbackConfig</attr>
+<!-- AnylineWebView.AnylineWebView(android.content.Context) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/constructor[@name='AnylineWebView' and count(parameter)=1 and parameter[1][@type='android.content.Context']]/parameter[1]" name="managedName">context</attr>
 <!-- AnylineWebView.setVisualFeedbackConfig(at.nineyards.anyline.camera.VisualFeedbackConfig) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='setVisualFeedbackConfig' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.VisualFeedbackConfig']]/parameter[1]" name="managedName">visualFeedbackConfig</attr>
 <!-- AnylineWebView.drawDocument(java.util.List&lt;android.graphics.PointF&gt;, java.lang.String) -->
@@ -2502,15 +2502,15 @@
 <!-- LightLevelHelper.setCurrentBrightness(double) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='LightLevelHelper']/method[@name='setCurrentBrightness' and count(parameter)=1 and parameter[1][@type='double']]/parameter[1]" name="managedName">brightness</attr>
 <!-- File: IO.Anyline.View.ScanView.cs -->
-<!-- ScanView.ScanView(android.content.Context, android.util.AttributeSet, int) -->
+<!-- ScanView.ScanView(android.content.Context) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/constructor[@name='ScanView' and count(parameter)=1 and parameter[1][@type='android.content.Context']]/parameter[1]" name="managedName">context</attr>
+<!-- ScanView.ScanView(android.content.Context, android.util.AttributeSet, int) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/constructor[@name='ScanView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/constructor[@name='ScanView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[2]" name="managedName">attrs</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/constructor[@name='ScanView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[3]" name="managedName">defStyleAttr</attr>
 <!-- ScanView.ScanView(android.content.Context, android.util.AttributeSet) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/constructor[@name='ScanView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/constructor[@name='ScanView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]/parameter[2]" name="managedName">attrs</attr>
-<!-- ScanView.ScanView(android.content.Context) -->
-<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/constructor[@name='ScanView' and count(parameter)=1 and parameter[1][@type='android.content.Context']]/parameter[1]" name="managedName">context</attr>
 <!-- ScanView.setScanViewPlugin(io.anyline.view.AbstractBaseScanViewPlugin) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='setScanViewPlugin' and count(parameter)=1 and parameter[1][@type='io.anyline.view.AbstractBaseScanViewPlugin']]/parameter[1]" name="managedName">scanViewPlugin</attr>
 <!-- ScanView.calculateBrightnessCount(double) -->

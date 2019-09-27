@@ -17,8 +17,7 @@ namespace Anyline
                 new KeyValuePair<string, string>("Barcode","others_config_barcode"),
                 new KeyValuePair<string, string>("License Plate","vehicle_config_license_plate"),
                 new KeyValuePair<string, string>("Meter","energy_config_analog_digital"),
-                new KeyValuePair<string, string>("USNR","mro_config_usnr"),
-                new KeyValuePair<string, string>("Serial Scanning","workflows_config_serial_scanning"),
+                new KeyValuePair<string, string>("USNR","mro_config_usnr")
             };
 
             AddButtons(scanMode_configurations);

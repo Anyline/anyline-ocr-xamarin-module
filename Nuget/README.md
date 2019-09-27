@@ -67,20 +67,19 @@ For a detailed setup guide on how to integrate Anyline for your scanning applica
 
 ### Requirements
 
-- A Xamarin account (If you work with Visual Studio, you need at least a Xamarin business account. Check out the Xamarin Website for detailed information)
-- Xamarin Studio or Visual Studio
+- Visual Studio with the "Mobile development with .NET" (Xamarin) package installed
 
 
 #### Android
 
-- Android device with SDK >= 18
+- Android device with SDK >= 19
 - decent camera functionality (recommended: 720p and adequate auto focus)
 
 
 #### iOS
 
-- minimum iOS 8.2
-- minimum iPhone4s
+- minimum iOS 10.0
+- minimum iPhone 5
 - A Mac computer for building / deploying to the iPhone
 
 
