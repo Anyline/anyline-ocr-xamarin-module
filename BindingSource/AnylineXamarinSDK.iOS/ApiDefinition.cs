@@ -3669,7 +3669,12 @@ namespace AnylineXamarinSDK.iOS
         // @property (assign, nonatomic) ALTINScanMode scanMode;
         [Export("scanMode", ArgumentSemantic.Assign)]
         ALTINScanMode ScanMode { get; set; }
+
+        // @property (assign, nonatomic) BOOL enableUpsideDownScan;
+        [Export("enableUpsideDownScan")]
+        bool EnableUpsideDownScan { get; set; }
     }
+
 
     // @interface ALOCRScanPlugin : ALAbstractScanPlugin
     [BaseType(typeof(ALAbstractScanPlugin))]
@@ -4234,4 +4239,180 @@ namespace AnylineXamarinSDK.iOS
         [Export("anylineCompositeScanPlugin:didFindResult:")]
         void DidFindResult(ALAbstractScanViewPluginComposite anylineCompositeScanPlugin, ALCompositeResult scanResult);
     }
+
+    /*
+
+    // @interface ALDataGroup1 : NSObject
+    [BaseType(typeof(NSObject))]
+    interface ALDataGroup1
+    {
+        // @property NSString * _Nonnull documentType;
+        [Export("documentType")]
+        string DocumentType { get; set; }
+
+        // @property NSString * _Nonnull issuingStateCode;
+        [Export("issuingStateCode")]
+        string IssuingStateCode { get; set; }
+
+        // @property NSString * _Nonnull documentNumber;
+        [Export("documentNumber")]
+        string DocumentNumber { get; set; }
+
+        // @property NSDate * _Nonnull dateOfExpiry;
+        [Export("dateOfExpiry", ArgumentSemantic.Assign)]
+        NSDate DateOfExpiry { get; set; }
+
+        // @property NSString * _Nonnull gender;
+        [Export("gender")]
+        string Gender { get; set; }
+
+        // @property NSString * _Nonnull nationality;
+        [Export("nationality")]
+        string Nationality { get; set; }
+
+        // @property NSString * _Nonnull lastName;
+        [Export("lastName")]
+        string LastName { get; set; }
+
+        // @property NSString * _Nonnull firstName;
+        [Export("firstName")]
+        string FirstName { get; set; }
+
+        // @property NSDate * _Nonnull dateOfBirth;
+        [Export("dateOfBirth", ArgumentSemantic.Assign)]
+        NSDate DateOfBirth { get; set; }
+
+        // -(instancetype _Nonnull)initWithDocumentType:(NSString * _Nonnull)documentType issuingStateCode:(NSString * _Nonnull)issuingStateCode documentNumber:(NSString * _Nonnull)documentNumber dateOfExpiry:(NSDate * _Nonnull)dateOfExpiry gender:(NSString * _Nonnull)gender nationality:(NSString * _Nonnull)nationality lastName:(NSString * _Nonnull)lastName firstName:(NSString * _Nonnull)firstName dateOfBirth:(NSDate * _Nonnull)dateOfBirth;
+        [Export("initWithDocumentType:issuingStateCode:documentNumber:dateOfExpiry:gender:nationality:lastName:firstName:dateOfBirth:")]
+        IntPtr Constructor(string documentType, string issuingStateCode, string documentNumber, NSDate dateOfExpiry, string gender, string nationality, string lastName, string firstName, NSDate dateOfBirth);
+
+        // -(instancetype _Nonnull)initWithPassportDataElements:(NSDictionary<NSString *,NSString *> * _Nonnull)passportDataElements;
+        [Export("initWithPassportDataElements:")]
+        IntPtr Constructor(NSDictionary<NSString, NSString> passportDataElements);
+    }
+
+    // @interface ALDataGroup2 : NSObject
+    [BaseType(typeof(NSObject))]
+    interface ALDataGroup2
+    {
+        // @property UIImage * _Nonnull faceImage;
+        [Export("faceImage", ArgumentSemantic.Assign)]
+        UIImage FaceImage { get; set; }
+
+        // -(instancetype _Nonnull)initWithFaceImage:(UIImage * _Nonnull)faceImage;
+        [Export("initWithFaceImage:")]
+        IntPtr Constructor(UIImage faceImage);
+    }
+
+    // @interface ALSOD : NSObject
+    [BaseType(typeof(NSObject))]
+    interface ALSOD
+    {
+        // @property NSString * _Nonnull issuerCountry;
+        [Export("issuerCountry")]
+        string IssuerCountry { get; set; }
+
+        // @property NSString * _Nonnull issuerCertificationAuthority;
+        [Export("issuerCertificationAuthority")]
+        string IssuerCertificationAuthority { get; set; }
+
+        // @property NSString * _Nonnull issuerOrganization;
+        [Export("issuerOrganization")]
+        string IssuerOrganization { get; set; }
+
+        // @property NSString * _Nonnull issuerOrganizationalUnit;
+        [Export("issuerOrganizationalUnit")]
+        string IssuerOrganizationalUnit { get; set; }
+
+        // @property NSString * _Nonnull signatureAlgorithm;
+        [Export("signatureAlgorithm")]
+        string SignatureAlgorithm { get; set; }
+
+        // @property NSString * _Nonnull ldsHashAlgorithm;
+        [Export("ldsHashAlgorithm")]
+        string LdsHashAlgorithm { get; set; }
+
+        // @property NSString * _Nonnull validFromString;
+        [Export("validFromString")]
+        string ValidFromString { get; set; }
+
+        // @property NSString * _Nonnull validUntilString;
+        [Export("validUntilString")]
+        string ValidUntilString { get; set; }
+    }
+
+    // @interface ALNFCResult : NSObject
+    [iOS(13, 0)]
+    [BaseType(typeof(NSObject))]
+    interface ALNFCResult
+    {
+        // @property ALSOD * sod;
+        [Export("sod", ArgumentSemantic.Assign)]
+        ALSOD Sod { get; set; }
+
+        // @property ALDataGroup1 * dataGroup1;
+        [Export("dataGroup1", ArgumentSemantic.Assign)]
+        ALDataGroup1 DataGroup1 { get; set; }
+
+        // @property ALDataGroup2 * dataGroup2;
+        [Export("dataGroup2", ArgumentSemantic.Assign)]
+        ALDataGroup2 DataGroup2 { get; set; }
+
+        // -(instancetype)initWithDataGroup1:(ALDataGroup1 *)dataGroup1 dataGroup2:(ALDataGroup2 *)dataGroup2 sod:(ALSOD *)sod;
+        [Export("initWithDataGroup1:dataGroup2:sod:")]
+        IntPtr Constructor(ALDataGroup1 dataGroup1, ALDataGroup2 dataGroup2, ALSOD sod);
+    }
+
+    // @protocol ALNFCDetectorDelegate <NSObject>
+    [iOS(13, 0)]
+    [Protocol, Model]
+    [BaseType(typeof(NSObject))]
+    interface ALNFCDetectorDelegate
+    {
+        // @required -(void)nfcSucceededWithResult:(ALNFCResult * _Nonnull)nfcResult;
+        [Abstract]
+        [Export("nfcSucceededWithResult:")]
+        void NfcSucceededWithResult(ALNFCResult nfcResult);
+
+        // @required -(void)nfcFailedWithError:(NSError * _Nonnull)error;
+        [Abstract]
+        [Export("nfcFailedWithError:")]
+        void NfcFailedWithError(NSError error);
+
+        // @optional -(void)nfcSucceededWithDataGroup1:(ALDataGroup1 * _Nonnull)dataGroup1 __attribute__((availability(ios, introduced=13.0)));
+        [iOS(13, 0)]
+        [Export("nfcSucceededWithDataGroup1:")]
+        void NfcSucceededWithDataGroup1(ALDataGroup1 dataGroup1);
+
+        // @optional -(void)nfcSucceededWithDataGroup2:(ALDataGroup2 * _Nonnull)dataGroup2 __attribute__((availability(ios, introduced=13.0)));
+        [iOS(13, 0)]
+        [Export("nfcSucceededWithDataGroup2:")]
+        void NfcSucceededWithDataGroup2(ALDataGroup2 dataGroup2);
+
+        // @optional -(void)nfcSucceededWithSOD:(ALSOD * _Nonnull)sod __attribute__((availability(ios, introduced=13.0)));
+        [iOS(13, 0)]
+        [Export("nfcSucceededWithSOD:")]
+        void NfcSucceededWithSOD(ALSOD sod);
+    }
+
+    // @interface ALNFCDetector : NSObject
+    [iOS(13, 0)]
+    [BaseType(typeof(NSObject))]
+    interface ALNFCDetector
+    {
+        // +(BOOL)readingAvailable;
+        [Static]
+        [Export("readingAvailable")]
+        bool ReadingAvailable { get; }
+
+        // -(instancetype _Nullable)initWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<ALNFCDetectorDelegate> _Nonnull)delegate;
+        [Export("initWithLicenseKey:delegate:")]
+        IntPtr Constructor(string licenseKey, ALNFCDetectorDelegate @delegate);
+
+        // -(void)startNfcDetectionWithPassportNumber:(NSString * _Nonnull)passportNumber dateOfBirth:(NSDate * _Nonnull)dateOfBirth expirationDate:(NSDate * _Nonnull)expirationDate;
+        [Export("startNfcDetectionWithPassportNumber:dateOfBirth:expirationDate:")]
+        void StartNfcDetectionWithPassportNumber(string passportNumber, NSDate dateOfBirth, NSDate expirationDate);
+    }
+
+    */
 }
