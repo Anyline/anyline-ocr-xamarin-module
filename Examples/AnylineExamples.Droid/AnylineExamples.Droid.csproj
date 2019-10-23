@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AndroidExampleModelWrapper.cs" />
+    <Compile Include="CropViewUIActivity.cs" />
     <Compile Include="DocScanUIMainActivity.cs" />
     <Compile Include="DocumentScanResultListener.cs" />
     <Compile Include="DocumentScanViewUIActivity.cs" />
@@ -168,6 +169,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\demo_activity_document_scan_view_ui.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\demo_activity_crop_view_ui.axml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
     </AndroidResource>
