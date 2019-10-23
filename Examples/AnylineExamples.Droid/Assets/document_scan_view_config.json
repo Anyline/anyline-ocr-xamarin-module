@@ -1,0 +1,72 @@
+﻿{
+  "scanMode": "multiple_pages",
+  "enablePostProcessing": true,
+  "showCancelOnCropView": true,
+
+  "reducePictureSize": {
+    "allowChangeCustomSize": "true",
+    "option": "Small",
+    "maxSizeSmall": 300,
+    "maxSizeMedium": 600,
+    "maxSizeLarge": 1200,
+    "maxSizeCustom": 900
+  },
+
+  "scanFormat": {
+    "a4Portrait": true,
+    "a4Landscape": false,
+    "complimentSlipPortrait": true,
+    "complimentSlipLandscape": false,
+    "businessCardPortrait": true,
+    "businessCardLandscape": false,
+    "letterPortrait": true,
+    "letterLandscape": false,
+    "customRatioPortrait": true,
+    "customRatioLandscape": false,
+    "customRatioValueShortSide": 6,
+    "customRatioValueLongSide": 8
+  },
+
+  "bottomBar": {
+    "position0": {
+      "control": "flash",
+      "width": 2
+    },
+    "position1": {
+      "control": "scan_mode",
+      "width": 2
+    },
+    "position2": {
+      "control": "manual_picture",
+      "width": 3
+    },
+    "position3": {
+      "control": "cancel",
+      "width": 2
+    },
+    "position4": {
+      "control": "ok",
+      "width": 2
+    }
+  },
+
+  "bottomBarExtension": {
+    "line0": "format",
+    "line1": "picture_resize",
+    "line2": "empty",
+    "line3": "empty"
+  },
+
+  "colors": {
+    "tintControls": "BF046F",
+    "tintControlsDisabled": "cccccc",
+    "tintManualPictureButton": "2faea9",
+    "textMessage": "234567",
+    "backgroundMessage": "ccf2f0",
+    "textHint": "123456",
+    "backgroundHint": "ead3f5",
+    "textBottomBar": "343434",
+    "backgroundBottomBar": "f2f2f2",
+    "divider": "343434"
+  }
+}
