@@ -1,6 +1,9 @@
 ﻿using Android.App;
 using Android.Content;
+using Android.Content.PM;
 using Android.OS;
+using Android.Support.V4.App;
+using Android.Support.V4.Content;
 using Android.Support.V7.App;
 using Android.Util;
 using Android.Views;
@@ -33,15 +36,12 @@ namespace AnylineExamples.Droid
                 SetContentView(Resource.Layout.demo_activity_document_scan_view_ui);
 
                 Window.SetFlags(WindowManagerFlags.KeepScreenOn, WindowManagerFlags.KeepScreenOn);
-
-                // license and configuration are required for initialization of the documentScanViewUI:
-                string configJson = "document_view_config.json";
-
+             
                 documentScanViewUI = FindViewById<DocumentScanViewUI>(Resource.Id.document_scan_view_ui);
                 // initialize the documentScanViewConfig from a scan-view config file:
                 DocumentScanViewConfig documentScanViewConfig = new DocumentScanViewConfig(this, "document_scan_view_config.json");
 
-                documentScanViewUI.Init(LICENSE_KEY, documentScanViewConfig, configJson, savedInstanceState);
+                documentScanViewUI.Init(LICENSE_KEY, documentScanViewConfig, "document_view_config.json", savedInstanceState);
                 documentScanViewUI.SetDocumentScanViewListener(this);
 
                 _isInitialized = true;
