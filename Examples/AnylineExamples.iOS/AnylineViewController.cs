@@ -81,6 +81,9 @@ namespace AnylineExamples.iOS
 
         public TableSource(Dictionary<string, List<ExampleModel>> tableItems, AnylineViewController parent)
         {
+            // adds NFC as special case only if available
+            tableItems.Add("NFC", new List<ExampleModel> { new ExampleModel(ItemType.Header, "TEST", "New Category", "nothing") });
+
             TableItems = tableItems;
             AnylineScanViewController = parent;            
         }

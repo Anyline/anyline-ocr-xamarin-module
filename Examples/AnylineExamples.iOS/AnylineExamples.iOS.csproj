@@ -55,6 +55,7 @@
     <CodesignProvision />
     <CodesignExtraArgs />
     <CodesignResourceRules />
+    <MtouchNoSymbolStrip>false</MtouchNoSymbolStrip>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>

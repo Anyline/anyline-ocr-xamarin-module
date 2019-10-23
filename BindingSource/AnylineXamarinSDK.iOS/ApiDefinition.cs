@@ -3669,7 +3669,12 @@ namespace AnylineXamarinSDK.iOS
         // @property (assign, nonatomic) ALTINScanMode scanMode;
         [Export("scanMode", ArgumentSemantic.Assign)]
         ALTINScanMode ScanMode { get; set; }
+
+        // @property (assign, nonatomic) BOOL enableUpsideDownScan;
+        [Export("enableUpsideDownScan")]
+        bool EnableUpsideDownScan { get; set; }
     }
+
 
     // @interface ALOCRScanPlugin : ALAbstractScanPlugin
     [BaseType(typeof(ALAbstractScanPlugin))]
@@ -4235,6 +4240,8 @@ namespace AnylineXamarinSDK.iOS
         void DidFindResult(ALAbstractScanViewPluginComposite anylineCompositeScanPlugin, ALCompositeResult scanResult);
     }
 
+    /*
+
     // @interface ALDataGroup1 : NSObject
     [BaseType(typeof(NSObject))]
     interface ALDataGroup1
@@ -4406,4 +4413,6 @@ namespace AnylineXamarinSDK.iOS
         [Export("startNfcDetectionWithPassportNumber:dateOfBirth:expirationDate:")]
         void StartNfcDetectionWithPassportNumber(string passportNumber, NSDate dateOfBirth, NSDate expirationDate);
     }
+
+    */
 }
