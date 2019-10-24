@@ -61,6 +61,10 @@ namespace AnylineExamples.Droid
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_doc_scan_ui_main);
+
+            SupportActionBar.SetHomeButtonEnabled(true);
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+
             CurrentActivity = this;
             imageListView = FindViewById<ListView>(Resource.Id.list);
 
@@ -87,6 +91,23 @@ namespace AnylineExamples.Droid
                     callDocumentScanViewUIActivity();
                 }
             };
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Android.Resource.Id.Home:
+                    Finish();
+                    return true;
+                default:
+                    return base.OnOptionsItemSelected(item);
+            }
+        }
+
+        public override void OnBackPressed()
+        {
+            Finish();
         }
 
         private void displayScannedPages(IList<IO.Anyline.View.ScanPage> scanPages)
