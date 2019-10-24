@@ -16,6 +16,7 @@ namespace AnylineExamples.Droid
     {
         public const int TypeItem = 0;
         public const int TypeHeader = 1;
+        public const int TypeDocumentUI = 2;
         private readonly List<AndroidExampleModelWrapper> _items;
         private readonly Context _context;
 
@@ -82,6 +83,7 @@ namespace AnylineExamples.Droid
                 switch (rowType)
                 {
                     case TypeItem:
+                    case TypeDocumentUI:
                         ((TextView)convertView).SetTextAppearance(_context, Android.Resource.Style.TextAppearanceMedium);
                         convertView.SetPadding(32, padding, padding, padding);
                         break;

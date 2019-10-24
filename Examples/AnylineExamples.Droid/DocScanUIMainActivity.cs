@@ -13,7 +13,7 @@ using System.Collections.Generic;
 
 namespace AnylineExamples.Droid
 {
-    [Activity(Label = "DocScanUIMainActivity")]
+    [Activity(Label = "Document Scanner UI")]
     public class DocScanUIMainActivity : AppCompatActivity
     {
         public static int REQUEST_CODE_SCAN = 1;
@@ -67,7 +67,25 @@ namespace AnylineExamples.Droid
             btScan = FindViewById<Button>(Resource.Id.btScan);
             btScan.Click += (sender, e) =>
             {
-                callDocumentScanViewUIActivity();
+                // if "scan document" is called repeatedly the user will be warned that scan results from the previous pass will get lost:
+                if (FullImagePath != null &&
+                    FullImagePath.Length > 0)
+                {
+                    Android.App.AlertDialog.Builder builder = new Android.App.AlertDialog.Builder(this);
+                    builder.SetTitle("Confirm");
+                    builder.SetMessage("If you perform new scans existing scans will be overwritten");
+
+                    builder.SetPositiveButton("Ok", (senderAlert, args) => {
+                        callDocumentScanViewUIActivity();
+                    });
+
+                    Android.App.AlertDialog alert = builder.Create();
+                    alert.Show();
+                }
+                else
+                {
+                    callDocumentScanViewUIActivity();
+                }
             };
         }
 
