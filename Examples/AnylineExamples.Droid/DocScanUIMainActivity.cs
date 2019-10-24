@@ -9,7 +9,6 @@ using Android.Views;
 using Android.Widget;
 using Java.IO;
 using Java.Text;
-using System;
 using System.Collections.Generic;
 
 namespace AnylineExamples.Droid
@@ -26,9 +25,10 @@ namespace AnylineExamples.Droid
         public static string EXTRA_CORNERS = "EXTRA_CORNERS";
         public static string RESULT_PAGES = "RESULT_PAGES";
 
-        private string[] fullImagePath = null;      // a list of scanned full pictures
-        private string[] croppedImagePath = null;   // a list of (automatically or manually) cropped pictures. a cropped picture contains the document
-        private static IList<PointF>[] corners = null;      // a list of 4 corners, specifying a cropped picture within the full picture
+        private static string[] FullImagePath = null;      // a list of scanned full pictures
+        private static string[] CroppedImagePath = null;   // a list of (automatically or manually) cropped pictures. a cropped picture contains the document
+        private static IList<IList<PointF>> Corners = null;      // a list of 4 corners, specifying a cropped picture within the full picture
+        public static IList<PointF> CornersForCropUI = null;      // a list of 4 corners, specifying a cropped picture within the full picture
 
         private static int selectedPosition;               // used to update the list of cropped images and corners after adjusting corners in the cropView
 
@@ -36,6 +36,8 @@ namespace AnylineExamples.Droid
         Button btScan;
 
         static File fullImgFile;                           // the image as it was taken by the camera. need to declare it globally as it is accessed in a listener
+
+        static Activity CurrentActivity;
 
         // call the documentScanView where a user will scan documents (automatically or manually):
         private void callDocumentScanViewUIActivity()
@@ -46,18 +48,21 @@ namespace AnylineExamples.Droid
         }
 
         // call the cropView where a user will adjust corners of a cropped image or - in case the documentScanView did not detect corners - set corners initially:
-        private void callCropViewUIActivity(int pos, File fullImgFile)
+        private static void callCropViewUIActivity(int pos, File fullImgFile)
         {
-            //Intent cropActivityIntent = new Intent(DocScanUIMainActivity.this, CropViewUIActivity.class);
-            //cropActivityIntent.putExtra(EXTRA_FULL_IMAGE_PATH, fullImgFile.getAbsolutePath());
-            //cropActivityIntent.putParcelableArrayListExtra(EXTRA_CORNERS, (ArrayList<PointF>) corners[pos]);
-            //startActivityForResult(cropActivityIntent, CROP_DOCUMENT_REQUEST);
+            CornersForCropUI = Corners[pos];
+
+            Intent cropActivityIntent = new Intent(CurrentActivity, typeof(CropViewUIActivity));
+            cropActivityIntent.PutExtra(EXTRA_FULL_IMAGE_PATH, fullImgFile.AbsolutePath);
+            CurrentActivity.StartActivityForResult(cropActivityIntent, CROP_DOCUMENT_REQUEST);
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_doc_scan_ui_main);
+            CurrentActivity = this;
+            imageListView = FindViewById<ListView>(Resource.Id.list);
 
             btScan = FindViewById<Button>(Resource.Id.btScan);
             btScan.Click += (sender, e) =>
@@ -68,19 +73,22 @@ namespace AnylineExamples.Droid
 
         private void displayScannedPages(IList<IO.Anyline.View.ScanPage> scanPages)
         {
-            fullImagePath = new string[scanPages.Count];
-            croppedImagePath = new string[scanPages.Count];
-            corners = new List<PointF>[scanPages.Count];
-
+            FullImagePath = new string[scanPages.Count];
+            CroppedImagePath = new string[scanPages.Count];
+            Corners = new List<PointF>[scanPages.Count];
             for (int i = 0; i < scanPages.Count; i++)
             {
-                fullImagePath[i] = scanPages[i].FullImagePath;
-                croppedImagePath[i] = scanPages[i].CroppedImagePath;
-                corners[i] = scanPages[i].TransformationPoints;
+                FullImagePath[i] = scanPages[i].FullImagePath;
+                CroppedImagePath[i] = scanPages[i].CroppedImagePath;
+                Corners[i] = new List<PointF>();
+                foreach (var transformationPoint in scanPages[i].TransformationPoints)
+                {
+                    Corners[i].Add(transformationPoint);
+                }
             }
 
             // create new adapter to display full image, corners and cropped image:
-            imageListView.Adapter = new ImageListViewArrayAdapter(this, fullImagePath);
+            imageListView.Adapter = new ImageListViewArrayAdapter(this, FullImagePath, CroppedImagePath);
         }
 
 
@@ -99,22 +107,26 @@ namespace AnylineExamples.Droid
                     Bundle extras = data.Extras;
                     if (extras != null)
                     {
-                        //// update list of cropped images and corners - full image stays the same:
-                        //corners[selectedPosition] = extras.GetParcelableArrayList(RESULT_CORNERS);
-                        //croppedImagePath[selectedPosition] = extras.GetString(RESULT_CROPPED_IMAGE_PATH);
+                        Corners[selectedPosition] = new List<PointF>();
+                        foreach (var corner in CornersForCropUI)
+                        {
+                            Corners[selectedPosition].Add(corner);
+                        }
+                        CroppedImagePath[selectedPosition] = extras.GetString(RESULT_CROPPED_IMAGE_PATH);
 
-                        //// redraw list view as corners and cropped image have changed:
-                        //imageListView.InvalidateViews();
+                        // redraw list view as corners and cropped image have changed:
+                        imageListView.InvalidateViews();
                     }
                 }
             }
         }
 
-        internal class ImageListViewArrayAdapter : Java.Lang.Object, IListAdapter
+        internal class ImageListViewArrayAdapter : Java.Lang.Object, IListAdapter, ImageView.IOnClickListener
         {
             private DocScanUIMainActivity docScanUIMainActivity;
-            private string[] fullImagePath;
             private int layout;
+            string[] fullImagePath;
+            string[] croppedImagePath;
 
             private string getPictureResolution(Context context, string imagePath)
             {
@@ -125,10 +137,11 @@ namespace AnylineExamples.Droid
                         NumberFormat.GetInstance(context.Resources.Configuration.Locale).Format(bitMapOption.OutHeight));
             }
 
-            public ImageListViewArrayAdapter(DocScanUIMainActivity docScanUIMainActivity, string[] fullImagePath)
+            public ImageListViewArrayAdapter(DocScanUIMainActivity docScanUIMainActivity, string[] fullImagePath, string[] croppedImagePath)
             {
                 this.docScanUIMainActivity = docScanUIMainActivity;
                 this.fullImagePath = fullImagePath;
+                this.croppedImagePath = croppedImagePath;
                 layout = Resource.Layout.activity_doc_scan_ui_main_list_item;
             }
 
@@ -140,39 +153,32 @@ namespace AnylineExamples.Droid
                 public TextView tvSizeCroppedImage;
             }
 
-            public int Count => throw new NotImplementedException();
+            public int Count => fullImagePath.Length;
 
-            public bool HasStableIds => throw new NotImplementedException();
+            public bool HasStableIds => false;
 
-            public bool IsEmpty => throw new NotImplementedException();
+            public bool IsEmpty => fullImagePath.Length == 0;
 
-            public int ViewTypeCount => throw new NotImplementedException();
-
-            public IntPtr Handle => throw new NotImplementedException();
+            public int ViewTypeCount => 1;
 
             public bool AreAllItemsEnabled()
             {
-                throw new NotImplementedException();
-            }
-
-            public void Dispose()
-            {
-                throw new NotImplementedException();
+                return true;
             }
 
             public Java.Lang.Object GetItem(int position)
             {
-                throw new NotImplementedException();
+                return fullImagePath[position];
             }
 
             public long GetItemId(int position)
             {
-                throw new NotImplementedException();
+                return 1;
             }
 
             public int GetItemViewType(int position)
             {
-                throw new NotImplementedException();
+                return 1;
             }
 
             public View GetView(int position, View convertView, ViewGroup parent)
@@ -212,17 +218,17 @@ namespace AnylineExamples.Droid
                         Bitmap drawableFullBitmap = fullBitmap.Copy(Bitmap.Config.Argb8888, true);
 
                         // draw small red circles on the fullBitmap, indicating the corners:
-                        if (corners[position] != null)
+                        if (Corners[position] != null)
                         {
                             Canvas canvas = new Canvas(drawableFullBitmap);
                             Paint paint = new Paint();
                             paint.Color = Color.Red;
                             paint.StrokeWidth = 4;
                             canvas.DrawBitmap(drawableFullBitmap, new Matrix(), null);
-                            canvas.DrawCircle(corners[position][0].X, corners[position][0].Y, 12, paint);
-                            canvas.DrawCircle(corners[position][1].X, corners[position][1].Y, 12, paint);
-                            canvas.DrawCircle(corners[position][2].X, corners[position][2].Y, 12, paint);
-                            canvas.DrawCircle(corners[position][3].X, corners[position][3].Y, 12, paint);
+                            canvas.DrawCircle(Corners[position][0].X, Corners[position][0].Y, 12, paint);
+                            canvas.DrawCircle(Corners[position][1].X, Corners[position][1].Y, 12, paint);
+                            canvas.DrawCircle(Corners[position][2].X, Corners[position][2].Y, 12, paint);
+                            canvas.DrawCircle(Corners[position][3].X, Corners[position][3].Y, 12, paint);
                         }
 
                         // display the full image with the 4 corners:
@@ -232,11 +238,33 @@ namespace AnylineExamples.Droid
                         viewHolder.tvSizeFullImage.SetText(getPictureResolution(parent.Context, fullImagePath[position]), TextView.BufferType.Normal);
 
                         // if user clicks on full image: call cropView where the user can adjust corners:
-                        viewHolder.ivFullImage.Click += (s, v) =>
+                        viewHolder.ivFullImage.SetOnClickListener(this);
+                    }
+                }
+
+                if (croppedImagePath[position] != null)
+                {
+                    File croppedImgFile = new File(croppedImagePath[position]);
+                    if (croppedImgFile.Exists())
+                    {
+                        // create bitmap in ARGB-format from cropped image file:
+                        Bitmap croppedBitmap = BitmapFactory.DecodeFile(croppedImgFile.AbsolutePath);
+                        Bitmap drawableCroppedBitmap = croppedBitmap.Copy(Bitmap.Config.Argb8888, true);
+
+                        // display the cropped image:
+                        viewHolder.ivCroppedImage.SetImageBitmap(drawableCroppedBitmap);
+
+                        // display the size (height and width) of the cropped image:
+                        viewHolder.tvSizeCroppedImage.SetText(getPictureResolution(parent.Context, croppedImagePath[position]), TextView.BufferType.Normal);
+
+                        // if a full image exists and user clicks on cropped image: call cropView where the user can adjust corners:
+                        if (fullImgFile != null)
                         {
-                            selectedPosition = (int)(s as View).Tag;
-                            //callCropViewUIActivity(selectedPosition, fullImgFile);
-                        };
+                            if (fullImgFile.Exists())
+                            {
+                                viewHolder.ivCroppedImage.SetOnClickListener(this);
+                            }
+                        }
                     }
                 }
                 return convertView;
@@ -244,17 +272,21 @@ namespace AnylineExamples.Droid
 
             public bool IsEnabled(int position)
             {
-                throw new NotImplementedException();
+                return true;
             }
 
             public void RegisterDataSetObserver(DataSetObserver observer)
             {
-                throw new NotImplementedException();
             }
 
             public void UnregisterDataSetObserver(DataSetObserver observer)
             {
-                throw new NotImplementedException();
+            }
+
+            public void OnClick(View v)
+            {
+                selectedPosition = (int)v.Tag;
+                callCropViewUIActivity(selectedPosition, new File(fullImagePath[selectedPosition]));
             }
         }
     }
