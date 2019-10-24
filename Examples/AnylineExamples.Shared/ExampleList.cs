@@ -52,7 +52,7 @@ namespace AnylineExamples.Shared
         public static readonly string Bottlecap = "Bottlecap";
         public static readonly string VoucherCode = "Voucher Code";
         public static readonly string CowTag = "Cattle Tag";
-        public static readonly string SerialScanning = "Serial Scanning";
+        public static readonly string SerialScanning = "Serial Scanning [License Plate - Driving Lincense - VIN]";
 
     }
     
