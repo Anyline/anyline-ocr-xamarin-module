@@ -4242,6 +4242,8 @@ namespace AnylineXamarinSDK.iOS
 
     /*
 
+    // currently not yet supported because of SWIFT issues
+
     // @interface ALDataGroup1 : NSObject
     [BaseType(typeof(NSObject))]
     interface ALDataGroup1

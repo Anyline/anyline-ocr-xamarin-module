@@ -76,15 +76,24 @@ namespace AnylineExamples.iOS
 
         protected string CellIdentifier = "TableCell";
 
-        private readonly object _lock = new object();
-        private bool _isNavigating = false;
+        private readonly object @lock = new object();
+        private bool isNavigating = false;
+
+        private bool nfcSupported = false;
 
         public TableSource(Dictionary<string, List<ExampleModel>> tableItems, AnylineViewController parent)
         {
-            // adds NFC as special case only if available
-            tableItems.Add("NFC", new List<ExampleModel> { new ExampleModel(ItemType.Header, "TEST", "New Category", "nothing") });
-
             TableItems = tableItems;
+
+            // adds NFC as special case once it's supported
+            if (nfcSupported)
+            {
+                var lastItem = TableItems.Last();
+                TableItems.Remove(lastItem.Key);
+                TableItems.Add("NFC-Item", new List<ExampleModel> { new ExampleModel(ItemType.Item, "Scan NFC of Passports", Category.Workflows, "") });
+                TableItems.Add(lastItem.Key, lastItem.Value);
+            }
+
             AnylineScanViewController = parent;            
         }
         
@@ -152,8 +161,8 @@ namespace AnylineExamples.iOS
         {
             // Because this method might be triggered asynchronously multiple times, we have to make sure
             // that we won't create multiple ViewControllers at the same time.
-            if (_isNavigating) return;
-            lock (_lock) _isNavigating = true;
+            if (isNavigating) return;
+            lock (@lock) isNavigating = true;
             
             // free resources of old controller instances
             if (AnylineScanViewController.CurrentScanViewController != null)
@@ -174,7 +183,7 @@ namespace AnylineExamples.iOS
             await Task.Delay(200);
 
             tableView.DeselectRow(indexPath, true);
-            lock (_lock) _isNavigating = false;
+            lock (@lock) isNavigating = false;
         }
 
     };

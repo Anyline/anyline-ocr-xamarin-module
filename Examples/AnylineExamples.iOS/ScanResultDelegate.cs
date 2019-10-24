@@ -18,18 +18,18 @@ namespace AnylineExamples.iOS
         IALCompositeScanPluginDelegate
     {
         // we store the ScanViewController for navigation purposes
-        private readonly ScanViewController _scanViewController;
+        private readonly ScanViewController scanViewController;
 
         public ScanResultDelegate(ScanViewController scanViewController)
         {
-            _scanViewController = scanViewController;
+            this.scanViewController = scanViewController;
         }
 
         // we call this method in every case a result is received and deal with processing that result in the ResultViewController
         void HandleResult(object result)
         {
             var resultViewController = new ResultViewController(result);
-            _scanViewController.NavigationController?.PushViewController(resultViewController, false);
+            scanViewController.NavigationController?.PushViewController(resultViewController, false);
         }
 
         public void DidFindResult(ALIDScanPlugin anylineIDScanPlugin, ALIDResult scanResult)
