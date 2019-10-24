@@ -52,15 +52,6 @@ namespace AnylineExamples.Shared
         public static readonly string CowTag = "Cattle Tag";
         public static readonly string SerialScanning = "Serial Scanning";
 
-        public static List<string> GetItems()
-        {
-            return new List<string>
-            {
-                AnalogDigital, DialMeter, MRZ, DrivingLicense, GermanIDFront,
-                LicensePlate, UniversalSerialNumber, VIN, TIN, ShippingContainer,
-                Document, Barcode, Bottlecap, VoucherCode, CowTag, SerialScanning
-            };
-        }
     }
     
     public static class ExampleList

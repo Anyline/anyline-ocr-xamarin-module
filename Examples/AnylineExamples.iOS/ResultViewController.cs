@@ -9,15 +9,15 @@ namespace AnylineExamples.iOS
     public class ResultViewController : UITableViewController
     {
         // we store the scan result as an object
-        Dictionary<string, object> _scanResult;
-        public static string scanResultsTableCellIdentifier = "ScanResultsTableCell";
-        public static string scanResultsDictionaryTableCellIdentifier = "ScanResultsDictionaryTableCell";
+        Dictionary<string, object> scanResult;
+        public static string ScanResultsTableCellIdentifier { get; } = "ScanResultsTableCell";
+        public static string ScanResultsDictionaryTableCellIdentifier { get; } = "ScanResultsDictionaryTableCell";
 
         public ResultViewController(object scanResult)
         {
             // in our example app, we dynamically extract result values from the object via reflection.
             // Usually, you can just cast the result to the object type that matches your ScanPlugin type (e.g. ALMeterResult for ALMeterScanPlugin etc.) and access the properties directly
-            _scanResult = scanResult.CreatePropertyDictionary();
+            this.scanResult = scanResult.CreatePropertyDictionary();
         }
 
         public override void ViewDidLoad()
@@ -25,11 +25,11 @@ namespace AnylineExamples.iOS
             base.ViewDidLoad();
 
             TableView = new UITableView(View.Bounds, UITableViewStyle.Grouped);
-            TableView.Source = new TableSource(_scanResult, this);
+            TableView.Source = new TableSource(scanResult, this);
             // this cell is responsible for displaying the scanning results
-            TableView.RegisterClassForCellReuse(typeof(UITableViewCell), scanResultsTableCellIdentifier);
+            TableView.RegisterClassForCellReuse(typeof(UITableViewCell), ScanResultsTableCellIdentifier);
             // this cell only necessary for the Serial Scanning, as it contains multiple plugin results
-            TableView.RegisterClassForCellReuse(typeof(PluginResultsCell), scanResultsDictionaryTableCellIdentifier);
+            TableView.RegisterClassForCellReuse(typeof(PluginResultsCell), ScanResultsDictionaryTableCellIdentifier);
             TableView.AllowsSelection = false;
             NavigationItem.LeftBarButtonItem = new UIBarButtonItem(UIBarButtonSystemItem.Done, (sender, args) =>
             {
@@ -139,15 +139,15 @@ namespace AnylineExamples.iOS
 
                 if (currentItem is Dictionary<string, object> plugins)
                 {
-                    var pluginCell = tableView.DequeueReusableCell(scanResultsDictionaryTableCellIdentifier) as PluginResultsCell;
+                    var pluginCell = tableView.DequeueReusableCell(ScanResultsDictionaryTableCellIdentifier) as PluginResultsCell;
                     pluginCell = new PluginResultsCell(plugins, tableView);
                     return pluginCell;
                 }
 
-                var cell = tableView.DequeueReusableCell(scanResultsTableCellIdentifier);
+                var cell = tableView.DequeueReusableCell(ScanResultsTableCellIdentifier);
                 if (cell == null)
                 {
-                    cell = new UITableViewCell(UITableViewCellStyle.Default, scanResultsTableCellIdentifier);
+                    cell = new UITableViewCell(UITableViewCellStyle.Default, ScanResultsTableCellIdentifier);
                     cell.SelectionStyle = UITableViewCellSelectionStyle.None;
                     cell.Accessory = UITableViewCellAccessory.None;
                     cell.AccessoryView = null;

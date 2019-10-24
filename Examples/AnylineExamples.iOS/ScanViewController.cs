@@ -11,18 +11,18 @@ namespace AnylineExamples.iOS
     {
         readonly string LicenseKey = AnylineViewController.LicenseKey;
 
-        string _jsonPath;
-        CGRect _frame;
-        bool _initialized = false;
+        string jsonPath;
+        CGRect frame;
+        bool initialized = false;
 
-        ALScanView _scanView;
-        ScanResultDelegate _resultDelegate;
+        ALScanView scanView;
+        ScanResultDelegate resultDelegate;
         public ScanViewController(string name, string jsonPath)
         {
             Title = name;
-            _jsonPath = jsonPath;
+            this.jsonPath = jsonPath;
 
-            _resultDelegate = new ScanResultDelegate(this);
+            resultDelegate = new ScanResultDelegate(this);
         }
 
         public override void ViewDidLoad()
@@ -37,22 +37,22 @@ namespace AnylineExamples.iOS
         {
             NSError error = null;
 
-            if (_initialized)
+            if (initialized)
                 return;
 
             try
             {
-                _frame = UIScreen.MainScreen.ApplicationFrame;
-                _frame = new CGRect(_frame.X,
-                    _frame.Y + NavigationController.NavigationBar.Frame.Size.Height,
-                    _frame.Width,
-                    _frame.Height - NavigationController.NavigationBar.Frame.Size.Height);
+                frame = UIScreen.MainScreen.ApplicationFrame;
+                frame = new CGRect(frame.X,
+                    frame.Y + NavigationController.NavigationBar.Frame.Size.Height,
+                    frame.Width,
+                    frame.Height - NavigationController.NavigationBar.Frame.Size.Height);
 
                 // Use the JSON file name that you want to load here
-                var configPath = NSBundle.MainBundle.PathForResource(@"" + _jsonPath.Replace(".json", ""), @"json");
+                var configPath = NSBundle.MainBundle.PathForResource(@"" + jsonPath.Replace(".json", ""), @"json");
 
                 // This is the main intialization method that will create our use case depending on the JSON configuration.
-                _scanView = ALScanView.ScanViewForFrame(_frame, configPath, LicenseKey, _resultDelegate, out error);
+                scanView = ALScanView.ScanViewForFrame(frame, configPath, LicenseKey, resultDelegate, out error);
 
                 if (error != null)
                 {
@@ -60,7 +60,7 @@ namespace AnylineExamples.iOS
                 }
 
                 // KNOWN ISSUE (OCRScanPlugin only): the customCmdFile is not loading the file correctly. therefore, it has to be added via code:
-                if (_scanView.ScanViewPlugin is ALOCRScanViewPlugin)
+                if (scanView.ScanViewPlugin is ALOCRScanViewPlugin)
                 {
 
                     var file = File.ReadAllText(configPath);
@@ -74,11 +74,11 @@ namespace AnylineExamples.iOS
                         var name = customCmdFileName.ToString().Split('.');
                         if (name.Length == 2)
                         {
-                            var config = (_scanView.ScanViewPlugin as ALOCRScanViewPlugin).OcrScanPlugin.OcrConfig;
+                            var config = (scanView.ScanViewPlugin as ALOCRScanViewPlugin).OcrScanPlugin.OcrConfig;
                             config.CustomCmdFilePath = NSBundle.MainBundle.PathForResource(name[0], name[1]);
 
                             // explicitly call this method so everything is updated internally
-                            (_scanView.ScanViewPlugin as ALOCRScanViewPlugin).OcrScanPlugin.SetOCRConfig(config, out error);
+                            (scanView.ScanViewPlugin as ALOCRScanViewPlugin).OcrScanPlugin.SetOCRConfig(config, out error);
 
                             if (error != null)
                                 ShowAlert("OCR Config Error", error.DebugDescription);
@@ -90,9 +90,9 @@ namespace AnylineExamples.iOS
                 // this should be automatically done already with the ScanViewForFrame call.
                 ConnectDelegateToScanPlugin();
 
-                View.AddSubview(_scanView);
-                _scanView.StartCamera();
-                _initialized = true;
+                View.AddSubview(scanView);
+                scanView.StartCamera();
+                initialized = true;
             }
             catch (Exception e)
             {
@@ -102,13 +102,13 @@ namespace AnylineExamples.iOS
 
         private void ConnectDelegateToScanPlugin()
         {
-            (_scanView.ScanViewPlugin as ALIDScanViewPlugin)?.IdScanPlugin.AddDelegate(_resultDelegate);
-            (_scanView.ScanViewPlugin as ALBarcodeScanViewPlugin)?.BarcodeScanPlugin.AddDelegate(_resultDelegate);
-            (_scanView.ScanViewPlugin as ALOCRScanViewPlugin)?.OcrScanPlugin.AddDelegate(_resultDelegate);
-            (_scanView.ScanViewPlugin as ALMeterScanViewPlugin)?.MeterScanPlugin.AddDelegate(_resultDelegate);
-            (_scanView.ScanViewPlugin as ALDocumentScanViewPlugin)?.DocumentScanPlugin.AddDelegate(_resultDelegate);
-            (_scanView.ScanViewPlugin as ALLicensePlateScanViewPlugin)?.LicensePlateScanPlugin.AddDelegate(_resultDelegate);
-            (_scanView.ScanViewPlugin as ALSerialScanViewPluginComposite)?.AddDelegate(_resultDelegate);
+            (scanView.ScanViewPlugin as ALIDScanViewPlugin)?.IdScanPlugin.AddDelegate(resultDelegate);
+            (scanView.ScanViewPlugin as ALBarcodeScanViewPlugin)?.BarcodeScanPlugin.AddDelegate(resultDelegate);
+            (scanView.ScanViewPlugin as ALOCRScanViewPlugin)?.OcrScanPlugin.AddDelegate(resultDelegate);
+            (scanView.ScanViewPlugin as ALMeterScanViewPlugin)?.MeterScanPlugin.AddDelegate(resultDelegate);
+            (scanView.ScanViewPlugin as ALDocumentScanViewPlugin)?.DocumentScanPlugin.AddDelegate(resultDelegate);
+            (scanView.ScanViewPlugin as ALLicensePlateScanViewPlugin)?.LicensePlateScanPlugin.AddDelegate(resultDelegate);
+            (scanView.ScanViewPlugin as ALSerialScanViewPluginComposite)?.AddDelegate(resultDelegate);
         }
 
         public override void ViewDidAppear(bool animated)
@@ -118,13 +118,13 @@ namespace AnylineExamples.iOS
             // initialize anyline if not already initialized
             InitializeAnyline();
 
-            if (!_initialized) return;
+            if (!initialized) return;
 
             NSError error = null;
 
             BeginInvokeOnMainThread(() =>
             {
-                var success = _scanView.ScanViewPlugin.StartAndReturnError(out error);
+                var success = scanView.ScanViewPlugin.StartAndReturnError(out error);
 
                 if (!success)
                 {
@@ -145,13 +145,13 @@ namespace AnylineExamples.iOS
         {
             base.ViewWillDisappear(animated);
 
-            _initialized = false;
+            initialized = false;
 
-            if (_scanView?.ScanViewPlugin == null)
+            if (scanView?.ScanViewPlugin == null)
                 return;
 
             NSError error;
-            _scanView.ScanViewPlugin.StopAndReturnError(out error);
+            scanView.ScanViewPlugin.StopAndReturnError(out error);
         }
 
         public override void ViewDidDisappear(bool animated)
@@ -167,9 +167,9 @@ namespace AnylineExamples.iOS
 
         new void Dispose()
         {
-            _scanView?.RemoveFromSuperview();
-            _scanView?.Dispose();
-            _scanView = null;
+            scanView?.RemoveFromSuperview();
+            scanView?.Dispose();
+            scanView = null;
             base.Dispose();
         }
     }
