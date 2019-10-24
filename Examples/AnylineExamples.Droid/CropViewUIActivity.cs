@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 namespace AnylineExamples.Droid
 {
-    [Activity(Label = "Document Scanner UI")]
+    [Activity(Label = "Document [Extended UI]")]
     public class CropViewUIActivity : AppCompatActivity, CropViewUI.ICropViewUIListener
     {
         private CropViewUI cropViewUI;

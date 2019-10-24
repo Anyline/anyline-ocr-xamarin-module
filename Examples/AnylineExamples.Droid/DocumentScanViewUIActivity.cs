@@ -13,7 +13,7 @@ using System.Collections.Generic;
 
 namespace AnylineExamples.Droid
 {
-    [Activity(Label = "Document Scanner UI")]
+    [Activity(Label = "Document [Extended UI]")]
     public class DocumentScanViewUIActivity : AppCompatActivity, DocumentScanViewUI.IDocumentScanViewListener
     {
         public static IList<ScanPage> ScanPages;
