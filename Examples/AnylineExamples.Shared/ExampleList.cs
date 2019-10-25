@@ -47,12 +47,12 @@ namespace AnylineExamples.Shared
         public static readonly string TIN = "Tire Identification Number";
         public static readonly string ShippingContainer = "Shipping Container";
         public static readonly string Barcode = "Barcode";
-        public static readonly string Document = "Document [Simple UI]";
-        public static readonly string DocumentUI = "Document [Extended UI]";
+        public static readonly string Document = "Document (Simple UI)";
+        public static readonly string DocumentUI = "Document (Extended UI)";
         public static readonly string Bottlecap = "Bottlecap";
         public static readonly string VoucherCode = "Voucher Code";
         public static readonly string CowTag = "Cattle Tag";
-        public static readonly string SerialScanning = "Serial Scanning [License Plate - Driving Lincense - VIN]";
+        public static readonly string SerialScanning = "Serial Scanning (LPT > DL > VIN)";
 
     }
     
