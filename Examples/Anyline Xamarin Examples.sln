@@ -17,11 +17,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anyline.UWP", "Xamarin.Form
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "AnylineExamples.Shared", "AnylineExamples.Shared\AnylineExamples.Shared.shproj", "{32A60C2C-F310-4800-881B-AE556D4B6704}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Anyline", "Xamarin.Forms\Anyline\Anyline\Anyline.shproj", "{78009554-0405-432F-B4C4-B021143BFB1F}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Xamarin.Forms\Anyline\Anyline\Anyline.projitems*{297d5189-5cd7-4037-ad21-02dfc29d3d2b}*SharedItemsImports = 4
 		AnylineExamples.Shared\AnylineExamples.Shared.projitems*{32a60c2c-f310-4800-881b-ae556d4b6704}*SharedItemsImports = 13
 		AnylineExamples.Shared\AnylineExamples.Shared.projitems*{3bc0ac7e-3b3b-4d3f-9cc0-b2bdecc460a6}*SharedItemsImports = 4
+		Xamarin.Forms\Anyline\Anyline\Anyline.projitems*{78009554-0405-432f-b4c4-b021143bfb1f}*SharedItemsImports = 13
 		AnylineExamples.Shared\AnylineExamples.Shared.projitems*{80a96b52-6758-4bdb-b0b4-cea4ca155c60}*SharedItemsImports = 4
 		Xamarin.Forms\Anyline\Anyline\Anyline.projitems*{b3cf6dc4-58c6-47a6-9121-e4e8aff53782}*SharedItemsImports = 4
 		Xamarin.Forms\Anyline\Anyline\Anyline.projitems*{e2c21eec-7018-4684-90c0-c4053319136f}*SharedItemsImports = 4
@@ -439,6 +442,7 @@ Global
 		{B3CF6DC4-58C6-47A6-9121-E4E8AFF53782} = {1682141F-9579-4AA8-954B-93A33153408D}
 		{297D5189-5CD7-4037-AD21-02DFC29D3D2B} = {1682141F-9579-4AA8-954B-93A33153408D}
 		{E2C21EEC-7018-4684-90C0-C4053319136F} = {1682141F-9579-4AA8-954B-93A33153408D}
+		{78009554-0405-432F-B4C4-B021143BFB1F} = {1682141F-9579-4AA8-954B-93A33153408D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AEF2E1D1-1460-43AB-BE53-E8A8DE9415B0}
