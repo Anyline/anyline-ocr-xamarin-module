@@ -10,7 +10,9 @@
     "plugin": {
       "id": "TIN_ID",
       "ocrPlugin": {
-        "tinConfig": {}
+        "tinConfig": {
+          "enableUpsideDown": false
+        }
       }
     },
     "cutoutConfig": {
