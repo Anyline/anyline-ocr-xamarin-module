@@ -1,18 +1,15 @@
-﻿using System;
-using System.Threading.Tasks;
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.Content.PM;
 using Android.OS;
-using Android.Runtime;
-using Android.Support.Design.Widget;
 using Android.Support.V4.App;
 using Android.Support.V4.Content;
 using Android.Support.V7.App;
-using Android.Util;
 using Android.Views;
 using Android.Widget;
 using AnylineExamples.Shared;
+using System;
+using System.Threading.Tasks;
 
 namespace AnylineExamples.Droid
 {
@@ -25,12 +22,12 @@ namespace AnylineExamples.Droid
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            
+
             SetContentView(Resource.Layout.activity_main);
-            
+
             Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
-            
+
             listView = FindViewById<ListView>(Resource.Id.listView);
 
             listAdapter = new ActivityListAdapter(this);
@@ -43,7 +40,7 @@ namespace AnylineExamples.Droid
             listView.ItemClick += ListView_ItemClick;
 
             int REQUEST_CAMERA = 0;
-            
+
             if (ContextCompat.CheckSelfPermission(this, Android.Manifest.Permission.Camera) != Permission.Granted)
             {
                 // Should we show an explanation?
@@ -84,6 +81,11 @@ namespace AnylineExamples.Droid
             try
             {
                 var intent = new Intent(ApplicationContext, typeof(ScanActivity));
+                if (item.Model.Type == ItemType.DocumentUI)
+                {
+                    intent = new Intent(ApplicationContext, typeof(DocScanUIMainActivity));
+                }
+
                 intent.PutExtra("jsonPath", jsonPath);
                 intent.PutExtra("title", item.Model.Name);
                 StartActivity(intent);
@@ -94,7 +96,7 @@ namespace AnylineExamples.Droid
                 Console.WriteLine(e.Message);
             }
         }
-        
+
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.menu_main, menu);
@@ -106,6 +108,6 @@ namespace AnylineExamples.Droid
             int id = item.ItemId;
             return base.OnOptionsItemSelected(item);
         }
-	}
+    }
 }
 

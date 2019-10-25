@@ -2042,6 +2042,8 @@
 <attr path="/api/package[@name='io.anyline.plugin.ocr']/class[@name='AnylineTINConfig.TINScanMode']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
 <!-- AnylineTINConfig.setScanMode(io.anyline.plugin.ocr.AnylineTINConfig.TINScanMode) -->
 <attr path="/api/package[@name='io.anyline.plugin.ocr']/class[@name='AnylineTINConfig']/method[@name='setScanMode' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ocr.AnylineTINConfig.TINScanMode']]/parameter[1]" name="managedName">scanMode</attr>
+<!-- AnylineTINConfig.enableUpsideDownScan(boolean) -->
+<attr path="/api/package[@name='io.anyline.plugin.ocr']/class[@name='AnylineTINConfig']/method[@name='enableUpsideDownScan' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">upsideDownScan</attr>
 <!-- File: IO.Anyline.Plugin.Ocr.AnylineVINConfig.cs -->
 <!-- File: IO.Anyline.Plugin.Ocr.OcrScanPlugin.cs -->
 <!-- OcrScanPlugin.OcrScanPlugin(android.content.Context, java.lang.String, java.lang.String, io.anyline.plugin.ocr.AnylineOcrBaseConfig) -->

@@ -14,17 +14,17 @@
 
   "scanFormat": {
     "a4Portrait": true,
-    "a4Landscape": false,
-    "complimentSlipPortrait": true,
+    "a4Landscape": true,
+    "complimentSlipPortrait": false,
     "complimentSlipLandscape": false,
-    "businessCardPortrait": true,
+    "businessCardPortrait": false,
     "businessCardLandscape": false,
     "letterPortrait": true,
     "letterLandscape": false,
     "customRatioPortrait": true,
-    "customRatioLandscape": false,
-    "customRatioValueShortSide": 6,
-    "customRatioValueLongSide": 8
+    "customRatioLandscape": true,
+    "customRatioValueShortSide": 3,
+    "customRatioValueLongSide": 4
   },
 
   "bottomBar": {
@@ -55,18 +55,5 @@
     "line1": "picture_resize",
     "line2": "empty",
     "line3": "empty"
-  },
-
-  "colors": {
-    "tintControls": "BF046F",
-    "tintControlsDisabled": "cccccc",
-    "tintManualPictureButton": "2faea9",
-    "textMessage": "234567",
-    "backgroundMessage": "ccf2f0",
-    "textHint": "123456",
-    "backgroundHint": "ead3f5",
-    "textBottomBar": "343434",
-    "backgroundBottomBar": "f2f2f2",
-    "divider": "343434"
   }
 }
