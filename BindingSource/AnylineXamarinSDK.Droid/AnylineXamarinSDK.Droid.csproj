@@ -53,7 +53,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Additions\AbstractBaseScanViewPlugin.cs" />
-    <Compile Include="Additions\Deprecations.cs" />
     <Compile Include="Additions\IDocumentScanResultListener.cs" />
     <Compile Include="Additions\IScanResultListener.cs" />
     <Compile Include="Additions\MrzIdentification.cs" />
@@ -68,10 +67,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\raw\al_d6f3e042d13f4cc06b77dbdb2d2dcebaf46326e6.txt" />
-    <TransformFile Include="Assets\tools\Generated.xml" />
+    <TransformFile Include="Assets\tools\Generated.xml">
+      <SubType>Designer</SubType>
+    </TransformFile>
   </ItemGroup>
   <ItemGroup>
-    <LibraryProjectZip Include="Jars\anylinesdk-15.aar" />
+    <LibraryProjectZip Include="Jars\anylinesdk-16.aar" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
   <PropertyGroup>
