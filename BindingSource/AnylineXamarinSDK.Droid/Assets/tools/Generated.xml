@@ -34,6 +34,8 @@
 <!-- AnylineController.setDelayScanTime(double, double) -->
 <attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setDelayScanTime' and count(parameter)=2 and parameter[1][@type='double'] and parameter[2][@type='double']]/parameter[1]" name="managedName">delayScanTime</attr>
 <attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setDelayScanTime' and count(parameter)=2 and parameter[1][@type='double'] and parameter[2][@type='double']]/parameter[2]" name="managedName">startTime</attr>
+<!-- AnylineController.setId(java.lang.String) -->
+<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setId' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">id</attr>
 <!-- AnylineController.setImageProvider(at.nineyards.anyline.ImageProvider) -->
 <attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setImageProvider' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.ImageProvider']]/parameter[1]" name="managedName">imageProvider</attr>
 <!-- AnylineController.setReportingEnabled(boolean) -->
@@ -46,6 +48,7 @@
 <!-- File: AT.Nineyards.Anyline.AnylineWorkerRunnable.cs -->
 <!-- AnylineWorkerRunnable.setDebug(boolean) -->
 <!-- AnylineWorkerRunnable.setCropRect(io.anyline.view.CutoutRect) -->
+<!-- AnylineWorkerRunnable.setId(java.lang.String) -->
 <!-- File: AT.Nineyards.Anyline.AnylineWorkerThreadPool.cs -->
 <!-- File: AT.Nineyards.Anyline.Camera.AbstractZoomHandler.cs -->
 <!-- AbstractZoomHandler.AbstractZoomHandler(android.view.View, int, at.nineyards.anyline.camera.CameraController) -->
@@ -406,6 +409,13 @@
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='setSceneMode' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">sceneMode</attr>
 <!-- CameraView.setUseMaxFpsRange(boolean) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='setUseMaxFpsRange' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">isEnabled</attr>
+<!-- CameraView.takeHighResolutionImage(int, int, int, int, int, int) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[1]" name="managedName">top</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[2]" name="managedName">left</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[3]" name="managedName">right</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[4]" name="managedName">bottom</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[5]" name="managedName">scanViewWidth</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[6]" name="managedName">scanViewHeight</attr>
 <!-- File: AT.Nineyards.Anyline.Camera.FaceDetector.cs -->
 <!-- FaceDetector.FaceDetectionResultHandler.onFailure(java.lang.String) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/interface[@name='FaceDetector.FaceDetectionResultHandler']/method[@name='onFailure' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">e</attr>
@@ -460,6 +470,13 @@
 <!-- File: AT.Nineyards.Anyline.Camera.IHighResolutionImageProvider.cs -->
 <!-- HighResolutionImageProvider.setHighResolutionImageListener(at.nineyards.anyline.camera.HighResolutionImageListener) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/interface[@name='HighResolutionImageProvider']/method[@name='setHighResolutionImageListener' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.HighResolutionImageListener']]/parameter[1]" name="managedName">highResolutionImageListener</attr>
+<!-- HighResolutionImageProvider.takeHighResolutionImage(int, int, int, int, int, int) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/interface[@name='HighResolutionImageProvider']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[1]" name="managedName">top</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/interface[@name='HighResolutionImageProvider']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[2]" name="managedName">left</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/interface[@name='HighResolutionImageProvider']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[3]" name="managedName">right</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/interface[@name='HighResolutionImageProvider']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[4]" name="managedName">bottom</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/interface[@name='HighResolutionImageProvider']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[5]" name="managedName">scanViewWidth</attr>
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/interface[@name='HighResolutionImageProvider']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[6]" name="managedName">scanViewHeight</attr>
 <!-- File: AT.Nineyards.Anyline.Camera.IImageListener.cs -->
 <!-- ImageListener.onImageAvailable(at.nineyards.anyline.camera.ImageReceiver) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/interface[@name='ImageListener']/method[@name='onImageAvailable' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.ImageReceiver']]/parameter[1]" name="managedName">imageReceiver</attr>
@@ -931,6 +948,8 @@
 <!-- DocumentScanPlugin.setPostProcessingEnabled(boolean) -->
 <attr path="/api/package[@name='io.anyline.plugin.document']/class[@name='DocumentScanPlugin']/method[@name='setPostProcessingEnabled' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">enabled</attr>
 <!-- DocumentScanPlugin.onFinishedWithOutput(java.lang.Object) -->
+<!-- DocumentScanPlugin.setDocumentNotifierListener(io.anyline.plugin.document.DocumentNotifierListener) -->
+<attr path="/api/package[@name='io.anyline.plugin.document']/class[@name='DocumentScanPlugin']/method[@name='setDocumentNotifierListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.document.DocumentNotifierListener']]/parameter[1]" name="managedName">listener</attr>
 <!-- DocumentScanPlugin.setDocumentRatios(java.lang.Double...) -->
 <attr path="/api/package[@name='io.anyline.plugin.document']/class[@name='DocumentScanPlugin']/method[@name='setDocumentRatios' and count(parameter)=1 and parameter[1][@type='java.lang.Double...']]/parameter[1]" name="managedName">ratios</attr>
 <!-- DocumentScanPlugin.setMaxDocumentOutputResolution(java.lang.Double, java.lang.Double) -->
@@ -981,6 +1000,8 @@
 <!-- File: IO.Anyline.Plugin.Document.IDocumentNotifierListener.cs -->
 <!-- DocumentNotifierListener.notifyDrawDocumentFeedback(java.util.List&lt;android.graphics.PointF&gt;) -->
 <attr path="/api/package[@name='io.anyline.plugin.document']/interface[@name='DocumentNotifierListener']/method[@name='notifyDrawDocumentFeedback' and count(parameter)=1 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;']]/parameter[1]" name="managedName">points</attr>
+<!-- DocumentNotifierListener.notifyTakeHighPictureResolution(at.nineyards.anyline.CombinedImageProvider) -->
+<attr path="/api/package[@name='io.anyline.plugin.document']/interface[@name='DocumentNotifierListener']/method[@name='notifyTakeHighPictureResolution' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.CombinedImageProvider']]/parameter[1]" name="managedName">combinedImageProvider</attr>
 <!-- File: IO.Anyline.Plugin.Document.IDocumentScanResultListener.cs -->
 <!-- DocumentScanResultListener.onDocumentOutlineDetected(java.util.List&lt;android.graphics.PointF&gt;, boolean) -->
 <attr path="/api/package[@name='io.anyline.plugin.document']/interface[@name='DocumentScanResultListener']/method[@name='onDocumentOutlineDetected' and count(parameter)=2 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[2][@type='boolean']]/parameter[1]" name="managedName">corners</attr>
@@ -2206,6 +2227,8 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='initComposite' and count(parameter)=2 and parameter[1][@type='org.json.JSONObject'] and parameter[2][@type='java.lang.String']]/parameter[2]" name="managedName">licenseKey</attr>
 <!-- ScanView.notifyDrawDocumentFeedback(java.util.List&lt;android.graphics.PointF&gt;) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='notifyDrawDocumentFeedback' and count(parameter)=1 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;']]/parameter[1]" name="managedName">points</attr>
+<!-- ScanView.notifyTakeHighPictureResolution(at.nineyards.anyline.CombinedImageProvider) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='notifyTakeHighPictureResolution' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.CombinedImageProvider']]/parameter[1]" name="managedName">imageProvider</attr>
 <!-- ScanView.onCutoutChanged(io.anyline.view.CutoutRect) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='onCutoutChanged' and count(parameter)=1 and parameter[1][@type='io.anyline.view.CutoutRect']]/parameter[1]" name="managedName">cutoutRect</attr>
 <!-- ScanView.onCutoutConfigChanged(io.anyline.view.CutoutConfig) -->
