@@ -295,6 +295,15 @@ namespace AnylineXamarinSDK.iOS
         Standard,
         Flexible
     }
+
+    [Native]
+    public enum ALTINUpsideDownMode : long
+    {
+        Disabled = 0,
+        Enabled = 1,
+        Auto = 2
+    }
+
     [Native]
     public enum ALOCRError : long
     {
@@ -336,7 +345,42 @@ namespace AnylineXamarinSDK.iOS
         Poland = 9,
         Slovakia = 10,
         Slovenia = 11,
-        GreatBritain = 12,
-        France = 13
+        UnitedKingdom = 12,
+        France = 13,
+        Albania = 14,
+        Armenia = 15,
+        Azerbaijan = 16,
+        Belarus = 17,
+        Belgium = 18,
+        BosniaAndHerzegovina = 19,
+        Bulgaria = 20,
+        Cyprus = 21,
+        Denmark = 22,
+        Estonia = 23,
+        Georgia = 24,
+        Greece = 25,
+        Hungary = 26,
+        Iceland = 27,
+        Italy = 28,
+        Latvia = 29,
+        Liechtenstein = 30,
+        Lithuania = 31,
+        Luxembourg = 32,
+        Malta = 33,
+        Moldova = 34,
+        Monaco = 35,
+        Montenegro = 36,
+        Netherlands = 37,
+        NorthMacedonia = 38,
+        Portugal = 39,
+        Romania = 40,
+        Russia = 41,
+        Serbia = 42,
+        Spain = 43,
+        Sweden = 44,
+        Turkey = 45,
+        Ukraine = 46,
+        Switzerland = 47,
+        Andorra = 48
     }
 }
