@@ -222,10 +222,12 @@ namespace AnylineExamples.iOS
             this.plugins = plugins;
             this.tableView = tableView;
 
-            BackgroundColor = UIColor.FromRGB(247, 247, 247);
+            bool darkMode = TraitCollection.UserInterfaceStyle == UIUserInterfaceStyle.Dark;
+
+            BackgroundColor = darkMode ? UIColor.FromRGB(0, 0, 0) : UIColor.FromRGB(247, 247, 247);
             ClipsToBounds = true;
             LayoutMargins = UIEdgeInsets.Zero;
-            
+
             int indexResult = 0;
             foreach (var plugin in plugins)
             {
@@ -259,7 +261,7 @@ namespace AnylineExamples.iOS
                     {
                         TranslatesAutoresizingMaskIntoConstraints = false,
                         Text = property.Key,
-                        TextColor = UIColor.Black,
+                        TextColor = darkMode ? UIColor.White : UIColor.Black,
                         Font = UIFont.SystemFontOfSize(16)
                     };
                     stackView.AddArrangedSubview(lbPropertyKey);
@@ -283,7 +285,7 @@ namespace AnylineExamples.iOS
                             Text = property.Value.ToString(),
                             LineBreakMode = UILineBreakMode.WordWrap,
                             Lines = 2,
-                            TextColor = UIColor.Black,
+                            TextColor = darkMode ? UIColor.White : UIColor.Black,
                             Font = UIFont.BoldSystemFontOfSize(17),
                         };
                         stackView.AddArrangedSubview(lbPropertyValue);

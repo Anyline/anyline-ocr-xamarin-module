@@ -53,6 +53,7 @@ namespace AnylineExamples.Shared
         public static readonly string VoucherCode = "Voucher Code";
         public static readonly string CowTag = "Cattle Tag";
         public static readonly string SerialScanning = "Serial Scanning (LPT > DL > VIN)";
+        public static readonly string ParallelScanning = "Parallel Scanning (Meter / Barcode)";
 
     }
     
@@ -90,6 +91,7 @@ namespace AnylineExamples.Shared
 
             new ExampleModel(ItemType.Header, Category.Workflows, Category.Workflows, ""),
             new ExampleModel(ItemType.Item, Example.SerialScanning, Category.Workflows, "workflows_config_serial_scanning.json"),
+            new ExampleModel(ItemType.Item, Example.ParallelScanning, Category.Workflows, "workflows_config_parallel_scanning.json"),
 
             new ExampleModel(ItemType.Header, Category.Version, Category.Version, ""),
         };

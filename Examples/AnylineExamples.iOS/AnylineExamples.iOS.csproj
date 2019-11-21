@@ -111,6 +111,7 @@
     <BundleResource Include="Resources\others_config_cow_tag.json" />
     <BundleResource Include="Resources\workflows_config_serial_scanning.json" />
     <BundleResource Include="Resources\mro_config_tin.json" />
+    <BundleResource Include="Resources\workflows_config_parallel_scanning.json" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

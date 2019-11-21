@@ -109,6 +109,7 @@ namespace AnylineExamples.iOS
             (scanView.ScanViewPlugin as ALDocumentScanViewPlugin)?.DocumentScanPlugin.AddDelegate(resultDelegate);
             (scanView.ScanViewPlugin as ALLicensePlateScanViewPlugin)?.LicensePlateScanPlugin.AddDelegate(resultDelegate);
             (scanView.ScanViewPlugin as ALSerialScanViewPluginComposite)?.AddDelegate(resultDelegate);
+            (scanView.ScanViewPlugin as ALParallelScanViewPluginComposite)?.AddDelegate(resultDelegate);
         }
 
         public override void ViewDidAppear(bool animated)

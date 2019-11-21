@@ -71,7 +71,7 @@ namespace AnylineExamples.iOS
                                             var sublist = result.Value.CreatePropertyDictionary();
                                             mapResultsSerialScanning.Add(result.Key.ToString(), sublist);
                                         }
-                                        dict.Add($"Serial Scanning {serialScanningIndex}", mapResultsSerialScanning);
+                                        dict.Add($"Composite {serialScanningIndex}", mapResultsSerialScanning);
 
                                         serialScanningIndex++;
                                     }
