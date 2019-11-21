@@ -3712,11 +3712,7 @@ namespace AnylineXamarinSDK.iOS
         // -(ALLicensePlateScanMode)parseScanModeString:(NSString * _Nonnull)scanModeString;
         [Export("parseScanModeString:")]
         ALLicensePlateScanMode ParseScanModeString(string scanModeString);
-
-        // @property (readonly, atomic) NSMutableDictionary<NSString *,NSString *> * _Nullable validationRegex;
-        [NullAllowed, Export("validationRegex")]
-        NSMutableDictionary<NSString, NSString> ValidationRegex { get; }
-
+        
         // -(void)addValidationRegexEntry:(NSString * _Nullable)validationRegex forCountry:(ALLicensePlateScanMode)scanMode;
         [Export("addValidationRegexEntry:forCountry:")]
         void AddValidationRegexEntry([NullAllowed] string validationRegex, ALLicensePlateScanMode scanMode);
@@ -3725,9 +3721,9 @@ namespace AnylineXamarinSDK.iOS
         [Export("removeValidationRegexEntryForCountry:")]
         void RemoveValidationRegexEntryForCountry(ALLicensePlateScanMode scanMode);
 
-        // @property (readonly, atomic) NSMutableDictionary<NSString *,NSString *> * _Nullable characterWhitelist;
-        [NullAllowed, Export("characterWhitelist")]
-        NSMutableDictionary<NSString, NSString> CharacterWhitelist { get; }
+        // - (NSMutableDictionary<NSString *,NSString *> * _Nullable)validationRegex;
+        [NullAllowed, Export("validationRegex")]
+        NSMutableDictionary<NSString, NSString> ValidationRegex { get; }
 
         // -(void)addCharacterWhiteListEntry:(NSString * _Nullable)characterWhiteList forCountry:(ALLicensePlateScanMode)scanMode;
         [Export("addCharacterWhiteListEntry:forCountry:")]
@@ -3736,6 +3732,10 @@ namespace AnylineXamarinSDK.iOS
         // -(void)removeCharacterWhiteListEntryForCountry:(ALLicensePlateScanMode)scanMode;
         [Export("removeCharacterWhiteListEntryForCountry:")]
         void RemoveCharacterWhiteListEntryForCountry(ALLicensePlateScanMode scanMode);
+
+        // - (NSMutableDictionary<NSString *,NSString *> * _Nullable)characterWhitelist;
+        [NullAllowed, Export("characterWhitelist")]
+        NSMutableDictionary<NSString, NSString> CharacterWhitelist { get; }
     }
 
     // @protocol ALLicensePlateScanPluginDelegate <NSObject>
