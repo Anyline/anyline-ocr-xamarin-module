@@ -1748,8 +1748,8 @@
 <!-- AbstractScanViewPluginComposite.fireOnPluginResult(io.anyline.plugin.ScanResult) -->
 <!-- AbstractScanViewPluginComposite.fireOnPluginScanRunSkipped(io.anyline.plugin.ScanRunSkippedReason) -->
 <!-- AbstractScanViewPluginComposite.isFinalResult(io.anyline.plugin.ScanResult) -->
-<!-- AbstractScanViewPluginComposite.remove(io.anyline.plugin.ScanPlugin) -->
-<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPluginComposite']/method[@name='remove' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanPlugin']]/parameter[1]" name="managedName">scanPlugin</attr>
+<!-- AbstractScanViewPluginComposite.remove(io.anyline.view.AbstractScanViewPlugin) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPluginComposite']/method[@name='remove' and count(parameter)=1 and parameter[1][@type='io.anyline.view.AbstractScanViewPlugin']]/parameter[1]" name="managedName">scanViewPlugin</attr>
 <!-- AbstractScanViewPluginComposite.removeScanInfoListener(io.anyline.plugin.ScanInfoListener) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPluginComposite']/method[@name='removeScanInfoListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanInfoListener']]/parameter[1]" name="managedName">listener</attr>
 <!-- AbstractScanViewPluginComposite.removeScanResultListener(io.anyline.plugin.ScanResultListener) -->
@@ -2237,8 +2237,9 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='onCutoutVisibility' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='boolean']]/parameter[1]" name="managedName">id</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='onCutoutVisibility' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='boolean']]/parameter[2]" name="managedName">visible</attr>
 <!-- ScanView.onLayout(boolean, int, int, int, int) -->
-<!-- ScanView.onScaleUpdate(float) -->
-<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='onScaleUpdate' and count(parameter)=1 and parameter[1][@type='float']]/parameter[1]" name="managedName">scale</attr>
+<!-- ScanView.onScaleUpdate(float, java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='onScaleUpdate' and count(parameter)=2 and parameter[1][@type='float'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">scale</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='onScaleUpdate' and count(parameter)=2 and parameter[1][@type='float'] and parameter[2][@type='java.lang.String']]/parameter[2]" name="managedName">id</attr>
 <!-- ScanView.onScanFeedbackConfigChanged(java.lang.Object, java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='onScanFeedbackConfigChanged' and count(parameter)=2 and parameter[1][@type='java.lang.Object'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">drawObject</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='onScanFeedbackConfigChanged' and count(parameter)=2 and parameter[1][@type='java.lang.Object'] and parameter[2][@type='java.lang.String']]/parameter[2]" name="managedName">id</attr>
@@ -2293,6 +2294,8 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPluginConfig']/method[@name='setCancelOnResult' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">isCancelOnResult</attr>
 <!-- ScanViewPluginConfig.setDelayStartScanTime(double) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPluginConfig']/method[@name='setDelayStartScanTime' and count(parameter)=1 and parameter[1][@type='double']]/parameter[1]" name="managedName">delayStartScanTime</attr>
+<!-- ScanViewPluginConfig.setScale(float) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPluginConfig']/method[@name='setScale' and count(parameter)=1 and parameter[1][@type='float']]/parameter[1]" name="managedName">scale</attr>
 <!-- ScanViewPluginConfig.setVisualFeedbackConfig(at.nineyards.anyline.camera.VisualFeedbackConfig) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPluginConfig']/method[@name='setVisualFeedbackConfig' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.VisualFeedbackConfig']]/parameter[1]" name="managedName">visualFeedbackConfig</attr>
 <!-- ScanViewPluginConfig.init(android.content.Context, org.json.JSONObject) -->
