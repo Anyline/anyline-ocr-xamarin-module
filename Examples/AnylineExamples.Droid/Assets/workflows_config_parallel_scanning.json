@@ -50,35 +50,39 @@
       {
         "viewPlugin": {
           "plugin": {
-            "id": "Barcode_ID",
-            "barcodePlugin": {
-
-            }
+            "id": "USNR_ID",
+            "ocrPlugin": {
+              "ocrConfig": {}
+            },
+            "delayStartScanTime": 1000
           },
           "cutoutConfig": {
             "style": "rect",
-            "maxWidthPercent": "80%",
-            "maxHeightPercent": "80%",
+            "width": 720,
             "alignment": "center",
+            "maxWidthPercent": "80%",
             "ratioFromSize": {
-              "width": 100,
-              "height": 80
+              "width": 720,
+              "height": 144
             },
-            "strokeWidth": 1,
-            "cornerRadius": 3,
+            "strokeWidth": 2,
             "strokeColor": "FFFFFF",
+            "cornerRadius": 4,
             "outerColor": "000000",
-            "outerAlpha": 0.3,
-            "feedbackStrokeColor": "0099FF"
+            "outerAlpha": 0.5,
+            "feedbackStrokeColor": "0099FF",
+            "offset": {
+              "x": 0,
+              "y": 0
+            }
           },
           "scanFeedback": {
-            "style": "rect",
+            "style": "CONTOUR_RECT",
             "strokeColor": "0099FF",
             "fillColor": "220099FF",
-            "animationDuration": 150,
-            "blinkOnResult": true,
             "beepOnResult": true,
-            "vibrateOnResult": true
+            "vibrateOnResult": true,
+            "blinkAnimationOnResult": true
           },
           "cancelOnResult": true
         }

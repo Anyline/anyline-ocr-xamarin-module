@@ -193,7 +193,7 @@ namespace AnylineExamples.iOS
         };
     };
 
-    // this cell represents the results of a Serial Scanning
+    // this cell represents the results of a Composite scan
     // for this example we work with 'object' results so any combination of plugins can be used
     // usually you would just cast the results to the object type that matches your ScanPlugin types
     public class PluginResultsCell : UITableViewCell
@@ -311,11 +311,20 @@ namespace AnylineExamples.iOS
             for (int i = 0; i < stackViewList.Count; i++)
             {
                 if (i == 0)
+                {
                     stackViewList[i].LeadingAnchor.ConstraintEqualTo(stackContent.LeadingAnchor).Active = true;
+                    stackViewList[i].TopAnchor.ConstraintEqualTo(stackContent.TopAnchor).Active = true;
+                }
                 else if (i == stackViewList.Count - 1)
+                {
                     stackViewList[i].TrailingAnchor.ConstraintEqualTo(stackContent.TrailingAnchor).Active = true;
+                    stackViewList[i].BottomAnchor.ConstraintEqualTo(stackContent.BottomAnchor).Active = true;
+                }
                 else
+                {
                     stackViewList[i].LeadingAnchor.ConstraintEqualTo(stackViewList[i - 1].TrailingAnchor).Active = true;
+                    stackViewList[i].TopAnchor.ConstraintEqualTo(stackViewList[i - 1].BottomAnchor).Active = true;
+                }
             }
         }
 
