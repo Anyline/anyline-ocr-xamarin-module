@@ -1,33 +1,34 @@
+using AnylineExamples.Shared;
 using Foundation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using UIKit;
-using System.Threading.Tasks;
 using System.Reflection;
-using AnylineExamples.Shared;
+using System.Threading.Tasks;
+using UIKit;
 
 namespace AnylineExamples.iOS
 {
-	public partial class AnylineViewController : UITableViewController
-	{
+    public partial class AnylineViewController : UITableViewController
+    {
 
         public const string LicenseKey = "eyAiYW5kcm9pZElkZW50aWZpZXIiOiBbICJBVC5BbnlsaW5lLlhhbWFyaW4uQXBwLkRyb2lkIiwgIkFULkFueWxpbmUuWGFtYXJpbi5Gb3Jtcy5BcHAuRHJvaWQiIF0sICJkZWJ1Z1JlcG9ydGluZyI6ICJvbiIsICJpb3NJZGVudGlmaWVyIjogWyAiQVQuQW55bGluZS5YYW1hcmluLkFwcC5pT1MiLCAiQVQuQW55bGluZS5YYW1hcmluLkZvcm1zLkFwcC5pT1MiIF0sICJsaWNlbnNlS2V5VmVyc2lvbiI6IDIsICJtYWpvclZlcnNpb24iOiAiMyIsICJwaW5nUmVwb3J0aW5nIjogdHJ1ZSwgInBsYXRmb3JtIjogWyAiaU9TIiwgIkFuZHJvaWQiIF0sICJzY29wZSI6IFsgIkFMTCIgXSwgInNob3dXYXRlcm1hcmsiOiB0cnVlLCAidG9sZXJhbmNlRGF5cyI6IDkwLCAidmFsaWQiOiAiMjAyMC0wMS0wMSIgfQprcS9WL0wrSGlpN0NzL2tXa1E5VWRzbGxzd0hOanphelZEZ2Z2WU1LLytJN1VHYmlITy9SblMrdGZIeUZxQmlJCkN3QXkrdkk5RnJpOVc5MStGdjJTS2FJNS8vLzZhUVgyVXlSVC9CaVRKM1QzTXBVOEIrMWpFZTQxbCtXejRqaFgKMlZ6dENpT2E3cit3d2RlTm1GUFpxdGVUTG5BRmgxQWgycDZpMzgyMWhOb3FsVHNxcFlJdjN3cWdCbWg5clh2WgpBM01pRnpkZ0dab1gzbzNINzFGRUtJME9JSy9ZRkNJRk5nVEI0MFhBM3ZTOXk2ak1FR2E5bjVQRHY5MU5NZEFRCnlHTzcxRVVuZE9ndmJmTkJWbVJYNUR1MGVrZ0RGYUNFMUwweVpUQ3dhMFJVTStLSE9PcXA3TThYOWVFdjJ0RVkKVEcyejdydGQ5YytiRlBvTU5vcUpwZz09Cg==";
 
         public UIViewController CurrentScanViewController { get; set; }
 
         public Dictionary<string, List<ExampleModel>> TableItems = new Dictionary<string, List<ExampleModel>>();
-        
-        public AnylineViewController (IntPtr handle) : base (handle){ }
-		
+
+        public AnylineViewController(IntPtr handle) : base(handle) { }
+
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
 
             var list = ExampleList.Items;
+            list.Remove(ExampleList.Items.FirstOrDefault(x => x.Type == ItemType.DocumentUI));
 
             string currentCategory = null;
-            var currentElements = new List<ExampleModel> ();
+            var currentElements = new List<ExampleModel>();
 
             foreach (var item in list)
             {
@@ -56,7 +57,7 @@ namespace AnylineExamples.iOS
         }
 
         // Lock orientation to portrait
-        public override UIInterfaceOrientationMask GetSupportedInterfaceOrientations ()
+        public override UIInterfaceOrientationMask GetSupportedInterfaceOrientations()
         {
             return UIInterfaceOrientationMask.Portrait;
         }
@@ -66,7 +67,7 @@ namespace AnylineExamples.iOS
         {
             return false;
         }
-	};
+    };
 
     public class TableSource : UITableViewSource
     {
@@ -94,9 +95,9 @@ namespace AnylineExamples.iOS
                 TableItems.Add(lastItem.Key, lastItem.Value);
             }
 
-            AnylineScanViewController = parent;            
+            AnylineScanViewController = parent;
         }
-        
+
         private string GetBuildVersion()
         {
             return typeof(AnylineViewController).Assembly.GetName().Version.ToString();
@@ -112,7 +113,7 @@ namespace AnylineExamples.iOS
                     var assembly = assemblies.Where(x => x.FullName.StartsWith("AnylineXamarinSDK")).FirstOrDefault();
                     if (assembly != null)
                     {
-                        return $"SDK: {assembly.GetName().Version} - Build: {GetBuildVersion()}";               
+                        return $"SDK: {assembly.GetName().Version} - Build: {GetBuildVersion()}";
                     }
                     return "";
                 }
@@ -125,7 +126,7 @@ namespace AnylineExamples.iOS
         }
 
         public override nint RowsInSection(UITableView tableview, nint section)
-        {            
+        {
             try
             {
                 return TableItems.ToList().ElementAt((int)section).Value.Count();
@@ -163,20 +164,20 @@ namespace AnylineExamples.iOS
             // that we won't create multiple ViewControllers at the same time.
             if (isNavigating) return;
             lock (@lock) isNavigating = true;
-            
+
             // free resources of old controller instances
             if (AnylineScanViewController.CurrentScanViewController != null)
             {
                 AnylineScanViewController.CurrentScanViewController.Dispose();
                 AnylineScanViewController.CurrentScanViewController = null;
             }
-            
+
             // create a new ScanViewController with the correct json config
             var example = TableItems.ElementAt(indexPath.Section).Value.ElementAt(indexPath.Row);
             AnylineScanViewController.CurrentScanViewController = new ScanViewController(example.Name, example.JsonPath);
-            
+
             // navigate to the newly created scan view controller
-            if (AnylineScanViewController.CurrentScanViewController != null)            
+            if (AnylineScanViewController.CurrentScanViewController != null)
                 AnylineScanViewController.NavigationController.PushViewController(AnylineScanViewController.CurrentScanViewController, false);
 
             // workaround so the row selection is not creating a scanViewController twice

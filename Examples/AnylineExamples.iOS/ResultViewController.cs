@@ -193,7 +193,7 @@ namespace AnylineExamples.iOS
         };
     };
 
-    // this cell represents the results of a Serial Scanning
+    // this cell represents the results of a Composite scan
     // for this example we work with 'object' results so any combination of plugins can be used
     // usually you would just cast the results to the object type that matches your ScanPlugin types
     public class PluginResultsCell : UITableViewCell
@@ -222,10 +222,12 @@ namespace AnylineExamples.iOS
             this.plugins = plugins;
             this.tableView = tableView;
 
-            BackgroundColor = UIColor.FromRGB(247, 247, 247);
+            bool darkMode = TraitCollection.UserInterfaceStyle == UIUserInterfaceStyle.Dark;
+
+            BackgroundColor = darkMode ? UIColor.FromRGB(0, 0, 0) : UIColor.FromRGB(247, 247, 247);
             ClipsToBounds = true;
             LayoutMargins = UIEdgeInsets.Zero;
-            
+
             int indexResult = 0;
             foreach (var plugin in plugins)
             {
@@ -259,7 +261,7 @@ namespace AnylineExamples.iOS
                     {
                         TranslatesAutoresizingMaskIntoConstraints = false,
                         Text = property.Key,
-                        TextColor = UIColor.Black,
+                        TextColor = darkMode ? UIColor.White : UIColor.Black,
                         Font = UIFont.SystemFontOfSize(16)
                     };
                     stackView.AddArrangedSubview(lbPropertyKey);
@@ -283,7 +285,7 @@ namespace AnylineExamples.iOS
                             Text = property.Value.ToString(),
                             LineBreakMode = UILineBreakMode.WordWrap,
                             Lines = 2,
-                            TextColor = UIColor.Black,
+                            TextColor = darkMode ? UIColor.White : UIColor.Black,
                             Font = UIFont.BoldSystemFontOfSize(17),
                         };
                         stackView.AddArrangedSubview(lbPropertyValue);
@@ -309,11 +311,20 @@ namespace AnylineExamples.iOS
             for (int i = 0; i < stackViewList.Count; i++)
             {
                 if (i == 0)
+                {
                     stackViewList[i].LeadingAnchor.ConstraintEqualTo(stackContent.LeadingAnchor).Active = true;
+                    stackViewList[i].TopAnchor.ConstraintEqualTo(stackContent.TopAnchor).Active = true;
+                }
                 else if (i == stackViewList.Count - 1)
+                {
                     stackViewList[i].TrailingAnchor.ConstraintEqualTo(stackContent.TrailingAnchor).Active = true;
+                    stackViewList[i].BottomAnchor.ConstraintEqualTo(stackContent.BottomAnchor).Active = true;
+                }
                 else
+                {
                     stackViewList[i].LeadingAnchor.ConstraintEqualTo(stackViewList[i - 1].TrailingAnchor).Active = true;
+                    stackViewList[i].TopAnchor.ConstraintEqualTo(stackViewList[i - 1].BottomAnchor).Active = true;
+                }
             }
         }
 

@@ -100,7 +100,7 @@ namespace AnylineExamples.Droid
                                         mapResultsSerialScanning.Put(indexResult, mapPluginResults);
                                         indexResult++;
                                     }
-                                    dict.Add($"Serial Scanning {serialScanningIndex}", mapResultsSerialScanning);
+                                    dict.Add($"Composite {serialScanningIndex}", mapResultsSerialScanning);
                                     serialScanningIndex++;
                                 }
                                 else if (value is AnylineImage)

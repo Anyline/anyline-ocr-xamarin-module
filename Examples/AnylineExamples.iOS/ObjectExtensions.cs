@@ -56,27 +56,34 @@ namespace AnylineExamples.iOS
                         case "SuperHandle":
                             break;
                         default:
-
-                            var value = prop.GetValue(obj, null);
-
-                            if (value != null)
+                            try
                             {
-                                if (value is Foundation.NSDictionary results)
-                                {
-                                    var mapResultsSerialScanning = new Dictionary<string, object>();
-                                    foreach (KeyValuePair<Foundation.NSObject, Foundation.NSObject> result in results)
-                                    {
-                                        var sublist = result.Value.CreatePropertyDictionary();
-                                        mapResultsSerialScanning.Add(result.Key.ToString(), sublist);
-                                    }
-                                    dict.Add($"Serial Scanning {serialScanningIndex}", mapResultsSerialScanning);
 
-                                    serialScanningIndex++;
-                                }
-                                else
+                                var value = prop.GetValue(obj, null);
+
+                                if (value != null)
                                 {
-                                    dict.AddProperty(prop.Name, value);
+                                    if (value is Foundation.NSDictionary results)
+                                    {
+                                        var mapResultsSerialScanning = new Dictionary<string, object>();
+                                        foreach (KeyValuePair<Foundation.NSObject, Foundation.NSObject> result in results)
+                                        {
+                                            var sublist = result.Value.CreatePropertyDictionary();
+                                            mapResultsSerialScanning.Add(result.Key.ToString(), sublist);
+                                        }
+                                        dict.Add($"Composite {serialScanningIndex}", mapResultsSerialScanning);
+
+                                        serialScanningIndex++;
+                                    }
+                                    else
+                                    {
+                                        dict.AddProperty(prop.Name, value);
+                                    }
                                 }
+                            }
+                            catch (Exception e)
+                            {
+                                Debug.WriteLine(e.Message);
                             }
                             break;
                     }
