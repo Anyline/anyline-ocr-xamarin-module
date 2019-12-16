@@ -61,7 +61,7 @@
   <remove-node path="/api/package[@name='io.anyline.view']/class[@name='BrightnessHelper']" />
 
   <remove-node path="/api/package[@name='at.nineyards.anyline']/class[@name='BuildConfig']"/>
-  <remove-node path="/api/package[@name='at.nineyards.anyline']/class[@name='SimpleImageProvider']"/>
+  <!--<remove-node path="/api/package[@name='at.nineyards.anyline']/class[@name='SimpleImageProvider']"/>-->
   <remove-node path="/api/package[@name='at.nineyards.anyline']/interface[@name='AnylineListener']"/>
   <remove-node path="/api/package[@name='at.nineyards.anyline']/interface[@name='AnylineDebugListener']"/>
   
