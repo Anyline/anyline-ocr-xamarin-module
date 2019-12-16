@@ -8,7 +8,7 @@ using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
-[assembly: ExportRenderer(typeof(ScanPage), typeof(ScanPageRenderer))]
+[assembly: ExportRenderer(typeof(ScanExamplePage), typeof(ScanPageRenderer))]
 namespace Anyline.iOS
 {
     public class ScanPageRenderer : PageRenderer
@@ -62,12 +62,12 @@ namespace Anyline.iOS
             {
                 frame = View.Bounds;
 
-                string configurationFile = (Element as ScanPage).ConfigurationFile.Replace(".json", "");
+                string configurationFile = (Element as ScanExamplePage).ConfigurationFile.Replace(".json", "");
 
                 // Use the JSON file name that you want to load here
                 var configPath = NSBundle.MainBundle.PathForResource(configurationFile, @"json");
                 // This is the main intialization method that will create our use case depending on the JSON configuration.
-                _resultDelegate = new ScanResultDelegate((Element as ScanPage).ShowResultsAction);
+                _resultDelegate = new ScanResultDelegate((Element as ScanExamplePage).ShowResultsAction);
                 _scanView = ALScanView.ScanViewForFrame(frame, configPath, licenseKey, _resultDelegate, out error);
 
                 if (error != null)

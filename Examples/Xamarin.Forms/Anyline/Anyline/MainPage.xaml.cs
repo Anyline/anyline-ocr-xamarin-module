@@ -36,7 +36,9 @@ namespace Anyline
 
         private async void BtScan_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ScanPage(((Button)sender).ClassId));
+            (sender as Button).IsEnabled = false;
+            await Navigation.PushAsync(new ScanExamplePage(((Button)sender).ClassId));
+            (sender as Button).IsEnabled = true;
         }
     }
 }

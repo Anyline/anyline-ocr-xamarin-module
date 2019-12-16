@@ -15,7 +15,7 @@ using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-[assembly: ExportRenderer(typeof(ScanPage), typeof(ScanPageRenderer))]
+[assembly: ExportRenderer(typeof(ScanExamplePage), typeof(ScanPageRenderer))]
 
 namespace Anyline.Droid
 {
@@ -41,7 +41,7 @@ namespace Anyline.Droid
                 return;
             }
 
-            string configurationFile = (Element as ScanPage).ConfigurationFile.Replace(".json", "") + ".json";
+            string configurationFile = (Element as ScanExamplePage).ConfigurationFile.Replace(".json", "") + ".json";
 
             try
             {
@@ -91,7 +91,28 @@ namespace Anyline.Droid
         public void OnResult(Java.Lang.Object result)
         {
             var processedResults = CreatePropertyList((result as AnylineScanResult));
-            (Element as ScanPage).ShowResultsAction?.Invoke(processedResults);
+            (Element as ScanExamplePage).ShowResultsAction?.Invoke(processedResults);
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            DisposeResources();
+            base.Dispose(disposing);
+        }
+
+        private void DisposeResources()
+        {
+            if (scanView != null)
+            {
+                scanView.Stop();
+                scanView.CameraView.ReleaseCameraInBackground();
+                scanView.CameraOpened -= ScanView_CameraOpened;
+                scanView.Dispose();
+                scanView = null;
+            }
+            view = null;
+            RemoveAllViews();
+            GC.Collect();
         }
 
         private Dictionary<string, object> CreatePropertyList(Java.Lang.Object obj)

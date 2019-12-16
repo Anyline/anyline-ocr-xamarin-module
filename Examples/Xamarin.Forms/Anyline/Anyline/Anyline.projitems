@@ -23,7 +23,7 @@
       <DependentUpon>ResultsPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)ScanPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ScanExamplePage.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainPage.xaml">

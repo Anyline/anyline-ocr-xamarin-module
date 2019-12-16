@@ -8,12 +8,12 @@ namespace Anyline
     /// This page is rendered natively in each individual platform.
     /// The scanning results are received in the 'ShowResultsAction' action.
     /// </summary>
-    public class ScanPage : ContentPage
+    public class ScanExamplePage : ContentPage
     {
         public string ConfigurationFile = "";
         public Action<Object> ShowResultsAction;
 
-        public ScanPage(string configurationFile)
+        public ScanExamplePage(string configurationFile)
         {
             BackgroundColor = Color.Black;
             Title = "Anyline Xamarin Module";

@@ -18,7 +18,7 @@ namespace Anyline
             btHome.Clicked += async (s, e) => await Navigation.PopToRootAsync();
             btScanAgain.Clicked += async (s, e) =>
             {
-                Navigation.InsertPageBefore(new ScanPage(configurationFile), this);
+                Navigation.InsertPageBefore(new ScanExamplePage(configurationFile), this);
                 await Navigation.PopAsync();
             };
         }
