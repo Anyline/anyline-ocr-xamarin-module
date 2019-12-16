@@ -34,6 +34,8 @@
 <!-- AnylineController.setDelayScanTime(double, double) -->
 <attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setDelayScanTime' and count(parameter)=2 and parameter[1][@type='double'] and parameter[2][@type='double']]/parameter[1]" name="managedName">delayScanTime</attr>
 <attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setDelayScanTime' and count(parameter)=2 and parameter[1][@type='double'] and parameter[2][@type='double']]/parameter[2]" name="managedName">startTime</attr>
+<!-- AnylineController.setHighRes(boolean) -->
+<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setHighRes' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">b</attr>
 <!-- AnylineController.setId(java.lang.String) -->
 <attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setId' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">id</attr>
 <!-- AnylineController.setImageProvider(at.nineyards.anyline.ImageProvider) -->
@@ -50,7 +52,19 @@
 <!-- AnylineWorkerRunnable.setCropRect(io.anyline.view.CutoutRect) -->
 <!-- AnylineWorkerRunnable.setId(java.lang.String) -->
 <!-- File: AT.Nineyards.Anyline.AnylineWorkerThreadPool.cs -->
-<!-- File: AT.Nineyards.Anyline.Camera.AbstractZoomHandler.cs -->
+<!-- File: AT.Nineyards.Anyline.Asset.AssetContext.cs -->
+<!-- AssetContext.setApiKey(java.lang.String) -->
+<!-- AssetContext.setAssetVersion(java.lang.String) -->
+<!-- AssetContext.setModelName(java.lang.String) -->
+<!-- AssetContext.setProjectId(java.lang.String) -->
+<!-- AssetContext.setScriptName(java.lang.String) -->
+<!-- AssetContext.setStage(java.lang.String) -->
+<!-- File: AT.Nineyards.Anyline.Asset.IAssetDelegate.cs -->
+<!-- AssetDelegate.onAssetDownloadProgress(java.lang.String, float) -->
+<!-- AssetDelegate.onAssetUpdateAvailable(boolean) -->
+<!-- AssetDelegate.onAssetUpdateError(java.lang.String) -->
+<!-- AssetDelegate.onAssetUpdateFinished(boolean) -->
+<!-- File: AT.Nineyards.Anyline.Camera.AbstractZoomHandler.cs -->
 <!-- AbstractZoomHandler.AbstractZoomHandler(android.view.View, int, at.nineyards.anyline.camera.CameraController) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AbstractZoomHandler']/constructor[@name='AbstractZoomHandler' and count(parameter)=3 and parameter[1][@type='android.view.View'] and parameter[2][@type='int'] and parameter[3][@type='at.nineyards.anyline.camera.CameraController']]/parameter[1]" name="managedName">touchableView</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AbstractZoomHandler']/constructor[@name='AbstractZoomHandler' and count(parameter)=3 and parameter[1][@type='android.view.View'] and parameter[2][@type='int'] and parameter[3][@type='at.nineyards.anyline.camera.CameraController']]/parameter[2]" name="managedName">currentZoomLevel</attr>
@@ -405,6 +419,8 @@
 <!-- CameraView.setPreferredPreviewSize(int, int) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='setPreferredPreviewSize' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='int']]/parameter[1]" name="managedName">width</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='setPreferredPreviewSize' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='int']]/parameter[2]" name="managedName">height</attr>
+<!-- CameraView.setPreviewCropGravity(int) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='setPreviewCropGravity' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">cropGravity</attr>
 <!-- CameraView.setSceneMode(java.lang.String) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='setSceneMode' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">sceneMode</attr>
 <!-- CameraView.setUseMaxFpsRange(boolean) -->
@@ -621,6 +637,11 @@
 <attr path="/api/package[@name='at.nineyards.anyline.modules']/class[@name='LicenseExpirationHelper']/method[@name='showExpirationDialog' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.content.DialogInterface.OnClickListener'] and parameter[3][@type='android.content.DialogInterface.OnClickListener']]/parameter[3]" name="managedName">contactListener</attr>
 <!-- LicenseExpirationHelper.showPricingPage(android.content.Context) -->
 <attr path="/api/package[@name='at.nineyards.anyline.modules']/class[@name='LicenseExpirationHelper']/method[@name='showPricingPage' and count(parameter)=1 and parameter[1][@type='android.content.Context']]/parameter[1]" name="managedName">context</attr>
+<!-- File: AT.Nineyards.Anyline.SimpleImageProvider.cs -->
+<!-- SimpleImageProvider.setNewImage(at.nineyards.anyline.models.AnylineImage) -->
+<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='SimpleImageProvider']/method[@name='setNewImage' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.models.AnylineImage']]/parameter[1]" name="managedName">image</attr>
+<!-- SimpleImageProvider.setNewImage(android.graphics.Bitmap) -->
+<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='SimpleImageProvider']/method[@name='setNewImage' and count(parameter)=1 and parameter[1][@type='android.graphics.Bitmap']]/parameter[1]" name="managedName">bmp</attr>
 <!-- File: AT.Nineyards.Anyline.Util.ArrayUtil.cs -->
 <!-- ArrayUtil.contains(float[], float) -->
 <attr path="/api/package[@name='at.nineyards.anyline.util']/class[@name='ArrayUtil']/method[@name='contains' and count(parameter)=2 and parameter[1][@type='float[]'] and parameter[2][@type='float']]/parameter[1]" name="managedName">values</attr>
@@ -702,7 +723,8 @@
 <attr path="/api/package[@name='at.nineyards.anyline.util']/class[@name='TempFileUtil']/method[@name='createTempFileCheckCache' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.util']/class[@name='TempFileUtil']/method[@name='createTempFileCheckCache' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[2]" name="managedName">fileNamePrefix</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.util']/class[@name='TempFileUtil']/method[@name='createTempFileCheckCache' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[3]" name="managedName">fileNameSuffix</attr>
-<!-- File: IO.Anyline.Nfc.Constants.MrtdConstants.cs -->
+<!-- File: AT.Nineyards.Anyline.Util.VersionUtil.cs -->
+<!-- File: IO.Anyline.Nfc.Constants.MrtdConstants.cs -->
 <!-- File: IO.Anyline.Nfc.Converter.ASN1Converter.cs -->
 <!-- ASN1Converter.translateAsn1Oid(java.lang.String) -->
 <!-- File: IO.Anyline.Nfc.NFC.Apdu.cs -->
@@ -903,6 +925,9 @@
 <attr path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/method[@name='setDelayScanTime' and count(parameter)=1 and parameter[1][@type='double']]/parameter[1]" name="managedName">delayScanTime</attr>
 <!-- AbstractScanPlugin.setReportingEnabled(boolean) -->
 <attr path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/method[@name='setReportingEnabled' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">isReportingEnabled</attr>
+<!-- AbstractScanPlugin.setupAssetUpdate(at.nineyards.anyline.asset.AssetContext, at.nineyards.anyline.asset.AssetDelegate) -->
+<attr path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/method[@name='setupAssetUpdate' and count(parameter)=2 and parameter[1][@type='at.nineyards.anyline.asset.AssetContext'] and parameter[2][@type='at.nineyards.anyline.asset.AssetDelegate']]/parameter[1]" name="managedName">context</attr>
+<attr path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/method[@name='setupAssetUpdate' and count(parameter)=2 and parameter[1][@type='at.nineyards.anyline.asset.AssetContext'] and parameter[2][@type='at.nineyards.anyline.asset.AssetDelegate']]/parameter[2]" name="managedName">callback</attr>
 <!-- AbstractScanPlugin.onFinishedWithOutput(java.lang.Object) -->
 <!-- File: IO.Anyline.Plugin.Barcode.BarcodeFormat.cs -->
 <!-- BarcodeFormat.fromBarcodeScanViewBarcodeFormat(io.anyline.plugin.barcode.BarcodeFormat) -->
@@ -1555,10 +1580,6 @@
 <attr path="/api/package[@name='io.anyline.plugin.ocr']/class[@name='OcrScanPlugin']/constructor[@name='OcrScanPlugin' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String'] and parameter[4][@type='io.anyline.plugin.ocr.AnylineOcrBaseConfig']]/parameter[4]" name="managedName">config</attr>
 <!-- OcrScanPlugin.setAnylineOcrConfig(io.anyline.plugin.ocr.AnylineOcrBaseConfig) -->
 <attr path="/api/package[@name='io.anyline.plugin.ocr']/class[@name='OcrScanPlugin']/method[@name='setAnylineOcrConfig' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ocr.AnylineOcrBaseConfig']]/parameter[1]" name="managedName">anylineOcrConfig</attr>
-<!-- OcrScanPlugin.copyTrainedData(android.content.Context, java.lang.String, java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.plugin.ocr']/class[@name='OcrScanPlugin']/method[@name='copyTrainedData' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[1]" name="managedName">context</attr>
-<attr path="/api/package[@name='io.anyline.plugin.ocr']/class[@name='OcrScanPlugin']/method[@name='copyTrainedData' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[2]" name="managedName">fileName</attr>
-<attr path="/api/package[@name='io.anyline.plugin.ocr']/class[@name='OcrScanPlugin']/method[@name='copyTrainedData' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[3]" name="managedName">fileHash</attr>
 <!-- OcrScanPlugin.copyTrainedData(java.lang.String, java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.plugin.ocr']/class[@name='OcrScanPlugin']/method[@name='copyTrainedData' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">fileName</attr>
 <attr path="/api/package[@name='io.anyline.plugin.ocr']/class[@name='OcrScanPlugin']/method[@name='copyTrainedData' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String']]/parameter[2]" name="managedName">fileHash</attr>
