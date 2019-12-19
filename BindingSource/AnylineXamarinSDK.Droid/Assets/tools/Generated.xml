@@ -52,14 +52,7 @@
 <!-- AnylineWorkerRunnable.setCropRect(io.anyline.view.CutoutRect) -->
 <!-- AnylineWorkerRunnable.setId(java.lang.String) -->
 <!-- File: AT.Nineyards.Anyline.AnylineWorkerThreadPool.cs -->
-<!-- File: AT.Nineyards.Anyline.Asset.AssetContext.cs -->
-<!-- AssetContext.setApiKey(java.lang.String) -->
-<!-- AssetContext.setAssetVersion(java.lang.String) -->
-<!-- AssetContext.setModelName(java.lang.String) -->
-<!-- AssetContext.setProjectId(java.lang.String) -->
-<!-- AssetContext.setScriptName(java.lang.String) -->
-<!-- AssetContext.setStage(java.lang.String) -->
-<!-- File: AT.Nineyards.Anyline.Asset.IAssetDelegate.cs -->
+<!-- File: AT.Nineyards.Anyline.Asset.IAssetDelegate.cs -->
 <!-- AssetDelegate.onAssetDownloadProgress(java.lang.String, float) -->
 <!-- AssetDelegate.onAssetUpdateAvailable(boolean) -->
 <!-- AssetDelegate.onAssetUpdateError(java.lang.String) -->
@@ -925,9 +918,6 @@
 <attr path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/method[@name='setDelayScanTime' and count(parameter)=1 and parameter[1][@type='double']]/parameter[1]" name="managedName">delayScanTime</attr>
 <!-- AbstractScanPlugin.setReportingEnabled(boolean) -->
 <attr path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/method[@name='setReportingEnabled' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">isReportingEnabled</attr>
-<!-- AbstractScanPlugin.setupAssetUpdate(at.nineyards.anyline.asset.AssetContext, at.nineyards.anyline.asset.AssetDelegate) -->
-<attr path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/method[@name='setupAssetUpdate' and count(parameter)=2 and parameter[1][@type='at.nineyards.anyline.asset.AssetContext'] and parameter[2][@type='at.nineyards.anyline.asset.AssetDelegate']]/parameter[1]" name="managedName">context</attr>
-<attr path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/method[@name='setupAssetUpdate' and count(parameter)=2 and parameter[1][@type='at.nineyards.anyline.asset.AssetContext'] and parameter[2][@type='at.nineyards.anyline.asset.AssetDelegate']]/parameter[2]" name="managedName">callback</attr>
 <!-- AbstractScanPlugin.onFinishedWithOutput(java.lang.Object) -->
 <!-- File: IO.Anyline.Plugin.Barcode.BarcodeFormat.cs -->
 <!-- BarcodeFormat.fromBarcodeScanViewBarcodeFormat(io.anyline.plugin.barcode.BarcodeFormat) -->
