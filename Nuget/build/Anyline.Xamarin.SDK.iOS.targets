@@ -7,19 +7,20 @@
 
   <Target Name="_Anyline_AddLinkMetadataToNuGetBundleResources" BeforeTargets="_CompileInterfaceDefinitions" DependsOnTargets="ResolveReferences">
 
-
     <PropertyGroup>
+      <IsOSX Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))' == 'true'">true</IsOSX>
+      <IsWindows Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">true</IsWindows>
+      <_MacContentFilePathPattern>^.*\/contentFiles\/\w*\/[\w.]*\/</_MacContentFilePathPattern>
       <_ContentFilePathPattern>^.*\\contentFiles\\\w*\\[\w.]*\\</_ContentFilePathPattern>
-    </PropertyGroup>
-
-    <ItemGroup Condition=" '$(OS)' == 'OSX' ">
-      <NativeLibs Include="$(MSBuildThisFileDirectory)contentFiles\**\*.*" />
-      <None Include="@(NativeLibs)">
-        <Link>\Resources\AnylineResources.bundle\%(RecursiveDir)%(FileName)%(Extension)</Link>
-      </None>
+    </PropertyGroup> 
+    
+    <ItemGroup Condition="'$(IsOSX)'=='true'">
+      <BundleResource Update="@(BundleResource)" Condition=" '%(BundleResource.NuGetPackageId)' == 'Anyline.Xamarin.SDK.iOS' And '%(BundleResource.NuGetItemType)' != '' And '%(BundleResource.Link)' == ''">
+        <Link>$([System.Text.RegularExpressions.Regex]::Replace(%(BundleResource.FullPath), $(_MacContentFilePathPattern), '', System.Text.RegularExpressions.RegexOptions.IgnoreCase))</Link>
+      </BundleResource>
     </ItemGroup>
 
-    <ItemGroup Condition=" '$(OS)' != 'OSX' ">
+    <ItemGroup Condition="'$(IsWindows)'=='true'">
       <BundleResource Update="@(BundleResource)" Condition=" '%(BundleResource.NuGetItemType)' != '' And '%(BundleResource.Link)' == ''">
         <Link>$([System.Text.RegularExpressions.Regex]::Replace(%(BundleResource.FullPath), $(_ContentFilePathPattern), '', System.Text.RegularExpressions.RegexOptions.IgnoreCase))</Link>
       </BundleResource>

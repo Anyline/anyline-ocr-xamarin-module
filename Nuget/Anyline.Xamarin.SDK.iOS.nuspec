@@ -24,9 +24,9 @@
   <files>
     <file src="AnylineResources.bundle\**\*.*" target="\contentFiles\any\xamarin.ios10\AnylineResources.bundle" />
     <file src="AnylineResources.bundle\**\*.*" target="\content\Resources\AnylineResources.bundle" />
-	<file src="lib\Xamarin.iOS10\AnylineXamarinSDK.iOS.dll" target="lib\Xamarin.iOS10" />
-	<file src="README.md" target="README.md" />
-	<file src="LICENSE.md" target="LICENSE.md" />
+    <file src="lib\Xamarin.iOS10\AnylineXamarinSDK.iOS.dll" target="lib\Xamarin.iOS10" />
+    <file src="README.md" target="README.md" />
+    <file src="LICENSE.md" target="LICENSE.md" />
     <file src="build\Anyline.Xamarin.SDK.iOS.targets" target="build" />
   </files>
 </package>
