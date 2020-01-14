@@ -1902,6 +1902,24 @@ namespace AnylineXamarinSDK.iOS
         // -(void)updateCutoutRect:(CGRect)rect;
         [Export("updateCutoutRect:")]
         void UpdateCutoutRect(CGRect rect);
+
+        // -(void)addScanViewPluginDelegate:(id<ALScanViewPluginDelegate> _Nonnull)scanViewPluginDelegate;
+        [Export("addScanViewPluginDelegate:")]
+        void AddScanViewPluginDelegate(ALScanViewPluginDelegate scanViewPluginDelegate);
+
+        // -(void)removeScanViewPluginDelegate:(id<ALScanViewPluginDelegate> _Nonnull)scanViewPluginDelegate;
+        [Export("removeScanViewPluginDelegate:")]
+        void RemoveScanViewPluginDelegate(ALScanViewPluginDelegate scanViewPluginDelegate);
+    }
+
+    // @protocol ALScanViewPluginDelegate <NSObject>
+    [Protocol, Model]
+    [BaseType(typeof(NSObject))]
+    interface ALScanViewPluginDelegate
+    {
+        // @optional -(void)anylineScanViewPlugin:(ALAbstractScanViewPlugin * _Nonnull)anylineScanViewPlugin updatedCutout:(CGRect)cutoutRect;
+        [Export("anylineScanViewPlugin:updatedCutout:")]
+        void UpdatedCutout(ALAbstractScanViewPlugin anylineScanViewPlugin, CGRect cutoutRect);
     }
 
     // @interface ALPolygon : NSObject
