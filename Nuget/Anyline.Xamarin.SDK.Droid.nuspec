@@ -2,7 +2,7 @@
 	<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
 		<metadata>
 			<id>Anyline.Xamarin.SDK.Droid</id>
-			<version>17.0.0</version>
+			<version>18.0.0</version>
 			<title>Anyline Xamarin SDK (Android)</title>
 			<authors>Anyline GmbH</authors>
 			<owners>peteranyline</owners>
@@ -17,7 +17,7 @@
 			For detailed integration guides, see https://documentation.anyline.com/toc/platforms/xamarin/xamarin.ios/xamarin.ios_quickstart.html and https://documentation.anyline.com/toc/platforms/xamarin/xamarin.android/xamarin.android_quickstart.html 
 			</description>
 			<projectUrl>https://documentation.anyline.io/toc/platforms/xamarin/index.html</projectUrl>
-			<copyright>Copyright © 2019 Anyline GmbH</copyright>
+			<copyright>Copyright © 2020 Anyline GmbH</copyright>
 			<tags>ocr scanning meter barcode mrz qr document camera anyline license plate </tags>			
 		</metadata>
 

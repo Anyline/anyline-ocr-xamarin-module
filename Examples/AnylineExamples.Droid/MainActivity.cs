@@ -81,10 +81,10 @@ namespace AnylineExamples.Droid
             try
             {
                 var intent = new Intent(ApplicationContext, typeof(ScanActivity));
-                if (item.Model.Type == ItemType.DocumentUI)
-                {
-                    intent = new Intent(ApplicationContext, typeof(DocScanUIMainActivity));
-                }
+                //if (item.Model.Type == ItemType.DocumentUI)
+                //{
+                //    intent = new Intent(ApplicationContext, typeof(DocScanUIMainActivity));
+                //}
 
                 intent.PutExtra("jsonPath", jsonPath);
                 intent.PutExtra("title", item.Model.Name);

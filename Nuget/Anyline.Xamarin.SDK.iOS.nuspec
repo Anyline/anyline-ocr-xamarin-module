@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata minClientVersion="3.3">
     <id>Anyline.Xamarin.SDK.iOS</id>
-    <version>17.0.0</version>
+    <version>18.0.0</version>
     <title>Anyline Xamarin SDK (iOS)</title>
     <authors>Anyline GmbH</authors>
     <owners>peteranyline</owners>
@@ -15,7 +15,7 @@
             For detailed integration guides, see https://documentation.anyline.com/toc/platforms/xamarin/xamarin.ios/xamarin.ios_quickstart.html and https://documentation.anyline.com/toc/platforms/xamarin/xamarin.android/xamarin.android_quickstart.html</description>
     <summary>An easy-to-use SDK for applications to enable Optical Character Recognition (OCR) on mobile devices.</summary>
     <releaseNotes>https://documentation.anyline.com/toc/platforms/xamarin/release_guide/index.html</releaseNotes>
-    <copyright>Copyright © 2019 Anyline GmbH</copyright>
+    <copyright>Copyright © 2020 Anyline GmbH</copyright>
     <tags>ocr scanning meter barcode mrz qr document camera anyline license plate</tags>
     <contentFiles>
       <files include="**\xamarin.ios*\**\*.*" buildAction="BundleResource" />
