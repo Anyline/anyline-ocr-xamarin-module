@@ -24,11 +24,11 @@ namespace AnylineExamples.Droid
         public static readonly string TAG = typeof(ScanActivity).Name;
 
         //INSERT YOUR LICENSE KEY HERE
-        public static readonly string LICENSE_KEY = "eyAiYW5kcm9pZElkZW50aWZpZXIiOiBbICJBVC5BbnlsaW5lLlhhbWFyaW4uQXBwLkRyb2lkIiwgIkFULkFueWxpbmUuWGFtYXJpbi5Gb3Jtcy5BcHAuRHJvaWQiIF0sICJkZWJ1Z1JlcG9ydGluZyI6ICJvbiIsICJpb3NJZGVudGlmaWVyIjogWyAiQVQuQW55bGluZS5YYW1hcmluLkFwcC5pT1MiLCAiQVQuQW55bGluZS5YYW1hcmluLkZvcm1zLkFwcC5pT1MiIF0sICJsaWNlbnNlS2V5VmVyc2lvbiI6IDIsICJtYWpvclZlcnNpb24iOiAiMyIsICJwaW5nUmVwb3J0aW5nIjogdHJ1ZSwgInBsYXRmb3JtIjogWyAiaU9TIiwgIkFuZHJvaWQiIF0sICJzY29wZSI6IFsgIkFMTCIgXSwgInNob3dXYXRlcm1hcmsiOiB0cnVlLCAidG9sZXJhbmNlRGF5cyI6IDkwLCAidmFsaWQiOiAiMjAyMC0wMS0wMSIgfQprcS9WL0wrSGlpN0NzL2tXa1E5VWRzbGxzd0hOanphelZEZ2Z2WU1LLytJN1VHYmlITy9SblMrdGZIeUZxQmlJCkN3QXkrdkk5RnJpOVc5MStGdjJTS2FJNS8vLzZhUVgyVXlSVC9CaVRKM1QzTXBVOEIrMWpFZTQxbCtXejRqaFgKMlZ6dENpT2E3cit3d2RlTm1GUFpxdGVUTG5BRmgxQWgycDZpMzgyMWhOb3FsVHNxcFlJdjN3cWdCbWg5clh2WgpBM01pRnpkZ0dab1gzbzNINzFGRUtJME9JSy9ZRkNJRk5nVEI0MFhBM3ZTOXk2ak1FR2E5bjVQRHY5MU5NZEFRCnlHTzcxRVVuZE9ndmJmTkJWbVJYNUR1MGVrZ0RGYUNFMUwweVpUQ3dhMFJVTStLSE9PcXA3TThYOWVFdjJ0RVkKVEcyejdydGQ5YytiRlBvTU5vcUpwZz09Cg==";
-        
+        public static readonly string LICENSE_KEY = "eyAiYW5kcm9pZElkZW50aWZpZXIiOiBbICJBVC5BbnlsaW5lLlhhbWFyaW4uQXBwLkRyb2lkIiwgIkFULkFueWxpbmUuWGFtYXJpbi5Gb3Jtcy5BcHAuRHJvaWQiIF0sICJkZWJ1Z1JlcG9ydGluZyI6ICJvbiIsICJpbWFnZVJlcG9ydENhY2hpbmciOiB0cnVlLCAiaW9zSWRlbnRpZmllciI6IFsgIkFULkFueWxpbmUuWGFtYXJpbi5BcHAuaU9TIiwgIkFULkFueWxpbmUuWGFtYXJpbi5Gb3Jtcy5BcHAuaU9TIiBdLCAibGljZW5zZUtleVZlcnNpb24iOiAyLCAibWFqb3JWZXJzaW9uIjogIjE4IiwgIm1heERheXNOb3RSZXBvcnRlZCI6IDAsICJwaW5nUmVwb3J0aW5nIjogdHJ1ZSwgInBsYXRmb3JtIjogWyAiaU9TIiwgIkFuZHJvaWQiIF0sICJzY29wZSI6IFsgIkFMTCIgXSwgInNob3dQb3BVcEFmdGVyRXhwaXJ5IjogdHJ1ZSwgInNob3dXYXRlcm1hcmsiOiB0cnVlLCAidG9sZXJhbmNlRGF5cyI6IDkwLCAidmFsaWQiOiAiMjAyMS0wMS0wMSIgfQpnS0YvdDJpS05FTFR5dzZYQnMzclhlb0dxSkk0K0hsZzNLcnRnZ3I3eVpNdHZNQ1I3cE5QK1M0YUp1VG8wVGU0CnJtY3hwZHFYNWF6Ly9nM0pNNHB4VjdlUjNvVVQ0MVY0cnAyV0ZsNGJnK25yV0JCRSt3OHlCTmZobE5memFkVDcKeXExZWNHcGdic0lzMW5EUEV6SkFkcWQ3b3Z0emRpY254S0VTTithQVR4NDBhNkgyYzQ1cVExTVZmTWNRTTBJeApPdTB1THBiTEFnTGRjVXFFK1k3LzJhaEdyRFFkemNwZXQ1TUpjbWM5ZGdNdHFBQWFrNUphNFQ1a2VUYnN5OGdNCkxSdWhQcExlMlcxQVJLVzRzaEVZTk9wanR2ZkszbkpuaHN4czJYeHZMK1Z5TTd6N2EyRW9yVXN2bk5jcGhsOUMKbkRBbml3bVR4WTJmdmVmQ2lRdFlwdz09Cg==";
+
         private ScanView _scanView;
         private bool _isInitialized = false;
-        
+
         private ScanResultListener _scanResultListener;
 
         public ScanActivity()
@@ -37,7 +37,7 @@ namespace AnylineExamples.Droid
             // therefore, we're using it here for all the use-cases.
             _scanResultListener = new DocumentScanResultListener(this);
         }
-        
+
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -46,10 +46,10 @@ namespace AnylineExamples.Droid
             {
                 SupportActionBar.SetHomeButtonEnabled(true);
                 SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-                
+
                 // we pass the json path from the previous activity
                 var jsonPath = Intent.GetStringExtra("jsonPath");
-                
+
                 // we pass the title from the previous activity
                 Title = Intent.GetStringExtra("title");
 
@@ -57,16 +57,16 @@ namespace AnylineExamples.Droid
                 SetContentView(Resource.Layout.scan_activity);
 
                 _scanView = FindViewById<ScanView>(Resource.Id.scan_view);
-                
+
                 // the initialization parses the json configuration and builds the whole use-case
                 _scanView.Init(jsonPath, LICENSE_KEY);
-                
+
                 /*
                  * Depending on your config/use-case, the ScanViewPlugin is of a different type.
                  * You need to add your implementation of IO.Anyline.Plugin.IScanResultListener to retrieve scan results.
                  */
                 _scanView.ScanViewPlugin.AddScanResultListener(_scanResultListener);
-                
+
                 // handle camera open events
                 _scanView.CameraOpened += ScanView_CameraOpened;
 
@@ -95,6 +95,12 @@ namespace AnylineExamples.Droid
                 Log.Debug(TAG, e.ToString());
             }
         }
+        
+        protected override void OnPause()
+        {
+            base.OnPause();
+            StopScanning();
+        }
 
         private void ScanView_CameraError(object sender, CameraErrorEventArgs e)
         {
@@ -112,38 +118,41 @@ namespace AnylineExamples.Droid
             switch (item.ItemId)
             {
                 case Android.Resource.Id.Home:
-                    GoBack();
+                    StopScanning();
+                    Finish();
                     return true;
                 default:
                     return base.OnOptionsItemSelected(item);
             }
         }
 
-        public override void OnBackPressed()
+        private void StopScanning()
         {
-            GoBack();
+            if (_scanView != null)
+            {
+                _scanView.Stop();
+                _scanView.CameraView.ReleaseCamera();
+            }
         }
 
-        private void GoBack()
+        protected override void Dispose(bool disposing)
         {
+            base.Dispose(disposing);
             try
             {
                 _isInitialized = false;
 
                 if (_scanView != null)
                 {
-                    _scanView.Stop();
-                    _scanView.CameraView.ReleaseCamera();
-
+                    _scanView.Dispose();
                     _scanView.CameraOpened -= ScanView_CameraOpened;
                     _scanView.CameraError -= ScanView_CameraError;
-
-                    _scanView.Dispose();
                     _scanView = null;
 
                     GC.Collect();
                 }
-            } catch (Exception) { }
+            }
+            catch (Exception) { }
             Finish();
         }
         #endregion

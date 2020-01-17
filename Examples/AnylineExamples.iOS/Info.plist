@@ -7,7 +7,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>AT.Anyline.Xamarin.App.iOS</string>
 	<key>MinimumOSVersion</key>
-	<string>10.1</string>
+	<string>11.0</string>
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>
@@ -28,10 +28,10 @@
 	<key>NSCameraUsageDescription</key>
 	<string>Yes we scan!</string>
 	<key>com.apple.developer.nfc.readersession.iso7816.select-identifiers</key>
-    <array>
-        <string>A0000002471001</string>
-    </array>
-    <key>NFCReaderUsageDescription</key>
-    <string>Please allow NFC access to read passports</string>
+	<array>
+		<string>A0000002471001</string>
+	</array>
+	<key>NFCReaderUsageDescription</key>
+	<string>Please allow NFC access to read passports</string>
 </dict>
 </plist>

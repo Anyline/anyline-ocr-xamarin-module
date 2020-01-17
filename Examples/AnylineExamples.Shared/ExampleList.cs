@@ -47,8 +47,8 @@ namespace AnylineExamples.Shared
         public static readonly string TIN = "Tire Identification Number";
         public static readonly string ShippingContainer = "Shipping Container";
         public static readonly string Barcode = "Barcode";
-        public static readonly string Document = "Document (Simple UI)";
-        public static readonly string DocumentUI = "Document (Extended UI)";
+        public static readonly string Document = "Document";
+        //public static readonly string DocumentUI = "Document (Extended UI)";
         public static readonly string Bottlecap = "Bottlecap";
         public static readonly string VoucherCode = "Voucher Code";
         public static readonly string CowTag = "Cattle Tag";
@@ -81,7 +81,7 @@ namespace AnylineExamples.Shared
 
             new ExampleModel(ItemType.Header, Category.Document, Category.Document, ""),
             new ExampleModel(ItemType.Item, Example.Document, Category.Document, "document_config.json"),
-            new ExampleModel(ItemType.DocumentUI, Example.DocumentUI, Category.Document, "document_view_config.json"),
+            //new ExampleModel(ItemType.DocumentUI, Example.DocumentUI, Category.Document, "document_view_config.json"),
 
             new ExampleModel(ItemType.Header, Category.Others, Category.Others, ""),
             new ExampleModel(ItemType.Item, Example.Barcode, Category.Others, "others_config_barcode.json"),
