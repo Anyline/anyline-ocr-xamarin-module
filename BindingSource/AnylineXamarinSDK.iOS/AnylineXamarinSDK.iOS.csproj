@@ -55,9 +55,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
   <PropertyGroup Condition=" $([MSBuild]::IsOsPlatform(Windows)) ">
-    <PostBuildEvent>xcopy $(TargetPath) $(ProjectDir)..\..\Nuget\lib\Xamarin.iOS10\ /Y</PostBuildEvent>
+    <PostBuildEvent>xcopy "$(TargetPath)" "$(ProjectDir)..\..\Nuget\lib\Xamarin.iOS10\" /Y</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup Condition=" $([MSBuild]::IsOsPlatform(OSX)) ">
-    <PostBuildEvent>cp $(TargetPath) $(ProjectDir)..\..\Nuget\lib\Xamarin.iOS10\</PostBuildEvent>
+    <PostBuildEvent>cp "$(TargetPath)" "$(ProjectDir)..\..\Nuget\lib\Xamarin.iOS10\"</PostBuildEvent>
   </PropertyGroup>
 </Project>
