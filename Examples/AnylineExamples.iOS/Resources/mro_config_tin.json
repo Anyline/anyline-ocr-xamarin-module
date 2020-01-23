@@ -15,9 +15,8 @@
     },
     "cutoutConfig": {
       "style": "rect",
-      "alignment": "top_half",
-      "maxWidthPercent": "99%",
-      "maxHeightPercent": "99%",
+      "alignment": "center",
+      "maxWidthPercent": "90%",
       "strokeWidth": 1,
       "strokeColor": "FFFFFF",
       "cornerRadius": 2,
@@ -31,7 +30,7 @@
       "style": "contour_rect",
       "strokeWidth": 2,
       "strokeColor": "0099FF",
-      "beepOnResult": false,
+      "beepOnResult": true,
       "vibrateOnResult": true,
       "blinkAnimationOnResult": true,
       "cancelOnResult": true
