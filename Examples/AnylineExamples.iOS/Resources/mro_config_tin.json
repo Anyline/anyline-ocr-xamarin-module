@@ -36,6 +36,7 @@
       "cancelOnResult": true
     },
     "cancelOnResult": true,
+    "delayStartScanTime": 2000,
     "reportingEnabled": true
   }
 }
