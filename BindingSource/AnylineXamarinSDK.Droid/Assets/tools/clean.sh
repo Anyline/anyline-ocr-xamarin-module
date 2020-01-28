@@ -1,6 +1,6 @@
 #!/bin/bash
 FILE="$1"/Generated.xml
-if [ -e "$FILE" ]
+if [[ -e "$FILE" ]]
 then
   echo File "$FILE" already exists. skipping...
 else
