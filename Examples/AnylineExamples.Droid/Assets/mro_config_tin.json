@@ -1,11 +1,11 @@
 ﻿{
-    "camera": {
-      "captureResolution": "720"
-    },
-    "flash": {
-      "mode": "manual",
-      "alignment": "bottom_left"
-    },
+  "camera": {
+    "captureResolution": "720"
+  },
+  "flash": {
+    "mode": "manual",
+    "alignment": "bottom_left"
+  },
   "viewPlugin": {
     "plugin": {
       "id": "TIN_ID",
@@ -16,28 +16,33 @@
     },
     "cutoutConfig": {
       "style": "rect",
-      "alignment": "top_half",
-      "maxWidthPercent": "99%",
-      "maxHeightPercent": "99%",
-      "strokeWidth": 1,
+      "width": 720,
+      "alignment": "center",
+      "maxWidthPercent": "80%",
+      "ratioFromSize": {
+        "width": 720,
+        "height": 144
+      },
+      "strokeWidth": 2,
       "strokeColor": "FFFFFF",
-      "cornerRadius": 2,
+      "cornerRadius": 4,
       "outerColor": "000000",
-      "outerAlpha": 0.3,
-      "feedbackStrokeColor": "0099FF"
+      "outerAlpha": 0.5,
+      "feedbackStrokeColor": "0099FF",
+      "offset": {
+        "x": 0,
+        "y": -15
+      }
     },
     "scanFeedback": {
-      "animation": "traverse_multi",
-      "animationDuration": 250,
-      "style": "contour_rect",
-      "strokeWidth": 2,
+      "style": "CONTOUR_RECT",
       "strokeColor": "0099FF",
-      "beepOnResult": false,
+      "fillColor": "220099FF",
+      "beepOnResult": true,
       "vibrateOnResult": true,
-      "blinkAnimationOnResult": true,
-      "cancelOnResult": true
+      "blinkAnimationOnResult": true
     },
     "cancelOnResult": true,
-    "reportingEnabled": true
+    "delayStartScanTime": 2000
   }
-  }
+}
