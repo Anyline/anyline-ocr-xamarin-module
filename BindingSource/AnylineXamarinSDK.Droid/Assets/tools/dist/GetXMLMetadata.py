@@ -104,7 +104,7 @@ def main(argv):
 
             fo.write('<!-- File: ' + f + ' -->' + '\r\n')
 
-            with open(os.path.abspath(input_path + '\\' + f)) as fp:
+            with open(os.path.abspath(input_path + os.sep + f)) as fp:
                 for line in fp:
 
                     if line.strip().startswith("// Metadata.xml"):
@@ -159,7 +159,7 @@ def main(argv):
                             param_types = []
 
                             if is_detailed_output:
-                                print match
+                                print(match)
 
                             # list of types and names in matching signature
                             _ = find_between(match, '(', ')') + ', '
@@ -204,12 +204,12 @@ def main(argv):
                                 param_text = param_text.replace('???', param_names[p - 1])
 
                                 if is_detailed_output:
-                                    print param_text
+                                    print(param_text)
 
                                 fo.write(param_text + '\n')
 
                         if is_detailed_output:
-                            print ""
+                            print("")
 
                         fo.write('\r')
 
