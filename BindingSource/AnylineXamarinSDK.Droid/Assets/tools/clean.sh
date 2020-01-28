@@ -1,7 +1,8 @@
 #!/bin/bash
-if [ -e Generated.xml ]
+FILE="$1"/Generated.xml
+if [ -e "$FILE" ]
 then
-  echo File Generated.xml already exists. skipping...
+  echo File $FILE already exists. skipping...
 else
-  echo "<metadata>THIS FILE WILL BE AUTO-GENERATED</metadata>" > Generated.xml
+  echo "<metadata>THIS FILE WILL BE AUTO-GENERATED</metadata>" > $FILE
 fi
