@@ -1,5 +1,5 @@
 @echo off
-SET FILE=%1\Generated.xml
+SET FILE=%1
 if exist %FILE% (
     echo File %FILE% already exists. skipping..
 ) else (
