@@ -34,7 +34,7 @@ namespace AnylineExamples.iOS
             else
             {
                 if (obj is UIImage) return new Dictionary<string, object>() { { "Image", obj } }.CreatePropertyDictionary();
-
+                bool compositeScanResult = false;
                 var props = obj.GetType().GetProperties();
                 foreach (var prop in props)
                 {
@@ -65,6 +65,7 @@ namespace AnylineExamples.iOS
                                 {
                                     if (value is Foundation.NSDictionary results)
                                     {
+                                        compositeScanResult = true;
                                         var mapResultsSerialScanning = new Dictionary<string, object>();
                                         foreach (KeyValuePair<Foundation.NSObject, Foundation.NSObject> result in results)
                                         {
@@ -88,6 +89,8 @@ namespace AnylineExamples.iOS
                             break;
                     }
                 }
+                // if this is a composite scan result, ignore the global Confidence value
+                if (compositeScanResult) dict.Remove("Confidence");
             }
 
             // we want to present "Result" always first, so:
