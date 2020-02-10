@@ -313,17 +313,20 @@ namespace AnylineExamples.iOS
                 if (i == 0)
                 {
                     stackViewList[i].LeadingAnchor.ConstraintEqualTo(stackContent.LeadingAnchor).Active = true;
-                    stackViewList[i].TopAnchor.ConstraintEqualTo(stackContent.TopAnchor).Active = true;
+                    if(!UIDevice.CurrentDevice.CheckSystemVersion(12, 0))
+                        stackViewList[i].TopAnchor.ConstraintEqualTo(stackContent.TopAnchor).Active = true;
                 }
                 else if (i == stackViewList.Count - 1)
                 {
                     stackViewList[i].TrailingAnchor.ConstraintEqualTo(stackContent.TrailingAnchor).Active = true;
-                    stackViewList[i].BottomAnchor.ConstraintEqualTo(stackContent.BottomAnchor).Active = true;
+                    if(!UIDevice.CurrentDevice.CheckSystemVersion(12, 0))
+                        stackViewList[i].BottomAnchor.ConstraintEqualTo(stackContent.BottomAnchor).Active = true;
                 }
                 else
                 {
                     stackViewList[i].LeadingAnchor.ConstraintEqualTo(stackViewList[i - 1].TrailingAnchor).Active = true;
-                    stackViewList[i].TopAnchor.ConstraintEqualTo(stackViewList[i - 1].BottomAnchor).Active = true;
+                    if(!UIDevice.CurrentDevice.CheckSystemVersion(12, 0))
+                        stackViewList[i].TopAnchor.ConstraintEqualTo(stackViewList[i - 1].BottomAnchor).Active = true;
                 }
             }
         }
