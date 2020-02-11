@@ -2,11 +2,11 @@
 	<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
 		<metadata>
 			<id>Anyline.Xamarin.SDK.Droid</id>
-			<version>18.1.0</version>
+			<version>19.0.0</version>
 			<title>Anyline Xamarin SDK (Android)</title>
 			<authors>Anyline GmbH</authors>
 			<owners>peteranyline</owners>
-			<licenseUrl>https://raw.githubusercontent.com/Anyline/anyline-ocr-xamarin-module/master/LICENSE.md</licenseUrl>
+			<licenseUrl>https://github.com/Anyline/anyline-ocr-xamarin-module/blob/master/Nuget/LICENSE.md</licenseUrl>
 			<iconUrl>https://anylinewebsiteresource.blob.core.windows.net/wordpressmedia/2015/11/logo-300x138.png</iconUrl>
 			<requireLicenseAcceptance>true</requireLicenseAcceptance>
 			<releaseNotes>https://documentation.anyline.com/toc/platforms/xamarin/release_guide/index.html</releaseNotes>
