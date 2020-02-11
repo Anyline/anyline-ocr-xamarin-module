@@ -177,4 +177,6 @@
   <attr path="/api/package[@name='io.anyline.view']/class[@name='SerialScanViewComposite']/method[@name='getCutoutRect' and count(parameter)=0]" name="visibility">protected</attr>
   <attr path="/api/package[@name='io.anyline.view']/class[@name='ParallelScanViewComposite']/method[@name='getCutoutRect' and count(parameter)=0]" name="visibility">protected</attr>
 
+  <remove-node path="/api/package[@name='io.anyline.view']/interface[@name='UIChangeListener']"/>
+  
 </metadata>
