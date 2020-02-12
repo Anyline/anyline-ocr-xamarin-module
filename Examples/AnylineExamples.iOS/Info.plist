@@ -33,5 +33,7 @@
 	</array>
 	<key>NFCReaderUsageDescription</key>
 	<string>Please allow NFC access to read passports</string>
+	<key>CFBundleName</key>
+	<string>Xamarin.iOS Examples</string>
 </dict>
 </plist>
