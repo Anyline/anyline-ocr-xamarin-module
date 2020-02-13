@@ -7185,76 +7185,52 @@ namespace Anyline.Droid
 			public const int contact_info = 2131623998;
 			
 			// aapt resource value: 0x7F0E003F
-			public const int default_web_client_id = 2131623999;
+			public const int fab_transformation_scrim_behavior = 2131623999;
 			
 			// aapt resource value: 0x7F0E0040
-			public const int fab_transformation_scrim_behavior = 2131624000;
+			public const int fab_transformation_sheet_behavior = 2131624000;
 			
 			// aapt resource value: 0x7F0E0041
-			public const int fab_transformation_sheet_behavior = 2131624001;
+			public const int flash_auto = 2131624001;
 			
 			// aapt resource value: 0x7F0E0042
-			public const int firebase_database_url = 2131624002;
+			public const int flash_off = 2131624002;
 			
 			// aapt resource value: 0x7F0E0043
-			public const int flash_auto = 2131624003;
+			public const int flash_on = 2131624003;
 			
 			// aapt resource value: 0x7F0E0044
-			public const int flash_off = 2131624004;
+			public const int hide_bottom_view_on_scroll_behavior = 2131624004;
 			
 			// aapt resource value: 0x7F0E0045
-			public const int flash_on = 2131624005;
+			public const int license_expiry_info = 2131624005;
 			
 			// aapt resource value: 0x7F0E0046
-			public const int gcm_defaultSenderId = 2131624006;
+			public const int mtrl_chip_close_icon_content_description = 2131624006;
 			
 			// aapt resource value: 0x7F0E0047
-			public const int google_api_key = 2131624007;
+			public const int open_permission_settings = 2131624007;
 			
 			// aapt resource value: 0x7F0E0048
-			public const int google_app_id = 2131624008;
+			public const int password_toggle_content_description = 2131624008;
 			
 			// aapt resource value: 0x7F0E0049
-			public const int google_crash_reporting_api_key = 2131624009;
+			public const int path_password_eye = 2131624009;
 			
 			// aapt resource value: 0x7F0E004A
-			public const int google_storage_bucket = 2131624010;
+			public const int path_password_eye_mask_strike_through = 2131624010;
 			
 			// aapt resource value: 0x7F0E004B
-			public const int hide_bottom_view_on_scroll_behavior = 2131624011;
+			public const int path_password_eye_mask_visible = 2131624011;
 			
 			// aapt resource value: 0x7F0E004C
-			public const int license_expiry_info = 2131624012;
+			public const int path_password_strike_through = 2131624012;
 			
 			// aapt resource value: 0x7F0E004D
-			public const int mtrl_chip_close_icon_content_description = 2131624013;
+			public const int search_menu_title = 2131624013;
 			
 			// aapt resource value: 0x7F0E004E
-			public const int open_permission_settings = 2131624014;
-			
-			// aapt resource value: 0x7F0E004F
-			public const int password_toggle_content_description = 2131624015;
-			
-			// aapt resource value: 0x7F0E0050
-			public const int path_password_eye = 2131624016;
-			
-			// aapt resource value: 0x7F0E0051
-			public const int path_password_eye_mask_strike_through = 2131624017;
-			
-			// aapt resource value: 0x7F0E0052
-			public const int path_password_eye_mask_visible = 2131624018;
-			
-			// aapt resource value: 0x7F0E0053
-			public const int path_password_strike_through = 2131624019;
-			
-			// aapt resource value: 0x7F0E0054
-			public const int project_id = 2131624020;
-			
-			// aapt resource value: 0x7F0E0055
-			public const int search_menu_title = 2131624021;
-			
-			// aapt resource value: 0x7F0E0056
-			public const int status_bar_notification_info_overflow = 2131624022;
+			public const int status_bar_notification_info_overflow = 2131624014;
 			
 			static String()
 			{
