@@ -66,7 +66,9 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchArch>ARM64</MtouchArch>
     <ConsolePause>false</ConsolePause>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <CodesignProvision>
+    </CodesignProvision>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>AnylineExamples.iOS.Application</StartupObject>
@@ -170,4 +172,8 @@
   </ItemGroup>
   <Import Project="..\AnylineExamples.Shared\AnylineExamples.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Target Name="BeforeBuild" Condition=" '$(RUNNING_ON_CICD)' == 'true' ">
+    <XmlPoke XmlInputPath="Resources/Info.plist" Query="//dict/key[. = 'CFBundleVersion']/following-sibling::string[1]" Value="$(BUILD_NUMBER)" />
+    <XmlPoke XmlInputPath="Resources/Info.plist" Query="//dict/key[. = 'CFBundleShortVersionString']/following-sibling::string[1]" Value="$(MAJOR_VERSION).$(MINOR_VERSION).$(BUILD_NUMBER)" />
+  </Target>
 </Project>
