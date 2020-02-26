@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="AT.Anyline.Xamarin.Forms.App.Droid" android:installLocation="auto">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0.0" package="com.anyline.xamarin.forms.examples" android:installLocation="auto">
 	<uses-sdk android:targetSdkVersion="28" android:minSdkVersion="21" />
 	<application android:label="Anyline Examples (Xamarin.Android Forms)" android:hardwareAccelerated="true"></application>
 	<uses-permission android:name="android.permission.CAMERA" />
