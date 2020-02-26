@@ -4,8 +4,6 @@
 <dict>
 	<key>CFBundleDisplayName</key>
 	<string>Xamarin.iOS Examples</string>
-	<key>CFBundleIdentifier</key>
-	<string>AT.Anyline.Xamarin.App.iOS</string>
 	<key>MinimumOSVersion</key>
 	<string>11.0</string>
 	<key>UIDeviceFamily</key>
@@ -15,8 +13,6 @@
 	</array>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0.0</string>
-	<key>CFBundleVersion</key>
-	<string>72</string>
 	<key>UILaunchStoryboardName</key>
 	<string>MainStoryboard.storyboard</string>
 	<key>UIMainStoryboardFile</key>
@@ -35,5 +31,9 @@
 	<string>Please allow NFC access to read passports</string>
 	<key>CFBundleName</key>
 	<string>Xamarin.iOS Examples</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.anyline.xamarin.examples</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
 </dict>
 </plist>
