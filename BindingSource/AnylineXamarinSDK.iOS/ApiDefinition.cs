@@ -3845,9 +3845,6 @@ namespace AnylineXamarinSDK.iOS
         void DidFindResult(ALAbstractScanViewPluginComposite anylineCompositeScanPlugin, ALCompositeResult scanResult);
     }
 
-    /*
-
-    // currently not yet supported because of SWIFT issues
 
     // @interface ALDataGroup1 : NSObject
     [BaseType(typeof(NSObject))]
@@ -4014,12 +4011,12 @@ namespace AnylineXamarinSDK.iOS
 
         // -(instancetype _Nullable)initWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<ALNFCDetectorDelegate> _Nonnull)delegate;
         [Export("initWithLicenseKey:delegate:")]
-        IntPtr Constructor(string licenseKey, ALNFCDetectorDelegate @delegate);
+        IntPtr Constructor(string licenseKey, NSObject @delegate);
 
         // -(void)startNfcDetectionWithPassportNumber:(NSString * _Nonnull)passportNumber dateOfBirth:(NSDate * _Nonnull)dateOfBirth expirationDate:(NSDate * _Nonnull)expirationDate;
         [Export("startNfcDetectionWithPassportNumber:dateOfBirth:expirationDate:")]
         void StartNfcDetectionWithPassportNumber(string passportNumber, NSDate dateOfBirth, NSDate expirationDate);
     }
 
-    */
+
 }

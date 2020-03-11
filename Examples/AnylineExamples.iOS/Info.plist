@@ -31,9 +31,9 @@
 	<string>Please allow NFC access to read passports</string>
 	<key>CFBundleName</key>
 	<string>Xamarin.iOS Examples</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.anyline.xamarin.examples</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.anyline.xamarin.examples</string>
 </dict>
 </plist>

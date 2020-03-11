@@ -136,6 +136,10 @@ namespace AnylineExamples.iOS
                 {
                     dict.Add(name, value);
                 }
+                else if (value is ALDataGroup1 || value is ALDataGroup2)
+                {
+                    value.CreatePropertyDictionary().ToList().ForEach(x => dict.Add(x.Key, x.Value));
+                }
                 else if (value.ToString() != "")
                 {
                     var str = value.ToString().Replace("\\n", Environment.NewLine);

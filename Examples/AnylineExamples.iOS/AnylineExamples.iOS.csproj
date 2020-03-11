@@ -47,12 +47,11 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <MtouchArch>ARM64</MtouchArch>
-    <CodesignEntitlements>
-    </CodesignEntitlements>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignKey>Apple Development: Ricardo Oliveira (2VXFX867VR)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <MtouchLink>Full</MtouchLink>
-    <CodesignProvision />
+    <CodesignProvision>Xamarin_NFCenabled_Development</CodesignProvision>
     <CodesignExtraArgs />
     <CodesignResourceRules />
     <MtouchNoSymbolStrip>false</MtouchNoSymbolStrip>
@@ -74,6 +73,7 @@
     <AppExtensionDebugBundleId />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="NFCScanViewController.cs" />
     <Compile Include="ObjectExtensions.cs" />
     <Compile Include="ResultViewController.cs" />
     <Compile Include="ScanResultDelegate.cs" />
@@ -164,7 +164,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Anyline.Xamarin.SDK.iOS">
-      <Version>19.0.0</Version>
+      <Version>20.0.0</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="..\AnylineExamples.Shared\AnylineExamples.Shared.projitems" Label="Shared" />
