@@ -25,31 +25,29 @@ namespace AnylineXamarinAppiOS
         NSDate dateOfExpiry;
 
 
-
-
-        public NFCScanViewController(string name, string v)
+        public NFCScanViewController(string name)
         {
-
+            Title = name;
         }
 
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            Title = "Passport NFC";
-            float hintMargin = 7;
+            float hintMargin = 2;
             // Set the background color to black to have a nicer transition
             View.BackgroundColor = UIColor.Black;
 
             UILabel hintViewLabel = new UILabel(CGRect.Empty);
+            hintView = new UIView(CGRect.Empty);
+
             hintViewLabel.Text = @"Scan MRZ";
             hintViewLabel.SizeToFit();
 
-            UIView hintView = new UIView(CGRect.Empty);
             hintView.AddSubview(hintViewLabel);
 
             hintView.Frame = new UIEdgeInsets(hintViewLabel.Frame.Top, hintViewLabel.Frame.Left, hintViewLabel.Frame.Bottom, hintViewLabel.Frame.Right)
-                .InsetRect(new CGRect(-hintMargin, -hintMargin, -hintMargin, -hintMargin));
-            hintView.Center = new CGPoint(View.Center);
+                                            .InsetRect(new CGRect(-hintMargin, -hintMargin, -hintMargin, -hintMargin));
+            hintView.Center = new CGPoint(View.Center.X, 0);
             hintViewLabel.TranslatesAutoresizingMaskIntoConstraints = false;
             hintViewLabel.CenterYAnchor.ConstraintEqualToSystemSpacingBelowAnchor(hintView.CenterYAnchor, 0);
             hintViewLabel.CenterXAnchor.ConstraintEqualToSystemSpacingAfterAnchor(hintView.CenterXAnchor, 0);
@@ -57,9 +55,7 @@ namespace AnylineXamarinAppiOS
             hintView.Layer.MasksToBounds = true;
             hintView.BackgroundColor = UIColor.Black.ColorWithAlpha(0.5f);
             hintViewLabel.TextColor = UIColor.White;
-            this.hintView = hintView;
             View.AddSubview(hintView);
-
 
             ALMRZConfig mrzConfig = new ALMRZConfig();
             //we want to be quite confident of these fields to ensure we can read the NFC with them
@@ -82,20 +78,11 @@ namespace AnylineXamarinAppiOS
             mrzConfig.IdFieldScanOptions = scanOptions;
 
             NSError error = null;
-
             //Init the anyline ID ScanPlugin with an ID, Licensekey, the delegate,
             //  the MRZConfig (which will configure the scan Plugin for MRZ scanning), and an error
             this.mrzScanPlugin = new ALIDScanPlugin(@"ModuleID", AnylineViewController.LicenseKey, this, mrzConfig, out error);
 
-
-            if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
-            {
-                nfcDetector = new ALNFCDetector(AnylineViewController.LicenseKey, this);
-            }
-            else
-            {
-                // Fallback on earlier versions
-            }
+            nfcDetector = new ALNFCDetector(AnylineViewController.LicenseKey, this);
 
             mrzScanViewPlugin = new ALIDScanViewPlugin(mrzScanPlugin);
 
@@ -105,20 +92,29 @@ namespace AnylineXamarinAppiOS
                 frame.Width,
                 frame.Height - NavigationController.NavigationBar.Frame.Size.Height);
 
-            // Use the JSON file name that you want to load here
-            var configPath = NSBundle.MainBundle.PathForResource(@"" + "id_config_mrz", @"json");
-
             // This is the main intialization method that will create our use case depending on the JSON configuration.
             scanView = new ALScanView(frame, mrzScanViewPlugin);
-
+            scanView.ScanViewPlugin.AddScanViewPluginDelegate(new CutoutListener(updateHintPosition, scanView));
             scanView.FlashButtonConfig.FlashAlignment = ALFlashAlignment.TopLeft;
-
-            //self.controllerType = ALScanHistoryNFC;
 
             // After setup is complete we add the scanView to the view of this view controller
             View.AddSubview(scanView);
             View.SendSubviewToBack(scanView);
 
+            var topGuide = TopLayoutGuide;
+
+            var viewNames = NSDictionary.FromObjectsAndKeys(new object[] {
+            scanView,
+            topGuide,
+            }, new NSObject[] {
+                new NSString("scanView"),
+                new NSString("topGuide"),
+            });
+            var emptyDict = new NSDictionary();
+
+
+            View.AddConstraints(NSLayoutConstraint.FromVisualFormat("H:|[scanView]|", 0, emptyDict, viewNames));
+            View.AddConstraints(NSLayoutConstraint.FromVisualFormat("V:[topGuide]-0-[scanView]|", 0, emptyDict, viewNames));
 
             scanView.StartCamera();
         }
@@ -176,13 +172,9 @@ namespace AnylineXamarinAppiOS
             string mrzString = identification.MrzString;
             string passportNumberForNFC = String.Copy(passportNumber);
 
-            NSRange passportNumberRange = new NSString(mrzString).LocalizedStandardRangeOfString(new NSString(passportNumber));
-            if (passportNumberRange.Location != null)
+            while (passportNumberForNFC.Length < 9)
             {
-                if (mrzString[(int)passportNumberRange.Location + (int)passportNumberRange.Length] == '<')
-                {
-                    passportNumberForNFC += "<";
-                }
+                passportNumberForNFC += "<";
             }
 
             stopMRZScanning();
@@ -201,7 +193,49 @@ namespace AnylineXamarinAppiOS
         public void NfcFailedWithError(NSError error)
         {
             System.Diagnostics.Debug.WriteLine(error.DebugDescription);
-            BeginInvokeOnMainThread(() => startMRZScanning());
+            BeginInvokeOnMainThread(() =>
+            {
+                if (error.Code == (int)ALErrorCode.NFCTagErrorNFCNotSupported)
+                {
+                    this.nfcDetector.Dispose();
+                    var okAlertController = UIAlertController.Create("NFC Not Supported", "NFC passport reading is not supported on this device", UIAlertControllerStyle.Alert);
+                    okAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
+                    PresentViewController(okAlertController, true, null);
+                }
+                if (error.Code == (int)ALErrorCode.NFCTagErrorResponseError || //error ALNFCTagErrorResponseError can mean the MRZ key was wrong
+                    error.Code == (int)ALErrorCode.NFCTagErrorUnexpectedError) //error ALNFCTagErrorUnexpectedError can mean the user pressed the 'Cancel' button while scanning. It could also mean the phone lost the connection with the NFC chip because it was moved.
+                {
+                    startMRZScanning(); //run the MRZ scanner so we can try again.
+                }
+                else
+                {
+                    //the MRZ details are correct, but something else went wrong. We can try reading the NFC chip again without rescanning the MRZ.
+                    readNFCChip();
+                }
+            });
+        }
+
+        void updateHintPosition(nfloat newPosition)
+        {
+            hintView.Center = new CGPoint(hintView.Center.X, newPosition);
+        }
+
+
+        private class CutoutListener : ALScanViewPluginDelegate
+        {
+            private Action<nfloat> updateHintPosition;
+            private ALScanView scanView;
+
+            public CutoutListener(Action<nfloat> updateHintPosition, ALScanView scanView)
+            {
+                this.updateHintPosition = updateHintPosition;
+                this.scanView = scanView;
+            }
+
+            public override void UpdatedCutout(ALAbstractScanViewPlugin anylineScanViewPlugin, CGRect cutoutRect)
+            {
+                updateHintPosition.Invoke(cutoutRect.Y + scanView.Frame.Y - 50);
+            }
         }
     }
 }

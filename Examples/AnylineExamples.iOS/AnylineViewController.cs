@@ -14,7 +14,6 @@ namespace AnylineExamples.iOS
     {
 
         public const string LicenseKey = "eyAiYW5kcm9pZElkZW50aWZpZXIiOiBbICJjb20uYW55bGluZS54YW1hcmluLmV4YW1wbGVzIiwgImNvbS5hbnlsaW5lLnhhbWFyaW4uZm9ybXMuZXhhbXBsZXMiIF0sICJkZWJ1Z1JlcG9ydGluZyI6ICJvbiIsICJpbWFnZVJlcG9ydENhY2hpbmciOiB0cnVlLCAiaW9zSWRlbnRpZmllciI6IFsgImNvbS5hbnlsaW5lLnhhbWFyaW4uZXhhbXBsZXMiLCAiY29tLmFueWxpbmUueGFtYXJpbi5mb3Jtcy5leGFtcGxlcyIgXSwgImxpY2Vuc2VLZXlWZXJzaW9uIjogMiwgIm1ham9yVmVyc2lvbiI6ICI0IiwgIm1heERheXNOb3RSZXBvcnRlZCI6IDAsICJwaW5nUmVwb3J0aW5nIjogdHJ1ZSwgInBsYXRmb3JtIjogWyAiaU9TIiwgIkFuZHJvaWQiIF0sICJzY29wZSI6IFsgIkFMTCIgXSwgInNob3dQb3BVcEFmdGVyRXhwaXJ5IjogdHJ1ZSwgInNob3dXYXRlcm1hcmsiOiB0cnVlLCAidG9sZXJhbmNlRGF5cyI6IDkwLCAidmFsaWQiOiAiMjAyMS0wMS0wMSIgfQpWQVZoT3FSZGl3cXl3VHpndk5sRjk5a24yQWxSTTE4bEVoQ2JWMlRWc25MUG9zQ1NIM0dtMytmZk1Db1drckt3CnZOZ0o1ZllCRGRSVHpLTmNvV3l0Rys5VjlXdU9kd1Y5elFYRTduWWdyL3cxWko1ald4dVZyK1h2QStLVW16MU8KWjFablhwQzZudU9YNTZIbDZPNkF2bWVqZ3VIekRYbHorUTU5OW8vMjVkMFNlN1NzVHBNRHlBWjVCMDRxdERSNApnMlh0STZCUXBuQ0hEQ20yQ253OGlJb2R5N0ZRb0hrQWdVSE0rMzg2aUpZbzRPbmxKNEdGSmRPQmJJdnRiL1VWCktFcktWdVZaWUxTVnBlU3dHMGNURDNESmhsWUdRdzU2cXdZUHo0WVFXWWVMVzNSeFdNN2FMWlZzRzMzbWhyaXQKQjBXUzVDOUQ3RHRFekFmLzBydld0dz09Cg==";
-        //public const string LicenseKey = "eyAiYW5kcm9pZElkZW50aWZpZXIiOiBbICJBVC5BbnlsaW5lLlhhbWFyaW4uQXBwLkRyb2lkIiwgIkFULkFueWxpbmUuWGFtYXJpbi5Gb3Jtcy5BcHAuRHJvaWQiIF0sICJkZWJ1Z1JlcG9ydGluZyI6ICJvbiIsICJpbWFnZVJlcG9ydENhY2hpbmciOiB0cnVlLCAiaW9zSWRlbnRpZmllciI6IFsgIkFULkFueWxpbmUuWGFtYXJpbi5BcHAuaU9TIiwgIkFULkFueWxpbmUuWGFtYXJpbi5Gb3Jtcy5BcHAuaU9TIiBdLCAibGljZW5zZUtleVZlcnNpb24iOiAyLCAibWFqb3JWZXJzaW9uIjogIjE4IiwgIm1heERheXNOb3RSZXBvcnRlZCI6IDAsICJwaW5nUmVwb3J0aW5nIjogdHJ1ZSwgInBsYXRmb3JtIjogWyAiaU9TIiwgIkFuZHJvaWQiIF0sICJzY29wZSI6IFsgIkFMTCIgXSwgInNob3dQb3BVcEFmdGVyRXhwaXJ5IjogdHJ1ZSwgInNob3dXYXRlcm1hcmsiOiB0cnVlLCAidG9sZXJhbmNlRGF5cyI6IDkwLCAidmFsaWQiOiAiMjAyMS0wMS0wMSIgfQpnS0YvdDJpS05FTFR5dzZYQnMzclhlb0dxSkk0K0hsZzNLcnRnZ3I3eVpNdHZNQ1I3cE5QK1M0YUp1VG8wVGU0CnJtY3hwZHFYNWF6Ly9nM0pNNHB4VjdlUjNvVVQ0MVY0cnAyV0ZsNGJnK25yV0JCRSt3OHlCTmZobE5memFkVDcKeXExZWNHcGdic0lzMW5EUEV6SkFkcWQ3b3Z0emRpY254S0VTTithQVR4NDBhNkgyYzQ1cVExTVZmTWNRTTBJeApPdTB1THBiTEFnTGRjVXFFK1k3LzJhaEdyRFFkemNwZXQ1TUpjbWM5ZGdNdHFBQWFrNUphNFQ1a2VUYnN5OGdNCkxSdWhQcExlMlcxQVJLVzRzaEVZTk9wanR2ZkszbkpuaHN4czJYeHZMK1Z5TTd6N2EyRW9yVXN2bk5jcGhsOUMKbkRBbml3bVR4WTJmdmVmQ2lRdFlwdz09Cg==";
 
         public UIViewController CurrentScanViewController { get; set; }
 
@@ -179,11 +178,18 @@ namespace AnylineExamples.iOS
 
             if (example.Name == "Scan NFC of Passports")
             {
-                AnylineScanViewController.CurrentScanViewController = new NFCScanViewController(example.Name, "id_config_mrz.json");
+                if (!UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
+                {
+                    var okAlertController = UIAlertController.Create("NFC Not Supported", "NFC passport reading is not supported on this device", UIAlertControllerStyle.Alert);
+                    okAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
+                    AnylineScanViewController.PresentViewController(okAlertController, true, null);
+                }
+                else AnylineScanViewController.CurrentScanViewController = new NFCScanViewController(example.Name);
             }
             else
+            {
                 AnylineScanViewController.CurrentScanViewController = new ScanViewController(example.Name, example.JsonPath);
-
+            }
             // navigate to the newly created scan view controller
             if (AnylineScanViewController.CurrentScanViewController != null)
                 AnylineScanViewController.NavigationController.PushViewController(AnylineScanViewController.CurrentScanViewController, false);

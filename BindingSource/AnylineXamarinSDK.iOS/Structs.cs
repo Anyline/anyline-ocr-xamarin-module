@@ -169,7 +169,24 @@ namespace AnylineXamarinSDK.iOS
         BarcodeModuleNativeDelegateWrong = 9004,
         EnergyScanPluginBarcodeNotSupported = 9005,
         ModuleSimpleOCRConfigLanguagesConfigIsNil = 9006,
-        InvalidConfigSet = 9007
+        InvalidConfigSet = 9007,
+        NFCTagErrorResponseError = 10001,
+        NFCTagErrorInvalidResponse = 10002,
+        NFCTagErrorUnexpectedError = 10003,
+        NFCTagErrorNFCNotSupported = 10004,
+        NFCTagErrorNoConnectedTag = 10005,
+        NFCTagErrorD087Malformed = 10006,
+        NFCTagErrorInvalidResponseChecksum = 10007,
+        NFCTagErrorMissingMandatoryFields = 10008,
+        NFCTagErrorCannotDecodeASN1Length = 10009,
+        NFCTagErrorInvalidASN1Value = 10010,
+        NFCTagErrorUnableToProtectAPDU = 10011,
+        NFCTagErrorUnableToUnprotectAPDU = 10012,
+        NFCTagErrorUnsupportedDataGroup = 10013,
+        NFCTagErrorDataGroupNotRead = 10014,
+        NFCTagErrorUnknownTag = 10015,
+        NFCTagErrorUnknownImageFormat = 10016,
+        NFCTagErrorNotImplemented = 10017
     }
 
     [StructLayout(LayoutKind.Sequential)]
