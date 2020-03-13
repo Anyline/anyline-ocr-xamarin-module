@@ -745,7 +745,7 @@
 <!-- DataGroup1.setLastName(java.lang.String) -->
 <!-- DataGroup1.setNationality(java.lang.String) -->
 <!-- File: IO.Anyline.Nfc.NFC.DataGroup2.cs -->
-<!-- DataGroup2.DataGroup2(byte[]) -->
+<!-- DataGroup2.DataGroup2(android.graphics.Bitmap) -->
 <!-- DataGroup2.setFaceImage(android.graphics.Bitmap) -->
 <!-- File: IO.Anyline.Nfc.NFC.Doc9303Apdu.cs -->
 <!-- Doc9303Apdu.buildDO87(byte[]) -->
@@ -768,7 +768,7 @@
 <!-- SOD.setValidUntilString(java.lang.String) -->
 <!-- File: IO.Anyline.Nfc.NfcDetector.cs -->
 <!-- NfcDetector.NfcDetectionHandler.onDg1Success(io.anyline.nfc.NFC.DataGroup1) -->
-<!-- NfcDetector.NfcDetectionHandler.onDg2Success(io.anyline.nfc.NFC.DataGroup2) -->
+<!-- NfcDetector.NfcDetectionHandler.onDg2Success(android.graphics.Bitmap) -->
 <!-- NfcDetector.NfcDetectionHandler.onNfcFailure(java.lang.String) -->
 <!-- NfcDetector.NfcDetectionHandler.onNfcSuccess(io.anyline.nfc.NFC.NFCResult) -->
 <!-- NfcDetector.NfcDetectionHandler.onSODSuccess(io.anyline.nfc.NFC.SOD) -->
@@ -2883,6 +2883,8 @@
 <!-- LicenseFeature.LicenseFeature(java.lang.String) -->
 <!-- LicenseFeature.LicenseFeature(java.lang.String, java.lang.String) -->
 <!-- LicenseFeature.LicenseFeature(java.lang.String, java.lang.String, java.lang.String) -->
+<!-- File: IO.Anyline.Util.NumberValidationUtil.cs -->
+<!-- NumberValidationUtil.getValidNumber(java.lang.String, double, double) -->
 <!-- File: IO.Anyline.View.AbstractBaseScanViewPlugin.cs -->
 <!-- AbstractBaseScanViewPlugin.setCancelOnResult(boolean) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='setCancelOnResult' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">cancelOnResult</attr>
