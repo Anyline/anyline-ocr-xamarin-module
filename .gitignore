@@ -197,3 +197,4 @@ bin
 /Examples/packages
 /BindingSource/*.opendb
 /BindingSource/*.db
+Nuget/AnylineResources.bundle/tests/
