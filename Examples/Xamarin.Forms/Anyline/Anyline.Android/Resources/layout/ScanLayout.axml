@@ -7,6 +7,5 @@
 	<io.anyline.view.ScanView
 		android:id="@+id/scan_view"
         android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:layout_margin="3dp"/>
+		android:layout_height="match_parent"/>
 </RelativeLayout>

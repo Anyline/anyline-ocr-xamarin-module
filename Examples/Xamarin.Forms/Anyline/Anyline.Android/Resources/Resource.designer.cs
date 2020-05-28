@@ -4796,6 +4796,9 @@ namespace Anyline.Droid
 			// aapt resource value: 0x7F05009A
 			public const int transparent = 2131034266;
 			
+			// aapt resource value: 0x7F05009B
+			public const int white = 2131034267;
+			
 			static Color()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -7320,28 +7323,31 @@ namespace Anyline.Droid
 			public const int mtrl_chip_close_icon_content_description = 2131624006;
 			
 			// aapt resource value: 0x7F0E0047
-			public const int open_permission_settings = 2131624007;
+			public const int ok = 2131624007;
 			
 			// aapt resource value: 0x7F0E0048
-			public const int password_toggle_content_description = 2131624008;
+			public const int open_permission_settings = 2131624008;
 			
 			// aapt resource value: 0x7F0E0049
-			public const int path_password_eye = 2131624009;
+			public const int password_toggle_content_description = 2131624009;
 			
 			// aapt resource value: 0x7F0E004A
-			public const int path_password_eye_mask_strike_through = 2131624010;
+			public const int path_password_eye = 2131624010;
 			
 			// aapt resource value: 0x7F0E004B
-			public const int path_password_eye_mask_visible = 2131624011;
+			public const int path_password_eye_mask_strike_through = 2131624011;
 			
 			// aapt resource value: 0x7F0E004C
-			public const int path_password_strike_through = 2131624012;
+			public const int path_password_eye_mask_visible = 2131624012;
 			
 			// aapt resource value: 0x7F0E004D
-			public const int search_menu_title = 2131624013;
+			public const int path_password_strike_through = 2131624013;
 			
 			// aapt resource value: 0x7F0E004E
-			public const int status_bar_notification_info_overflow = 2131624014;
+			public const int search_menu_title = 2131624014;
+			
+			// aapt resource value: 0x7F0E004F
+			public const int status_bar_notification_info_overflow = 2131624015;
 			
 			static String()
 			{

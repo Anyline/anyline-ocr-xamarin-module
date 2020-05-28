@@ -71,7 +71,8 @@ namespace Anyline.Droid
 
         private void ScanView_CameraOpened(object sender, AT.Nineyards.Anyline.Camera.CameraOpenedEventArgs e)
         {
-            scanView.ScanViewPlugin.Start();
+            if (scanView != null)
+                scanView.ScanViewPlugin.Start();
         }
 
         protected override void OnLayout(bool changed, int l, int t, int r, int b)
