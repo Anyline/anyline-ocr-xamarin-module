@@ -72,7 +72,7 @@ For a detailed setup guide on how to integrate Anyline for your scanning applica
 
 #### Android
 
-- Android device with SDK >= 19
+- Android device with SDK >= 21
 - decent camera functionality (recommended: 720p and adequate auto focus)
 
 
