@@ -95,7 +95,7 @@ namespace AnylineExamples.Droid
                 Log.Debug(TAG, e.ToString());
             }
         }
-        
+
         protected override void OnPause()
         {
             base.OnPause();
@@ -140,8 +140,6 @@ namespace AnylineExamples.Droid
             base.Dispose(disposing);
             try
             {
-                _isInitialized = false;
-
                 if (_scanView != null)
                 {
                     _scanView.Dispose();
@@ -149,7 +147,11 @@ namespace AnylineExamples.Droid
                     _scanView.CameraError -= ScanView_CameraError;
                     _scanView = null;
 
+
+
                     GC.Collect();
+
+                    _isInitialized = false;
                 }
             }
             catch (Exception) { }

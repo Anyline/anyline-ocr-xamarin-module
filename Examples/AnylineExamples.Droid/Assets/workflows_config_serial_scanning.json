@@ -25,7 +25,7 @@
             "style": "rect",
             "maxWidthPercent": "80%",
             "maxHeightPercent": "80%",
-            "alignment": "top_half",
+            "alignment": "center",
             "width": 550,
             "ratioFromSize": {
               "width": 2,
@@ -100,7 +100,7 @@
           "cutoutConfig": {
             "style": "rect",
             "maxWidthPercent": "70%",
-            "alignment": "top_half",
+            "alignment": "center",
             "ratioFromSize": {
               "width": 62,
               "height": 9
