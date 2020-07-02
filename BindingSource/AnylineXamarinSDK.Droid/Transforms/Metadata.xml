@@ -178,7 +178,12 @@
   <attr path="/api/package[@name='io.anyline.view']/class[@name='ParallelScanViewComposite']/method[@name='getCutoutRect' and count(parameter)=0]" name="visibility">protected</attr>
   <attr path="/api/package[@name='io.anyline.plugin.document']/class[@name='DocumentScanViewPlugin']/method[@name='setupListenersForScanView' and count(parameter)=0]" name="visibility">protected</attr>
   <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPlugin']/method[@name='getCutoutRect' and count(parameter)=0]" name="visibility">protected</attr>
-  
+
+  <!--Fixes Error	CS0542	'FieldScanOption': member names cannot be the same as their enclosing type-->
+  <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IDFieldScanOptions.FieldScanOption']/field[@name='fieldScanOption']" name="managedName">IDFieldScanOption</attr>
+
+  Metadata.xml XPath field reference:
+
   <remove-node path="/api/package[@name='io.anyline.view']/interface[@name='UIChangeListener']"/>
   <remove-node path="/api/package[@name='at.nineyards.anyline.trainer']"/>
 

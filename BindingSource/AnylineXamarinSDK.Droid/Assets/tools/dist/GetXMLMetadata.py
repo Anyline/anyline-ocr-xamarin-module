@@ -180,14 +180,18 @@ def main(argv):
 
                             for p in _:
                                 if p != '':
-                                    type_name = p.split(' ')[0]
+                                    try:
+                                        type_name = p.split(' ')[0]
 
-                                    if fix == True:
-                                        type_name = type_name.replace(',', ', ')
+                                        if fix == True:
+                                            type_name = type_name.replace(',', ', ')
 
-                                    param_types.append(type_name)
+                                        param_types.append(type_name)
 
-                                    param_names.append(p.split(' ')[1])
+                                        param_names.append(p.split(' ')[1])
+                                    except:
+                                        # for generics in java, the naming format is different and, here, ignored
+                                        pass
 
                             # for i in range(0, len(param_names)):
                             #    print param_types[i] + " - " + param_names[i]

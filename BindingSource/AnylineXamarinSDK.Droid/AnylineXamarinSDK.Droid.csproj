@@ -67,16 +67,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\raw\al_d6f3e042d13f4cc06b77dbdb2d2dcebaf46326e6.txt" />
-    <TransformFile Include="Assets\tools\Generated.xml">
-      <SubType>Designer</SubType>
-    </TransformFile>
   </ItemGroup>
   <ItemGroup>
     <LibraryProjectZip Include="Jars\anylinesdk.aar" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\tools\" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
   <PropertyGroup Condition=" $([MSBuild]::IsOsPlatform(Windows)) ">
-    <PostBuildEvent>"$(ProjectDir)Assets\tools\dist\GetXMLMetadata.exe" "$(ProjectDir)obj\$(ConfigurationName)\generated\src" "$(ProjectDir)Assets\tools\Generated.xml" "$(ProjectDir)Assets\tools\javadoc" 0 &amp; xcopy "$(TargetPath)" "$(ProjectDir)..\..\Nuget\lib\MonoAndroid10\" /Y</PostBuildEvent>
+    <PostBuildEvent>python "$(ProjectDir)Assets\tools\dist\GetXMLMetadata.py" "$(ProjectDir)obj\$(ConfigurationName)\generated\src" "$(ProjectDir)Assets\tools\Generated.xml" "$(ProjectDir)Assets\tools\javadoc" 0 &amp; xcopy "$(TargetPath)" "$(ProjectDir)..\..\Nuget\lib\MonoAndroid10\" /Y</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup Condition=" $([MSBuild]::IsOsPlatform(OSX)) ">
     <PostBuildEvent>python "$(ProjectDir)Assets\tools\dist\GetXMLMetadata.py" "$(ProjectDir)obj\$(ConfigurationName)\generated\src\" "$(ProjectDir)Assets\tools\Generated.xml" "$(ProjectDir)Assets\tools\javadoc" 0 &amp; cp "$(TargetPath)" "$(ProjectDir)..\..\Nuget\lib\MonoAndroid10\"</PostBuildEvent>

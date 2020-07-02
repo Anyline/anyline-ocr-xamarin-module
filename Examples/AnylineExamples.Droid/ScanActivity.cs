@@ -66,7 +66,7 @@ namespace AnylineExamples.Droid
                  * You need to add your implementation of IO.Anyline.Plugin.IScanResultListener to retrieve scan results.
                  */
                 _scanView.ScanViewPlugin.AddScanResultListener(_scanResultListener);
-
+                //((_scanView.ScanViewPlugin as IdScanViewPlugin).ScanPlugin as IdScanPlugin).IdConfig
                 // handle camera open events
                 _scanView.CameraOpened += ScanView_CameraOpened;
 
@@ -109,7 +109,6 @@ namespace AnylineExamples.Droid
 
         private void ScanView_CameraOpened(object sender, CameraOpenedEventArgs args)
         {
-            Log.Debug(TAG, $"Camera opened with resolution {args.Width} x {args.Height}.");
         }
 
         #region going back & cleanup

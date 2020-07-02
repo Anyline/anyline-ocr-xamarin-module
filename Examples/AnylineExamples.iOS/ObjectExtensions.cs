@@ -128,6 +128,13 @@ namespace AnylineExamples.iOS
                 {
                     value.CreatePropertyDictionary().ToList().ForEach(x => dict.Add(x.Key, x.Value));
                 }
+                else if(value is ALTemplateIdentification templateIdentification)
+                {
+                    foreach (var field in templateIdentification.FieldNames)
+                    {
+                        dict.Add(field, templateIdentification.ValueForField(field));
+                    }
+                }
                 else if (value is ALIDFieldConfidences)
                 {
                     value.CreatePropertyDictionary().ToList().ForEach(x => dict.Add($"{x.Key} (field confidence)", x.Value));

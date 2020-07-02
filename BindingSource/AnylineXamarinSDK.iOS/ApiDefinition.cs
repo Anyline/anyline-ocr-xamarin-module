@@ -2619,6 +2619,60 @@ namespace AnylineXamarinSDK.iOS
         IntPtr Constructor(string surname, string givenNames, string dateOfBirth, string nationality, string placeOfBirth, string dateOfExpiry, string documentNumber, string cardAccessNumber, string germanIdFrontString);
     }
 
+    // @interface ALLayoutDefinition : NSObject
+    [BaseType(typeof(NSObject))]
+    interface ALLayoutDefinition
+    {
+        // @property NSString * _Nonnull country;
+        [Export("country")]
+        string Country { get; set; }
+
+        // @property NSString * _Nonnull layout;
+        [Export("layout")]
+        string Layout { get; set; }
+
+        // @property NSString * _Nonnull type;
+        [Export("type")]
+        string Type { get; set; }
+
+        // -(instancetype _Nonnull)initWithDictionary:(NSDictionary<NSString *,NSString *> * _Nonnull)dictionary;
+        [Export("initWithDictionary:")]
+        IntPtr Constructor(NSDictionary<NSString, NSString> dictionary);
+    }
+
+    // @interface ALTemplateIdentification : NSObject
+    [BaseType(typeof(NSObject))]
+    interface ALTemplateIdentification
+    {
+        // @property (nonatomic, strong) ALTemplateFieldConfidences * _Nullable fieldConfidences;
+        [NullAllowed, Export("fieldConfidences", ArgumentSemantic.Strong)]
+        ALTemplateFieldConfidences FieldConfidences { get; set; }
+
+        // @property (nonatomic, strong) ALLayoutDefinition * _Nullable layoutDefinition;
+        [NullAllowed, Export("layoutDefinition", ArgumentSemantic.Strong)]
+        ALLayoutDefinition LayoutDefinition { get; set; }
+
+        // -(void)addField:(NSString * _Nonnull)fieldName value:(NSString * _Nonnull)value;
+        [Export("addField:value:")]
+        void AddField(string fieldName, string value);
+
+        // -(NSArray<NSString *> * _Nonnull)fieldNames;
+        [Export("fieldNames")]
+        string[] FieldNames { get; }
+
+        // -(NSString * _Nonnull)valueForField:(NSString * _Nonnull)fieldName;
+        [Export("valueForField:")]
+        string ValueForField(string fieldName);
+
+        // -(BOOL)hasField:(NSString * _Nonnull)fieldName;
+        [Export("hasField:")]
+        bool HasField(string fieldName);
+
+        // -(void)removeField:(NSString * _Nonnull)fieldName;
+        [Export("removeField:")]
+        void RemoveField(string fieldName);
+    }
+
     // audit-objc-generics: @interface ALIDResult<__covariant ObjectType> : ALScanResult
     [BaseType(typeof(ALScanResult))]
     interface ALIDResult
@@ -2920,6 +2974,74 @@ namespace AnylineXamarinSDK.iOS
         // -(instancetype _Nullable)initWithSurname:(ALFieldConfidence)surname givenNames:(ALFieldConfidence)givenNames dateOfBirth:(ALFieldConfidence)dateOfBirth placeOfBirth:(ALFieldConfidence)placeOfBirth dateOfIssue:(ALFieldConfidence)dateOfIssue dateOfExpiry:(ALFieldConfidence)dateOfExpiry authority:(ALFieldConfidence)authority documentNumber:(ALFieldConfidence)documentNumber categories:(ALFieldConfidence)categories;
         [Export("initWithSurname:givenNames:dateOfBirth:placeOfBirth:dateOfIssue:dateOfExpiry:authority:documentNumber:categories:")]
         IntPtr Constructor(int surname, int givenNames, int dateOfBirth, int placeOfBirth, int dateOfIssue, int dateOfExpiry, int authority, int documentNumber, int categories);
+    }
+
+
+    // @interface ALTemplateFieldScanOptions : ALIDFieldScanOptions
+    [BaseType(typeof(ALIDFieldScanOptions))]
+    interface ALTemplateFieldScanOptions
+    {
+        // -(instancetype _Nullable)initWithJsonDictionary:(NSDictionary * _Nonnull)configDict;
+        [Export("initWithJsonDictionary:")]
+        IntPtr Constructor(NSDictionary configDict);
+
+        // -(BOOL)hasField:(NSString * _Nonnull)fieldName;
+        [Export("hasField:")]
+        bool HasField(string fieldName);
+
+        // -(void)addField:(NSString * _Nonnull)fieldName value:(ALFieldScanOption)scanOption;
+        [Export("addField:value:")]
+        void AddField(string fieldName, ALFieldScanOption scanOption);
+
+        // -(void)removeField:(NSString * _Nonnull)fieldName;
+        [Export("removeField:")]
+        void RemoveField(string fieldName);
+
+        // -(NSArray<NSString *> * _Nonnull)fieldNames;
+        [Export("fieldNames")]
+        string[] FieldNames { get; }
+
+        // -(ALFieldScanOption)valueForField:(NSString * _Nonnull)fieldName;
+        [Export("valueForField:")]
+        ALFieldScanOption ValueForField(string fieldName);
+    }
+
+    // @interface ALTemplateFieldConfidences : ALIDFieldConfidences
+    [BaseType(typeof(ALIDFieldConfidences))]
+    interface ALTemplateFieldConfidences
+    {
+        // -(instancetype _Nullable)initWithJsonDictionary:(NSDictionary * _Nonnull)configDict;
+        [Export("initWithJsonDictionary:")]
+        IntPtr Constructor(NSDictionary configDict);
+
+        // -(BOOL)hasField:(NSString * _Nonnull)fieldName;
+        [Export("hasField:")]
+        bool HasField(string fieldName);
+
+        // -(void)addField:(NSString * _Nonnull)fieldName value:(ALFieldConfidence)confidence;
+        [Export("addField:value:")]
+        void AddField(string fieldName, int confidence);
+
+        // -(void)removeField:(NSString * _Nonnull)fieldName;
+        [Export("removeField:")]
+        void RemoveField(string fieldName);
+
+        // -(ALFieldConfidence)valueForField:(NSString * _Nonnull)fieldName;
+        [Export("valueForField:")]
+        int ValueForField(string fieldName);
+
+        // -(NSArray<NSString *> * _Nonnull)fieldNames;
+        [Export("fieldNames")]
+        string[] FieldNames { get; }
+    }
+
+    // @interface ALTemplateConfig : ALIDConfig
+    [BaseType(typeof(ALIDConfig))]
+    interface ALTemplateConfig
+    {
+        // -(NSDictionary * _Nonnull)toStartVariableJsonDictionary;
+        [Export("toStartVariableJsonDictionary")]
+        NSDictionary ToStartVariableJsonDictionary { get; }
     }
 
     // @interface ALDrivingLicenseIdentification : NSObject

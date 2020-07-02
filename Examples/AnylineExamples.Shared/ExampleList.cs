@@ -38,6 +38,7 @@ namespace AnylineExamples.Shared
     {
         public static readonly string AnalogDigital = "Analog/Digital Meter";
         public static readonly string DialMeter = "Dial Meter";
+        public static readonly string GENERIC_ID = "Universal ID";
         public static readonly string MRZ = "Passport/MRZ";
         public static readonly string DrivingLicense = "Driving License";
         public static readonly string GermanIDFront = "German ID Front";
@@ -66,6 +67,7 @@ namespace AnylineExamples.Shared
             new ExampleModel(ItemType.Item, Example.DialMeter, Category.Energy, "energy_config_dial.json"),
 
             new ExampleModel(ItemType.Header, Category.ID, Category.ID, ""),
+            new ExampleModel(ItemType.Item, Example.GENERIC_ID, Category.ID, "id_config_universal.json"),
             new ExampleModel(ItemType.Item, Example.MRZ, Category.ID, "id_config_mrz.json"),
             new ExampleModel(ItemType.Item, Example.DrivingLicense, Category.ID, "id_config_driving_license.json"),
             new ExampleModel(ItemType.Item, Example.GermanIDFront, Category.ID, "id_config_german_id_front.json"),

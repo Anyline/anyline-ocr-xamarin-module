@@ -114,6 +114,7 @@
     <BundleResource Include="Resources\workflows_config_serial_scanning.json" />
     <BundleResource Include="Resources\mro_config_tin.json" />
     <BundleResource Include="Resources\workflows_config_parallel_scanning.json" />
+    <BundleResource Include="Resources\id_config_universal.json" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -167,7 +168,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Anyline.Xamarin.SDK.iOS">
-      <Version>21.0.0</Version>
+      <Version>22.0.0</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="..\AnylineExamples.Shared\AnylineExamples.Shared.projitems" Label="Shared" />

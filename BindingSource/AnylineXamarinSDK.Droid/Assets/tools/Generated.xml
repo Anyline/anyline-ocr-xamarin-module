@@ -9,26 +9,17 @@
 <attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='addToLicenseCheck' and count(parameter)=1 and parameter[1][@type='io.anyline.util.LicenseFeature']]/parameter[1]" name="managedName">licenseFeature</attr>
 <!-- AnylineController.getLicenseExpirationDate(java.lang.String) -->
 <attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='getLicenseExpirationDate' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">licenseKey</attr>
-<!-- AnylineController.loadCmdFile(java.lang.String) -->
-<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='loadCmdFile' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">cmdFileName</attr>
-<!-- AnylineController.loadCmdFile(java.lang.String, java.lang.String) -->
-<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='loadCmdFile' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">cmdFileName</attr>
-<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='loadCmdFile' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String']]/parameter[2]" name="managedName">pathInAssets</attr>
-<!-- AnylineController.loadScript(java.lang.String) -->
-<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='loadScript' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">script</attr>
-<!-- AnylineController.loadScript(java.lang.String, java.lang.String) -->
-<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='loadScript' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">script</attr>
-<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='loadScript' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String']]/parameter[2]" name="managedName">bundlePath</attr>
-<!-- AnylineController.loadScript(java.lang.String, java.lang.String, java.lang.String) -->
-<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='loadScript' and count(parameter)=3 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[1]" name="managedName">scriptName</attr>
-<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='loadScript' and count(parameter)=3 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[2]" name="managedName">script</attr>
-<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='loadScript' and count(parameter)=3 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[3]" name="managedName">bundlePath</attr>
 <!-- AnylineController.reportIncludeValues(java.lang.String) -->
 <attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='reportIncludeValues' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">jsonString</attr>
 <!-- AnylineController.setAssetJsonPaths(java.lang.String...) -->
 <attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setAssetJsonPaths' and count(parameter)=1 and parameter[1][@type='java.lang.String...']]/parameter[1]" name="managedName">assetJsonPaths</attr>
 <!-- AnylineController.setCancelOnResult(boolean) -->
 <attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setCancelOnResult' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">isCancelOnResult</attr>
+<!-- AnylineController.setCmdFile(java.lang.String) -->
+<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setCmdFile' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">cmdFileName</attr>
+<!-- AnylineController.setCmdFile(java.lang.String, java.lang.String) -->
+<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setCmdFile' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">cmdFileName</attr>
+<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setCmdFile' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String']]/parameter[2]" name="managedName">pathInAssets</attr>
 <!-- AnylineController.setCropRect(io.anyline.view.CutoutRect) -->
 <attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setCropRect' and count(parameter)=1 and parameter[1][@type='io.anyline.view.CutoutRect']]/parameter[1]" name="managedName">cutoutRect</attr>
 <!-- AnylineController.setDelayScanTime(double, double) -->
@@ -42,6 +33,15 @@
 <attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setImageProvider' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.ImageProvider']]/parameter[1]" name="managedName">imageProvider</attr>
 <!-- AnylineController.setReportingEnabled(boolean) -->
 <attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setReportingEnabled' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">isReportingEnabled</attr>
+<!-- AnylineController.setScript(java.lang.String) -->
+<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setScript' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">script</attr>
+<!-- AnylineController.setScript(java.lang.String, java.lang.String) -->
+<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setScript' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">script</attr>
+<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setScript' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String']]/parameter[2]" name="managedName">bundlePath</attr>
+<!-- AnylineController.setScript(java.lang.String, java.lang.String, java.lang.String) -->
+<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setScript' and count(parameter)=3 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[1]" name="managedName">scriptName</attr>
+<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setScript' and count(parameter)=3 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[2]" name="managedName">script</attr>
+<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setScript' and count(parameter)=3 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[3]" name="managedName">bundlePath</attr>
 <!-- AnylineController.setStartVariable(java.lang.String, java.lang.Object) -->
 <attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setStartVariable' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.Object']]/parameter[1]" name="managedName">key</attr>
 <attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setStartVariable' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.Object']]/parameter[2]" name="managedName">value</attr>
@@ -134,13 +134,12 @@
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController.CameraOrientation']/method[@name='fromDegrees' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">degrees</attr>
 <!-- CameraController.CameraOrientation.valueOf(java.lang.String) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController.CameraOrientation']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
-<!-- CameraController.setCameraConfig(at.nineyards.anyline.camera.CameraConfig) -->
-<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setCameraConfig' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.CameraConfig']]/parameter[1]" name="managedName">cameraConfig</attr>
 <!-- CameraController.setPreferredCameraConfig(at.nineyards.anyline.camera.CameraConfig) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setPreferredCameraConfig' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.CameraConfig']]/parameter[1]" name="managedName">preferredCameraConfig</attr>
 <!-- CameraController.setZoomRatio(double) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setZoomRatio' and count(parameter)=1 and parameter[1][@type='double']]/parameter[1]" name="managedName">zoomLevelRatio</attr>
 <!-- CameraController.reportCameraError(java.lang.Exception) -->
+<!-- CameraController.setCameraConfig(at.nineyards.anyline.camera.CameraConfig) -->
 <!-- CameraController.setCameraOpenListener(at.nineyards.anyline.camera.CameraOpenListener) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setCameraOpenListener' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.CameraOpenListener']]/parameter[1]" name="managedName">listener</attr>
 <!-- CameraController.setCameraOrientation(at.nineyards.anyline.camera.CameraController.CameraOrientation) -->
@@ -2402,18 +2401,28 @@
 <!-- GermanIdFrontIdentification.setSurname(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontIdentification']/method[@name='setSurname' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">surname</attr>
 <!-- File: IO.Anyline.Plugin.ID.ID.cs -->
-<!-- ID.setFaceImage(android.graphics.Bitmap) -->
+<!-- ID.ID(io.anyline.plugin.id.Identification) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='ID']/constructor[@name='ID' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.Identification']]/parameter[1]" name="managedName">identification</attr>
+<!-- ID.setFaceImage(android.graphics.Bitmap) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='ID']/method[@name='setFaceImage' and count(parameter)=1 and parameter[1][@type='android.graphics.Bitmap']]/parameter[1]" name="managedName">faceImage</attr>
+<!-- ID.setFieldConfidences(TFieldConfidences) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='ID']/method[@name='setFieldConfidences' and count(parameter)=1 and parameter[1][@type='TFieldConfidences']]/parameter[1]" name="managedName">fieldConfidences</attr>
 <!-- ID.parseDateObject(java.lang.String) -->
-<!-- File: IO.Anyline.Plugin.ID.IdConfig.cs -->
-<!-- IdConfig.setIdFieldScanOptions(io.anyline.plugin.id.IDFieldScanOptions) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdConfig']/method[@name='setIdFieldScanOptions' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions']]/parameter[1]" name="managedName">idFieldScanOptions</attr>
-<!-- IdConfig.setIdMinFieldConfidences(io.anyline.plugin.id.IDFieldConfidences) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdConfig']/method[@name='setIdMinFieldConfidences' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldConfidences']]/parameter[1]" name="managedName">idMinFieldConfidences</attr>
+<!-- File: IO.Anyline.Plugin.ID.IDataObject.cs -->
+<!-- File: IO.Anyline.Plugin.ID.IdConfig.cs -->
+<!-- IdConfig.setIdFieldScanOptions(TFieldScanOptions) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdConfig']/method[@name='setIdFieldScanOptions' and count(parameter)=1 and parameter[1][@type='TFieldScanOptions']]/parameter[1]" name="managedName">idFieldScanOptions</attr>
+<!-- IdConfig.setIdMinFieldConfidences(TFieldConfidences) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdConfig']/method[@name='setIdMinFieldConfidences' and count(parameter)=1 and parameter[1][@type='TFieldConfidences']]/parameter[1]" name="managedName">idMinFieldConfidences</attr>
 <!-- IdConfig.setMinConfidence(int) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdConfig']/method[@name='setMinConfidence' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">minConfidence</attr>
 <!-- IdConfig.enableFaceDetection(boolean) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdConfig']/method[@name='enableFaceDetection' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">faceDetectionEnabled</attr>
+<!-- File: IO.Anyline.Plugin.ID.Identification.cs -->
+<!-- Identification.getValue(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='Identification']/method[@name='getValue' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">fieldName</attr>
+<!-- Identification.hasField(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='Identification']/method[@name='hasField' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">fieldName</attr>
 <!-- File: IO.Anyline.Plugin.ID.IDFieldConfidences.cs -->
 <!-- IDFieldConfidences.initDictionaryStartVariableFromJsonObject(android.content.Context, org.json.JSONObject, java.lang.Object) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IDFieldConfidences']/method[@name='initDictionaryStartVariableFromJsonObject' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='org.json.JSONObject'] and parameter[3][@type='java.lang.Object']]/parameter[1]" name="managedName">context</attr>
@@ -2432,13 +2441,13 @@
 <!-- IDFieldScanOptions.setIdFieldScanOptionsStartVariable(io.anyline.plugin.id.IDFieldScanOptions) -->
 <!-- File: IO.Anyline.Plugin.ID.IdScanPlugin.cs -->
 <!-- IdScanPlugin.ScanMode.valueOf(java.lang.String) -->
-<!-- IdScanPlugin.IdScanPlugin(android.content.Context, java.lang.String, java.lang.String, io.anyline.plugin.id.IdConfig) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdScanPlugin']/constructor[@name='IdScanPlugin' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String'] and parameter[4][@type='io.anyline.plugin.id.IdConfig']]/parameter[1]" name="managedName">context</attr>
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdScanPlugin']/constructor[@name='IdScanPlugin' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String'] and parameter[4][@type='io.anyline.plugin.id.IdConfig']]/parameter[2]" name="managedName">id</attr>
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdScanPlugin']/constructor[@name='IdScanPlugin' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String'] and parameter[4][@type='io.anyline.plugin.id.IdConfig']]/parameter[3]" name="managedName">licenseKey</attr>
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdScanPlugin']/constructor[@name='IdScanPlugin' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String'] and parameter[4][@type='io.anyline.plugin.id.IdConfig']]/parameter[4]" name="managedName">idConfig</attr>
-<!-- IdScanPlugin.setIdConfig(io.anyline.plugin.id.IdConfig) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdScanPlugin']/method[@name='setIdConfig' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IdConfig']]/parameter[1]" name="managedName">idConfig</attr>
+<!-- IdScanPlugin.IdScanPlugin(android.content.Context, java.lang.String, java.lang.String, io.anyline.plugin.id.IdConfig&lt;?, ?&gt;) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdScanPlugin']/constructor[@name='IdScanPlugin' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String'] and parameter[4][@type='io.anyline.plugin.id.IdConfig&lt;?, ?&gt;']]/parameter[1]" name="managedName">context</attr>
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdScanPlugin']/constructor[@name='IdScanPlugin' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String'] and parameter[4][@type='io.anyline.plugin.id.IdConfig&lt;?, ?&gt;']]/parameter[2]" name="managedName">id</attr>
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdScanPlugin']/constructor[@name='IdScanPlugin' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String'] and parameter[4][@type='io.anyline.plugin.id.IdConfig&lt;?, ?&gt;']]/parameter[3]" name="managedName">licenseKey</attr>
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdScanPlugin']/constructor[@name='IdScanPlugin' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String'] and parameter[4][@type='io.anyline.plugin.id.IdConfig&lt;?, ?&gt;']]/parameter[4]" name="managedName">idConfig</attr>
+<!-- IdScanPlugin.setIdConfig(io.anyline.plugin.id.IdConfig&lt;?, ?&gt;) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdScanPlugin']/method[@name='setIdConfig' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IdConfig&lt;?, ?&gt;']]/parameter[1]" name="managedName">idConfig</attr>
 <!-- IdScanPlugin.onFailure(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdScanPlugin']/method[@name='onFailure' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">e</attr>
 <!-- IdScanPlugin.onFinishedWithOutput(java.lang.Object) -->
@@ -2454,12 +2463,23 @@
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdScanViewPlugin']/constructor[@name='IdScanViewPlugin' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='io.anyline.plugin.id.IdConfig']]/parameter[2]" name="managedName">licenseKey</attr>
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdScanViewPlugin']/constructor[@name='IdScanViewPlugin' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='io.anyline.plugin.id.IdConfig']]/parameter[3]" name="managedName">scanViewPluginConfig</attr>
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdScanViewPlugin']/constructor[@name='IdScanViewPlugin' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='io.anyline.plugin.id.IdConfig']]/parameter[4]" name="managedName">idConfig</attr>
-<!-- IdScanViewPlugin.IdScanViewPlugin(android.content.Context, java.lang.String, io.anyline.view.ScanViewPluginConfig, io.anyline.plugin.id.IdConfig, java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdScanViewPlugin']/constructor[@name='IdScanViewPlugin' and count(parameter)=5 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='io.anyline.plugin.id.IdConfig'] and parameter[5][@type='java.lang.String']]/parameter[1]" name="managedName">context</attr>
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdScanViewPlugin']/constructor[@name='IdScanViewPlugin' and count(parameter)=5 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='io.anyline.plugin.id.IdConfig'] and parameter[5][@type='java.lang.String']]/parameter[2]" name="managedName">licenseKey</attr>
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdScanViewPlugin']/constructor[@name='IdScanViewPlugin' and count(parameter)=5 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='io.anyline.plugin.id.IdConfig'] and parameter[5][@type='java.lang.String']]/parameter[3]" name="managedName">scanViewPluginConfig</attr>
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdScanViewPlugin']/constructor[@name='IdScanViewPlugin' and count(parameter)=5 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='io.anyline.plugin.id.IdConfig'] and parameter[5][@type='java.lang.String']]/parameter[4]" name="managedName">idConfig</attr>
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdScanViewPlugin']/constructor[@name='IdScanViewPlugin' and count(parameter)=5 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='io.anyline.plugin.id.IdConfig'] and parameter[5][@type='java.lang.String']]/parameter[5]" name="managedName">id</attr>
+<!-- IdScanViewPlugin.IdScanViewPlugin(android.content.Context, java.lang.String, io.anyline.view.ScanViewPluginConfig, io.anyline.plugin.id.IdConfig&lt;?, ?&gt;, java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdScanViewPlugin']/constructor[@name='IdScanViewPlugin' and count(parameter)=5 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='io.anyline.plugin.id.IdConfig&lt;?, ?&gt;'] and parameter[5][@type='java.lang.String']]/parameter[1]" name="managedName">context</attr>
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdScanViewPlugin']/constructor[@name='IdScanViewPlugin' and count(parameter)=5 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='io.anyline.plugin.id.IdConfig&lt;?, ?&gt;'] and parameter[5][@type='java.lang.String']]/parameter[2]" name="managedName">licenseKey</attr>
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdScanViewPlugin']/constructor[@name='IdScanViewPlugin' and count(parameter)=5 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='io.anyline.plugin.id.IdConfig&lt;?, ?&gt;'] and parameter[5][@type='java.lang.String']]/parameter[3]" name="managedName">scanViewPluginConfig</attr>
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdScanViewPlugin']/constructor[@name='IdScanViewPlugin' and count(parameter)=5 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='io.anyline.plugin.id.IdConfig&lt;?, ?&gt;'] and parameter[5][@type='java.lang.String']]/parameter[4]" name="managedName">idConfig</attr>
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdScanViewPlugin']/constructor[@name='IdScanViewPlugin' and count(parameter)=5 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='io.anyline.plugin.id.IdConfig&lt;?, ?&gt;'] and parameter[5][@type='java.lang.String']]/parameter[5]" name="managedName">id</attr>
+<!-- File: IO.Anyline.Plugin.ID.LayoutDefinition.cs -->
+<!-- LayoutDefinition.LayoutDefinition(java.lang.String, java.lang.String, java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='LayoutDefinition']/constructor[@name='LayoutDefinition' and count(parameter)=3 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[1]" name="managedName">type</attr>
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='LayoutDefinition']/constructor[@name='LayoutDefinition' and count(parameter)=3 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[2]" name="managedName">country</attr>
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='LayoutDefinition']/constructor[@name='LayoutDefinition' and count(parameter)=3 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[3]" name="managedName">layout</attr>
+<!-- LayoutDefinition.setCountry(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='LayoutDefinition']/method[@name='setCountry' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">country</attr>
+<!-- LayoutDefinition.setLayout(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='LayoutDefinition']/method[@name='setLayout' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">layout</attr>
+<!-- LayoutDefinition.setType(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='LayoutDefinition']/method[@name='setType' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">type</attr>
 <!-- File: IO.Anyline.Plugin.ID.MrzConfig.cs -->
 <!-- MrzConfig.setCropAndTransformID(boolean) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzConfig']/method[@name='setCropAndTransformID' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">cropAndTransformID</attr>
@@ -2603,6 +2623,29 @@
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='NFCConfig']/constructor[@name='NFCConfig' and count(parameter)=3 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[1]" name="managedName">passportNumber</attr>
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='NFCConfig']/constructor[@name='NFCConfig' and count(parameter)=3 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[2]" name="managedName">dateOfBirth</attr>
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='NFCConfig']/constructor[@name='NFCConfig' and count(parameter)=3 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[3]" name="managedName">expirationDate</attr>
+<!-- File: IO.Anyline.Plugin.ID.TemplateConfig.cs -->
+<!-- TemplateConfig.TemplateConfig(org.json.JSONObject) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='TemplateConfig']/constructor[@name='TemplateConfig' and count(parameter)=1 and parameter[1][@type='org.json.JSONObject']]/parameter[1]" name="managedName">jsonObject</attr>
+<!-- File: IO.Anyline.Plugin.ID.TemplateFieldConfidences.cs -->
+<!-- TemplateFieldConfidences.addField(java.lang.String, java.lang.Integer) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='TemplateFieldConfidences']/method[@name='addField' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.Integer']]/parameter[1]" name="managedName">fieldName</attr>
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='TemplateFieldConfidences']/method[@name='addField' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.Integer']]/parameter[2]" name="managedName">value</attr>
+<!-- TemplateFieldConfidences.getConfidence(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='TemplateFieldConfidences']/method[@name='getConfidence' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">fieldName</attr>
+<!-- TemplateFieldConfidences.hasField(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='TemplateFieldConfidences']/method[@name='hasField' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">fieldName</attr>
+<!-- TemplateFieldConfidences.removeField(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='TemplateFieldConfidences']/method[@name='removeField' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">fieldName</attr>
+<!-- File: IO.Anyline.Plugin.ID.TemplateFieldScanOptions.cs -->
+<!-- TemplateFieldScanOptions.addField(java.lang.String, io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='TemplateFieldScanOptions']/method[@name='addField' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">fieldName</attr>
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='TemplateFieldScanOptions']/method[@name='addField' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[2]" name="managedName">value</attr>
+<!-- TemplateFieldScanOptions.getFieldScanOption(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='TemplateFieldScanOptions']/method[@name='getFieldScanOption' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">fieldName</attr>
+<!-- TemplateFieldScanOptions.hasField(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='TemplateFieldScanOptions']/method[@name='hasField' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">fieldName</attr>
+<!-- TemplateFieldScanOptions.removeField(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='TemplateFieldScanOptions']/method[@name='removeField' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">fieldName</attr>
 <!-- File: IO.Anyline.Plugin.IScanInfoListener.cs -->
 <!-- ScanInfoListener.onInfo(io.anyline.plugin.ScanInfo) -->
 <attr path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanInfoListener']/method[@name='onInfo' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanInfo']]/parameter[1]" name="managedName">info</attr>
