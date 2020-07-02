@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Content;
 using Android.Graphics;
+using Android.Runtime;
 using Android.Views;
 using Anyline;
 using Anyline.Droid;
@@ -133,6 +134,7 @@ namespace Anyline.Droid
                     case "PeerReference":
                     case "Outline":
                     case "Class":
+                    case "FieldNames":
                         break;
                     default:
 
@@ -178,6 +180,11 @@ namespace Anyline.Droid
                                 {
                                     var sublist = CreatePropertyList(value as IDFieldConfidences);
                                     sublist.ToList().ForEach(x => dict.Add($"{x.Key} (field confidence)", x.Value));
+                                }
+                                else if (value is JavaDictionary<String, String> dictionaryValues)
+                                {
+                                    foreach (var v in dictionaryValues)
+                                        dict.Add(v.Key, new Java.Lang.String(v.Value.ToString()).ReplaceAll("\\\\n", "\\\n"));
                                 }
                                 else
                                 {
