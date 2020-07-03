@@ -224,13 +224,15 @@ namespace AnylineXamarinSDK.iOS
     [Native]
     public enum ALRunFailure : long
     {
-        Unkown = -1,
+        Unknown = -1,
+        Unkown = Unknown,
         NoLinesFound = -2,
         NoTextFound = -3,
         ConfidenceNotReached = -4,
         ResultNotValid = -5,
         SharpnessNotReached = -6,
-        PolongsOutOfCutout = -7
+        PolongsOutOfCutout = -7,
+        IDTypeNotSupported = -8
     }
 
     [Native]

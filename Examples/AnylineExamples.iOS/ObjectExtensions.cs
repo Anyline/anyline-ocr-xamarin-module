@@ -124,16 +124,19 @@ namespace AnylineExamples.iOS
             {
                 if (value is ALMRZIdentification
                     || value is ALDrivingLicenseIdentification
-                    || value is ALGermanIDFrontIdentification)
+                    || value is ALGermanIDFrontIdentification
+                    || value is ALLayoutDefinition)
                 {
                     value.CreatePropertyDictionary().ToList().ForEach(x => dict.Add(x.Key, x.Value));
                 }
-                else if(value is ALTemplateIdentification templateIdentification)
+                else if (value is ALTemplateIdentification templateIdentification)
                 {
                     foreach (var field in templateIdentification.FieldNames)
                     {
-                        dict.Add(field, templateIdentification.ValueForField(field));
+                        dict.AddProperty(field, templateIdentification.ValueForField(field));
                     }
+
+                    dict.AddProperty("LayoutDefinition", templateIdentification.LayoutDefinition);
                 }
                 else if (value is ALIDFieldConfidences)
                 {

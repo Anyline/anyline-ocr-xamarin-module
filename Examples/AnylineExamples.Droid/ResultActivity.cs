@@ -39,7 +39,7 @@ namespace AnylineExamples.Droid
 
             var handle = new IntPtr(Intent.GetIntExtra("handle", 0));
             var scanResult = GetObject<ScanResult>(handle, JniHandleOwnership.DoNotTransfer);
-
+            
             if (scanResult != null)
             {
                 Title = scanResult.GetType().Name;
@@ -109,15 +109,20 @@ namespace AnylineExamples.Droid
                                     var bitmap = (value as AnylineImage).Clone().Bitmap;
                                     dict.Add(prop.Name, bitmap);
                                 }
-                                else if (value is ID)
+                                else if (value is ID id)
                                 {
-                                    var sublist = CreatePropertyList(value as ID);
+                                    var sublist = CreatePropertyList(id);
                                     sublist.ToList().ForEach(x => dict.Add(x.Key, x.Value));
                                 }
-                                else if (value is IDFieldConfidences)
+                                else if (value is IDFieldConfidences idFieldConfidences)
                                 {
-                                    var sublist = CreatePropertyList(value as IDFieldConfidences);
+                                    var sublist = CreatePropertyList(idFieldConfidences);
                                     sublist.ToList().ForEach(x => dict.Add($"{x.Key} (field confidence)", x.Value));
+                                }
+                                else if (value is LayoutDefinition universalIDInfo)
+                                {
+                                    var sublist = CreatePropertyList(universalIDInfo);
+                                    sublist.ToList().ForEach(x => dict.Add($"{x.Key}", x.Value));
                                 }
                                 else if (value is JavaDictionary<String, String> dictionaryValues)
                                 {
