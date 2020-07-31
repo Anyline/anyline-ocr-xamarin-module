@@ -40,7 +40,7 @@
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <DocumentationFile>
     </DocumentationFile>
-    <NoWarn>0618;0809;0114</NoWarn>
+    <NoWarn>0618;0809;0114;CS0109;CS0108</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accessibility">
