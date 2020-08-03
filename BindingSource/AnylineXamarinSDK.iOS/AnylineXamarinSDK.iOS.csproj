@@ -29,6 +29,7 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <NoWarn>CS0108</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

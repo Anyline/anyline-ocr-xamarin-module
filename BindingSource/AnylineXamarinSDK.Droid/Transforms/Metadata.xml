@@ -236,7 +236,7 @@
   <remove-node path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/constructor[@name='AnylineController']"/>
   <remove-node path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineRawResult']/constructor[@name='AnylineRawResult' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.core.CoreResult']]"/>
   
-  <!--Fixes Error CS0507 'SerialScanViewComposite.CutoutRect': cannot change access modifiers when overriding 'protected' inherited member 'ScanViewPluginComposite.CutoutRect'	AnylineXamarinSDK.Droid	D:\ANYLINE\anyline-ocr-xamarin-module\BindingSource\AnylineXamarinSDK.Droid\obj\Release\generated\src\IO.Anyline.View.SerialScanViewComposite.cs	71	Active-->
+  <!--Fixes Error CS0507 'SerialScanViewComposite.CutoutRect': cannot change access modifiers when overriding 'protected' inherited member 'ScanViewPluginComposite.CutoutRect'	AnylineXamarinSDK.Droid	-->
   <attr path="/api/package[@name='io.anyline.view']/class[@name='SerialScanViewComposite']/method[@name='getCutoutRect' and count(parameter)=0]" name="visibility">protected</attr>
   <attr path="/api/package[@name='io.anyline.view']/class[@name='ParallelScanViewComposite']/method[@name='getCutoutRect' and count(parameter)=0]" name="visibility">protected</attr>
   <attr path="/api/package[@name='io.anyline.plugin.document']/class[@name='DocumentScanViewPlugin']/method[@name='setupListenersForScanView' and count(parameter)=0]" name="visibility">protected</attr>
