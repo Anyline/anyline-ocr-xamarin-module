@@ -64,7 +64,7 @@ namespace Anyline.Droid
                 }
 
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 // show error
             }
