@@ -5,96 +5,10 @@
   <!--
   This document contains the binding transforms for the Anyline SDK. To learn more about metadata binding transforms, visit  
   https://developer.xamarin.com/guides/android/advanced_topics/binding-a-java-library/customizing-bindings/java-bindings-metadata/
-  
   -->
   
-  <!-- +++++++++++++ Removes +++++++++++++ -->
-
-  <!-- remove firebase components -->
-
-  <remove-node path="/api/package[starts-with(@name, 'com.google.android.gms.auth')]" />
-  <remove-node path="/api/package[starts-with(@name, 'com.google.android.gms.common.data')]" />
-  <remove-node path="/api/package[starts-with(@name, 'com.google.android.gms.common.image')]" />
-
-  <remove-node path="/api/package[starts-with(@name, 'com.google.android.gms.common.server')]" />
-  <!--<remove-node path="/api/package[starts-with(@name, 'com.google.android.gms.common.internal')]" />-->
-  <remove-node path="/api/package[starts-with(@name, 'com.google.android.gms.internal.base')]" />
-
-  <remove-node path="/api/package[@name='com.google.android.gms.common.internal']/class[@name='zaa']"/>
-  <remove-node path="/api/package[@name='com.google.android.gms.common.internal']/class[@name='zam']"/>
-  <remove-node path="/api/package[@name='com.google.android.gms.common.internal']/class[@name='zan']"/>
-  <remove-node path="/api/package[@name='com.google.android.gms.common.internal']/class[@name='zao']"/>
-  <remove-node path="/api/package[@name='com.google.android.gms.common.internal']/class[@name='zab']"/>
-
-  <remove-node path="/api/package[@name='com.google.android.gms.signin.internal']/class[@name='zai']"/>
-  <remove-node path="/api/package[@name='com.google.android.gms.signin.internal']/class[@name='zak']"/>
-  <remove-node path="/api/package[@name='com.google.android.gms.signin.internal']/class[@name='zab']"/>
-
-
-  <remove-node path="/api/package[starts-with(@name, 'com.google.firebase.ml.vision.document')]" />
-  <remove-node path="/api/package[starts-with(@name, 'com.google.firebase.ml.vision.text')]" />
-  <remove-node path="/api/package[starts-with(@name, 'com.google.firebase.ml.vision.text')]" />
-
-  <remove-node path="/api/package[@name='com.google.firebase']/interface[@name='FirebaseAppLifecycleListener']"/>
-  <!--<remove-node path="/api/package[@name='com.google.firebase']/interface[@name='FirebaseApp.BackgroundStateChangeListener']"/>-->
-  
-  <remove-node path="/api/package[@name='com.google.firebase']/interface[@name='FirebaseApp.IdTokenListener']"/>
-  <remove-node path="/api/package[@name='com.google.firebase']/interface[@name='FirebaseApp.IdTokenListenersCountChangedListener']"/>
-  
-  <!-- remove opencv components -->
-
-  <remove-node path="/api/package[@name='org.opencv.android']"/>
-  <remove-node path="/api/package[@name='org.opencv.core']"/>
-  <remove-node path="/api/package[@name='org.opencv.imgcodecs']"/>
-  <remove-node path="/api/package[@name='org.opencv.photo']"/>
-  <remove-node path="/api/package[@name='org.opencv.imgproc']"/>
-  <remove-node path="/api/package[@name='org.opencv.utils']"/>
-
-  <!-- remove anyline components -->
-
-  <remove-node path="/api/package[@name='at.nineyards.anylinexamarin.support']/class[@name='BuildConfig']" />
-  
-  <remove-node path="/api/package[@name='at.nineyards.anyline.core']"/>
-  <remove-node path="/api/package[@name='at.nineyards.anyline.core.custom']"/>
-  <remove-node path="/api/package[@name='at.nineyards.anyline.reporter']"/>
-
-  <remove-node path="/api/package[@name='io.anyline.view']/class[@name='BrightnessHelper']" />
-
-  <remove-node path="/api/package[@name='at.nineyards.anyline']/class[@name='BuildConfig']"/>
-  <!--<remove-node path="/api/package[@name='at.nineyards.anyline']/class[@name='SimpleImageProvider']"/>-->
-  <remove-node path="/api/package[@name='at.nineyards.anyline']/interface[@name='AnylineListener']"/>
-  <remove-node path="/api/package[@name='at.nineyards.anyline']/interface[@name='AnylineDebugListener']"/>
-  
-  <remove-node path="/api/package[@name='at.nineyards.anyline.modules']/class[@name='AnylineBaseModuleView']/method[@name='setCropRect']"/>
-  <remove-node path="/api/package[@name='at.nineyards.anyline.modules']/class[@name='AnylineBaseModuleView']/method[@name='getAnylineController']"/>
-  <remove-node path="/api/package[@name='at.nineyards.anyline.modules']/class[@name='AnylineBaseModuleView']/field[@name='anylineController']"/>
-  <remove-node path="/api/package[@name='at.nineyards.anyline.modules']/class[@name='AnylineBaseModuleView']/method[@name='reportDebugRunSkipped']"/>
-  <remove-node path="/api/package[@name='at.nineyards.anyline.modules']/class[@name='AnylineBaseModuleView']/method[@name='setDebugListener']"/>
-
-  <remove-node path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineYuvImage']/method[@name='getAsCvMat']"/>
-  <remove-node path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineImage']/method[@name='getCvMat']"/>
-  <remove-node path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineImage']/method[@name='getGreyCvMat']"/>
-  <remove-node path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineImage']/method[@name='getRgbCvMat']"/>
-  <remove-node path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineImage']/constructor[@name='AnylineImage' and count(parameter)=1 and parameter[1][@type='org.opencv.core.Mat']]"/>
-  <remove-node path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineRawResult']"/>
-
-  <!--Metadata.xml XPath method reference: path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='takeHighResolutionImage' and count(parameter)=0]"-->
-  <!--<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']" name="managedName">MyCameraController</attr>-->
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/interface[@name='CameraController.CameraControllerListener']"/>
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/interface[@name='CameraController.CameraControllerListener']"/>
-
-  <!-- add AnylineController license expiration date API -->
-  
-  <!-- AnylineController.getLicenseExpirationDate(java.lang.String) -->
-  <!--<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='getLicenseExpirationDate' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">licenseKey</attr>-->
-  
-  <!-- debitcard is not implemented for now -->
-  <remove-node path="/api/package[@name='at.nineyards.anyline.modules.debitcard']"/>
-
-  <!-- namespace changes -->
-
-  <attr path="/api/package[@name='at.nineyards.anyline.modules.licenseplate']" name="managedName">AT.Nineyards.Anyline.Modules.LicensePlate</attr>
-  <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.licenseplate']" name="managedName">AT.Nineyards.Anylinexamarin.Support.Modules.LicensePlate</attr>
+  <!-- CS0109 should be ignored: https://bugzilla.xamarin.com/show_bug.cgi?id=58932 PR to Fix it: https://github.com/xamarin/java.interop/pull/625#issue-402742236 -->
+  <!-- CS0108 will also be ignored as they come from the Android SDK and there is no way to add the 'new' keyworkd via transformations  -->
   
   <!-- ++++++++ Generic type changes ++++++++ -->
 
@@ -103,69 +17,188 @@
   The following limitations for java generics exist:
   https://developer.xamarin.com/guides/android/advanced_topics/limitations/
   
-  As of Anyline version 3.10, the Java AAR library inhibits a support library (anylinesupportlib.jar) for the scan views & result listeners which do not extend the generic result listeners.
-  
   -->
   
-  <!-- Fix modifiers etc. -->
+  <!-- remove opencv components -->
   
-  <attr path="/api/package[@name='at.nineyards.anyline.modules']/class[@name='AnylineBaseModuleView']/method[@name='initAnyline']" name="abstract">false</attr>
+  <remove-node path="/api/package[@name='io.anyline.opencv.core']/class[@name='Core']/field[@name='BORDER_REFLECT101']" />
+  <remove-node path="/api/package[@name='io.anyline.opencv.calib3d']/class[@name='Calib3d']"/>
+  <remove-node path="/api/package[@name='io.anyline.opencv.ml']/class[@name='SVM']"/>
 
-  <!-- rename the native (unsupported) java class bindings to Native + <name>, so there is no ambiguity -->
-  
-  <!-- Barcode -->
-  <attr path="/api/package[@name='at.nineyards.anyline.modules.barcode']/class[@name='BarcodeScanView']" name="managedName">NativeBarcodeScanView</attr>
-  <attr path="/api/package[@name='at.nineyards.anyline.modules.barcode']/interface[@name='BarcodeResultListener']" name="managedName">NativeBarcodeResultListener</attr>
-  
-  <!-- Document -->
-  <attr path="/api/package[@name='at.nineyards.anyline.modules.document']/class[@name='DocumentScanView']" name="managedName">NativeDocumentScanView</attr>
-  <attr path="/api/package[@name='at.nineyards.anyline.modules.document']/interface[@name='DocumentResultListener']" name="managedName">NativeDocumentResultListener</attr>
-  
-  <!-- Energy -->
-  <attr path="/api/package[@name='at.nineyards.anyline.modules.energy']/class[@name='EnergyScanView']" name="managedName">NativeEnergyScanView</attr>
-  <attr path="/api/package[@name='at.nineyards.anyline.modules.energy']/interface[@name='EnergyResultListener']" name="managedName">NativeEnergyResultListener</attr>
+  <!-- remove anyline components -->
 
-  <!-- License Plate -->
-  <attr path="/api/package[@name='at.nineyards.anyline.modules.licenseplate']/class[@name='LicensePlateScanView']" name="managedName">NativeLicensePlateScanView</attr>
-  <attr path="/api/package[@name='at.nineyards.anyline.modules.licenseplate']/interface[@name='LicensePlateResultListener']" name="managedName">NativeLicensePlateResultListener</attr>
+  <remove-node path="/api/package[@name='at.nineyards.anyline.core']"/>
+  <remove-node path="/api/package[@name='at.nineyards.anyline.core.custom']"/>
+  <remove-node path="/api/package[@name='at.nineyards.anyline.reporter']"/>
 
-  <!-- MRZ -->
-  <attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/class[@name='MrzScanView']" name="managedName">NativeMrzScanView</attr>
-  <attr path="/api/package[@name='at.nineyards.anyline.modules.mrz']/interface[@name='MrzResultListener']" name="managedName">NativeMrzResultListener</attr>
-  
-  <!-- OCR -->
-  <attr path="/api/package[@name='at.nineyards.anyline.modules.ocr']/class[@name='AnylineOcrScanView']" name="managedName">NativeAnylineOcrScanView</attr>
-  <attr path="/api/package[@name='at.nineyards.anyline.modules.ocr']/interface[@name='AnylineOcrResultListener']" name="managedName">NativeAnylineOcrResultListener</attr>
+  <remove-node path="/api/package[@name='at.nineyards.anyline']/interface[@name='AnylineListener']"/>
+  <remove-node path="/api/package[@name='at.nineyards.anyline']/interface[@name='AnylineDebugListener']"/>
 
-  <!-- manual parameter name changes (parameter names from support library are not present in the javadoc) -->
+  <remove-node path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineYuvImage']/method[@name='getAsCvMat']"/>
+  <remove-node path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineImage']/method[@name='getCvMat']"/>
+  <remove-node path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineImage']/method[@name='getGreyCvMat']"/>
+  <remove-node path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineImage']/method[@name='getRgbCvMat']"/>
   
-  <!-- Barcode -->
-  <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.barcode']/interface[@name='BarcodeResultListener']/method[@name='onResult']/parameter[1]" name="managedName">scanResult</attr>
-  
-  <!-- Document -->
-  <!-- hint: Xamarin manages to restore the parameter names of the other interface methods -->
-  <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.document']/interface[@name='DocumentResultListener']/method[@name='onResult']/parameter[1]" name="managedName">scanResult</attr>
-  
-  <!-- Energy -->
-  <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.energy']/interface[@name='EnergyResultListener']/method[@name='onResult']/parameter[1]" name="managedName">scanResult</attr>
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/interface[@name='CameraController.CameraControllerListener']"/>
 
-  <!-- License Plate -->
-  <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.licenseplate']/interface[@name='LicensePlateResultListener']/method[@name='onResult']/parameter[1]" name="managedName">scanResult</attr>
+  <!--Fixes warning BG8401: Skipping ... -->
 
-  <!-- MRZ/ID -->
-  <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.mrz']/interface[@name='MrzResultListener']/method[@name='onResult']/parameter[1]" name="managedName">scanResult</attr>
-  <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.mrz']/interface[@name='IdResultListener']/method[@name='onResult']/parameter[1]" name="managedName">scanResult</attr>
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AbstractZoomHandler']/field[@name='zoomLevel']" />
 
-  <!-- OCR -->
-  <attr path="/api/package[@name='at.nineyards.anylinexamarin.support.modules.ocr']/interface[@name='AnylineOcrResultListener']/method[@name='onResult']/parameter[1]" name="managedName">scanResult</attr>
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='opticalStabilizationEnabled']" />
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='autoExposureRegionEnabled']" />
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='autoFocusInterval']" />
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='fallbackLensFacings']" />
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='focalLength']" />
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='focusMode']" />
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='focusOnTouchEnabled']" />
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='focusRegionEnabled']" />
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='frameSize']" />
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='frameToViewScale']" />
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='lensFacing']" />
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='maxFocalLength']" />
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='maxZoomRatio']" />
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='pictureSize']" />
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='previewSize']" />
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='sceneMode']" />
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='updateRegionsOnAutoFocusEnabled']" />
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='videoStabilizationEnabled']" />
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='zoomGestureEnabled']" />
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='zoomRatio']" />
+
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/field[@name='cameraConfig']" />
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/field[@name='cameraFeatures']" />
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/field[@name='cameraOrientation']" />
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/field[@name='preferredCameraConfig']" />
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/field[@name='previewView']" />
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/field[@name='autoFocusTimer']" />
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setCameraControllerListener']" />
   
-  <!-- ANYLINE 4+ Support API -->
-  
-  <!--<remove-node path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanResultListener']"/>-->
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraFeatures']/field[@name='exposureStep']" />
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraFeatures']/field[@name='focusModes']" />
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraFeatures']/field[@name='lensFacing']" />
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraFeatures']/field[@name='maxAutoExposureRegions']" />
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraFeatures']/field[@name='maxExposure']" />
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraFeatures']/field[@name='maxFocusRegions']" />
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraFeatures']/field[@name='minExposure']" />
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraFeatures']/field[@name='pictureSizes']" />
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraFeatures']/field[@name='previewSizes']" />
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraFeatures']/field[@name='sceneModes']" />
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraFeatures']/field[@name='sensorOrientation']" />
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraFeatures']/field[@name='videoSizes']" />
 
-  <!--
-  <attr path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanResultListener']/method[@name='onResult' and count(parameter)=1 and parameter[1][@type='T']]/parameter[1]" name="managedType">IO.Anyline.Plugin.ScanResult</attr>
-  -->
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/field[@name='cameraController']" />
+
+  <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/field[@name='id']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/field[@name='imageProvider']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/field[@name='anylineController']" />
+
+  <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='ScanInfo']/field[@name='pluginId']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='ScanInfo']/field[@name='key']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='ScanInfo']/field[@name='value']" />
+
+  <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='ScanResult']/field[@name='pluginId']" />
+
+  <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='ScanRunSkippedReason']/field[@name='pluginId']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='ScanRunSkippedReason']/field[@name='code']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='ScanRunSkippedReason']/field[@name='text']" />
+
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldConfidences']/field[@name='surname']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldConfidences']/field[@name='givenNames']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldConfidences']/field[@name='dateOfBirth']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldConfidences']/field[@name='placeOfBirth']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldConfidences']/field[@name='dateOfIssue']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldConfidences']/field[@name='dateOfExpiry']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldConfidences']/field[@name='authority']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldConfidences']/field[@name='documentNumber']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldConfidences']/field[@name='categories']" />
+  
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOptions']/field[@name='surname']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOptions']/field[@name='givenNames']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOptions']/field[@name='dateOfBirth']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOptions']/field[@name='placeOfBirth']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOptions']/field[@name='dateOfIssue']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOptions']/field[@name='dateOfExpiry']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOptions']/field[@name='authority']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOptions']/field[@name='documentNumber']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOptions']/field[@name='categories']" />
+
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIDFrontFieldConfidences']/field[@name='surname']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIDFrontFieldConfidences']/field[@name='givenNames']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIDFrontFieldConfidences']/field[@name='dateOfBirth']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIDFrontFieldConfidences']/field[@name='nationality']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIDFrontFieldConfidences']/field[@name='placeOfBirth']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIDFrontFieldConfidences']/field[@name='dateOfExpiry']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIDFrontFieldConfidences']/field[@name='documentNumber']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIDFrontFieldConfidences']/field[@name='cardAccessNumber']" />
+
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontFieldScanOptions']/field[@name='surname']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontFieldScanOptions']/field[@name='givenNames']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontFieldScanOptions']/field[@name='dateOfBirth']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontFieldScanOptions']/field[@name='nationality']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontFieldScanOptions']/field[@name='placeOfBirth']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontFieldScanOptions']/field[@name='dateOfExpiry']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontFieldScanOptions']/field[@name='documentNumber']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontFieldScanOptions']/field[@name='cardAccessNumber']" />
+
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='ID']/field[@name='fieldConfidences']" />
+
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdConfig']/field[@name='idFieldScanOptions']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdConfig']/field[@name='idMinFieldConfidences']" />
+
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='LayoutDefinition']/field[@name='type']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='LayoutDefinition']/field[@name='country']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='LayoutDefinition']/field[@name='layout']" />
+
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/field[@name='checkDigitDateOfBirth']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/field[@name='checkDigitDateOfExpiry']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/field[@name='checkDigitDocumentNumber']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/field[@name='checkDigitFinal']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/field[@name='checkDigitPersonalNumber']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/field[@name='dateOfBirth']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/field[@name='dateOfExpiry']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/field[@name='documentNumber']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/field[@name='documentType']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/field[@name='givenNames']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/field[@name='issuingCountryCode']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/field[@name='nationalityCountryCode']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/field[@name='optionalData']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/field[@name='personalNumber']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/field[@name='sex']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/field[@name='surname']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/field[@name='vizAddress']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/field[@name='vizDateOfBirth']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/field[@name='vizDateOfExpiry']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/field[@name='vizDateOfIssue']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/field[@name='vizGivenNames']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/field[@name='vizSurname']" />
+  
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldScanOptions']/field[@name='vizAddress']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldScanOptions']/field[@name='vizDateOfBirth']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldScanOptions']/field[@name='vizDateOfExpiry']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldScanOptions']/field[@name='vizDateOfIssue']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldScanOptions']/field[@name='vizGivenNames']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldScanOptions']/field[@name='vizSurname']" />
+
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldConfidences']/method[@name='setDrivingLicenseFieldConfidences']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIDFrontFieldConfidences']/method[@name='setGermanIdFrontConfidences']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/method[@name='setMrzFieldConfidences']" />
+  
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='TemplateFieldConfidences']/field[@name='fieldNames']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='TemplateFieldScanOptions']/field[@name='fieldNames']" />
+
+  <remove-node path="/api/package[@name='io.anyline.plugin.licenseplate']/class[@name='LicensePlateScanPlugin']/field[@name='charWhiteList']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.licenseplate']/class[@name='LicensePlateScanPlugin']/field[@name='validationRegex']" />
+
+  <remove-node path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/field[@name='cancelOnResult']" />
+  
+  <remove-node path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPlugin']/field[@name='cutoutRect']" />
+  <remove-node path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPlugin']/field[@name='scanPlugin']" />
+  <remove-node path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPlugin']/field[@name='scanViewPluginConfig']" />
+
+  <remove-node path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPluginComposite']/field[@name='id']" />
+  <remove-node path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPluginComposite']/field[@name='imageProvider']" />
+
 
   <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='getScanViewPluginConfig' and count(parameter)=0]" name="visibility">public</attr>
 
@@ -173,7 +206,37 @@
 
   <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/interface[@name='NativeBarcodeResultListener']"/>
   
-  <!--Fixes Error CS0507 'SerialScanViewComposite.CutoutRect': cannot change access modifiers when overriding 'protected' inherited member 'ScanViewPluginComposite.CutoutRect'	AnylineXamarinSDK.Droid	D:\ANYLINE\anyline-ocr-xamarin-module\BindingSource\AnylineXamarinSDK.Droid\obj\Release\generated\src\IO.Anyline.View.SerialScanViewComposite.cs	71	Active-->
+  <!-- remove methods with dependencies to removed classes -->
+  
+  <remove-node path="/api/package[@name='io.anyline.view']/class[@name='DebugUtil']/method[@name='reportDebugVariableForListener']" />
+  <remove-node path="/api/package[@name='io.anyline.view']/class[@name='AnylineWebView']/method[@name='setAnimatableShapeRelativeToCutout']" />
+
+  <remove-node path="/api/package[@name='io.anyline.view']/class[@name='AbstractWebView']/method[@name='updateContours']" />
+  <remove-node path="/api/package[@name='io.anyline.view']/class[@name='AbstractWebView']/method[@name='updateContoursREACT']" />
+  <remove-node path="/api/package[@name='io.anyline.view']/class[@name='AbstractWebView']/method[@name='setAnimatableShapeRelativeToCutout']" />
+  <remove-node path="/api/package[@name='io.anyline.view']/class[@name='AbstractWebView']/method[@name='setAnimatableShapeRelativeToCutoutREACT']" />
+
+  <remove-node path="/api/package[@name='io.anyline.plugin.document']/class[@name='DocumentScanPlugin']/method[@name='getCurrentDocPolygon']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.document']/class[@name='DocumentScanPlugin']/method[@name='getCurrentDocSquare']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.document']/class[@name='DocumentScanPlugin']/method[@name='pointsFromSquare']" />
+  
+  <remove-node path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='reportDebugRunSkipped']" />
+  <remove-node path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='setDebugListener']" />
+
+  <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/method[@name='getAssetController']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/method[@name='invokeOnRunSkipped']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/method[@name='onAbortRun']" />
+
+  <remove-node path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineRawResult']/method[@name='getCoreResult']" />
+
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='enableBarcodeDetection']" />
+  
+  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='NativeBarcodeDetector']/method[@name='enableBarcodeDetection']" />
+
+  <remove-node path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/constructor[@name='AnylineController']"/>
+  <remove-node path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineRawResult']/constructor[@name='AnylineRawResult' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.core.CoreResult']]"/>
+  
+  <!--Fixes Error CS0507 'SerialScanViewComposite.CutoutRect': cannot change access modifiers when overriding 'protected' inherited member 'ScanViewPluginComposite.CutoutRect'	AnylineXamarinSDK.Droid	-->
   <attr path="/api/package[@name='io.anyline.view']/class[@name='SerialScanViewComposite']/method[@name='getCutoutRect' and count(parameter)=0]" name="visibility">protected</attr>
   <attr path="/api/package[@name='io.anyline.view']/class[@name='ParallelScanViewComposite']/method[@name='getCutoutRect' and count(parameter)=0]" name="visibility">protected</attr>
   <attr path="/api/package[@name='io.anyline.plugin.document']/class[@name='DocumentScanViewPlugin']/method[@name='setupListenersForScanView' and count(parameter)=0]" name="visibility">protected</attr>
@@ -181,10 +244,11 @@
 
   <!--Fixes Error	CS0542	'FieldScanOption': member names cannot be the same as their enclosing type-->
   <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IDFieldScanOptions.FieldScanOption']/field[@name='fieldScanOption']" name="managedName">IDFieldScanOption</attr>
+  <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IDFieldScanOptions.FieldScanOption']/field[@name='fieldScanOption']" name="visibility">public</attr>
 
-  Metadata.xml XPath field reference:
+  <remove-node path="/api/package[@name='io.anyline.view']/interface[@name='LicenseKeyExceptionListener']"/>
 
-  <remove-node path="/api/package[@name='io.anyline.view']/interface[@name='UIChangeListener']"/>
   <remove-node path="/api/package[@name='at.nineyards.anyline.trainer']"/>
+  <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/field[@name='trainerContext']" />
 
 </metadata>
