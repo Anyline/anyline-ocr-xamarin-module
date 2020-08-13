@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -36,6 +37,12 @@ namespace Anyline
 
         private async void BtScan_Clicked(object sender, EventArgs e)
         {
+            var status = await Permissions.CheckStatusAsync<Permissions.Camera>();
+            if (status != PermissionStatus.Granted)
+            {
+                await Permissions.RequestAsync<Permissions.Camera>();
+            }
+
             (sender as Button).IsEnabled = false;
             await Navigation.PushAsync(new ScanExamplePage(((Button)sender).ClassId));
             (sender as Button).IsEnabled = true;

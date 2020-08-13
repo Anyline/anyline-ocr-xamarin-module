@@ -23,22 +23,20 @@
 	<key>MinimumOSVersion</key>
 	<string>8.0</string>
 	<key>CFBundleDisplayName</key>
-	<string>Anyline</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.anyline.xamarin.forms.examples</string>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
+	<string>Anyline.XamarinForms.iOS</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
 	<key>CFBundleName</key>
 	<string>Anyline</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
-	<key>UIStatusBarStyle</key>
-	<string>UIStatusBarStyleLightContent</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.anyline.xamarin.forms.examples</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.0</string>
-	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Yes we scan!</string>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
 </dict>
 </plist>
