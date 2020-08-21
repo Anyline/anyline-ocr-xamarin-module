@@ -16,7 +16,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <AndroidUseAapt2>true</AndroidUseAapt2>
@@ -32,11 +31,6 @@
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
-    <AotAssemblies>false</AotAssemblies>
-    <EnableLLVM>false</EnableLLVM>
-    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
-    <BundleAssemblies>false</BundleAssemblies>
     <AndroidDexTool>d8</AndroidDexTool>
     <AndroidUseAapt2>false</AndroidUseAapt2>
   </PropertyGroup>
@@ -105,7 +99,7 @@
   <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Anyline\Anyline.csproj">
-      <Project>{AE271DAE-1EC5-42B5-AE66-B7A3CFD7BD00}</Project>
+      <Project>{C72A4B49-D1FA-49D4-99BA-5AA347FA0179}</Project>
       <Name>Anyline</Name>
     </ProjectReference>
   </ItemGroup>
