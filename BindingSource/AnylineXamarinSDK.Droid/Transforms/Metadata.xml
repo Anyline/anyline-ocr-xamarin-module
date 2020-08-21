@@ -173,6 +173,8 @@
   <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/field[@name='vizGivenNames']" />
   <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/field[@name='vizSurname']" />
   
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldScanOptions']/field[@name='dateOfBirth']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldScanOptions']/field[@name='dateOfExpiry']" />
   <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldScanOptions']/field[@name='vizAddress']" />
   <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldScanOptions']/field[@name='vizDateOfBirth']" />
   <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldScanOptions']/field[@name='vizDateOfExpiry']" />
@@ -250,5 +252,7 @@
 
   <remove-node path="/api/package[@name='at.nineyards.anyline.trainer']"/>
   <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/field[@name='trainerContext']" />
+  
+  <remove-node path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='initAsync' and count(parameter)=2 and parameter[1][@type='at.nineyards.anyline.trainer.TrainerContext'] and parameter[2][@type='at.nineyards.anyline.trainer.TrainerUtils.ViewConfigResultHandler']]" />
 
 </metadata>

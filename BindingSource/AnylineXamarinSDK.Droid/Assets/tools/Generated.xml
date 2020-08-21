@@ -52,6 +52,10 @@
 <!-- AnylineWorkerRunnable.setCropRect(io.anyline.view.CutoutRect) -->
 <!-- AnylineWorkerRunnable.setId(java.lang.String) -->
 <!-- File: AT.Nineyards.Anyline.AnylineWorkerThreadPool.cs -->
+<!-- AnylineWorkerThreadPool.addRunnable(java.lang.String, at.nineyards.anyline.AnylineWorkerRunnable) -->
+<!-- AnylineWorkerThreadPool.executeRunnable(java.lang.Runnable) -->
+<!-- AnylineWorkerThreadPool.stopById(java.lang.String) -->
+<!-- File: AT.Nineyards.Anyline.BuildConfig.cs -->
 <!-- File: AT.Nineyards.Anyline.Camera.AbstractZoomHandler.cs -->
 <!-- AbstractZoomHandler.AbstractZoomHandler(android.view.View, int, at.nineyards.anyline.camera.CameraController) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AbstractZoomHandler']/constructor[@name='AbstractZoomHandler' and count(parameter)=3 and parameter[1][@type='android.view.View'] and parameter[2][@type='int'] and parameter[3][@type='at.nineyards.anyline.camera.CameraController']]/parameter[1]" name="managedName">touchableView</attr>
@@ -559,6 +563,13 @@
 <!-- AnylineImage.save(java.io.File, int) -->
 <attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineImage']/method[@name='save' and count(parameter)=2 and parameter[1][@type='java.io.File'] and parameter[2][@type='int']]/parameter[1]" name="managedName">file</attr>
 <attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineImage']/method[@name='save' and count(parameter)=2 and parameter[1][@type='java.io.File'] and parameter[2][@type='int']]/parameter[2]" name="managedName">quality</attr>
+<!-- File: AT.Nineyards.Anyline.Models.AnylineRawResult.cs -->
+<!-- AnylineRawResult.getConfidence(java.lang.String) -->
+<attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineRawResult']/method[@name='getConfidence' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">identifier</attr>
+<!-- AnylineRawResult.getResult(java.lang.String) -->
+<attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineRawResult']/method[@name='getResult' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">identifier</attr>
+<!-- AnylineRawResult.hasConfidenceValue(java.lang.String) -->
+<attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineRawResult']/method[@name='hasConfidenceValue' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">identifier</attr>
 <!-- File: AT.Nineyards.Anyline.Models.AnylineScanResult.cs -->
 <!-- AnylineScanResult.AnylineScanResult(java.util.List&lt;android.graphics.PointF&gt;, java.lang.Integer, at.nineyards.anyline.models.AnylineImage, at.nineyards.anyline.models.AnylineImage, at.nineyards.anyline.models.AnylineImage, T) -->
 <!-- AnylineScanResult.AnylineScanResult(java.util.List&lt;android.graphics.PointF&gt;, java.lang.Integer, at.nineyards.anyline.models.AnylineImage, at.nineyards.anyline.models.AnylineImage, T) -->
@@ -893,94 +904,6 @@
 <!-- Utils.loadResource(android.content.Context, int, int) -->
 <!-- Utils.matToBitmap(io.anyline.opencv.core.Mat, android.graphics.Bitmap) -->
 <!-- Utils.matToBitmap(io.anyline.opencv.core.Mat, android.graphics.Bitmap, boolean) -->
-<!-- File: IO.Anyline.Opencv.Calib3d.Calib3d.cs -->
-<!-- Calib3d.RQDecomp3x3(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.RQDecomp3x3(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.Rodrigues(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.Rodrigues(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.calibrate(java.util.List&lt;io.anyline.opencv.core.Mat&gt;, java.util.List&lt;io.anyline.opencv.core.Mat&gt;, io.anyline.opencv.core.Size, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, java.util.List&lt;io.anyline.opencv.core.Mat&gt;, java.util.List&lt;io.anyline.opencv.core.Mat&gt;) -->
-<!-- Calib3d.calibrate(java.util.List&lt;io.anyline.opencv.core.Mat&gt;, java.util.List&lt;io.anyline.opencv.core.Mat&gt;, io.anyline.opencv.core.Size, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, java.util.List&lt;io.anyline.opencv.core.Mat&gt;, java.util.List&lt;io.anyline.opencv.core.Mat&gt;, int) -->
-<!-- Calib3d.calibrate(java.util.List&lt;io.anyline.opencv.core.Mat&gt;, java.util.List&lt;io.anyline.opencv.core.Mat&gt;, io.anyline.opencv.core.Size, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, java.util.List&lt;io.anyline.opencv.core.Mat&gt;, java.util.List&lt;io.anyline.opencv.core.Mat&gt;, int, io.anyline.opencv.core.TermCriteria) -->
-<!-- Calib3d.calibrateCamera(java.util.List&lt;io.anyline.opencv.core.Mat&gt;, java.util.List&lt;io.anyline.opencv.core.Mat&gt;, io.anyline.opencv.core.Size, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, java.util.List&lt;io.anyline.opencv.core.Mat&gt;, java.util.List&lt;io.anyline.opencv.core.Mat&gt;) -->
-<!-- Calib3d.calibrateCamera(java.util.List&lt;io.anyline.opencv.core.Mat&gt;, java.util.List&lt;io.anyline.opencv.core.Mat&gt;, io.anyline.opencv.core.Size, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, java.util.List&lt;io.anyline.opencv.core.Mat&gt;, java.util.List&lt;io.anyline.opencv.core.Mat&gt;, int) -->
-<!-- Calib3d.calibrateCamera(java.util.List&lt;io.anyline.opencv.core.Mat&gt;, java.util.List&lt;io.anyline.opencv.core.Mat&gt;, io.anyline.opencv.core.Size, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, java.util.List&lt;io.anyline.opencv.core.Mat&gt;, java.util.List&lt;io.anyline.opencv.core.Mat&gt;, int, io.anyline.opencv.core.TermCriteria) -->
-<!-- Calib3d.calibrationMatrixValues(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Size, double, double, double[], double[], double[], io.anyline.opencv.core.Point, double[]) -->
-<!-- Calib3d.composeRT(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.composeRT(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.computeCorrespondEpilines(io.anyline.opencv.core.Mat, int, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.convertPointsFromHomogeneous(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.convertPointsToHomogeneous(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.correctMatches(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.decomposeEssentialMat(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.decomposeHomographyMat(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, java.util.List&lt;io.anyline.opencv.core.Mat&gt;, java.util.List&lt;io.anyline.opencv.core.Mat&gt;, java.util.List&lt;io.anyline.opencv.core.Mat&gt;) -->
-<!-- Calib3d.decomposeProjectionMatrix(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.decomposeProjectionMatrix(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.distortPoints(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.distortPoints(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, double) -->
-<!-- Calib3d.drawChessboardCorners(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Size, io.anyline.opencv.core.MatOfPoint2f, boolean) -->
-<!-- Calib3d.estimateAffine3D(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.estimateAffine3D(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, double, double) -->
-<!-- Calib3d.estimateNewCameraMatrixForUndistortRectify(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Size, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.estimateNewCameraMatrixForUndistortRectify(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Size, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, double, io.anyline.opencv.core.Size, double) -->
-<!-- Calib3d.filterSpeckles(io.anyline.opencv.core.Mat, double, int, double) -->
-<!-- Calib3d.filterSpeckles(io.anyline.opencv.core.Mat, double, int, double, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.findChessboardCorners(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Size, io.anyline.opencv.core.MatOfPoint2f) -->
-<!-- Calib3d.findChessboardCorners(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Size, io.anyline.opencv.core.MatOfPoint2f, int) -->
-<!-- Calib3d.findCirclesGrid(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Size, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.findCirclesGrid(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Size, io.anyline.opencv.core.Mat, int) -->
-<!-- Calib3d.findEssentialMat(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.findEssentialMat(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, double, io.anyline.opencv.core.Point, int, double, double) -->
-<!-- Calib3d.findEssentialMat(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, double, io.anyline.opencv.core.Point, int, double, double, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.findEssentialMat(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.findEssentialMat(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, int, double, double) -->
-<!-- Calib3d.findEssentialMat(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, int, double, double, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.findFundamentalMat(io.anyline.opencv.core.MatOfPoint2f, io.anyline.opencv.core.MatOfPoint2f) -->
-<!-- Calib3d.findFundamentalMat(io.anyline.opencv.core.MatOfPoint2f, io.anyline.opencv.core.MatOfPoint2f, int, double, double) -->
-<!-- Calib3d.findFundamentalMat(io.anyline.opencv.core.MatOfPoint2f, io.anyline.opencv.core.MatOfPoint2f, int, double, double, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.findHomography(io.anyline.opencv.core.MatOfPoint2f, io.anyline.opencv.core.MatOfPoint2f) -->
-<!-- Calib3d.findHomography(io.anyline.opencv.core.MatOfPoint2f, io.anyline.opencv.core.MatOfPoint2f, int, double) -->
-<!-- Calib3d.findHomography(io.anyline.opencv.core.MatOfPoint2f, io.anyline.opencv.core.MatOfPoint2f, int, double, io.anyline.opencv.core.Mat, int, double) -->
-<!-- Calib3d.getOptimalNewCameraMatrix(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Size, double) -->
-<!-- Calib3d.getOptimalNewCameraMatrix(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Size, double, io.anyline.opencv.core.Size, io.anyline.opencv.core.Rect, boolean) -->
-<!-- Calib3d.getValidDisparityROI(io.anyline.opencv.core.Rect, io.anyline.opencv.core.Rect, int, int, int) -->
-<!-- Calib3d.initCameraMatrix2D(java.util.List&lt;io.anyline.opencv.core.MatOfPoint3f&gt;, java.util.List&lt;io.anyline.opencv.core.MatOfPoint2f&gt;, io.anyline.opencv.core.Size) -->
-<!-- Calib3d.initCameraMatrix2D(java.util.List&lt;io.anyline.opencv.core.MatOfPoint3f&gt;, java.util.List&lt;io.anyline.opencv.core.MatOfPoint2f&gt;, io.anyline.opencv.core.Size, double) -->
-<!-- Calib3d.initUndistortRectifyMap(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Size, int, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.matMulDeriv(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.projectPoints(io.anyline.opencv.core.MatOfPoint3f, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.MatOfDouble, io.anyline.opencv.core.MatOfPoint2f) -->
-<!-- Calib3d.projectPoints(io.anyline.opencv.core.MatOfPoint3f, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.MatOfDouble, io.anyline.opencv.core.MatOfPoint2f, io.anyline.opencv.core.Mat, double) -->
-<!-- Calib3d.projectPoints(io.anyline.opencv.core.MatOfPoint3f, io.anyline.opencv.core.MatOfPoint2f, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.projectPoints(io.anyline.opencv.core.MatOfPoint3f, io.anyline.opencv.core.MatOfPoint2f, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, double, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.recoverPose(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.recoverPose(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, double, io.anyline.opencv.core.Point) -->
-<!-- Calib3d.recoverPose(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, double, io.anyline.opencv.core.Point, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.recoverPose(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.recoverPose(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.reprojectImageTo3D(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.reprojectImageTo3D(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, boolean) -->
-<!-- Calib3d.reprojectImageTo3D(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, boolean, int) -->
-<!-- Calib3d.sampsonDistance(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.solvePnP(io.anyline.opencv.core.MatOfPoint3f, io.anyline.opencv.core.MatOfPoint2f, io.anyline.opencv.core.Mat, io.anyline.opencv.core.MatOfDouble, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.solvePnP(io.anyline.opencv.core.MatOfPoint3f, io.anyline.opencv.core.MatOfPoint2f, io.anyline.opencv.core.Mat, io.anyline.opencv.core.MatOfDouble, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, boolean, int) -->
-<!-- Calib3d.solvePnPRansac(io.anyline.opencv.core.MatOfPoint3f, io.anyline.opencv.core.MatOfPoint2f, io.anyline.opencv.core.Mat, io.anyline.opencv.core.MatOfDouble, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.solvePnPRansac(io.anyline.opencv.core.MatOfPoint3f, io.anyline.opencv.core.MatOfPoint2f, io.anyline.opencv.core.Mat, io.anyline.opencv.core.MatOfDouble, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, boolean, int, float, double, io.anyline.opencv.core.Mat, int) -->
-<!-- Calib3d.stereoCalibrate(java.util.List&lt;io.anyline.opencv.core.Mat&gt;, java.util.List&lt;io.anyline.opencv.core.Mat&gt;, java.util.List&lt;io.anyline.opencv.core.Mat&gt;, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Size, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.stereoCalibrate(java.util.List&lt;io.anyline.opencv.core.Mat&gt;, java.util.List&lt;io.anyline.opencv.core.Mat&gt;, java.util.List&lt;io.anyline.opencv.core.Mat&gt;, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Size, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, int) -->
-<!-- Calib3d.stereoCalibrate(java.util.List&lt;io.anyline.opencv.core.Mat&gt;, java.util.List&lt;io.anyline.opencv.core.Mat&gt;, java.util.List&lt;io.anyline.opencv.core.Mat&gt;, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Size, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, int, io.anyline.opencv.core.TermCriteria) -->
-<!-- Calib3d.stereoCalibrate(java.util.List&lt;io.anyline.opencv.core.Mat&gt;, java.util.List&lt;io.anyline.opencv.core.Mat&gt;, java.util.List&lt;io.anyline.opencv.core.Mat&gt;, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Size, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.stereoCalibrate(java.util.List&lt;io.anyline.opencv.core.Mat&gt;, java.util.List&lt;io.anyline.opencv.core.Mat&gt;, java.util.List&lt;io.anyline.opencv.core.Mat&gt;, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Size, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, int) -->
-<!-- Calib3d.stereoCalibrate(java.util.List&lt;io.anyline.opencv.core.Mat&gt;, java.util.List&lt;io.anyline.opencv.core.Mat&gt;, java.util.List&lt;io.anyline.opencv.core.Mat&gt;, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Size, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, int, io.anyline.opencv.core.TermCriteria) -->
-<!-- Calib3d.stereoRectify(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Size, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.stereoRectify(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Size, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, int) -->
-<!-- Calib3d.stereoRectifyUncalibrated(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Size, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.stereoRectifyUncalibrated(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Size, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, double) -->
-<!-- Calib3d.triangulatePoints(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.undistortImage(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.undistortImage(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Size) -->
-<!-- Calib3d.undistortPoints(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.undistortPoints(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- Calib3d.validateDisparity(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, int, int) -->
-<!-- Calib3d.validateDisparity(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, int, int, int) -->
 <!-- File: IO.Anyline.Opencv.Calib3d.StereoBM.cs -->
 <!-- StereoBM.StereoBM(long) -->
 <!-- StereoBM.setPreFilterCap(int) -->
@@ -1828,19 +1751,6 @@
 <!-- StatModel.predict(io.anyline.opencv.core.Mat) -->
 <!-- StatModel.predict(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, int) -->
 <!-- StatModel.train(io.anyline.opencv.core.Mat, int, io.anyline.opencv.core.Mat) -->
-<!-- File: IO.Anyline.Opencv.ML.SVM.cs -->
-<!-- SVM.SVM(long) -->
-<!-- SVM.setClassWeights(io.anyline.opencv.core.Mat) -->
-<!-- SVM.setCoef0(double) -->
-<!-- SVM.setDegree(double) -->
-<!-- SVM.setGamma(double) -->
-<!-- SVM.setNu(double) -->
-<!-- SVM.setTermCriteria(io.anyline.opencv.core.TermCriteria) -->
-<!-- SVM.setType(int) -->
-<!-- SVM.getDecisionFunction(int, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- SVM.setC(double) -->
-<!-- SVM.setKernel(int) -->
-<!-- SVM.setP(double) -->
 <!-- File: IO.Anyline.Opencv.ML.TrainData.cs -->
 <!-- TrainData.TrainData(long) -->
 <!-- TrainData.getCatCount(int) -->
@@ -2304,7 +2214,9 @@
 <!-- DrivingLicenseFieldScanOptions.setSurname(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOptions']/method[@name='setSurname' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">surname</attr>
 <!-- File: IO.Anyline.Plugin.ID.DrivingLicenseIdentification.cs -->
-<!-- DrivingLicenseIdentification.setAuthority(java.lang.String) -->
+<!-- DrivingLicenseIdentification.DrivingLicenseIdentification(at.nineyards.anyline.models.AnylineRawResult) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseIdentification']/constructor[@name='DrivingLicenseIdentification' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.models.AnylineRawResult']]/parameter[1]" name="managedName">alResult</attr>
+<!-- DrivingLicenseIdentification.setAuthority(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseIdentification']/method[@name='setAuthority' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">authority</attr>
 <!-- DrivingLicenseIdentification.setCategories(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseIdentification']/method[@name='setCategories' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">categories</attr>
@@ -2374,7 +2286,9 @@
 <!-- GermanIdFrontFieldScanOptions.setSurname(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontFieldScanOptions']/method[@name='setSurname' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">surname</attr>
 <!-- File: IO.Anyline.Plugin.ID.GermanIdFrontIdentification.cs -->
-<!-- GermanIdFrontIdentification.setCardAccessNumber(java.lang.String) -->
+<!-- GermanIdFrontIdentification.GermanIdFrontIdentification(at.nineyards.anyline.models.AnylineRawResult) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontIdentification']/constructor[@name='GermanIdFrontIdentification' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.models.AnylineRawResult']]/parameter[1]" name="managedName">alResult</attr>
+<!-- GermanIdFrontIdentification.setCardAccessNumber(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontIdentification']/method[@name='setCardAccessNumber' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">cardAccessNumber</attr>
 <!-- GermanIdFrontIdentification.setDateOfBirth(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontIdentification']/method[@name='setDateOfBirth' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">dateOfBirth</attr>
@@ -2428,6 +2342,7 @@
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IDFieldConfidences']/method[@name='initDictionaryStartVariableFromJsonObject' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='org.json.JSONObject'] and parameter[3][@type='java.lang.Object']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IDFieldConfidences']/method[@name='initDictionaryStartVariableFromJsonObject' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='org.json.JSONObject'] and parameter[3][@type='java.lang.Object']]/parameter[2]" name="managedName">json</attr>
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IDFieldConfidences']/method[@name='initDictionaryStartVariableFromJsonObject' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='org.json.JSONObject'] and parameter[3][@type='java.lang.Object']]/parameter[3]" name="managedName">object</attr>
+<!-- IDFieldConfidences.setIDFieldConfidences(at.nineyards.anyline.models.AnylineRawResult, java.lang.Class) -->
 <!-- IDFieldConfidences.setIdMinFieldConfidenceStartVariable(io.anyline.plugin.id.IDFieldConfidences) -->
 <!-- File: IO.Anyline.Plugin.ID.IDFieldScanOptions.cs -->
 <!-- IDFieldScanOptions.FieldScanOption.fromInt(int) -->
@@ -2533,6 +2448,10 @@
 <!-- File: IO.Anyline.Plugin.ID.MrzFieldScanOptions.cs -->
 <!-- MrzFieldScanOptions.setAddress(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldScanOptions']/method[@name='setAddress' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">address</attr>
+<!-- MrzFieldScanOptions.setDateOfBirth(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldScanOptions']/method[@name='setDateOfBirth' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">dateOfBirth</attr>
+<!-- MrzFieldScanOptions.setDateOfExpiry(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldScanOptions']/method[@name='setDateOfExpiry' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">dateOfExpiry</attr>
 <!-- MrzFieldScanOptions.setDateOfIssue(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldScanOptions']/method[@name='setDateOfIssue' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">dateOfIssue</attr>
 <!-- MrzFieldScanOptions.setVizAddress(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
@@ -2548,7 +2467,9 @@
 <!-- MrzFieldScanOptions.setVizSurname(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldScanOptions']/method[@name='setVizSurname' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">vizSurname</attr>
 <!-- File: IO.Anyline.Plugin.ID.MrzIdentification.cs -->
-<!-- MrzIdentification.setAddress(java.lang.String) -->
+<!-- MrzIdentification.MrzIdentification(at.nineyards.anyline.models.AnylineRawResult) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/constructor[@name='MrzIdentification' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.models.AnylineRawResult']]/parameter[1]" name="managedName">alResult</attr>
+<!-- MrzIdentification.setAddress(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setAddress' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">address</attr>
 <!-- MrzIdentification.setCheckDigitDateOfBirth(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzIdentification']/method[@name='setCheckDigitDateOfBirth' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">checkDigitDateOfBirth</attr>
@@ -2925,6 +2846,8 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='addScanResultListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanResultListener&lt;ResultType&gt;']]/parameter[1]" name="managedName">listener</attr>
 <!-- AbstractBaseScanViewPlugin.addScanRunSkippedListener(io.anyline.plugin.ScanRunSkippedListener) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='addScanRunSkippedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanRunSkippedListener']]/parameter[1]" name="managedName">listener</attr>
+<!-- AbstractBaseScanViewPlugin.addUIConfigChangedListener(io.anyline.view.UIChangeListener) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='addUIConfigChangedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.view.UIChangeListener']]/parameter[1]" name="managedName">listener</attr>
 <!-- AbstractBaseScanViewPlugin.calcCutOutAndImageCropBounds(android.content.Context, int, int, int, int, float) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=6 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='float']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=6 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='float']]/parameter[2]" name="managedName">frameWidth</attr>
@@ -2940,6 +2863,8 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='removeScanResultListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanResultListener&lt;ResultType&gt;']]/parameter[1]" name="managedName">listener</attr>
 <!-- AbstractBaseScanViewPlugin.removeScanRunSkippedListener(io.anyline.plugin.ScanRunSkippedListener) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='removeScanRunSkippedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanRunSkippedListener']]/parameter[1]" name="managedName">listener</attr>
+<!-- AbstractBaseScanViewPlugin.removeUIConfigChangedListener(io.anyline.view.UIChangeListener) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='removeUIConfigChangedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.view.UIChangeListener']]/parameter[1]" name="managedName">listener</attr>
 <!-- AbstractBaseScanViewPlugin.reportDebugVariable(java.lang.String, java.lang.Object) -->
 <!-- AbstractBaseScanViewPlugin.setImageProvider(at.nineyards.anyline.ImageProvider) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='setImageProvider' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.ImageProvider']]/parameter[1]" name="managedName">imageProvider</attr>
@@ -2951,6 +2876,8 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='addScanResultListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanResultListener&lt;ResultType&gt;']]/parameter[1]" name="managedName">listener</attr>
 <!-- AbstractBaseScanViewPlugin.addScanRunSkippedListener(io.anyline.plugin.ScanRunSkippedListener) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='addScanRunSkippedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanRunSkippedListener']]/parameter[1]" name="managedName">listener</attr>
+<!-- AbstractBaseScanViewPlugin.addUIConfigChangedListener(io.anyline.view.UIChangeListener) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='addUIConfigChangedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.view.UIChangeListener']]/parameter[1]" name="managedName">listener</attr>
 <!-- AbstractBaseScanViewPlugin.calcCutOutAndImageCropBounds(android.content.Context, int, int, int, int, float) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=6 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='float']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=6 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='float']]/parameter[2]" name="managedName">frameWidth</attr>
@@ -2964,6 +2891,8 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='removeScanResultListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanResultListener&lt;ResultType&gt;']]/parameter[1]" name="managedName">listener</attr>
 <!-- AbstractBaseScanViewPlugin.removeScanRunSkippedListener(io.anyline.plugin.ScanRunSkippedListener) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='removeScanRunSkippedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanRunSkippedListener']]/parameter[1]" name="managedName">listener</attr>
+<!-- AbstractBaseScanViewPlugin.removeUIConfigChangedListener(io.anyline.view.UIChangeListener) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='removeUIConfigChangedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.view.UIChangeListener']]/parameter[1]" name="managedName">listener</attr>
 <!-- AbstractBaseScanViewPlugin.setImageProvider(at.nineyards.anyline.ImageProvider) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='setImageProvider' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.ImageProvider']]/parameter[1]" name="managedName">imageProvider</attr>
 <!-- File: IO.Anyline.View.AbstractScanViewPlugin.cs -->
@@ -2979,6 +2908,8 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPlugin']/method[@name='addScanResultListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanResultListener']]/parameter[1]" name="managedName">listener</attr>
 <!-- AbstractScanViewPlugin.addScanRunSkippedListener(io.anyline.plugin.ScanRunSkippedListener) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPlugin']/method[@name='addScanRunSkippedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanRunSkippedListener']]/parameter[1]" name="managedName">listener</attr>
+<!-- AbstractScanViewPlugin.addUIConfigChangedListener(io.anyline.view.UIChangeListener) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPlugin']/method[@name='addUIConfigChangedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.view.UIChangeListener']]/parameter[1]" name="managedName">listener</attr>
 <!-- AbstractScanViewPlugin.calcCutOutAndImageCropBounds(android.content.Context, int, int, int, int, float) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPlugin']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=6 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='float']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPlugin']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=6 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='float']]/parameter[2]" name="managedName">frameWidth</attr>
@@ -2992,6 +2923,8 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPlugin']/method[@name='removeScanResultListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanResultListener']]/parameter[1]" name="managedName">listener</attr>
 <!-- AbstractScanViewPlugin.removeScanRunSkippedListener(io.anyline.plugin.ScanRunSkippedListener) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPlugin']/method[@name='removeScanRunSkippedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanRunSkippedListener']]/parameter[1]" name="managedName">listener</attr>
+<!-- AbstractScanViewPlugin.removeUIConfigChangedListener(io.anyline.view.UIChangeListener) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPlugin']/method[@name='removeUIConfigChangedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.view.UIChangeListener']]/parameter[1]" name="managedName">listener</attr>
 <!-- AbstractScanViewPlugin.setImageProvider(at.nineyards.anyline.ImageProvider) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPlugin']/method[@name='setImageProvider' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.ImageProvider']]/parameter[1]" name="managedName">imageProvider</attr>
 <!-- File: IO.Anyline.View.AbstractScanViewPluginComposite.cs -->
@@ -3008,6 +2941,8 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPluginComposite']/method[@name='addScanResultListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanResultListener']]/parameter[1]" name="managedName">listener</attr>
 <!-- AbstractScanViewPluginComposite.addScanRunSkippedListener(io.anyline.plugin.ScanRunSkippedListener) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPluginComposite']/method[@name='addScanRunSkippedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanRunSkippedListener']]/parameter[1]" name="managedName">listener</attr>
+<!-- AbstractScanViewPluginComposite.addUIConfigChangedListener(io.anyline.view.UIChangeListener) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPluginComposite']/method[@name='addUIConfigChangedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.view.UIChangeListener']]/parameter[1]" name="managedName">listener</attr>
 <!-- AbstractScanViewPluginComposite.calcCutOutAndImageCropBounds(android.content.Context, int, int, int, int, float) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPluginComposite']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=6 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='float']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPluginComposite']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=6 and parameter[1][@type='android.content.Context'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='float']]/parameter[2]" name="managedName">frameWidth</attr>
@@ -3027,6 +2962,8 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPluginComposite']/method[@name='removeScanResultListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanResultListener']]/parameter[1]" name="managedName">listener</attr>
 <!-- AbstractScanViewPluginComposite.removeScanRunSkippedListener(io.anyline.plugin.ScanRunSkippedListener) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPluginComposite']/method[@name='removeScanRunSkippedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanRunSkippedListener']]/parameter[1]" name="managedName">listener</attr>
+<!-- AbstractScanViewPluginComposite.removeUIConfigChangedListener(io.anyline.view.UIChangeListener) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPluginComposite']/method[@name='removeUIConfigChangedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.view.UIChangeListener']]/parameter[1]" name="managedName">listener</attr>
 <!-- AbstractScanViewPluginComposite.setImageProvider(at.nineyards.anyline.ImageProvider) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPluginComposite']/method[@name='setImageProvider' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.ImageProvider']]/parameter[1]" name="managedName">imageProvider</attr>
 <!-- File: IO.Anyline.View.AbstractWebView.cs -->
@@ -3133,6 +3070,15 @@
 <!-- BaseScanViewConfig.init(android.content.Context, org.json.JSONObject) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='BaseScanViewConfig']/method[@name='init' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='org.json.JSONObject']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='BaseScanViewConfig']/method[@name='init' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='org.json.JSONObject']]/parameter[2]" name="managedName">json</attr>
+<!-- File: IO.Anyline.View.BrightnessHelper.cs -->
+<!-- BrightnessHelper.BrightnessFeedback.valueOf(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='BrightnessHelper.BrightnessFeedback']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
+<!-- BrightnessHelper.setEpsonExposureCompensationLevels(java.lang.String, java.lang.String, java.lang.String, java.lang.String) -->
+<!-- BrightnessHelper.setLevelsForAutoFlash(int, int, int, int) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='BrightnessHelper']/method[@name='setLevelsForAutoFlash' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[1]" name="managedName">lowBrightness</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='BrightnessHelper']/method[@name='setLevelsForAutoFlash' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[2]" name="managedName">highBrightness</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='BrightnessHelper']/method[@name='setLevelsForAutoFlash' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[3]" name="managedName">lowAmbientLight</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='BrightnessHelper']/method[@name='setLevelsForAutoFlash' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[4]" name="managedName">highAmbientLight</attr>
 <!-- File: IO.Anyline.View.CutoutConfig.cs -->
 <!-- CutoutConfig.AnimationStyle.fromInt(int) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='CutoutConfig.AnimationStyle']/method[@name='fromInt' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">style</attr>
@@ -3273,6 +3219,15 @@
 <!-- File: IO.Anyline.View.ICutoutConfigChangedListener.cs -->
 <!-- CutoutConfigChangedListener.onCutoutConfigChanged(io.anyline.view.CutoutConfig) -->
 <attr path="/api/package[@name='io.anyline.view']/interface[@name='CutoutConfigChangedListener']/method[@name='onCutoutConfigChanged' and count(parameter)=1 and parameter[1][@type='io.anyline.view.CutoutConfig']]/parameter[1]" name="managedName">cutoutConfig</attr>
+<!-- File: IO.Anyline.View.IUIChangeListener.cs -->
+<!-- UIChangeListener.onCutoutChanged(io.anyline.view.CutoutRect) -->
+<attr path="/api/package[@name='io.anyline.view']/interface[@name='UIChangeListener']/method[@name='onCutoutChanged' and count(parameter)=1 and parameter[1][@type='io.anyline.view.CutoutRect']]/parameter[1]" name="managedName">cutoutRect</attr>
+<!-- UIChangeListener.onCutoutVisibility(java.lang.String, boolean) -->
+<attr path="/api/package[@name='io.anyline.view']/interface[@name='UIChangeListener']/method[@name='onCutoutVisibility' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='boolean']]/parameter[1]" name="managedName">id</attr>
+<attr path="/api/package[@name='io.anyline.view']/interface[@name='UIChangeListener']/method[@name='onCutoutVisibility' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='boolean']]/parameter[2]" name="managedName">visible</attr>
+<!-- UIChangeListener.onScanFeedbackConfigChanged(java.lang.Object, java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.view']/interface[@name='UIChangeListener']/method[@name='onScanFeedbackConfigChanged' and count(parameter)=2 and parameter[1][@type='java.lang.Object'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">scanFeedbackConfig</attr>
+<attr path="/api/package[@name='io.anyline.view']/interface[@name='UIChangeListener']/method[@name='onScanFeedbackConfigChanged' and count(parameter)=2 and parameter[1][@type='java.lang.Object'] and parameter[2][@type='java.lang.String']]/parameter[2]" name="managedName">id</attr>
 <!-- File: IO.Anyline.View.JsonParser.cs -->
 <!-- JsonParser.init(org.json.JSONObject, java.lang.String, android.content.Context) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='JsonParser']/method[@name='init' and count(parameter)=3 and parameter[1][@type='org.json.JSONObject'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='android.content.Context']]/parameter[1]" name="managedName">jsonObject</attr>
