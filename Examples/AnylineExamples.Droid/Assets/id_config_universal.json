@@ -26,7 +26,7 @@
               "minConfidence": 50
             },
             "placeOfBirth": {
-              "scanOption": 0,
+              "scanOption": 1,
               "minConfidence": 50
             },
             "dateOfIssue": {
@@ -65,15 +65,15 @@
               "minConfidence": 60
             },
             "placeOfBirth": {
-              "scanOption": 0,
+              "scanOption": 1,
               "minConfidence": 60
             },
             "dateOfExpiry": {
-              "scanOption": 0,
+              "scanOption": 1,
               "minConfidence": 60
             },
             "cardAccessNumber": {
-              "scanOption": 0,
+              "scanOption": 1,
               "minConfidence": 60
             },
             "documentNumber": {
@@ -81,7 +81,7 @@
               "minConfidence": 60
             },
             "nationality": {
-              "scanOption": 0,
+              "scanOption": 1,
               "minConfidence": 60
             }
           }
@@ -103,17 +103,17 @@
         "height": 31
       },
       "cropPadding": {
-        "x": -30,
-        "y": -90
+        "x": -50,
+        "y": -50
       },
       "cropOffset": {
         "x": 0,
-        "y": 90
+        "y": 0
       },
       "feedbackStrokeColor": "0099FF"
     },
     "scanFeedback": {
-      "style": "contour_rect",
+      "style": "CONTOUR_POINT",
       "visualFeedbackRedrawTimeout": 100,
       "strokeColor": "0099FF",
       "fillColor": "220099FF",
