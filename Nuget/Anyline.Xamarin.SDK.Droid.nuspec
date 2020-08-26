@@ -6,7 +6,7 @@
 			<title>Anyline Xamarin SDK (Android)</title>
 			<authors>Anyline GmbH</authors>
 			<owners>peteranyline</owners>
-			<licenseUrl>https://github.com/Anyline/anyline-ocr-xamarin-module/blob/master/Nuget/LICENSE.md</licenseUrl>
+			<licenseUrl>https://github.com/Anyline/anyline-ocr-xamarin-module/blob/master/LICENSE.md</licenseUrl>
 			<iconUrl>https://anylinewebsiteresource.blob.core.windows.net/wordpressmedia/2015/11/logo-300x138.png</iconUrl>
 			<requireLicenseAcceptance>true</requireLicenseAcceptance>
 			<releaseNotes>https://documentation.anyline.com/toc/platforms/xamarin/release_guide/index.html</releaseNotes>

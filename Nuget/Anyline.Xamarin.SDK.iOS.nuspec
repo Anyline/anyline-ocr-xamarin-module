@@ -7,7 +7,7 @@
     <authors>Anyline GmbH</authors>
     <owners>peteranyline</owners>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <licenseUrl>https://github.com/Anyline/anyline-ocr-xamarin-module/blob/master/Nuget/LICENSE.md</licenseUrl>
+    <licenseUrl>https://github.com/Anyline/anyline-ocr-xamarin-module/blob/master/LICENSE.md</licenseUrl>
     <projectUrl>https://documentation.anyline.io/toc/platforms/xamarin/index.html</projectUrl>
     <iconUrl>https://anylinewebsiteresource.blob.core.windows.net/wordpressmedia/2015/11/logo-300x138.png</iconUrl>
     <description>Anyline provides an easy-to-use SDK for applications to enable Optical Character Recognition (OCR) on mobile devices.
