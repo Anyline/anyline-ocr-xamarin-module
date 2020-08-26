@@ -23,8 +23,8 @@
 
 		<files>
 			<file src="lib\MonoAndroid10\AnylineXamarinSDK.Droid.dll" target="lib\MonoAndroid10" />
-			<file src="README.md" target="README.md" />
-			<file src="LICENSE.md" target="LICENSE.md" />
+			<file src="..\README.md" target="README.md" />
+			<file src="..\LICENSE.md" target="LICENSE.md" />
 		</files>
 				
     </package>
