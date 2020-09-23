@@ -2467,12 +2467,6 @@ namespace AnylineXamarinSDK.iOS
         IntPtr Constructor(NSDictionary<NSString, NSString> dictionary);
     }
 
-    // @interface ALTemplateIdentification : NSObject
-    [BaseType (typeof(NSObject))]
-    interface ALTemplateIdentification
-    {
-    }
-
     // @interface ALUniversalIDIdentification : NSObject
     [BaseType (typeof(NSObject))]
     interface ALUniversalIDIdentification
@@ -2505,6 +2499,7 @@ namespace AnylineXamarinSDK.iOS
     	[Export ("removeField:")]
     	void RemoveField (string fieldName);
     }
+
     // @interface ALIDConfig : NSObject
     [BaseType(typeof(NSObject))]
     interface ALIDConfig
@@ -2824,12 +2819,6 @@ namespace AnylineXamarinSDK.iOS
     	ALFieldScanOption ValueForField (string fieldName);
     }
 
-    // @interface ALTemplateFieldConfidences : ALIDFieldConfidences
-    [BaseType (typeof(ALIDFieldConfidences))]
-    interface ALTemplateFieldConfidences
-    {
-    }
-
     // @interface ALUniversalIDFieldConfidences : ALIDFieldConfidences
     [BaseType (typeof(ALIDFieldConfidences))]
     interface ALUniversalIDFieldConfidences
@@ -2857,12 +2846,6 @@ namespace AnylineXamarinSDK.iOS
     	// -(NSArray<NSString *> * _Nonnull)fieldNames;
     	[Export ("fieldNames")]
     	string[] FieldNames { get; }
-    }
-
-    // @interface ALTemplateConfig : ALIDConfig
-    [BaseType (typeof(ALIDConfig))]
-    interface ALTemplateConfig
-    {
     }
 
     // @interface ALUniversalIDConfig : ALIDConfig

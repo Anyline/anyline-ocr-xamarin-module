@@ -5,15 +5,18 @@
   },
   "flash": {
     "mode": "manual",
-    "alignment": "bottom_right",
-    "imageOn": "flash_on",
-    "imageOff": "flash_off"
+    "alignment": "bottom_right"
   },
   "viewPlugin": {
     "plugin": {
       "id": "ID",
       "idPlugin": {
-        "templateConfig": {
+        "universalIdConfig": {
+          "allowedLayouts": {
+            "mrz": [],
+            "drivingLicense": [],
+            "idFront": []
+          },
           "drivingLicense": {
             "surname": {
               "scanOption": 0,
@@ -115,7 +118,7 @@
       "feedbackStrokeColor": "0099FF"
     },
     "scanFeedback": {
-      "style": "CONTOUR_POINT",
+      "style": "CONTOUR_RECT",
       "visualFeedbackRedrawTimeout": 100,
       "strokeColor": "0099FF",
       "fillColor": "220099FF",

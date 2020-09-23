@@ -129,14 +129,14 @@ namespace AnylineExamples.iOS
                 {
                     value.CreatePropertyDictionary().ToList().ForEach(x => dict.Add(x.Key, x.Value));
                 }
-                else if (value is ALTemplateIdentification templateIdentification)
+                else if (value is ALUniversalIDIdentification universalIDIdentification)
                 {
-                    foreach (var field in templateIdentification.FieldNames)
+                    foreach (var field in universalIDIdentification.FieldNames)
                     {
-                        dict.AddProperty(field, templateIdentification.ValueForField(field));
+                        dict.AddProperty(field, universalIDIdentification.ValueForField(field));
                     }
 
-                    dict.AddProperty("LayoutDefinition", templateIdentification.LayoutDefinition);
+                    dict.AddProperty("LayoutDefinition", universalIDIdentification.LayoutDefinition);
                 }
                 else if (value is ALIDFieldConfidences)
                 {
