@@ -264,7 +264,7 @@ implements <a href="../../../io/anyline/view/UIChangeListener.html" title="inter
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/anyline/view/ScanView.html#getImageProvider--">getImageProvider</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code><a href="../../../io/anyline/view/AbstractBaseScanViewPlugin.html" title="class in io.anyline.view">AbstractBaseScanViewPlugin</a></code></td>
+<td class="colFirst"><code><a href="../../../io/anyline/view/AbstractBaseScanViewPlugin.html" title="class in io.anyline.view">AbstractBaseScanViewPlugin</a>&lt;?&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/anyline/view/ScanView.html#getScanViewPlugin--">getScanViewPlugin</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i7" class="rowColor">
@@ -288,7 +288,7 @@ implements <a href="../../../io/anyline/view/UIChangeListener.html" title="inter
 <tr id="i10" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/anyline/view/ScanView.html#initAsync-TrainerContext-TrainerUtils.ViewConfigResultHandler-">initAsync</a></span>(TrainerContext&nbsp;trainerContext,
-         TrainerUtils.ViewConfigResultHandler&nbsp;viewConfigResultHandler)</code>&nbsp;</td>
+         TrainerUtils.ViewConfigResultHandler&nbsp;resultHandler)</code>&nbsp;</td>
 </tr>
 <tr id="i11" class="rowColor">
 <td class="colFirst"><code>void</code></td>
@@ -352,7 +352,7 @@ implements <a href="../../../io/anyline/view/UIChangeListener.html" title="inter
 </tr>
 <tr id="i24" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/anyline/view/ScanView.html#setScanViewPlugin-io.anyline.view.AbstractBaseScanViewPlugin-">setScanViewPlugin</a></span>(<a href="../../../io/anyline/view/AbstractBaseScanViewPlugin.html" title="class in io.anyline.view">AbstractBaseScanViewPlugin</a>&nbsp;scanViewPlugin)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/anyline/view/ScanView.html#setScanViewPlugin-io.anyline.view.AbstractBaseScanViewPlugin-">setScanViewPlugin</a></span>(<a href="../../../io/anyline/view/AbstractBaseScanViewPlugin.html" title="class in io.anyline.view">AbstractBaseScanViewPlugin</a>&lt;?&gt;&nbsp;scanViewPlugin)</code>
 <div class="block">Sets the ScanView with the specific <a href="../../../io/anyline/view/AbstractScanViewPlugin.html" title="class in io.anyline.view"><code>AbstractScanViewPlugin</code></a></div>
 </td>
 </tr>
@@ -372,9 +372,7 @@ implements <a href="../../../io/anyline/view/UIChangeListener.html" title="inter
 </tr>
 <tr id="i28" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/anyline/view/ScanView.html#updateCutoutView--">updateCutoutView</a></span>()</code>
-<div class="block">Call this to update the cutout to changes made in the config changes</div>
-</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/anyline/view/ScanView.html#updateCutoutView--">updateCutoutView</a></span>()</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -501,7 +499,7 @@ implements <a href="../../../io/anyline/view/UIChangeListener.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>setScanViewPlugin</h4>
-<pre>public&nbsp;void&nbsp;setScanViewPlugin(<a href="../../../io/anyline/view/AbstractBaseScanViewPlugin.html" title="class in io.anyline.view">AbstractBaseScanViewPlugin</a>&nbsp;scanViewPlugin)</pre>
+<pre>public&nbsp;void&nbsp;setScanViewPlugin(<a href="../../../io/anyline/view/AbstractBaseScanViewPlugin.html" title="class in io.anyline.view">AbstractBaseScanViewPlugin</a>&lt;?&gt;&nbsp;scanViewPlugin)</pre>
 <div class="block">Sets the ScanView with the specific <a href="../../../io/anyline/view/AbstractScanViewPlugin.html" title="class in io.anyline.view"><code>AbstractScanViewPlugin</code></a></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -515,7 +513,7 @@ implements <a href="../../../io/anyline/view/UIChangeListener.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>getScanViewPlugin</h4>
-<pre>public&nbsp;<a href="../../../io/anyline/view/AbstractBaseScanViewPlugin.html" title="class in io.anyline.view">AbstractBaseScanViewPlugin</a>&nbsp;getScanViewPlugin()</pre>
+<pre>public&nbsp;<a href="../../../io/anyline/view/AbstractBaseScanViewPlugin.html" title="class in io.anyline.view">AbstractBaseScanViewPlugin</a>&lt;?&gt;&nbsp;getScanViewPlugin()</pre>
 </li>
 </ul>
 <a name="getBrightnessFeedBack--">
@@ -555,16 +553,6 @@ implements <a href="../../../io/anyline/view/UIChangeListener.html" title="inter
 <pre>public&nbsp;<a href="../../../at/nineyards/anyline/ImageProvider.html" title="interface in at.nineyards.anyline">ImageProvider</a>&nbsp;getImageProvider()</pre>
 </li>
 </ul>
-<a name="updateCutoutView--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>updateCutoutView</h4>
-<pre>public&nbsp;void&nbsp;updateCutoutView()</pre>
-<div class="block">Call this to update the cutout to changes made in the config changes</div>
-</li>
-</ul>
 <a name="onTouchEvent-android.view.MotionEvent-">
 <!--   -->
 </a>
@@ -585,6 +573,15 @@ implements <a href="../../../io/anyline/view/UIChangeListener.html" title="inter
 <li class="blockList">
 <h4>drawShape</h4>
 <pre>public&nbsp;void&nbsp;drawShape(java.util.List&lt;android.graphics.PointF&gt;&nbsp;outline)</pre>
+</li>
+</ul>
+<a name="updateCutoutView--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>updateCutoutView</h4>
+<pre>public&nbsp;void&nbsp;updateCutoutView()</pre>
 </li>
 </ul>
 <a name="startBlinkAnimation--">
@@ -644,12 +641,7 @@ implements <a href="../../../io/anyline/view/UIChangeListener.html" title="inter
 <li class="blockList">
 <h4>initComposite</h4>
 <pre>public&nbsp;void&nbsp;initComposite(org.json.JSONObject&nbsp;jsonObject,
-                          java.lang.String&nbsp;licenseKey)
-                   throws java.lang.Exception</pre>
-<dl>
-<dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.Exception</code></dd>
-</dl>
+                          java.lang.String&nbsp;licenseKey)</pre>
 </li>
 </ul>
 <a name="initAsync-TrainerContext-TrainerUtils.ViewConfigResultHandler-">
@@ -659,7 +651,7 @@ implements <a href="../../../io/anyline/view/UIChangeListener.html" title="inter
 <li class="blockList">
 <h4>initAsync</h4>
 <pre>public&nbsp;void&nbsp;initAsync(TrainerContext&nbsp;trainerContext,
-                      TrainerUtils.ViewConfigResultHandler&nbsp;viewConfigResultHandler)</pre>
+                      TrainerUtils.ViewConfigResultHandler&nbsp;resultHandler)</pre>
 </li>
 </ul>
 <a name="getScanViewPluginConfig--">
