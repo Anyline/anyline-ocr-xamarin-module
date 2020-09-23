@@ -563,179 +563,6 @@ namespace AnylineXamarinSDK.iOS
         IntPtr Constructor(ALCameraConfig cameraConfig, ALFlashButtonConfig flashButtonConfig, ALScanViewPluginConfig scanViewPluginConfig);
     }
 
-    // @interface ALUIConfiguration : ALBasicConfig
-    [BaseType(typeof(ALBasicConfig))]
-    interface ALUIConfiguration
-    {
-        // @property (nonatomic, strong) NSString * _Nullable defaultCamera;
-        [NullAllowed, Export("defaultCamera", ArgumentSemantic.Strong)]
-        string DefaultCamera { get; set; }
-
-        // @property (assign, nonatomic) CGFloat cutoutWidthPercent;
-        [Export("cutoutWidthPercent")]
-        nfloat CutoutWidthPercent { get; set; }
-
-        // @property (assign, nonatomic) CGFloat cutoutMaxPercentWidth;
-        [Export("cutoutMaxPercentWidth")]
-        nfloat CutoutMaxPercentWidth { get; set; }
-
-        // @property (assign, nonatomic) CGFloat cutoutMaxPercentHeight;
-        [Export("cutoutMaxPercentHeight")]
-        nfloat CutoutMaxPercentHeight { get; set; }
-
-        // @property (assign, nonatomic) ALCutoutAlignment cutoutAlignment;
-        [Export("cutoutAlignment", ArgumentSemantic.Assign)]
-        ALCutoutAlignment CutoutAlignment { get; set; }
-
-        // @property (assign, nonatomic) ALCaptureViewResolution captureResolution;
-        [Export("captureResolution", ArgumentSemantic.Assign)]
-        ALCaptureViewResolution CaptureResolution { get; set; }
-
-        // @property (assign, nonatomic) ALPictureResolution pictureResolution;
-        [Export("pictureResolution", ArgumentSemantic.Assign)]
-        ALPictureResolution PictureResolution { get; set; }
-
-        // @property (assign, nonatomic) ALCaptureViewMode captureMode;
-        [Export("captureMode", ArgumentSemantic.Assign)]
-        ALCaptureViewMode CaptureMode { get; set; }
-
-        // @property (assign, nonatomic) CGPoint cutoutOffset;
-        [Export("cutoutOffset", ArgumentSemantic.Assign)]
-        CGPoint CutoutOffset { get; set; }
-
-        // @property (copy, nonatomic) UIBezierPath * _Nullable cutoutPath;
-        [NullAllowed, Export("cutoutPath", ArgumentSemantic.Copy)]
-        UIBezierPath CutoutPath { get; set; }
-
-        // @property (assign, nonatomic) CGSize cutoutCropPadding;
-        [Export("cutoutCropPadding", ArgumentSemantic.Assign)]
-        CGSize CutoutCropPadding { get; set; }
-
-        // @property (assign, nonatomic) CGPoint cutoutCropOffset;
-        [Export("cutoutCropOffset", ArgumentSemantic.Assign)]
-        CGPoint CutoutCropOffset { get; set; }
-
-        // @property (nonatomic, strong) UIColor * _Nullable cutoutBackgroundColor;
-        [NullAllowed, Export("cutoutBackgroundColor", ArgumentSemantic.Strong)]
-        UIColor CutoutBackgroundColor { get; set; }
-
-        // @property (nonatomic, strong) UIImage * _Nullable overlayImage;
-        [NullAllowed, Export("overlayImage", ArgumentSemantic.Strong)]
-        UIImage OverlayImage { get; set; }
-
-        // @property (nonatomic, strong) UIColor * _Nullable strokeColor;
-        [NullAllowed, Export("strokeColor", ArgumentSemantic.Strong)]
-        UIColor StrokeColor { get; set; }
-
-        // @property (assign, nonatomic) NSInteger strokeWidth;
-        [Export("strokeWidth")]
-        nint StrokeWidth { get; set; }
-
-        // @property (assign, nonatomic) NSInteger cornerRadius;
-        [Export("cornerRadius")]
-        nint CornerRadius { get; set; }
-
-        // @property (nonatomic, strong) UIColor * _Nullable feedbackStrokeColor;
-        [NullAllowed, Export("feedbackStrokeColor", ArgumentSemantic.Strong)]
-        UIColor FeedbackStrokeColor { get; set; }
-
-        // @property (assign, nonatomic) ALUIFeedbackStyle feedbackStyle;
-        [Export("feedbackStyle", ArgumentSemantic.Assign)]
-        ALUIFeedbackStyle FeedbackStyle { get; set; }
-
-        // @property (assign, nonatomic) ALUIVisualFeedbackAnimation visualFeedbackAnimation;
-        [Export("visualFeedbackAnimation", ArgumentSemantic.Assign)]
-        ALUIVisualFeedbackAnimation VisualFeedbackAnimation { get; set; }
-
-        // @property (nonatomic, strong) UIColor * _Nullable visualFeedbackStrokeColor;
-        [NullAllowed, Export("visualFeedbackStrokeColor", ArgumentSemantic.Strong)]
-        UIColor VisualFeedbackStrokeColor { get; set; }
-
-        // @property (nonatomic, strong) UIColor * _Nullable visualFeedbackFillColor;
-        [NullAllowed, Export("visualFeedbackFillColor", ArgumentSemantic.Strong)]
-        UIColor VisualFeedbackFillColor { get; set; }
-
-        // @property (assign, nonatomic) NSInteger visualFeedbackStrokeWidth;
-        [Export("visualFeedbackStrokeWidth")]
-        nint VisualFeedbackStrokeWidth { get; set; }
-
-        // @property (assign, nonatomic) NSInteger visualFeedbackCornerRadius;
-        [Export("visualFeedbackCornerRadius")]
-        nint VisualFeedbackCornerRadius { get; set; }
-
-        // @property (assign, nonatomic) NSInteger visualFeedbackAnimationDuration;
-        [Export("visualFeedbackAnimationDuration")]
-        nint VisualFeedbackAnimationDuration { get; set; }
-
-        // @property (assign, nonatomic) NSInteger visualFeedbackRedrawTimeout;
-        [Export("visualFeedbackRedrawTimeout")]
-        nint VisualFeedbackRedrawTimeout { get; set; }
-
-        // @property (nonatomic, strong) UIColor * _Nullable backgroundColorWithoutAlpha;
-        [NullAllowed, Export("backgroundColorWithoutAlpha", ArgumentSemantic.Strong)]
-        UIColor BackgroundColorWithoutAlpha { get; set; }
-
-        // @property (assign, nonatomic) CGFloat backgroundAlpha;
-        [Export("backgroundAlpha")]
-        nfloat BackgroundAlpha { get; set; }
-
-        // @property (assign, nonatomic) ALFlashMode flashMode;
-        [Export("flashMode", ArgumentSemantic.Assign)]
-        ALFlashMode FlashMode { get; set; }
-
-        // @property (assign, nonatomic) ALFlashAlignment flashAlignment;
-        [Export("flashAlignment", ArgumentSemantic.Assign)]
-        ALFlashAlignment FlashAlignment { get; set; }
-
-        // @property (nonatomic, strong) UIImage * _Nullable flashImage;
-        [NullAllowed, Export("flashImage", ArgumentSemantic.Strong)]
-        UIImage FlashImage { get; set; }
-
-        // @property (assign, nonatomic) CGPoint flashOffset;
-        [Export("flashOffset", ArgumentSemantic.Assign)]
-        CGPoint FlashOffset { get; set; }
-
-        // @property (assign, nonatomic) BOOL beepOnResult;
-        [Export("beepOnResult")]
-        bool BeepOnResult { get; set; }
-
-        // @property (assign, nonatomic) BOOL vibrateOnResult;
-        [Export("vibrateOnResult")]
-        bool VibrateOnResult { get; set; }
-
-        // @property (assign, nonatomic) BOOL blinkAnimationOnResult;
-        [Export("blinkAnimationOnResult")]
-        bool BlinkAnimationOnResult { get; set; }
-
-        // @property (assign, nonatomic) BOOL cancelOnResult;
-        [Export("cancelOnResult")]
-        bool CancelOnResult { get; set; }
-
-        // -(void)setCutoutPathForWidth:(CGFloat)width height:(CGFloat)height;
-        [Export("setCutoutPathForWidth:height:")]
-        void SetCutoutPathForWidth(nfloat width, nfloat height);
-
-        // -(void)updateCutoutWidth:(CGFloat)width;
-        [Export("updateCutoutWidth:")]
-        void UpdateCutoutWidth(nfloat width);
-
-        // +(instancetype)cutoutConfigurationFromJsonFile:(NSString *)jsonFile;
-        [Static]
-        [Export("cutoutConfigurationFromJsonFile:")]
-        ALUIConfiguration CutoutConfigurationFromJsonFile(string jsonFile);
-    }
-
-    // @interface Paths (ALUIConfiguration)
-    [Category]
-    [BaseType(typeof(ALUIConfiguration))]
-    interface ALUIConfiguration_Paths
-    {
-        // +(UIBezierPath * _Nullable)AL_lugPath;
-        [Static]
-        [NullAllowed, Export("AL_lugPath")]
-        UIBezierPath AL_lugPath { get; }
-    }
-
     // @interface ALIndexPath : NSObject
     [BaseType(typeof(NSObject))]
     interface ALIndexPath
@@ -1940,7 +1767,7 @@ namespace AnylineXamarinSDK.iOS
         [Export("polygonWithScale:")]
         ALPolygon PolygonWithScale(nfloat scale);
     }
-    
+
     // @interface ALUIFeedback : UIView
     [BaseType(typeof(UIView))]
     interface ALUIFeedback
@@ -2258,7 +2085,7 @@ namespace AnylineXamarinSDK.iOS
         // -(instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID licenseKey:(NSString * _Nonnull)licenseKey delegate:(id<ALBarcodeScanPluginDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
         [Export("initWithPluginID:licenseKey:delegate:error:")]
         IntPtr Constructor([NullAllowed] string pluginID, string licenseKey, NSObject @delegate, [NullAllowed] out NSError error);
-        
+
         // @property (readonly, nonatomic, strong) NSHashTable<ALBarcodeScanPluginDelegate> * _Nullable delegates;
         [NullAllowed, Export("delegates", ArgumentSemantic.Strong)]
         NSSet Delegates { get; }
@@ -2641,52 +2468,43 @@ namespace AnylineXamarinSDK.iOS
     }
 
     // @interface ALTemplateIdentification : NSObject
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     interface ALTemplateIdentification
     {
-        // @property (nonatomic, strong) ALTemplateFieldConfidences * _Nullable fieldConfidences;
-        [NullAllowed, Export("fieldConfidences", ArgumentSemantic.Strong)]
-        ALTemplateFieldConfidences FieldConfidences { get; set; }
-
-        // @property (nonatomic, strong) ALLayoutDefinition * _Nullable layoutDefinition;
-        [NullAllowed, Export("layoutDefinition", ArgumentSemantic.Strong)]
-        ALLayoutDefinition LayoutDefinition { get; set; }
-
-        // -(void)addField:(NSString * _Nonnull)fieldName value:(NSString * _Nonnull)value;
-        [Export("addField:value:")]
-        void AddField(string fieldName, string value);
-
-        // -(NSArray<NSString *> * _Nonnull)fieldNames;
-        [Export("fieldNames")]
-        string[] FieldNames { get; }
-
-        // -(NSString * _Nonnull)valueForField:(NSString * _Nonnull)fieldName;
-        [Export("valueForField:")]
-        string ValueForField(string fieldName);
-
-        // -(BOOL)hasField:(NSString * _Nonnull)fieldName;
-        [Export("hasField:")]
-        bool HasField(string fieldName);
-
-        // -(void)removeField:(NSString * _Nonnull)fieldName;
-        [Export("removeField:")]
-        void RemoveField(string fieldName);
     }
 
-    // audit-objc-generics: @interface ALIDResult<__covariant ObjectType> : ALScanResult
-    [BaseType(typeof(ALScanResult))]
-    interface ALIDResult
+    // @interface ALUniversalIDIdentification : NSObject
+    [BaseType (typeof(NSObject))]
+    interface ALUniversalIDIdentification
     {
-        // @property (readonly, assign, nonatomic) BOOL allCheckDigitsValid;
-        //[Obsolete("", false)]
-        //[Export("allCheckDigitsValid")]
-        //bool AllCheckDigitsValid { get; }
+    	// @property (nonatomic, strong) ALUniversalIDFieldConfidences * _Nullable fieldConfidences;
+    	[NullAllowed, Export ("fieldConfidences", ArgumentSemantic.Strong)]
+    	ALUniversalIDFieldConfidences FieldConfidences { get; set; }
 
-        // -(instancetype _Nullable)initWithResult:(ObjectType _Nonnull)result image:(UIImage * _Nonnull)image fullImage:(UIImage * _Nullable)fullImage confidence:(NSInteger)confidence pluginID:(NSString * _Nonnull)pluginID allCheckDigitsValid:(BOOL)allCheckDigitsValid;
-        [Export("initWithResult:image:fullImage:confidence:pluginID:allCheckDigitsValid:")]
-        IntPtr Constructor(NSObject result, UIImage image, [NullAllowed] UIImage fullImage, nint confidence, string pluginID, bool allCheckDigitsValid);
+    	// @property (nonatomic, strong) ALLayoutDefinition * _Nullable layoutDefinition;
+    	[NullAllowed, Export ("layoutDefinition", ArgumentSemantic.Strong)]
+    	ALLayoutDefinition LayoutDefinition { get; set; }
+
+    	// -(void)addField:(NSString * _Nonnull)fieldName value:(NSString * _Nonnull)value;
+    	[Export ("addField:value:")]
+    	void AddField (string fieldName, string value);
+
+    	// -(NSArray<NSString *> * _Nonnull)fieldNames;
+    	[Export ("fieldNames")]
+    	string[] FieldNames { get; }
+
+    	// -(NSString * _Nonnull)valueForField:(NSString * _Nonnull)fieldName;
+    	[Export ("valueForField:")]
+    	string ValueForField (string fieldName);
+
+    	// -(BOOL)hasField:(NSString * _Nonnull)fieldName;
+    	[Export ("hasField:")]
+    	bool HasField (string fieldName);
+
+    	// -(void)removeField:(NSString * _Nonnull)fieldName;
+    	[Export ("removeField:")]
+    	void RemoveField (string fieldName);
     }
-
     // @interface ALIDConfig : NSObject
     [BaseType(typeof(NSObject))]
     interface ALIDConfig
@@ -2977,71 +2795,87 @@ namespace AnylineXamarinSDK.iOS
     }
 
 
-    // @interface ALTemplateFieldScanOptions : ALIDFieldScanOptions
-    [BaseType(typeof(ALIDFieldScanOptions))]
-    interface ALTemplateFieldScanOptions
+    // @interface ALUniversalIDFieldScanOptions : ALIDFieldScanOptions
+    [BaseType (typeof(ALIDFieldScanOptions))]
+    interface ALUniversalIDFieldScanOptions
     {
-        // -(instancetype _Nullable)initWithJsonDictionary:(NSDictionary * _Nonnull)configDict;
-        [Export("initWithJsonDictionary:")]
-        IntPtr Constructor(NSDictionary configDict);
+    	// -(instancetype _Nullable)initWithJsonDictionary:(NSDictionary * _Nonnull)configDict;
+    	[Export ("initWithJsonDictionary:")]
+    	IntPtr Constructor (NSDictionary configDict);
 
-        // -(BOOL)hasField:(NSString * _Nonnull)fieldName;
-        [Export("hasField:")]
-        bool HasField(string fieldName);
+    	// -(BOOL)hasField:(NSString * _Nonnull)fieldName;
+    	[Export ("hasField:")]
+    	bool HasField (string fieldName);
 
-        // -(void)addField:(NSString * _Nonnull)fieldName value:(ALFieldScanOption)scanOption;
-        [Export("addField:value:")]
-        void AddField(string fieldName, ALFieldScanOption scanOption);
+    	// -(void)addField:(NSString * _Nonnull)fieldName value:(ALFieldScanOption)scanOption;
+    	[Export ("addField:value:")]
+    	void AddField (string fieldName, ALFieldScanOption scanOption);
 
-        // -(void)removeField:(NSString * _Nonnull)fieldName;
-        [Export("removeField:")]
-        void RemoveField(string fieldName);
+    	// -(void)removeField:(NSString * _Nonnull)fieldName;
+    	[Export ("removeField:")]
+    	void RemoveField (string fieldName);
 
-        // -(NSArray<NSString *> * _Nonnull)fieldNames;
-        [Export("fieldNames")]
-        string[] FieldNames { get; }
+    	// -(NSArray<NSString *> * _Nonnull)fieldNames;
+    	[Export ("fieldNames")]
+    	string[] FieldNames { get; }
 
-        // -(ALFieldScanOption)valueForField:(NSString * _Nonnull)fieldName;
-        [Export("valueForField:")]
-        ALFieldScanOption ValueForField(string fieldName);
+    	// -(ALFieldScanOption)valueForField:(NSString * _Nonnull)fieldName;
+    	[Export ("valueForField:")]
+    	ALFieldScanOption ValueForField (string fieldName);
     }
 
     // @interface ALTemplateFieldConfidences : ALIDFieldConfidences
-    [BaseType(typeof(ALIDFieldConfidences))]
+    [BaseType (typeof(ALIDFieldConfidences))]
     interface ALTemplateFieldConfidences
     {
-        // -(instancetype _Nullable)initWithJsonDictionary:(NSDictionary * _Nonnull)configDict;
-        [Export("initWithJsonDictionary:")]
-        IntPtr Constructor(NSDictionary configDict);
+    }
 
-        // -(BOOL)hasField:(NSString * _Nonnull)fieldName;
-        [Export("hasField:")]
-        bool HasField(string fieldName);
+    // @interface ALUniversalIDFieldConfidences : ALIDFieldConfidences
+    [BaseType (typeof(ALIDFieldConfidences))]
+    interface ALUniversalIDFieldConfidences
+    {
+    	// -(instancetype _Nullable)initWithJsonDictionary:(NSDictionary * _Nonnull)configDict;
+    	[Export ("initWithJsonDictionary:")]
+    	IntPtr Constructor (NSDictionary configDict);
 
-        // -(void)addField:(NSString * _Nonnull)fieldName value:(ALFieldConfidence)confidence;
-        [Export("addField:value:")]
-        void AddField(string fieldName, int confidence);
+    	// -(BOOL)hasField:(NSString * _Nonnull)fieldName;
+    	[Export ("hasField:")]
+    	bool HasField (string fieldName);
 
-        // -(void)removeField:(NSString * _Nonnull)fieldName;
-        [Export("removeField:")]
-        void RemoveField(string fieldName);
+    	// -(void)addField:(NSString * _Nonnull)fieldName value:(ALFieldConfidence)confidence;
+    	[Export ("addField:value:")]
+    	void AddField (string fieldName, int confidence);
 
-        // -(ALFieldConfidence)valueForField:(NSString * _Nonnull)fieldName;
-        [Export("valueForField:")]
-        int ValueForField(string fieldName);
+    	// -(void)removeField:(NSString * _Nonnull)fieldName;
+    	[Export ("removeField:")]
+    	void RemoveField (string fieldName);
 
-        // -(NSArray<NSString *> * _Nonnull)fieldNames;
-        [Export("fieldNames")]
-        string[] FieldNames { get; }
+    	// -(ALFieldConfidence)valueForField:(NSString * _Nonnull)fieldName;
+    	[Export ("valueForField:")]
+    	int ValueForField (string fieldName);
+
+    	// -(NSArray<NSString *> * _Nonnull)fieldNames;
+    	[Export ("fieldNames")]
+    	string[] FieldNames { get; }
     }
 
     // @interface ALTemplateConfig : ALIDConfig
-    [BaseType(typeof(ALIDConfig))]
+    [BaseType (typeof(ALIDConfig))]
     interface ALTemplateConfig
     {
-        // -(NSDictionary * _Nonnull)toStartVariableJsonDictionary;
-        [Export("toStartVariableJsonDictionary")]
-        NSDictionary ToStartVariableJsonDictionary { get; }
+    }
+
+    // @interface ALUniversalIDConfig : ALIDConfig
+    [BaseType (typeof(ALIDConfig))]
+    interface ALUniversalIDConfig
+    {
+    	// -(NSDictionary * _Nonnull)toStartVariableJsonDictionary;
+    	[Export ("toStartVariableJsonDictionary")]
+    	NSDictionary ToStartVariableJsonDictionary { get; }
+
+    	// -(NSDictionary * _Nullable)allowedLayoutsJsonDictionary;
+    	[NullAllowed, Export ("allowedLayoutsJsonDictionary")]
+    	NSDictionary AllowedLayoutsJsonDictionary { get; }
     }
 
     // @interface ALDrivingLicenseIdentification : NSObject
@@ -3232,6 +3066,23 @@ namespace AnylineXamarinSDK.iOS
         IntPtr Constructor(int surname, int givenNames, int dateOfBirth, int nationality, int placeOfBirth, int dateOfExpiry, int documentNumber, int cardAccessNumber);
     }
 
+    // audit-objc-generics: @interface ALIDResult<__covariant ObjectType> : ALScanResult
+    [BaseType (typeof(ALScanResult))]
+    interface ALIDResult
+    {
+    	// @property (readonly, assign, nonatomic) BOOL allCheckDigitsValid __attribute__((deprecated("Deprecated since Version 10. Please use the property "allCheckDigitsValid" from any Identification Object (ALMRZIdentification, ALGermanIDFrontIdentification or ALDrivingLicenseIdentification) instead.")));
+    	[Export ("allCheckDigitsValid")]
+    	bool AllCheckDigitsValid { get; }
+
+    	// -(instancetype _Nullable)initWithResult:(ObjectType _Nonnull)result image:(UIImage * _Nullable)image fullImage:(UIImage * _Nullable)fullImage confidence:(NSInteger)confidence pluginID:(NSString * _Nonnull)pluginID;
+    	[Export ("initWithResult:image:fullImage:confidence:pluginID:")]
+    	IntPtr Constructor (NSObject result, [NullAllowed] UIImage image, [NullAllowed] UIImage fullImage, nint confidence, string pluginID);
+
+    	// -(instancetype _Nullable)initWithResult:(ObjectType _Nonnull)result image:(UIImage * _Nonnull)image fullImage:(UIImage * _Nullable)fullImage confidence:(NSInteger)confidence pluginID:(NSString * _Nonnull)pluginID allCheckDigitsValid:(BOOL)allCheckDigitsValid __attribute__((deprecated("Deprecated since Version 10. Please use "initWithResult:image:fullImage:confidence:pluginID" instead")));
+    	[Export ("initWithResult:image:fullImage:confidence:pluginID:allCheckDigitsValid:")]
+    	IntPtr Constructor (NSObject result, UIImage image, [NullAllowed] UIImage fullImage, nint confidence, string pluginID, bool allCheckDigitsValid);
+    }
+    
     // @interface ALIDScanPlugin : ALAbstractScanPlugin
     [BaseType(typeof(ALAbstractScanPlugin))]
     [DisableDefaultCtor]
@@ -3848,11 +3699,11 @@ namespace AnylineXamarinSDK.iOS
         // -(void)removeDelegate:(id<ALLicensePlateScanPluginDelegate> _Nonnull)delegate;
         [Export("removeDelegate:")]
         void RemoveDelegate(NSObject @delegate);
-        
+
         // -(ALLicensePlateScanMode)parseScanModeString:(NSString * _Nonnull)scanModeString;
         [Export("parseScanModeString:")]
         ALLicensePlateScanMode ParseScanModeString(string scanModeString);
-        
+
         // -(void)addValidationRegexEntry:(NSString * _Nullable)validationRegex forCountry:(ALLicensePlateScanMode)scanMode;
         [Export("addValidationRegexEntry:forCountry:")]
         void AddValidationRegexEntry([NullAllowed] string validationRegex, ALLicensePlateScanMode scanMode);
