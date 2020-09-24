@@ -74,6 +74,11 @@
   <ItemGroup>
     <Folder Include="Assets\tools\" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Google.Guava">
+      <Version>27.1.0.4</Version>
+    </PackageReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
   <PropertyGroup Condition=" $([MSBuild]::IsOsPlatform(Windows)) ">
     <PostBuildEvent>python "$(ProjectDir)Assets\tools\dist\GetXMLMetadata.py" "$(ProjectDir)obj\$(ConfigurationName)\generated\src" "$(ProjectDir)Assets\tools\Generated.xml" "$(ProjectDir)Assets\tools\javadoc" 0 &amp; xcopy "$(TargetPath)" "$(ProjectDir)..\..\Nuget\lib\MonoAndroid10\" /Y</PostBuildEvent>

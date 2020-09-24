@@ -21,7 +21,9 @@
 			<tags>ocr scanning meter barcode mrz qr document camera anyline license plate </tags>			
 
 			<dependencies>
-				<dependency id="Xamarin.Google.Guava.ListenableFuture" version="1.0.0.2" />
+				<group targetFramework="MonoAndroid,Version=v9.0">
+					<dependency id="Xamarin.Google.Guava" version="27.1.0.3" />
+				</group>
 			</dependencies>
 
 		</metadata>

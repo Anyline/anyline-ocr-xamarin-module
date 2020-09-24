@@ -25,12 +25,12 @@
 <!-- AnylineController.setDelayScanTime(double, double) -->
 <attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setDelayScanTime' and count(parameter)=2 and parameter[1][@type='double'] and parameter[2][@type='double']]/parameter[1]" name="managedName">delayScanTime</attr>
 <attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setDelayScanTime' and count(parameter)=2 and parameter[1][@type='double'] and parameter[2][@type='double']]/parameter[2]" name="managedName">startTime</attr>
-<!-- AnylineController.setHighRes(boolean) -->
-<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setHighRes' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">b</attr>
 <!-- AnylineController.setId(java.lang.String) -->
 <attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setId' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">id</attr>
 <!-- AnylineController.setImageProvider(at.nineyards.anyline.ImageProvider) -->
 <attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setImageProvider' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.ImageProvider']]/parameter[1]" name="managedName">imageProvider</attr>
+<!-- AnylineController.setIsFullFrameScanning(boolean) -->
+<attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setIsFullFrameScanning' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">b</attr>
 <!-- AnylineController.setProductName(java.lang.String) -->
 <attr path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/method[@name='setProductName' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">productName</attr>
 <!-- AnylineController.setReportingEnabled(boolean) -->
@@ -55,9 +55,11 @@
 <!-- AnylineWorkerRunnable.setDebug(boolean) -->
 <!-- AnylineWorkerRunnable.setCropRect(android.graphics.RectF) -->
 <!-- AnylineWorkerRunnable.setId(java.lang.String) -->
+<!-- AnylineWorkerRunnable.setIsFullFrameScanning(boolean) -->
 <!-- AnylineWorkerRunnable.setProductName(java.lang.String) -->
 <!-- File: AT.Nineyards.Anyline.AnylineWorkerThreadPool.cs -->
 <!-- AnylineWorkerThreadPool.addRunnable(java.lang.String, at.nineyards.anyline.AnylineWorkerRunnable) -->
+<!-- AnylineWorkerThreadPool.execute(java.util.concurrent.Callable&lt;java.lang.String&gt;) -->
 <!-- AnylineWorkerThreadPool.stopById(java.lang.String) -->
 <!-- File: AT.Nineyards.Anyline.BuildConfig.cs -->
 <!-- File: AT.Nineyards.Anyline.Camera.AbstractZoomHandler.cs -->
@@ -146,6 +148,8 @@
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setPreferredCameraConfig' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.CameraConfig']]/parameter[1]" name="managedName">preferredCameraConfig</attr>
 <!-- CameraController.setZoomRatio(double) -->
 <attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setZoomRatio' and count(parameter)=1 and parameter[1][@type='double']]/parameter[1]" name="managedName">zoomLevelRatio</attr>
+<!-- CameraController.removeCameraOpenListener(at.nineyards.anyline.camera.CameraOpenListener) -->
+<attr path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='removeCameraOpenListener' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.camera.CameraOpenListener']]/parameter[1]" name="managedName">listener</attr>
 <!-- CameraController.reportCameraError(java.lang.Exception) -->
 <!-- CameraController.setCameraConfig(at.nineyards.anyline.camera.CameraConfig) -->
 <!-- CameraController.setCameraOpenListener(at.nineyards.anyline.camera.CameraOpenListener) -->
