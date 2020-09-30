@@ -165,7 +165,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Anyline.Xamarin.SDK.iOS">
-      <Version>24.0.0</Version>
+      <Version>24.1.0</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="..\AnylineExamples.Shared\AnylineExamples.Shared.projitems" Label="Shared" />
