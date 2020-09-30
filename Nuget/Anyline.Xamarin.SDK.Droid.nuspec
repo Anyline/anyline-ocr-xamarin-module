@@ -22,7 +22,7 @@
 
 			<dependencies>
 				<group targetFramework="MonoAndroid,Version=v9.0">
-					<dependency id="Xamarin.Google.Guava" version="27.1.0.3" />
+					<dependency id="Xamarin.Google.Guava" version="27.1.0.4" />
 				</group>
 			</dependencies>
 
