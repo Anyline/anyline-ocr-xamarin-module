@@ -186,8 +186,8 @@
   <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIDFrontFieldConfidences']/method[@name='setGermanIdFrontConfidences']" />
   <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/method[@name='setMrzFieldConfidences']" />
   
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='TemplateFieldConfidences']/field[@name='fieldNames']" />
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='TemplateFieldScanOptions']/field[@name='fieldNames']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='UniversalIdFieldConfidences']/field[@name='fieldNames']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='UniversalIdFieldScanOptions']/field[@name='fieldNames']" />
 
   <remove-node path="/api/package[@name='io.anyline.plugin.licenseplate']/class[@name='LicensePlateScanPlugin']/field[@name='charWhiteList']" />
   <remove-node path="/api/package[@name='io.anyline.plugin.licenseplate']/class[@name='LicensePlateScanPlugin']/field[@name='validationRegex']" />
