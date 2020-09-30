@@ -23,6 +23,8 @@
 			<dependencies>
 				<group targetFramework="MonoAndroid,Version=v9.0">
 					<dependency id="Xamarin.Google.Guava" version="27.1.0.4" />
+					<dependency id="Xamarin.Google.Guava.FailureAccess" version="1.0.1.2" />
+					<dependency id="Xamarin.Google.Guava.ListenableFuture" version="1.0.0.2" />
 				</group>
 			</dependencies>
 
