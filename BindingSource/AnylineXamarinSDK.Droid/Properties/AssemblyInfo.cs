@@ -27,8 +27,8 @@ using Android.App;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("24.1.0")]
-[assembly: AssemblyFileVersion("24.1.0.0")]
-[assembly: AssemblyInformationalVersion("24.1.0-rc.1")]
+//[assembly: AssemblyFileVersion("24.1.0.0")]
+//[assembly: AssemblyInformationalVersion("24.1.0-rc.1")]
 
 
 [assembly: UsesPermission(Android.Manifest.Permission.Camera)]
