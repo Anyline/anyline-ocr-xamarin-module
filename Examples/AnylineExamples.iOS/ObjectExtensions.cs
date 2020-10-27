@@ -31,13 +31,6 @@ namespace AnylineExamples.iOS
                     dict.Add(od.Key, od.Value);
                 }
             }
-            else if (obj is Array resultArray)
-            {
-                foreach (var r in resultArray)
-                {
-                    r.CreatePropertyDictionary().ToList().ForEach(x => dict.AddProperty(x.Key, x.Value));
-                }
-            }
             else
             {
                 if (obj is UIImage) return new Dictionary<string, object>() { { "Image", obj } }.CreatePropertyDictionary();
@@ -82,6 +75,13 @@ namespace AnylineExamples.iOS
                                         dict.Add($"Result group {groupIndex}", mapGroupResults);
 
                                         groupIndex++;
+                                    }
+                                    else if (value is Foundation.NSArray resultArray)
+                                    {
+                                        for (nuint i = 0; i < resultArray.Count; i++)
+                                        {
+                                            resultArray.GetItem<Foundation.NSObject>(i).CreatePropertyDictionary().ToList().ForEach(x => dict.AddProperty(x.Key, x.Value));
+                                        }
                                     }
                                     else
                                     {
