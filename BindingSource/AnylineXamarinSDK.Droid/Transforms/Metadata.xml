@@ -8,7 +8,7 @@
   -->
   
   <!-- CS0109 should be ignored: https://bugzilla.xamarin.com/show_bug.cgi?id=58932 PR to Fix it: https://github.com/xamarin/java.interop/pull/625#issue-402742236 -->
-  <!-- CS0108 will also be ignored as they come from the Android SDK and there is no way to add the 'new' keyworkd via transformations  -->
+  <!-- CS0108 will also be ignored as they come from the Android SDK and there is no way to add the 'new' keyword via transformations  -->
   
   <!-- ++++++++ Generic type changes ++++++++ -->
 
@@ -43,6 +43,10 @@
 
   <!--Fixes warning BG8401: Skipping ... -->
 
+  <remove-node path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='Barcode']/field[@name='barcodeFormat']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='Barcode']/field[@name='value']" />
+
+  
   <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AbstractZoomHandler']/field[@name='zoomLevel']" />
 
   <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='opticalStabilizationEnabled']" />

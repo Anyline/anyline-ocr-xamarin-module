@@ -59,7 +59,7 @@
 <!-- AnylineWorkerRunnable.setProductName(java.lang.String) -->
 <!-- File: AT.Nineyards.Anyline.AnylineWorkerThreadPool.cs -->
 <!-- AnylineWorkerThreadPool.addRunnable(java.lang.String, at.nineyards.anyline.AnylineWorkerRunnable) -->
-<!-- AnylineWorkerThreadPool.execute(java.util.concurrent.Callable&lt;java.lang.String&gt;) -->
+<!-- AnylineWorkerThreadPool.execute(java.util.concurrent.Callable&lt;?&gt;) -->
 <!-- AnylineWorkerThreadPool.stopById(java.lang.String) -->
 <!-- File: AT.Nineyards.Anyline.BuildConfig.cs -->
 <!-- File: AT.Nineyards.Anyline.Camera.AbstractZoomHandler.cs -->
@@ -576,6 +576,7 @@
 <attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineRawResult']/method[@name='getConfidence' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">identifier</attr>
 <!-- AnylineRawResult.getResult(java.lang.String) -->
 <attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineRawResult']/method[@name='getResult' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">identifier</attr>
+<!-- AnylineRawResult.getResultSpecialCharacters(java.lang.String) -->
 <!-- AnylineRawResult.hasConfidenceValue(java.lang.String) -->
 <attr path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineRawResult']/method[@name='hasConfidenceValue' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">identifier</attr>
 <!-- File: AT.Nineyards.Anyline.Models.AnylineScanResult.cs -->
@@ -2061,6 +2062,9 @@
 <!-- AbstractScanPlugin.setReportingEnabled(boolean) -->
 <attr path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/method[@name='setReportingEnabled' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">isReportingEnabled</attr>
 <!-- AbstractScanPlugin.onFinishedWithOutput(java.lang.Object) -->
+<!-- File: IO.Anyline.Plugin.Barcode.Barcode.cs -->
+<!-- Barcode.setBarcodeFormat(io.anyline.plugin.barcode.BarcodeFormat) -->
+<!-- Barcode.setValue(java.lang.String) -->
 <!-- File: IO.Anyline.Plugin.Barcode.BarcodeFormat.cs -->
 <!-- BarcodeFormat.fromBarcodeScanViewBarcodeFormat(io.anyline.plugin.barcode.BarcodeFormat) -->
 <attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='BarcodeFormat']/method[@name='fromBarcodeScanViewBarcodeFormat' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.barcode.BarcodeFormat']]/parameter[1]" name="managedName">barcodeFormat</attr>
@@ -2069,22 +2073,17 @@
 <!-- BarcodeFormat.valueOf(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='BarcodeFormat']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
 <!-- File: IO.Anyline.Plugin.Barcode.BarcodeScanPlugin.cs -->
-<!-- BarcodeScanPlugin.BarcodeScanPlugin(android.content.Context, java.lang.String, java.lang.String) -->
+<!-- BarcodeScanPlugin.ScanMode.valueOf(java.lang.String) -->
+<!-- BarcodeScanPlugin.BarcodeScanPlugin(android.content.Context, java.lang.String, java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='BarcodeScanPlugin']/constructor[@name='BarcodeScanPlugin' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='BarcodeScanPlugin']/constructor[@name='BarcodeScanPlugin' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[2]" name="managedName">id</attr>
 <attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='BarcodeScanPlugin']/constructor[@name='BarcodeScanPlugin' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[3]" name="managedName">licenseKey</attr>
 <!-- BarcodeScanPlugin.onFinishedWithOutput(java.lang.Object) -->
 <!-- BarcodeScanPlugin.setBarcodeFormats(io.anyline.plugin.barcode.BarcodeFormat...) -->
 <attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='BarcodeScanPlugin']/method[@name='setBarcodeFormats' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.barcode.BarcodeFormat...']]/parameter[1]" name="managedName">formats</attr>
+<!-- BarcodeScanPlugin.setScanMode(java.lang.Enum&lt;io.anyline.plugin.barcode.BarcodeScanPlugin.ScanMode&gt;) -->
 <!-- File: IO.Anyline.Plugin.Barcode.BarcodeScanResult.cs -->
-<!-- BarcodeScanResult.BarcodeScanResult(java.lang.String, java.util.List&lt;android.graphics.PointF&gt;, java.lang.Integer, at.nineyards.anyline.models.AnylineImage, at.nineyards.anyline.models.AnylineImage, java.lang.String, io.anyline.plugin.barcode.BarcodeFormat) -->
-<attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='BarcodeScanResult']/constructor[@name='BarcodeScanResult' and count(parameter)=7 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[3][@type='java.lang.Integer'] and parameter[4][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[5][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[6][@type='java.lang.String'] and parameter[7][@type='io.anyline.plugin.barcode.BarcodeFormat']]/parameter[1]" name="managedName">pluginId</attr>
-<attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='BarcodeScanResult']/constructor[@name='BarcodeScanResult' and count(parameter)=7 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[3][@type='java.lang.Integer'] and parameter[4][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[5][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[6][@type='java.lang.String'] and parameter[7][@type='io.anyline.plugin.barcode.BarcodeFormat']]/parameter[2]" name="managedName">outline</attr>
-<attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='BarcodeScanResult']/constructor[@name='BarcodeScanResult' and count(parameter)=7 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[3][@type='java.lang.Integer'] and parameter[4][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[5][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[6][@type='java.lang.String'] and parameter[7][@type='io.anyline.plugin.barcode.BarcodeFormat']]/parameter[3]" name="managedName">confidence</attr>
-<attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='BarcodeScanResult']/constructor[@name='BarcodeScanResult' and count(parameter)=7 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[3][@type='java.lang.Integer'] and parameter[4][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[5][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[6][@type='java.lang.String'] and parameter[7][@type='io.anyline.plugin.barcode.BarcodeFormat']]/parameter[4]" name="managedName">cutoutImage</attr>
-<attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='BarcodeScanResult']/constructor[@name='BarcodeScanResult' and count(parameter)=7 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[3][@type='java.lang.Integer'] and parameter[4][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[5][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[6][@type='java.lang.String'] and parameter[7][@type='io.anyline.plugin.barcode.BarcodeFormat']]/parameter[5]" name="managedName">fullImage</attr>
-<attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='BarcodeScanResult']/constructor[@name='BarcodeScanResult' and count(parameter)=7 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[3][@type='java.lang.Integer'] and parameter[4][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[5][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[6][@type='java.lang.String'] and parameter[7][@type='io.anyline.plugin.barcode.BarcodeFormat']]/parameter[6]" name="managedName">result</attr>
-<attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='BarcodeScanResult']/constructor[@name='BarcodeScanResult' and count(parameter)=7 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[3][@type='java.lang.Integer'] and parameter[4][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[5][@type='at.nineyards.anyline.models.AnylineImage'] and parameter[6][@type='java.lang.String'] and parameter[7][@type='io.anyline.plugin.barcode.BarcodeFormat']]/parameter[7]" name="managedName">barcodeFormat</attr>
+<!-- BarcodeScanResult.BarcodeScanResult(java.lang.String, java.util.List&lt;android.graphics.PointF&gt;, java.lang.Integer, at.nineyards.anyline.models.AnylineImage, at.nineyards.anyline.models.AnylineImage, java.util.List&lt;io.anyline.plugin.barcode.Barcode&gt;) -->
 <!-- File: IO.Anyline.Plugin.Barcode.BarcodeScanViewPlugin.cs -->
 <!-- BarcodeScanViewPlugin.BarcodeScanViewPlugin(android.content.Context, io.anyline.plugin.AbstractScanPlugin, io.anyline.view.ScanViewPluginConfig) -->
 <attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='BarcodeScanViewPlugin']/constructor[@name='BarcodeScanViewPlugin' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='io.anyline.plugin.AbstractScanPlugin'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig']]/parameter[1]" name="managedName">context</attr>

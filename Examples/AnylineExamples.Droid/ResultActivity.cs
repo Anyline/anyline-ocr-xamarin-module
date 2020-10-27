@@ -55,7 +55,7 @@ namespace AnylineExamples.Droid
         private Dictionary<string, Java.Lang.Object> CreatePropertyList(Java.Lang.Object obj)
         {
             var dict = new Dictionary<string, Java.Lang.Object>();
-            int serialScanningIndex = 0;
+            int resultGroupsIndex = 0;
             foreach (var prop in obj.GetType().GetProperties())
             {
 
@@ -84,12 +84,12 @@ namespace AnylineExamples.Droid
                             Log.Debug(TAG, "{0}: {1}", prop.Name, value);
                             if (value != null)
                             {
-                                // Iterate through a list for Serial Scanning
+                                // Iterate through a list of results
                                 if (value is JavaList)
                                 {
                                     var indexResult = 0;
 
-                                    var mapResultsSerialScanning = new LinkedHashMap();
+                                    var mapResultGroup = new LinkedHashMap();
                                     foreach (Java.Lang.Object result in (value as JavaList))
                                     {
                                         var sublist = CreatePropertyList(result);
@@ -98,11 +98,11 @@ namespace AnylineExamples.Droid
                                         {
                                             mapPluginResults.Put(item.Key, item.Value);
                                         }
-                                        mapResultsSerialScanning.Put(indexResult, mapPluginResults);
+                                        mapResultGroup.Put(indexResult, mapPluginResults);
                                         indexResult++;
                                     }
-                                    dict.Add($"Composite {serialScanningIndex}", mapResultsSerialScanning);
-                                    serialScanningIndex++;
+                                    dict.Add($"Result group {resultGroupsIndex}", mapResultGroup);
+                                    resultGroupsIndex++;
                                 }
                                 else if (value is AnylineImage)
                                 {

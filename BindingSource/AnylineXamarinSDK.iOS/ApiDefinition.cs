@@ -2072,6 +2072,20 @@ namespace AnylineXamarinSDK.iOS
         [Export("barcodeFormat", ArgumentSemantic.Assign)]
         ALBarcodeFormat BarcodeFormat { get; }
 
+        // -(NSString * _Nonnull)toJSONString;
+        [Export("toJSONString")]
+        string ToJSONString { get; }
+
+        // +(ALBarcodeFormat)barcodeFormatForString:(NSString * _Nonnull)barcodeFormatString;
+        [Static]
+        [Export("barcodeFormatForString:")]
+        ALBarcodeFormat BarcodeFormatForString(string barcodeFormatString);
+
+        // +(NSString * _Nonnull)barcodeStringForFormat:(ALBarcodeFormat)barcodeFormat;
+        [Static]
+        [Export("barcodeStringForFormat:")]
+        string BarcodeStringForFormat(ALBarcodeFormat barcodeFormat);
+
         // -(instancetype _Nullable)initWithResult:(NSString * _Nonnull)result image:(UIImage * _Nonnull)image fullImage:(UIImage * _Nullable)fullImage confidence:(NSInteger)confidence pluginID:(NSString * _Nonnull)pluginID barcodeFormat:(ALBarcodeFormat)barcodeFormat;
         [Export("initWithResult:image:fullImage:confidence:pluginID:barcodeFormat:")]
         IntPtr Constructor(string result, UIImage image, [NullAllowed] UIImage fullImage, nint confidence, string pluginID, ALBarcodeFormat barcodeFormat);
@@ -2089,15 +2103,15 @@ namespace AnylineXamarinSDK.iOS
         // @property (readonly, nonatomic, strong) NSHashTable<ALBarcodeScanPluginDelegate> * _Nullable delegates;
         [NullAllowed, Export("delegates", ArgumentSemantic.Strong)]
         NSSet Delegates { get; }
-        /*
+
         // @property (assign, nonatomic) ALBarcodeFormatOptions barcodeFormatOptions;
         [Export("barcodeFormatOptions", ArgumentSemantic.Assign)]
-        NSSet BarcodeFormatOptions { get; set; }
+        NSObject BarcodeFormatOptions { get; set; }
 
         // -(ALBarcodeFormat)barcodeFormatForString:(NSString * _Nullable)barcodeFormatString;
         [Export("barcodeFormatForString:")]
         ALBarcodeFormat BarcodeFormatForString([NullAllowed] string barcodeFormatString);
-        */
+
 
         // -(void)addDelegate:(id<ALBarcodeScanPluginDelegate> _Nonnull)delegate;
         [Export("addDelegate:")]
@@ -2113,10 +2127,10 @@ namespace AnylineXamarinSDK.iOS
     [BaseType(typeof(NSObject))]
     interface ALBarcodeScanPluginDelegate
     {
-        // @required -(void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin * _Nonnull)anylineBarcodeScanPlugin didFindResult:(ALBarcodeResult * _Nonnull)scanResult;
+        // @required -(void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin * _Nonnull)anylineBarcodeScanPlugin didFindResults:(NSArray<ALBarcodeResult *> * _Nonnull)scanResults;
         [Abstract]
-        [Export("anylineBarcodeScanPlugin:didFindResult:")]
-        void DidFindResult(ALBarcodeScanPlugin anylineBarcodeScanPlugin, ALBarcodeResult scanResult);
+        [Export("anylineBarcodeScanPlugin:didFindResults:")]
+        void DidFindResults (ALBarcodeScanPlugin anylineBarcodeScanPlugin, ALBarcodeResult[] scanResults);
 
         // @optional -(void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin * _Nonnull)anylineBarcodeScanPlugin updatedBarcodeFormats:(ALBarcodeFormatOptions)formats;
         //[Export("anylineBarcodeScanPlugin:updatedBarcodeFormats:")]

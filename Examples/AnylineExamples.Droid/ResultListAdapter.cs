@@ -13,7 +13,7 @@ namespace AnylineExamples.Droid
         public const int TypeHeader = 0;
         public const int TypeItem = 1;
         public const int TypeImage = 2;
-        public const int TypeSerial = 3;
+        public const int TypeComposite = 3;
         private readonly List<Java.Lang.Object> _items;
         private readonly Context _context;
 
@@ -34,7 +34,7 @@ namespace AnylineExamples.Droid
             if (GetItem(position).GetType() == typeof(Bitmap))
                 return TypeImage;
             if (GetItem(position).GetType() == typeof(Java.Util.LinkedHashMap))
-                return TypeSerial;
+                return TypeComposite;
 
             return TypeItem;
         }
@@ -94,9 +94,10 @@ namespace AnylineExamples.Droid
                         break;
                     case TypeImage:
                         convertView = new ImageView(_context);
+                        ((ImageView)convertView).SetPadding(padding, padding, padding, padding);
                         ((ImageView)convertView).SetImageBitmap(GetItem(position) as Bitmap);
                         break;
-                    case TypeSerial:
+                    case TypeComposite:
                         convertView = new LinearLayout(_context);
                         (convertView as LinearLayout).Orientation = Android.Widget.Orientation.Vertical;
 
@@ -114,8 +115,11 @@ namespace AnylineExamples.Droid
                             string keyPluginResult = scanningResult.ToString();
                             Java.Util.LinkedHashMap pluginResults = serialScanningResults.Get(scanningResult) as Java.Util.LinkedHashMap;
 
-                            TextView tvPluginTitle = CreateTextView(pluginResults.Get("PluginId").ToString(), padding, padding4, padding, padding4, Android.Resource.Style.TextAppearanceLarge, Color.ParseColor("#007aff"), TypefaceStyle.Bold, TextAlignment.Center);
-                            llPluginContent.AddView(tvPluginTitle);
+                            if (pluginResults.ContainsKey("PluginId"))
+                            {
+                                TextView tvPluginTitle = CreateTextView(pluginResults.Get("PluginId").ToString(), padding, padding4, padding, padding4, Android.Resource.Style.TextAppearanceLarge, Color.ParseColor("#007aff"), TypefaceStyle.Bold, TextAlignment.Center);
+                                llPluginContent.AddView(tvPluginTitle);
+                            }
 
                             foreach (var result in pluginResults.KeySet())
                             {

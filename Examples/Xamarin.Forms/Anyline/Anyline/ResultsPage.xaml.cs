@@ -33,7 +33,7 @@ namespace Anyline
                 {
                     var img = new Image()
                     {
-                        Aspect = Aspect.AspectFill,
+                        Aspect = Aspect.AspectFit,
                         Source = ImageSource.FromStream(() => new MemoryStream(item.Value as byte[]))
                     };
 

@@ -19,7 +19,7 @@ namespace AnylineExamples.iOS
         /// <returns></returns>
         public static Dictionary<string, object> CreatePropertyDictionary(this object obj)
         {
-            int serialScanningIndex = 0;
+            int groupIndex = 0;
             Dictionary<string, object> dict = new Dictionary<string, object>();
 
             if (obj is Dictionary<string, object>)
@@ -29,6 +29,13 @@ namespace AnylineExamples.iOS
                 foreach (var od in objDict)
                 {
                     dict.Add(od.Key, od.Value);
+                }
+            }
+            else if (obj is Array resultArray)
+            {
+                foreach (var r in resultArray)
+                {
+                    r.CreatePropertyDictionary().ToList().ForEach(x => dict.AddProperty(x.Key, x.Value));
                 }
             }
             else
@@ -66,15 +73,15 @@ namespace AnylineExamples.iOS
                                     if (value is Foundation.NSDictionary results)
                                     {
                                         compositeScanResult = true;
-                                        var mapResultsSerialScanning = new Dictionary<string, object>();
+                                        var mapGroupResults = new Dictionary<string, object>();
                                         foreach (KeyValuePair<Foundation.NSObject, Foundation.NSObject> result in results)
                                         {
                                             var sublist = result.Value.CreatePropertyDictionary();
-                                            mapResultsSerialScanning.Add(result.Key.ToString(), sublist);
+                                            mapGroupResults.Add(result.Key.ToString(), sublist);
                                         }
-                                        dict.Add($"Composite {serialScanningIndex}", mapResultsSerialScanning);
+                                        dict.Add($"Result group {groupIndex}", mapGroupResults);
 
-                                        serialScanningIndex++;
+                                        groupIndex++;
                                     }
                                     else
                                     {

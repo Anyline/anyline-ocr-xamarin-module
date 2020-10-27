@@ -14,7 +14,7 @@ namespace AnylineExamples.iOS
             {
                 UIApplication.Main(args, null, "AppDelegate");
             }
-            catch(Exception)
+            catch(Exception e)
             {
                 
             }
