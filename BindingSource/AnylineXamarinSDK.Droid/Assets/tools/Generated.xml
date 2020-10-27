@@ -2081,6 +2081,7 @@
 <!-- BarcodeScanPlugin.onFinishedWithOutput(java.lang.Object) -->
 <!-- BarcodeScanPlugin.setBarcodeFormats(io.anyline.plugin.barcode.BarcodeFormat...) -->
 <attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='BarcodeScanPlugin']/method[@name='setBarcodeFormats' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.barcode.BarcodeFormat...']]/parameter[1]" name="managedName">formats</attr>
+<!-- BarcodeScanPlugin.setMultiBarcode(boolean) -->
 <!-- BarcodeScanPlugin.setScanMode(java.lang.Enum&lt;io.anyline.plugin.barcode.BarcodeScanPlugin.ScanMode&gt;) -->
 <!-- File: IO.Anyline.Plugin.Barcode.BarcodeScanResult.cs -->
 <!-- BarcodeScanResult.BarcodeScanResult(java.lang.String, java.util.List&lt;android.graphics.PointF&gt;, java.lang.Integer, at.nineyards.anyline.models.AnylineImage, at.nineyards.anyline.models.AnylineImage, java.util.List&lt;io.anyline.plugin.barcode.Barcode&gt;) -->
@@ -2094,6 +2095,7 @@
 <attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='BarcodeScanViewPlugin']/constructor[@name='BarcodeScanViewPlugin' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='java.lang.String']]/parameter[2]" name="managedName">licenseKey</attr>
 <attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='BarcodeScanViewPlugin']/constructor[@name='BarcodeScanViewPlugin' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='java.lang.String']]/parameter[3]" name="managedName">config</attr>
 <attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='BarcodeScanViewPlugin']/constructor[@name='BarcodeScanViewPlugin' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[4][@type='java.lang.String']]/parameter[4]" name="managedName">id</attr>
+<!-- BarcodeScanViewPlugin.setMultiBarcodeEnabled(boolean) -->
 <!-- BarcodeScanViewPlugin.setBarcodeFormats(io.anyline.plugin.barcode.BarcodeFormat...) -->
 <attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='BarcodeScanViewPlugin']/method[@name='setBarcodeFormats' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.barcode.BarcodeFormat...']]/parameter[1]" name="managedName">formats</attr>
 <!-- File: IO.Anyline.Plugin.Document.DocumentScanPlugin.cs -->
