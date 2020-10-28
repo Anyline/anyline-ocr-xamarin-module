@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10};
+var methods = {"i0":10,"i1":10,"i2":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -165,9 +165,22 @@ extends <a href="../../../../io/anyline/view/AbstractScanViewPlugin.html" title=
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/anyline/plugin/barcode/BarcodeScanViewPlugin.html#isMultiBarcodeEnabled--">isMultiBarcodeEnabled</a></span>()</code>
+<div class="block">Check if multi barcode is enabled</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/anyline/plugin/barcode/BarcodeScanViewPlugin.html#setBarcodeFormats-io.anyline.plugin.barcode.BarcodeFormat...-">setBarcodeFormats</a></span>(<a href="../../../../io/anyline/plugin/barcode/BarcodeFormat.html" title="enum in io.anyline.plugin.barcode">BarcodeFormat</a>...&nbsp;formats)</code>
 <div class="block">Set all the barcode formats that should be supported (or null to set back to all supported types).</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/anyline/plugin/barcode/BarcodeScanViewPlugin.html#setMultiBarcode-boolean-">setMultiBarcode</a></span>(boolean&nbsp;multiBarcode)</code>
+<div class="block">Enable multi barcode
+ Gives the possibility to scan more than one barcode within the cutout</div>
 </td>
 </tr>
 </table>
@@ -246,7 +259,7 @@ extends <a href="../../../../io/anyline/view/AbstractScanViewPlugin.html" title=
 <a name="setBarcodeFormats-io.anyline.plugin.barcode.BarcodeFormat...-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>setBarcodeFormats</h4>
 <pre>public&nbsp;void&nbsp;setBarcodeFormats(<a href="../../../../io/anyline/plugin/barcode/BarcodeFormat.html" title="enum in io.anyline.plugin.barcode">BarcodeFormat</a>...&nbsp;formats)</pre>
@@ -254,6 +267,35 @@ extends <a href="../../../../io/anyline/view/AbstractScanViewPlugin.html" title=
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>formats</code> - all the supported formats</dd>
+</dl>
+</li>
+</ul>
+<a name="setMultiBarcode-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMultiBarcode</h4>
+<pre>public&nbsp;void&nbsp;setMultiBarcode(boolean&nbsp;multiBarcode)</pre>
+<div class="block">Enable multi barcode
+ Gives the possibility to scan more than one barcode within the cutout</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>multiBarcode</code> - </dd>
+</dl>
+</li>
+</ul>
+<a name="isMultiBarcodeEnabled--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>isMultiBarcodeEnabled</h4>
+<pre>public&nbsp;boolean&nbsp;isMultiBarcodeEnabled()</pre>
+<div class="block">Check if multi barcode is enabled</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>@boolean</dd>
 </dl>
 </li>
 </ul>

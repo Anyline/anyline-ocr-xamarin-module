@@ -3,6 +3,8 @@ using Android.Content.Res;
 using Android.Graphics;
 using Android.Views;
 using Android.Widget;
+using Java.Util;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -123,25 +125,8 @@ namespace AnylineExamples.Droid
 
                             foreach (var result in pluginResults.KeySet())
                             {
-                                string resultKey = result.ToString();
-                                if (resultKey.Equals("PluginId")) { continue; }
-                                Java.Lang.Object resultValue = pluginResults.Get(resultKey);
-
-                                TextView tvTitle = CreateTextView(resultKey, padding, padding4, padding, padding4, Android.Resource.Style.TextAppearanceSmall, Color.Black, TypefaceStyle.Normal);
-                                llPluginContent.AddView(tvTitle);
-
-                                if (resultValue.GetType() == typeof(Bitmap))
-                                {
-                                    ImageView ivContent = new ImageView(_context);
-                                    ivContent.SetPadding(20, 20, 20, 20);
-                                    ivContent.SetImageBitmap(resultValue as Bitmap);
-                                    llPluginContent.AddView(ivContent);
-                                }
-                                else
-                                {
-                                    TextView tvValue = CreateTextView(resultValue.ToString(), 32, padding, padding, padding, Android.Resource.Style.TextAppearanceMedium, Color.Black, TypefaceStyle.Bold);
-                                    llPluginContent.AddView(tvValue);
-                                }
+                                if (result.ToString().Equals("PluginId")) { continue; }
+                                AddResult(result.ToString(), pluginResults.Get(result.ToString()), llPluginContent);
                             }
                             (convertView as LinearLayout).AddView(llPluginContent);
                             (convertView as LinearLayout).AddView(CreateLayoutDivider());
@@ -154,6 +139,36 @@ namespace AnylineExamples.Droid
 #pragma warning restore 0618
 
             return convertView;
+        }
+
+        private void AddResult(string resultKey, Java.Lang.Object resultValue, LinearLayout llPluginContent)
+        {
+            int padding = 16;
+            int padding4 = 4;
+
+
+            TextView tvTitle = CreateTextView(resultKey, padding, padding4, padding, padding4, Android.Resource.Style.TextAppearanceSmall, Color.Black, TypefaceStyle.Normal);
+            llPluginContent.AddView(tvTitle);
+
+            if (resultValue.GetType() == typeof(Bitmap))
+            {
+                ImageView ivContent = new ImageView(_context);
+                ivContent.SetPadding(20, 20, 20, 20);
+                ivContent.SetImageBitmap(resultValue as Bitmap);
+                llPluginContent.AddView(ivContent);
+            }
+            else if (resultValue.GetType() == typeof(Java.Util.LinkedHashMap))
+            {
+                foreach (var value in (resultValue as LinkedHashMap).Values())
+                {
+                    AddResult("", value as Java.Lang.Object, llPluginContent);
+                }
+            }
+            else
+            {
+                TextView tvValue = CreateTextView(resultValue.ToString(), 32, padding, padding, padding, Android.Resource.Style.TextAppearanceMedium, Color.Black, TypefaceStyle.Bold);
+                llPluginContent.AddView(tvValue);
+            }
         }
 
         private TextView CreateTextView(string text, int paddingL, int paddingT, int paddingR, int paddingB, int textAppearance, Color color, TypefaceStyle typefaceStyle, TextAlignment alignment = TextAlignment.ViewStart)

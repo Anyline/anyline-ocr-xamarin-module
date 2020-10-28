@@ -258,10 +258,8 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i16" class="altColor">
-<td class="colFirst"><code>abstract void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../at/nineyards/anyline/camera/CameraController.html#openCameraReportError--">openCameraReportError</a></span>()</code>
-<div class="block">This is called automatically and should usually not be used.</div>
-</td>
+<td class="colFirst"><code>abstract boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../at/nineyards/anyline/camera/CameraController.html#openCameraInBackgroundSuccessfully--">openCameraInBackgroundSuccessfully</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i17" class="rowColor">
 <td class="colFirst"><code>abstract void</code></td>
@@ -798,17 +796,6 @@ public abstract&nbsp;<a href="../../../../at/nineyards/anyline/camera/ImageRecei
 <div class="block">Reset the auto focus timer, if a focus config is set.<br/></div>
 </li>
 </ul>
-<a name="openCameraReportError--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>openCameraReportError</h4>
-<pre>public abstract&nbsp;void&nbsp;openCameraReportError()</pre>
-<div class="block">This is called automatically and should usually not be used.
- Reports opening or error to the CameraOpenListener set with <a href="../../../../at/nineyards/anyline/camera/CameraController.html#setCameraOpenListener-at.nineyards.anyline.camera.CameraOpenListener-"><code>setCameraOpenListener(CameraOpenListener)</code></a>.</div>
-</li>
-</ul>
 <a name="releaseCamera--">
 <!--   -->
 </a>
@@ -850,6 +837,15 @@ public abstract&nbsp;<a href="../../../../at/nineyards/anyline/camera/ImageRecei
 <pre>public abstract&nbsp;void&nbsp;openCameraInBackground()</pre>
 <div class="block">Open the camera in a background thread, if surface is already created and camera is not opened already.
  Reports opening or error to the CameraOpenListener set with <a href="../../../../at/nineyards/anyline/camera/CameraController.html#setCameraOpenListener-at.nineyards.anyline.camera.CameraOpenListener-"><code>setCameraOpenListener(CameraOpenListener)</code></a>.</div>
+</li>
+</ul>
+<a name="openCameraInBackgroundSuccessfully--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openCameraInBackgroundSuccessfully</h4>
+<pre>public abstract&nbsp;boolean&nbsp;openCameraInBackgroundSuccessfully()</pre>
 </li>
 </ul>
 <a name="releaseCameraInBackground--">

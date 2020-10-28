@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -163,23 +163,31 @@ extends java.lang.Object</pre>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../at/nineyards/anyline/models/AnylineRawResult.html#getIdentifiers--">getIdentifiers</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
+<td class="colFirst"><code>java.util.Set&lt;java.lang.String&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../at/nineyards/anyline/models/AnylineRawResult.html#getIdentifiersSpecialCharacterResult--">getIdentifiersSpecialCharacterResult</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../at/nineyards/anyline/models/AnylineRawResult.html#getResult-java.lang.String-">getResult</a></span>(java.lang.String&nbsp;identifier)</code>
 <div class="block">Returns the validated result object for an identifier or null if identifier
  does not exist or no valid result was found for the identifier.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../at/nineyards/anyline/models/AnylineRawResult.html#getResultSpecialCharacters-java.lang.String-">getResultSpecialCharacters</a></span>(java.lang.String&nbsp;identifier)</code>&nbsp;</td>
+</tr>
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../at/nineyards/anyline/models/AnylineRawResult.html#hasConfidenceValue-java.lang.String-">hasConfidenceValue</a></span>(java.lang.String&nbsp;identifier)</code>&nbsp;</td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../at/nineyards/anyline/models/AnylineRawResult.html#isValid--">isValid</a></span>()</code>
 <div class="block">Returns true if the result is valid.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../at/nineyards/anyline/models/AnylineRawResult.html#toString--">toString</a></span>()</code>&nbsp;</td>
 </tr>
@@ -248,6 +256,15 @@ extends java.lang.Object</pre>
 </dl>
 </li>
 </ul>
+<a name="getResultSpecialCharacters-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getResultSpecialCharacters</h4>
+<pre>public&nbsp;java.lang.String&nbsp;getResultSpecialCharacters(java.lang.String&nbsp;identifier)</pre>
+</li>
+</ul>
 <a name="getIdentifiers--">
 <!--   -->
 </a>
@@ -259,6 +276,15 @@ extends java.lang.Object</pre>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>All the identifiers in the spec.</dd>
 </dl>
+</li>
+</ul>
+<a name="getIdentifiersSpecialCharacterResult--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getIdentifiersSpecialCharacterResult</h4>
+<pre>public&nbsp;java.util.Set&lt;java.lang.String&gt;&nbsp;getIdentifiersSpecialCharacterResult()</pre>
 </li>
 </ul>
 <a name="getConfidence-java.lang.String-">
