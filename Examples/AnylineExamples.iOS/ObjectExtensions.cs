@@ -54,6 +54,11 @@ namespace AnylineExamples.iOS
                         case "Superclass":
                         case "Zone":
                         case "SuperHandle":
+                        case "AccessibilityAttributedUserInputLabels":
+                        case "AccessibilityRespondsToUserInteraction":
+                        case "AccessibilityTextualContext":
+                        case "AccessibilityUserInputLabels":
+                        case "ToJSONString":
                             break;
                         default:
                             try

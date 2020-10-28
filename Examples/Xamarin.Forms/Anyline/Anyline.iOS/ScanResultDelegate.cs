@@ -64,9 +64,9 @@ namespace Anyline.iOS
             HandleResult(scanResult);
         }
 
-        public void DidFindResults(ALBarcodeScanPlugin anylineBarcodeScanPlugin, ALBarcodeResult[] scanResults)
+        public void DidFindResult(ALBarcodeScanPlugin anylineBarcodeScanPlugin, ALBarcodeResult scanResult)
         {
-            HandleResult(scanResults);
+            HandleResult(scanResult);
         }
 
         public void DidFindResult(ALAbstractScanViewPluginComposite anylineCompositeScanPlugin, ALCompositeResult scanResult)

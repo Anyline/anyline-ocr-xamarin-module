@@ -21,6 +21,7 @@ namespace Anyline.iOS
         /// <returns></returns>
         public static Dictionary<string, object> CreatePropertyDictionary(this object obj)
         {
+            int groupIndex = 0;
             Dictionary<string, object> dict = new Dictionary<string, object>();
 
             if (obj is Dictionary<string, object>)
@@ -35,7 +36,7 @@ namespace Anyline.iOS
             else
             {
                 if (obj is UIImage) return new Dictionary<string, object>() { { "Image", obj } }.CreatePropertyDictionary();
-
+                bool compositeScanResult = false;
                 var props = obj.GetType().GetProperties();
                 foreach (var prop in props)
                 {
@@ -59,18 +60,51 @@ namespace Anyline.iOS
                         case "AccessibilityRespondsToUserInteraction":
                         case "AccessibilityTextualContext":
                         case "AccessibilityUserInputLabels":
+                        case "ToJSONString":
                             break;
                         default:
-
-                            var value = prop.GetValue(obj, null);
-
-                            if (value != null)
+                            try
                             {
-                                dict.AddProperty(prop.Name, value);
+
+                                var value = prop.GetValue(obj, null);
+
+                                if (value != null)
+                                {
+                                    if (value is Foundation.NSDictionary results)
+                                    {
+                                        compositeScanResult = true;
+                                        var mapGroupResults = new Dictionary<string, object>();
+                                        foreach (KeyValuePair<Foundation.NSObject, Foundation.NSObject> result in results)
+                                        {
+                                            var sublist = result.Value.CreatePropertyDictionary();
+                                            mapGroupResults.Add(result.Key.ToString(), sublist);
+                                        }
+                                        dict.Add($"Result group {groupIndex}", mapGroupResults);
+
+                                        groupIndex++;
+                                    }
+                                    else if (value is Foundation.NSArray resultArray)
+                                    {
+                                        for (nuint i = 0; i < resultArray.Count; i++)
+                                        {
+                                            resultArray.GetItem<Foundation.NSObject>(i).CreatePropertyDictionary().ToList().ForEach(x => dict.AddProperty(x.Key, x.Value));
+                                        }
+                                    }
+                                    else
+                                    {
+                                        dict.AddProperty(prop.Name, value);
+                                    }
+                                }
+                            }
+                            catch (Exception e)
+                            {
+                                Debug.WriteLine(e.Message);
                             }
                             break;
                     }
                 }
+                // if this is a composite scan result, ignore the global Confidence value
+                if (compositeScanResult) dict.Remove("Confidence");
             }
 
             // we want to present "Result" always first, so:
@@ -102,11 +136,21 @@ namespace Anyline.iOS
             Debug.WriteLine("{0}: {1}", name, value);
             if (value != null)
             {
-                if (value is ALMRZIdentification 
+                if (value is ALMRZIdentification
                     || value is ALDrivingLicenseIdentification
-                    || value is ALGermanIDFrontIdentification)
+                    || value is ALGermanIDFrontIdentification
+                    || value is ALLayoutDefinition)
                 {
                     value.CreatePropertyDictionary().ToList().ForEach(x => dict.Add(x.Key, x.Value));
+                }
+                else if (value is ALUniversalIDIdentification universalIDIdentification)
+                {
+                    foreach (var field in universalIDIdentification.FieldNames)
+                    {
+                        dict.AddProperty(field, universalIDIdentification.ValueForField(field));
+                    }
+
+                    dict.AddProperty("LayoutDefinition", universalIDIdentification.LayoutDefinition);
                 }
                 else if (value is ALIDFieldConfidences)
                 {
@@ -115,6 +159,10 @@ namespace Anyline.iOS
                 else if (value is UIImage && value != null)
                 {
                     dict.Add(name, (value as UIImage).AsJPEG().ToArray());
+                }
+                else if (value is ALDataGroup1 || value is ALDataGroup2)
+                {
+                    value.CreatePropertyDictionary().ToList().ForEach(x => dict.Add(x.Key, x.Value));
                 }
                 else if (value.ToString() != "")
                 {

@@ -28,9 +28,6 @@ namespace AnylineExamples.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-
-            InitializeAnyline();
-
         }
 
         private void InitializeAnyline()
