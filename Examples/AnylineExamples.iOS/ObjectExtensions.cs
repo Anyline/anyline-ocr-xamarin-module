@@ -155,10 +155,6 @@ namespace AnylineExamples.iOS
                 }
                 else if (value is UIImage && value != null)
                 {
-                    dict.Add(name, (value as UIImage).AsJPEG().ToArray());
-                }
-                else if (value is byte[])
-                {
                     dict.Add(name, value);
                 }
                 else if (value is ALDataGroup1 || value is ALDataGroup2)
