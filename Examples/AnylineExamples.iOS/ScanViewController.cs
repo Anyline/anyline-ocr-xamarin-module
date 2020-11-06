@@ -25,10 +25,6 @@ namespace AnylineExamples.iOS
             resultDelegate = new ScanResultDelegate(this);
         }
 
-        public override void ViewDidLoad()
-        {
-            base.ViewDidLoad();
-        }
 
         private void InitializeAnyline()
         {
@@ -89,6 +85,7 @@ namespace AnylineExamples.iOS
 
                 View.AddSubview(scanView);
                 scanView.StartCamera();
+
                 initialized = true;
             }
             catch (Exception e)
@@ -138,7 +135,7 @@ namespace AnylineExamples.iOS
                 }
             });
         }
-
+        #region teardown
         public override void ViewWillDisappear(bool animated)
         {
             base.ViewWillDisappear(animated);
@@ -158,17 +155,18 @@ namespace AnylineExamples.iOS
             Dispose();
         }
 
-        private void ShowAlert(string title, string text)
-        {
-            new UIAlertView(title, text, (IUIAlertViewDelegate)null, "OK", null).Show();
-        }
-
         new void Dispose()
         {
             scanView?.RemoveFromSuperview();
             scanView?.Dispose();
             scanView = null;
             base.Dispose();
+        }
+        #endregion
+
+        private void ShowAlert(string title, string text)
+        {
+            new UIAlertView(title, text, (IUIAlertViewDelegate)null, "OK", null).Show();
         }
     }
 }

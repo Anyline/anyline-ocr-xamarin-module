@@ -16,7 +16,7 @@ namespace AnylineExamples.iOS
             }
             catch(Exception e)
             {
-                
+                System.Diagnostics.Debug.WriteLine(e.Message);
             }
         }
     }

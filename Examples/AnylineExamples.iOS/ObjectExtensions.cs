@@ -139,7 +139,7 @@ namespace AnylineExamples.iOS
                     || value is ALGermanIDFrontIdentification
                     || value is ALLayoutDefinition)
                 {
-                    value.CreatePropertyDictionary().ToList().ForEach(x => dict.Add(x.Key, x.Value));
+                    value.CreatePropertyDictionary().ToList().ForEach(x => dict.AddProperty(x.Key, x.Value));
                 }
                 else if (value is ALUniversalIDIdentification universalIDIdentification)
                 {
@@ -147,7 +147,6 @@ namespace AnylineExamples.iOS
                     {
                         dict.AddProperty(field, universalIDIdentification.ValueForField(field));
                     }
-
                     dict.AddProperty("LayoutDefinition", universalIDIdentification.LayoutDefinition);
                 }
                 else if (value is ALIDFieldConfidences)
@@ -155,6 +154,10 @@ namespace AnylineExamples.iOS
                     value.CreatePropertyDictionary().ToList().ForEach(x => dict.Add($"{x.Key} (field confidence)", x.Value));
                 }
                 else if (value is UIImage && value != null)
+                {
+                    dict.Add(name, (value as UIImage).AsJPEG().ToArray());
+                }
+                else if (value is byte[])
                 {
                     dict.Add(name, value);
                 }

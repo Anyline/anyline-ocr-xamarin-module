@@ -132,8 +132,6 @@ namespace Anyline.iOS
         /// <param name="value"></param>
         public static void AddProperty(this Dictionary<string, object> dict, string name, object value)
         {
-
-            Debug.WriteLine("{0}: {1}", name, value);
             if (value != null)
             {
                 if (value is ALMRZIdentification
@@ -141,7 +139,7 @@ namespace Anyline.iOS
                     || value is ALGermanIDFrontIdentification
                     || value is ALLayoutDefinition)
                 {
-                    value.CreatePropertyDictionary().ToList().ForEach(x => dict.Add(x.Key, x.Value));
+                    value.CreatePropertyDictionary().ToList().ForEach(x => dict.AddProperty(x.Key, x.Value));
                 }
                 else if (value is ALUniversalIDIdentification universalIDIdentification)
                 {
@@ -159,6 +157,10 @@ namespace Anyline.iOS
                 else if (value is UIImage && value != null)
                 {
                     dict.Add(name, (value as UIImage).AsJPEG().ToArray());
+                }
+                else if(value is byte[])
+                {
+                    dict.Add(name, value);
                 }
                 else if (value is ALDataGroup1 || value is ALDataGroup2)
                 {
