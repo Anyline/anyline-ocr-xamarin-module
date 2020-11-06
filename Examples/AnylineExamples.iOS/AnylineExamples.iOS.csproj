@@ -93,8 +93,6 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
-    <BundleResource Include="Resources\anyline_capitals.traineddata" />
-    <BundleResource Include="Resources\bottlecap.traineddata" />
     <BundleResource Include="Resources\document_config.json" />
     <BundleResource Include="Resources\energy_config_analog_digital.json" />
     <BundleResource Include="Resources\energy_config_dial.json" />
@@ -104,7 +102,6 @@
     <BundleResource Include="Resources\mro_config_usnr.json" />
     <BundleResource Include="Resources\mro_config_vin.json" />
     <BundleResource Include="Resources\others_config_barcode.json" />
-    <BundleResource Include="Resources\others_config_bottlecap.json" />
     <BundleResource Include="Resources\others_config_voucher_code.json" />
     <BundleResource Include="Resources\vehicle_config_license_plate.json" />
     <BundleResource Include="Resources\id_config_german_id_front.json" />

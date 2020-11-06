@@ -26,8 +26,6 @@ namespace Anyline.Droid
         private Android.Views.View view;
         private ScanView scanView;
 
-        private readonly string licenseKey = "ewogICJsaWNlbnNlS2V5VmVyc2lvbiI6IDIsCiAgImRlYnVnUmVwb3J0aW5nIjogIm9uIiwKICAiaW1hZ2VSZXBvcnRDYWNoaW5nIjogdHJ1ZSwKICAibWFqb3JWZXJzaW9uIjogIjI1IiwKICAibWF4RGF5c05vdFJlcG9ydGVkIjogNSwKICAiYWR2YW5jZWRCYXJjb2RlIjogdHJ1ZSwKICAibXVsdGlCYXJjb2RlIjogdHJ1ZSwKICAic3VwcG9ydGVkQmFyY29kZUZvcm1hdHMiOiBbCiAgICAiQUxMIgogIF0sCiAgInBpbmdSZXBvcnRpbmciOiB0cnVlLAogICJwbGF0Zm9ybSI6IFsKICAgICJpT1MiLAogICAgIkFuZHJvaWQiCiAgXSwKICAic2NvcGUiOiBbCiAgICAiQUxMIgogIF0sCiAgInNob3dQb3BVcEFmdGVyRXhwaXJ5IjogdHJ1ZSwKICAic2hvd1dhdGVybWFyayI6IHRydWUsCiAgInRvbGVyYW5jZURheXMiOiA5MCwKICAidmFsaWQiOiAiMjAyMS0wNi0zMCIsCiAgImlvc0lkZW50aWZpZXIiOiBbCiAgICAiY29tLmFueWxpbmUueGFtYXJpbi5leGFtcGxlcyIsCiAgICAiY29tLmFueWxpbmUueGFtYXJpbi5mb3Jtcy5leGFtcGxlcyIKICBdLAogICJhbmRyb2lkSWRlbnRpZmllciI6IFsKICAgICJjb20uYW55bGluZS54YW1hcmluLmV4YW1wbGVzIiwKICAgICJjb20uYW55bGluZS54YW1hcmluLmZvcm1zLmV4YW1wbGVzIgogIF0KfQpJbHE1REZNMU03QzEzNGJiaGo4dm9zMEFEVjEzNm1HbWNEYmdUbUdoWTd3dDlrR0gyYTRyK3RjeDJLYTNZN3d3R1EweThWeFZvZWVmQU5NWEtycm04bGkzN1MzKzdjWTU1dUZ1RVJPUkR6bmd3aCtYMmU3VGtkNDhiemd5Y1JpdnZkM09LZ3JiNDRUbDBycHExc2dOZVVzVVozRnEwd3dFM2VMQWx3VkFrdkRiVjdOdktaMEF5M3J6Mmg0TGNuTmpQTHErOTE0VmVPZUNDVUo3aU9VMW5vWUJKUlBqdDFmWHpqS1dOZmNXRXNPTlJrMVNaMUFzaXREZzNCMHVuZXZLSVNBWXRZT0hTL01DWDlseVlHS05acWQxODBrOXhscUVpbVVYTjc4UnFHd2ZLRFF2SFpoTWp4LzFzVFVrZXI4aFpNcGNtb0c5NWJMSjhoTlFRNjNuZ2c9PQ==";
-
         public ScanPageRenderer(Context context) : base(context)
         {
 
@@ -56,7 +54,7 @@ namespace Anyline.Droid
 
                     scanView = view.FindViewById<ScanView>(Resource.Id.scan_view);
 
-                    scanView.Init(configurationFile, licenseKey);
+                    scanView.Init(configurationFile);
 
                     scanView.ScanViewPlugin.AddScanResultListener(this);
 
@@ -149,19 +147,18 @@ namespace Anyline.Droid
 
                             if (value != null)
                             {
-                                // TODO: iterate through every result and display them
-                                //if(value is JavaList)
-                                //{
-                                //    var i = 0;
-                                //    var resultList = (value as JavaList);
-                                //    foreach (Java.Lang.Object v in resultList)
-                                //    {
-                                //        var sublist = CreatePropertyList(v);
-                                //        sublist.ToList().ForEach(x => dict.Add(x.Key + $" ({i})", x.Value));
-                                //        i++;
-                                //    }
-                                //}
-                                if (value is AnylineImage)
+                                if (value is JavaList)
+                                {
+                                    var i = 0;
+                                    var resultList = (value as JavaList);
+                                    foreach (Java.Lang.Object v in resultList)
+                                    {
+                                        var sublist = CreatePropertyList(v);
+                                        sublist.ToList().ForEach(x => dict.Add(x.Key + $" ({i})", x.Value));
+                                        i++;
+                                    }
+                                }
+                                else if (value is AnylineImage)
                                 {
                                     var bitmap = (value as AnylineImage).Clone().Bitmap;
 
