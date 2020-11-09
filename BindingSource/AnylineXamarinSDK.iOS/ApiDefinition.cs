@@ -907,6 +907,10 @@ namespace AnylineXamarinSDK.iOS
         // -(id)resultForIdentifier:(NSString *)identifier;
         [Export("resultForIdentifier:")]
         NSObject ResultForIdentifier(string identifier);
+
+        // -(ALFieldConfidence)confidenceForIdentifier:(NSString *)identifier;
+        [Export("confidenceForIdentifier:")]
+        int ConfidenceForIdentifier(string identifier);
     }
 
     // @interface ALSegmentResult : NSObject
@@ -1880,11 +1884,11 @@ namespace AnylineXamarinSDK.iOS
         [Export("initWithFrame:scanViewPlugin:cameraConfig:flashButtonConfig:")]
         IntPtr Constructor(CGRect frame, [NullAllowed] ALAbstractScanViewPlugin scanViewPlugin, ALCameraConfig cameraConfig, ALFlashButtonConfig flashButtonConfig);
 
-        // +(instancetype _Nullable)scanViewForFrame:(CGRect)frame configPath:(NSString * _Nonnull)configPath licenseKey:(NSString * _Nonnull)licenseKey delegate:(id _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
+        // +(instancetype _Nullable)scanViewForFrame:(CGRect)frame configPath:(NSString * _Nonnull)configPath delegate:(id _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
         [Static]
-        [Export("scanViewForFrame:configPath:licenseKey:delegate:error:")]
+        [Export("scanViewForFrame:configPath:delegate:error:")]
         [return: NullAllowed]
-        ALScanView ScanViewForFrame(CGRect frame, string configPath, string licenseKey, NSObject @delegate, [NullAllowed] out NSError error);
+        ALScanView ScanViewForFrame(CGRect frame, string configPath, NSObject @delegate, [NullAllowed] out NSError error);
 
         // +(instancetype _Nullable)scanViewForFrame:(CGRect)frame configDict:(NSDictionary * _Nonnull)configDict licenseKey:(NSString * _Nonnull)licenseKey delegate:(id _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
         [Static]
@@ -1899,10 +1903,6 @@ namespace AnylineXamarinSDK.iOS
         // -(void)stopCamera;
         [Export("stopCamera")]
         void StopCamera();
-
-        // -(void)updateDispatchTimer;
-        [Export("updateDispatchTimer")]
-        void UpdateDispatchTimer();
 
         // -(void)updateTextRect:(ALSquare * _Nonnull)square;
         [Export("updateTextRect:")]
@@ -3080,10 +3080,6 @@ namespace AnylineXamarinSDK.iOS
     [BaseType (typeof(ALScanResult))]
     interface ALIDResult
     {
-    	// @property (readonly, assign, nonatomic) BOOL allCheckDigitsValid __attribute__((deprecated("Deprecated since Version 10. Please use the property "allCheckDigitsValid" from any Identification Object (ALMRZIdentification, ALGermanIDFrontIdentification or ALDrivingLicenseIdentification) instead.")));
-    	[Export ("allCheckDigitsValid")]
-    	bool AllCheckDigitsValid { get; }
-
     	// -(instancetype _Nullable)initWithResult:(ObjectType _Nonnull)result image:(UIImage * _Nullable)image fullImage:(UIImage * _Nullable)fullImage confidence:(NSInteger)confidence pluginID:(NSString * _Nonnull)pluginID;
     	[Export ("initWithResult:image:fullImage:confidence:pluginID:")]
     	IntPtr Constructor (NSObject result, [NullAllowed] UIImage image, [NullAllowed] UIImage fullImage, nint confidence, string pluginID);
@@ -3098,9 +3094,9 @@ namespace AnylineXamarinSDK.iOS
     [DisableDefaultCtor]
     interface ALIDScanPlugin
     {
-        // -(instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID licenseKey:(NSString * _Nonnull)licenseKey delegate:(id<ALIDPluginDelegate> _Nonnull)delegate idConfig:(ALIDConfig * _Nonnull)config error:(NSError * _Nullable * _Nullable)error;
-        [Export("initWithPluginID:licenseKey:delegate:idConfig:error:")]
-        IntPtr Constructor([NullAllowed] string pluginID, string licenseKey, NSObject @delegate, ALIDConfig config, [NullAllowed] out NSError error);
+        // -(instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID delegate:(id<ALIDPluginDelegate> _Nonnull)delegate idConfig:(ALIDConfig * _Nonnull)config error:(NSError * _Nullable * _Nullable)error;
+        [Export("initWithPluginID:delegate:idConfig:error:")]
+        IntPtr Constructor([NullAllowed] string pluginID, NSObject @delegate, ALIDConfig config, [NullAllowed] out NSError error);
 
         // @property (readonly, nonatomic, strong) NSHashTable<ALIDPluginDelegate> * _Nullable delegates;
         [NullAllowed, Export("delegates", ArgumentSemantic.Strong)]
@@ -3231,36 +3227,6 @@ namespace AnylineXamarinSDK.iOS
         // extern NSString *const _Nonnull charWhiteListForIMEI;
         [Field("charWhiteListForIMEI", "__Internal")]
         NSString charWhiteListForIMEI { get; }
-    }
-
-    // @interface ALOCRLanguage : NSObject
-    [BaseType(typeof(NSObject))]
-    interface ALOCRLanguage
-    {
-        // @property (nonatomic, strong) NSString * _Nullable path;
-        [NullAllowed, Export("path", ArgumentSemantic.Strong)]
-        string Path { get; set; }
-
-        // @property (nonatomic, strong) NSString * _Nullable md5;
-        [NullAllowed, Export("md5", ArgumentSemantic.Strong)]
-        string Md5 { get; set; }
-
-        // @property (nonatomic, strong) NSString * _Nullable filename;
-        [NullAllowed, Export("filename", ArgumentSemantic.Strong)]
-        string Filename { get; set; }
-
-        // @property (nonatomic, strong) NSString * _Nullable fileExtension;
-        [NullAllowed, Export("fileExtension", ArgumentSemantic.Strong)]
-        string FileExtension { get; set; }
-
-        // -(instancetype _Nullable)initWithPath:(NSString * _Nonnull)path error:(NSError * _Nullable * _Nullable)error;
-        [Export("initWithPath:error:")]
-        IntPtr Constructor(string path, [NullAllowed] out NSError error);
-
-        // +(BOOL)copyLanguage:(NSString * _Nonnull)path toPath:(NSString * _Nonnull)toPath fileHash:(NSString * _Nullable)hash error:(NSError * _Nullable * _Nullable)error;
-        [Static]
-        [Export("copyLanguage:toPath:fileHash:error:")]
-        bool CopyLanguage(string path, string toPath, [NullAllowed] string hash, [NullAllowed] out NSError error);
     }
 
     // @interface ALOCRConfig : ALBaseOCRConfig
@@ -3992,14 +3958,23 @@ namespace AnylineXamarinSDK.iOS
         [Export("readingAvailable")]
         bool ReadingAvailable { get; }
 
-        // -(instancetype _Nullable)initWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<ALNFCDetectorDelegate> _Nonnull)delegate;
-        [Export("initWithLicenseKey:delegate:")]
-        IntPtr Constructor(string licenseKey, NSObject @delegate);
+        // -(instancetype _Nullable)initWithDelegate:(id<ALNFCDetectorDelegate> _Nonnull)delegate;
+        [Export("initWithDelegate:")]
+        IntPtr Constructor(NSObject @delegate);
 
         // -(void)startNfcDetectionWithPassportNumber:(NSString * _Nonnull)passportNumber dateOfBirth:(NSDate * _Nonnull)dateOfBirth expirationDate:(NSDate * _Nonnull)expirationDate;
         [Export("startNfcDetectionWithPassportNumber:dateOfBirth:expirationDate:")]
         void StartNfcDetectionWithPassportNumber(string passportNumber, NSDate dateOfBirth, NSDate expirationDate);
     }
 
+    // @interface AnylineSDK : NSObject
+    [BaseType(typeof(NSObject))]
+    interface AnylineSDK
+    {
+        // +(BOOL)setupWithLicenseKey:(NSString * _Nonnull)licenseKey error:(NSError * _Nullable * _Nullable)error;
+        [Static]
+        [Export("setupWithLicenseKey:error:")]
+        bool SetupWithLicenseKey(string licenseKey, [NullAllowed] out NSError error);
+    }
 
 }

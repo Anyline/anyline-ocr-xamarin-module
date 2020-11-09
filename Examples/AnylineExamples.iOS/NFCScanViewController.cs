@@ -80,9 +80,9 @@ namespace AnylineXamarinAppiOS
             NSError error = null;
             //Init the anyline ID ScanPlugin with an ID, Licensekey, the delegate,
             //  the MRZConfig (which will configure the scan Plugin for MRZ scanning), and an error
-            this.mrzScanPlugin = new ALIDScanPlugin(@"ModuleID", AnylineViewController.LicenseKey, this, mrzConfig, out error);
+            this.mrzScanPlugin = new ALIDScanPlugin(@"ModuleID", this, mrzConfig, out error);
 
-            nfcDetector = new ALNFCDetector(AnylineViewController.LicenseKey, this);
+            nfcDetector = new ALNFCDetector(this);
 
             mrzScanViewPlugin = new ALIDScanViewPlugin(mrzScanPlugin);
 

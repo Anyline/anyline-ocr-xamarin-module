@@ -9,8 +9,6 @@ namespace AnylineExamples.iOS
 {
     public sealed class ScanViewController : UIViewController
     {
-        readonly string LicenseKey = AnylineViewController.LicenseKey;
-
         string jsonPath;
         CGRect frame;
         bool initialized = false;
@@ -45,7 +43,7 @@ namespace AnylineExamples.iOS
                 var configPath = NSBundle.MainBundle.PathForResource(@"" + jsonPath.Replace(".json", ""), @"json");
 
                 // This is the main intialization method that will create our use case depending on the JSON configuration.
-                scanView = ALScanView.ScanViewForFrame(frame, configPath, LicenseKey, resultDelegate, out error);
+                scanView = ALScanView.ScanViewForFrame(frame, configPath, resultDelegate, out error);
 
                 if (error != null)
                 {
