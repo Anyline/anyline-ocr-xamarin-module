@@ -78,6 +78,7 @@
     <BundleResource Include="Resources\mro_config_usnr.json" />
     <BundleResource Include="Resources\others_config_barcode.json" />
     <BundleResource Include="Resources\vehicle_config_license_plate.json" />
+    <Compile Include="AnylineSDKService.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
