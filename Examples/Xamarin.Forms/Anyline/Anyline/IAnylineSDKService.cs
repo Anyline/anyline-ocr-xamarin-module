@@ -2,6 +2,6 @@
 {
     public interface IAnylineSDKService
     {
-        bool SetupWithLicenseKey(string LicenseKey, out string LicenseError);
+        bool SetupWithLicenseKey(string licenseKey, out string licenseErrorMessage);
     }
 }

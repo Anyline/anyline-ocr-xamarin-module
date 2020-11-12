@@ -6,17 +6,17 @@ namespace Anyline.Droid
 {
     public class AnylineSDKService : IAnylineSDKService
     {
-        public bool SetupWithLicenseKey(string licenseKey, out string LicenseError)
+        public bool SetupWithLicenseKey(string licenseKey, out string licenseErrorMessage)
         {
             try
             {
-                AnylineSDK.Init(licenseKey, MainActivity.Instance);
-                LicenseError = null;
+                AnylineSDK.Init(licenseKey, context: MainActivity.Instance);
+                licenseErrorMessage = null;
                 return true;
             }
             catch (Exception ex)
             {
-                LicenseError = ex.Message;
+                licenseErrorMessage = ex.Message;
                 return false;
             }
         }

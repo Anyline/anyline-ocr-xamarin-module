@@ -5,7 +5,7 @@ namespace Anyline.iOS
 {
     public class AnylineSDKService : IAnylineSDKService
     {
-        public bool SetupWithLicenseKey(string licenseKey, out string LicenseError)
+        public bool SetupWithLicenseKey(string licenseKey, out string licenseErrorMessage)
         {
             NSError licenseError;
 
@@ -13,12 +13,12 @@ namespace Anyline.iOS
 
             if (licenseError == null)
             {
-                LicenseError = null;
+                licenseErrorMessage = null;
                 return true;
             }
             else
             {
-                LicenseError = licenseError.LocalizedDescription;
+                licenseErrorMessage = licenseError.LocalizedDescription;
                 return false;
             }
         }
