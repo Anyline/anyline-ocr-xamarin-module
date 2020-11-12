@@ -7,9 +7,7 @@ namespace Anyline.iOS
     {
         public bool SetupWithLicenseKey(string licenseKey, out string licenseErrorMessage)
         {
-            NSError licenseError;
-
-            AnylineXamarinSDK.iOS.AnylineSDK.SetupWithLicenseKey(licenseKey, out licenseError);
+            AnylineXamarinSDK.iOS.AnylineSDK.SetupWithLicenseKey(licenseKey, out NSError licenseError);
 
             if (licenseError == null)
             {
