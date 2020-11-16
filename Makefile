@@ -4,7 +4,7 @@ bundle-release: clean-build-folders
 	# -- Zips the release bundle, excluding Git files, bin, obj and vs folders --
 	@rm -rf anyline-ocr-xamarin-module.zip
 ifeq ($(OS),Windows_NT)
-	tar.exe --exclude=*.nupkg --exclude=*.DS_Store -acf anyline-ocr-xamarin-module.zip BindingSource Examples Nuget clean_build_folders.bat com.anyline.xamarin.examples_* LICENSE.md README.md
+	tar.exe --exclude=*.nupkg --exclude=*.DS_Store -acf anyline-ocr-xamarin-module.zip BindingSource Examples Nuget com.anyline.xamarin.examples_* LICENSE.md README.md
 	CertUtil -hashfile anyline-ocr-xamarin-module.zip MD5
 else
 	zip -r -quiet anyline-ocr-xamarin-module.zip . -x "*.git*" -x "*.nupkg" -x "*.DS_Store"
