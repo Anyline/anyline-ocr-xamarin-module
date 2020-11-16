@@ -30,7 +30,7 @@ git lfs install
 
 ### BindingSource
 
-The `anylinesdk-xamarin.sln` Visual Studio solution located in the /BindingSource directory inhibits two projects: The project for Android bindings `AnylineXamarinSDK.Droid` and the iOS bindings project `AnylineXamarinSDK.iOS`.
+The `Anyline Xamarin SDK.sln` Visual Studio solution located in the /BindingSource directory inhibits two projects: The project for Android bindings `AnylineXamarinSDK.Droid` and the iOS bindings project `AnylineXamarinSDK.iOS`.
 
 
 #### Android: AnylineXamarinSDK.Droid
@@ -78,8 +78,8 @@ For a detailed setup guide on how to integrate Anyline for your scanning applica
 
 #### iOS
 
-- minimum iOS 10.0
-- minimum iPhone 5
+- minimum iOS 11.0
+- minimum iPhone 5s
 - A Mac computer for building / deploying to the iPhone
 
 

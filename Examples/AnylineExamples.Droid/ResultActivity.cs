@@ -81,7 +81,6 @@ namespace AnylineExamples.Droid
                             if (prop.GetCustomAttributes(typeof(ObsoleteAttribute), true).ToArray().Length > 0)
                                 continue;
 
-                            Log.Debug(TAG, "{0}: {1}", prop.Name, value);
                             if (value != null)
                             {
                                 // Iterate through a list of results

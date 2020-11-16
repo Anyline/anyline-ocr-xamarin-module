@@ -158,6 +158,18 @@ namespace Anyline.Droid
                                         i++;
                                     }
                                 }
+                                else if (value is Java.Util.AbstractList resultList)
+                                {
+                                    var i = 0;
+                                    var iterator = resultList.Iterator();
+                                    while (iterator.HasNext)
+                                    {
+                                        var v = iterator.Next();
+                                        var sublist = CreatePropertyList(v);
+                                        sublist.ToList().ForEach(x => dict.Add(x.Key + $" ({i})", x.Value));
+                                        i++;
+                                    }
+                                }
                                 else if (value is AnylineImage)
                                 {
                                     var bitmap = (value as AnylineImage).Clone().Bitmap;
