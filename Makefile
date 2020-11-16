@@ -33,11 +33,11 @@ clean-build-folders:
 	@rm -rf BindingSource/AnylineXamarinSDK.iOS/bin
 	@rm -rf BindingSource/AnylineXamarinSDK.iOS/obj
 
-	@rm -rf Examples/Xamarin.Forms\Anyline/Anyline.Android/bin
-	@rm -rf Examples/Xamarin.Forms\Anyline/Anyline.Android/obj
+	@rm -rf Examples/Xamarin.Forms/Anyline/Anyline.Android/bin
+	@rm -rf Examples/Xamarin.Forms/Anyline/Anyline.Android/obj
 
-	@rm -rf Examples/Xamarin.Forms\Anyline/Anyline.iOS/bin
-	@rm -rf Examples/Xamarin.Forms\Anyline/Anyline.iOS/obj
+	@rm -rf Examples/Xamarin.Forms/Anyline/Anyline.iOS/bin
+	@rm -rf Examples/Xamarin.Forms/Anyline/Anyline.iOS/obj
 
 	@rm -rf Examples/Xamarin.Forms/Anyline/Anyline.UWP/bin
 	@rm -rf Examples/Xamarin.Forms/Anyline/Anyline.UWP/obj
