@@ -7,7 +7,7 @@ ifeq ($(OS),Windows_NT)
 	tar.exe --exclude=*.nupkg --exclude=*.DS_Store -acf anyline-ocr-xamarin-module.zip BindingSource Examples Nuget com.anyline.xamarin.examples_* LICENSE.md README.md
 	CertUtil -hashfile anyline-ocr-xamarin-module.zip MD5
 else
-	zip -r -quiet anyline-ocr-xamarin-module.zip . -x "*.git*" -x "*.nupkg" -x "*.DS_Store"
+	zip -rq anyline-ocr-xamarin-module.zip . -x "*.git*" -x "*.nupkg" -x "*.DS_Store"
 	md5 anyline-ocr-xamarin-module.zip
 endif
 
