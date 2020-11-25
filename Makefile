@@ -53,7 +53,7 @@ build-ios-sdk:
 		/p:BuildIpa=false \
 		/v:minimal \
 		/t:rebuild "BindingSource/AnylineXamarinSDK.iOS/AnylineXamarinSDK.iOS.csproj"
-	nuget pack Nuget/Anyline.Xamarin.SDK.Droid.nuspec
+	nuget pack Nuget/Anyline.Xamarin.SDK.iOS.nuspec
 	@echo iOS NuGet package created
 
 build-ios-examples:
