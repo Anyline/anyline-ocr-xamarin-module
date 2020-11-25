@@ -24,6 +24,8 @@ else
 		/v:minimal \
 		/t:rebuild "BindingSource/AnylineXamarinSDK.Droid/AnylineXamarinSDK.Droid.csproj"
 endif
+	nuget pack Nuget/Anyline.Xamarin.SDK.Droid.nuspec
+	@echo Android NuGet package created
 
 build-android-examples:
 	nuget restore Examples/AnylineExamples.Droid/AnylineExamples.Droid.csproj
@@ -42,6 +44,8 @@ else
 endif
 	@echo Android Examples APK is built
 
+
+
 build-ios-sdk:
 	# Needs to be run on a Mac
 	@msbuild /p:Configuration="Release" \
@@ -49,7 +53,9 @@ build-ios-sdk:
 		/p:BuildIpa=false \
 		/v:minimal \
 		/t:rebuild "BindingSource/AnylineXamarinSDK.iOS/AnylineXamarinSDK.iOS.csproj"
-    
+	nuget pack Nuget/Anyline.Xamarin.SDK.Droid.nuspec
+	@echo iOS NuGet package created
+
 build-ios-examples:
 	# Needs to be run on a Mac
 	@msbuild /p:Configuration="Release" \
