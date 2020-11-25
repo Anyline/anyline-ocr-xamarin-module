@@ -1,3 +1,63 @@
+# BUILD
+
+build-android-sdk:
+ifeq ($(OS),Windows_NT)
+    #Build Android DLL
+	@msbuild.exe /p:Configuration="Release" \
+		/p:Platform="AnyCPU" \
+		/v:minimal \
+		/t:rebuild "BindingSource/AnylineXamarinSDK.Droid/AnylineXamarinSDK.Droid.csproj"
+    # Build once more to generate the Metadata
+	@msbuild.exe /p:Configuration="Release" \
+		/p:Platform="AnyCPU" \
+		/v:minimal \
+		/t:rebuild "BindingSource/AnylineXamarinSDK.Droid/AnylineXamarinSDK.Droid.csproj"
+else
+    #Build Android DLL
+	@msbuild /p:Configuration="Release" \
+		/p:Platform="AnyCPU" \
+		/v:minimal \
+		/t:rebuild "BindingSource/AnylineXamarinSDK.Droid/AnylineXamarinSDK.Droid.csproj"
+    # Build once more to generate the Metadata
+	@msbuild /p:Configuration="Release" \
+		/p:Platform="AnyCPU" \
+		/v:minimal \
+		/t:rebuild "BindingSource/AnylineXamarinSDK.Droid/AnylineXamarinSDK.Droid.csproj"
+endif
+
+build-android-examples:
+	nuget restore Examples/AnylineExamples.Droid/AnylineExamples.Droid.csproj
+ifeq ($(OS),Windows_NT)
+	# Build the examples .apk file 
+	@msbuild.exe /p:Configuration="Release" \
+		/p:MonoSymbolArchive=False \
+		/v:minimal \
+		/t:PackageForAndroid "Examples/AnylineExamples.Droid/AnylineExamples.Droid.csproj"
+else
+	# Build the examples .apk file 
+	@msbuild /p:Configuration="Release" \
+		/p:MonoSymbolArchive=False \
+		/v:minimal \
+		/t:PackageForAndroid "Examples/AnylineExamples.Droid/AnylineExamples.Droid.csproj"
+endif
+	@echo Android Examples APK is built
+
+build-ios-sdk:
+	# Needs to be run on a Mac
+	@msbuild /p:Configuration="Release" \
+		/p:Platform="AnyCPU" \
+		/p:BuildIpa=false \
+		/v:minimal \
+		/t:rebuild "BindingSource/AnylineXamarinSDK.iOS/AnylineXamarinSDK.iOS.csproj"
+    
+build-ios-examples:
+	# Needs to be run on a Mac
+	@msbuild /p:Configuration="Release" \
+		/p:Platform="iPhone" \
+		/p:BuildIpa=false \
+		/v:minimal \
+		/t:rebuild "Examples/AnylineExamples.iOS/AnylineExamples.iOS.csproj"
+    
 # ARCHIVE
 
 bundle-release: clean-build-folders
