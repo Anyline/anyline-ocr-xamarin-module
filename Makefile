@@ -1,6 +1,7 @@
 # BUILD
 
 build-android-sdk:
+	nuget restore BindingSource/AnylineXamarinSDK.Droid/AnylineXamarinSDK.Droid.csproj
 ifeq ($(OS),Windows_NT)
     #Build Android DLL
 	@msbuild.exe /p:Configuration="Release" \
@@ -24,7 +25,7 @@ else
 		/v:minimal \
 		/t:rebuild "BindingSource/AnylineXamarinSDK.Droid/AnylineXamarinSDK.Droid.csproj"
 endif
-	nuget pack Nuget/Anyline.Xamarin.SDK.Droid.nuspec
+	nuget pack Nuget/Anyline.Xamarin.SDK.Droid.nuspec -OutputDirectory Nuget
 	@echo Android NuGet package created
 
 build-android-examples:
@@ -53,7 +54,7 @@ build-ios-sdk:
 		/p:BuildIpa=false \
 		/v:minimal \
 		/t:rebuild "BindingSource/AnylineXamarinSDK.iOS/AnylineXamarinSDK.iOS.csproj"
-	nuget pack Nuget/Anyline.Xamarin.SDK.iOS.nuspec
+	nuget pack Nuget/Anyline.Xamarin.SDK.iOS.nuspec -OutputDirectory Nuget
 	@echo iOS NuGet package created
 
 build-ios-examples:

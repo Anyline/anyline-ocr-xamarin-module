@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -166,27 +166,31 @@ implements <a href="../../../../at/nineyards/anyline/camera/FaceDetector.FaceDet
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/anyline/plugin/id/IdScanPlugin.html#getProductName--">getProductName</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/anyline/plugin/id/IdScanPlugin.html#getModuleIdentifier--">getModuleIdentifier</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/anyline/plugin/id/IdScanPlugin.html#onFailure-java.lang.String-">onFailure</a></span>(java.lang.String&nbsp;e)</code>&nbsp;</td>
+<td class="colFirst"><code>java.lang.String</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/anyline/plugin/id/IdScanPlugin.html#getProductName--">getProductName</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/anyline/plugin/id/IdScanPlugin.html#onSuccess-at.nineyards.anyline.models.AnylineImage-">onSuccess</a></span>(<a href="../../../../at/nineyards/anyline/models/AnylineImage.html" title="class in at.nineyards.anyline.models">AnylineImage</a>&nbsp;faceImage)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/anyline/plugin/id/IdScanPlugin.html#onFailure-java.lang.String-">onFailure</a></span>(java.lang.String&nbsp;e)</code>&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/anyline/plugin/id/IdScanPlugin.html#setIdConfig-io.anyline.plugin.id.IdConfig-">setIdConfig</a></span>(<a href="../../../../io/anyline/plugin/id/IdConfig.html" title="class in io.anyline.plugin.id">IdConfig</a>&lt;?,?&gt;&nbsp;idConfig)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/anyline/plugin/id/IdScanPlugin.html#onSuccess-at.nineyards.anyline.models.AnylineImage-">onSuccess</a></span>(<a href="../../../../at/nineyards/anyline/models/AnylineImage.html" title="class in at.nineyards.anyline.models">AnylineImage</a>&nbsp;faceImage)</code>&nbsp;</td>
 </tr>
 <tr id="i5" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/anyline/plugin/id/IdScanPlugin.html#setIdConfig-io.anyline.plugin.id.IdConfig-">setIdConfig</a></span>(<a href="../../../../io/anyline/plugin/id/IdConfig.html" title="class in io.anyline.plugin.id">IdConfig</a>&lt;?,?&gt;&nbsp;idConfig)</code>&nbsp;</td>
+</tr>
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/anyline/plugin/id/IdScanPlugin.html#setReportingEnabled-boolean-">setReportingEnabled</a></span>(boolean&nbsp;isReportingEnabled)</code>
 <div class="block">This has no effect in this plugin.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/anyline/plugin/id/IdScanPlugin.html#start--">start</a></span>()</code>
 <div class="block">Start the processing of the plugin</div>
@@ -311,6 +315,23 @@ implements <a href="../../../../at/nineyards/anyline/camera/FaceDetector.FaceDet
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../io/anyline/plugin/AbstractScanPlugin.html#getProductName--">getProductName</a></code>&nbsp;in class&nbsp;<code><a href="../../../../io/anyline/plugin/AbstractScanPlugin.html" title="class in io.anyline.plugin">AbstractScanPlugin</a>&lt;<a href="../../../../io/anyline/plugin/ScanResult.html" title="class in io.anyline.plugin">ScanResult</a>&lt;<a href="../../../../io/anyline/plugin/id/ID.html" title="class in io.anyline.plugin.id">ID</a>&gt;&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="getModuleIdentifier--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getModuleIdentifier</h4>
+<pre>public&nbsp;java.lang.String&nbsp;getModuleIdentifier()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../io/anyline/plugin/ScanPlugin.html#getModuleIdentifier--">getModuleIdentifier</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../io/anyline/plugin/ScanPlugin.html" title="interface in io.anyline.plugin">ScanPlugin</a>&lt;<a href="../../../../io/anyline/plugin/ScanResult.html" title="class in io.anyline.plugin">ScanResult</a>&lt;<a href="../../../../io/anyline/plugin/id/ID.html" title="class in io.anyline.plugin.id">ID</a>&gt;&gt;</code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../io/anyline/plugin/AbstractScanPlugin.html#getModuleIdentifier--">getModuleIdentifier</a></code>&nbsp;in class&nbsp;<code><a href="../../../../io/anyline/plugin/AbstractScanPlugin.html" title="class in io.anyline.plugin">AbstractScanPlugin</a>&lt;<a href="../../../../io/anyline/plugin/ScanResult.html" title="class in io.anyline.plugin">ScanResult</a>&lt;<a href="../../../../io/anyline/plugin/id/ID.html" title="class in io.anyline.plugin.id">ID</a>&gt;&gt;</code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the module identifier of the plugin</dd>
 </dl>
 </li>
 </ul>

@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -162,32 +162,36 @@ extends <a href="../../../../io/anyline/plugin/AbstractScanPlugin.html" title="c
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/anyline/plugin/meter/MeterScanPlugin.html#getProductName--">getProductName</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/anyline/plugin/meter/MeterScanPlugin.html#getModuleIdentifier--">getModuleIdentifier</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/anyline/plugin/meter/MeterScanPlugin.html#getProductName--">getProductName</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="../../../../io/anyline/plugin/meter/MeterScanMode.html" title="enum in io.anyline.plugin.meter">MeterScanMode</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/anyline/plugin/meter/MeterScanPlugin.html#getScanMode--">getScanMode</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/anyline/plugin/meter/MeterScanPlugin.html#setScanMode-io.anyline.plugin.meter.MeterScanMode-">setScanMode</a></span>(<a href="../../../../io/anyline/plugin/meter/MeterScanMode.html" title="enum in io.anyline.plugin.meter">MeterScanMode</a>&nbsp;scanMode)</code>
 <div class="block">Set the scan mode (Select what should be scanned next).</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/anyline/plugin/meter/MeterScanPlugin.html#setSerialNumberCharWhitelist-java.lang.String-">setSerialNumberCharWhitelist</a></span>(java.lang.String&nbsp;whiteList)</code>
 <div class="block">Set the character whitelist (all the characters that may occur in the data that should be recognized)
  as a string for the Serialnumber scan mode.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/anyline/plugin/meter/MeterScanPlugin.html#setSerialNumberValidationRegex-java.lang.String-">setSerialNumberValidationRegex</a></span>(java.lang.String&nbsp;regexString)</code>
 <div class="block">Set a validation regex string for the Serialnumber scan mode.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/anyline/plugin/meter/MeterScanPlugin.html#start--">start</a></span>()</code>
 <div class="block">Start the processing of the plugin</div>
@@ -250,6 +254,23 @@ extends <a href="../../../../io/anyline/plugin/AbstractScanPlugin.html" title="c
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../io/anyline/plugin/AbstractScanPlugin.html#getProductName--">getProductName</a></code>&nbsp;in class&nbsp;<code><a href="../../../../io/anyline/plugin/AbstractScanPlugin.html" title="class in io.anyline.plugin">AbstractScanPlugin</a>&lt;<a href="../../../../io/anyline/plugin/meter/MeterScanResult.html" title="class in io.anyline.plugin.meter">MeterScanResult</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="getModuleIdentifier--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getModuleIdentifier</h4>
+<pre>public&nbsp;java.lang.String&nbsp;getModuleIdentifier()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../io/anyline/plugin/ScanPlugin.html#getModuleIdentifier--">getModuleIdentifier</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../io/anyline/plugin/ScanPlugin.html" title="interface in io.anyline.plugin">ScanPlugin</a>&lt;<a href="../../../../io/anyline/plugin/meter/MeterScanResult.html" title="class in io.anyline.plugin.meter">MeterScanResult</a>&gt;</code></dd>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../io/anyline/plugin/AbstractScanPlugin.html#getModuleIdentifier--">getModuleIdentifier</a></code>&nbsp;in class&nbsp;<code><a href="../../../../io/anyline/plugin/AbstractScanPlugin.html" title="class in io.anyline.plugin">AbstractScanPlugin</a>&lt;<a href="../../../../io/anyline/plugin/meter/MeterScanResult.html" title="class in io.anyline.plugin.meter">MeterScanResult</a>&gt;</code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the module identifier of the plugin</dd>
 </dl>
 </li>
 </ul>
