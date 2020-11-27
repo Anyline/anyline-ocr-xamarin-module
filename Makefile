@@ -1,9 +1,11 @@
 # BUILD
 
-build-android-sdk:
-	nuget restore BindingSource/AnylineXamarinSDK.Droid/AnylineXamarinSDK.Droid.csproj
+android-sdk:
+	@nuget restore BindingSource/AnylineXamarinSDK.Droid/AnylineXamarinSDK.Droid.csproj
+	
+	@sed -i '' "s/^\[assembly: AssemblyVersion.*/\[assembly: AssemblyVersion(\"$(MAJOR_VERSION).$(MINOR_VERSION).$(BUILD_NUMBER)\")\]/" BindingSource/AnylineXamarinSDK.Droid/Properties/AssemblyInfo.cs
 ifeq ($(OS),Windows_NT)
-    #Build Android DLL
+    # Build Android DLL
 	@msbuild.exe /p:Configuration="Release" \
 		/p:Platform="AnyCPU" \
 		/v:minimal \
@@ -14,7 +16,7 @@ ifeq ($(OS),Windows_NT)
 		/v:minimal \
 		/t:rebuild "BindingSource/AnylineXamarinSDK.Droid/AnylineXamarinSDK.Droid.csproj"
 else
-    #Build Android DLL
+    # Build Android DLL
 	@msbuild /p:Configuration="Release" \
 		/p:Platform="AnyCPU" \
 		/v:minimal \
@@ -25,11 +27,17 @@ else
 		/v:minimal \
 		/t:rebuild "BindingSource/AnylineXamarinSDK.Droid/AnylineXamarinSDK.Droid.csproj"
 endif
-	nuget pack Nuget/Anyline.Xamarin.SDK.Droid.nuspec -OutputDirectory Nuget
-	@echo Android NuGet package created
+	@rm -rf Nuget/Anyline.Xamarin.SDK.Droid.*.nupkg
 
-build-android-examples:
-	nuget restore Examples/AnylineExamples.Droid/AnylineExamples.Droid.csproj
+	@-dotnet nuget remove source LocalNuGet
+	@dotnet nuget add source $(PWD)/Nuget -n LocalNuGet
+
+	@sed -i '' "s/<version>.*/<version>$(MAJOR_VERSION).$(MINOR_VERSION).$(BUILD_NUMBER)<\/version>/" Nuget/Anyline.Xamarin.SDK.Droid.nuspec
+	@nuget pack Nuget/Anyline.Xamarin.SDK.Droid.nuspec -OutputDirectory Nuget
+
+android-examples: reference-newest-android-nuget
+	@rm -rf *.apk
+	@nuget restore Examples/AnylineExamples.Droid/AnylineExamples.Droid.csproj
 ifeq ($(OS),Windows_NT)
 	# Build the examples .apk file 
 	@msbuild.exe /p:Configuration="Release" \
@@ -45,29 +53,57 @@ else
 endif
 	@echo Android Examples APK is built
 
+	# sign the apk
+	@jarsigner -sigalg MD5withRSA -digestalg SHA1 -keystore "$(KEYSTORE_PATH)" -storepass "$(KEYSTORE_RELEASE_PW)" -signedjar "Examples/AnylineExamples.Droid/bin/Release/com.anyline.xamarin.examples-Signed.apk" "Examples/AnylineExamples.Droid/bin/Release/com.anyline.xamarin.examples.apk" "Xamarin.App.Droid Sample App"
+	# zipalign the apk
+	@zipalign -f 4 "Examples/AnylineExamples.Droid/bin/Release/com.anyline.xamarin.examples-Signed.apk" "Examples/AnylineExamples.Droid/bin/Release/com.anyline.xamarin.examples.apk"
+	
+	@mv "Examples/AnylineExamples.Droid/bin/Release/com.anyline.xamarin.examples.apk" "com.anyline.xamarin.examples_$(MAJOR_VERSION).$(MINOR_VERSION).$(BUILD_NUMBER).apk"
 
 
-build-ios-sdk:
+ios-sdk:
 	# Needs to be run on a Mac
+
+	@sed -i '' "s/^\[assembly: AssemblyVersion.*/\[assembly: AssemblyVersion(\"$(MAJOR_VERSION).$(MINOR_VERSION).$(BUILD_NUMBER)\")\]/" BindingSource/AnylineXamarinSDK.iOS/Properties/AssemblyInfo.cs
+
 	@msbuild /p:Configuration="Release" \
 		/p:Platform="AnyCPU" \
 		/p:BuildIpa=false \
 		/v:minimal \
 		/t:rebuild "BindingSource/AnylineXamarinSDK.iOS/AnylineXamarinSDK.iOS.csproj"
-	nuget pack Nuget/Anyline.Xamarin.SDK.iOS.nuspec -OutputDirectory Nuget
-	@echo iOS NuGet package created
+	
+	@rm -rf Nuget/Anyline.Xamarin.SDK.iOS.*.nupkg
+	
+	@-dotnet nuget remove source LocalNuGet
+	@dotnet nuget add source $(PWD)/Nuget -n LocalNuGet
 
-build-ios-examples:
+	@sed -i '' "s/<version>.*/<version>$(MAJOR_VERSION).$(MINOR_VERSION).$(BUILD_NUMBER)<\/version>/" Nuget/Anyline.Xamarin.SDK.iOS.nuspec
+	@nuget pack Nuget/Anyline.Xamarin.SDK.iOS.nuspec -OutputDirectory Nuget
+
+ios-examples: reference-newest-ios-nuget
 	# Needs to be run on a Mac
+	@nuget restore Examples/AnylineExamples.iOS/AnylineExamples.iOS.csproj
 	@msbuild /p:Configuration="Release" \
 		/p:Platform="iPhone" \
 		/p:BuildIpa=false \
 		/v:minimal \
 		/t:rebuild "Examples/AnylineExamples.iOS/AnylineExamples.iOS.csproj"
-    
+
+reference-newest-android-nuget:
+	@-dotnet remove Examples/AnylineExamples.Droid/AnylineExamples.Droid.csproj package Anyline.Xamarin.SDK.Droid
+	@-dotnet remove Examples/Xamarin.Forms/Anyline/Anyline.Android/Anyline.Android.csproj package Anyline.Xamarin.SDK.Droid
+	@dotnet add Examples/AnylineExamples.Droid/AnylineExamples.Droid.csproj package Anyline.Xamarin.SDK.Droid
+	@dotnet add Examples/Xamarin.Forms/Anyline/Anyline.Android/Anyline.Android.csproj package Anyline.Xamarin.SDK.Droid
+
+reference-newest-ios-nuget:
+	@-dotnet remove Examples/AnylineExamples.iOS/AnylineExamples.iOS.csproj package Anyline.Xamarin.SDK.iOS
+	@-dotnet remove Examples/Xamarin.Forms/Anyline/Anyline.iOS/Anyline.iOS.csproj package Anyline.Xamarin.SDK.iOS
+	@dotnet add Examples/AnylineExamples.iOS/AnylineExamples.iOS.csproj package Anyline.Xamarin.SDK.iOS
+	@dotnet add Examples/Xamarin.Forms/Anyline/Anyline.iOS/Anyline.iOS.csproj package Anyline.Xamarin.SDK.iOS
+
 # ARCHIVE
 
-bundle-release: clean-build-folders
+bundle-release: android-sdk android-examples ios-sdk ios-examples clean-build-folders
 	# -- Zips the release bundle, excluding Git files, bin, obj and vs folders --
 	@rm -rf anyline-ocr-xamarin-module.zip
 ifeq ($(OS),Windows_NT)
