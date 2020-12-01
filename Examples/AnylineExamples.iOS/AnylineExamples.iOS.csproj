@@ -168,7 +168,7 @@
   <Import Project="..\AnylineExamples.Shared\AnylineExamples.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="BeforeBuild" Condition=" '$(RUNNING_ON_CICD)' == 'true' ">
-    <XmlPoke XmlInputPath="Info.plist" Query="//dict/key[. = 'CFBundleVersion']/following-sibling::string[1]" Value="$(BUILD_NUMBER)" />
-    <XmlPoke XmlInputPath="Info.plist" Query="//dict/key[. = 'CFBundleShortVersionString']/following-sibling::string[1]" Value="$(MAJOR_VERSION).$(MINOR_VERSION).$(BUILD_NUMBER)" />
+    <XmlPoke XmlInputPath="Info.plist" Query="//dict/key[. = 'CFBundleVersion']/following-sibling::string[1]" Value="$(BUNDLE_VERSION_IOS)" />
+    <XmlPoke XmlInputPath="Info.plist" Query="//dict/key[. = 'CFBundleShortVersionString']/following-sibling::string[1]" Value="$(MAJOR_VERSION_IOS).$(MINOR_VERSION_IOS).$(BUILD_NUMBER_IOS)" />
   </Target>
 </Project>
