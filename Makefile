@@ -69,7 +69,7 @@ ifeq ($(OS),Windows_NT)
 	@msbuild.exe /p:Configuration="Release" \
 		/p:Platform="AnyCPU" \
 		/v:minimal \
-		/t:rebuild "BindingSource/AnylineXamarinSDK.Droid/AnylineXamarinSDK.Droid.csproj"
+		/t:build "BindingSource/AnylineXamarinSDK.Droid/AnylineXamarinSDK.Droid.csproj"
 else
 	@msbuild /p:Configuration="Release" \
 		/p:Platform="AnyCPU" \
@@ -79,7 +79,7 @@ else
 	@msbuild /p:Configuration="Release" \
 		/p:Platform="AnyCPU" \
 		/v:minimal \
-		/t:rebuild "BindingSource/AnylineXamarinSDK.Droid/AnylineXamarinSDK.Droid.csproj"
+		/t:build "BindingSource/AnylineXamarinSDK.Droid/AnylineXamarinSDK.Droid.csproj"
 endif
 	@rm -rf Nuget/Anyline.Xamarin.SDK.Droid.*.nupkg
 
