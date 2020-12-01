@@ -109,6 +109,8 @@ endif
 	@mv "Examples/AnylineExamples.Droid/bin/Release/com.anyline.xamarin.examples.apk" "com.anyline.xamarin.examples_$(MAJOR_VERSION_ANDROID).$(MINOR_VERSION_ANDROID).$(BUILD_NUMBER_ANDROID).apk"
 
 
+build-android-testing-version: set-anyline-version build-android-sdk reference-android-nuget-package build-android-examples 
+
 build-ios-sdk:
 # Needs to be run on a Mac
 ifneq ($(OS),Windows_NT)
@@ -135,6 +137,21 @@ ifneq ($(OS),Windows_NT)
 		/t:rebuild "Examples/AnylineExamples.iOS/AnylineExamples.iOS.csproj"
 endif
 
+build-ios-examples-ipa:
+# Needs to be run on a Mac
+ifneq ($(OS),Windows_NT)
+	# Build iOS Examples App
+	@nuget restore Examples/AnylineExamples.iOS/AnylineExamples.iOS.csproj
+	@msbuild /p:Configuration="Release" \
+		/p:Platform="iPhone" \
+		/p:IpaPackageDir="$(PWD)" \
+		/p:BuildIpa=true \
+		/v:minimal \
+		/t:rebuild "Examples/AnylineExamples.iOS/AnylineExamples.iOS.csproj"
+endif
+
+build-ios-testing-version: set-anyline-version build-ios-sdk reference-ios-nuget-package build-ios-examples-ipa
+
 # Release
 
 archive:
@@ -144,7 +161,7 @@ ifeq ($(OS),Windows_NT)
 	tar.exe --exclude=*.nupkg --exclude=*.DS_Store -acf anyline-ocr-xamarin-module.zip BindingSource Examples Nuget com.anyline.xamarin.examples_* LICENSE.md README.md
 	CertUtil -hashfile anyline-ocr-xamarin-module.zip MD5
 else
-	zip -rq anyline-ocr-xamarin-module.zip . -x "*.git*" -x "*.nupkg" -x "*.DS_Store"
+	zip -rq anyline-ocr-xamarin-module.zip . -x "*.git*" -x "*.nupkg" -x "*.DS_Store" -x "*.ipa"
 	md5 anyline-ocr-xamarin-module.zip
 endif
 
@@ -176,18 +193,21 @@ create-local-nuget-source:
 	@-dotnet nuget remove source LocalNuGet
 	@dotnet nuget add source $(PWD)/Nuget -n LocalNuGet
 
-reference-nuget-packages: create-local-nuget-source
+reference-nuget-packages: create-local-nuget-source reference-android-nuget-package reference-ios-nuget-package
+
+reference-android-nuget-package:
 	# Referece the generated NuGet packages
 	@-dotnet remove Examples/AnylineExamples.Droid/AnylineExamples.Droid.csproj package Anyline.Xamarin.SDK.Droid
 	@-dotnet remove Examples/Xamarin.Forms/Anyline/Anyline.Android/Anyline.Android.csproj package Anyline.Xamarin.SDK.Droid
 	@dotnet add Examples/AnylineExamples.Droid/AnylineExamples.Droid.csproj package Anyline.Xamarin.SDK.Droid -v $(MAJOR_VERSION_ANDROID).$(MINOR_VERSION_ANDROID).$(BUILD_NUMBER_ANDROID)
 	@dotnet add Examples/Xamarin.Forms/Anyline/Anyline.Android/Anyline.Android.csproj package Anyline.Xamarin.SDK.Droid -v $(MAJOR_VERSION_ANDROID).$(MINOR_VERSION_ANDROID).$(BUILD_NUMBER_ANDROID)
 
+reference-ios-nuget-package:
+	# Referece the generated NuGet packages
 	@-dotnet remove Examples/AnylineExamples.iOS/AnylineExamples.iOS.csproj package Anyline.Xamarin.SDK.iOS
 	@-dotnet remove Examples/Xamarin.Forms/Anyline/Anyline.iOS/Anyline.iOS.csproj package Anyline.Xamarin.SDK.iOS
 	@dotnet add Examples/AnylineExamples.iOS/AnylineExamples.iOS.csproj package Anyline.Xamarin.SDK.iOS -v $(MAJOR_VERSION_IOS).$(MINOR_VERSION_IOS).$(BUILD_NUMBER_IOS)
 	@dotnet add Examples/Xamarin.Forms/Anyline/Anyline.iOS/Anyline.iOS.csproj package Anyline.Xamarin.SDK.iOS -v $(MAJOR_VERSION_IOS).$(MINOR_VERSION_IOS).$(BUILD_NUMBER_IOS)
-
 
 #GitHub
 
