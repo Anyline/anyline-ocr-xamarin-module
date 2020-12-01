@@ -179,7 +179,7 @@ ifeq ($(OS),Windows_NT)
 	@sed -i "s/^\[assembly: AssemblyVersion.*/\[assembly: AssemblyVersion(\"$(MAJOR_VERSION_IOS).$(MINOR_VERSION_IOS).$(BUILD_NUMBER_IOS)\")\]/" BindingSource/AnylineXamarinSDK.iOS/Properties/AssemblyInfo.cs
 	# Change NuGet package version
 	@sed -i "s/<version>.*/<version>$(MAJOR_VERSION_ANDROID).$(MINOR_VERSION_ANDROID).$(BUILD_NUMBER_ANDROID)<\/version>/" Nuget/Anyline.Xamarin.SDK.Droid.nuspec
-	@sed -i "s/<version>.*/<version>$(MAJOR_VERSION).$(MINOR_VERSION).$(BUILD_NUMBER)<\/version>/" Nuget/Anyline.Xamarin.SDK.iOS.nuspec
+	@sed -i "s/<version>.*/<version>$(MAJOR_VERSION_IOS).$(MINOR_VERSION_IOS).$(BUILD_NUMBER_IOS)<\/version>/" Nuget/Anyline.Xamarin.SDK.iOS.nuspec
 else
 	# Change SDK version
 	@sed -i '' "s/^\[assembly: AssemblyVersion.*/\[assembly: AssemblyVersion(\"$(MAJOR_VERSION_ANDROID).$(MINOR_VERSION_ANDROID).$(BUILD_NUMBER_ANDROID)\")\]/" BindingSource/AnylineXamarinSDK.Droid/Properties/AssemblyInfo.cs
@@ -195,14 +195,14 @@ create-local-nuget-source:
 
 reference-nuget-packages: create-local-nuget-source reference-android-nuget-package reference-ios-nuget-package
 
-reference-android-nuget-package:
+reference-android-nuget-package: create-local-nuget-source
 	# Referece the generated NuGet packages
 	@-dotnet remove Examples/AnylineExamples.Droid/AnylineExamples.Droid.csproj package Anyline.Xamarin.SDK.Droid
 	@-dotnet remove Examples/Xamarin.Forms/Anyline/Anyline.Android/Anyline.Android.csproj package Anyline.Xamarin.SDK.Droid
 	@dotnet add Examples/AnylineExamples.Droid/AnylineExamples.Droid.csproj package Anyline.Xamarin.SDK.Droid -v $(MAJOR_VERSION_ANDROID).$(MINOR_VERSION_ANDROID).$(BUILD_NUMBER_ANDROID)
 	@dotnet add Examples/Xamarin.Forms/Anyline/Anyline.Android/Anyline.Android.csproj package Anyline.Xamarin.SDK.Droid -v $(MAJOR_VERSION_ANDROID).$(MINOR_VERSION_ANDROID).$(BUILD_NUMBER_ANDROID)
 
-reference-ios-nuget-package:
+reference-ios-nuget-package: create-local-nuget-source
 	# Referece the generated NuGet packages
 	@-dotnet remove Examples/AnylineExamples.iOS/AnylineExamples.iOS.csproj package Anyline.Xamarin.SDK.iOS
 	@-dotnet remove Examples/Xamarin.Forms/Anyline/Anyline.iOS/Anyline.iOS.csproj package Anyline.Xamarin.SDK.iOS
