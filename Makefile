@@ -249,7 +249,7 @@ reference-ios-nuget-package: create-local-nuget-source
 #GitHub
 
 draft-github-release:
-	gh release create v$(MAJOR_VERSION).$(MINOR_VERSION) -d -t "Anyline Xamarin SDK $(MAJOR_VERSION).$(MINOR_VERSION)" -n "https://documentation.anyline.com/toc/platforms/xamarin/release_guide/index.html" -R github.com/Anyline/anyline-ocr-xamarin-module 
+	gh release create v$(MAJOR_VERSION).$(MINOR_VERSION) -d -t "Anyline Xamarin SDK $(MAJOR_VERSION).$(MINOR_VERSION)" -n "https://documentation.anyline.com/toc/platforms/xamarin/release_guide/index.html" --target "$(BRANCH)" -R github.com/Anyline/anyline-ocr-xamarin-module 
 
 upload-release-bundle:
 	gh release upload v$(MAJOR_VERSION).$(MINOR_VERSION) anyline-ocr-xamarin-module.zip -R github.com/Anyline/anyline-ocr-xamarin-module
