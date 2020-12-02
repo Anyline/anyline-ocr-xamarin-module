@@ -2,38 +2,39 @@
 
 RUNNING_ON_CICD = true
 
-# ////// Release ////// #
+# //////////////////////////////////////////////////////////// RELEASE //////////////////////////////////////////////////////////// #
 # MAJOR_VERSION
 # MINOR_VERSION
 # BUILD_NUMBER
-# ////// Release ////// #
+# //////////////////////////////////////////////////////////// RELEASE //////////////////////////////////////////////////////////// #
 
 
-# ////// iOS ////// #
+# ////////////////////////////////////////////////////////////// iOS ////////////////////////////////////////////////////////////// #
 # MAJOR_VERSION_IOS
 # MINOR_VERSION_IOS
 # BUILD_NUMBER_IOS
 # BUNDLE_VERSION_IOS
-# ////// iOS ////// #
+# ////////////////////////////////////////////////////////////// iOS ////////////////////////////////////////////////////////////// #
 
 
-# ////// ANDROID ////// #
+# //////////////////////////////////////////////////////////// ANDROID //////////////////////////////////////////////////////////// #
 # MAJOR_VERSION_ANDROID
 # MINOR_VERSION_ANDROID
 # BUILD_NUMBER_ANDROID
-# VERSION_CODE_ANDROID - Used in the Android Examples App - Cannot be 0.
-# KEYSTORE_PATH - Used to sign the final Examples APK
-# KEYSTORE_RELEASE_PW - Used to sign the final Examples APK
-# ////// ANDROID ////// #
+# VERSION_CODE_ANDROID	- Used in the Android Examples App - Cannot be 0.
+# KEYSTORE_PATH			- Used to sign the final Examples APK
+# KEYSTORE_RELEASE_PW	- Used to sign the final Examples APK
+# ANDROID_SDK_URL		- Used for the download-android-sdk recipe		| 	Both env. variables are required
+# ANDROID_JAVADOC_URL	- Used for the download-android-sdk recipe		| 	for the download-android-sdk recipe
+# //////////////////////////////////////////////////////////// ANDROID //////////////////////////////////////////////////////////// #
 
 
-# ////// WINDOWS MACHINES ////// #
+# //////////////////////////////////////////////////////// WINDOWS MACHINES //////////////////////////////////////////////////////// #
 # WINDOWS machines will also require setting the PWD env. variable: #
 # PWD=%cd%
-# ////// WINDOWS MACHINES ////// #
+# //////////////////////////////////////////////////////// WINDOWS MACHINES //////////////////////////////////////////////////////// #
 
-
-## TOOLS ##
+# ///////////////////////////////////////////////////////////// TOOLS ////////////////////////////////////////////////////////////// #
 # The following tools need to be available on the PATH: #
 # make
 # msbuild (or msbuid.exe on Windows)
@@ -46,13 +47,30 @@ RUNNING_ON_CICD = true
 # md5 (on Mac OS)
 # CertUtil (on Windows)
 # sed
+# curl
 # gh (GitHub)
-## TOOLS ## 
+# ///////////////////////////////////////////////////////////// TOOLS ////////////////////////////////////////////////////////////// #
 
 all: help
 help: 
 	@echo "You probably wanted to call:" 
 	@echo make bundle-release
+
+# NATIVE SDKs
+
+download-android-sdk:
+# Downloads the SDK from the ANDROID_SDK_URL env. variable
+	curl $(ANDROID_SDK_URL) -o "BindingSource/AnylineXamarinSDK.Droid/Jars/anylinesdk.aar"
+# Downloads the JAVADOC from the ANDROID_JAVADOC_URL env. variable
+	curl $(ANDROID_JAVADOC_URL) -o "javadoc.jar"
+# Clears old javadoc content, expands, and copies the new one
+	@rm -rf javadoc_content
+	@unzip -q javadoc.jar -d javadoc_content
+	@rm -rf "BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc"
+	@cp -r "javadoc_content" "BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc"
+	@rm -rf "javadoc_content"
+	@rm -rf "javadoc.jar"
+	@echo "Android SDK and Javadoc replaced"
 
 # BUILD
 
