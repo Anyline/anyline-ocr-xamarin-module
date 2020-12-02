@@ -58,12 +58,12 @@ help:
 
 # NATIVE SDKs
 
-download-android-sdk:
-# Downloads the SDK from the ANDROID_SDK_URL env. variable
+replace-android-sdk:
+# Download the SDK from the ANDROID_SDK_URL env. variable
 	curl $(ANDROID_SDK_URL) -o "BindingSource/AnylineXamarinSDK.Droid/Jars/anylinesdk.aar"
-# Downloads the JAVADOC from the ANDROID_JAVADOC_URL env. variable
+# Download the JAVADOC from the ANDROID_JAVADOC_URL env. variable
 	curl $(ANDROID_JAVADOC_URL) -o "javadoc.jar"
-# Clears old javadoc content, expands, and copies the new one
+# Clear old javadoc content, expands, and copies the new one
 	@rm -rf javadoc_content
 	@unzip -q javadoc.jar -d javadoc_content
 	@rm -rf "BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc"
@@ -127,10 +127,8 @@ endif
 	@mv "Examples/AnylineExamples.Droid/bin/Release/com.anyline.xamarin.examples.apk" "com.anyline.xamarin.examples_$(MAJOR_VERSION_ANDROID).$(MINOR_VERSION_ANDROID).$(BUILD_NUMBER_ANDROID).apk"
 
 
-build-android-testing-version: set-anyline-version build-android-sdk reference-android-nuget-package build-android-examples 
-
 build-ios-sdk:
-# Needs to be run on a Mac
+# Needs a MacOS to run
 ifneq ($(OS),Windows_NT)
 	# Build iOS SDK
 	@msbuild /p:Configuration="Release" \
@@ -138,13 +136,17 @@ ifneq ($(OS),Windows_NT)
 		/p:BuildIpa=false \
 		/v:minimal \
 		/t:rebuild "BindingSource/AnylineXamarinSDK.iOS/AnylineXamarinSDK.iOS.csproj"
+else
+	@echo ""
+	@echo "WARNING: This recipe must run on a MacOS to build the iOS SDK DLL."
+	@echo ""
 endif
 
 	@rm -rf Nuget/Anyline.Xamarin.SDK.iOS.*.nupkg
 	@nuget pack Nuget/Anyline.Xamarin.SDK.iOS.nuspec -OutputDirectory Nuget
 
 build-ios-examples:
-# Needs to be run on a Mac
+# Needs a MacOS to run
 ifneq ($(OS),Windows_NT)
 	# Build iOS Examples App
 	@nuget restore Examples/AnylineExamples.iOS/AnylineExamples.iOS.csproj
@@ -153,10 +155,14 @@ ifneq ($(OS),Windows_NT)
 		/p:BuildIpa=false \
 		/v:minimal \
 		/t:rebuild "Examples/AnylineExamples.iOS/AnylineExamples.iOS.csproj"
+else
+	@echo ""
+	@echo "WARNING: This recipe must run on a MacOS to build the iOS Examples App."
+	@echo ""
 endif
 
 build-ios-examples-ipa:
-# Needs to be run on a Mac
+# Needs a MacOS to run
 ifneq ($(OS),Windows_NT)
 	# Build iOS Examples App
 	@nuget restore Examples/AnylineExamples.iOS/AnylineExamples.iOS.csproj
@@ -166,9 +172,12 @@ ifneq ($(OS),Windows_NT)
 		/p:BuildIpa=true \
 		/v:minimal \
 		/t:rebuild "Examples/AnylineExamples.iOS/AnylineExamples.iOS.csproj"
+else
+	@echo ""
+	@echo "WARNING: This recipe must run on a MacOS to build the iOS .ipa file."
+	@echo ""
 endif
 
-build-ios-testing-version: set-anyline-version build-ios-sdk reference-ios-nuget-package build-ios-examples-ipa
 
 # Release
 
@@ -183,35 +192,45 @@ else
 	md5 anyline-ocr-xamarin-module.zip
 endif
 
-# Builds everything and archives the bundle for release
-bundle-release: set-anyline-version build-android-sdk build-ios-sdk reference-nuget-packages build-android-examples build-ios-examples clean-build-folders archive
+android-release: set-anyline-android-version build-android-sdk reference-android-nuget-package build-android-examples 
+
+ios-release: set-anyline-ios-version build-ios-sdk reference-ios-nuget-package build-ios-examples-ipa
+
+bundle-release: android-release ios-release clean-build-folders archive
 
 bundle-and-draft-new-github-release: bundle-release draft-github-release upload-release-bundle
 
 #SETUP
 
-set-anyline-version:
+set-anyline-android-version:
 ifeq ($(OS),Windows_NT)
-	# Change SDK version
+# Change SDK version
 	@sed -i "s/^\[assembly: AssemblyVersion.*/\[assembly: AssemblyVersion(\"$(MAJOR_VERSION_ANDROID).$(MINOR_VERSION_ANDROID).$(BUILD_NUMBER_ANDROID)\")\]/" BindingSource/AnylineXamarinSDK.Droid/Properties/AssemblyInfo.cs
-	@sed -i "s/^\[assembly: AssemblyVersion.*/\[assembly: AssemblyVersion(\"$(MAJOR_VERSION_IOS).$(MINOR_VERSION_IOS).$(BUILD_NUMBER_IOS)\")\]/" BindingSource/AnylineXamarinSDK.iOS/Properties/AssemblyInfo.cs
-	# Change NuGet package version
+# Change NuGet package version
 	@sed -i "s/<version>.*/<version>$(MAJOR_VERSION_ANDROID).$(MINOR_VERSION_ANDROID).$(BUILD_NUMBER_ANDROID)<\/version>/" Nuget/Anyline.Xamarin.SDK.Droid.nuspec
+else
+# Change SDK version
+	@sed -i '' "s/^\[assembly: AssemblyVersion.*/\[assembly: AssemblyVersion(\"$(MAJOR_VERSION_ANDROID).$(MINOR_VERSION_ANDROID).$(BUILD_NUMBER_ANDROID)\")\]/" BindingSource/AnylineXamarinSDK.Droid/Properties/AssemblyInfo.cs
+# Change NuGet package version
+	@sed -i '' "s/<version>.*/<version>$(MAJOR_VERSION_ANDROID).$(MINOR_VERSION_ANDROID).$(BUILD_NUMBER_ANDROID)<\/version>/" Nuget/Anyline.Xamarin.SDK.Droid.nuspec
+endif
+
+set-anyline-ios-version:
+ifeq ($(OS),Windows_NT)
+# Change SDK version
+	@sed -i "s/^\[assembly: AssemblyVersion.*/\[assembly: AssemblyVersion(\"$(MAJOR_VERSION_IOS).$(MINOR_VERSION_IOS).$(BUILD_NUMBER_IOS)\")\]/" BindingSource/AnylineXamarinSDK.iOS/Properties/AssemblyInfo.cs
+# Change NuGet package version
 	@sed -i "s/<version>.*/<version>$(MAJOR_VERSION_IOS).$(MINOR_VERSION_IOS).$(BUILD_NUMBER_IOS)<\/version>/" Nuget/Anyline.Xamarin.SDK.iOS.nuspec
 else
-	# Change SDK version
-	@sed -i '' "s/^\[assembly: AssemblyVersion.*/\[assembly: AssemblyVersion(\"$(MAJOR_VERSION_ANDROID).$(MINOR_VERSION_ANDROID).$(BUILD_NUMBER_ANDROID)\")\]/" BindingSource/AnylineXamarinSDK.Droid/Properties/AssemblyInfo.cs
+# Change SDK version
 	@sed -i '' "s/^\[assembly: AssemblyVersion.*/\[assembly: AssemblyVersion(\"$(MAJOR_VERSION_IOS).$(MINOR_VERSION_IOS).$(BUILD_NUMBER_IOS)\")\]/" BindingSource/AnylineXamarinSDK.iOS/Properties/AssemblyInfo.cs
-	# Change NuGet package version
-	@sed -i '' "s/<version>.*/<version>$(MAJOR_VERSION_ANDROID).$(MINOR_VERSION_ANDROID).$(BUILD_NUMBER_ANDROID)<\/version>/" Nuget/Anyline.Xamarin.SDK.Droid.nuspec
+# Change NuGet package version
 	@sed -i '' "s/<version>.*/<version>$(MAJOR_VERSION_IOS).$(MINOR_VERSION_IOS).$(BUILD_NUMBER_IOS)<\/version>/" Nuget/Anyline.Xamarin.SDK.iOS.nuspec
 endif
 
 create-local-nuget-source:
 	@-dotnet nuget remove source LocalNuGet
 	@dotnet nuget add source $(PWD)/Nuget -n LocalNuGet
-
-reference-nuget-packages: create-local-nuget-source reference-android-nuget-package reference-ios-nuget-package
 
 reference-android-nuget-package: create-local-nuget-source
 	# Referece the generated NuGet packages
