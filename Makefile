@@ -228,7 +228,7 @@ else
 	@sed -i '' "s/<version>.*/<version>$(MAJOR_VERSION_IOS).$(MINOR_VERSION_IOS).$(BUILD_NUMBER_IOS)<\/version>/" Nuget/Anyline.Xamarin.SDK.iOS.nuspec
 endif
 
-create-local-nuget-source:
+create-local-nuget-source: clean-nuget-anyline-cache
 	@-dotnet nuget remove source LocalNuGet
 	@dotnet nuget add source $(PWD)/Nuget -n LocalNuGet
 
@@ -255,6 +255,9 @@ upload-release-bundle:
 	gh release upload v$(MAJOR_VERSION).$(MINOR_VERSION) anyline-ocr-xamarin-module.zip -R github.com/Anyline/anyline-ocr-xamarin-module
 
 # CLEAN
+
+clean-nuget-anyline-cache:
+	@rm -rf $(shell nuget locals all -list | grep global-packages | sed 's/global-packages://' | sed 's/\\/\//g')/anyline.xamarin.sdk.*
 
 clean-build-folders: 
 	@rm -rf BindingSource/.vs

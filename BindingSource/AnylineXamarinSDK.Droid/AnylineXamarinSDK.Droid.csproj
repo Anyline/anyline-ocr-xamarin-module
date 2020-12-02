@@ -43,9 +43,6 @@
     <NoWarn>0618;0809;0114;CS0109;CS0108</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Accessibility">
-      <HintPath>C:\Windows\Microsoft.NET\Framework\v2.0.50727\Accessibility.dll</HintPath>
-    </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
