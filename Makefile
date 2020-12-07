@@ -63,7 +63,7 @@ replace-android-sdk:
 	curl $(ANDROID_SDK_URL) -o "BindingSource/AnylineXamarinSDK.Droid/Jars/anylinesdk.aar"
 # Download the JAVADOC from the ANDROID_JAVADOC_URL env. variable
 	curl $(ANDROID_JAVADOC_URL) -o "javadoc.jar"
-# Clear old javadoc content, expands, and copies the new one
+# Clear old javadoc content, expand, and copy the new one
 	@rm -rf javadoc_content
 	@unzip -q javadoc.jar -d javadoc_content
 	@rm -rf "BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc"
@@ -178,14 +178,12 @@ else
 	@echo ""
 endif
 
-
 # Release
 
 archive:
 # -- Zips the release bundle, excluding Git files, bin, obj and vs folders --
-	@rm -rf anyline-ocr-xamarin-module.zip
 ifeq ($(OS),Windows_NT)
-	tar.exe --exclude=*.nupkg --exclude=*.DS_Store -acf anyline-ocr-xamarin-module.zip BindingSource Examples Nuget com.anyline.xamarin.examples_* LICENSE.md README.md
+	tar.exe --exclude=*.nupkg --exclude=*.DS_Store -acf anyline-ocr-xamarin-module.zip BindingSource Examples Nuget com.anyline.xamarin.examples_* LICENSE.md README.md $(SWID_TAG_NAME)
 	CertUtil -hashfile anyline-ocr-xamarin-module.zip MD5
 else
 	zip -rq anyline-ocr-xamarin-module.zip . -x "*.git*" -x "*.nupkg" -x "*.DS_Store" -x "*.ipa"
@@ -196,9 +194,14 @@ android-release: set-anyline-android-version build-android-sdk reference-android
 
 ios-release: set-anyline-ios-version build-ios-sdk reference-ios-nuget-package build-ios-examples-ipa
 
-bundle-release: android-release ios-release clean-build-folders archive
+bundle-release: android-release ios-release clean-build-files-and-folders create-corpus-swid-tag archive
 
 bundle-and-draft-new-github-release: bundle-release draft-github-release upload-release-bundle
+
+create-corpus-swid-tag:
+ifneq ($(CORPUS_SWID_SCRIPT_PATH),)
+	python $(CORPUS_SWID_SCRIPT_PATH) "Anyline Xamarin SDK" "com.anyline.xamarin" "$(MAJOR_VERSION).$(MINOR_VERSION).0" "$(REVISION)" "$(SWID_TAG_NAME)" "."
+endif
 
 #SETUP
 
@@ -259,31 +262,42 @@ upload-release-bundle:
 clean-nuget-anyline-cache:
 	@rm -rf $(shell nuget locals all -list | grep global-packages | sed 's/global-packages://' | sed 's/\\/\//g')/anyline.xamarin.sdk.*
 
-clean-build-folders: 
+clean-build-files-and-folders: 	
+
+	@rm -rf anyline-ocr-xamarin-module.zip
+
 	@rm -rf BindingSource/.vs
 	@rm -rf Examples/.vs
 
+	@rm -rf Examples/Xamarin.Forms/Anyline/Anyline/.vs
 	@rm -rf Examples/Xamarin.Forms/Anyline/Anyline/bin
 	@rm -rf Examples/Xamarin.Forms/Anyline/Anyline/obj
 
+	@rm -rf Examples/AnylineExamples.Droid/.vs
 	@rm -rf Examples/AnylineExamples.Droid/bin
 	@rm -rf Examples/AnylineExamples.Droid/obj
 
+	@rm -rf Examples/AnylineExamples.iOS/.vs
 	@rm -rf Examples/AnylineExamples.iOS/bin
 	@rm -rf Examples/AnylineExamples.iOS/obj
 
+	@rm -rf BindingSource/AnylineXamarinSDK.Droid/.vs
 	@rm -rf BindingSource/AnylineXamarinSDK.Droid/bin
 	@rm -rf BindingSource/AnylineXamarinSDK.Droid/obj
 
+	@rm -rf BindingSource/AnylineXamarinSDK.iOS/.vs
 	@rm -rf BindingSource/AnylineXamarinSDK.iOS/bin
 	@rm -rf BindingSource/AnylineXamarinSDK.iOS/obj
 
+	@rm -rf Examples/Xamarin.Forms/Anyline/Anyline.Android/.vs
 	@rm -rf Examples/Xamarin.Forms/Anyline/Anyline.Android/bin
 	@rm -rf Examples/Xamarin.Forms/Anyline/Anyline.Android/obj
 
+	@rm -rf Examples/Xamarin.Forms/Anyline/Anyline.iOS/.vs
 	@rm -rf Examples/Xamarin.Forms/Anyline/Anyline.iOS/bin
 	@rm -rf Examples/Xamarin.Forms/Anyline/Anyline.iOS/obj
 
+	@rm -rf Examples/Xamarin.Forms/Anyline/Anyline.UWP/.vs
 	@rm -rf Examples/Xamarin.Forms/Anyline/Anyline.UWP/bin
 	@rm -rf Examples/Xamarin.Forms/Anyline/Anyline.UWP/obj
 
