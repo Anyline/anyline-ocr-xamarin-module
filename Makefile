@@ -1,4 +1,4 @@
-## The recipes depend on the following Environment Variables: ##
+## The recipes depends on the following Environment Variables: ##
 
 RUNNING_ON_CICD = true
 
@@ -200,7 +200,7 @@ bundle-and-draft-new-github-release: bundle-release draft-github-release upload-
 
 create-corpus-swid-tag:
 ifneq ($(CORPUS_SWID_SCRIPT_PATH),)
-	python $(CORPUS_SWID_SCRIPT_PATH) "Anyline Xamarin SDK" "com.anyline.xamarin" "$(MAJOR_VERSION).$(MINOR_VERSION).0" "$(REVISION)" "$(SWID_TAG_NAME)" "."
+	python $(CORPUS_SWID_SCRIPT_PATH) "Anyline Xamarin SDK" "com.anyline.xamarin" "$(MAJOR_VERSION).$(MINOR_VERSION).0" "$(REVISION)" "$(SWID_TAG_NAME)" "." "."
 endif
 
 #SETUP
