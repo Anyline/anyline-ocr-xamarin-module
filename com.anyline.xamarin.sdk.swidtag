@@ -1,0 +1,923 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoftwareIdentity corpus="true" name="Anyline Xamarin SDK v27.0.0" patch="false" supplemental="false" tagId="com.anyline.xamarin-v27.0.0" tagVersion="0" version="27.0.0" versionScheme="semver" xml:lang="en" xmlns="http://standards.iso.org/iso/19770/-2/2015/schema.xsd" xmlns:SHA256="http://www.w3.org/2001/04/xmlenc#sha256" xmlns:n8060="http://csrc.nist.gov/ns/swid/2015-extensions/1.0">
+  <Entity name="Anyline GmbH" regid="https://anyline.com" role="softwareCreator licensor tagCreator distributor"/>
+  <Payload n8060:envVarPrefix="$" n8060:envVarSuffix="" n8060:pathSeparator="/">
+    <Directory location="" name="">
+      <File SHA256:hash="e1ef3f48bc27783f6cd7a88814b7f55e56a696e47efd6315c10f18e6a728811b" name="LICENSE.md" size="130277" version="27.0.0"/>
+      <File SHA256:hash="16eeedc9d5554589bf245ef7b049e0fa5d92fa986392fe21712e315b4f6f00ec" name="Makefile" size="13322" version="27.0.0"/>
+      <File SHA256:hash="061f446d54b33700d90a4a97f641dbefc7d32f9fa233119aa14dfe2e29379024" name="README.md" size="4300" version="27.0.0"/>
+      <File SHA256:hash="b58b5723e901a648d8b26e6373d3a300b58ed06fd1b3298a39dd7a5be0640c12" name="AnylineXamarinAppiOS.ipa" size="40053123" version="27.0.0"/>
+      <File SHA256:hash="b85f7678e5c3cce90a3306bbc5ad4726c75aeb39efea6da06f668bd304e0375e" name="com.anyline.xamarin.examples_27.0.0.apk" size="61727455" version="27.0.0"/>
+    </Directory>
+    <Directory location="" name="BindingSource">
+      <File SHA256:hash="212be6085c94ff64381be33d600a89989dab7bacf6675c9e31c0d869ee3fad38" name="Anyline Xamarin SDK.sln" size="5327" version="27.0.0"/>
+      <File SHA256:hash="22f33b02606aa4d4d7d77942fbe683e435a9df2a347f622d0efca45aaefc0c45" name="AnylineSDK.userprefs" size="366" version="27.0.0"/>
+    </Directory>
+    <Directory location="BindingSource" name="AnylineXamarinSDK.iOS">
+      <File SHA256:hash="1221a7d6a8a4ac2683404cecf1e221c045a0c034572dc9398db98cb0a77655f1" name="Extra.cs" size="325" version="27.0.0"/>
+      <File SHA256:hash="1c67b866fbe4b92fb8f0fa686aa6037f5e7d6866af16e81cb423479ffeef87a9" name="ApiDefinition.cs" size="191021" version="27.0.0"/>
+      <File SHA256:hash="2d6782190d5a6c531923800b4fa107ab0120fbcfd790dcd2d8ee12d400475a8f" name="AnylineXamarinSDK.iOS.csproj" size="2706" version="27.0.0"/>
+      <File SHA256:hash="43dc410308cc20cfed938def8914fbbff4f8e4e5e531178c1b768efd37ca23b7" name="Anyline.linkwith.cs" size="2499" version="27.0.0"/>
+      <File SHA256:hash="585c022b301929ff6e657ef0bb52b30557002f8bc5b72b7095b3ab4ddb027599" name="Anyline.a" size="182357576" version="27.0.0"/>
+      <File SHA256:hash="7cfa6416629059e29d2992d03cae92511b1d6ee7e6b975100be301367f7c3dca" name="Structs.cs" size="9776" version="27.0.0"/>
+    </Directory>
+    <Directory location="BindingSource/AnylineXamarinSDK.iOS" name="tools">
+      <File SHA256:hash="1818156f1095ce1cfff95cd0313ea6423b4d6b3f8ad2d2264084fe4866de95ba" name="update-ios-example-app.py" size="3593" version="27.0.0"/>
+      <File SHA256:hash="e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855" name="__init__.py" size="0" version="27.0.0"/>
+      <File SHA256:hash="b50d2e4f445b76c77612976525710ece89b232b88c454a5d131f521b1311a947" name="setup.py" size="103" version="27.0.0"/>
+    </Directory>
+    <Directory location="BindingSource/AnylineXamarinSDK.iOS/tools" name="dist">
+      <File SHA256:hash="c4da7fe8fb8d3b8f2c03b9273431fab3ebbed12ced442767e000a1034f378125" name="bz2.pyd" size="92672" version="27.0.0"/>
+      <File SHA256:hash="6afde549c55084f4d9fe0b9414b5a272739b6f33e082014968b202162e05062e" name="python27.dll" size="3423744" version="27.0.0"/>
+      <File SHA256:hash="2d24d30313e5a4d2dc1d6d13fbdcba1d1245944398a906d22c1b024b79841b8b" name="_hashlib.pyd" size="1483264" version="27.0.0"/>
+      <File SHA256:hash="7f94a83ce4856202a6d7da0bceeafedb0c7d262db0867d1f364929159e72dec0" name="library.zip" size="1826625" version="27.0.0"/>
+      <File SHA256:hash="1ab3d13af1ad283a20cdf47daacf370ec776c7c7a4b76d433513e5e57f72415c" name="update-ios-example-app.exe" size="26624" version="27.0.0"/>
+      <File SHA256:hash="105896c0c89ef973f683a7d48ac202b44b9c01c3a581e56a739adde2f70e3f31" name="select.pyd" size="11776" version="27.0.0"/>
+      <File SHA256:hash="813625846dc564cc5a547a272a441be6f17dc159e435402fa65c64462c74f990" name="unicodedata.pyd" size="692224" version="27.0.0"/>
+    </Directory>
+    <Directory location="BindingSource/AnylineXamarinSDK.iOS" name="Properties">
+      <File SHA256:hash="d5c685cafbe0159ad5e3c1514d68bef0ec441ee8029d72edbfcdade10369364c" name="AssemblyInfo.cs" size="1383" version="27.0.0"/>
+    </Directory>
+    <Directory location="BindingSource" name="AnylineXamarinSDK.Droid">
+      <File SHA256:hash="515bc5ea7cf5681180d47fd3303b7255f2b59da9c66bf623811b847653701b00" name="AnylineXamarinSDK.Droid.csproj" size="4730" version="27.0.0"/>
+    </Directory>
+    <Directory location="BindingSource/AnylineXamarinSDK.Droid" name="Jars">
+      <File SHA256:hash="e4334800ffc7717f45fc40908e9f10322063e6855ff39e0b2fce1024924e2a39" name="anylinesdk.aar" size="75221697" version="27.0.0"/>
+    </Directory>
+    <Directory location="BindingSource/AnylineXamarinSDK.Droid" name="Additions">
+      <File SHA256:hash="22bdd136c20c7d0fc4c79a4c1774d3b23f036b1528fe2e66d2df8a333eb2d652" name="AbstractBaseScanViewPlugin.cs" size="4239" version="27.0.0"/>
+      <File SHA256:hash="5b7f0353fd34f2ee23e1ed4714d3baa4b51b1ea9f2df125165a3d8fefe51e7cf" name="MrzIdentification.cs" size="1003" version="27.0.0"/>
+      <File SHA256:hash="aebe301bef2c7033edb88a31005ae94eed8ab49ed7e0b72dbe04669798dae605" name="IScanResultListener.cs" size="6739" version="27.0.0"/>
+      <File SHA256:hash="622ba4a10dacf324aae2273352e4678dc315e396596c03110d9bb40002d9b207" name="IDocumentScanResultListener.cs" size="31556" version="27.0.0"/>
+    </Directory>
+    <Directory location="BindingSource/AnylineXamarinSDK.Droid" name="Transforms">
+      <File SHA256:hash="481e360d8be2ed31768ac836bb66079876846c9a61d761532926033af039b14a" name="Metadata.xml" size="26052" version="27.0.0"/>
+      <File SHA256:hash="8d7d755f5c46d2487badbff7c29c356eed25af49f5ee9b5ea8193a328e76969b" name="EnumMethods.xml" size="495" version="27.0.0"/>
+      <File SHA256:hash="57e0fd165a4ce35c20a2c440539bca05fa23005d64d107825b22b08da3132e69" name="EnumFields.xml" size="632" version="27.0.0"/>
+    </Directory>
+    <Directory location="BindingSource/AnylineXamarinSDK.Droid" name="Properties">
+      <File SHA256:hash="a3fc26fe3f6a25d14ceff2cab285fc4da36714be75292f434639b37c2960f1af" name="AssemblyInfo.cs" size="1317" version="27.0.0"/>
+    </Directory>
+    <Directory location="BindingSource/AnylineXamarinSDK.Droid" name="Assets"/>
+    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets" name="tools">
+      <File SHA256:hash="8322306e5d71f2a785329d8454cb4237eb0416ab00327f28842c5f6e4b668d11" name="clean.bat" size="171" version="27.0.0"/>
+      <File SHA256:hash="0d6bc6e28e26d131fe4ea2f8e3334ded9b1113a073e118ca53d426744d05a5d7" name="Generated.xml" size="537072" version="27.0.0"/>
+      <File SHA256:hash="57bff726267cbc28aec253a43e5b30160505e17e6b7939ebcf3671dcc57bfd9c" name="clean.sh" size="174" version="27.0.0"/>
+    </Directory>
+    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools" name="dist">
+      <File SHA256:hash="8fda9b063e5caf89f6c02b28a6dfdb6643a2d56460cb2e6332c7537caece363b" name="GetJavaSignatures.py" size="3518" version="27.0.0"/>
+      <File SHA256:hash="32481ca9ccf4cdf3edf88d4cd841ee687d8f35880a7af8781a0d2d56cc09dce1" name="setup.py" size="96" version="27.0.0"/>
+      <File SHA256:hash="33e0707785ebca0d45acf42b9bba76c3cee91bb46adad2a21ce2111b6e005890" name="GetJavaSignatures.pyc" size="2959" version="27.0.0"/>
+      <File SHA256:hash="d95827921264a739631681ccc1fd37f84f2048de282f4e1ace7b9db9ce2cfd37" name="GetXMLMetadata.py" size="8426" version="27.0.0"/>
+    </Directory>
+    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools" name="javadoc">
+      <File SHA256:hash="de88d947c2d56109e358f45ad2ef3960500110fbb255364e7ba4871d47f6c426" name="constant-values.html" size="23958" version="27.0.0"/>
+      <File SHA256:hash="f738b8c7f3bc160c8b1de81e42a8682769efc26ccb62f17ccfa5aef65de0a929" name="overview-tree.html" size="44720" version="27.0.0"/>
+      <File SHA256:hash="039e24dc4921febd00f49e8c555843a93e61fc525bbbcbee2ff298a1153508f7" name="index.html" size="2859" version="27.0.0"/>
+      <File SHA256:hash="f88894f83b616b2462f2189a49bb4f6697a94f97316461aaecbf301f868c3933" name="overview-frame.html" size="2082" version="27.0.0"/>
+      <File SHA256:hash="c5f0482ca41e66fb9c50448ae95b753f6a1c6aab2d4a7c2cf8bf0a675b0cc62c" name="allclasses-noframe.html" size="25586" version="27.0.0"/>
+      <File SHA256:hash="b79a5a8871ee85c3dc562881fd811252d16e367ad588682ff61f8b4b0eb61359" name="index-all.html" size="684042" version="27.0.0"/>
+      <File SHA256:hash="9db6a73fa538f4b45a4b4c1d7bd18cb0221bd05c667d794e02f2bc1a96921a70" name="deprecated-list.html" size="38921" version="27.0.0"/>
+      <File SHA256:hash="506393161b692568f588d68beaecf9ad5d33f147abad909d9cde12918dbce7b7" name="script.js" size="827" version="27.0.0"/>
+      <File SHA256:hash="1bd7e17fe3d51bcd775fff086f66b19fc97a2f467248f382d8310c6b114c4d5e" name="stylesheet.css" size="12842" version="27.0.0"/>
+      <File SHA256:hash="2df92f9865bbb4890de09a45aff250bce9f1abe07f2866bd63feb13deae37d74" name="overview-summary.html" size="5965" version="27.0.0"/>
+      <File SHA256:hash="a4aec0f8e45c8d32d61fcc8c341837b90f5edd4434469e7edc7dc3d38cc2242f" name="help-doc.html" size="8163" version="27.0.0"/>
+      <File SHA256:hash="2e9c613d81a882301d07e114df2d27bd36d0d8b162aefe083916df139b9af89e" name="allclasses-frame.html" size="29206" version="27.0.0"/>
+      <File SHA256:hash="72c144069c38767d77089ee257cc4e2a5ac40d622cb89fcf0219c544bb2419d7" name="package-list" size="317" version="27.0.0"/>
+    </Directory>
+    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc" name="io"/>
+    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc/io" name="anyline"/>
+    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc/io/anyline" name="plugin">
+      <File SHA256:hash="bd4f5a42f3d63f12b8d1098845e15eea6978f7e61cf8ae85ac74bf1efc6f1a95" name="ScanInfo.html" size="10802" version="27.0.0"/>
+      <File SHA256:hash="f088faaf30e8c9cf064cdbb37cefc7d3a32d31fcd911872d73c9855bfdb6ec50" name="AbstractScanPlugin.html" size="42197" version="27.0.0"/>
+      <File SHA256:hash="63f1e62ff8a569704e43cf4269a1ee6a8092c9289538c7cf474504c23815a40b" name="ScanRunSkippedReason.html" size="10805" version="27.0.0"/>
+      <File SHA256:hash="353780b48dbe99280e5b43fc15c7337d1fec4443391db917a180bf6bc3b671e3" name="package-frame.html" size="1772" version="27.0.0"/>
+      <File SHA256:hash="dae8073b1a9a1165865b54541eda87e8e1808c5975079a888550d54e3a49467a" name="package-summary.html" size="8272" version="27.0.0"/>
+      <File SHA256:hash="1d631afaad7a04d0f496592e467b3e779941d11f9c9b17e3a402e03f37b70221" name="ScanPlugin.html" size="19347" version="27.0.0"/>
+      <File SHA256:hash="9a5611d8dce22f871cba0f4c221ac136bae8734722dfd61c7ee05ccbc01e5f89" name="ScanInfoListener.html" size="8035" version="27.0.0"/>
+      <File SHA256:hash="d63a17c7f4df216cf4744afb9720ac506add1544155cf865a4e748c9801d756b" name="package-tree.html" size="6293" version="27.0.0"/>
+      <File SHA256:hash="268601a0cd12f9fe9802c4f2e7e756b5cdac5ef25eae4c39ce0263382ea6f68b" name="ScanResultListener.html" size="8290" version="27.0.0"/>
+      <File SHA256:hash="4822917dcd2a48459bfaa6a9ec07412c3a754788b4e15e41058f107ea2eb7e2c" name="ScanRunSkippedListener.html" size="8356" version="27.0.0"/>
+      <File SHA256:hash="7db77ef5900d1c212eda352add3664b4a0dd36d4c43243c574e4900f7712999f" name="ScanResult.html" size="15703" version="27.0.0"/>
+    </Directory>
+    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc/io/anyline/plugin" name="licenseplate">
+      <File SHA256:hash="c3b2f70f1040b1e8cf7e569165f64cfa348caaf45f845080d4c19de029ba77bd" name="LicensePlateScanViewPlugin.html" size="13898" version="27.0.0"/>
+      <File SHA256:hash="7afbd6ca2bda4f49c3c05d03903ab3b11f005784f75254f7aa3d887da6dbfa09" name="package-frame.html" size="1296" version="27.0.0"/>
+      <File SHA256:hash="b87cfb34d0d54c19e59d093f27b11f0d039382e64cf97c463d555455b9ecc145" name="package-summary.html" size="6032" version="27.0.0"/>
+      <File SHA256:hash="4f611e74227795ad286c613a863afa4923eeaa319ff9bb19b5aa2efda49d9267" name="LicensePlateScanPlugin.html" size="28562" version="27.0.0"/>
+      <File SHA256:hash="a9335bec98cf29a4feb1a7d4cb0d253ac8bd96a8565c64ff51d3391013090194" name="package-tree.html" size="6851" version="27.0.0"/>
+      <File SHA256:hash="1b6cf1d942107110784b18d03d5580e6c58b5f6febe3aa915d5e7c5ccf3711c2" name="LicensePlateScanMode.html" size="37948" version="27.0.0"/>
+      <File SHA256:hash="f05688a29612c8b804fb6ea52e1fa17b950ecba8f4881a6281861c6fb3ee34ba" name="LicensePlateScanResult.html" size="13490" version="27.0.0"/>
+    </Directory>
+    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc/io/anyline/plugin" name="ocr">
+      <File SHA256:hash="6f2c5623ef152e8c4197eb2b06db59a5b2ac45fa6e0ba579e9664818eaef1327" name="AnylineTINConfig.html" size="14416" version="27.0.0"/>
+      <File SHA256:hash="11cb97d95da8794c6b416594ee3bac27e79c0bd821820781ad7efc2ebfca6d87" name="OcrScanPlugin.html" size="21243" version="27.0.0"/>
+      <File SHA256:hash="bab97aa376c5f21fb799db5ffe433acaf3206598bb89fcde8a9128287a26762e" name="AnylineTINConfig.TINUpsideDownMode.html" size="14075" version="27.0.0"/>
+      <File SHA256:hash="e091eabbfbfd95ccf9971e167ab773eab8833c7223ce8ecb00d12cc89656e8e1" name="AnylineCattleTagConfig.html" size="8111" version="27.0.0"/>
+      <File SHA256:hash="4f1293449c142e9ceab5b3cd7ffef3fe1aa4ba462ce8c4e7c7ae7955adddb1ec" name="AnylineOcrBaseConfig.html" size="9953" version="27.0.0"/>
+      <File SHA256:hash="c40c74729b8cf275ef00a589eb6b2e05acf1581e72a3fe5b7c02ade58dcf7b68" name="AnylineOcrConfig.ScanMode.html" size="15207" version="27.0.0"/>
+      <File SHA256:hash="744a5a768893a488c3bbe9f3152e20071bc732a53403a469a844ab405049682a" name="OcrScanResult.html" size="13774" version="27.0.0"/>
+      <File SHA256:hash="2a544ea629e82f2399fe018bc356abf2f1151ea6e25506fc9088a78e1ef369f3" name="package-frame.html" size="2674" version="27.0.0"/>
+      <File SHA256:hash="89bcdaeb8cdc5f38e282012147cbb4ddd8152c2038e6930ed7d36d9a3ea3dd5f" name="TINResult.html" size="13631" version="27.0.0"/>
+      <File SHA256:hash="670149402db39613c70292cb8971d395e3331ab33d5f69e4ca4caf745b31966a" name="package-summary.html" size="9180" version="27.0.0"/>
+      <File SHA256:hash="ebcd1e2bdbf5137d5f9882d958a21179b162cadab2e08e0c716989436523e8d7" name="AnylineContainerConfig.ContainerScanMode.html" size="13793" version="27.0.0"/>
+      <File SHA256:hash="388e1545f1f881cc47476c072d37db4e92e77739d6636413af52204bc5774bca" name="AnylineTINConfig.TINScanMode.html" size="13377" version="27.0.0"/>
+      <File SHA256:hash="8ef350353756f091dcc5b5cffadc7b1d45df8f80f0f6597d1414166e6fda7b3d" name="package-tree.html" size="9077" version="27.0.0"/>
+      <File SHA256:hash="91100a9cae06c239669c835edddc6d152a4df5532682f40578d1d9ba9c98e597" name="OcrScanViewPlugin.html" size="19085" version="27.0.0"/>
+      <File SHA256:hash="0d3682894892d7cffcfb6b2e647d80852b983e917ed57b6c56d43ef8ea5f9ef9" name="AnylineVINConfig.html" size="11980" version="27.0.0"/>
+      <File SHA256:hash="aea06cf3d1b4bac47fcdf8d0a95022ea91f94fd784dbcd3db17e5169a4e4f8c5" name="AnylineOcrConfig.AnylineOcrRegex.html" size="17170" version="27.0.0"/>
+      <File SHA256:hash="1b4a4f398214e2a7adb71fdc9cf0743c75e8060919ff143bed5ffe857e3444a3" name="AnylineOcrConfig.html" size="38302" version="27.0.0"/>
+      <File SHA256:hash="e36547f9b1d8b77f6ba35d080d764c443fe0c4a3a1978d356ae79e7e75467a06" name="AnylineContainerConfig.html" size="14866" version="27.0.0"/>
+    </Directory>
+    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc/io/anyline/plugin" name="document">
+      <File SHA256:hash="364c1dc57531bb1f58ad33ee848aca26be63eb7dd14c38db24cc5b110364e355" name="DocumentScanPlugin.html" size="39868" version="27.0.0"/>
+      <File SHA256:hash="f44eb9f1d9fe4208a33d741bc74e50c5c5d91dcd2070ca04de6e0f74b03c097a" name="DocumentScanViewPlugin.DocumentRatio.html" size="18500" version="27.0.0"/>
+      <File SHA256:hash="e67128fb08524d3f6450d0c0704f74f774fd76ac697df9abbd1dfdd615a23088" name="DocumentNotifierListener.html" size="8639" version="27.0.0"/>
+      <File SHA256:hash="e3e2c505f17fda579e7781c1e34ead372bbef9b9a4a367c1750e6a9f012e23ef" name="DocumentScanResultListener.html" size="22373" version="27.0.0"/>
+      <File SHA256:hash="789fd35f31d55b314b12aa87bed331961c1d428b8d4a8fa8e46e30ef00be26bd" name="DocumentScanState.html" size="14123" version="27.0.0"/>
+      <File SHA256:hash="6f2e43f7b92c8146602a9eb6e0f4507a303ba75ed71d54f2d349b3b4cb8de5a1" name="DocumentScanViewPlugin.DocumentError.html" size="20465" version="27.0.0"/>
+      <File SHA256:hash="93afcebed816dbbd999599a2d9cc7fe3e1c6b1fa965bf8d5785d439b1adea2f5" name="package-frame.html" size="1873" version="27.0.0"/>
+      <File SHA256:hash="244b680ac080a0ce8e559348062bf08468d4645af628a862d3883a4188178134" name="package-summary.html" size="7796" version="27.0.0"/>
+      <File SHA256:hash="b6f0d8ede431507e154b729338754ac9e7364addfe06b45bca5093dfdba44048" name="DocumentScanViewPlugin.html" size="31226" version="27.0.0"/>
+      <File SHA256:hash="c1e915cc6baaa6471d5989f9e69e0d6e8402fd9df11d5c14323ec1569f111660" name="package-tree.html" size="7386" version="27.0.0"/>
+    </Directory>
+    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc/io/anyline/plugin" name="id">
+      <File SHA256:hash="b040c73f607a15ce3e8619ce262dd0ddef5a0f53e7423337375edcb6beac4667" name="IdConfig.html" size="17150" version="27.0.0"/>
+      <File SHA256:hash="bf08b864acf4ddea281eef74878d47219c0d9163d1b8ee9c45e385420a5c4757" name="IdScanViewPlugin.html" size="15505" version="27.0.0"/>
+      <File SHA256:hash="b7f070be52e66098b872000f36c98822d96e8fcd43472eb772d1310b4d164983" name="DrivingLicenseIdentification.html" size="52923" version="27.0.0"/>
+      <File SHA256:hash="254cbf9670ffa15dbaa04a6dc333031dfa01e8a52b366e7dcf99ca0dee89805e" name="Identification.html" size="12055" version="27.0.0"/>
+      <File SHA256:hash="fb29c3b3e55da2717fff89213a79b8ed76dbb2855e4f893f51a3647da6e1d900" name="IDFieldScanOptions.html" size="10349" version="27.0.0"/>
+      <File SHA256:hash="6e6b106af53301ed911c829254b2e54cdb8daccfe5bf529b32f2106ee7f1d6ca" name="UniversalIdConfig.html" size="16375" version="27.0.0"/>
+      <File SHA256:hash="e2b1d905bbb271a3e5a17df02327830780475f8e1d9715e9b225c042bc14bb65" name="DrivingLicenseFieldConfidences.html" size="18864" version="27.0.0"/>
+      <File SHA256:hash="d277a9313588a818b7c8cc56ac1ede0317fff5f59e2ba292eea402612cbe5fbb" name="TemplateFieldConfidences.html" size="10853" version="27.0.0"/>
+      <File SHA256:hash="ad162c94e60f5a2cd8f02ce9098c16aa36daa62023d8e6ef097a7692f7528f56" name="MrzConfig.html" size="13615" version="27.0.0"/>
+      <File SHA256:hash="2e56eea11fd3bdcba4f49ca3f12d0ffbdda1cf2554651d01e071f65e29a3d2e2" name="ID.html" size="13931" version="27.0.0"/>
+      <File SHA256:hash="0c318ae1556c1b3da967db3dd5c4af07640adb7c3b8bb3c7c14a8d4f12377674" name="GermanIdFrontConfig.html" size="9912" version="27.0.0"/>
+      <File SHA256:hash="ff67af912302d92bd88ca2b7165ba735d7451eb563ce299aab3853b8aec84b6e" name="TemplateConfig.html" size="11559" version="27.0.0"/>
+      <File SHA256:hash="db0ed89beeef97e4de2c7791c5ee0bdbbb4f9f00fd17aa60b9bcc1e9377e7afe" name="DataObject.html" size="5020" version="27.0.0"/>
+      <File SHA256:hash="30ce07ceb62fd98d29b28197b9ee0b513236a2debaf2e11b475975ce471e8d08" name="NFCConfig.html" size="10548" version="27.0.0"/>
+      <File SHA256:hash="303c1bd421ebd0818495b972873d06672a11d36f4d8fedfaba7697662d7ae3d1" name="IDFieldScanOptions.FieldScanOption.html" size="16106" version="27.0.0"/>
+      <File SHA256:hash="a1f3ccef7c3ec8e01baebdb5eda75d4f7fddfd7d6d18e8689bc23ad9723041e4" name="IDFieldConfidences.html" size="9278" version="27.0.0"/>
+      <File SHA256:hash="e666b603cefae0eba3a43193a39c6bd16fbb61045252caf853d4e3e257f77f4c" name="DrivingLicenseConfig.DrivingLicenseCountry.html" size="15865" version="27.0.0"/>
+      <File SHA256:hash="9713bb18c03db5a23f1e74d90852a4a6d53189b47f899e94dae11d13ea5aabe9" name="DrivingLicenseFieldScanOptions.html" size="25777" version="27.0.0"/>
+      <File SHA256:hash="f5333021b15c10a42f642128e7f9e0bb216354bf5b17ea6dc2a563d0edad0477" name="TemplateFieldScanOptions.html" size="11813" version="27.0.0"/>
+      <File SHA256:hash="115c62c1ba52cfdfadd964a4b064514be1fb25e792d07d202cd06b5d8e7e40ad" name="LayoutDefinition.html" size="13716" version="27.0.0"/>
+      <File SHA256:hash="ad453687f355606625f5f5037ed379bb26daf856fa41022a18b184a49e98b188" name="UniversalIdLayoutType.html" size="13554" version="27.0.0"/>
+      <File SHA256:hash="4dfd2216e3eb5c3d64343e77264e2955d9d85390a99b7dc7547d59a4c308c8b9" name="IdScanPlugin.html" size="23580" version="27.0.0"/>
+      <File SHA256:hash="5d5939c35bf8c67a7652db5e918a57efffd3d8e57b30f03e90e0bbf8526a4d11" name="package-frame.html" size="5031" version="27.0.0"/>
+      <File SHA256:hash="c81a797d7d57e4dd0606c789d8a0b6ff967991ae368fbf3bcafbc96d379e9a27" name="GermanIdFrontFieldScanOptions.html" size="24143" version="27.0.0"/>
+      <File SHA256:hash="031c2a1729c34b16ca458c06cbb3b0e6e15f23dc0fda21edacdf349e3fa38483" name="GermanIdFrontIdentification.html" size="40321" version="27.0.0"/>
+      <File SHA256:hash="1f4e03236919b48d00e31397f54f7ef613744d6ce4e204a1ca12c3c8cb88b4e9" name="MrzFieldScanOptions.html" size="33928" version="27.0.0"/>
+      <File SHA256:hash="b935982105670631499708b8cbc11aabcaca30650c6076e1bb0456312e8e6372" name="package-summary.html" size="13155" version="27.0.0"/>
+      <File SHA256:hash="bf4bac2c23af7a1f98bc90d4d676dc1f850f0f7df148cd200fe3d2e925614721" name="UniversalIdLayoutType.LayoutType.html" size="5161" version="27.0.0"/>
+      <File SHA256:hash="5370e96d26804e5ef593a2ebb3eeec4b4cb0327c3593962c67fff39eef7c3ff2" name="UniversalIdFieldConfidences.html" size="13901" version="27.0.0"/>
+      <File SHA256:hash="d950b0480416966724e15e7a5403a85b85c44f0d113a4d14ae477366ee22b67c" name="MrzIdentification.html" size="82147" version="27.0.0"/>
+      <File SHA256:hash="65041aea7bc171af99bb691b20c4af65c8bf2cdb924b19c082c47df4666b28ff" name="DrivingLicenseConfig.html" size="13649" version="27.0.0"/>
+      <File SHA256:hash="343540b502c0e86d68f30c8a325bf2212c44602f8e272e325ba6ec0cb4127d00" name="package-tree.html" size="12743" version="27.0.0"/>
+      <File SHA256:hash="69ab893bd4df87a4c7c969e51be2cffa4025c90fc69c99528bb910e045913879" name="MrzFieldConfidences.html" size="34443" version="27.0.0"/>
+      <File SHA256:hash="547662ba3f8d7fc5c55e45efd61f8ec501da880d3562872770aade4116630060" name="GermanIDFrontFieldConfidences.html" size="17911" version="27.0.0"/>
+      <File SHA256:hash="ceb7703bbcefb363ea42ac28d842f07ec66896c0d417d35cdc057f8a0b5df802" name="UniversalIdFieldScanOptions.html" size="15480" version="27.0.0"/>
+    </Directory>
+    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc/io/anyline/plugin" name="barcode">
+      <File SHA256:hash="7e674ef3e4332e825cd2237ecf3e71c5d51cccc030ec6452cb63a81024bc9a3c" name="BarcodeScanViewPlugin.html" size="17495" version="27.0.0"/>
+      <File SHA256:hash="c1fcc88961bd6cc39f56571fbac91b4ed60778646ccd7bc81e2ea2aa47def5fe" name="Barcode.html" size="9915" version="27.0.0"/>
+      <File SHA256:hash="2f01e6cd810bce3140f624f085934bb7a4110738c289ed9d9c035cd7cb898fd6" name="package-frame.html" size="1324" version="27.0.0"/>
+      <File SHA256:hash="e9b4cc91f41c5039f2afc43742f316c66bf65de4715b9c0c2649c7dbd7c10119" name="BarcodeFormat.html" size="36106" version="27.0.0"/>
+      <File SHA256:hash="32b5c4d8d1b12d3910f53163249a9433257b0a0fc7c7c5341be5260b88239afc" name="package-summary.html" size="6291" version="27.0.0"/>
+      <File SHA256:hash="7f15f688540c0ad6ff09741cda18c0fe32d9d6d59088ad8800c22b1a76e58e18" name="BarcodeScanResult.html" size="11735" version="27.0.0"/>
+      <File SHA256:hash="f504c7fb9c664d13ca33d15c5cd6922a2bd897940ea0232ea0932aee9eaa493f" name="package-tree.html" size="6921" version="27.0.0"/>
+      <File SHA256:hash="5e7d08a2920212e4e9b736afb3d3dbee9eb7cc668da7825b01d51c53dfec4546" name="BarcodeScanPlugin.html" size="22216" version="27.0.0"/>
+    </Directory>
+    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc/io/anyline/plugin" name="meter">
+      <File SHA256:hash="c3d14eb0c7389c2eb47b39f84b2a5b268c278aa8ee4b8d11286d50c4fb623c2d" name="MeterScanPlugin.html" size="23618" version="27.0.0"/>
+      <File SHA256:hash="fee82c5be40aad9a9751bd9c1fbc8d62a383689a5201e10ee3d6609e2bd99f86" name="MeterScanResult.html" size="13758" version="27.0.0"/>
+      <File SHA256:hash="85c6627b7e951aca5062a6c99367ba84f44df1931c05627c09bf7bbf0e833218" name="package-frame.html" size="1191" version="27.0.0"/>
+      <File SHA256:hash="0dcf66076b45dc68547ee5aa8fb47d61161d549910ee516ee2ca9cb40926412b" name="package-summary.html" size="6216" version="27.0.0"/>
+      <File SHA256:hash="ced5f80505ef49d7f7b77f9311e7d773e2d6e0f09479129099090ed4b38469d0" name="MeterScanMode.html" size="18717" version="27.0.0"/>
+      <File SHA256:hash="e6e727709a6e7a656715b9dbfcaae1ff3f6947f1b775c6a2be0a895b0cbc3719" name="package-tree.html" size="6692" version="27.0.0"/>
+      <File SHA256:hash="d46ead26b114120c037cd59dbc5aa48020bb2b01aaafb6fc676e38be8b7332e3" name="MeterScanViewPlugin.html" size="20005" version="27.0.0"/>
+    </Directory>
+    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc/io/anyline" name="view">
+      <File SHA256:hash="cdb914e9a5c46c5bcc16a4c697de0b635390641cf704b86997c1502feda4c01d" name="ScanViewRefactor.html" size="7327" version="27.0.0"/>
+      <File SHA256:hash="be45a42ecce2a2f1a6b463402ccf15a8c27e79e9747cf84c727821dd99cf8363" name="FlashViewConfig.FlashAlignment.html" size="16692" version="27.0.0"/>
+      <File SHA256:hash="8da19f0a969b99635fec88cb70224cdc033513d4e4330b9fb014a9d75d268103" name="BrightnessHelper.html" size="9814" version="27.0.0"/>
+      <File SHA256:hash="72e7a2fb3767f873ebcf3cf1ccb003b51afe99668810b7b6a88573cfb9477de1" name="AnylineFeedbackView.html" size="27947" version="27.0.0"/>
+      <File SHA256:hash="fa89dcc6eaebf7bfe6749f272311bddc17bdd0c9ef9ddfb970873259ab8a21ff" name="CutoutRect.html" size="14763" version="27.0.0"/>
+      <File SHA256:hash="59ca7c6af7b5e114dac0d5fa578e46320847a6a502fa865efeef1c3beef9ff1d" name="DebugUtil.html" size="7189" version="27.0.0"/>
+      <File SHA256:hash="dabe30d0b32137067eae031ad5f4f8708cc0a5c09e8777815e891186a8402b88" name="AbstractScanViewPlugin.html" size="33549" version="27.0.0"/>
+      <File SHA256:hash="65abd3cfc3f38e8fb8f5214268aaceab55c5cff4d160fb9fef36b1d2c9ed2609" name="CutoutConfig.CutoutAlignment.html" size="15362" version="27.0.0"/>
+      <File SHA256:hash="83a9077886052c744afd25e116ea172487a5517c67ad5735b92cba484d317868" name="CutoutConfig.CutoutStyle.html" size="14760" version="27.0.0"/>
+      <File SHA256:hash="009476fdeeb115ad1a6612a4a3d1f4153ea8c1e10ff21dbd55abc48f574f81a0" name="LightLevelHelper.LightLevelListener.html" size="8535" version="27.0.0"/>
+      <File SHA256:hash="dd70708a7158331f30fdc0cd8752e2e1289faffad97730d3f7a5a861bd50110b" name="UIChangeListener.html" size="9199" version="27.0.0"/>
+      <File SHA256:hash="af1bc217188da67be80625cd65c39110316192fa2f70ec2b685115adb378ef31" name="FlashView.html" size="40396" version="27.0.0"/>
+      <File SHA256:hash="0ccbed0dcbdaf216d8b3b59aa71701fa285dc63ddb4d1bed29cb9686087d3c32" name="ScanPage.html" size="21656" version="27.0.0"/>
+      <File SHA256:hash="9609b4ed5605795160bd9a4c10c99725dd3999885745a042d56c42e2038c8b8e" name="AnylineWebView.html" size="47455" version="27.0.0"/>
+      <File SHA256:hash="8c81af409ba79b6a091ced34b97e28d8cc46892e802162257f40fecd36c95f21" name="IAnylineViewConfig.html" size="7762" version="27.0.0"/>
+      <File SHA256:hash="d243a63f402b257f16df5f43b2fba221ca168b745588d70eaa317b2fe7d9f822" name="AbstractBaseScanViewPlugin.html" size="22386" version="27.0.0"/>
+      <File SHA256:hash="ea2b017692804a6e578dde63a9d3f70f4874b9b9dbe1b6223f8cd7afd1a08634" name="AnylineViewConfig.html" size="10136" version="27.0.0"/>
+      <File SHA256:hash="29d2447ba68d6758b90cf8cae9d134b30e00c43e74443ad7edb37c9defa55116" name="FlashViewConfig.FlashMode.html" size="14870" version="27.0.0"/>
+      <File SHA256:hash="8c678f6f08273bd005e214f0ee88857731a3e5d3d8e2ce7afca6c29a24337fa0" name="LightLevelHelper.html" size="12454" version="27.0.0"/>
+      <File SHA256:hash="6ba20dce5029e9a028edaa576aa4a5ebcb9e6f0528a50252179ad40882d355f9" name="package-frame.html" size="5613" version="27.0.0"/>
+      <File SHA256:hash="9ee16f2f6b9a6fd2b967bdcc762abb7ec26a6bba703f60600f74361c3beb3286" name="CutoutConfig.AnimationStyle.html" size="14726" version="27.0.0"/>
+      <File SHA256:hash="f8baf6557d6acafbbe829e9895173438746a5ecf1486fbf814fe6dad33fbd027" name="LicenseKeyExceptionListener.html" size="7405" version="27.0.0"/>
+      <File SHA256:hash="28215f1872efbf016748bb3077bc793bb65e9917cb69552a29e502eba68f7e02" name="ScanViewCameraConfig.html" size="23750" version="27.0.0"/>
+      <File SHA256:hash="28f46b38aaeb7edb6f14a71e55a8e21923abd8431971f5b3933e02d2f61203ee" name="package-summary.html" size="14034" version="27.0.0"/>
+      <File SHA256:hash="289cbe1b15173efd970a18118e829ec83d01a97365ad53bd90d18fc040fab4b8" name="SerialScanViewComposite.html" size="18472" version="27.0.0"/>
+      <File SHA256:hash="4c7ae4c8b2f332c237d1ffe83d5b9eeb2f5b314d7a7a552e929315e8fb66c3f3" name="AbstractWebView.html" size="43418" version="27.0.0"/>
+      <File SHA256:hash="a1c9961656d569113df94021ac15336822166bdb19763dd4a3b5053978c592fb" name="LightLevelHelper.BrightnessLevel.html" size="13673" version="27.0.0"/>
+      <File SHA256:hash="4cbfeb99472e1d5e3c1b022e7392b2ff7cb2997d721448f1ef618bc10a0fc848" name="BrightnessHelper.BrightnessFeedback.html" size="13751" version="27.0.0"/>
+      <File SHA256:hash="c8f4d06fc968e3da40e452d66a4f947d5444e0b05958ef9c382a2699d423bf83" name="package-tree.html" size="13428" version="27.0.0"/>
+      <File SHA256:hash="ad9b7e30302dd725fbb639819be07654ad4ed993becb593f234e418e69d643fe" name="CutoutConfigChangedListener.html" size="7645" version="27.0.0"/>
+      <File SHA256:hash="cf9a26ab5a417743edaf417aa821a2a8c77011aa0176e9f51161d1fdd53eec96" name="LightLevelHelper.AmbientLightLevel.html" size="14184" version="27.0.0"/>
+      <File SHA256:hash="b76681d43fac9fd0d74a93579da792c904696ce006d20b76bbadf50511e78aaf" name="BaseScanViewConfig.html" size="12508" version="27.0.0"/>
+      <File SHA256:hash="5fa24c97f49adcdb0aea3bfdce58735bb6c82aa1c306ec8915b6e650938a2a7b" name="JsonParser.html" size="10460" version="27.0.0"/>
+      <File SHA256:hash="6fe94b069ce2d0b59b85a5fe6dccb19217385311698f6e2ee9f31d6300862d86" name="FlashViewConfig.html" size="21250" version="27.0.0"/>
+      <File SHA256:hash="410dbd7b0f462c3e4745833c16113cfe5d424e4a9b9df27ea2d06b4f4fad90a0" name="AnylineCutoutBase.html" size="9585" version="27.0.0"/>
+      <File SHA256:hash="17e8a41e91e7e16e78b26261e1a5d1b6d71a44a224f9e3ba6c89bc63bb736e80" name="ScanView.html" size="60910" version="27.0.0"/>
+      <File SHA256:hash="0ad53a36d7369a099e7bfd9f8f92d488649096ae7dc6d9fd189712a9edfb2c45" name="AbstractScanViewPluginComposite.html" size="32548" version="27.0.0"/>
+      <File SHA256:hash="fef994079f8d8831197db86d43ba70c7bcd9a5c2d80392c2a793d22cc272d486" name="CutoutConfig.html" size="49099" version="27.0.0"/>
+      <File SHA256:hash="eeba897f52e48a49056e6a4a16a0f9c2c58901d0a86195a9234687ee1d77fa62" name="ParallelScanViewComposite.html" size="15778" version="27.0.0"/>
+      <File SHA256:hash="662b20be23c9ed806960626e441298661b596cd850cd6e40cc88393066c20b15" name="ScanViewUtil.html" size="15955" version="27.0.0"/>
+      <File SHA256:hash="b13eeffdb392544b32f8435a76cb6f703e6f5260aeb29c0d39b368fd79a4747d" name="ScanViewPluginConfig.html" size="17105" version="27.0.0"/>
+    </Directory>
+    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc" name="META-INF">
+      <File SHA256:hash="566ad1a80220026d05099562645ce968ff0e7c36cde22634332605bb34cc3eff" name="MANIFEST.MF" size="25" version="27.0.0"/>
+    </Directory>
+    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc" name="at"/>
+    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc/at" name="nineyards"/>
+    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc/at/nineyards" name="anyline">
+      <File SHA256:hash="700c7f21068055f346d73c16379e09770d5f930ca1ee72b149c5d5239e2aea2c" name="ImageProvider.html" size="9598" version="27.0.0"/>
+      <File SHA256:hash="7384b6385a6f45643437230fbcf91028d40d367dce5c1b26c2d1bb26b52c7892" name="AnylineDebugListener.html" size="31039" version="27.0.0"/>
+      <File SHA256:hash="65ec0438553dc64695ad38e9c1297a461e5941c8f42625a07b7bdb0a6847ee67" name="SimpleImageProvider.html" size="15100" version="27.0.0"/>
+      <File SHA256:hash="cdd0ffe28da46ee1bd8523d0f6cc4ae4fdfb5bc63211e8834866941fe4f4009e" name="package-frame.html" size="1426" version="27.0.0"/>
+      <File SHA256:hash="2a4ece28139eecb4e30d62c675dca686e87df89425bbacdde52a225a9223e664" name="package-summary.html" size="6223" version="27.0.0"/>
+      <File SHA256:hash="cea689e86105d5f7367e460cb63286bcccf9c84e01dc1d402b22206f5de36b32" name="package-tree.html" size="5369" version="27.0.0"/>
+      <File SHA256:hash="79fae4ec8cb21162e1e23e7337d87854ef4cc6f665d7beddd38b53333aafb275" name="AnylineListener.html" size="10161" version="27.0.0"/>
+      <File SHA256:hash="e7326aca21211144ae8b1dae5247aca36a37482ff090bbecb0d5437cb50432c0" name="AnylineController.html" size="33456" version="27.0.0"/>
+    </Directory>
+    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc/at/nineyards/anyline" name="util">
+      <File SHA256:hash="31a7225e5ae4ad6d9621550a9429ae83d752c8111ec1e317680088d7cebcc7da" name="ColorUtil.html" size="9332" version="27.0.0"/>
+      <File SHA256:hash="60602ffe391e64d411484839735ee87ea10a6bca53eaba78ebd11db50a425c3d" name="AssetUtil.html" size="22920" version="27.0.0"/>
+      <File SHA256:hash="73ddbc941e5ae4593b934c049bd1129de60d45c5a02f457ea7e995fecd10f73b" name="SoundUtil.html" size="12243" version="27.0.0"/>
+      <File SHA256:hash="8a51d4d5d1279578f8573f64aeae892990e0a7202c641f76e211ae61f268105c" name="ConstantUtil.html" size="22712" version="27.0.0"/>
+      <File SHA256:hash="229b7e9a3cde6eb1318f82efce95458b396b548252fd114148ff404a6b071327" name="NumUtil.html" size="11596" version="27.0.0"/>
+      <File SHA256:hash="3995a5b5d7b9b328c8db64c5be806ed4d1807d08ad93f46a6418d23dc7e871b9" name="package-frame.html" size="1669" version="27.0.0"/>
+      <File SHA256:hash="ad7d6c29b7347b47d898eb3bd5efa58032fc89bce45bb529ede2f45fd9eb64f2" name="package-summary.html" size="6832" version="27.0.0"/>
+      <File SHA256:hash="a302463cd66db6872373f30f7065236435dcf6765fd2488bf7c43be36b3c6f18" name="package-tree.html" size="6176" version="27.0.0"/>
+      <File SHA256:hash="7c10daefecdf79a758c763951db318434f9d71e9c3af9fa79224d2678ab49638" name="TempFileUtil.html" size="10793" version="27.0.0"/>
+      <File SHA256:hash="d31f2948064f5b489b29b78f2209f7d2b4dc8c54f46359cffe2eee30914f9847" name="VersionUtil.html" size="8690" version="27.0.0"/>
+      <File SHA256:hash="0d215103b51885f59b1a3bce8202d609bfde37b3ad4b7bddf46ac65dedb89352" name="ArrayUtil.html" size="11072" version="27.0.0"/>
+      <File SHA256:hash="a8375f3a7c975b01e3f13278054ede81453f69b7db6b9f3295e173048f567ad2" name="DimensUtil.html" size="13082" version="27.0.0"/>
+    </Directory>
+    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc/at/nineyards/anyline" name="camera">
+      <File SHA256:hash="d4567c7269e1c2aa5e91fa3adfa6fc142ab68e9795ef60f5d804e6b48e5c82da" name="CameraFeatures.html" size="26891" version="27.0.0"/>
+      <File SHA256:hash="6acbfe0580191c56c75b8c4559cc516fcc5ec5c3cc3b6ee61b069b11aa51dda4" name="ImageReceiver.html" size="11206" version="27.0.0"/>
+      <File SHA256:hash="aa9408dff3e97d4414489580ed88968b0256c882c3ab41744582c489b4b5b000" name="CameraController.CameraControllerListener.html" size="7878" version="27.0.0"/>
+      <File SHA256:hash="1dd2f9d54ddc40848b3f6d34541a4edc545018df97537104f17f0cb5032298cd" name="CameraController2.html" size="47307" version="27.0.0"/>
+      <File SHA256:hash="3b80d71bde611ee7d3c56440ba186250885efb42b87bf8d4f5860c9ef4f4b3b6" name="CameraView.html" size="79316" version="27.0.0"/>
+      <File SHA256:hash="8d7be1e6b6f1a2a069cb5bb5705c2c0b3ba981ef70e2b4fd40b62e77d39ed1d9" name="CameraFeatures.LensFacing.html" size="18919" version="27.0.0"/>
+      <File SHA256:hash="9fc86a397ece34fb93284b14093c96fdc8f92753041e9a4d4922bd15c35de279" name="NativeBarcodeDetectionThread.html" size="10252" version="27.0.0"/>
+      <File SHA256:hash="a9221750e8c7961c9a0d3e057aae0c7e1a8255af0e23fa462b5cf3191fb9ef74" name="AbstractZoomHandler.html" size="12953" version="27.0.0"/>
+      <File SHA256:hash="8cfeaf7c7af7e262688edf74c7e5d7ef88c2bcd709e38d8c516e302c6ac17b2c" name="CameraFeatures1.html" size="14367" version="27.0.0"/>
+      <File SHA256:hash="8e67560e1a79a9afc312df353634d372bbfb8c5efe7585975a3d98a979930d5b" name="CameraFeatures.OutputFormat.html" size="24593" version="27.0.0"/>
+      <File SHA256:hash="e7e74434eedb09bfe44c81695d72a7e8ff7e80bae552a2dce624b19c1b630f30" name="HighResolutionImageListener.html" size="9232" version="27.0.0"/>
+      <File SHA256:hash="b7227b27e90b8a0ecc9037d470ffb944500190088fb24c192a0605539e9dce7b" name="CameraFeatures.FocusMode.html" size="20798" version="27.0.0"/>
+      <File SHA256:hash="16eb839b54b6edca33ac0450584826c8afa6be81c353f32be85bacd3188269d8" name="NativeBarcodeDetector.html" size="15430" version="27.0.0"/>
+      <File SHA256:hash="295aee021d3e05e9ccc534c8f865ea5af3526418a2b0f21a8d87f3087adb2403" name="CameraOpenListener.html" size="9369" version="27.0.0"/>
+      <File SHA256:hash="72cebff6bd49b47a269c4f076bdb897c9899852748790b51d03b63cf64bb1774" name="CameraSize.html" size="14030" version="27.0.0"/>
+      <File SHA256:hash="0345a23060fd9420772a63d86208ccc7dec3a292dd330937f848439623f6d598" name="SimpleZoomHandlerBuilder.html" size="11897" version="27.0.0"/>
+      <File SHA256:hash="c37c340b8abddaef116d40fed733db59a987c5e566de9354dcb89f1053e24d14" name="FocusConfig.html" size="9898" version="27.0.0"/>
+      <File SHA256:hash="96477f36c70e34445740e8fc53ecd44ef3ad7a9795bab4650dc286f60a2d1ad2" name="CameraFeatures.SceneMode.html" size="26998" version="27.0.0"/>
+      <File SHA256:hash="cf2a1752fdeded5f8126c89845fafb199386c486d2a2b9c60bc3aea7899061f9" name="FlashControl.Mode.html" size="13598" version="27.0.0"/>
+      <File SHA256:hash="7ba99bcc49c1b6c61554310950221c58b8be461239c9338d46e5c9bab227bdc4" name="package-frame.html" size="7775" version="27.0.0"/>
+      <File SHA256:hash="c1a019c5aef4ef4aaf0427c1addfb4e2a89540ed26e9d86e45ef72a1034a96db" name="CameraUtil.html" size="24236" version="27.0.0"/>
+      <File SHA256:hash="5827d5020a7cd1ad4604d98db1be98aa5a8dbb45fe78997c49b0d124b698a6c9" name="package-summary.html" size="19333" version="27.0.0"/>
+      <File SHA256:hash="5caf2a261d0d539a1b699a9579c74302554af22c74efd0467b90beb8b349b3df" name="ZoomEventHandler.html" size="7644" version="27.0.0"/>
+      <File SHA256:hash="12628784a7bc7d95111cb2779a2a2f8224a047e4f714a971ea50134312f1e3f7" name="SimpleZoomHandler.html" size="12542" version="27.0.0"/>
+      <File SHA256:hash="63acd07b32ad6f64de4fcd126107be4961b151b4fd26be0458d698c8443d7f49" name="VisualFeedbackConfig.FeedbackStyle.html" size="17359" version="27.0.0"/>
+      <File SHA256:hash="cb5eb1b9d876354c18448bb1b83fcc330c4414a3c68186aaf8c9ed275f88d541" name="HighResolutionImageProvider.html" size="11533" version="27.0.0"/>
+      <File SHA256:hash="fdd2b182af0a7e74343fcee3cf988ed288cd93d66863331490778f0fc27f4614" name="VisualFeedbackConfig.AnimationStyle.html" size="18168" version="27.0.0"/>
+      <File SHA256:hash="8859b6c8d6c9b65536efe307b4ef3b61370c5a2a1d53b0ce7688ef98fe715d46" name="ActiveArrayZoomHandler.html" size="13239" version="27.0.0"/>
+      <File SHA256:hash="e5353ff8e1b2ba164b98884cecfe81b3c98f277afa56f25cc71ca0b6ecf39ff9" name="CameraController.html" size="46797" version="27.0.0"/>
+      <File SHA256:hash="64150b17a45026636918231e8f8fc2df1ce52d8b6464b7253170d94b52d4ea06" name="CameraPermissionHelper.html" size="15574" version="27.0.0"/>
+      <File SHA256:hash="c26b1a3be8a7248f347631d7a47b09ff46f3053726f749a01feda8ec4c60e0b2" name="CameraFeatures2.AutoExposureMode.html" size="17718" version="27.0.0"/>
+      <File SHA256:hash="a6e5a22ce47e5db9520c98aa50d7167a217ae5b274225ace506d337270e2d134" name="FlashControl.html" size="13726" version="27.0.0"/>
+      <File SHA256:hash="618066356cff1fcd96268353a086fa718665395c7f2318c749e13484e5713609" name="package-tree.html" size="16216" version="27.0.0"/>
+      <File SHA256:hash="eb28d2f592b0efe81b3fe35cb1b48855fdb736cf958618ca3d5ce3378c52ac43" name="CameraUtil.AspectRatio.html" size="16531" version="27.0.0"/>
+      <File SHA256:hash="af493024527701c121dda2db5c36959e4ca20da6a353d7156e92c0a994de2f64" name="CutoutUpdateListener.html" size="8290" version="27.0.0"/>
+      <File SHA256:hash="782c37819440f2008b113bd3ad94c89570653f13a6c2b5397778a6c67dc7e0ca" name="ActiveArrayZoomHandlerBuilder.html" size="13012" version="27.0.0"/>
+      <File SHA256:hash="426d36d3313d96925200b418836af0bfbe1b962d06b9fee183cc2a5416a269b6" name="SimpleZoomHandler.IZoomHandlerListener.html" size="7867" version="27.0.0"/>
+      <File SHA256:hash="3002709d2ba5cfcf2172ea17c5608ef0bc31e22d66a9625103fe2df5a9949d69" name="CameraFeatures2.html" size="16914" version="27.0.0"/>
+      <File SHA256:hash="740a1b57032537723dd5745787c04cdd7305b3df3fca99f768978dd06f5ac5b9" name="NativeBarcodeResultListener.html" size="8788" version="27.0.0"/>
+      <File SHA256:hash="4b6b2a28b347ead43738594fbf0a4d7fa473cdc225a32ea0217c1ca3fab0b18f" name="FaceDetector.html" size="11068" version="27.0.0"/>
+      <File SHA256:hash="c8a8d10fc5a22c7ecc9e75c4d4db9ff1ba65af72a78c379e2c5f1b9ca4356d17" name="ActiveArrayZoomHandler.IZoomHandlerListener.html" size="8013" version="27.0.0"/>
+      <File SHA256:hash="b3009141e421008f39e061d2fdc086cb2ab8fcdba5516f5808290391834f4d5c" name="CameraConfig.html" size="48366" version="27.0.0"/>
+      <File SHA256:hash="fed7962d828be3d5804472fd66e86e84ae56f937477477a836a17eda7f37dc23" name="VisualFeedbackConfig.html" size="29644" version="27.0.0"/>
+      <File SHA256:hash="97c9fa772017b5d294b83d16f7103914436d94723044c461a6c63cdf45fc57ea" name="FaceDetector.FaceDetectionResultHandler.html" size="8845" version="27.0.0"/>
+      <File SHA256:hash="0a62a5ba6edc6dda886bb03956a4a2dd9e1cd580e734952cd17d75180dea3a1e" name="CameraFeatures.FpsRange.html" size="14574" version="27.0.0"/>
+      <File SHA256:hash="e3a3edf540246ccf2dc6b83df2a930a5e5e5141de04e1d3cd3ac5daa772d92a6" name="CameraController2.State.html" size="15858" version="27.0.0"/>
+      <File SHA256:hash="6459ca6bafdc1f9a4bfe01dce5cadbcdb3959e2e7f96fd5e77f571fc817e695f" name="ImageListener.html" size="9010" version="27.0.0"/>
+      <File SHA256:hash="5d451e2b5d4dbfd8459d5966f9dfb2cac593a7f35a5c4827bd9d0d41dd9e9d88" name="FocusConfig.Builder.html" size="21369" version="27.0.0"/>
+      <File SHA256:hash="fc365c7c7bb1ea0611216c6882614804f66c36cd7ebd84d345656c6552540d5c" name="CameraController1.html" size="50991" version="27.0.0"/>
+      <File SHA256:hash="4aeba8064a350522449583893970f086533f4cdcb4c19611d493fefdb6d9fd1b" name="CameraController.CameraOrientation.html" size="16732" version="27.0.0"/>
+    </Directory>
+    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc/at/nineyards/anyline" name="models">
+      <File SHA256:hash="1325a2eb4595d9ad3e4f43ecfba29f604b0e45bb5238bcf2df44ddb3669598d8" name="AnylineImage.html" size="16921" version="27.0.0"/>
+      <File SHA256:hash="e10cc3d4b4af17b34b0c7c76e8b051831b9fb63113bc4b06c533e3c8e4135461" name="AnylineScanResult.html" size="14381" version="27.0.0"/>
+      <File SHA256:hash="820624ad136ba117be3ffa71d2f74e292aa0783429e7190631fef3f52bf4fb7a" name="package-frame.html" size="1162" version="27.0.0"/>
+      <File SHA256:hash="338c03848478560731e057503ff59d7ad084d791c5c7838a2f2862bfe96da563" name="AnylineRawResult.html" size="15364" version="27.0.0"/>
+      <File SHA256:hash="940f0aa3fd7f242638eaead189f25086e3fb121227bf5a16f4e6862417d519cf" name="package-summary.html" size="5728" version="27.0.0"/>
+      <File SHA256:hash="8d2ce48bf0c3c9733aa5f49c62a969fb1be09c8d2b9af929564533db48b4cf34" name="package-tree.html" size="5324" version="27.0.0"/>
+      <File SHA256:hash="ef7056db011575582b8ff3177083208ffe6a8d7afb4a838fdf7b968bd4aaf628" name="AnylineYuvImage.html" size="26246" version="27.0.0"/>
+    </Directory>
+    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc/at/nineyards/anyline" name="modules">
+      <File SHA256:hash="4ccf803841fef7bba8f585dffa95e3ae0f2504c6f8e40892c81a5ef885c70c53" name="LicenseExpirationHelper.html" size="9286" version="27.0.0"/>
+      <File SHA256:hash="5a69edf615959e0d6517cde3213d2b57c986098324c245a2e38ca9a304dacedf" name="AnylineModuleResultListener.html" size="9003" version="27.0.0"/>
+      <File SHA256:hash="5a9a094ec467633293bbd28f80ded8af08676fa4a51347294e67270603d69abe" name="package-frame.html" size="1226" version="27.0.0"/>
+      <File SHA256:hash="588db027407cf02b5e532eeb595f971934b8e9a51897a71908bcf9aac7aa8e9a" name="AnylineModule.html" size="14526" version="27.0.0"/>
+      <File SHA256:hash="4c63f481d6532c7c2bf7c997a14361b935d3150c3ed8c6661260e6e014ecb0e9" name="package-summary.html" size="6192" version="27.0.0"/>
+      <File SHA256:hash="edb5716be48d97707b328089c278330d1846783f660513ebbf608bf2ee41c778" name="package-tree.html" size="5166" version="27.0.0"/>
+    </Directory>
+    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets" name="raw">
+      <File SHA256:hash="312a409d0ce3d0a00b7cd2c917142eb2fb8bad19c2bc970c0b5d3c69908ac42d" name="al_d6f3e042d13f4cc06b77dbdb2d2dcebaf46326e6.txt" size="7137" version="27.0.0"/>
+    </Directory>
+    <Directory location="" name="Examples">
+      <File SHA256:hash="409f84cd92b5f8e5b068c1d0bcea063b69d403c3a22e988c9493be013cb6632c" name="Anyline Xamarin Examples.sln" size="40698" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples" name="AnylineExamples.Droid">
+      <File SHA256:hash="ece7128a072b1105ae0914c004943f08a5db3a24e8c03cf87e932890b6006ca5" name="Util.cs" size="3496" version="27.0.0"/>
+      <File SHA256:hash="5355d699fa4eb612a270bda5b64ae528c5c0438be4fbe29ea35e71274670d9ad" name="ScanActivity.cs" size="4818" version="27.0.0"/>
+      <File SHA256:hash="334f2a8da4f13c90f84c926ba96c245f87107d5c1d97a4fd85d2a17b93d8cb58" name="ResultListAdapter.cs" size="8155" version="27.0.0"/>
+      <File SHA256:hash="d97dbeca5674427828c11932c0ad0bb803dac99913b456d511b8c9c787aa1518" name="AnylineExamples.Droid.csproj" size="9944" version="27.0.0"/>
+      <File SHA256:hash="0d340d5b8424e6c68705abfdca6a3bec8e365af5f1f53cbe9e2e0a56be118f6f" name="ScanResultListener.cs" size="1849" version="27.0.0"/>
+      <File SHA256:hash="782bcc6994c92a1a8166240e671a05d61d2545a01262c9a78cb36fd21af0bbaa" name="DocScanUIMainActivity.cs" size="14450" version="27.0.0"/>
+      <File SHA256:hash="aeb8e6b101e690f029ab1618a1880359e3f4634e51014f01dc9988020bada49f" name="DocumentScanViewUIActivity.cs" size="4973" version="27.0.0"/>
+      <File SHA256:hash="759399e8159f63f0be08f5fc4b596666099dec5b5e7eb6f1bcd8bead0c3193fd" name="DocumentScanResultListener.cs" size="1746" version="27.0.0"/>
+      <File SHA256:hash="96eed3844c6720d6b0d4ff4d8a934fd44d4e63468043ada0358d45fd42505c8d" name="ResultActivity.cs" size="7109" version="27.0.0"/>
+      <File SHA256:hash="850299cdf2044dd6ab5b73c58642197637a41546671fb4ddfa7aa0e344aba1b9" name="MainActivity.cs" size="5524" version="27.0.0"/>
+      <File SHA256:hash="1a1bd279c2855add1ca10a4138467d383600a443d1492fddd6c1e6dd625717d5" name="ActivityListAdapter.cs" size="3330" version="27.0.0"/>
+      <File SHA256:hash="7978e7c2a229354aaca42f68995795daefe27fa9c42e773c93ee79955c3726a8" name="CropViewUIActivity.cs" size="2208" version="27.0.0"/>
+      <File SHA256:hash="f3364528ab34dfe11415eb43fb214699ac91b0a4b0d87d27666e3c9755e6b60e" name="AndroidExampleModelWrapper.cs" size="666" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples/AnylineExamples.Droid" name="Resources">
+      <File SHA256:hash="287faa808f0127d14cd655f297a97eb3146bcab2ec349cad7ec4350844e881af" name="Resource.designer.cs" size="307177" version="27.0.0"/>
+      <File SHA256:hash="961d7d15547f8a2f2381b65d2e70200b4cf81f200e15a1b5e89ef95a5892af78" name="AboutResources.txt" size="1693" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples/AnylineExamples.Droid/Resources" name="mipmap-mdpi">
+      <File SHA256:hash="0eac55bd0cb251b388fb6a0d44ecf9aa6cb7768e6179cc28befa965799ee24d8" name="ic_launcher_foreground.png" size="958" version="27.0.0"/>
+      <File SHA256:hash="1226d41122cae6730fa6e1f44520dc946c08c6b0197dc4700e567467a86584a1" name="ic_launcher.png" size="1362" version="27.0.0"/>
+      <File SHA256:hash="2fd9c4293096c82af2bf9e04305238d07d1972fa87b2f0184a3d6661b51a5cc1" name="ic_launcher_round.png" size="2413" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples/AnylineExamples.Droid/Resources" name="mipmap-hdpi">
+      <File SHA256:hash="0ebc24c3a238af6e6653b1f4733774c3a443c96de1f163ecfb45f2c0f88dc8f1" name="ic_launcher_foreground.png" size="1441" version="27.0.0"/>
+      <File SHA256:hash="6087170e47f004c7f5c2330a13ae3b56887f2ebe3d3af6b0f958f322dea53a87" name="ic_launcher.png" size="1634" version="27.0.0"/>
+      <File SHA256:hash="85cfec007adcacce0689063dd4b6afdec9523adace39c06853bfeb9b23414836" name="ic_launcher_round.png" size="3552" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples/AnylineExamples.Droid/Resources" name="mipmap-xxxhdpi">
+      <File SHA256:hash="0c9515741e081ee8528fbd6c293269a96d1b6d695e621009d8970fb7f0172d5e" name="ic_launcher_foreground.png" size="4889" version="27.0.0"/>
+      <File SHA256:hash="ddf4bf1587c7a8ef6e1eaea586e6dff71e0f3e67972499884fa622ec40c29b6f" name="ic_launcher.png" size="5016" version="27.0.0"/>
+      <File SHA256:hash="a1db075c64da0644e414d3e0e103bd73ef0d18a2db80211d43a037e844e6ae2c" name="ic_launcher_round.png" size="10893" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples/AnylineExamples.Droid/Resources" name="layout">
+      <File SHA256:hash="8fe1a9236d2625b94a441688340eac6410b0ce903473622e14f1ab2adc3fe904" name="demo_activity_crop_view_ui.axml" size="483" version="27.0.0"/>
+      <File SHA256:hash="08e20abb5bff6998f152bc24d2c79f823d112ad9882c737d096779aaf1f8ff84" name="scan_activity.axml" size="450" version="27.0.0"/>
+      <File SHA256:hash="5326208a8c5580c0c5b7a7d848cbd343bbfbd5fe16ec6f7aeaadf48f97dbad18" name="activity_doc_scan_ui_main_list_item.axml" size="2265" version="27.0.0"/>
+      <File SHA256:hash="98ccd2683c007ffe730dbc80abb669a274919ee716bc61c4f7ca19189a50a7dc" name="result_activity.axml" size="821" version="27.0.0"/>
+      <File SHA256:hash="b7e108557298e0ac9680b191325c968b4975a6ecf0668b0089fa1f95c61a5c46" name="content_main.axml" size="925" version="27.0.0"/>
+      <File SHA256:hash="b35bb1cdf9400428893876bc9e56d5661e4e2cfaaed47b997e7e6a6f7e2e8f1c" name="demo_activity_document_scan_view_ui.axml" size="531" version="27.0.0"/>
+      <File SHA256:hash="5ee7bc32f6482daa55380cd80a9dec28e5ff6a60dbfad08931b3ea394b1ca8da" name="activity_main.axml" size="952" version="27.0.0"/>
+      <File SHA256:hash="d2ed50115ba03438196e291f6324078ac649001d29f97142c19e5ee06fb4961c" name="activity_doc_scan_ui_main.axml" size="736" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples/AnylineExamples.Droid/Resources" name="mipmap-xxhdpi">
+      <File SHA256:hash="e99b97002c6423fcb49589d78821335a4ef0478678698977e6d92a088807feb6" name="ic_launcher_foreground.png" size="3403" version="27.0.0"/>
+      <File SHA256:hash="402da3105b03dad36b197e9d9dbb57508c6445dabc393c059ae28a5b225dc54b" name="ic_launcher.png" size="3871" version="27.0.0"/>
+      <File SHA256:hash="9d09baf6388ffffe01ecfacdf533cb721709a6a88c4d34270992f2801a9b6821" name="ic_launcher_round.png" size="8001" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples/AnylineExamples.Droid/Resources" name="values">
+      <File SHA256:hash="376121b154f43e13883b5ce018ec7461d385e4dae88b25898c3450f5dedc50dd" name="colors.xml" size="208" version="27.0.0"/>
+      <File SHA256:hash="73f5a83f80fbd3d4efa64a8dbd1c491892b948b5ba123fb4a5f4c59a77010c45" name="dimens.xml" size="67" version="27.0.0"/>
+      <File SHA256:hash="dc8a5c472177c14b37f41bdad55c2fae4dabd16c1f35a07763a148e31b459c19" name="example_activities.xml" size="3946" version="27.0.0"/>
+      <File SHA256:hash="7be528fd4393a20bcedf1cf478bc5308d5919bd98f5abc853cd89b7f8758dcd9" name="styles.xml" size="708" version="27.0.0"/>
+      <File SHA256:hash="532fb025c79d7995276c46697a92539a2510ba2a8ad3bd261af4308618dddf35" name="strings.xml" size="85" version="27.0.0"/>
+      <File SHA256:hash="d80a637240092d84a76bf66fdff7a711f43fba8b25088c6d6d7ea2600aaf0df7" name="ic_launcher_background.xml" size="120" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples/AnylineExamples.Droid/Resources" name="menu">
+      <File SHA256:hash="6cd478c9254d5420e0c68d2c05168b523a89fb96ae623e4103e328f2d9b86d5f" name="menu_main.xml" size="362" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples/AnylineExamples.Droid/Resources" name="mipmap-xhdpi">
+      <File SHA256:hash="ad347c2bbd69ad09696c79685819e06f66f3fc08b3fda60400a88dc678968333" name="ic_launcher_foreground.png" size="2056" version="27.0.0"/>
+      <File SHA256:hash="f4eed7967c9459e854d749025a0cb4a0a4eac95c4876e0e5d49271a9222343e7" name="ic_launcher.png" size="2307" version="27.0.0"/>
+      <File SHA256:hash="74e7d3413541820200276767046d2c3bcd7fd180285a794a325e63fcd8c1283a" name="ic_launcher_round.png" size="4858" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples/AnylineExamples.Droid/Resources" name="mipmap-anydpi-v26">
+      <File SHA256:hash="9c3a7e0a6515c6e1a7ae834a9ae430311ebc3241f7b2e5e7f0460aa690709a7c" name="ic_launcher.xml" size="265" version="27.0.0"/>
+      <File SHA256:hash="9c3a7e0a6515c6e1a7ae834a9ae430311ebc3241f7b2e5e7f0460aa690709a7c" name="ic_launcher_round.xml" size="265" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples/AnylineExamples.Droid" name="Properties">
+      <File SHA256:hash="7fa47aa48a0781207d64d33597033a13aa918afefa06b8e625155029453399b3" name="AssemblyInfo.cs" size="1080" version="27.0.0"/>
+      <File SHA256:hash="1eef0a9db74cc6dd67d72f8070b4c42a7d775265bb8d003d91f23dad5a3caf7d" name="AndroidManifest.xml" size="633" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples/AnylineExamples.Droid" name="Assets">
+      <File SHA256:hash="b34779f1aa5980fe7c0b04e139e2fc568759386013d6769cdf1f58b2b9575553" name="mro_config_vin.json" size="1014" version="27.0.0"/>
+      <File SHA256:hash="420774f58ff5fd0aa8fd1e5ddf9b02ea943cc7c7f4e754a5fdfa9db46cc8e482" name="mro_config_usnr.json" size="976" version="27.0.0"/>
+      <File SHA256:hash="7e04810cc5bc76d5e46f4a0593bf5e587b6fa229fbcbfb76968015543616bab6" name="id_config_universal.json" size="3182" version="27.0.0"/>
+      <File SHA256:hash="3efcd9c5f2ec802fa059ae9d5260331e4f19e852bf3f7de9c45a4e753d4b280c" name="mro_config_tin.json" size="977" version="27.0.0"/>
+      <File SHA256:hash="04169aa205c8376023171a9df04b49cdee9be73f7f9cc6b6bd497ecfc72c095d" name="energy_config_dial.json" size="803" version="27.0.0"/>
+      <File SHA256:hash="cf3ce437641a5ac833e9e7aed8da2ed139d1bee7a642c021ec9ab3bc0826c1f1" name="id_config_mrz.json" size="1103" version="27.0.0"/>
+      <File SHA256:hash="7eaa97276a1b8779d38b24c1a3970038dd6216f063c7668e638190b4107facae" name="document_scan_view_config.json" size="1215" version="27.0.0"/>
+      <File SHA256:hash="5f860bf58419930703d3fd8f24547c605f285ea42be920e686177443b73c6d94" name="document_config.json" size="864" version="27.0.0"/>
+      <File SHA256:hash="9a3a42052cd4adec4909fb86845f37efc978669925ab001e408f3ea8fe80e1ae" name="mro_config_shipping_container.json" size="1077" version="27.0.0"/>
+      <File SHA256:hash="e3ebbfe118865107af8556d98dd6498f0fc274a4683d159f09e0ec19c8e64f77" name="workflows_config_serial_scanning.json" size="3436" version="27.0.0"/>
+      <File SHA256:hash="4cdca12e7655cc1af7f8afb9e0af5568812e3c929e1fd95eaad820681b9c2ea8" name="vehicle_config_license_plate.json" size="987" version="27.0.0"/>
+      <File SHA256:hash="a30518b25d339e7cd854e2170103f2d59d9e78bf2d523430c4d7acc59e813d8d" name="id_config_german_id_front.json" size="960" version="27.0.0"/>
+      <File SHA256:hash="73ba89fe22638573a59b711609dbbaa4fb92169430db1b59dc55ce51c78fc9b9" name="others_config_barcode.json" size="1547" version="27.0.0"/>
+      <File SHA256:hash="2530022c995a5e184c2fda4c395841b2b66dabe01fc68b925023df3a020587c2" name="id_config_driving_license.json" size="2319" version="27.0.0"/>
+      <File SHA256:hash="e4dd4b05c4133dfe5c928df6a5c0c670f89e36838dbdd8908d0b284a7687ea66" name="energy_config_analog_digital.json" size="977" version="27.0.0"/>
+      <File SHA256:hash="95073b13f06366854b2bb271cd4a360d27685741afcdf3fd1ee748fbedb8b64a" name="document_view_config.json" size="833" version="27.0.0"/>
+      <File SHA256:hash="6d87815dd8e48661082d6abd0ba34e33d725007ccffca6bd7e3c360bff02060f" name="others_config_voucher_code.json" size="1126" version="27.0.0"/>
+      <File SHA256:hash="d9c10af6935e56fa757b079b3a26b1e2980281ebf68226d0d0d6c51d60eedbaa" name="workflows_config_parallel_scanning.json" size="3019" version="27.0.0"/>
+      <File SHA256:hash="36a5c1bffa776292a0749f43a419856040c071522af65a21735a187a09081e90" name="others_config_cow_tag.json" size="1095" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples" name="AnylineExamples.Shared">
+      <File SHA256:hash="ecc0b9f874f78950a1be22330302083cf0dcf15d4069e15cc4ac9db70962eae3" name="ExampleHelper.cs" size="811" version="27.0.0"/>
+      <File SHA256:hash="5c788bd88fa6207c4b480f720032d4a8a19ff035d0043f74119af7a4cd373610" name="AnylineExamples.Shared.shproj" size="1047" version="27.0.0"/>
+      <File SHA256:hash="4732c3e69754280ea625031311c39054b4e128c6d917217de456771d663f97b5" name="ExampleModel.cs" size="965" version="27.0.0"/>
+      <File SHA256:hash="32be14d3255feea245b07fe04842cbbea768f54fd2d75046df582f98bf624b85" name="ExampleList.cs" size="5251" version="27.0.0"/>
+      <File SHA256:hash="16e7fb945fbfbc9cd075eb529bac5dcbe61786e086e7634441358b2d364acc5c" name="AnylineExamples.Shared.projitems" size="728" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples" name="Xamarin.Forms"/>
+    <Directory location="Examples/Xamarin.Forms" name="Anyline"/>
+    <Directory location="Examples/Xamarin.Forms/Anyline" name="Anyline.Android">
+      <File SHA256:hash="9b6d837048b48194feefd0a381a7c65e887388694b28af7f1ec69b70ac10fbb2" name="ScanPageRenderer.cs" size="8726" version="27.0.0"/>
+      <File SHA256:hash="74b8d90a4820396cc1ce80727bd91783b01f3bc3368a872ae30e4e8a3fe7bddb" name="AnylineSDKService.cs" size="656" version="27.0.0"/>
+      <File SHA256:hash="fab3a071270ef1875e969b45ea71233c84e5efcc3d8288b103b765997ba6f8ff" name="Anyline.Android.csproj" size="5470" version="27.0.0"/>
+      <File SHA256:hash="8e208164f3e986adecfcf887f6e33cef01d3c93e97c19e763f045576c366501c" name="MainActivity.cs" size="3008" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples/Xamarin.Forms/Anyline/Anyline.Android" name="Resources">
+      <File SHA256:hash="2afe57f2c3accc01bb91796a4fa24d559de2febd4a3fcd3876ed89460753d828" name="Resource.designer.cs" size="1119004" version="27.0.0"/>
+      <File SHA256:hash="c207c7e4b907ce6302a3b657215cfa7d2a7bc3d7ed1f4e45fde0b01baefde72a" name="AboutResources.txt" size="1772" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples/Xamarin.Forms/Anyline/Anyline.Android/Resources" name="mipmap-mdpi">
+      <File SHA256:hash="54f2cbea5af45cc7a4fe7d4c80841c8be270e8e4e337201ff2422ecf4007e181" name="icon.png" size="2807" version="27.0.0"/>
+      <File SHA256:hash="0dc5150f8c57eef92075a270adf3578c77cf390bea2ea161e4ef09dbf2a6e698" name="launcher_foreground.png" size="6439" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples/Xamarin.Forms/Anyline/Anyline.Android/Resources" name="mipmap-hdpi">
+      <File SHA256:hash="a5bb656d9c5f9d702ab1b7fb2c3ea6d4855fdcdf7592b8affa37a0f7c788efe7" name="icon.png" size="4754" version="27.0.0"/>
+      <File SHA256:hash="992d032e705646cd3be0fb83873074c9b1dcb0673c05307953d72679a37b65f4" name="launcher_foreground.png" size="11695" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples/Xamarin.Forms/Anyline/Anyline.Android/Resources" name="drawable">
+      <File SHA256:hash="2a86ddb37dfa7acd913f094fe465df6c82b2895c35e2ac6edfe66a8f09b4b45b" name="anyline_logo.png" size="16053" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples/Xamarin.Forms/Anyline/Anyline.Android/Resources" name="mipmap-xxxhdpi">
+      <File SHA256:hash="8911287772984d5bac8d0c89fcbf501285fdbf10d5a6540c1b5a4e6ccc4ff06f" name="icon.png" size="19380" version="27.0.0"/>
+      <File SHA256:hash="54d86486f9ba368807632acd6dafc7e56395a7cfe8599cb44c36a4a1a424fb96" name="launcher_foreground.png" size="52285" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples/Xamarin.Forms/Anyline/Anyline.Android/Resources" name="layout">
+      <File SHA256:hash="34938e1281d14651ca6a5618ab9d57d1fa873911c5bc91595317d7dffa927900" name="ScanLayout.axml" size="422" version="27.0.0"/>
+      <File SHA256:hash="51144227d1f4af532b7a3848acd28377c67bfa8196034874723e08487725319c" name="Toolbar.xml" size="383" version="27.0.0"/>
+      <File SHA256:hash="5ff39f10ce370a4b97aca35cc0068d0d4ab045c9dc3c265ab10970460a5b5dd0" name="Tabbar.xml" size="522" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples/Xamarin.Forms/Anyline/Anyline.Android/Resources" name="mipmap-xxhdpi">
+      <File SHA256:hash="9f3bffe7057bb1215c9764b0faa56e3a5ffa4ce3b92ce1d54c1ef106d125bcfb" name="icon.png" size="12827" version="27.0.0"/>
+      <File SHA256:hash="7235e00896cbc1f3558c6199f2ca74e828bb6d444517802b1e288558748aa228" name="launcher_foreground.png" size="33484" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples/Xamarin.Forms/Anyline/Anyline.Android/Resources" name="values">
+      <File SHA256:hash="987cdfa47c039690bd81c8eed890bc2676c3187f4e3beaaa3953f30b793b9d4c" name="colors.xml" size="262" version="27.0.0"/>
+      <File SHA256:hash="f2e944cc76e6a8191a4a202a82974ab64603dbff7475f0dd6473bad0b35ce3d2" name="styles.xml" size="1364" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples/Xamarin.Forms/Anyline/Anyline.Android/Resources" name="mipmap-xhdpi">
+      <File SHA256:hash="5ffdb4ae78761bf99a0a43f827f42ea1a3410fc3b8537832536af712cefdb069" name="icon.png" size="7028" version="27.0.0"/>
+      <File SHA256:hash="3a84ead75472a8b35a9d3a25a046fd7c869880a254882e03f8b96c7d49accdf0" name="launcher_foreground.png" size="17898" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples/Xamarin.Forms/Anyline/Anyline.Android/Resources" name="mipmap-anydpi-v26">
+      <File SHA256:hash="9b61dd67545a7ea1f9594c1485625da201177f6f8e4a76f5289f9685f25af030" name="icon.xml" size="261" version="27.0.0"/>
+      <File SHA256:hash="9b61dd67545a7ea1f9594c1485625da201177f6f8e4a76f5289f9685f25af030" name="icon_round.xml" size="261" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples/Xamarin.Forms/Anyline/Anyline.Android" name="Properties">
+      <File SHA256:hash="8e6fd053ca15cdf58d7fc0b8c23da74d5c929438e272f2389615f20b1aff818d" name="AssemblyInfo.cs" size="1116" version="27.0.0"/>
+      <File SHA256:hash="3d13bbb12fe7d954d48dcd640674db2054b05fad676d7caed12db223891e345e" name="AndroidManifest.xml" size="757" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples/Xamarin.Forms/Anyline/Anyline.Android" name="Assets">
+      <File SHA256:hash="0e1eb1dc8386eb982f7228fd4eaba3d42c54ace9d989b05da3e4cd3d1840f006" name="mro_config_usnr.json" size="975" version="27.0.0"/>
+      <File SHA256:hash="c6c03a77c525edf92b148a2c64ffcf6f0bb415837727538144e7c3b01d542379" name="vehicle_config_license_plate.json" size="1006" version="27.0.0"/>
+      <File SHA256:hash="73ba89fe22638573a59b711609dbbaa4fb92169430db1b59dc55ce51c78fc9b9" name="others_config_barcode.json" size="1547" version="27.0.0"/>
+      <File SHA256:hash="e4d53e183a20892918b4ddcd5be730ca2d7898682d0e52f524b19e6d741e302f" name="AboutAssets.txt" size="625" version="27.0.0"/>
+      <File SHA256:hash="d836212777884524b8c1c60ddb9ae3c0e4432c944aa41567fa8376a0f4828690" name="energy_config_analog_digital.json" size="968" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples/Xamarin.Forms/Anyline" name="Anyline.iOS">
+      <File SHA256:hash="0a15bc4fd747245c889db2315c6da7a64649c1b58bc685b0e9f4ee6fb648d82c" name="ScanPageRenderer.cs" size="4495" version="27.0.0"/>
+      <File SHA256:hash="0b5fd5a9f444e1b49ce9a4b0c41dc5b44695995f431dd642603a42f0e9858de6" name="Entitlements.plist" size="193" version="27.0.0"/>
+      <File SHA256:hash="a60c1578d55223460656b48830b1a7cfa44bcba64d909213e83fdf678ed1a7a1" name="AppDelegate.cs" size="1100" version="27.0.0"/>
+      <File SHA256:hash="03c56f04754d4d865933c0514cc1c10506bb0b41a65a0fdc99e5b202f202d89f" name="ObjectExtensions.cs" size="7387" version="27.0.0"/>
+      <File SHA256:hash="8186bed6e514c83b9297ad953e55754b3c7e4e2c6ed984267b7d28de01b454f8" name="Anyline.iOS.csproj" size="7075" version="27.0.0"/>
+      <File SHA256:hash="3e60f520861fbbaeb67faab99fc31420bdf8f76dad1678979ab0da6f4463b436" name="AnylineSDKService.cs" size="695" version="27.0.0"/>
+      <File SHA256:hash="2646059343d4318fe9f292cc7906161457c90d46962f892ac6acec6ad233ec4d" name="Main.cs" size="481" version="27.0.0"/>
+      <File SHA256:hash="37bf55b8de961beb9e2727270b4ef3bf99d30cd75437fddc5a1d17e2a5f7702e" name="ScanResultDelegate.cs" size="2712" version="27.0.0"/>
+      <File SHA256:hash="876306df144e30d30b42ff5149d22c16c3838f1ded24980cd914294dfdfbdf74" name="Info.plist" size="1380" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples/Xamarin.Forms/Anyline/Anyline.iOS" name="Resources">
+      <File SHA256:hash="0e1eb1dc8386eb982f7228fd4eaba3d42c54ace9d989b05da3e4cd3d1840f006" name="mro_config_usnr.json" size="975" version="27.0.0"/>
+      <File SHA256:hash="e0f6fe0f2c7861b27f833d66631a944161a094a75819a02c3acf7f4ac5dc0ad6" name="Default-Portrait@2x.png" size="34540" version="27.0.0"/>
+      <File SHA256:hash="446bbe7b9770d1e283b4bf1fa2b42490659852af9159a22d97cd80e6a889168b" name="LaunchScreen.storyboard" size="2616" version="27.0.0"/>
+      <File SHA256:hash="2a86ddb37dfa7acd913f094fe465df6c82b2895c35e2ac6edfe66a8f09b4b45b" name="anyline_logo.png" size="16053" version="27.0.0"/>
+      <File SHA256:hash="2f79839ed7826658f68d6f9b78d3683aea06c52782970bf05eaf3f189340487e" name="Default-Portrait.png" size="10710" version="27.0.0"/>
+      <File SHA256:hash="6a4a6ddba32b0253bbd267c1ba23f7c3cacf39a1f3ceeaea97427a13149de3dd" name="Default@2x.png" size="8368" version="27.0.0"/>
+      <File SHA256:hash="c6c03a77c525edf92b148a2c64ffcf6f0bb415837727538144e7c3b01d542379" name="vehicle_config_license_plate.json" size="1006" version="27.0.0"/>
+      <File SHA256:hash="10eaeb5095d8d61941eab7ff58132727c467542efebdbdfc61583ff03c79206b" name="Default-568h@2x.png" size="8884" version="27.0.0"/>
+      <File SHA256:hash="73ba89fe22638573a59b711609dbbaa4fb92169430db1b59dc55ce51c78fc9b9" name="others_config_barcode.json" size="1547" version="27.0.0"/>
+      <File SHA256:hash="d836212777884524b8c1c60ddb9ae3c0e4432c944aa41567fa8376a0f4828690" name="energy_config_analog_digital.json" size="968" version="27.0.0"/>
+      <File SHA256:hash="2c8e7ff274347291e4bceba1a7b8c2811e6346994732d86ad31a21ed8dc3e9ec" name="Default.png" size="7243" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples/Xamarin.Forms/Anyline/Anyline.iOS" name="Assets.xcassets"/>
+    <Directory location="Examples/Xamarin.Forms/Anyline/Anyline.iOS/Assets.xcassets" name="AppIcon.appiconset">
+      <File SHA256:hash="ed32a51128101cd81f0569f209f415ca21315591fc46b1db5533f254d4db6c69" name="Icon167.png" size="4692" version="27.0.0"/>
+      <File SHA256:hash="653a3d75c42c01ce4dd60c0aa0b59f6de548a016a2d70cc9aaa3a5e9664e78c9" name="Icon29.png" size="845" version="27.0.0"/>
+      <File SHA256:hash="cc7f7cb40a3d7b2d7639e2a15b62bc3404d779a56c8863ae492218fb3519452e" name="Icon1024.png" size="70429" version="27.0.0"/>
+      <File SHA256:hash="bf145cb811bd1095bd94aadd17e3ed38b489dde1e8ce58ad5e9de090bb3556f8" name="Icon60.png" size="2537" version="27.0.0"/>
+      <File SHA256:hash="170b1b2119e0fff597104534ab50b7c31b930eb76b24bfc9bd7508e1b489bc30" name="Icon76.png" size="2332" version="27.0.0"/>
+      <File SHA256:hash="04cfee2b3a4feb32a77bb953c8453a0bb416f48906a9448b5edc355c0d68da86" name="Icon58.png" size="1761" version="27.0.0"/>
+      <File SHA256:hash="09242c80c04a97fc083bca554f5c992f4ae090ffaa858af7a92613b5cdb07354" name="Icon40.png" size="1101" version="27.0.0"/>
+      <File SHA256:hash="538ba04ed28b7eec3917fa1a3226e4b023ffc263bb762891a2a25e2c95f9f394" name="Icon80.png" size="2454" version="27.0.0"/>
+      <File SHA256:hash="201357b359fc066f822e6f62fbef3c9e578492793f0a2b8748d23df962180dbb" name="Contents.json" size="2135" version="27.0.0"/>
+      <File SHA256:hash="a5bf0830dc6cffbf5685ee16b11c9e04b08466cce1ddd4c9598f9ad8e7952c6f" name="Icon87.png" size="2758" version="27.0.0"/>
+      <File SHA256:hash="faf908f37fa0eb73f531d8c46ef422df52252b9bca73cd726ec299bf92852fb6" name="Icon120.png" size="3773" version="27.0.0"/>
+      <File SHA256:hash="8b98982a7dd52bbaea5515ce0681e7b1180eaddf85589cc6a261c5b1c98336d9" name="Icon152.png" size="4750" version="27.0.0"/>
+      <File SHA256:hash="de96a3ba670c8163ba94ef578bb897b951b14c475ac1fecab06b297af967bd6f" name="Icon20.png" size="1313" version="27.0.0"/>
+      <File SHA256:hash="d11de68c36358cccbb16a82ba7645c3ab6c7568b4cd5f29f7b7879f38a99495e" name="Icon180.png" size="5192" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples/Xamarin.Forms/Anyline/Anyline.iOS" name="Properties">
+      <File SHA256:hash="e6a1d1d98806630137733561a1430453a95bd3f093ce00545ad02f5569b6d77a" name="AssemblyInfo.cs" size="1398" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples/Xamarin.Forms/Anyline" name="Anyline">
+      <File SHA256:hash="4bc431cc6bb2b688657b08227e1115a9cbd8e3f291be670cb53f7d900cfb1e77" name="App.xaml.cs" size="601" version="27.0.0"/>
+      <File SHA256:hash="c289a0b828387ac046d8fd595687d1d3c1e4c2f96d681e2aff1bdbc65d5a3898" name="App.xaml" size="460" version="27.0.0"/>
+      <File SHA256:hash="03cc2dce8e8073748849d4cad4a223ed19227374c35bb30e44d3342e6ec5816a" name="AssemblyInfo.cs" size="86" version="27.0.0"/>
+      <File SHA256:hash="16a7a093892d3ce017fda2b31ec767c5194dae576a4a16df6a7039e8feab2c2d" name="ResultsPage.xaml" size="1207" version="27.0.0"/>
+      <File SHA256:hash="99167d07c2ebb3e7e095581271d3beabd634b660b5b5106bd27d1d1c0ff99a41" name="ScanExamplePage.cs" size="1027" version="27.0.0"/>
+      <File SHA256:hash="3ba007069d2eac2141e709d1c4d85c9b3b1c0c3cf2019f610014ed1369f2e479" name="MainPage.xaml.cs" size="3723" version="27.0.0"/>
+      <File SHA256:hash="5490e711421e0c0291a795337e7c69e8023c7a312923f8d5a9207a494d56916f" name="MainPage.xaml" size="653" version="27.0.0"/>
+      <File SHA256:hash="d30626d205bc0c4a1acf2a991f8860d549b61e2a7c32f126fe8dcc943f1c5046" name="ResultsPage.xaml.cs" size="1805" version="27.0.0"/>
+      <File SHA256:hash="b7257f6870923f28909b2d73185751fdee1a6345395529f306622c8e933e31fe" name="IAnylineSDKService.cs" size="162" version="27.0.0"/>
+      <File SHA256:hash="7e3c52a80e03fe9d478785f6ecf5a5cf2959da28047a9b65a34b7991197b36e9" name="Anyline.csproj" size="688" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples/Xamarin.Forms/Anyline" name="Anyline.UWP">
+      <File SHA256:hash="f86ccc294e29226272a300064bdaa686b4b766aaefecfd0eccc3c981ab58fcc5" name="App.xaml.cs" size="4028" version="27.0.0"/>
+      <File SHA256:hash="d504ded09c7880cf8de6be953f69000c4dc74c806e9ee8e122673f646ade2102" name="App.xaml" size="255" version="27.0.0"/>
+      <File SHA256:hash="852e38f9fccb1c36287fd9c8fa37fef75d792dbb0c5d349b9cea286091d6bd56" name="Package.appxmanifest" size="1950" version="27.0.0"/>
+      <File SHA256:hash="50efc4bb951e5267a38ce3a8a311c15449fe8a86f1673accfa8d315d36ad27ba" name="Anyline.UWP.csproj" size="7744" version="27.0.0"/>
+      <File SHA256:hash="a704d4755818c34123412d481ba34e0dfe581ec66c72a8f96169a79c9cb90049" name="MainPage.xaml.cs" size="637" version="27.0.0"/>
+      <File SHA256:hash="24e08630aad2f85ca207df2b28cd36a6e9bee3c482e0162ae804ec3c6964eaa8" name="MainPage.xaml" size="614" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples/Xamarin.Forms/Anyline/Anyline.UWP" name="Properties">
+      <File SHA256:hash="9d27ca281cdbb38ca7be52974661950aa9e264ee971c3a7b24043f3f3486aaf7" name="AssemblyInfo.cs" size="1042" version="27.0.0"/>
+      <File SHA256:hash="a3cdd20348525b48b51d6645f2937d61d381a12c3960c22150729f21a58e68fb" name="Default.rd.xml" size="1242" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples/Xamarin.Forms/Anyline/Anyline.UWP" name="Assets">
+      <File SHA256:hash="6fe175cbd70266edd806dd012ab321fa833f70a9b541aabc10cc186458be6656" name="StoreLogo.scale-100.png" size="836" version="27.0.0"/>
+      <File SHA256:hash="abd3401a82c9b1200c26f07c5aa7f7a7d158a5baf2656fabee36313cbc35362d" name="SplashScreen.scale-400.png" size="39781" version="27.0.0"/>
+      <File SHA256:hash="ecb962c88280cf6a96340a8305cfaa38b383443ea34b1e4ec5f2a9e3760b93db" name="LargeTile.scale-100.png" size="6143" version="27.0.0"/>
+      <File SHA256:hash="7595d3ac7b16f868a7592b2da853ce8d22a4eed6d17f7b23f7161f9453df217d" name="SmallTile.scale-100.png" size="1218" version="27.0.0"/>
+      <File SHA256:hash="b2afc214b8763d1e49e04f6b8b9874489c8f3161a1ffdbfc982814cbe3554a5e" name="SplashScreen.scale-200.png" size="15240" version="27.0.0"/>
+      <File SHA256:hash="fe5b4c196c4b797feb626828e4f0238599d4921582153a89c3768ea7cdf7e419" name="LargeTile.scale-400.png" size="31561" version="27.0.0"/>
+      <File SHA256:hash="5b2397925fb468b680e09ee9ad6ba5c33c965bb2243817a8e251fe05b85914ce" name="StoreLogo.scale-200.png" size="1742" version="27.0.0"/>
+      <File SHA256:hash="1ad5362d793e5bf5d1fbff43ec411f00e8fc01895f0d970887c0f911de382e23" name="SmallTile.scale-400.png" size="5566" version="27.0.0"/>
+      <File SHA256:hash="4143193d0f1118d330676663e6dbeaca66df641428ead6c6387f7746c7d68aef" name="LargeTile.scale-200.png" size="13916" version="27.0.0"/>
+      <File SHA256:hash="63cf084fb7dfdd4d2e616596ec52ccfbed492faa5fd52797eea47a8fb2f1783e" name="StoreLogo.scale-400.png" size="3654" version="27.0.0"/>
+      <File SHA256:hash="6300a58ac90e557cd5b805ba98cf2812afec06e8ff99d03130a31746a300d4af" name="SplashScreen.scale-100.png" size="6555" version="27.0.0"/>
+      <File SHA256:hash="c9f090d46a23ff8fab155a6af832d503c8615a3a1fc38033b0cb715f3d3c8c56" name="SmallTile.scale-200.png" size="2536" version="27.0.0"/>
+      <File SHA256:hash="7fb93687733f942cdac9f7dc281ab2526e664373baf77a8bf666b85848c00e6c" name="Square44x44Logo.altform-unplated_targetsize-16.png" size="394" version="27.0.0"/>
+      <File SHA256:hash="e3ba16f6d320e1ab16f79d0ab7eb71f637d951db8badf855258164c0d567afc7" name="StoreLogo.backup.png" size="392" version="27.0.0"/>
+      <File SHA256:hash="95e00144ed9bf5455115326995ac0356ddd3552d666b8d6de8a85623d189a02b" name="Square150x150Logo.scale-400.png" size="13344" version="27.0.0"/>
+      <File SHA256:hash="6300a58ac90e557cd5b805ba98cf2812afec06e8ff99d03130a31746a300d4af" name="Wide310x150Logo.scale-200.png" size="6555" version="27.0.0"/>
+      <File SHA256:hash="9b6f8cd2241e6c01b4be126cd7c24b3434f09d85ec9a270cd0fc3654a72bda57" name="Square44x44Logo.scale-400.png" size="4740" version="27.0.0"/>
+      <File SHA256:hash="7561ac05fdff02f38e355b13b62c1ebe8ad9a181707d9e3bacdc5b905f43a8a1" name="Square44x44Logo.targetsize-48.png" size="1245" version="27.0.0"/>
+      <File SHA256:hash="b2afc214b8763d1e49e04f6b8b9874489c8f3161a1ffdbfc982814cbe3554a5e" name="Wide310x150Logo.scale-400.png" size="15240" version="27.0.0"/>
+      <File SHA256:hash="1d40948676cc3e3b5286df59cbd6c2e92ad976d63d7ffd416618c2d93e4afee3" name="Square150x150Logo.scale-200.png" size="5904" version="27.0.0"/>
+      <File SHA256:hash="54841d560ee0a5aabca7a3fbb8ad9d8f40043022cb86e42f5c9749f1b76be20c" name="Square44x44Logo.scale-200.png" size="2468" version="27.0.0"/>
+      <File SHA256:hash="7ca16a3fcf7a327f8278e1cf8f1f90d36fdeee0bf04135757c8ff9c55a548bd2" name="Square44x44Logo.targetsize-256.png" size="9693" version="27.0.0"/>
+      <File SHA256:hash="7561ac05fdff02f38e355b13b62c1ebe8ad9a181707d9e3bacdc5b905f43a8a1" name="Square44x44Logo.altform-unplated_targetsize-48.png" size="1245" version="27.0.0"/>
+      <File SHA256:hash="35a95dee1e17babe17cfe3bba7ad7eb3a15824b460d01430de71bfb18711a1db" name="Wide310x150Logo.scale-100.png" size="2988" version="27.0.0"/>
+      <File SHA256:hash="7fb93687733f942cdac9f7dc281ab2526e664373baf77a8bf666b85848c00e6c" name="Square44x44Logo.targetsize-16.png" size="394" version="27.0.0"/>
+      <File SHA256:hash="7ca16a3fcf7a327f8278e1cf8f1f90d36fdeee0bf04135757c8ff9c55a548bd2" name="Square44x44Logo.altform-unplated_targetsize-256.png" size="9693" version="27.0.0"/>
+      <File SHA256:hash="599e524004b895c68965675af6df9ec23493f78c8430d7c41c9c9f0b6a87e8a5" name="Square44x44Logo.scale-100.png" size="1141" version="27.0.0"/>
+      <File SHA256:hash="c70483b2fe2e2a6f4390d15e72a90907190ec1bf9a34677a1ed8597ba4a1445e" name="Square150x150Logo.scale-100.png" size="2772" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples" name="AnylineExamples.iOS">
+      <File SHA256:hash="9243396e4c450787e00397e44529136ff9df979130d9ed30c0bd2d485ef7053c" name="ResultViewController.cs" size="15167" version="27.0.0"/>
+      <File SHA256:hash="20ff89db4c152b298dde6ea06da2245a7f097981d9e9a06957a1e260f00cc4e1" name="MainController.cs" size="452" version="27.0.0"/>
+      <File SHA256:hash="b2294456cd23958ae24c9941fbf455024d1177d579b581fc07eab5bf4c10dd6b" name="MainController.designer.cs" size="449" version="27.0.0"/>
+      <File SHA256:hash="acbb6343b651b35afb5c269f3f3ba2a957782c4d366f0069086a01cc7fdc0aa4" name="Entitlements.plist" size="319" version="27.0.0"/>
+      <File SHA256:hash="7cb6b8375a0b86312ba080e36369104684140949977070bcb2e04fd3f227261c" name="AppDelegate.cs" size="2139" version="27.0.0"/>
+      <File SHA256:hash="d35c11b639705bfbdf76b1670777ddb616be68b540470b080299978f241e4d8e" name="ObjectExtensions.cs" size="7260" version="27.0.0"/>
+      <File SHA256:hash="215c770a72231443b27e3febc09f5bf72423c49efad3d2814f39f77855f96ed4" name="AnylineViewController.designer.cs" size="463" version="27.0.0"/>
+      <File SHA256:hash="3c68af9b1ed81578c7ae57a9b825699b440d0d1b5b439048a90d09bc498d0d15" name="AnylineViewController.cs" size="9711" version="27.0.0"/>
+      <File SHA256:hash="f85e35b434eba230e71be08b8621de8555badf1282d029648836690a079fa56e" name="Main.cs" size="586" version="27.0.0"/>
+      <File SHA256:hash="80040198a84c96475218b6debbacd41dbd8ff75c98b263825497b0c1b8c4a3d3" name="AnylineExamples.iOS.csproj" size="8196" version="27.0.0"/>
+      <File SHA256:hash="51f8a1f9357d76ce47b0e19ccbbadd4cc32635fe873883caf314adf7cf597df2" name="NFCScanViewController.cs" size="10360" version="27.0.0"/>
+      <File SHA256:hash="50edb93db0cf405cc763e444d1cb1ba770f1fc8135ed52c0db144fccfc547199" name="ScanViewController.cs" size="6233" version="27.0.0"/>
+      <File SHA256:hash="263fa0a9628d52249eca37381bec34f844d716e16801000ddf8bc498cb5479bb" name="MainStoryboard.storyboard" size="2270" version="27.0.0"/>
+      <File SHA256:hash="e7ccd57b642f38f7fd56812fc54f2ff2a85e3059cf380e365fb28a4712566bbb" name="ScanResultDelegate.cs" size="2914" version="27.0.0"/>
+      <File SHA256:hash="c5bc390971e5d25a9288fa1f454834a93b75886319fbea704222d8e0268a38ff" name="Info.plist" size="1218" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples/AnylineExamples.iOS" name="Resources">
+      <File SHA256:hash="b34779f1aa5980fe7c0b04e139e2fc568759386013d6769cdf1f58b2b9575553" name="mro_config_vin.json" size="1014" version="27.0.0"/>
+      <File SHA256:hash="420774f58ff5fd0aa8fd1e5ddf9b02ea943cc7c7f4e754a5fdfa9db46cc8e482" name="mro_config_usnr.json" size="976" version="27.0.0"/>
+      <File SHA256:hash="7e04810cc5bc76d5e46f4a0593bf5e587b6fa229fbcbfb76968015543616bab6" name="id_config_universal.json" size="3182" version="27.0.0"/>
+      <File SHA256:hash="839b4a13f0ce59ca4137215b4e01c44aa1f4387243f5250a6f21ba1e5c4d3a3c" name="mro_config_tin.json" size="932" version="27.0.0"/>
+      <File SHA256:hash="04169aa205c8376023171a9df04b49cdee9be73f7f9cc6b6bd497ecfc72c095d" name="energy_config_dial.json" size="803" version="27.0.0"/>
+      <File SHA256:hash="cf3ce437641a5ac833e9e7aed8da2ed139d1bee7a642c021ec9ab3bc0826c1f1" name="id_config_mrz.json" size="1103" version="27.0.0"/>
+      <File SHA256:hash="48418d31f6aa357327a582abda153daeb2f9636a0d2c5aab86195d77742464d9" name="LaunchScreen.xib" size="3749" version="27.0.0"/>
+      <File SHA256:hash="5f860bf58419930703d3fd8f24547c605f285ea42be920e686177443b73c6d94" name="document_config.json" size="864" version="27.0.0"/>
+      <File SHA256:hash="9a3a42052cd4adec4909fb86845f37efc978669925ab001e408f3ea8fe80e1ae" name="mro_config_shipping_container.json" size="1077" version="27.0.0"/>
+      <File SHA256:hash="850864f90a7998b6225e18c9d6659798ba120166648f911aa88c5b6c607237bc" name="workflows_config_serial_scanning.json" size="3440" version="27.0.0"/>
+      <File SHA256:hash="4cdca12e7655cc1af7f8afb9e0af5568812e3c929e1fd95eaad820681b9c2ea8" name="vehicle_config_license_plate.json" size="987" version="27.0.0"/>
+      <File SHA256:hash="a30518b25d339e7cd854e2170103f2d59d9e78bf2d523430c4d7acc59e813d8d" name="id_config_german_id_front.json" size="960" version="27.0.0"/>
+      <File SHA256:hash="73ba89fe22638573a59b711609dbbaa4fb92169430db1b59dc55ce51c78fc9b9" name="others_config_barcode.json" size="1547" version="27.0.0"/>
+      <File SHA256:hash="2530022c995a5e184c2fda4c395841b2b66dabe01fc68b925023df3a020587c2" name="id_config_driving_license.json" size="2319" version="27.0.0"/>
+      <File SHA256:hash="e4dd4b05c4133dfe5c928df6a5c0c670f89e36838dbdd8908d0b284a7687ea66" name="energy_config_analog_digital.json" size="977" version="27.0.0"/>
+      <File SHA256:hash="6d87815dd8e48661082d6abd0ba34e33d725007ccffca6bd7e3c360bff02060f" name="others_config_voucher_code.json" size="1126" version="27.0.0"/>
+      <File SHA256:hash="d31160f5b2cf8d8029137bf785672b716e8ec4aeb47ba5984ea166b9dab2a4b0" name="workflows_config_parallel_scanning.json" size="2175" version="27.0.0"/>
+      <File SHA256:hash="36a5c1bffa776292a0749f43a419856040c071522af65a21735a187a09081e90" name="others_config_cow_tag.json" size="1095" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples/AnylineExamples.iOS" name="Assets.xcassets"/>
+    <Directory location="Examples/AnylineExamples.iOS/Assets.xcassets" name="AppIcon.appiconset">
+      <File SHA256:hash="ed32a51128101cd81f0569f209f415ca21315591fc46b1db5533f254d4db6c69" name="Icon167.png" size="4692" version="27.0.0"/>
+      <File SHA256:hash="653a3d75c42c01ce4dd60c0aa0b59f6de548a016a2d70cc9aaa3a5e9664e78c9" name="Icon29.png" size="845" version="27.0.0"/>
+      <File SHA256:hash="cc7f7cb40a3d7b2d7639e2a15b62bc3404d779a56c8863ae492218fb3519452e" name="Icon1024.png" size="70429" version="27.0.0"/>
+      <File SHA256:hash="bf145cb811bd1095bd94aadd17e3ed38b489dde1e8ce58ad5e9de090bb3556f8" name="Icon60.png" size="2537" version="27.0.0"/>
+      <File SHA256:hash="170b1b2119e0fff597104534ab50b7c31b930eb76b24bfc9bd7508e1b489bc30" name="Icon76.png" size="2332" version="27.0.0"/>
+      <File SHA256:hash="04cfee2b3a4feb32a77bb953c8453a0bb416f48906a9448b5edc355c0d68da86" name="Icon58.png" size="1761" version="27.0.0"/>
+      <File SHA256:hash="09242c80c04a97fc083bca554f5c992f4ae090ffaa858af7a92613b5cdb07354" name="Icon40.png" size="1101" version="27.0.0"/>
+      <File SHA256:hash="538ba04ed28b7eec3917fa1a3226e4b023ffc263bb762891a2a25e2c95f9f394" name="Icon80.png" size="2454" version="27.0.0"/>
+      <File SHA256:hash="201357b359fc066f822e6f62fbef3c9e578492793f0a2b8748d23df962180dbb" name="Contents.json" size="2135" version="27.0.0"/>
+      <File SHA256:hash="a5bf0830dc6cffbf5685ee16b11c9e04b08466cce1ddd4c9598f9ad8e7952c6f" name="Icon87.png" size="2758" version="27.0.0"/>
+      <File SHA256:hash="faf908f37fa0eb73f531d8c46ef422df52252b9bca73cd726ec299bf92852fb6" name="Icon120.png" size="3773" version="27.0.0"/>
+      <File SHA256:hash="8b98982a7dd52bbaea5515ce0681e7b1180eaddf85589cc6a261c5b1c98336d9" name="Icon152.png" size="4750" version="27.0.0"/>
+      <File SHA256:hash="de96a3ba670c8163ba94ef578bb897b951b14c475ac1fecab06b297af967bd6f" name="Icon20.png" size="1313" version="27.0.0"/>
+      <File SHA256:hash="d11de68c36358cccbb16a82ba7645c3ab6c7568b4cd5f29f7b7879f38a99495e" name="Icon180.png" size="5192" version="27.0.0"/>
+    </Directory>
+    <Directory location="Examples/AnylineExamples.iOS" name="Properties">
+      <File SHA256:hash="c15a958fcd35c87c85b4602eb052c2b28a46a5bde264621889a5acab09ea24ef" name="AssemblyInfo.cs" size="1412" version="27.0.0"/>
+    </Directory>
+    <Directory location="" name="Nuget">
+      <File SHA256:hash="8eae08ca2c810d408bb04e4294a28f5d067019de8455ed8cc6a7d33056e0bd0c" name="Anyline.Xamarin.SDK.iOS.27.0.0.nupkg" size="149487966" version="27.0.0"/>
+      <File SHA256:hash="29e9cc68bd69ca4dc9dc10f20c6355058e67ac84fa995b9c0414c1dc5c986b6b" name="Anyline.Xamarin.SDK.iOS.nuspec" size="2161" version="27.0.0"/>
+      <File SHA256:hash="93d2a229c7b50a231abd9f7315eb131e8aa0112b1f03591253ae658d0f246d26" name="Anyline.Xamarin.SDK.Droid.nuspec" size="1881" version="27.0.0"/>
+      <File SHA256:hash="fd7e4875e331a136f048c34298977505948e5af5992dad8e92f861bae456d78d" name="Anyline.Xamarin.SDK.Droid.27.0.0.nupkg" size="76976621" version="27.0.0"/>
+    </Directory>
+    <Directory location="Nuget" name="lib"/>
+    <Directory location="Nuget/lib" name="Xamarin.iOS10">
+      <File SHA256:hash="6e91832061598768006063910c8c1d551820a7205c698227202a2cab0c32ba13" name="AnylineXamarinSDK.iOS.dll" size="182687232" version="27.0.0"/>
+    </Directory>
+    <Directory location="Nuget/lib" name="MonoAndroid10">
+      <File SHA256:hash="4f54fc9ec7c2ff4e691fb229bd6239971dc41ebfd2be3c682a71b591a2b3b56d" name="AnylineXamarinSDK.Droid.dll" size="79518720" version="27.0.0"/>
+    </Directory>
+    <Directory location="Nuget" name="build">
+      <File SHA256:hash="765c48481d6a316673ad580f6ac89d112c76ecd3f316a79a03e4e3130114271d" name="Anyline.Xamarin.SDK.iOS.targets" size="1847" version="27.0.0"/>
+    </Directory>
+    <Directory location="Nuget" name="AnylineResources.bundle">
+      <File SHA256:hash="89379612baafa79af846e30a77c1b03744e7174572526323d0cfde15b0be0f1e" name="Anyline-Info.plist" size="899" version="27.0.0"/>
+      <File SHA256:hash="71869ffc6078f30d3f2c9af7522ca8ccd3c986831ed53365ea84a7d29e0aa225" name="threshold_all.ale" size="2872" version="27.0.0"/>
+      <File SHA256:hash="5068123befd877a33f7bbbea03f84996d122bf95532c536f933dfbfa59478188" name="subscript_function_list.md" size="2491" version="27.0.0"/>
+    </Directory>
+    <Directory location="Nuget/AnylineResources.bundle" name="ui">
+      <File SHA256:hash="f297b744f6c4c22a28c1fcbdb19e1996c9a3b724ca40314f494c4761c9de3e44" name="favicon.ico" size="15086" version="27.0.0"/>
+      <File SHA256:hash="4db5e46b2d8fe17e6afc8c60283464669a16813e92fe1c0a1a1e1e3fa77de8fa" name="index.html" size="2839" version="27.0.0"/>
+      <File SHA256:hash="88d521a33f756bcf1179cde80470763260454323236abcc1ee7adda52f762a70" name="asset-manifest.json" size="574" version="27.0.0"/>
+      <File SHA256:hash="608c4306a0fcde1816c24ee93ad8980dcbd7f6fb6490b732b584505925deedc3" name="precache-manifest.ce26756c8a59c9a79b352ead99228ad1.js" size="693" version="27.0.0"/>
+      <File SHA256:hash="63800f1e3dfcae864156435f1c263e4aff662d4700c95827d28884abfb7b91ee" name="manifest.json" size="303" version="27.0.0"/>
+      <File SHA256:hash="cd352b80a9562718dba18a4f564f995e043ca7bcd85ce53fbd69f8a32e9e1988" name="service-worker.js" size="1043" version="27.0.0"/>
+    </Directory>
+    <Directory location="Nuget/AnylineResources.bundle/ui" name="static"/>
+    <Directory location="Nuget/AnylineResources.bundle/ui/static" name="css">
+      <File SHA256:hash="21c6988fd1aa9fb4de048d976c1fe578016f83518b86d901007168f42100ee88" name="main.chunk.css" size="947" version="27.0.0"/>
+      <File SHA256:hash="887a52aa6ecc97b68ec73fa19232ae2799939cc239d7f030e4640d8d3f67faa8" name="main.aad3df20.chunk.css" size="874" version="27.0.0"/>
+    </Directory>
+    <Directory location="Nuget/AnylineResources.bundle/ui/static" name="js">
+      <File SHA256:hash="c001e7e14d32725ad7c8a1860d9dc272ef6da4488d7c6cdce3c24fa2ec43786f" name="3.10897e3c.chunk.js" size="100551" version="27.0.0"/>
+      <File SHA256:hash="4abf5b82071a0ef33f607f9ec78c7949443a146b2557dd4d897ab5f01edd601b" name="1.42b14459.chunk.js" size="10761" version="27.0.0"/>
+      <File SHA256:hash="a39ed7cc72b0a03acd5a2e341918103a1f2a8d39a8670afc307055702d59ada4" name="2.chunk.js" size="648096" version="27.0.0"/>
+      <File SHA256:hash="ed17a3a979f77f56936c9c48b270b3995e6e87cb74a8a00b36941be6ebb4fc8c" name="2.8b8e9591.chunk.js" size="317465" version="27.0.0"/>
+      <File SHA256:hash="7c63fcf85e521e3dece5d51df7832ed32ba5e927b90f960635477185ca550380" name="main.chunk.js" size="53750" version="27.0.0"/>
+      <File SHA256:hash="8354432c302e5781a2412940cc48d5ef9557786706ecbaab9351dbaaaf0e5a43" name="main.21e52887.chunk.js" size="18425" version="27.0.0"/>
+      <File SHA256:hash="822b118d5747ede5362096a5931bb4755a37d04365f10cc91ca66cb28efcd33f" name="runtime~main.141b28a8.js" size="2257" version="27.0.0"/>
+      <File SHA256:hash="d6921683df7fc9f83e8e57c47aa9cc387a1ec3f6f791f4d17a853094f8d98af2" name="runtime~main.js" size="1536" version="27.0.0"/>
+    </Directory>
+    <Directory location="Nuget/AnylineResources.bundle/ui/static" name="media">
+      <File SHA256:hash="4bb358b7729e14b45bf234df0ca4d81d4614d9b0cf9831390cbbbf2313c4c375" name="anyIcon.ebceaedb.svg" size="1722" version="27.0.0"/>
+    </Directory>
+    <Directory location="Nuget/AnylineResources.bundle" name="module_barcode">
+      <File SHA256:hash="9590170c178a99ec71936c3249e899d4c5b28cce9cd0946b6ca92594dbed95f9" name="ean.ale" size="10444" version="27.0.0"/>
+      <File SHA256:hash="f49d3e0ff2f812ba11b7befb34b27ce2ac3efdb0f12e2285e4ec202ae5880edc" name="noscript_barcode.ale" size="1612" version="27.0.0"/>
+    </Directory>
+    <Directory location="Nuget/AnylineResources.bundle" name="images">
+      <File SHA256:hash="e1f4edb8baba3521e7c09ddb0a763759906497d7c04074e51659f6fe30d46e0f" name="flash_white.png" size="1532" version="27.0.0"/>
+      <File SHA256:hash="18d33aa7a1f5934f980cfc116f974b6af72dac9dcafc7ca60f9fbdafefeb7a88" name="flash_white@3x.png" size="2291" version="27.0.0"/>
+      <File SHA256:hash="594bd5c5f3cb5d3b2550797b034aaecb099f77a98fb195d0690d4adb4a4373ae" name="flash_white@2x.png" size="1879" version="27.0.0"/>
+      <File SHA256:hash="ef253a62b7c9e19c514b3a8e2985d13954dbaa3631acfd519ed51261d4c629f1" name="anyline_logo_white.dat" size="4506" version="27.0.0"/>
+    </Directory>
+    <Directory location="Nuget/AnylineResources.bundle" name="module_document">
+      <File SHA256:hash="f34feb6b29d26f97c2ed043894cc08bc6b58ab839ed71e7cc05285973ab3491e" name="document.ale" size="50380" version="27.0.0"/>
+    </Directory>
+    <Directory location="Nuget/AnylineResources.bundle/module_document" name="trained_models">
+      <File SHA256:hash="59be727caab25d6e614ca0875e8bbf54a8b9ee053c7cf9e8aad6664bf29dd780" name="doc_model_3_25.any" size="258440" version="27.0.0"/>
+      <File SHA256:hash="c62250447d59b98570604e3a2587bebc705554e219b63d2628ee0c54b4334e94" name="doc_model_3_27.any" size="258440" version="27.0.0"/>
+    </Directory>
+    <Directory location="Nuget/AnylineResources.bundle" name="module_energy">
+      <File SHA256:hash="00296bd133b4f663365efe8d95bde46d8bb0d8efddcde5cb2ff1e0c6700f36bd" name="analog_meter.ale" size="37280" version="27.0.0"/>
+      <File SHA256:hash="696af463db7fe9867edbd0c8194ada2205c1fca7756ba437814561773a0ea167" name="digital_meter.ale" size="37452" version="27.0.0"/>
+      <File SHA256:hash="fb55b3c70a6c40740e13944a120a978698c0dc97532c607dc95a942449d05ae0" name="digital_meter_multifields.ale" size="38112" version="27.0.0"/>
+      <File SHA256:hash="792ace44355ef81f0ed1d2956e3be1f2ff5a493c7cf2fea917f678de0a6690d5" name="brightness.ale" size="396" version="27.0.0"/>
+      <File SHA256:hash="fd84cb96695bb1e2bb0edd78fa2f1fb49b642d79b79d339cc8fe033a5c2b6257" name="dot_matrix_meter.ale" size="8312" version="27.0.0"/>
+      <File SHA256:hash="9121b9b2c88e0251f626639e1bd50acadcd0c891fdf4e897822e9f54e93fc339" name="energy_serial_alnum_3_letters.ale" size="21112" version="27.0.0"/>
+      <File SHA256:hash="20ca89e70969f8d7e52ef8cdf2548d4a2f77cbfc3e258d836bed5a9c234124b2" name="analog_digital_auto_mode.ale" size="37560" version="27.0.0"/>
+      <File SHA256:hash="93d4a864f199cf227b37f14647985fcfa2613abfc12c20a8e9b8ef3eb68654bf" name="energy_serial.ale" size="8460" version="27.0.0"/>
+      <File SHA256:hash="be31889af72f73c54f5b8df22c1171b707e9bef44c174afc846692298487bdd5" name="digital_heat_meter.ale" size="8248" version="27.0.0"/>
+      <File SHA256:hash="d5780707b887e00740e1b1571ab4c570233d9bef3584ec6474fdf545b660ffe0" name="dial_meter.ale" size="3936" version="27.0.0"/>
+      <File SHA256:hash="e1f68a6fa038008c8eee89b41f18b44b939823e6c3407f66fefa975fe0eb4834" name="energy_serial_capital_letters.ale" size="12620" version="27.0.0"/>
+    </Directory>
+    <Directory location="Nuget/AnylineResources.bundle/module_energy" name="trained_models">
+      <File SHA256:hash="7ac646a318cf6fc96603197bcccd0eb342b0336c31596654e3a3bc3e2db4caf6" name="crnn_auto_synth.any" size="8559624" version="27.0.0"/>
+      <File SHA256:hash="ab5811a84144e148443a633a4174e4d378fb3d7c613a8c9967405ba85413b5bd" name="det_auto_synth.any" size="470232" version="27.0.0"/>
+      <File SHA256:hash="3cd9663a7b58e74756128f1908eb5ef48c3695fc626f4ff8637ce05564db78ab" name="CNN_SNr_w_CL_special_whiteList.any" size="904680" version="27.0.0"/>
+      <File SHA256:hash="1176690f4c4843b7b4e148fccf276e48b4a98fa38343d61675cb3e1ee75ba1f2" name="crnn_energy_digital_hex_small.any" size="1462952" version="27.0.0"/>
+      <File SHA256:hash="d26c6fd0a85a4f479aa42332a0ebe54c016d0f12d33aa025329867941b580037" name="det_auto_hex.any" size="470232" version="27.0.0"/>
+      <File SHA256:hash="5e5629f188dbcd864422ce5b1285ab96211eb4b3cb2bb02535a8f972d2dc4267" name="CNN_serialnumbers_combined.any" size="472936" version="27.0.0"/>
+    </Directory>
+    <Directory location="Nuget/AnylineResources.bundle" name="module_anyline_ocr">
+      <File SHA256:hash="620bf405f55a28e4984cc73fdcd14c4fba321445151203a7c0f7eb87812e8eaf" name="tin.ale" size="33548" version="27.0.0"/>
+      <File SHA256:hash="93507ebf9d8ce6db9dcf4dad60a725a29834fa6bc2049aef9488692796099b64" name="vin.ale" size="18336" version="27.0.0"/>
+      <File SHA256:hash="73c24e06b22da318ebd1ec51b20a008458bd16dfbb35282217d21ae4bdf9eded" name="container_scanner_vertical.ale" size="21900" version="27.0.0"/>
+      <File SHA256:hash="6bb58deba71a52b5c4657126644b74fc435aeb3e8197e05c256ac983bc880784" name="cow_tag_scanner.ale" size="21856" version="27.0.0"/>
+      <File SHA256:hash="cacc70924fc10cafdd24706b5bf73d55f859614283fcec97f30cfd51fbd64d42" name="container_scanner.ale" size="14624" version="27.0.0"/>
+      <File SHA256:hash="061c2fe04425098fce427230036b76ed53fc9cc261cbafee3b712df369456fa7" name="anyline_ocr_grid_any.ale" size="22988" version="27.0.0"/>
+      <File SHA256:hash="aaa86979cefc7646c19db6a64394c04a25d567d022f44a96a0e47ce8390bbdd6" name="anyline_ocr_auto_any.ale" size="25484" version="27.0.0"/>
+      <File SHA256:hash="1370c2b62c2399ad2819ff0439e29e86d96336245b9f33cca0b88dfb9c2c0448" name="anyline_ocr_line_any.ale" size="19000" version="27.0.0"/>
+    </Directory>
+    <Directory location="Nuget/AnylineResources.bundle/module_anyline_ocr" name="trained_models">
+      <File SHA256:hash="4dd25af6486ee3853f6819e9d86b696f912941cb99deaef669789f487b236871" name="comb_rw_10Lite.any" size="258456" version="27.0.0"/>
+      <File SHA256:hash="5f9192edeb19a73ba9c38c55706a0dd0a5e6610cead178b8bf48b3e7e403748f" name="crnn_baseline_v2_ds6e1.any" size="2434456" version="27.0.0"/>
+      <File SHA256:hash="3990e21b0752e22656d1f3346b8acd62d6ff2cc15faa60a69325525a1b044df3" name="USNr.any" size="904712" version="27.0.0"/>
+      <File SHA256:hash="d9df79e97f4900d7c0f3d1a65a2e4d69fa0ec9787648685f0b1dd3bea253c25a" name="VIN.any" size="903144" version="27.0.0"/>
+    </Directory>
+    <Directory location="Nuget/AnylineResources.bundle/module_anyline_ocr" name="config_files">
+      <File SHA256:hash="c00b0505dda9c40c31bca98001769b61140c965ffef5443e1f62bf484507dafd" name="cooper.txt" size="42" version="27.0.0"/>
+      <File SHA256:hash="21a0ebb4b7b100b782f2dab41ab9a9a65af90a9c99ef842925dc4a53e92149d4" name="giti.txt" size="46" version="27.0.0"/>
+      <File SHA256:hash="77e91e280e3ede3e34df59873ceb421f483e15b48eceb942e650bc1187f62221" name="continental.txt" size="134" version="27.0.0"/>
+      <File SHA256:hash="c2df8897bc00b9181054ca1837b0781c617f2251303c46b58be58618daf21c06" name="michelin.txt" size="374" version="27.0.0"/>
+      <File SHA256:hash="59c3a2218829cd8eba5e761458c172c597fa563fe65851dedad78919b6bbb0c6" name="availableManufacturer.md" size="75" version="27.0.0"/>
+      <File SHA256:hash="45f3b68233c2a2c60bc847d3911d52a44b14053f005b9b6503ec0e87a69ec680" name="goodyear.txt" size="224" version="27.0.0"/>
+    </Directory>
+    <Directory location="Nuget/AnylineResources.bundle" name="module_license_plate">
+      <File SHA256:hash="3aac59370b6f688db05ad75ef681cf1db00811509b39c1675c8670287e5130e3" name="license_plates_combined.ale" size="197068" version="27.0.0"/>
+    </Directory>
+    <Directory location="Nuget/AnylineResources.bundle/module_license_plate" name="trained_models">
+      <File SHA256:hash="0f4913a6704534f7b05516d218d0dd89cb18f25de6814488de9e719d4193920b" name="LPT.any" size="1297272" version="27.0.0"/>
+    </Directory>
+    <Directory location="Nuget/AnylineResources.bundle" name="sounds">
+      <File SHA256:hash="8b21c1906ec134d7cfdee540bdeb6a1b67d558d8d9f8f0d766ac767e5e1ec676" name="beep.wav" size="9702" version="27.0.0"/>
+    </Directory>
+    <Directory location="Nuget/AnylineResources.bundle" name="module_id">
+      <File SHA256:hash="c614544077ba9b47594039d9ac5857f50b7262b1327537cffdd3f38eac4da4ce" name="functions_template.ale" size="102776" version="27.0.0"/>
+      <File SHA256:hash="a8e083b4b8c0ecb62691d6f442ba713c446164766d7cb0c10dce286a834a4803" name="anyline_driving_license_belgium.ale" size="39544" version="27.0.0"/>
+      <File SHA256:hash="0b2ba9497228abcf28e1bd0e26e531125e4009b3fe8f2382ee77857958b8003f" name="anyline_driving_license.ale" size="251488" version="27.0.0"/>
+      <File SHA256:hash="d4fde24514c138bb68863d44ff807f5e31f7a73210edb24008d41d3db9625649" name="mrz_scanning.ale" size="385696" version="27.0.0"/>
+      <File SHA256:hash="73b4b5473635d67c8667edb6a8ed2c62061029202852dacfe7250b55ef325681" name="main_id_scanner.ale" size="12172" version="27.0.0"/>
+      <File SHA256:hash="48330f3de80851d99039fc4adf73af3835dfb722f41ed0d517f38146398b193a" name="anyline_german_id_front.ale" size="130764" version="27.0.0"/>
+      <File SHA256:hash="937113e8f61aada9fcb2a9205ce3330977283c5b6032c1b29e217c7cf170d0eb" name="anyline_driving_license_netherlands.ale" size="73824" version="27.0.0"/>
+      <File SHA256:hash="b2452d46321b8fc743507dfb6438fda57e5a87fdfa05f8ea19ea0cb329861622" name="functions_card_rectification.ale" size="5368" version="27.0.0"/>
+      <File SHA256:hash="8969f702ceb11c3ed97fb698b7e8b4f7a73964e96e1a917c7996ade48ef1fc16" name="auto_mode_standalone.ale" size="2764" version="27.0.0"/>
+      <File SHA256:hash="0713709321aafd8b27c3ea69472947fc5d8f1884dfe3374a1c393cc23015d79f" name="functions_template_scanning.ale" size="75424" version="27.0.0"/>
+      <File SHA256:hash="6b956aea54c083d2871591fd850b8b56ecd53c4b763087a24024baa8504d462f" name="functions_east_detection.ale" size="8096" version="27.0.0"/>
+      <File SHA256:hash="ab2a993c974377711e39bf740a6adde31893a057f6afc7d68ee41d6132c73719" name="functions_auto_mode.ale" size="38712" version="27.0.0"/>
+      <File SHA256:hash="76a18354b1f3f2e6a8e7c35b2a56ad723c0d0d876552f7b30bebb416f21ad8f4" name="functions_card_detection.ale" size="56504" version="27.0.0"/>
+      <File SHA256:hash="f3868bc38293ec90600c8dd1541143d9164fb0db17b4f429334c085d37ecdfc2" name="template_scanning_standalone.ale" size="93452" version="27.0.0"/>
+      <File SHA256:hash="ad8aaec62cf57743444874963eab3bba670ea5194040b43589bd90a66dfaa80b" name="functions_common.ale" size="5024" version="27.0.0"/>
+      <File SHA256:hash="60fa4270506997e919d41e87366e633667a577441a0717c7fc3caf175b744848" name="functions_mrz_scanning.ale" size="518860" version="27.0.0"/>
+      <File SHA256:hash="e2b62443f8e00433e835407ca310d257ffe40612a8a67e6c49db94145ca0a2d4" name="functions_anonymize_id.ale" size="5792" version="27.0.0"/>
+    </Directory>
+    <Directory location="Nuget/AnylineResources.bundle/module_id" name="trained_models">
+      <File SHA256:hash="a0f7ac982db5a78b6db8d59a9237591f0cda762c4dfcb01deb7b6f89067b4ffa" name="crnnID_quant.any" size="1136120" version="27.0.0"/>
+      <File SHA256:hash="dbaddc2daa3b5b003fe8de073c1219fc24e9ddb4a4438ccdfea82bfd674d2d59" name="IDDe.any" size="649656" version="27.0.0"/>
+      <File SHA256:hash="a2de6d66407635d9f3b0ec8f22d1be76ad2af3fe056da62d6a0a2a455f6f5a26" name="DL_AT.any" size="649656" version="27.0.0"/>
+      <File SHA256:hash="66c2e82800e9b002654acb8b078f912869da866d01aee1fb8af73c6478f25ba3" name="IDDeSticker.any" size="649672" version="27.0.0"/>
+      <File SHA256:hash="89fd735d626876e53d332328b21421ffa3c697c9b9c602fe3213b98864032610" name="eastID_landscape.any" size="7093576" version="27.0.0"/>
+      <File SHA256:hash="e16f09861167cf004eb3b51528734f16830bccb6e19dac14958ef71fe692ba55" name="OCRb.any" size="417672" version="27.0.0"/>
+      <File SHA256:hash="3990e21b0752e22656d1f3346b8acd62d6ff2cc15faa60a69325525a1b044df3" name="USNr.any" size="904712" version="27.0.0"/>
+    </Directory>
+    <Directory location="Nuget/AnylineResources.bundle/module_id" name="config_files">
+      <File SHA256:hash="e0e8b64fed61be4a7342c741961c62fd595d6b68cabfe48e4dd477493ed40863" name="ID_default_start_variables.json" size="1231" version="27.0.0"/>
+    </Directory>
+    <Directory location="Nuget/AnylineResources.bundle/module_id/config_files" name="templates">
+      <File SHA256:hash="abbd65d0c2753db351231a63fe2b6cb8e8a000c1253f0f253cfaea7f71a7bcd0" name="USA-FO-TX19.any" size="13240" version="27.0.0"/>
+      <File SHA256:hash="aea4e7c7c78e086e362c75eb3db955283bf8310a5f0131bd31198c2e60c025d2" name="CHE-FO-02001.any" size="13384" version="27.0.0"/>
+      <File SHA256:hash="c55f9ef62f022d9379edfe1b05ed6c83ea8c794e8f305b21f3ac8fcbc6e6a81d" name="MLT-FO-03001.any" size="14248" version="27.0.0"/>
+      <File SHA256:hash="9e59fed7ee007573d154179aa636e5d0c32de1393c826842294e8f80f9e8307a" name="NLD-FO-04001.any" size="11224" version="27.0.0"/>
+      <File SHA256:hash="c107486224567ca0a6eb2f238e3cb289dadb64b091127427708b4282cc8fc468" name="IRL-FO-04001.any" size="17896" version="27.0.0"/>
+      <File SHA256:hash="cff8809118112086493e225a3947d3efa539e6547cdbb92f77e224245e78abf2" name="ITA-BO-04004.any" size="13048" version="27.0.0"/>
+      <File SHA256:hash="bb7415390be1d6ba5e4bc6befd2ac1d5baec09c225195b417d39b9f2f8162007" name="AUT-FO-05002_05001.any" size="11000" version="27.0.0"/>
+      <File SHA256:hash="6a3c60a82b2dc2b0675c197444c36a35473bd847d734eefc2d72e397f3e37397" name="FIN-FO-05001.any" size="15000" version="27.0.0"/>
+      <File SHA256:hash="66c643b699dbcbc1113bbb5c9c8b98c6f6172db1c50d2d86f3737e1c07502153" name="USA-FO-FL19_v2.any" size="13896" version="27.0.0"/>
+      <File SHA256:hash="459b633f8acde6456033564abe08e63bfc863e1e5e1ac6c544c14bef4c4c45f0" name="CZE-BO-04002_04001.any" size="10968" version="27.0.0"/>
+      <File SHA256:hash="f0505e41f480cb4419e3f6971c3e72566719655091086e63a6a97468984da7b8" name="NLD-FO-06001.any" size="10504" version="27.0.0"/>
+      <File SHA256:hash="ce752d1da664210fb49f1173a883d74749928b9ce67d7ae5a76fd84d09abd05c" name="ESP-BO-03001.any" size="7688" version="27.0.0"/>
+      <File SHA256:hash="d64977e0766d9dba61095ea9182a2f89836261b98d30c1bef604dc77ff1640dd" name="FIN-BO-06001.any" size="12280" version="27.0.0"/>
+      <File SHA256:hash="5fc40f00f274fed47d7f56d789e960721f8fd805d86ebc0b9e788faf03c25e81" name="ITA-FO-05001.any" size="14840" version="27.0.0"/>
+      <File SHA256:hash="1b4fa7db0f893d0194ec199c229b3e2c0b68749d2ce96fdf455afd7743e967e6" name="SVK-FO-04001_03001.any" size="14136" version="27.0.0"/>
+      <File SHA256:hash="d0ee6da08b2bee70b1f46370f2689cde98e345b1d9b1a8510231830fe6f2f249" name="NOR-FO-07001.any" size="11208" version="27.0.0"/>
+      <File SHA256:hash="1da8f4f79cc71c7223ee33a6ae5ab6049bd1ea02bd418ca546411b66997f8b06" name="BGR-FO-02001.any" size="20232" version="27.0.0"/>
+      <File SHA256:hash="e8387f6ad4bbddc080084f1931c7c626680876bf0140942f929923c388b41fa5" name="SVN-FO-04001.any" size="12008" version="27.0.0"/>
+      <File SHA256:hash="0dc5614c9fac30afeb625a8df324b8b5cd1e2941c146fa17f90540aa2b0f67cf" name="USA-FO-OH19.any" size="11320" version="27.0.0"/>
+      <File SHA256:hash="30b5cfb0087aff4d1a5a0dcedd01d26fd5819f42d1a2bb57a37716e5d0bb6879" name="DNK-FO-04001.any" size="14504" version="27.0.0"/>
+      <File SHA256:hash="32ab3ca6f29f6ca056608de585b95556cc6df8e885dbdb09cb473f00e82efddd" name="NZL-FO-14.any" size="8888" version="27.0.0"/>
+      <File SHA256:hash="31f84a052bb58dd877887967100090c814cb0bd8735c8bacaa4c9a85a3432ba7" name="CZE-FO-02003_02002_02001.any" size="15368" version="27.0.0"/>
+      <File SHA256:hash="1d55a7c4cc370ca4c38f51f3cec5a3fa213fa0341616df90e6a8ee9dd3634d7e" name="POL-FO-04001.any" size="16472" version="27.0.0"/>
+      <File SHA256:hash="4734e6a85cfc2442cf359fecab860c682a307cc784321ba34f89ec1e47e56df8" name="ROU-FO-06001_05001.any" size="11976" version="27.0.0"/>
+      <File SHA256:hash="4188f924f95f1f296cd9d1c571823ad3f861ad349a445bfeed7ca8025df7ead5" name="AUT-FO-04001.any" size="10888" version="27.0.0"/>
+      <File SHA256:hash="dedd9d0434615e43f59e5a0632a29660fd41aec33c8811951fd27f6552975ab3" name="GBR-BO-02001_01001.any" size="9816" version="27.0.0"/>
+      <File SHA256:hash="38f00b54e3bedc3e0b176e3a7b4de2f827320d01789a017002e348c4f8482f19" name="USA-FO-NC19.any" size="16520" version="27.0.0"/>
+      <File SHA256:hash="3e6905e5c65fbc71c57ab49978feb9c97b55731afa4aa6ee6b90929d6c06f4fd" name="SVK-BO-05002_05001_04001_03001_02001.any" size="8280" version="27.0.0"/>
+      <File SHA256:hash="0a09f83e488c9f41033c1985a92f72971f1e9c4d67d6a07dc1e10d213ef08662" name="BGR-FO-02002.any" size="22024" version="27.0.0"/>
+      <File SHA256:hash="e3a7c61daaec592d68ddc0f98f6399eb871fde3a9daa939bd9f7d6787dbaa501" name="SWE-FO-07001.any" size="15656" version="27.0.0"/>
+      <File SHA256:hash="6d6ca149a6045d3a2745c88e38341e7bc1ae26215e27a2d8612b831ab357c26a" name="LTU-FO-03002_03001.any" size="14040" version="27.0.0"/>
+      <File SHA256:hash="85bf54a8072c0881a6a3cd820ce2fb170dd4c9ec37f338d05cd2b3065cbd758e" name="NOR-FO-05002_05001.any" size="14680" version="27.0.0"/>
+      <File SHA256:hash="ed82d7bb9f55f50c0cb5c85bd3c989d22a78acdf55b54f7312fe18ec5ea0c513" name="AUS-FO-SA13.any" size="7304" version="27.0.0"/>
+      <File SHA256:hash="c175fb59d880f05ef106391f04b54942cfa0d6d1212c5c248924eb0e09de6bba" name="HUN-FO-04001_03001.any" size="13224" version="27.0.0"/>
+      <File SHA256:hash="e9f152a1d5cd73cd24e6e03b9aa01fb4e7e6830230e90cb31cab469cd51c40b5" name="USA-FO-IL19.any" size="20168" version="27.0.0"/>
+      <File SHA256:hash="81b60ce8212c2f8c0905718b1b3c85b4f4170d3a7b62da883d7525e74514b66e" name="USA-FO-MI19.any" size="15256" version="27.0.0"/>
+      <File SHA256:hash="6b815bd035a00dd59930288230223a4fa283f2c7b69b7be21c99e7647b4e554c" name="POL-BO-03001_02003_02002.any" size="7752" version="27.0.0"/>
+      <File SHA256:hash="ddb683142e1908d607ef6b96d5c77f24979c52098f2579da3aa24ad468c4c2d7" name="DEU-BO-02001.any" size="10120" version="27.0.0"/>
+      <File SHA256:hash="dfc1d492707c6251c311ee94fac579aabd8f0c93c43b5aac9850af073dddc297" name="AUS-FO-NT06.any" size="9656" version="27.0.0"/>
+      <File SHA256:hash="7132f94aef6cbc4923ce699499a16999f2785dc59687cadc2e606235579aeebd" name="USA-FO-CT19.any" size="14312" version="27.0.0"/>
+      <File SHA256:hash="a14907ecadfa5ca949ee61cad66805d1b0820661f4bcd8e8773b4fdfa71950c6" name="GBR-FO-09002_09001_08002_08001.any" size="12552" version="27.0.0"/>
+      <File SHA256:hash="64b9def8ca599981d14cd045c86a3ec6aca0414aef9c2d61c5fe5ad2520bbae0" name="HRV-BO-03002_03001.any" size="8920" version="27.0.0"/>
+      <File SHA256:hash="3123343dcd73e9b4e6563bc5963acb3545aa3984ebbe7de773070444dade86c3" name="AUS-FO-NSW12.any" size="7944" version="27.0.0"/>
+      <File SHA256:hash="eb935bebc6a26cc6e6856f810f71c519bd6b2cee27f91730b4557a76f9d28b87" name="GBR-FO-07001.any" size="11896" version="27.0.0"/>
+      <File SHA256:hash="5d9c1e55c9b4de386763fcb5bd2800ec2d54fe82b3b56f00d1563d6b6af281bf" name="BEL-BO-10001.any" size="10904" version="27.0.0"/>
+      <File SHA256:hash="5ae38ad5d59226861be36185ec9d2ee94adb93ee07bc19370011546dfc6aa637" name="ESP-FO-04002.any" size="10600" version="27.0.0"/>
+      <File SHA256:hash="bfb294da865723695df81daedf2fe288b0953f3a194d6744cca892895bc9e03b" name="LVA-BO-01001.any" size="9096" version="27.0.0"/>
+      <File SHA256:hash="2894da64398442ce4f00bb77a96f998d635786803d00158dcfc6157c34eb3d05" name="USA-FO-NY19.any" size="11352" version="27.0.0"/>
+      <File SHA256:hash="0a2a6ca312f956ffa2533089d5f587165099f7cc39c82b115db3bcdc6cac7207" name="USA-FO-PA19.any" size="15928" version="27.0.0"/>
+      <File SHA256:hash="07753de3fb1a2e504ac3f792c39199f56563d46775e5c4bb88225397e1a8eb3b" name="ESP-BO-05001.any" size="9992" version="27.0.0"/>
+      <File SHA256:hash="6ecdb87fbcb64b293a3a0fe7c7be7ab6976a489833eb5495abf4697c0cdda1b5" name="BEL-BO-09003_09002_09001.any" size="11336" version="27.0.0"/>
+      <File SHA256:hash="3491920771ac1ae5fb6bd01ff876b0a6ae73e68e91308a4b25ccac3ecc7b7233" name="GRC-FO-03002.any" size="16344" version="27.0.0"/>
+      <File SHA256:hash="298ed4aa0bd0432540023c0f2bdd36e73614de841d4bfecba2a71fd07f18c886" name="USA-FO-RI19.any" size="16552" version="27.0.0"/>
+      <File SHA256:hash="be32402d6ec73fb095c033b68126d0b486917f5892c99f0eef28f47b3ca87882" name="MLT-BO-03001.any" size="8024" version="27.0.0"/>
+      <File SHA256:hash="4860c8f8d33bded6e10008928fa99fbdd2594b980607d5f0e6028e12ba027352" name="USA-FO-RI19_v2.any" size="16840" version="27.0.0"/>
+      <File SHA256:hash="436558006f28ae56db3427c776a83d9cecc12a7335e8d6728670a25411a7593f" name="HRV-FO-02001.any" size="14616" version="27.0.0"/>
+      <File SHA256:hash="ca9bd899e95715e1e63e5d7ccc24a18405bd0695df85394304410b1899cc5c9b" name="FIN-FO-04001.any" size="15000" version="27.0.0"/>
+      <File SHA256:hash="a48148d123c01c3ad6a6ba42686120583839a3592d650de054e69b99450eb1d1" name="FIN-BO-09001.any" size="10824" version="27.0.0"/>
+      <File SHA256:hash="75d7d3807d91195ed5182f88006b9285b860870fd7fd2e63b1757eb126104538" name="USA-FO-MA19.any" size="12296" version="27.0.0"/>
+      <File SHA256:hash="979d2a4166970d57960537a8eecdad5ab5ad8a5123986ebd100a684c06dbf5e1" name="ITA-FO-06001.any" size="13640" version="27.0.0"/>
+      <File SHA256:hash="a11953c605f92d31177a02194821b4857b59b6773f019f227979003b5b25ba7b" name="NLD-FO-05001.any" size="9736" version="27.0.0"/>
+      <File SHA256:hash="5fa1f270cce5ed760384eca403bf6de5e4e049a9bb8625ac5afc79a18117652a" name="USA-FO-AZ19.any" size="20744" version="27.0.0"/>
+      <File SHA256:hash="919eea3bb99edc7e058ce87c939842fbb92a2d70c6f5017cbfd744552611bb66" name="LTU-FO-04001.any" size="14904" version="27.0.0"/>
+      <File SHA256:hash="9c2a364caf9b95be8427e1b60f153d195abb33e55dfcb5446c88576bde79e8db" name="AUS-FO-WAXX.any" size="8008" version="27.0.0"/>
+      <File SHA256:hash="a5a1c733719ccba1fed1ed46ee610468b57305776ee867c9bae3327db78c593c" name="NLD-BO-05001_04001.any" size="8184" version="27.0.0"/>
+      <File SHA256:hash="c23a9166f45d8fd06f3b9a55807eee572b470ef3963075a22f356c6b6899ab5b" name="USA-FO-CT19_v2.any" size="14472" version="27.0.0"/>
+      <File SHA256:hash="0de488f6fee2f960b72b75cd6d75b411eeae590ac77a829b74d29da933408956" name="POL-BO-04001.any" size="9240" version="27.0.0"/>
+      <File SHA256:hash="ab6b0469ea070ec1f67af50e743e17d62dd8d4cd97bb0ca4d873faf891180968" name="AUT-BO-02003_02002_02001.any" size="8456" version="27.0.0"/>
+      <File SHA256:hash="3504e0131ad683a20e0544f28a81ff589cef904c3662fa6e230b709d4522b34e" name="FRA-BO-02002_02001.any" size="9160" version="27.0.0"/>
+      <File SHA256:hash="6a0a3db4e7a242fba4934f6d0650900977a7e6bc2a3d771e59e64625a02ccb7f" name="AUS-FO-TA15.any" size="7848" version="27.0.0"/>
+      <File SHA256:hash="f07162273b0fb58c84af488f0b6a65a9e6985c5ae6d354d0cbde06237d8966f9" name="SWE-FO-06001.any" size="14856" version="27.0.0"/>
+      <File SHA256:hash="d5f74f4e168e44108f74e356638b5f2aa00d509abe967aa137a4974f956ffcd8" name="BEL-FO-05001_04003_04002_04001_03001.any" size="9448" version="27.0.0"/>
+      <File SHA256:hash="5af2a70419b61b0dbb4f7d4970045fdb8fe752943dcd7fca974dce48d205580d" name="HUN-FO-02001.any" size="14216" version="27.0.0"/>
+      <File SHA256:hash="71cfd53457c790bb6d598e42209b52ae6a0345560281af590d46dc49903b674b" name="CHE-BO-01003_01002_01001.any" size="5112" version="27.0.0"/>
+      <File SHA256:hash="bb3c3a49d9b9f881c140b2de139011c6edfc810673ea739f593a49b4603c7a04" name="USA-FO-NJ19.any" size="13912" version="27.0.0"/>
+      <File SHA256:hash="9f8fd53f302774473ac6c37b3710f2d3db6991f336608a5967279b8811533016" name="USA-FO-PA19_v2.any" size="15928" version="27.0.0"/>
+      <File SHA256:hash="067a8e39f703362bd7db42c9eb1e0704f29f1c1bacd85394a7ce96697b5505d5" name="PRT-FO-06001.any" size="16616" version="27.0.0"/>
+      <File SHA256:hash="3e18480f699610c5d64b42cb44ea902daca393d3d88750f307c47879c8b49981" name="NOR-FO-06001.any" size="15512" version="27.0.0"/>
+      <File SHA256:hash="738de4da14a90b57295708f41555930b55fc2c9c9f5c995e42a52e64c1ffa1dc" name="CYP-BO-04001.any" size="11416" version="27.0.0"/>
+      <File SHA256:hash="fc2953542026319c8bcfea258b101a144478d54a95717f82284266227e0d9540" name="LTU-BO-02002_02001.any" size="9272" version="27.0.0"/>
+      <File SHA256:hash="09918f498ed171a73f3cb08a1867c1063a3c3bc82be9700e3b55f3aaabe908df" name="ROU-BO-03001_02002_02001_01002.any" size="11944" version="27.0.0"/>
+      <File SHA256:hash="678b10506bd0455fec1a7499c74ca69dbb4dddb0f3d3f4f40252b1436d6b2229" name="BGR-BO-02001.any" size="13176" version="27.0.0"/>
+      <File SHA256:hash="6d9d0afebb8180e0e8adbfc3388dfb84d23f87855522c0e6357f829744fc9e13" name="BEL-FO-02003_02002_02001.any" size="11192" version="27.0.0"/>
+      <File SHA256:hash="e08f9d517f7bc07e17794bb43aaa68d142b6dad024447fe31511ce34f6787772" name="USA-FO-CA19.any" size="18712" version="27.0.0"/>
+      <File SHA256:hash="82a5333dfa55ec10d6f32f8c223ea4e7baac778e827921673a3c11f73026bea4" name="LTU-FO-02004_02003.any" size="14280" version="27.0.0"/>
+      <File SHA256:hash="aa6cf0a6a71ab9d9ab31c143c134c3f0c0e1ca424030f2e0b797d9dddccbdf7b" name="DEU-FO-02006_02003_02002_02001.any" size="10968" version="27.0.0"/>
+      <File SHA256:hash="180a52198fd31610ef2a316561f0299374fcfb8c932c8d1f06b066e09d9a9e21" name="SWE-BO-03001.any" size="12440" version="27.0.0"/>
+      <File SHA256:hash="dc6b6d883f3f2182f66950f36eb0cfc6ce1c11e072a2fd088147f093b971adc8" name="AUS-FO-QLD19.any" size="11800" version="27.0.0"/>
+      <File SHA256:hash="1c6da87d2f11414b224917fc029924d342e5c25f754882bc034c7f875e70a82c" name="LVA-BO-02001.any" size="9144" version="27.0.0"/>
+      <File SHA256:hash="0a38f8e101ee06bd77de4a552e528b176a5e5ac66e923892bb68436ea25e496a" name="LUX-FO-01010.any" size="14600" version="27.0.0"/>
+      <File SHA256:hash="ad51acb117dad3b2dfde74ef37e7d50e90d3ae5c8595158aefb9a989a1c1af88" name="ISL-FO-06001.any" size="14232" version="27.0.0"/>
+      <File SHA256:hash="e55fe62b9f1413b66f0eb3dcfe4cbaefc8c5cd1ef86f43b1a2ffd74582b3830b" name="EST-FO-02004.any" size="15432" version="27.0.0"/>
+      <File SHA256:hash="c78d38f766329d06bc07eb7b96567bb7e0bccfb1a7d41c030bf16641dfefc8b5" name="PRT-BO-03004_03003_03002_03001.any" size="7944" version="27.0.0"/>
+      <File SHA256:hash="cb30c61eeb54820132127ea76ec11d2c64b6bbd134ea374da43c22587b001a60" name="FRA-FO-07001_06001.any" size="14184" version="27.0.0"/>
+      <File SHA256:hash="82142220cdc9efc9a64cb1803b71b190304d7c59835d026853f26dc5546af23f" name="AUS-FO-CT11.any" size="7448" version="27.0.0"/>
+      <File SHA256:hash="ec0a34dcba7f0f70dd033190580bc68fa2d603247a3451b1d529840c3e7b0722" name="CYP-FO-03001.any" size="18264" version="27.0.0"/>
+      <File SHA256:hash="137328b99e8aef514dd8f80ec4817d313565e23039a2dbdd10485c5bf2950eca" name="USA-FO-FL19.any" size="17736" version="27.0.0"/>
+      <File SHA256:hash="0cd4b385f38249e946fdbd5b1dd478a5a86e77ca672771682918b42cf8688674" name="SVN-BO-02001.any" size="6568" version="27.0.0"/>
+      <File SHA256:hash="2aff937c0007a31c75918038ae40bdaa60979d09914c99b923485eff32b2c193" name="LVA-FO-01002.any" size="15640" version="27.0.0"/>
+      <File SHA256:hash="0d625b26ff65c3575117899dfb4e796f3c7dd361b34eec12c1eec89b3a7dd016" name="LVA-FO-01003.any" size="15320" version="27.0.0"/>
+      <File SHA256:hash="cc1d5ecb73531cdb9be77f0815f2ecdc151f0979a7bcb6e3f94fbdfb2bf7188b" name="HUN-BO-05004_05003_05002_05001.any" size="8312" version="27.0.0"/>
+      <File SHA256:hash="4ccf3516f3f134d4fe58f5f51d25932d7fd2855e7b2469ed88181e6e86443a16" name="EST-BO-03001.any" size="7640" version="27.0.0"/>
+      <File SHA256:hash="b37df01cee3f4ede269fcf55fc0ead06ea9e3cd5b01839729c3507cc8a5e48b5" name="DNK-FO-03001.any" size="14632" version="27.0.0"/>
+      <File SHA256:hash="b90fb01304943099bbeb29dd1d60cfd3787fe2f49b6c30dbdbccf152f4c29100" name="AUS-FO-VIC09.any" size="8264" version="27.0.0"/>
+      <File SHA256:hash="cbd2e2fc354b1990d4a0f2b5a002d78d119a973db018743161bfefb098769e61" name="SWE-FO-05001_04001.any" size="11640" version="27.0.0"/>
+      <File SHA256:hash="be8e980a6c97d00db89d16cfc8b82d77e02e6c63ea32fb52308a576f03d33e37" name="USA-FO-MI19_v2.any" size="15496" version="27.0.0"/>
+      <File SHA256:hash="53a2920ee2e1088080a46034496dbdfd17121f622c5714ef82811975463fd4f0" name="LUX-BO-02004.any" size="13432" version="27.0.0"/>
+      <File SHA256:hash="bbf038fc7594f65bcc11e3e973e2d350d4ac975cb23580636fb43999bb1dfef3" name="LUX-BO-02005.any" size="11208" version="27.0.0"/>
+      <File SHA256:hash="ac79a04b12afc7cd241c6f4909782f6bce990752a84d9093a07a93f54a106160" name="DEU-FO-02007.any" size="13816" version="27.0.0"/>
+    </Directory>
+  </Payload>
+</SoftwareIdentity>
