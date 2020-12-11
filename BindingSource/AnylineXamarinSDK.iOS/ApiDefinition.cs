@@ -2883,9 +2883,18 @@ namespace AnylineXamarinSDK.iOS
     	[Export ("toStartVariableJsonDictionary")]
     	NSDictionary ToStartVariableJsonDictionary { get; }
 
-    	// -(NSDictionary * _Nullable)allowedLayoutsJsonDictionary;
-    	[NullAllowed, Export ("allowedLayoutsJsonDictionary")]
-    	NSDictionary AllowedLayoutsJsonDictionary { get; }
+        // -(void)setAllowedLayouts:(NSArray<NSString *> * _Nullable)allowedLayouts forLayoutType:(ALUniversalIDLayoutType)layoutType;
+        [Export ("setAllowedLayouts:forLayoutType:")]
+        void SetAllowedLayouts ([NullAllowed] string[] allowedLayouts, ALUniversalIDLayoutType layoutType);
+
+        // -(NSArray<NSString *> * _Nullable)getAllowedLayoutsForLayoutType:(ALUniversalIDLayoutType)layoutType;
+        [Export ("getAllowedLayoutsForLayoutType:")]
+        [return: NullAllowed]
+        string[] GetAllowedLayoutsForLayoutType (ALUniversalIDLayoutType layoutType);
+
+        // -(NSDictionary<NSString *,NSArray<NSString *> *> * _Nullable)allowedLayoutsDictionary;
+        [NullAllowed, Export ("allowedLayoutsDictionary")]
+        NSDictionary<NSString, NSArray<NSString>> AllowedLayoutsDictionary { get; }
     }
 
     // @interface ALDrivingLicenseIdentification : NSObject

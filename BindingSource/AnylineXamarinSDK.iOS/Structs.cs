@@ -195,13 +195,6 @@ namespace AnylineXamarinSDK.iOS
         public long minCharacterCount;
         public long maxCharacterCount;
     }
-    
-    [StructLayout(LayoutKind.Sequential)]
-    public struct ALRange
-    {
-        public ulong min;
-        public ulong max;
-    }
 
     [Native]
     public enum ALScanResultState : long
@@ -293,6 +286,21 @@ namespace AnylineXamarinSDK.iOS
         Auto
     }
 
+    [Native]
+    public enum ALUniversalIDLayoutType : long
+    {
+        DrivingLicense = 0,
+        Mrz = 1,
+        IDFront = 2
+    }
+    
+    [StructLayout(LayoutKind.Sequential)]
+    public struct ALRange
+    {
+        public ulong min;
+        public ulong max;
+    }
+    
     [Native]
     public enum ALOCRScanMode : long
     {

@@ -4,10 +4,9 @@
   <Payload n8060:envVarPrefix="$" n8060:envVarSuffix="" n8060:pathSeparator="/">
     <Directory location="" name="">
       <File SHA256:hash="e1ef3f48bc27783f6cd7a88814b7f55e56a696e47efd6315c10f18e6a728811b" name="LICENSE.md" size="130277" version="27.0.0"/>
-      <File SHA256:hash="16eeedc9d5554589bf245ef7b049e0fa5d92fa986392fe21712e315b4f6f00ec" name="Makefile" size="13322" version="27.0.0"/>
+      <File SHA256:hash="c59b3d790229cf380b8beef28ce754998ec83e91673dbc26739c7781be5c6d7d" name="Makefile" size="13306" version="27.0.0"/>
       <File SHA256:hash="061f446d54b33700d90a4a97f641dbefc7d32f9fa233119aa14dfe2e29379024" name="README.md" size="4300" version="27.0.0"/>
-      <File SHA256:hash="b58b5723e901a648d8b26e6373d3a300b58ed06fd1b3298a39dd7a5be0640c12" name="AnylineXamarinAppiOS.ipa" size="40053123" version="27.0.0"/>
-      <File SHA256:hash="b85f7678e5c3cce90a3306bbc5ad4726c75aeb39efea6da06f668bd304e0375e" name="com.anyline.xamarin.examples_27.0.0.apk" size="61727455" version="27.0.0"/>
+      <File SHA256:hash="cdf8301aaf7e50d816fb2e5871e44addc8390c86edc114e907da80df5047b71c" name="com.anyline.xamarin.examples_27.0.0.apk" size="61727445" version="27.0.0"/>
     </Directory>
     <Directory location="" name="BindingSource">
       <File SHA256:hash="212be6085c94ff64381be33d600a89989dab7bacf6675c9e31c0d869ee3fad38" name="Anyline Xamarin SDK.sln" size="5327" version="27.0.0"/>
@@ -15,11 +14,11 @@
     </Directory>
     <Directory location="BindingSource" name="AnylineXamarinSDK.iOS">
       <File SHA256:hash="1221a7d6a8a4ac2683404cecf1e221c045a0c034572dc9398db98cb0a77655f1" name="Extra.cs" size="325" version="27.0.0"/>
-      <File SHA256:hash="1c67b866fbe4b92fb8f0fa686aa6037f5e7d6866af16e81cb423479ffeef87a9" name="ApiDefinition.cs" size="191021" version="27.0.0"/>
+      <File SHA256:hash="4bb33f7699a2420929b18e21c88eabb9e89fc91e217547983993eff9ec2d667d" name="ApiDefinition.cs" size="191662" version="27.0.0"/>
       <File SHA256:hash="2d6782190d5a6c531923800b4fa107ab0120fbcfd790dcd2d8ee12d400475a8f" name="AnylineXamarinSDK.iOS.csproj" size="2706" version="27.0.0"/>
       <File SHA256:hash="43dc410308cc20cfed938def8914fbbff4f8e4e5e531178c1b768efd37ca23b7" name="Anyline.linkwith.cs" size="2499" version="27.0.0"/>
-      <File SHA256:hash="585c022b301929ff6e657ef0bb52b30557002f8bc5b72b7095b3ab4ddb027599" name="Anyline.a" size="182357576" version="27.0.0"/>
-      <File SHA256:hash="7cfa6416629059e29d2992d03cae92511b1d6ee7e6b975100be301367f7c3dca" name="Structs.cs" size="9776" version="27.0.0"/>
+      <File SHA256:hash="69e1cd27ee16a164a91236b49b72ac7871b2138e3dc544ecd49d84517a3a7c5d" name="Anyline.a" size="182705664" version="27.0.0"/>
+      <File SHA256:hash="4e06d37873a68764218b11cca5930653731411f235f68fea943e63fbd2f35399" name="Structs.cs" size="9918" version="27.0.0"/>
     </Directory>
     <Directory location="BindingSource/AnylineXamarinSDK.iOS" name="tools">
       <File SHA256:hash="1818156f1095ce1cfff95cd0313ea6423b4d6b3f8ad2d2264084fe4866de95ba" name="update-ios-example-app.py" size="3593" version="27.0.0"/>
@@ -660,24 +659,24 @@
       <File SHA256:hash="c15a958fcd35c87c85b4602eb052c2b28a46a5bde264621889a5acab09ea24ef" name="AssemblyInfo.cs" size="1412" version="27.0.0"/>
     </Directory>
     <Directory location="" name="Nuget">
-      <File SHA256:hash="8eae08ca2c810d408bb04e4294a28f5d067019de8455ed8cc6a7d33056e0bd0c" name="Anyline.Xamarin.SDK.iOS.27.0.0.nupkg" size="149487966" version="27.0.0"/>
+      <File SHA256:hash="1a3f5a0d7151e6248b82473ffdab2151e755beb1d7c7f2f9517c48f146ea9363" name="Anyline.Xamarin.SDK.iOS.27.0.0.nupkg" size="137334004" version="27.0.0"/>
       <File SHA256:hash="29e9cc68bd69ca4dc9dc10f20c6355058e67ac84fa995b9c0414c1dc5c986b6b" name="Anyline.Xamarin.SDK.iOS.nuspec" size="2161" version="27.0.0"/>
       <File SHA256:hash="93d2a229c7b50a231abd9f7315eb131e8aa0112b1f03591253ae658d0f246d26" name="Anyline.Xamarin.SDK.Droid.nuspec" size="1881" version="27.0.0"/>
-      <File SHA256:hash="fd7e4875e331a136f048c34298977505948e5af5992dad8e92f861bae456d78d" name="Anyline.Xamarin.SDK.Droid.27.0.0.nupkg" size="76976621" version="27.0.0"/>
+      <File SHA256:hash="2ff670867d10e93b0fe1dbd6b6acedee005f38281d147c39c05dd7ffe4d62154" name="Anyline.Xamarin.SDK.Droid.27.0.0.nupkg" size="76976626" version="27.0.0"/>
     </Directory>
     <Directory location="Nuget" name="lib"/>
     <Directory location="Nuget/lib" name="Xamarin.iOS10">
-      <File SHA256:hash="6e91832061598768006063910c8c1d551820a7205c698227202a2cab0c32ba13" name="AnylineXamarinSDK.iOS.dll" size="182687232" version="27.0.0"/>
+      <File SHA256:hash="f3f6afaebfef84260df15877864c01b9859a46c87a23a3513d5944c681bb1c0b" name="AnylineXamarinSDK.iOS.dll" size="183035904" version="27.0.0"/>
     </Directory>
     <Directory location="Nuget/lib" name="MonoAndroid10">
-      <File SHA256:hash="4f54fc9ec7c2ff4e691fb229bd6239971dc41ebfd2be3c682a71b591a2b3b56d" name="AnylineXamarinSDK.Droid.dll" size="79518720" version="27.0.0"/>
+      <File SHA256:hash="a8b83f8a52a953b6a2677f38ad6b4e0a3f8d4b1437b9b3ef714e18de921631a6" name="AnylineXamarinSDK.Droid.dll" size="79518720" version="27.0.0"/>
     </Directory>
     <Directory location="Nuget" name="build">
       <File SHA256:hash="765c48481d6a316673ad580f6ac89d112c76ecd3f316a79a03e4e3130114271d" name="Anyline.Xamarin.SDK.iOS.targets" size="1847" version="27.0.0"/>
     </Directory>
     <Directory location="Nuget" name="AnylineResources.bundle">
-      <File SHA256:hash="89379612baafa79af846e30a77c1b03744e7174572526323d0cfde15b0be0f1e" name="Anyline-Info.plist" size="899" version="27.0.0"/>
-      <File SHA256:hash="71869ffc6078f30d3f2c9af7522ca8ccd3c986831ed53365ea84a7d29e0aa225" name="threshold_all.ale" size="2872" version="27.0.0"/>
+      <File SHA256:hash="f2c59c5e2c5b1547847e406c4ebd26dc5cb9da306a7c9161ac8f3cc3a22d7339" name="Anyline-Info.plist" size="897" version="27.0.0"/>
+      <File SHA256:hash="01f8c5207a66c12f8f20106a1d5d8c2032eb7d3f8e839eb3b2a880cc07775f34" name="threshold_all.ale" size="2872" version="27.0.0"/>
       <File SHA256:hash="5068123befd877a33f7bbbea03f84996d122bf95532c536f933dfbfa59478188" name="subscript_function_list.md" size="2491" version="27.0.0"/>
     </Directory>
     <Directory location="Nuget/AnylineResources.bundle" name="ui">
@@ -707,8 +706,26 @@
       <File SHA256:hash="4bb358b7729e14b45bf234df0ca4d81d4614d9b0cf9831390cbbbf2313c4c375" name="anyIcon.ebceaedb.svg" size="1722" version="27.0.0"/>
     </Directory>
     <Directory location="Nuget/AnylineResources.bundle" name="module_barcode">
-      <File SHA256:hash="9590170c178a99ec71936c3249e899d4c5b28cce9cd0946b6ca92594dbed95f9" name="ean.ale" size="10444" version="27.0.0"/>
-      <File SHA256:hash="f49d3e0ff2f812ba11b7befb34b27ce2ac3efdb0f12e2285e4ec202ae5880edc" name="noscript_barcode.ale" size="1612" version="27.0.0"/>
+      <File SHA256:hash="4696ae14a5bc71de902909cac894ecd769412978c88959ff9623af436652fa5b" name="ean.ale" size="10444" version="27.0.0"/>
+      <File SHA256:hash="85c5d9525f2b89c95f51f443b6ec9f5f3c328f2d57d38d7b398c519273a94980" name="noscript_barcode.ale" size="1612" version="27.0.0"/>
+    </Directory>
+    <Directory location="Nuget/AnylineResources.bundle" name="ui_2_0">
+      <File SHA256:hash="f297b744f6c4c22a28c1fcbdb19e1996c9a3b724ca40314f494c4761c9de3e44" name="favicon.ico" size="15086" version="27.0.0"/>
+      <File SHA256:hash="ea9db93a5d2e8cd2d83d0cf0e602bf43acb28ee5df8bcd62ab47b84fd82a5c1e" name="index.html" size="2140" version="27.0.0"/>
+      <File SHA256:hash="12cdd52477187b231ace264cf89429cf858edb7b9515a398e9b22075a7743b52" name="asset-manifest.json" size="792" version="27.0.0"/>
+      <File SHA256:hash="f72d4c84c2d49e601d50163172919f43b8c98391d3778d639e4f96b91b0ae2a9" name="manifest.json" size="308" version="27.0.0"/>
+    </Directory>
+    <Directory location="Nuget/AnylineResources.bundle/ui_2_0" name="static"/>
+    <Directory location="Nuget/AnylineResources.bundle/ui_2_0/static" name="css">
+      <File SHA256:hash="83b0f6febe006301d38670cec20b119aa3ef05526b1990d4216315c3c1d55753" name="main.chunk.css" size="483" version="27.0.0"/>
+    </Directory>
+    <Directory location="Nuget/AnylineResources.bundle/ui_2_0/static" name="js">
+      <File SHA256:hash="50d50f7995df48f33111ef90d483f883432af4a01d0a2df1bb49de51e48d0f56" name="2.chunk.js" size="435555" version="27.0.0"/>
+      <File SHA256:hash="f659326991904ba78449be7eac485e5fe2e2fb84d7abcc5c675c8024779dabdd" name="runtime-main.js" size="1532" version="27.0.0"/>
+      <File SHA256:hash="3c7c512498676d570da5d2908f60dab7fb82a97dfab8b80d972b00455bac3f42" name="main.chunk.js" size="55458" version="27.0.0"/>
+    </Directory>
+    <Directory location="Nuget/AnylineResources.bundle/ui_2_0/static" name="media">
+      <File SHA256:hash="4bb358b7729e14b45bf234df0ca4d81d4614d9b0cf9831390cbbbf2313c4c375" name="anyIcon.ebceaedb.svg" size="1722" version="27.0.0"/>
     </Directory>
     <Directory location="Nuget/AnylineResources.bundle" name="images">
       <File SHA256:hash="e1f4edb8baba3521e7c09ddb0a763759906497d7c04074e51659f6fe30d46e0f" name="flash_white.png" size="1532" version="27.0.0"/>
@@ -717,24 +734,24 @@
       <File SHA256:hash="ef253a62b7c9e19c514b3a8e2985d13954dbaa3631acfd519ed51261d4c629f1" name="anyline_logo_white.dat" size="4506" version="27.0.0"/>
     </Directory>
     <Directory location="Nuget/AnylineResources.bundle" name="module_document">
-      <File SHA256:hash="f34feb6b29d26f97c2ed043894cc08bc6b58ab839ed71e7cc05285973ab3491e" name="document.ale" size="50380" version="27.0.0"/>
+      <File SHA256:hash="a2397a17ce88c7f53325cdea616f049987e8e2dabcb8c085325b8040b85c221a" name="document.ale" size="50380" version="27.0.0"/>
     </Directory>
     <Directory location="Nuget/AnylineResources.bundle/module_document" name="trained_models">
       <File SHA256:hash="59be727caab25d6e614ca0875e8bbf54a8b9ee053c7cf9e8aad6664bf29dd780" name="doc_model_3_25.any" size="258440" version="27.0.0"/>
       <File SHA256:hash="c62250447d59b98570604e3a2587bebc705554e219b63d2628ee0c54b4334e94" name="doc_model_3_27.any" size="258440" version="27.0.0"/>
     </Directory>
     <Directory location="Nuget/AnylineResources.bundle" name="module_energy">
-      <File SHA256:hash="00296bd133b4f663365efe8d95bde46d8bb0d8efddcde5cb2ff1e0c6700f36bd" name="analog_meter.ale" size="37280" version="27.0.0"/>
-      <File SHA256:hash="696af463db7fe9867edbd0c8194ada2205c1fca7756ba437814561773a0ea167" name="digital_meter.ale" size="37452" version="27.0.0"/>
-      <File SHA256:hash="fb55b3c70a6c40740e13944a120a978698c0dc97532c607dc95a942449d05ae0" name="digital_meter_multifields.ale" size="38112" version="27.0.0"/>
-      <File SHA256:hash="792ace44355ef81f0ed1d2956e3be1f2ff5a493c7cf2fea917f678de0a6690d5" name="brightness.ale" size="396" version="27.0.0"/>
-      <File SHA256:hash="fd84cb96695bb1e2bb0edd78fa2f1fb49b642d79b79d339cc8fe033a5c2b6257" name="dot_matrix_meter.ale" size="8312" version="27.0.0"/>
-      <File SHA256:hash="9121b9b2c88e0251f626639e1bd50acadcd0c891fdf4e897822e9f54e93fc339" name="energy_serial_alnum_3_letters.ale" size="21112" version="27.0.0"/>
-      <File SHA256:hash="20ca89e70969f8d7e52ef8cdf2548d4a2f77cbfc3e258d836bed5a9c234124b2" name="analog_digital_auto_mode.ale" size="37560" version="27.0.0"/>
-      <File SHA256:hash="93d4a864f199cf227b37f14647985fcfa2613abfc12c20a8e9b8ef3eb68654bf" name="energy_serial.ale" size="8460" version="27.0.0"/>
-      <File SHA256:hash="be31889af72f73c54f5b8df22c1171b707e9bef44c174afc846692298487bdd5" name="digital_heat_meter.ale" size="8248" version="27.0.0"/>
-      <File SHA256:hash="d5780707b887e00740e1b1571ab4c570233d9bef3584ec6474fdf545b660ffe0" name="dial_meter.ale" size="3936" version="27.0.0"/>
-      <File SHA256:hash="e1f68a6fa038008c8eee89b41f18b44b939823e6c3407f66fefa975fe0eb4834" name="energy_serial_capital_letters.ale" size="12620" version="27.0.0"/>
+      <File SHA256:hash="1808ae48ec3754befe3f7ed7b9490168c3235c6b3af156c0e436e72bf2f4d276" name="analog_meter.ale" size="37280" version="27.0.0"/>
+      <File SHA256:hash="5cb5976d0871845069268d187ddd9d7874fc5cc41e8fd6106b89c5f7e5bad139" name="digital_meter.ale" size="37452" version="27.0.0"/>
+      <File SHA256:hash="cbc735624e76d34e562c24bf4912c16add0e2ebe15cc544a78f7dbbbda8e7221" name="digital_meter_multifields.ale" size="38112" version="27.0.0"/>
+      <File SHA256:hash="93866efc493da320607ecaef9712c38eb5922cd3e0f14c8ae0397e2cee71acbb" name="brightness.ale" size="396" version="27.0.0"/>
+      <File SHA256:hash="e1bb729b1eeb4d87362374bb04dca4dda71eb4aa52ec6aa795b9330a7cd4728d" name="dot_matrix_meter.ale" size="8312" version="27.0.0"/>
+      <File SHA256:hash="71a77ce74b2f0c0d6889ea1b9ba58df965573012151e114c900440ea27966b84" name="energy_serial_alnum_3_letters.ale" size="21112" version="27.0.0"/>
+      <File SHA256:hash="188f9272841ae894f101f43eecf6515e520068ff82df8e96dbb9749e28bc2727" name="analog_digital_auto_mode.ale" size="37560" version="27.0.0"/>
+      <File SHA256:hash="9a6f28e6cf041cdae1eb668a6c8306d71b836016b08129a8a0355dd1ef23e471" name="energy_serial.ale" size="8460" version="27.0.0"/>
+      <File SHA256:hash="a2068942a6bbafe3608b899a400b1838c4eb174e2eb15c5bafb9e95e3957df81" name="digital_heat_meter.ale" size="8248" version="27.0.0"/>
+      <File SHA256:hash="721b4069e3ca7d8c003844a6ef62c4aa5e288245ef87220c733799658a674e93" name="dial_meter.ale" size="3936" version="27.0.0"/>
+      <File SHA256:hash="34177832c4e7265329090a14e0ab34cedbd7010170032e55e54497514e2c752d" name="energy_serial_capital_letters.ale" size="12620" version="27.0.0"/>
     </Directory>
     <Directory location="Nuget/AnylineResources.bundle/module_energy" name="trained_models">
       <File SHA256:hash="7ac646a318cf6fc96603197bcccd0eb342b0336c31596654e3a3bc3e2db4caf6" name="crnn_auto_synth.any" size="8559624" version="27.0.0"/>
@@ -745,14 +762,14 @@
       <File SHA256:hash="5e5629f188dbcd864422ce5b1285ab96211eb4b3cb2bb02535a8f972d2dc4267" name="CNN_serialnumbers_combined.any" size="472936" version="27.0.0"/>
     </Directory>
     <Directory location="Nuget/AnylineResources.bundle" name="module_anyline_ocr">
-      <File SHA256:hash="620bf405f55a28e4984cc73fdcd14c4fba321445151203a7c0f7eb87812e8eaf" name="tin.ale" size="33548" version="27.0.0"/>
-      <File SHA256:hash="93507ebf9d8ce6db9dcf4dad60a725a29834fa6bc2049aef9488692796099b64" name="vin.ale" size="18336" version="27.0.0"/>
-      <File SHA256:hash="73c24e06b22da318ebd1ec51b20a008458bd16dfbb35282217d21ae4bdf9eded" name="container_scanner_vertical.ale" size="21900" version="27.0.0"/>
-      <File SHA256:hash="6bb58deba71a52b5c4657126644b74fc435aeb3e8197e05c256ac983bc880784" name="cow_tag_scanner.ale" size="21856" version="27.0.0"/>
-      <File SHA256:hash="cacc70924fc10cafdd24706b5bf73d55f859614283fcec97f30cfd51fbd64d42" name="container_scanner.ale" size="14624" version="27.0.0"/>
-      <File SHA256:hash="061c2fe04425098fce427230036b76ed53fc9cc261cbafee3b712df369456fa7" name="anyline_ocr_grid_any.ale" size="22988" version="27.0.0"/>
-      <File SHA256:hash="aaa86979cefc7646c19db6a64394c04a25d567d022f44a96a0e47ce8390bbdd6" name="anyline_ocr_auto_any.ale" size="25484" version="27.0.0"/>
-      <File SHA256:hash="1370c2b62c2399ad2819ff0439e29e86d96336245b9f33cca0b88dfb9c2c0448" name="anyline_ocr_line_any.ale" size="19000" version="27.0.0"/>
+      <File SHA256:hash="08cbbd2817eddbec51f863178a30e8324771ca45d1ff873c6ea28af5b2cfad81" name="tin.ale" size="33548" version="27.0.0"/>
+      <File SHA256:hash="91fd3d908c46be0c8f7e10749cc47362410707dd1894af5ccc63d3a2b329a971" name="vin.ale" size="18336" version="27.0.0"/>
+      <File SHA256:hash="3eb391f1f8eef7f9d4e492434950546d297a2813c6eda1822697d9a44b011d7f" name="container_scanner_vertical.ale" size="21900" version="27.0.0"/>
+      <File SHA256:hash="4aa81f049a09053e77136197f167e7ecba1641f8db4b5aa0afbb3a548ef2050d" name="cow_tag_scanner.ale" size="21856" version="27.0.0"/>
+      <File SHA256:hash="245eb41874c990cf6bcef45d6d4800d768a20c7b4ab71666b11270c5e5c6baa1" name="container_scanner.ale" size="14624" version="27.0.0"/>
+      <File SHA256:hash="0e0df3ca8f5b84fd1f3e92969c3ad30e64c5d893ee026274fb19a853088c415a" name="anyline_ocr_grid_any.ale" size="22988" version="27.0.0"/>
+      <File SHA256:hash="2903b1d2f869dee4c61971b9765d6777f55502d008e11bda5aad8ae09b7f0587" name="anyline_ocr_auto_any.ale" size="25484" version="27.0.0"/>
+      <File SHA256:hash="3e3bbe36e7d4a91e8f0fccd64a751a4cface17052f34fdcf19d5271e336f88e2" name="anyline_ocr_line_any.ale" size="19000" version="27.0.0"/>
     </Directory>
     <Directory location="Nuget/AnylineResources.bundle/module_anyline_ocr" name="trained_models">
       <File SHA256:hash="4dd25af6486ee3853f6819e9d86b696f912941cb99deaef669789f487b236871" name="comb_rw_10Lite.any" size="258456" version="27.0.0"/>
@@ -769,7 +786,7 @@
       <File SHA256:hash="45f3b68233c2a2c60bc847d3911d52a44b14053f005b9b6503ec0e87a69ec680" name="goodyear.txt" size="224" version="27.0.0"/>
     </Directory>
     <Directory location="Nuget/AnylineResources.bundle" name="module_license_plate">
-      <File SHA256:hash="3aac59370b6f688db05ad75ef681cf1db00811509b39c1675c8670287e5130e3" name="license_plates_combined.ale" size="197068" version="27.0.0"/>
+      <File SHA256:hash="eb674511c9febf733fb2957e162948e5a51f0f8f2cdca5d744e07b0517b41373" name="license_plates_combined.ale" size="197068" version="27.0.0"/>
     </Directory>
     <Directory location="Nuget/AnylineResources.bundle/module_license_plate" name="trained_models">
       <File SHA256:hash="0f4913a6704534f7b05516d218d0dd89cb18f25de6814488de9e719d4193920b" name="LPT.any" size="1297272" version="27.0.0"/>
@@ -778,146 +795,190 @@
       <File SHA256:hash="8b21c1906ec134d7cfdee540bdeb6a1b67d558d8d9f8f0d766ac767e5e1ec676" name="beep.wav" size="9702" version="27.0.0"/>
     </Directory>
     <Directory location="Nuget/AnylineResources.bundle" name="module_id">
-      <File SHA256:hash="c614544077ba9b47594039d9ac5857f50b7262b1327537cffdd3f38eac4da4ce" name="functions_template.ale" size="102776" version="27.0.0"/>
-      <File SHA256:hash="a8e083b4b8c0ecb62691d6f442ba713c446164766d7cb0c10dce286a834a4803" name="anyline_driving_license_belgium.ale" size="39544" version="27.0.0"/>
-      <File SHA256:hash="0b2ba9497228abcf28e1bd0e26e531125e4009b3fe8f2382ee77857958b8003f" name="anyline_driving_license.ale" size="251488" version="27.0.0"/>
-      <File SHA256:hash="d4fde24514c138bb68863d44ff807f5e31f7a73210edb24008d41d3db9625649" name="mrz_scanning.ale" size="385696" version="27.0.0"/>
-      <File SHA256:hash="73b4b5473635d67c8667edb6a8ed2c62061029202852dacfe7250b55ef325681" name="main_id_scanner.ale" size="12172" version="27.0.0"/>
-      <File SHA256:hash="48330f3de80851d99039fc4adf73af3835dfb722f41ed0d517f38146398b193a" name="anyline_german_id_front.ale" size="130764" version="27.0.0"/>
-      <File SHA256:hash="937113e8f61aada9fcb2a9205ce3330977283c5b6032c1b29e217c7cf170d0eb" name="anyline_driving_license_netherlands.ale" size="73824" version="27.0.0"/>
-      <File SHA256:hash="b2452d46321b8fc743507dfb6438fda57e5a87fdfa05f8ea19ea0cb329861622" name="functions_card_rectification.ale" size="5368" version="27.0.0"/>
-      <File SHA256:hash="8969f702ceb11c3ed97fb698b7e8b4f7a73964e96e1a917c7996ade48ef1fc16" name="auto_mode_standalone.ale" size="2764" version="27.0.0"/>
-      <File SHA256:hash="0713709321aafd8b27c3ea69472947fc5d8f1884dfe3374a1c393cc23015d79f" name="functions_template_scanning.ale" size="75424" version="27.0.0"/>
-      <File SHA256:hash="6b956aea54c083d2871591fd850b8b56ecd53c4b763087a24024baa8504d462f" name="functions_east_detection.ale" size="8096" version="27.0.0"/>
-      <File SHA256:hash="ab2a993c974377711e39bf740a6adde31893a057f6afc7d68ee41d6132c73719" name="functions_auto_mode.ale" size="38712" version="27.0.0"/>
-      <File SHA256:hash="76a18354b1f3f2e6a8e7c35b2a56ad723c0d0d876552f7b30bebb416f21ad8f4" name="functions_card_detection.ale" size="56504" version="27.0.0"/>
-      <File SHA256:hash="f3868bc38293ec90600c8dd1541143d9164fb0db17b4f429334c085d37ecdfc2" name="template_scanning_standalone.ale" size="93452" version="27.0.0"/>
-      <File SHA256:hash="ad8aaec62cf57743444874963eab3bba670ea5194040b43589bd90a66dfaa80b" name="functions_common.ale" size="5024" version="27.0.0"/>
-      <File SHA256:hash="60fa4270506997e919d41e87366e633667a577441a0717c7fc3caf175b744848" name="functions_mrz_scanning.ale" size="518860" version="27.0.0"/>
-      <File SHA256:hash="e2b62443f8e00433e835407ca310d257ffe40612a8a67e6c49db94145ca0a2d4" name="functions_anonymize_id.ale" size="5792" version="27.0.0"/>
+      <File SHA256:hash="89c5834821e2caf734c2d0aa2c00ea9bd76e58a01edbd412c34f2ded1bee554d" name="functions_template.ale" size="136416" version="27.0.0"/>
+      <File SHA256:hash="e02c5db185201e3dc6dd04e674e8a0e54e46bfba0a051672c8ca9006cd07e945" name="anyline_driving_license_belgium.ale" size="39544" version="27.0.0"/>
+      <File SHA256:hash="a8290a61f0e9fc5ca240f0dfea2f39add347195c36e75a5803d81407b9db8e6d" name="anyline_driving_license.ale" size="251488" version="27.0.0"/>
+      <File SHA256:hash="3da68712991057ee02f6346e92c82379e3476af8699f62256afac574d6e07f14" name="mrz_scanning.ale" size="385356" version="27.0.0"/>
+      <File SHA256:hash="41250c879c137c58101c41e70d9592c3fbd1a71ce2443563757ca3f36913860d" name="main_id_scanner.ale" size="10380" version="27.0.0"/>
+      <File SHA256:hash="e088781edc46652a814d9ea3b85aea52e6effc4545f8a0cd396e7e8f708e5415" name="anyline_german_id_front.ale" size="130764" version="27.0.0"/>
+      <File SHA256:hash="0487a5f81b5af178d0dc16405348dbeafca46e08885d995d7190d38fa2a20606" name="anyline_driving_license_netherlands.ale" size="73824" version="27.0.0"/>
+      <File SHA256:hash="c94a56b2a0c5c2e2f3f79daf7d9fee0a57e1b4cb944f730b40e8c08a4fdf2f54" name="functions_card_rectification.ale" size="4600" version="27.0.0"/>
+      <File SHA256:hash="a0c5273387d15a11312a000f3592b6e5747b5c9ab2e6dd753a4b220ea96f7c75" name="auto_mode_standalone.ale" size="2764" version="27.0.0"/>
+      <File SHA256:hash="191ac721a1269781e51d5d5876bf701c88cba00e52f4a9cd469cbd7dc8b46954" name="functions_template_scanning.ale" size="75872" version="27.0.0"/>
+      <File SHA256:hash="cc904c6645b3b1c05d62223097fe830826a90c662789a880accb12103645090a" name="functions_square_from_edges.ale" size="32352" version="27.0.0"/>
+      <File SHA256:hash="b0d7367c7d48110a9fff04411027ec6254b2c3174db22a458a1f90877b799886" name="functions_auto_mode.ale" size="38944" version="27.0.0"/>
+      <File SHA256:hash="c834e81a92a4dd824f636bdb0354cc4f02feea804933b09af87861330f6a860c" name="functions_card_detection.ale" size="40992" version="27.0.0"/>
+      <File SHA256:hash="44b98086d59fd90927904215d5e28309dae14428d19b79ddd14d3150feca9fa1" name="functions_field_detection.ale" size="5472" version="27.0.0"/>
+      <File SHA256:hash="850569268bba03017185bc24a28b8774b404f44936958f7f4194375ea4e1ecf8" name="template_scanning_standalone.ale" size="93452" version="27.0.0"/>
+      <File SHA256:hash="15452783a3f7c1613b01e2beb706d3bec9259109738b1dae32c0d9cb498f7cde" name="card_detection_function_test.ale" size="13856" version="27.0.0"/>
+      <File SHA256:hash="c085a3833bc1379097d96a3d0bc0b47032c49422c842e1311356a0c0b5d9ac10" name="functions_common.ale" size="5024" version="27.0.0"/>
+      <File SHA256:hash="99582101c83b3d6d0ff7ee3bcccb98b1203e2a71fa54fae05a7c84b357e17d81" name="functions_mrz_scanning.ale" size="518348" version="27.0.0"/>
+      <File SHA256:hash="07b2dcf0de172a6c6f8f268d4e2eddd49e850c3b31c15f1cb3839163a11f462c" name="functions_anonymize_id.ale" size="5792" version="27.0.0"/>
     </Directory>
     <Directory location="Nuget/AnylineResources.bundle/module_id" name="trained_models">
       <File SHA256:hash="a0f7ac982db5a78b6db8d59a9237591f0cda762c4dfcb01deb7b6f89067b4ffa" name="crnnID_quant.any" size="1136120" version="27.0.0"/>
       <File SHA256:hash="dbaddc2daa3b5b003fe8de073c1219fc24e9ddb4a4438ccdfea82bfd674d2d59" name="IDDe.any" size="649656" version="27.0.0"/>
       <File SHA256:hash="a2de6d66407635d9f3b0ec8f22d1be76ad2af3fe056da62d6a0a2a455f6f5a26" name="DL_AT.any" size="649656" version="27.0.0"/>
       <File SHA256:hash="66c2e82800e9b002654acb8b078f912869da866d01aee1fb8af73c6478f25ba3" name="IDDeSticker.any" size="649672" version="27.0.0"/>
-      <File SHA256:hash="89fd735d626876e53d332328b21421ffa3c697c9b9c602fe3213b98864032610" name="eastID_landscape.any" size="7093576" version="27.0.0"/>
+      <File SHA256:hash="6321d12722edecd67937a9394f465434bcd0acc0a5006bc6bfd7b54f72ba3f34" name="plink4_idd_textblock_vgg_small_v2.any" size="88776" version="27.0.0"/>
       <File SHA256:hash="e16f09861167cf004eb3b51528734f16830bccb6e19dac14958ef71fe692ba55" name="OCRb.any" size="417672" version="27.0.0"/>
       <File SHA256:hash="3990e21b0752e22656d1f3346b8acd62d6ff2cc15faa60a69325525a1b044df3" name="USNr.any" size="904712" version="27.0.0"/>
     </Directory>
     <Directory location="Nuget/AnylineResources.bundle/module_id" name="config_files">
-      <File SHA256:hash="e0e8b64fed61be4a7342c741961c62fd595d6b68cabfe48e4dd477493ed40863" name="ID_default_start_variables.json" size="1231" version="27.0.0"/>
+      <File SHA256:hash="d91f81a7d0d85e576fb991e51ce232955788ff5d014edce6638096e2f601ce68" name="ID_default_start_variables.ale" size="1740" version="27.0.0"/>
     </Directory>
     <Directory location="Nuget/AnylineResources.bundle/module_id/config_files" name="templates">
-      <File SHA256:hash="abbd65d0c2753db351231a63fe2b6cb8e8a000c1253f0f253cfaea7f71a7bcd0" name="USA-FO-TX19.any" size="13240" version="27.0.0"/>
-      <File SHA256:hash="aea4e7c7c78e086e362c75eb3db955283bf8310a5f0131bd31198c2e60c025d2" name="CHE-FO-02001.any" size="13384" version="27.0.0"/>
-      <File SHA256:hash="c55f9ef62f022d9379edfe1b05ed6c83ea8c794e8f305b21f3ac8fcbc6e6a81d" name="MLT-FO-03001.any" size="14248" version="27.0.0"/>
-      <File SHA256:hash="9e59fed7ee007573d154179aa636e5d0c32de1393c826842294e8f80f9e8307a" name="NLD-FO-04001.any" size="11224" version="27.0.0"/>
-      <File SHA256:hash="c107486224567ca0a6eb2f238e3cb289dadb64b091127427708b4282cc8fc468" name="IRL-FO-04001.any" size="17896" version="27.0.0"/>
-      <File SHA256:hash="cff8809118112086493e225a3947d3efa539e6547cdbb92f77e224245e78abf2" name="ITA-BO-04004.any" size="13048" version="27.0.0"/>
-      <File SHA256:hash="bb7415390be1d6ba5e4bc6befd2ac1d5baec09c225195b417d39b9f2f8162007" name="AUT-FO-05002_05001.any" size="11000" version="27.0.0"/>
-      <File SHA256:hash="6a3c60a82b2dc2b0675c197444c36a35473bd847d734eefc2d72e397f3e37397" name="FIN-FO-05001.any" size="15000" version="27.0.0"/>
-      <File SHA256:hash="66c643b699dbcbc1113bbb5c9c8b98c6f6172db1c50d2d86f3737e1c07502153" name="USA-FO-FL19_v2.any" size="13896" version="27.0.0"/>
-      <File SHA256:hash="459b633f8acde6456033564abe08e63bfc863e1e5e1ac6c544c14bef4c4c45f0" name="CZE-BO-04002_04001.any" size="10968" version="27.0.0"/>
-      <File SHA256:hash="f0505e41f480cb4419e3f6971c3e72566719655091086e63a6a97468984da7b8" name="NLD-FO-06001.any" size="10504" version="27.0.0"/>
-      <File SHA256:hash="ce752d1da664210fb49f1173a883d74749928b9ce67d7ae5a76fd84d09abd05c" name="ESP-BO-03001.any" size="7688" version="27.0.0"/>
-      <File SHA256:hash="d64977e0766d9dba61095ea9182a2f89836261b98d30c1bef604dc77ff1640dd" name="FIN-BO-06001.any" size="12280" version="27.0.0"/>
-      <File SHA256:hash="5fc40f00f274fed47d7f56d789e960721f8fd805d86ebc0b9e788faf03c25e81" name="ITA-FO-05001.any" size="14840" version="27.0.0"/>
-      <File SHA256:hash="1b4fa7db0f893d0194ec199c229b3e2c0b68749d2ce96fdf455afd7743e967e6" name="SVK-FO-04001_03001.any" size="14136" version="27.0.0"/>
-      <File SHA256:hash="d0ee6da08b2bee70b1f46370f2689cde98e345b1d9b1a8510231830fe6f2f249" name="NOR-FO-07001.any" size="11208" version="27.0.0"/>
-      <File SHA256:hash="1da8f4f79cc71c7223ee33a6ae5ab6049bd1ea02bd418ca546411b66997f8b06" name="BGR-FO-02001.any" size="20232" version="27.0.0"/>
-      <File SHA256:hash="e8387f6ad4bbddc080084f1931c7c626680876bf0140942f929923c388b41fa5" name="SVN-FO-04001.any" size="12008" version="27.0.0"/>
-      <File SHA256:hash="0dc5614c9fac30afeb625a8df324b8b5cd1e2941c146fa17f90540aa2b0f67cf" name="USA-FO-OH19.any" size="11320" version="27.0.0"/>
-      <File SHA256:hash="30b5cfb0087aff4d1a5a0dcedd01d26fd5819f42d1a2bb57a37716e5d0bb6879" name="DNK-FO-04001.any" size="14504" version="27.0.0"/>
-      <File SHA256:hash="32ab3ca6f29f6ca056608de585b95556cc6df8e885dbdb09cb473f00e82efddd" name="NZL-FO-14.any" size="8888" version="27.0.0"/>
-      <File SHA256:hash="31f84a052bb58dd877887967100090c814cb0bd8735c8bacaa4c9a85a3432ba7" name="CZE-FO-02003_02002_02001.any" size="15368" version="27.0.0"/>
-      <File SHA256:hash="1d55a7c4cc370ca4c38f51f3cec5a3fa213fa0341616df90e6a8ee9dd3634d7e" name="POL-FO-04001.any" size="16472" version="27.0.0"/>
-      <File SHA256:hash="4734e6a85cfc2442cf359fecab860c682a307cc784321ba34f89ec1e47e56df8" name="ROU-FO-06001_05001.any" size="11976" version="27.0.0"/>
-      <File SHA256:hash="4188f924f95f1f296cd9d1c571823ad3f861ad349a445bfeed7ca8025df7ead5" name="AUT-FO-04001.any" size="10888" version="27.0.0"/>
-      <File SHA256:hash="dedd9d0434615e43f59e5a0632a29660fd41aec33c8811951fd27f6552975ab3" name="GBR-BO-02001_01001.any" size="9816" version="27.0.0"/>
-      <File SHA256:hash="38f00b54e3bedc3e0b176e3a7b4de2f827320d01789a017002e348c4f8482f19" name="USA-FO-NC19.any" size="16520" version="27.0.0"/>
-      <File SHA256:hash="3e6905e5c65fbc71c57ab49978feb9c97b55731afa4aa6ee6b90929d6c06f4fd" name="SVK-BO-05002_05001_04001_03001_02001.any" size="8280" version="27.0.0"/>
-      <File SHA256:hash="0a09f83e488c9f41033c1985a92f72971f1e9c4d67d6a07dc1e10d213ef08662" name="BGR-FO-02002.any" size="22024" version="27.0.0"/>
-      <File SHA256:hash="e3a7c61daaec592d68ddc0f98f6399eb871fde3a9daa939bd9f7d6787dbaa501" name="SWE-FO-07001.any" size="15656" version="27.0.0"/>
-      <File SHA256:hash="6d6ca149a6045d3a2745c88e38341e7bc1ae26215e27a2d8612b831ab357c26a" name="LTU-FO-03002_03001.any" size="14040" version="27.0.0"/>
-      <File SHA256:hash="85bf54a8072c0881a6a3cd820ce2fb170dd4c9ec37f338d05cd2b3065cbd758e" name="NOR-FO-05002_05001.any" size="14680" version="27.0.0"/>
-      <File SHA256:hash="ed82d7bb9f55f50c0cb5c85bd3c989d22a78acdf55b54f7312fe18ec5ea0c513" name="AUS-FO-SA13.any" size="7304" version="27.0.0"/>
-      <File SHA256:hash="c175fb59d880f05ef106391f04b54942cfa0d6d1212c5c248924eb0e09de6bba" name="HUN-FO-04001_03001.any" size="13224" version="27.0.0"/>
-      <File SHA256:hash="e9f152a1d5cd73cd24e6e03b9aa01fb4e7e6830230e90cb31cab469cd51c40b5" name="USA-FO-IL19.any" size="20168" version="27.0.0"/>
-      <File SHA256:hash="81b60ce8212c2f8c0905718b1b3c85b4f4170d3a7b62da883d7525e74514b66e" name="USA-FO-MI19.any" size="15256" version="27.0.0"/>
-      <File SHA256:hash="6b815bd035a00dd59930288230223a4fa283f2c7b69b7be21c99e7647b4e554c" name="POL-BO-03001_02003_02002.any" size="7752" version="27.0.0"/>
-      <File SHA256:hash="ddb683142e1908d607ef6b96d5c77f24979c52098f2579da3aa24ad468c4c2d7" name="DEU-BO-02001.any" size="10120" version="27.0.0"/>
-      <File SHA256:hash="dfc1d492707c6251c311ee94fac579aabd8f0c93c43b5aac9850af073dddc297" name="AUS-FO-NT06.any" size="9656" version="27.0.0"/>
-      <File SHA256:hash="7132f94aef6cbc4923ce699499a16999f2785dc59687cadc2e606235579aeebd" name="USA-FO-CT19.any" size="14312" version="27.0.0"/>
-      <File SHA256:hash="a14907ecadfa5ca949ee61cad66805d1b0820661f4bcd8e8773b4fdfa71950c6" name="GBR-FO-09002_09001_08002_08001.any" size="12552" version="27.0.0"/>
-      <File SHA256:hash="64b9def8ca599981d14cd045c86a3ec6aca0414aef9c2d61c5fe5ad2520bbae0" name="HRV-BO-03002_03001.any" size="8920" version="27.0.0"/>
-      <File SHA256:hash="3123343dcd73e9b4e6563bc5963acb3545aa3984ebbe7de773070444dade86c3" name="AUS-FO-NSW12.any" size="7944" version="27.0.0"/>
-      <File SHA256:hash="eb935bebc6a26cc6e6856f810f71c519bd6b2cee27f91730b4557a76f9d28b87" name="GBR-FO-07001.any" size="11896" version="27.0.0"/>
-      <File SHA256:hash="5d9c1e55c9b4de386763fcb5bd2800ec2d54fe82b3b56f00d1563d6b6af281bf" name="BEL-BO-10001.any" size="10904" version="27.0.0"/>
-      <File SHA256:hash="5ae38ad5d59226861be36185ec9d2ee94adb93ee07bc19370011546dfc6aa637" name="ESP-FO-04002.any" size="10600" version="27.0.0"/>
-      <File SHA256:hash="bfb294da865723695df81daedf2fe288b0953f3a194d6744cca892895bc9e03b" name="LVA-BO-01001.any" size="9096" version="27.0.0"/>
-      <File SHA256:hash="2894da64398442ce4f00bb77a96f998d635786803d00158dcfc6157c34eb3d05" name="USA-FO-NY19.any" size="11352" version="27.0.0"/>
-      <File SHA256:hash="0a2a6ca312f956ffa2533089d5f587165099f7cc39c82b115db3bcdc6cac7207" name="USA-FO-PA19.any" size="15928" version="27.0.0"/>
-      <File SHA256:hash="07753de3fb1a2e504ac3f792c39199f56563d46775e5c4bb88225397e1a8eb3b" name="ESP-BO-05001.any" size="9992" version="27.0.0"/>
-      <File SHA256:hash="6ecdb87fbcb64b293a3a0fe7c7be7ab6976a489833eb5495abf4697c0cdda1b5" name="BEL-BO-09003_09002_09001.any" size="11336" version="27.0.0"/>
-      <File SHA256:hash="3491920771ac1ae5fb6bd01ff876b0a6ae73e68e91308a4b25ccac3ecc7b7233" name="GRC-FO-03002.any" size="16344" version="27.0.0"/>
-      <File SHA256:hash="298ed4aa0bd0432540023c0f2bdd36e73614de841d4bfecba2a71fd07f18c886" name="USA-FO-RI19.any" size="16552" version="27.0.0"/>
-      <File SHA256:hash="be32402d6ec73fb095c033b68126d0b486917f5892c99f0eef28f47b3ca87882" name="MLT-BO-03001.any" size="8024" version="27.0.0"/>
-      <File SHA256:hash="4860c8f8d33bded6e10008928fa99fbdd2594b980607d5f0e6028e12ba027352" name="USA-FO-RI19_v2.any" size="16840" version="27.0.0"/>
-      <File SHA256:hash="436558006f28ae56db3427c776a83d9cecc12a7335e8d6728670a25411a7593f" name="HRV-FO-02001.any" size="14616" version="27.0.0"/>
-      <File SHA256:hash="ca9bd899e95715e1e63e5d7ccc24a18405bd0695df85394304410b1899cc5c9b" name="FIN-FO-04001.any" size="15000" version="27.0.0"/>
-      <File SHA256:hash="a48148d123c01c3ad6a6ba42686120583839a3592d650de054e69b99450eb1d1" name="FIN-BO-09001.any" size="10824" version="27.0.0"/>
-      <File SHA256:hash="75d7d3807d91195ed5182f88006b9285b860870fd7fd2e63b1757eb126104538" name="USA-FO-MA19.any" size="12296" version="27.0.0"/>
-      <File SHA256:hash="979d2a4166970d57960537a8eecdad5ab5ad8a5123986ebd100a684c06dbf5e1" name="ITA-FO-06001.any" size="13640" version="27.0.0"/>
-      <File SHA256:hash="a11953c605f92d31177a02194821b4857b59b6773f019f227979003b5b25ba7b" name="NLD-FO-05001.any" size="9736" version="27.0.0"/>
-      <File SHA256:hash="5fa1f270cce5ed760384eca403bf6de5e4e049a9bb8625ac5afc79a18117652a" name="USA-FO-AZ19.any" size="20744" version="27.0.0"/>
-      <File SHA256:hash="919eea3bb99edc7e058ce87c939842fbb92a2d70c6f5017cbfd744552611bb66" name="LTU-FO-04001.any" size="14904" version="27.0.0"/>
-      <File SHA256:hash="9c2a364caf9b95be8427e1b60f153d195abb33e55dfcb5446c88576bde79e8db" name="AUS-FO-WAXX.any" size="8008" version="27.0.0"/>
-      <File SHA256:hash="a5a1c733719ccba1fed1ed46ee610468b57305776ee867c9bae3327db78c593c" name="NLD-BO-05001_04001.any" size="8184" version="27.0.0"/>
-      <File SHA256:hash="c23a9166f45d8fd06f3b9a55807eee572b470ef3963075a22f356c6b6899ab5b" name="USA-FO-CT19_v2.any" size="14472" version="27.0.0"/>
-      <File SHA256:hash="0de488f6fee2f960b72b75cd6d75b411eeae590ac77a829b74d29da933408956" name="POL-BO-04001.any" size="9240" version="27.0.0"/>
-      <File SHA256:hash="ab6b0469ea070ec1f67af50e743e17d62dd8d4cd97bb0ca4d873faf891180968" name="AUT-BO-02003_02002_02001.any" size="8456" version="27.0.0"/>
-      <File SHA256:hash="3504e0131ad683a20e0544f28a81ff589cef904c3662fa6e230b709d4522b34e" name="FRA-BO-02002_02001.any" size="9160" version="27.0.0"/>
-      <File SHA256:hash="6a0a3db4e7a242fba4934f6d0650900977a7e6bc2a3d771e59e64625a02ccb7f" name="AUS-FO-TA15.any" size="7848" version="27.0.0"/>
-      <File SHA256:hash="f07162273b0fb58c84af488f0b6a65a9e6985c5ae6d354d0cbde06237d8966f9" name="SWE-FO-06001.any" size="14856" version="27.0.0"/>
-      <File SHA256:hash="d5f74f4e168e44108f74e356638b5f2aa00d509abe967aa137a4974f956ffcd8" name="BEL-FO-05001_04003_04002_04001_03001.any" size="9448" version="27.0.0"/>
-      <File SHA256:hash="5af2a70419b61b0dbb4f7d4970045fdb8fe752943dcd7fca974dce48d205580d" name="HUN-FO-02001.any" size="14216" version="27.0.0"/>
-      <File SHA256:hash="71cfd53457c790bb6d598e42209b52ae6a0345560281af590d46dc49903b674b" name="CHE-BO-01003_01002_01001.any" size="5112" version="27.0.0"/>
-      <File SHA256:hash="bb3c3a49d9b9f881c140b2de139011c6edfc810673ea739f593a49b4603c7a04" name="USA-FO-NJ19.any" size="13912" version="27.0.0"/>
-      <File SHA256:hash="9f8fd53f302774473ac6c37b3710f2d3db6991f336608a5967279b8811533016" name="USA-FO-PA19_v2.any" size="15928" version="27.0.0"/>
-      <File SHA256:hash="067a8e39f703362bd7db42c9eb1e0704f29f1c1bacd85394a7ce96697b5505d5" name="PRT-FO-06001.any" size="16616" version="27.0.0"/>
-      <File SHA256:hash="3e18480f699610c5d64b42cb44ea902daca393d3d88750f307c47879c8b49981" name="NOR-FO-06001.any" size="15512" version="27.0.0"/>
-      <File SHA256:hash="738de4da14a90b57295708f41555930b55fc2c9c9f5c995e42a52e64c1ffa1dc" name="CYP-BO-04001.any" size="11416" version="27.0.0"/>
-      <File SHA256:hash="fc2953542026319c8bcfea258b101a144478d54a95717f82284266227e0d9540" name="LTU-BO-02002_02001.any" size="9272" version="27.0.0"/>
-      <File SHA256:hash="09918f498ed171a73f3cb08a1867c1063a3c3bc82be9700e3b55f3aaabe908df" name="ROU-BO-03001_02002_02001_01002.any" size="11944" version="27.0.0"/>
-      <File SHA256:hash="678b10506bd0455fec1a7499c74ca69dbb4dddb0f3d3f4f40252b1436d6b2229" name="BGR-BO-02001.any" size="13176" version="27.0.0"/>
-      <File SHA256:hash="6d9d0afebb8180e0e8adbfc3388dfb84d23f87855522c0e6357f829744fc9e13" name="BEL-FO-02003_02002_02001.any" size="11192" version="27.0.0"/>
-      <File SHA256:hash="e08f9d517f7bc07e17794bb43aaa68d142b6dad024447fe31511ce34f6787772" name="USA-FO-CA19.any" size="18712" version="27.0.0"/>
-      <File SHA256:hash="82a5333dfa55ec10d6f32f8c223ea4e7baac778e827921673a3c11f73026bea4" name="LTU-FO-02004_02003.any" size="14280" version="27.0.0"/>
-      <File SHA256:hash="aa6cf0a6a71ab9d9ab31c143c134c3f0c0e1ca424030f2e0b797d9dddccbdf7b" name="DEU-FO-02006_02003_02002_02001.any" size="10968" version="27.0.0"/>
-      <File SHA256:hash="180a52198fd31610ef2a316561f0299374fcfb8c932c8d1f06b066e09d9a9e21" name="SWE-BO-03001.any" size="12440" version="27.0.0"/>
-      <File SHA256:hash="dc6b6d883f3f2182f66950f36eb0cfc6ce1c11e072a2fd088147f093b971adc8" name="AUS-FO-QLD19.any" size="11800" version="27.0.0"/>
-      <File SHA256:hash="1c6da87d2f11414b224917fc029924d342e5c25f754882bc034c7f875e70a82c" name="LVA-BO-02001.any" size="9144" version="27.0.0"/>
-      <File SHA256:hash="0a38f8e101ee06bd77de4a552e528b176a5e5ac66e923892bb68436ea25e496a" name="LUX-FO-01010.any" size="14600" version="27.0.0"/>
-      <File SHA256:hash="ad51acb117dad3b2dfde74ef37e7d50e90d3ae5c8595158aefb9a989a1c1af88" name="ISL-FO-06001.any" size="14232" version="27.0.0"/>
-      <File SHA256:hash="e55fe62b9f1413b66f0eb3dcfe4cbaefc8c5cd1ef86f43b1a2ffd74582b3830b" name="EST-FO-02004.any" size="15432" version="27.0.0"/>
-      <File SHA256:hash="c78d38f766329d06bc07eb7b96567bb7e0bccfb1a7d41c030bf16641dfefc8b5" name="PRT-BO-03004_03003_03002_03001.any" size="7944" version="27.0.0"/>
-      <File SHA256:hash="cb30c61eeb54820132127ea76ec11d2c64b6bbd134ea374da43c22587b001a60" name="FRA-FO-07001_06001.any" size="14184" version="27.0.0"/>
-      <File SHA256:hash="82142220cdc9efc9a64cb1803b71b190304d7c59835d026853f26dc5546af23f" name="AUS-FO-CT11.any" size="7448" version="27.0.0"/>
-      <File SHA256:hash="ec0a34dcba7f0f70dd033190580bc68fa2d603247a3451b1d529840c3e7b0722" name="CYP-FO-03001.any" size="18264" version="27.0.0"/>
-      <File SHA256:hash="137328b99e8aef514dd8f80ec4817d313565e23039a2dbdd10485c5bf2950eca" name="USA-FO-FL19.any" size="17736" version="27.0.0"/>
-      <File SHA256:hash="0cd4b385f38249e946fdbd5b1dd478a5a86e77ca672771682918b42cf8688674" name="SVN-BO-02001.any" size="6568" version="27.0.0"/>
-      <File SHA256:hash="2aff937c0007a31c75918038ae40bdaa60979d09914c99b923485eff32b2c193" name="LVA-FO-01002.any" size="15640" version="27.0.0"/>
-      <File SHA256:hash="0d625b26ff65c3575117899dfb4e796f3c7dd361b34eec12c1eec89b3a7dd016" name="LVA-FO-01003.any" size="15320" version="27.0.0"/>
-      <File SHA256:hash="cc1d5ecb73531cdb9be77f0815f2ecdc151f0979a7bcb6e3f94fbdfb2bf7188b" name="HUN-BO-05004_05003_05002_05001.any" size="8312" version="27.0.0"/>
-      <File SHA256:hash="4ccf3516f3f134d4fe58f5f51d25932d7fd2855e7b2469ed88181e6e86443a16" name="EST-BO-03001.any" size="7640" version="27.0.0"/>
-      <File SHA256:hash="b37df01cee3f4ede269fcf55fc0ead06ea9e3cd5b01839729c3507cc8a5e48b5" name="DNK-FO-03001.any" size="14632" version="27.0.0"/>
-      <File SHA256:hash="b90fb01304943099bbeb29dd1d60cfd3787fe2f49b6c30dbdbccf152f4c29100" name="AUS-FO-VIC09.any" size="8264" version="27.0.0"/>
-      <File SHA256:hash="cbd2e2fc354b1990d4a0f2b5a002d78d119a973db018743161bfefb098769e61" name="SWE-FO-05001_04001.any" size="11640" version="27.0.0"/>
-      <File SHA256:hash="be8e980a6c97d00db89d16cfc8b82d77e02e6c63ea32fb52308a576f03d33e37" name="USA-FO-MI19_v2.any" size="15496" version="27.0.0"/>
-      <File SHA256:hash="53a2920ee2e1088080a46034496dbdfd17121f622c5714ef82811975463fd4f0" name="LUX-BO-02004.any" size="13432" version="27.0.0"/>
-      <File SHA256:hash="bbf038fc7594f65bcc11e3e973e2d350d4ac975cb23580636fb43999bb1dfef3" name="LUX-BO-02005.any" size="11208" version="27.0.0"/>
-      <File SHA256:hash="ac79a04b12afc7cd241c6f4909782f6bce990752a84d9093a07a93f54a106160" name="DEU-FO-02007.any" size="13816" version="27.0.0"/>
+      <File SHA256:hash="63b739188d52da4f38552f502cbeaa1b1d0a085fb7d7bc0693791fda78d6003e" name="LVA-FO-01003.ale" size="20492" version="27.0.0"/>
+      <File SHA256:hash="af4d23432d362fd189dac715a5a0c3cebcc7739b7b0ea9ffb7cf7715b3eaa2a6" name="HUN-BO-05004_05003_05002_05001.ale" size="11148" version="27.0.0"/>
+      <File SHA256:hash="2cc19e61776fd9931b0edef690aa8482960636b975e039d82dab9fc0aba26ff8" name="EST-BO-03001.ale" size="10252" version="27.0.0"/>
+      <File SHA256:hash="7b034e4f90977046a194a03ea47a39dd48d53f0b71841b36e4da0e5e6328b7b4" name="DNK-FO-03001.ale" size="19576" version="27.0.0"/>
+      <File SHA256:hash="359f8e364912d2aa8ab5f29122a8486799ce06123b8e1cf1ee4f18b6fefc2c34" name="AUS-FO-VIC09.ale" size="11104" version="27.0.0"/>
+      <File SHA256:hash="779f4e5326edd6d57ffe9ef2a7b64cef56f0c01b67ffd6eb718594d1d1f403e7" name="CYP-FO-03001.ale" size="24416" version="27.0.0"/>
+      <File SHA256:hash="0ceee2fcd39fd72a65a335d3e4e2db94b7cdfa52ddacd8af8ea0052529c1a1f2" name="USA-FO-FL19.ale" size="23712" version="27.0.0"/>
+      <File SHA256:hash="dcced5ef4d22d4751c20bcb001394767d248989c8c0a1b71302d232f18ee6b88" name="LVA-FO-01002.ale" size="20920" version="27.0.0"/>
+      <File SHA256:hash="040a157580e61264d25bef3e976af6098693766527f43c4705e062862ced6c31" name="SVN-BO-02001.ale" size="8824" version="27.0.0"/>
+      <File SHA256:hash="1dcd5f57193eb52d039367a44ba9063de4cef6e976d7e471c440ef53ff77be58" name="USA-FO-IA19.ale" size="18488" version="27.0.0"/>
+      <File SHA256:hash="3c20cf0fc3d7c2f75f8a6e581074c27b311524fd946da3024c804fff41afced9" name="USA-FO-MD19.ale" size="16736" version="27.0.0"/>
+      <File SHA256:hash="46289e04b5e856de47a9db0bcfa44ffdc07cbd47cf5d7b9b96817d5adb051bac" name="LUX-BO-02005.ale" size="15008" version="27.0.0"/>
+      <File SHA256:hash="7aefb83946c2e72d72ccea598d3ce51782ac90e4f06c2116340c6315f0316f41" name="USA-FO-WY19.ale" size="20428" version="27.0.0"/>
+      <File SHA256:hash="625b63fc83a0c22b8f7d03eb80496149860dcac79dbcfca859161663f63f85ea" name="DEU-FO-02007.ale" size="18488" version="27.0.0"/>
+      <File SHA256:hash="0b716f9639e99655885d048912a4f971c33e3903845cc8044df723b378d6b356" name="USA-FO-IA19_v2.ale" size="18488" version="27.0.0"/>
+      <File SHA256:hash="b7d6369c0d7bfc1b216fc4fd8d7ad7ccdf0aa7ff1e5de35ee5fb139c3fdd7514" name="SWE-FO-05001_04001.ale" size="15584" version="27.0.0"/>
+      <File SHA256:hash="7e2ebbac09a88bf0a23146b3b2ca2b35e3751d2beb7712cb853344ab729694b6" name="USA-FO-MI19_v2.ale" size="20704" version="27.0.0"/>
+      <File SHA256:hash="5095657a9986320cc34dc2c8ef5663501b126fef70d41ebb05d2717e0d6fe14d" name="LUX-BO-02004.ale" size="17976" version="27.0.0"/>
+      <File SHA256:hash="6d9a44cb261083c9d01a827dca25b3efea224020549c1ad6fb788fd6b56720cb" name="USA-FO-VT19.ale" size="19744" version="27.0.0"/>
+      <File SHA256:hash="288efda251ce3b59dd7198233459b8b357959e0bca621909d60e7c751869af89" name="AUS-FO-QLD19.ale" size="15800" version="27.0.0"/>
+      <File SHA256:hash="fdd4b1420f70e1805f7d5f8da66dae98f002ed2955cda62fcfc98c01748f63f8" name="LVA-BO-02001.ale" size="12256" version="27.0.0"/>
+      <File SHA256:hash="6aa6f5116fb3f06d5a56b08dafd494e53fc5ef08b6c9cdbfbb497490d2a0f91e" name="USA-FO-TN19_v2.ale" size="20896" version="27.0.0"/>
+      <File SHA256:hash="43216ebb4e960437c90081d8a0f5f918a47b8894d90e3d8609178ca11962ad7a" name="LUX-FO-01010.ale" size="19532" version="27.0.0"/>
+      <File SHA256:hash="2b8fec5e0f74381aadfe4833fa4b21a7653f6a0ebdff166a6962db1cd300f75d" name="ISL-FO-06001.ale" size="19040" version="27.0.0"/>
+      <File SHA256:hash="bb48c263e9bda34c4a2b48974c6b36c86bcd8ccee0d6445d37ee2f932565c8dd" name="SWE-BO-03001.ale" size="16652" version="27.0.0"/>
+      <File SHA256:hash="44b4e128ba30f6a2052630fbb433957cdc91ef2f3174072b7af29fa72fbdb26a" name="USA-FO-NV19.ale" size="20512" version="27.0.0"/>
+      <File SHA256:hash="703fcfd0e0127806a3068e7ebaf9fc7b6949e9ffb713a76f72dd6e35269d6267" name="FRA-FO-07001_06001.ale" size="18976" version="27.0.0"/>
+      <File SHA256:hash="44e77df0d75453e94fd5d0cc7ca85dfe6dd038b61a759d27dff7f9afbb61e18c" name="USA-FO-NM19.ale" size="16672" version="27.0.0"/>
+      <File SHA256:hash="40ecdcd0a3ca8bec6cb52af88ad694a880b3f6502a21c74552d737a666ca86ad" name="AUS-FO-ACT11.ale" size="9996" version="27.0.0"/>
+      <File SHA256:hash="4af168e10d0eb546ff3b9b20052dfed3c779d42d25daa4abc7a05953abdc6395" name="EST-FO-02004.ale" size="20640" version="27.0.0"/>
+      <File SHA256:hash="38ffee3ba9f2c17f181bb368fa3eb56a7e00c5614b27105b9acd6d70a95135a6" name="PRT-BO-03004_03003_03002_03001.ale" size="10656" version="27.0.0"/>
+      <File SHA256:hash="c4dfa6dff994ec9cd83aa2c327e5a11e3778d24b4bd0bdb7b27bef67d050171d" name="HUN-FO-02001.ale" size="19020" version="27.0.0"/>
+      <File SHA256:hash="1400d6b1313b314dd3ea84342ff107f4c0a4c89b33b0bff1c11e29633316e428" name="CHE-BO-01003_01002_01001.ale" size="6880" version="27.0.0"/>
+      <File SHA256:hash="84db4ef87050f79096c3e603a355e1ddadbc183fdc164fa931aa61db35339a75" name="MEX-BO-G.ale" size="14284" version="27.0.0"/>
+      <File SHA256:hash="c2e9acfb8b353d593177aaa0af087f1012a6c80b3625d0e9502331fc8ff6e467" name="USA-FO-NJ19.ale" size="18616" version="27.0.0"/>
+      <File SHA256:hash="12dd517ff13b2a12a00c6505e73c409e3dac022985d2ee2319f55c834bc9557c" name="USA-FO-TN19.ale" size="20896" version="27.0.0"/>
+      <File SHA256:hash="40e22bbc5853de193206d5e8558c902899a8b1a345b70b3eb481cc3b039c5e5e" name="USA-FO-PA19_v2.ale" size="21304" version="27.0.0"/>
+      <File SHA256:hash="e72d02d428773295625927934bb2d889b38502ebb6e5eeef9a4f7941c920fe48" name="PRT-FO-06001.ale" size="22220" version="27.0.0"/>
+      <File SHA256:hash="e3d949da2db0408dd8a1aa8eef958183fecfe0ba089478378264296309deec48" name="AUS-FO-TAS15.ale" size="10528" version="27.0.0"/>
+      <File SHA256:hash="7a6d0a7e32c7d9595e503c17d9345acf0b16612f6fe1702f9fa2be63c0e83ae8" name="NLD-BO-05001_04001.ale" size="10976" version="27.0.0"/>
+      <File SHA256:hash="f6bae0ec37da5301806ca2c4c2624717ff94c087da2e325a3173f93be4629143" name="USA-FO-CT19_v2.ale" size="19360" version="27.0.0"/>
+      <File SHA256:hash="2bd6d572503afaa45156f259800a2486c874fbd06441549944e9831ccd747da6" name="AUT-BO-02003_02002_02001.ale" size="11340" version="27.0.0"/>
+      <File SHA256:hash="b1e0e7196ea7128dec6081162ed3c644804a593c7f9bd7134a74b1dc419c819c" name="POL-BO-04001.ale" size="12384" version="27.0.0"/>
+      <File SHA256:hash="90332432e26d73d1f58dd1e50bcc07291b7018d12fb889bec2fb0f128e1f98e8" name="FRA-BO-02002_02001.ale" size="12280" version="27.0.0"/>
+      <File SHA256:hash="540b77c3eeaa87521c809e9390989c3968e6bb612eee9fafb9eb86f89b93f4aa" name="BEL-FO-05001_04003_04002_04001_03001.ale" size="12664" version="27.0.0"/>
+      <File SHA256:hash="1387f48c6e95b5441d50888d59a19c28818e6dd57189085b14e4e25b4d6b439a" name="SWE-FO-06001.ale" size="19896" version="27.0.0"/>
+      <File SHA256:hash="ffe6adf4b741cb3be46b625c3131ff7b0fe594ae789b3f47d8c1fa183a5168af" name="ROU-BO-03001_02002_02001_01002.ale" size="15992" version="27.0.0"/>
+      <File SHA256:hash="d7d488e68d20f34a0bed30a79eba4cfc2400911867c2d9ac35a964bd1440fb9a" name="BEL-FO-02003_02002_02001.ale" size="14988" version="27.0.0"/>
+      <File SHA256:hash="658fbf6a1cfe41c17854e8f225bf5770d9da9b6ee52a4da3d6375cd2007b17ea" name="BGR-BO-02001.ale" size="17632" version="27.0.0"/>
+      <File SHA256:hash="fe32b90085aa2a8763f3d14e48e7c30e69e69aad7fe0185e75380ef8b387b8eb" name="USA-FO-CA19.ale" size="25016" version="27.0.0"/>
+      <File SHA256:hash="a6b4a54a954e964194deb8f790f42023fcb849d404a6f429b28c5acf49081b74" name="USA-FO-HI19.ale" size="20620" version="27.0.0"/>
+      <File SHA256:hash="881e1f2bc8502a6f9715bb701a4e53ff26f934fd9be56d2bf8a94618f253c170" name="LTU-FO-02004_02003.ale" size="19104" version="27.0.0"/>
+      <File SHA256:hash="50f791f0e7e3c2bb3fe1d8f0765e355cbc7c3869f56dc089d6d75671345a90c7" name="DEU-FO-02006_02003_02002_02001.ale" size="14712" version="27.0.0"/>
+      <File SHA256:hash="a23480480e4719f5534f936adbcb10d3b8f89309a78c6143105512acd229efed" name="NOR-FO-06001.ale" size="20748" version="27.0.0"/>
+      <File SHA256:hash="f5f8e24463eb41d433ce8e0025c64cc90e2e99d21babab7599e75b7e5e5ae9e6" name="CYP-BO-04001.ale" size="15308" version="27.0.0"/>
+      <File SHA256:hash="72dacd82f4d6d927d43aef76566c0e79a5a7a5f5d08699e4499ff4d43fdd4b15" name="USA-FO-WA19.ale" size="19384" version="27.0.0"/>
+      <File SHA256:hash="128f892c6efa1e1dee3c71499f5590b97eb0ea44d23e947b791f59afee168429" name="USA-FO-ME19.ale" size="19320" version="27.0.0"/>
+      <File SHA256:hash="9a84568b99bc60e40506ffe1c07cda4e6c30b94c33830176c89f80a406faa836" name="USA-FO-SD19.ale" size="19192" version="27.0.0"/>
+      <File SHA256:hash="576dcaf1555d2fc0df96a1c48a9f80c9ab6612ffc93449ff68b29260c7db7c7f" name="LTU-BO-02002_02001.ale" size="12428" version="27.0.0"/>
+      <File SHA256:hash="70f45155062dad66230578ab7919756ebce85b0731ef608b3f0aec5b69b65c28" name="MEX-BO-E.ale" size="17952" version="27.0.0"/>
+      <File SHA256:hash="0d7cc6f4beed16909e92e7c481910dc1bd3806f24a7a34b09147c56f3a1df8bd" name="USA-FO-NH19.ale" size="19424" version="27.0.0"/>
+      <File SHA256:hash="19d92abd63f929e4653ef10b3a3a9d9ff45434a673bb0b126c851e9c249b0f8f" name="FIN-BO-09001.ale" size="14496" version="27.0.0"/>
+      <File SHA256:hash="a71518da103468badac763e22d0946b8ebece2e1efcf539d9150003d047fd36d" name="USA-FO-MA19.ale" size="16460" version="27.0.0"/>
+      <File SHA256:hash="bba6a5a2c00698886c90cdc37a7ba326168186a9c1d10a7a12480ed93b0fe20b" name="USA-FO-ID19.ale" size="21004" version="27.0.0"/>
+      <File SHA256:hash="8eaf6ebb73988f84634495b1a25ba41d17967e10f6a8f3d043a0e13911342a33" name="ITA-FO-06001.ale" size="18252" version="27.0.0"/>
+      <File SHA256:hash="d3b51716fc3ac3c1ab3db85a39416b8ce9e01b888aa00ed1697e9719bd233f8e" name="NLD-FO-05001.ale" size="13048" version="27.0.0"/>
+      <File SHA256:hash="f61c96e251f32f92099b89085321025041cdb6af3f0aed748fb78b4d0dbf8864" name="USA-FO-AZ19.ale" size="27724" version="27.0.0"/>
+      <File SHA256:hash="3a2f57a2dc1f2cdb98f2418b327873a86719357015c214016689c9da59b33e0d" name="USA-FO-RI19.ale" size="22136" version="27.0.0"/>
+      <File SHA256:hash="5aa93a73485d798c410236b655160e58de6e928a184dbc3948efea11eee64394" name="MLT-BO-03001.ale" size="10764" version="27.0.0"/>
+      <File SHA256:hash="84ee0558e17282e4d91646421bc558b6b697e8bfbe43cc671c2f83bb381827c9" name="USA-FO-RI19_v2.ale" size="22520" version="27.0.0"/>
+      <File SHA256:hash="0296a7b0c0880e352db364faf87c0624e9e91c0d408ad0794f38fa0397db1b49" name="HRV-FO-02001.ale" size="19552" version="27.0.0"/>
+      <File SHA256:hash="173ba701726ba94980638210cdff3357488a1b631b5a4f850121162e7b3bb2f0" name="FIN-FO-04001.ale" size="20088" version="27.0.0"/>
+      <File SHA256:hash="4d6b728e132d38464f5ff7994315c8c04a225ba7a8a53bab1f2bb1ce73ec8e96" name="USA-FO-KY19.ale" size="17760" version="27.0.0"/>
+      <File SHA256:hash="c23d779b74bd610d85b3e37deded4abefbf6a5b3ae933efb4eb487a6e3929c76" name="LTU-FO-04001.ale" size="19936" version="27.0.0"/>
+      <File SHA256:hash="5ef9203c8dc4cf55ca99b789de0ad703c30dd6a115b9e97631409b942fea661e" name="AUS-FO-WAXX.ale" size="10764" version="27.0.0"/>
+      <File SHA256:hash="c82da67d6d9277d941bdf7eff3f7e14d942a8a5e7b0f2ffe4a5b22938d0be9d6" name="USA-FO-MO19_v2.ale" size="17420" version="27.0.0"/>
+      <File SHA256:hash="e1f739a07b6743ce2ea63abf0d2f8c59fb19dda16782532e40a314239777803d" name="MEX-BO-C.ale" size="18508" version="27.0.0"/>
+      <File SHA256:hash="c30fdef7e20813ee74935c402da3065279b2b2c3e4f079344795394ce7e8e748" name="USA-FO-MT19.ale" size="18764" version="27.0.0"/>
+      <File SHA256:hash="95a534a3ae2033d6dd0f29131716fb746c3dcbe03d99dc1fe4a7e13c129017e4" name="USA-FO-MO19.ale" size="17420" version="27.0.0"/>
+      <File SHA256:hash="53eb87a305fe321641af8919eb01ef0d06c35303956cf419c13254b1c420bbfe" name="USA-FO-NY19.ale" size="15200" version="27.0.0"/>
+      <File SHA256:hash="5f84791d8dc681a7d3ab371db86b23029b6c81e81e35598cd5d3837f8cc74e29" name="ESP-FO-04002.ale" size="14200" version="27.0.0"/>
+      <File SHA256:hash="1c8c23834b4357cb79bc8571e473736af9d55e00bed16f3c6fb77468c2fd2f2c" name="USA-FO-UT19.ale" size="20408" version="27.0.0"/>
+      <File SHA256:hash="cf737abcc78bb74510d044f2c85b0628395866719fc99462cd06b3798fddb593" name="USA-FO-UT19_v2.ale" size="20428" version="27.0.0"/>
+      <File SHA256:hash="8514508494091b85381e8c75575a591332eb65addab672d0674a94b73b8b1b0d" name="USA-FO-OK19.ale" size="17696" version="27.0.0"/>
+      <File SHA256:hash="b39d8577f3e21a4eead8af03a26144e87997df74a8fe40e626e103c9504ec3c3" name="LVA-BO-01001.ale" size="12192" version="27.0.0"/>
+      <File SHA256:hash="2d9f3b5a1f5a481ebd24a17d7303e5dad76f3e7b52a41ebab88ee5c8182d3cd8" name="USA-FO-DC19.ale" size="20984" version="27.0.0"/>
+      <File SHA256:hash="ff1768f135617953142d818b3503ea28ff95c2183b95c51b14d1a1615ef57dc5" name="USA-FO-OR19.ale" size="19192" version="27.0.0"/>
+      <File SHA256:hash="c80a9fd07969c3e80ac64d1d0c96342ce3fe355ae37e6f885d73acad4be8c8fb" name="ESP-BO-05001.ale" size="13388" version="27.0.0"/>
+      <File SHA256:hash="c51942a116d17ddfa151c901d4f107926644aa7ede695ceb58b81739491c37b4" name="BEL-BO-09003_09002_09001.ale" size="15180" version="27.0.0"/>
+      <File SHA256:hash="40c7a3111fb9e052d10edb4e602f52946e799c9dcbcf059a4dfa3431b26a0250" name="GRC-FO-03002.ale" size="21856" version="27.0.0"/>
+      <File SHA256:hash="630a0643c7045a9176e27e8118cffa63ab615fadc05c608ef6df4ee185200531" name="USA-FO-PA19.ale" size="21304" version="27.0.0"/>
+      <File SHA256:hash="e4910909e50e4c759e27250267a1104a2ce6413e0717805565d964301c0afa9b" name="USA-FO-WI19.ale" size="25504" version="27.0.0"/>
+      <File SHA256:hash="63411f692d0e4db0588ced2874f30c921a26ea2a5b5690454b1c696e1369729d" name="USA-FO-AR19.ale" size="17400" version="27.0.0"/>
+      <File SHA256:hash="4f068ce96470d7eca79ece126bf5e3d0a0382631673d088d97e1782a130f5edd" name="HUN-FO-04001_03001.ale" size="17696" version="27.0.0"/>
+      <File SHA256:hash="3c5f666f06cf3077340ff7e151a666dda701ef311470f4f60d8c8d191dc1bd42" name="USA-FO-ND19.ale" size="19020" version="27.0.0"/>
+      <File SHA256:hash="9c5bda25110a5583eaef2b87d287b39201b55e058fcb5fae18a0a64b2a6a9d0b" name="DEU-BO-02001.ale" size="13560" version="27.0.0"/>
+      <File SHA256:hash="e07b0c0a2c3801004a2a0217f0848b7064e4369cb9a4375fb47edd767e341e48" name="POL-BO-03001_02003_02002.ale" size="10400" version="27.0.0"/>
+      <File SHA256:hash="9f972326adb031c76a30246ade1e007298acc76fb611eca9377a85f444903ee7" name="USA-FO-MI19.ale" size="20384" version="27.0.0"/>
+      <File SHA256:hash="d5dc50e452b05b9056d268ac9555878bd92fb887d4273d54024a1e0c2405eee7" name="USA-FO-IL19.ale" size="26956" version="27.0.0"/>
+      <File SHA256:hash="188c2b31ca257f078dd85f63e1d62d89961dbcbbb8d00cd42f4057351f79ca55" name="USA-FO-WV19.ale" size="19512" version="27.0.0"/>
+      <File SHA256:hash="43fa84f5ebad792fd3d041de30787a2d8348b585bc42ee59aa89da30332542ee" name="USA-FO-DE19.ale" size="19256" version="27.0.0"/>
+      <File SHA256:hash="7b916476e2aa4fdbccb0b2a5ab1b4376f8a5c9f53ced6cad75e19c119959eda4" name="USA-FO-KS19.ale" size="20108" version="27.0.0"/>
+      <File SHA256:hash="d11ca8debd6fbf4f34050423a2d3a26b5502b91ef59c94d76feadae42ca51fe1" name="AUS-FO-SA13.ale" size="9804" version="27.0.0"/>
+      <File SHA256:hash="149a4dea64a89c2e8c9e10e9439d75299b8eb768417d6f15efd3e22bee227188" name="GBR-FO-09002_09001_08002_08001.ale" size="16800" version="27.0.0"/>
+      <File SHA256:hash="dc6658785ef17531b837df072b6359ab35621f35eff00d398d16b99768f869bb" name="USA-FO-CT19.ale" size="19148" version="27.0.0"/>
+      <File SHA256:hash="ac6769086496c10f6d8b9cf4fc6876e483e62d0fef91750688cf47f4347e3946" name="HRV-BO-03002_03001.ale" size="11960" version="27.0.0"/>
+      <File SHA256:hash="454895d81466fde2a91525462f78f55aa69c83173522acac60010dc91711bb69" name="AUS-FO-NSW12.ale" size="10656" version="27.0.0"/>
+      <File SHA256:hash="3b3e4a086c9e8711c919ac12b45e6b24fbc42b56803495ed8bc506e91ba58dde" name="USA-FO-CO19.ale" size="21496" version="27.0.0"/>
+      <File SHA256:hash="bcbea25f42901d4a9639806e1072238a1c4241c0153dc7293bd8c3944e38d92a" name="GBR-FO-07001.ale" size="15928" version="27.0.0"/>
+      <File SHA256:hash="d343c05ee04fbdf7175110a2a1200b20cb2d790c06c1d1d3229be6d8de0f7a81" name="BEL-BO-10001.ale" size="14604" version="27.0.0"/>
+      <File SHA256:hash="dcf635a2ad48b6ddbf21e7f28f9acdca52ce4630a9f2319676999524f5e5bb6c" name="USA-FO-IN19.ale" size="20768" version="27.0.0"/>
+      <File SHA256:hash="c77fc5bc077de6ece403f469959ebd7f7ef623cbd1ba7f91b4f119011fdfbf92" name="AUS-FO-NT06.ale" size="12940" version="27.0.0"/>
+      <File SHA256:hash="9b36a66825090d5f3b4eba40ae33ce5457aede4a6e23904f0d32c1efd6542e24" name="USA-FO-AK19.ale" size="20448" version="27.0.0"/>
+      <File SHA256:hash="541e5a357a77f3dfa20d52a5716185cef7b9c34b80987a49ea2ce3d88c260b0c" name="USA-FO-VA19.ale" size="18272" version="27.0.0"/>
+      <File SHA256:hash="0d789eea817d80dff3d3376ae8924ae8d96a0a084dc76955c20e5ff5a1200dde" name="NOR-FO-07001.ale" size="15008" version="27.0.0"/>
+      <File SHA256:hash="d7e1b0f9b8d531b162d961e3d422a1b7ca49b9ad4064189882cf380a1b6a9464" name="BGR-FO-02001.ale" size="27040" version="27.0.0"/>
+      <File SHA256:hash="f41430f583bdae3fad253a2e841f0ac34f795a224fdc213836ba546efb3a0a06" name="SVK-FO-04001_03001.ale" size="18936" version="27.0.0"/>
+      <File SHA256:hash="576b23f2df907f29e46e0a00a5a9f92e4c11fa5069442af6d018a25aa5ce20f7" name="SVN-FO-04001.ale" size="16076" version="27.0.0"/>
+      <File SHA256:hash="c2381f7699b9bee84bd21141dfd187547784d88fc7f58ac9a468e262eb070ea5" name="USA-FO-OH19.ale" size="15160" version="27.0.0"/>
+      <File SHA256:hash="3ecf8ed7de0dd5224ccc23af534295846c92baa3205d9a5ecf11ebfb4fec9c4a" name="DNK-FO-04001.ale" size="19404" version="27.0.0"/>
+      <File SHA256:hash="7a2075a6a7faedb38f7eaa86a8407a06ad6d715b1a2a9caaa5ab4f35c1d6bb6b" name="CZE-BO-04002_04001.ale" size="14688" version="27.0.0"/>
+      <File SHA256:hash="1c3878c074459fe2efb5f71eb6bdc85b5e8aa6631ee098b6adb216476d40ce48" name="NLD-FO-06001.ale" size="14072" version="27.0.0"/>
+      <File SHA256:hash="2045dfbecb3ac8e380be7d36b14b8ac8250addc32fc9587268ea0238bf35cfd5" name="ESP-BO-03001.ale" size="10316" version="27.0.0"/>
+      <File SHA256:hash="5884f55cef1c8345edd6003a0b407f5ce514d47f5f66d0d135cd167768651a22" name="FIN-BO-06001.ale" size="16460" version="27.0.0"/>
+      <File SHA256:hash="7ea9ca07395bfba77b8fadc826047f08f9191075f968c8008f23139afb9a8535" name="ITA-FO-05001.ale" size="19852" version="27.0.0"/>
+      <File SHA256:hash="69362d729c1caceac983af2dd0fcace235cae4f305c00b7d4dc8a1a59d5cd755" name="USA-FO-AL19.ale" size="18808" version="27.0.0"/>
+      <File SHA256:hash="bf1965f19e50dd10d4aa8355f665f9b6b8ef0ebe2af464aafb5a4b4c4d3eed5a" name="SVK-BO-05002_05001_04001_03001_02001.ale" size="11104" version="27.0.0"/>
+      <File SHA256:hash="cb73f383c78288cadcaea3370a3fb92f37d853e8926310341d747f29596e0e73" name="USA-FO-NC19.ale" size="22092" version="27.0.0"/>
+      <File SHA256:hash="731ba3a9c380e99b0aaafc7cfa1bc7046b4e55174b3f579d6aafe65bcd1c2407" name="BGR-FO-02002.ale" size="29432" version="27.0.0"/>
+      <File SHA256:hash="2c6e9e22886c46a94e54695c5f2ef2658209023e74181a9c92c176d85c2a6667" name="USA-FO-MN19.ale" size="20152" version="27.0.0"/>
+      <File SHA256:hash="2cd0c5d67667cd81cd5d9c7810199d0f83654204c0bedcac476a2b1a474ddf07" name="LTU-FO-03002_03001.ale" size="18784" version="27.0.0"/>
+      <File SHA256:hash="ab9e4066f8f916ee14d798bdca668ddd6af8b417f0ebc98d5dd9df42ad0043da" name="SWE-FO-07001.ale" size="20940" version="27.0.0"/>
+      <File SHA256:hash="151e70ab5a7d0edca77c18c85ef3412d69e944f9ede6e6662474a9758df3b937" name="NOR-FO-05002_05001.ale" size="19640" version="27.0.0"/>
+      <File SHA256:hash="de32febd9938eee4e6e09eff87ad64189163cfd3f950b2af33e8843f60287308" name="NZL-FO-14.ale" size="11916" version="27.0.0"/>
+      <File SHA256:hash="4bb6d533408d1f004f1607b0a89387c5c33d8542be6f9698f0ffe0930d664aaf" name="CZE-FO-02003_02002_02001.ale" size="20556" version="27.0.0"/>
+      <File SHA256:hash="7220d7eb27b25506eda13d97d47bd977866a0410bf85b2633cb38e5b694d8a37" name="POL-FO-04001.ale" size="22028" version="27.0.0"/>
+      <File SHA256:hash="753845d1e574b3c1e605b13cc90ca25929d9e915d1954755d5851b3612821350" name="AUT-FO-04001.ale" size="14584" version="27.0.0"/>
+      <File SHA256:hash="6bb082087e80104344efb6151f6674d5ea1c6dc3f5f25686c9b36b1da83867a5" name="ROU-FO-06001_05001.ale" size="16032" version="27.0.0"/>
+      <File SHA256:hash="2d2984a76a1ce142188cd9f3e9edb0964ff6df744937a59d5bcc34d55f10a082" name="GBR-BO-02001_01001.ale" size="13152" version="27.0.0"/>
+      <File SHA256:hash="89f1dd34f311ecd1acd2c14d0981d75cde2a505292d88dc56ec90bfe8c4cdbf8" name="USA-FO-TX19.ale" size="17720" version="27.0.0"/>
+      <File SHA256:hash="0a8422623e009d113d322f220bf336f352ade7f8210c13702cafdec5bda11e62" name="CHE-FO-02001.ale" size="17912" version="27.0.0"/>
+      <File SHA256:hash="dd313f47c1666c63b2eeaaeabe63f30eef8bc4c5537df49c399e51bae53adaa7" name="USA-FO-MS19.ale" size="17208" version="27.0.0"/>
+      <File SHA256:hash="f960c4b78b5f27bcdca4ea4a7ca98ab1f1f39e05ddf3bf91183554f0e1f5c93f" name="ITA-BO-04004.ale" size="17464" version="27.0.0"/>
+      <File SHA256:hash="fb00ea1c70b2bd764b03324f913035587ed7c8d524a79e9080e1d2bc17af4e49" name="USA-FO-NE19.ale" size="19960" version="27.0.0"/>
+      <File SHA256:hash="476d022a6bc4f33ab1b241a5acd3401e14a63edb20dc02ea2c925dfeb2e5bbf7" name="AUT-FO-05002_05001.ale" size="14732" version="27.0.0"/>
+      <File SHA256:hash="1e15aba3782709d1a1ae858142c981405f035142cd3fa4ddfb8732594b3372f2" name="USA-FO-FL19_v2.ale" size="18592" version="27.0.0"/>
+      <File SHA256:hash="81f3c731de8ec75809be4eb3ffb16cb168238a51b0419a3cf689e4de55ea440d" name="FIN-FO-05001.ale" size="20064" version="27.0.0"/>
+      <File SHA256:hash="587b4cbc59fc5d6320538905d72142c0e0c90621b1d97f5d1e13d762fc860e7b" name="MLT-FO-03001.ale" size="19064" version="27.0.0"/>
+      <File SHA256:hash="0e8afc1b3d1ec4de51dabf1b001e56a8ae98fa4d3d8c6faac9263825dbe7841a" name="USA-FO-LA19.ale" size="19212" version="27.0.0"/>
+      <File SHA256:hash="d951a9722338265ba544361b25c0bba2214c1b765330a128a2f4f86f146489f5" name="NLD-FO-04001.ale" size="15032" version="27.0.0"/>
+      <File SHA256:hash="482f62617a88c0348ae0e27025c1edead075d97d3631029bca3a3777c197bb6a" name="IRL-FO-04001.ale" size="23928" version="27.0.0"/>
     </Directory>
   </Payload>
 </SoftwareIdentity>
