@@ -1,0 +1,471 @@
+{
+    "dataFields": [
+        {
+            "label": "surname",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 518.8356164383562,
+                "y": 105.84239130434781,
+                "width": 803.9383561643835,
+                "height": 56.79347826086956
+            },
+            "type": "generic",
+            "postprocessingParameterDict": {
+                "validationRegex": "[A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+                "cleanRegex": "[^A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]",
+                "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            }
+        },
+        {
+            "label": "givenNames",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 516.2671232876712,
+                "y": 157.4728260869565,
+                "width": 809.0753424657534,
+                "height": 61.95652173913043
+            },
+            "type": "generic",
+            "postprocessingParameterDict": {
+                "validationRegex": "[A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+                "cleanRegex": "[^A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]",
+                "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            }
+        },
+        {
+            "label": "dateOfBirth",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 518.8356164383562,
+                "y": 216.8478260869565,
+                "width": 231.16438356164383,
+                "height": 54.211956521739125
+            },
+            "type": "date",
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^\\d]",
+                "whitelistPattern": "1,|[\\d\\-\\/\\. ]",
+                "validationRegex": "(0[1-9]|[12][0-9]|3[01]){1}(0[1-9]|1[0-2]){1}(19|20){1}[0-9]{2}"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.1
+            }
+        },
+        {
+            "label": "placeOfBirth",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 747.431506849315,
+                "y": 214.26630434782606,
+                "width": 580.4794520547945,
+                "height": 56.79347826086956
+            },
+            "type": "generic",
+            "postprocessingParameterDict": {
+                "validationRegex": "[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+                "cleanRegex": "[^A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]",
+                "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            }
+        },
+        {
+            "label": "dateOfIssue",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 521.404109589041,
+                "y": 273.64130434782606,
+                "width": 228.5958904109589,
+                "height": 51.63043478260869
+            },
+            "type": "date",
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^\\d]",
+                "whitelistPattern": "1,|[\\d\\-\\/\\. ]",
+                "validationRegex": "(0[1-9]|[12][0-9]|3[01]){1}(0[1-9]|1[0-2]){1}(19|20){1}[0-9]{2}"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.1
+            }
+        },
+        {
+            "label": "dateOfExpiry",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 518.8356164383562,
+                "y": 325.27173913043475,
+                "width": 233.73287671232876,
+                "height": 59.37499999999999
+            },
+            "type": "date",
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^\\d]",
+                "whitelistPattern": "1,|[\\d\\-\\/\\. ]",
+                "validationRegex": "(0[1-9]|[12][0-9]|3[01]){1}(0[1-9]|1[0-2]){1}(19|20){1}[0-9]{2}"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.1
+            }
+        },
+        {
+            "label": "authority",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 839.8972602739725,
+                "y": 271.0597826086956,
+                "width": 488.01369863013696,
+                "height": 54.211956521739125
+            },
+            "type": "generic",
+            "postprocessingParameterDict": {
+                "validationRegex": "[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+                "cleanRegex": "[^A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]",
+                "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            }
+        },
+        {
+            "label": "personalNumber",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 837.3287671232877,
+                "y": 325.27173913043475,
+                "width": 246.5753424657534,
+                "height": 54.211956521739125
+            },
+            "type": "generic",
+            "postprocessingParameterDict": {
+                "validationRegex": "[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+                "cleanRegex": "[^A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]",
+                "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            }
+        },
+        {
+            "label": "documentNumber",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 516.2671232876712,
+                "y": 379.4836956521739,
+                "width": 313.35616438356163,
+                "height": 64.53804347826086
+            },
+            "type": "documentNumber",
+            "postprocessingParameterDict": {
+                "validationRegex": "[0-9]{10}",
+                "cleanRegex": "[^0-9]",
+                "whitelistPattern": "10|[0-9]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            }
+        },
+        {
+            "label": "signature",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 495.7191780821918,
+                "y": 451.76630434782606,
+                "width": 505.9931506849315,
+                "height": 237.49999999999997
+            },
+            "type": "image"
+        },
+        {
+            "label": "photo",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 48.8013698630137,
+                "y": 219.42934782608694,
+                "width": 405.82191780821915,
+                "height": 565.3532608695651
+            },
+            "type": "image"
+        },
+        {
+            "label": "photo_bottom_right",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 1037.6712328767123,
+                "y": 549.8641304347826,
+                "width": 141.2671232876712,
+                "height": 201.3586956521739
+            },
+            "type": "image"
+        },
+        {
+            "label": "photo_right_mid",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 1289.3835616438355,
+                "y": 363.99456521739125,
+                "width": 115.58219178082192,
+                "height": 167.79891304347825
+            },
+            "type": "image"
+        },
+        {
+            "label": "categories",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 66.78082191780821,
+                "y": 836.4130434782608,
+                "width": 1379.2808219178082,
+                "height": 69.70108695652173
+            },
+            "type": "categories",
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^(AM|A1|A2|A|B|BE|B1|C1|C1E|C|CE|D1|D1E|D|F)/ ]",
+                "whitelistPattern": "1,|[(AM|A1|A2|A|B|BE|B1|C1|C1E|C|CE|D1|D1E|D|F)/ ]",
+                "validationRegex": "((AM)|(A1)|(A2)|(A)|(B)|(BE)|(B1)|(C1)|(C1E)|(C)|(CE)|(D1)|(D1E)|(D)|(F)| |/){1,}"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.3
+            }
+        },
+        {
+            "label": "s_in_flag",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 205.4794520547945,
+                "y": 80.02717391304347,
+                "width": 92.46575342465752,
+                "height": 90.3532608695652
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "korkort",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 392.9794520547945,
+                "y": 18.070652173913043,
+                "width": 462.32876712328766,
+                "height": 72.28260869565217
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "sverige",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 1029.9657534246576,
+                "y": 25.815217391304344,
+                "width": 436.6438356164383,
+                "height": 64.53804347826086
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "1",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 444.3493150684931,
+                "y": 113.58695652173913,
+                "width": 64.21232876712328,
+                "height": 43.88586956521739
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "2",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 441.78082191780817,
+                "y": 165.2173913043478,
+                "width": 59.07534246575342,
+                "height": 51.63043478260869
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "3",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 441.78082191780817,
+                "y": 219.42934782608694,
+                "width": 61.64383561643835,
+                "height": 51.63043478260869
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "4a",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 454.62328767123284,
+                "y": 271.0597826086956,
+                "width": 71.91780821917808,
+                "height": 51.63043478260869
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "4b",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 452.05479452054794,
+                "y": 322.6902173913043,
+                "width": 74.48630136986301,
+                "height": 56.79347826086956
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "4c",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 765.4109589041095,
+                "y": 268.4782608695652,
+                "width": 74.48630136986301,
+                "height": 54.211956521739125
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "4c",
+            "positionIndex": 0,
+            "lineIndex": 1,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 762.8424657534246,
+                "y": 320.1086956521739,
+                "width": 74.48630136986301,
+                "height": 59.37499999999999
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "5",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 444.3493150684931,
+                "y": 384.64673913043475,
+                "width": 61.64383561643835,
+                "height": 56.79347826086956
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "7",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 439.21232876712327,
+                "y": 438.8586956521739,
+                "width": 64.21232876712328,
+                "height": 56.79347826086956
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "9",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 12.842465753424657,
+                "y": 844.1576086956521,
+                "width": 59.07534246575342,
+                "height": 59.37499999999999
+            },
+            "type": "MATCHING"
+        }
+    ],
+    "height": 950,
+    "width": 1500,
+    "postprocessingParameters": {
+        "dateFormat": "ddmmyyyy"
+    },
+    "preprocessingParameters": {
+        "templateType": "drivingLicense",
+        "detectionMethod": "FengThreshold",
+        "expandSpecsBy": 1,
+        "fengAlpha": 0.11,
+        "fengK1": 0.04,
+        "fengK2": 0.03,
+        "fengSize1": 11,
+        "fengSize2": 40,
+        "homomorphicFiltering": 1,
+        "homomorphicFilteringAlpha": 2,
+        "homomorphicFilteringBeta": 0.5,
+        "homomorphicFilteringSigma": 30,
+        "maxCharHeight": 80,
+        "maxCharHeightHyph": 7,
+        "maxCharRatio": 5.72,
+        "maxCharRatioHyph": 4.5,
+        "maxCharWidth": 80,
+        "maxCharWidthHyph": 15,
+        "medianWordDist": 15.5,
+        "minCharHeight": 20,
+        "minCharHeightHyph": 3,
+        "minCharRatio": 0.12,
+        "minCharRatioHyph": 1.2,
+        "minCharWidth": 3,
+        "minCharWidthHyph": 7,
+        "minIntersectionRatio": 0.15,
+        "minIntersectionRatioLine": 0.01,
+        "wordMaxXDistance": 2.5,
+        "classificationModel": "tfAUT"
+    }
+}

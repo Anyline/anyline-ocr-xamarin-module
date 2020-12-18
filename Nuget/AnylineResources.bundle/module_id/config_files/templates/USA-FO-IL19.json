@@ -1,0 +1,690 @@
+{
+    "dataFields": [
+        {
+            "label": "licenseNumber",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^A-Z0-9\\-]",
+                "validationRegex": "[A-Z]{1}[0-9]{3}[\\-]{1}[0-9]{4}[\\-]{1}[0-9]{4}",
+                "whitelistPattern": "1|[A-Z];3|[0-9];1|[\\/];4|[0-9];1|[\\/];4|[0-9]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            },
+            "shapeAttributes": {
+                "height": 64,
+                "type": "bboxUR",
+                "width": 432,
+                "x": 683,
+                "y": 216
+            },
+            "type": "documentNumber"
+        },
+        {
+            "label": "dateOfBirth",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^\\d]",
+                "validationRegex": "(0[1-9]|1[0-2]){1}(0[1-9]|[12][0-9]|3[01]){1}(19|20){1}[0-9]{2}",
+                "whitelistPattern": "1,|[\\d\\/ ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.1
+            },
+            "shapeAttributes": {
+                "height": 65,
+                "type": "bboxUR",
+                "width": 289,
+                "x": 646,
+                "y": 276
+            },
+            "type": "date"
+        },
+        {
+            "label": "dateOfExpiry",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^\\d]",
+                "validationRegex": "(0[1-9]|1[0-2]){1}(0[1-9]|[12][0-9]|3[01]){1}(19|20){1}[0-9]{2}",
+                "whitelistPattern": "1,|[\\d\\/ ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.1
+            },
+            "shapeAttributes": {
+                "height": 59,
+                "type": "bboxUR",
+                "width": 292,
+                "x": 644,
+                "y": 338
+            },
+            "type": "date"
+        },
+        {
+            "label": "dateOfIssue",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^\\d]",
+                "validationRegex": "(0[1-9]|1[0-2]){1}(0[1-9]|[12][0-9]|3[01]){1}(19|20){1}[0-9]{2}",
+                "whitelistPattern": "1,|[\\d\\/ ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.1
+            },
+            "shapeAttributes": {
+                "height": 59,
+                "type": "bboxUR",
+                "width": 262,
+                "x": 1183,
+                "y": 336
+            },
+            "type": "date"
+        },
+        {
+            "label": "lastName",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^A-ZÄÖÜß\\.\\/\\-\\(\\)\\,\\' ]",
+                "validationRegex": "[A-ZÄÖÜß\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+                "whitelistPattern": "1,|[A-ZÄÖÜß\\.\\/\\-\\(\\)\\,\\' ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            },
+            "shapeAttributes": {
+                "height": 47,
+                "type": "bboxUR",
+                "width": 634,
+                "x": 552,
+                "y": 398
+            },
+            "type": "generic"
+        },
+        {
+            "label": "firstName",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^A-ZÄÖÜß\\.\\/\\-\\(\\)\\,\\' ]",
+                "validationRegex": "[A-ZÄÖÜß\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+                "whitelistPattern": "1,|[A-ZÄÖÜß\\.\\/\\-\\(\\)\\,\\' ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            },
+            "shapeAttributes": {
+                "height": 41,
+                "type": "bboxUR",
+                "width": 638,
+                "x": 549,
+                "y": 448
+            },
+            "type": "generic"
+        },
+        {
+            "label": "address",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^A-ZÄÖÜß0-9\\.\\/\\-\\(\\)\\,\\' ]",
+                "validationRegex": "[A-ZÄÖÜß0-9\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+                "whitelistPattern": "1,|[A-ZÄÖÜß0-9\\.\\/\\-\\(\\)\\,\\' ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            },
+            "shapeAttributes": {
+                "height": 44,
+                "type": "bboxUR",
+                "width": 640,
+                "x": 548,
+                "y": 493
+            },
+            "type": "generic"
+        },
+        {
+            "label": "address",
+            "lineIndex": 1,
+            "positionIndex": 0,
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^A-ZÄÖÜß0-9\\.\\/\\-\\(\\)\\,\\' ]",
+                "validationRegex": "[A-ZÄÖÜß0-9\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+                "whitelistPattern": "1,|[A-ZÄÖÜß0-9\\.\\/\\-\\(\\)\\,\\' ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            },
+            "shapeAttributes": {
+                "height": 47,
+                "type": "bboxUR",
+                "width": 644,
+                "x": 546,
+                "y": 537
+            },
+            "type": "generic"
+        },
+        {
+            "label": "class",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^A-Z ]",
+                "validationRegex": "[A-Z ]{1,}",
+                "whitelistPattern": "1,|[A-Z ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            },
+            "shapeAttributes": {
+                "height": 47,
+                "type": "bboxUR",
+                "width": 141,
+                "x": 681,
+                "y": 612
+            },
+            "type": "generic"
+        },
+        {
+            "label": "endorsements",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^A-Z ]",
+                "validationRegex": "[A-Z ]{1,}",
+                "whitelistPattern": "1,|[A-Z ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            },
+            "shapeAttributes": {
+                "height": 47,
+                "type": "bboxUR",
+                "width": 258,
+                "x": 949,
+                "y": 616
+            },
+            "type": "generic"
+        },
+        {
+            "label": "restrictions",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^A-Z ]",
+                "validationRegex": "[A-Z ]{1,}",
+                "whitelistPattern": "1,|[A-Z ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            },
+            "shapeAttributes": {
+                "height": 50,
+                "type": "bboxUR",
+                "width": 294,
+                "x": 654,
+                "y": 658
+            },
+            "type": "generic"
+        },
+        {
+            "label": "sex",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^A-Z\\- ]",
+                "validationRegex": "[A-Z\\- ]{1,}",
+                "whitelistPattern": "1,|[A-Z\\- ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            },
+            "shapeAttributes": {
+                "height": 47,
+                "type": "bboxUR",
+                "width": 81,
+                "x": 641,
+                "y": 750
+            },
+            "type": "generic"
+        },
+        {
+            "label": "weight",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^0-9]",
+                "validationRegex": "[0-9]{1,}",
+                "whitelistPattern": "1,|[0-9]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            },
+            "shapeAttributes": {
+                "height": 59,
+                "type": "bboxUR",
+                "width": 163,
+                "x": 641,
+                "y": 794
+            },
+            "type": "generic"
+        },
+        {
+            "label": "height",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 49,
+                "type": "bboxUR",
+                "width": 147,
+                "x": 943,
+                "y": 752
+            },
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^0-9\\-\\'\" ]",
+                "validationRegex": "[4-7]{1}(\\')?(\\-)?( )?(0[0-9]{1}|1[01])[\\']{0,2}",
+                "whitelistPattern": "1,|[0-9\\-\\'\" ]"
+            },
+            "type": "generic"
+        },
+        {
+            "label": "eyes",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 44,
+                "type": "bboxUR",
+                "width": 115,
+                "x": 941,
+                "y": 804
+            },
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^A-Z]",
+                "validationRegex": "[A-Z]{3}",
+                "whitelistPattern": "3|[A-Z]"
+            },
+            "type": "generic"
+        },
+        {
+            "label": "type",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^A-Z]",
+                "validationRegex": "[A-Z]{3}",
+                "whitelistPattern": "3|[A-Z]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            },
+            "shapeAttributes": {
+                "height": 49,
+                "type": "bboxUR",
+                "width": 111,
+                "x": 1204,
+                "y": 800
+            },
+            "type": "generic"
+        },
+        {
+            "label": "documentDiscriminator",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^0-9A-Z]",
+                "validationRegex": "[0-9]{11}[A-Z]{2}[0-9]{4}",
+                "whitelistPattern": "11|[0-9];2|[A-Z];4|[0-9]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            },
+            "shapeAttributes": {
+                "height": 43,
+                "type": "bboxUR",
+                "width": 316,
+                "x": 601,
+                "y": 854
+            },
+            "type": "documentNumber"
+        },
+        {
+            "label": "photo",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 609,
+                "type": "bboxUR",
+                "width": 463,
+                "x": 43,
+                "y": 184
+            },
+            "type": "image"
+        },
+        {
+            "label": "signature",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 136,
+                "type": "bboxUR",
+                "width": 469,
+                "x": 38,
+                "y": 788
+            },
+            "type": "image"
+        },
+        {
+            "label": "photo_mini",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 306,
+                "type": "bboxUR",
+                "width": 234,
+                "x": 1208,
+                "y": 538
+            },
+            "type": "image"
+        },
+        {
+            "label": "ILLINOIS_",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 99,
+                "type": "bboxUR",
+                "width": 422,
+                "x": 82,
+                "y": 46
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "JESSE_WHITE_SECRETARY_OF_STATE_",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 48,
+                "type": "bboxUR",
+                "width": 594,
+                "x": 634,
+                "y": 46
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "DRIVERS_LICENSE_",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 65,
+                "type": "bboxUR",
+                "width": 536,
+                "x": 660,
+                "y": 96
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "USA_",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 42,
+                "type": "bboxUR",
+                "width": 82,
+                "x": 1355,
+                "y": 60
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "4D_LIC_NO_",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 44,
+                "type": "bboxUR",
+                "width": 170,
+                "x": 515,
+                "y": 232
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "3_DOB_",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 39,
+                "type": "bboxUR",
+                "width": 129,
+                "x": 516,
+                "y": 298
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "4B_EXP_",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 39,
+                "type": "bboxUR",
+                "width": 128,
+                "x": 518,
+                "y": 352
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "1_",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 47,
+                "type": "bboxUR",
+                "width": 36,
+                "x": 516,
+                "y": 404
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "2_",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 41,
+                "type": "bboxUR",
+                "width": 38,
+                "x": 518,
+                "y": 456
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "8_",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 38,
+                "type": "bboxUR",
+                "width": 41,
+                "x": 512,
+                "y": 498
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "9_CLASS_",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 47,
+                "type": "bboxUR",
+                "width": 167,
+                "x": 516,
+                "y": 616
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "12_REST",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 44,
+                "type": "bboxUR",
+                "width": 147,
+                "x": 515,
+                "y": 668
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "15_SEX",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 42,
+                "type": "bboxUR",
+                "width": 125,
+                "x": 519,
+                "y": 758
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "17_WGT",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 38,
+                "type": "bboxUR",
+                "width": 135,
+                "x": 516,
+                "y": 808
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "5_DD_",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 51,
+                "type": "bboxUR",
+                "width": 83,
+                "x": 518,
+                "y": 850
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "9A_END_",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 45,
+                "type": "bboxUR",
+                "width": 132,
+                "x": 821,
+                "y": 620
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "16_HGT_",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 44,
+                "type": "bboxUR",
+                "width": 128,
+                "x": 809,
+                "y": 764
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "18_EYES_",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 44,
+                "type": "bboxUR",
+                "width": 147,
+                "x": 806,
+                "y": 808
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "TYPE_",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 45,
+                "type": "bboxUR",
+                "width": 108,
+                "x": 1105,
+                "y": 808
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "4A_ISS_",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 41,
+                "type": "bboxUR",
+                "width": 125,
+                "x": 1068,
+                "y": 354
+            },
+            "type": "MATCHING"
+        }
+    ],
+    "height": 950,
+    "postprocessingParameters": {
+        "dateFormat": "mmddyyyy"
+    },
+    "preprocessingParameters": {
+        "classificationModel": "tfAUT",
+        "detectionMethod": "FengThreshold",
+        "expandSpecsBy": 1,
+        "fengAlpha": 0.11,
+        "fengK1": 0.04,
+        "fengK2": 0.03,
+        "fengSize1": 11,
+        "fengSize2": 40,
+        "homomorphicFiltering": 1,
+        "homomorphicFilteringAlpha": 2,
+        "homomorphicFilteringBeta": 0.5,
+        "homomorphicFilteringSigma": 30,
+        "maxCharHeight": 80,
+        "maxCharHeightHyph": 7,
+        "maxCharRatio": 5.72,
+        "maxCharRatioHyph": 4.5,
+        "maxCharWidth": 80,
+        "maxCharWidthHyph": 15,
+        "medianWordDist": 15.5,
+        "minCharHeight": 20,
+        "minCharHeightHyph": 3,
+        "minCharRatio": 0.12,
+        "minCharRatioHyph": 1.2,
+        "minCharWidth": 3,
+        "minCharWidthHyph": 7,
+        "minIntersectionRatio": 0.15,
+        "minIntersectionRatioLine": 0.01,
+        "templateType": "drivingLicense",
+        "wordMaxXDistance": 2.5
+    },
+    "width": 1500
+}

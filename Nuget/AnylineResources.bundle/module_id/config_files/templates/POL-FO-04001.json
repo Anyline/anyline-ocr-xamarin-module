@@ -1,0 +1,527 @@
+{
+    "dataFields": [
+        {
+            "label": "surname",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 545,
+                "y": 170,
+                "width": 930,
+                "height": 60
+            },
+            "type": "generic",
+            "postprocessingParameterDict": {
+                "validationRegex": "[A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+                "cleanRegex": "[^A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]",
+                "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            }
+        },
+        {
+            "label": "givenNames",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 545,
+                "y": 225,
+                "width": 930,
+                "height": 60
+            },
+            "type": "generic",
+            "postprocessingParameterDict": {
+                "validationRegex": "[A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+                "cleanRegex": "[^A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]",
+                "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            }
+        },
+        {
+            "label": "dateOfBirth",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 545,
+                "y": 285,
+                "width": 270,
+                "height": 60
+            },
+            "type": "date",
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^\\d]",
+                "whitelistPattern": "1,|[\\d\\-\\/\\. ]",
+                "validationRegex": "(0[1-9]|[12][0-9]|3[01]){1}(0[1-9]|1[0-2]){1}(19|20){1}[0-9]{2}"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.1
+            }
+        },
+        {
+            "label": "placeOfBirth",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 820,
+                "y": 285,
+                "width": 655,
+                "height": 60
+            },
+            "type": "generic",
+            "postprocessingParameterDict": {
+                "validationRegex": "[A-ZÄÖÜ\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+                "cleanRegex": "[^A-ZÄÖÜ\\.\\/\\-\\(\\)\\,\\' ]",
+                "whitelistPattern": "1,|[A-ZÄÖÜ\\.\\/\\-\\(\\)\\,\\' ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            }
+        },
+        {
+            "label": "dateOfIssue",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 545,
+                "y": 340,
+                "width": 280,
+                "height": 60
+            },
+            "type": "date",
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^\\d]",
+                "whitelistPattern": "1,|[\\d\\-\\/\\. ]",
+                "validationRegex": "(0[1-9]|[12][0-9]|3[01]){1}(0[1-9]|1[0-2]){1}(19|20){1}[0-9]{2}"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.1
+            }
+        },
+        {
+            "label": "dateOfExpiry",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 545,
+                "y": 405,
+                "width": 280,
+                "height": 60
+            },
+            "type": "date",
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^\\d]",
+                "whitelistPattern": "1,|[\\d\\-\\/\\. ]",
+                "validationRegex": "(0[1-9]|[12][0-9]|3[01]){1}(0[1-9]|1[0-2]){1}(19|20){1}[0-9]{2}"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.1
+            }
+        },
+        {
+            "label": "authority",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 890,
+                "y": 340,
+                "width": 600,
+                "height": 60
+            },
+            "type": "generic",
+            "postprocessingParameterDict": {
+                "validationRegex": "[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+                "cleanRegex": "[^A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]",
+                "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            }
+        },
+        {
+            "label": "personalNumber",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 545,
+                "y": 450,
+                "width": 330,
+                "height": 62.9973474801061
+            },
+            "type": "generic",
+            "postprocessingParameterDict": {
+                "validationRegex": "[0-9]{10,11}",
+                "cleanRegex": "[^0-9]",
+                "whitelistPattern": "10,11|[0-9]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            }
+        },
+        {
+            "label": "documentNumber",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 545,
+                "y": 510,
+                "width": 380,
+                "height": 60
+            },
+            "type": "documentNumber",
+            "postprocessingParameterDict": {
+                "validationRegex": "[0-9]{5}[\\/]{1}[0-9]{2}[\\/]{1}[0-9]{4}",
+                "cleanRegex": "[^0-9\\/]",
+                "whitelistPattern": "5|[0-9];1|[\\/];2|[0-9];1|[\\/];4|[0-9]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            }
+        },
+        {
+            "label": "signature",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 537.5,
+                "y": 582.0954907161804,
+                "width": 665.0,
+                "height": 90.71618037135279
+            },
+            "type": "image"
+        },
+        {
+            "label": "photo_right",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 1200.5,
+                "y": 460.0954907161804,
+                "width": 180.0,
+                "height": 200.71618037135279
+            },
+            "type": "image"
+        },
+        {
+            "label": "photo",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 55.0,
+                "y": 229.31034482758622,
+                "width": 397.5,
+                "height": 544.2970822281168
+            },
+            "type": "image"
+        },
+        {
+            "label": "categories",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 110,
+                "y": 835,
+                "width": 700,
+                "height": 75
+            },
+            "type": "categories",
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^(AM|A1|A2|A|B1|B|C1|C|D1|D|BE|C1E|CE|D1E|DE|T|\\/)]",
+                "whitelistPattern": "1,|[(AM|A1|A2|A|B1|B|C1|C|D1|D|BE|C1E|CE|D1E|DE|T|\\/)]",
+                "validationRegex": "(AM|A1|A2|A|B1|B|C1|C|D1|D|BE|C1E|CE|D1E|DE|T|\\/){1,}"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.3,
+                "useEAST": 0
+            }
+        },
+        {
+            "label": "pl_in_flag",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 160.0,
+                "y": 85.6763925729443,
+                "width": 140.0,
+                "height": 113.39522546419099
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "prawo_jazdy",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 350.0,
+                "y": 27.718832891246684,
+                "width": 480.0,
+                "height": 98.27586206896552
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "address",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 537.5,
+                "y": 670.291777188329,
+                "width": 925.0,
+                "height": 65.51724137931035
+            },
+            "type": "generic",
+            "postprocessingParameterDict": {
+                "validationRegex": "[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+                "cleanRegex": "[^A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]",
+                "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            }
+        },
+        {
+            "label": "address",
+            "positionIndex": 0,
+            "lineIndex": 1,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 535.0,
+                "y": 733.2891246684351,
+                "width": 927.5,
+                "height": 57.95755968169762
+            },
+            "type": "generic",
+            "postprocessingParameterDict": {
+                "validationRegex": "[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+                "cleanRegex": "[^A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]",
+                "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            }
+        },
+        {
+            "label": "rzeczpospolita",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 842.5,
+                "y": 37.798408488063664,
+                "width": 625.0,
+                "height": 88.19628647214854
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "polska",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 1160.0,
+                "y": 93.23607427055703,
+                "width": 307.5,
+                "height": 80.63660477453581
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "1",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 467,
+                "y": 180,
+                "width": 77.5,
+                "height": 52.91777188328913
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "2",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 465,
+                "y": 240,
+                "width": 80.0,
+                "height": 52.91777188328913
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "3",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 465.0,
+                "y": 304.90716180371356,
+                "width": 77.5,
+                "height": 52.91777188328913
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "4a",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 465.0,
+                "y": 362.86472148541117,
+                "width": 87.5,
+                "height": 52.91777188328913
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "4c",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 825.0,
+                "y": 355.3050397877984,
+                "width": 80.0,
+                "height": 65.51724137931035
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "4b",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 470.0,
+                "y": 420.82228116710877,
+                "width": 87.5,
+                "height": 45.358090185676396
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "4d",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 467.5,
+                "y": 466.1803713527852,
+                "width": 87.5,
+                "height": 55.43766578249337
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "5",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 467.5,
+                "y": 524.1379310344828,
+                "width": 77.5,
+                "height": 50.397877984084886
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "7",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 465.0,
+                "y": 574.5358090185676,
+                "width": 80.0,
+                "height": 57.95755968169762
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "8",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 465.0,
+                "y": 682.8912466843501,
+                "width": 80.0,
+                "height": 55.43766578249337
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "9",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 27.5,
+                "y": 854.2440318302388,
+                "width": 82.5,
+                "height": 57.95755968169762
+            },
+            "type": "MATCHING"
+        }
+    ],
+    "height": 950,
+    "width": 1500,
+    "postprocessingParameters": {
+        "dateFormat": "ddmmyyyy"
+    },
+    "preprocessingParameters": {
+        "templateType": "drivingLicense",
+        "detectionMethod": "FengThreshold",
+        "expandSpecsBy": 1,
+        "fengAlpha": 0.11,
+        "fengK1": 0.04,
+        "fengK2": 0.03,
+        "fengSize1": 11,
+        "fengSize2": 40,
+        "homomorphicFiltering": 1,
+        "homomorphicFilteringAlpha": 2,
+        "homomorphicFilteringBeta": 0.5,
+        "homomorphicFilteringSigma": 30,
+        "maxCharHeight": 80,
+        "maxCharHeightHyph": 7,
+        "maxCharRatio": 5.72,
+        "maxCharRatioHyph": 4.5,
+        "maxCharWidth": 80,
+        "maxCharWidthHyph": 15,
+        "medianWordDist": 15.5,
+        "minCharHeight": 20,
+        "minCharHeightHyph": 3,
+        "minCharRatio": 0.12,
+        "minCharRatioHyph": 1.2,
+        "minCharWidth": 3,
+        "minCharWidthHyph": 7,
+        "minIntersectionRatio": 0.15,
+        "minIntersectionRatioLine": 0.01,
+        "wordMaxXDistance": 2.5,
+        "classificationModel": "tfAUT"
+    }
+}

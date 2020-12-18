@@ -243,119 +243,6 @@ namespace AnylineXamarinSDK.iOS
         Barcode
     }
 
-    [Native]
-    public enum ALBarcodeFormat : long
-    {
-        Aztec = 1 << 0,
-        Codabar = 1 << 1,
-        Code39 = 1 << 2,
-        Code93 = 1 << 3,
-        Code128 = 1 << 4,
-        DataMatrix = 1 << 5,
-        Ean8 = 1 << 6,
-        Ean13 = 1 << 7,
-        Itf = 1 << 8,
-        Pdf417 = 1 << 9,
-        Qr = 1 << 10,
-        Rss14 = 1 << 11,
-        RSSExpanded = 1 << 12,
-        Upca = 1 << 13,
-        Upce = 1 << 14,
-        UPCEANExtension = 1 << 15,
-        Unknown = 0,
-        All = (Aztec | Codabar | Code39 | Code93 | Code128 | DataMatrix | Ean8 | Ean13 | Itf | Pdf417 | Qr | Rss14 | RSSExpanded | Upca | Upce | UPCEANExtension)
-    }
-
-    [Native]
-    public enum ALFieldScanOption : long
-    {
-        Mandatory = 0,
-        Optional = 1,
-        Disabled = 2,
-        Default = 3
-    }
-
-    [Native]
-    public enum ALDrivingLicenseScanMode : long
-    {
-        At,
-        De,
-        Uk,
-        Nl,
-        Be,
-        Auto
-    }
-
-    [Native]
-    public enum ALUniversalIDLayoutType : long
-    {
-        DrivingLicense = 0,
-        Mrz = 1,
-        IDFront = 2
-    }
-    
-    [StructLayout(LayoutKind.Sequential)]
-    public struct ALRange
-    {
-        public ulong min;
-        public ulong max;
-    }
-    
-    [Native]
-    public enum ALOCRScanMode : long
-    {
-        Line,
-        Grid,
-        Auto
-    }
-
-    [Native]
-    public enum ALContainerScanMode : long
-    {
-        Horizontal,
-        Vertical
-    }
-
-    [Native]
-    public enum ALTINScanMode : long
-    {
-        Standard,
-        Flexible
-    }
-
-    [Native]
-    public enum ALTINUpsideDownMode : long
-    {
-        Disabled = 0,
-        Enabled = 1,
-        Auto = 2
-    }
-
-    [Native]
-    public enum ALOCRError : long
-    {
-        Unkown = -1,
-        NoLinesFound = -2,
-        NoTextFound = -3,
-        ConfidenceNotReached = -4,
-        ResultNotValid = -5,
-        SharpnessNotReached = -6
-    }
-
-    [Native]
-    public enum ALDocumentError : long
-    {
-        Unkown = -1,
-        OutlineNotFound = -2,
-        SkewTooHigh = -3,
-        GlareDetected = -4,
-        ImageTooDark = -5,
-        NotSharp = -6,
-        ShakeDetected = -7,
-        RatioOutsideOfTolerance = -8,
-        BoundsOutsideOfTolerance = -9
-    }
-
     // added in 11
     [Native]
     public enum ALLicensePlateScanMode : long
@@ -409,5 +296,86 @@ namespace AnylineXamarinSDK.iOS
         Ukraine = 46,
         Switzerland = 47,
         Andorra = 48
+    }
+
+    [Native]
+    public enum ALDocumentError : long
+    {
+        Unknown = -1,
+        Unkown = Unknown,
+        OutlineNotFound = -2,
+        SkewTooHigh = -3,
+        GlareDetected = -4,
+        ImageTooDark = -5,
+        NotSharp = -6,
+        ShakeDetected = -7,
+        RatioOutsideOfTolerance = -8,
+        BoundsOutsideOfTolerance = -9,
+        DontMove = -10
+    }
+    
+    [StructLayout(LayoutKind.Sequential)]
+    public struct ALRange
+    {
+        public ulong min;
+        public ulong max;
+    }
+    
+    [Native]
+    public enum ALOCRScanMode : long
+    {
+        Line,
+        Grid,
+        Auto
+    }
+
+    [Native]
+    public enum ALContainerScanMode : long
+    {
+        Horizontal,
+        Vertical
+    }
+
+    [Native]
+    public enum ALTINScanMode : long
+    {
+        Standard,
+        Flexible
+    }
+
+    [Native]
+    public enum ALTINUpsideDownMode : long
+    {
+        Disabled = 0,
+        Enabled = 1,
+        Auto = 2
+    }
+
+    [Native]
+    public enum ALFieldScanOption : long
+    {
+        Mandatory = 0,
+        Optional = 1,
+        Disabled = 2,
+        Default = 3
+    }
+
+    [Native]
+    public enum ALDrivingLicenseScanMode : long
+    {
+        At,
+        De,
+        Uk,
+        Nl,
+        Be,
+        Auto
+    }
+
+    [Native]
+    public enum ALUniversalIDLayoutType : long
+    {
+        DrivingLicense = 0,
+        Mrz = 1,
+        IDFront = 2
     }
 }

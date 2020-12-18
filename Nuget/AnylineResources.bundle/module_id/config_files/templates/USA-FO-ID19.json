@@ -1,0 +1,681 @@
+{
+  "dataFields": [
+    {
+      "label": "class",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 768,
+        "y": 224,
+        "width": 54,
+        "height": 46
+      },
+      "type": "alphaUpper",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^A-Z\\,\\/ ]",
+        "validationRegex": "[A-Z\\,\\/ ]{1,}",
+        "whitelistPattern": "1,|[A-Z\\,\\/ ]"
+      },
+      "preprocessingParameterDict": {}
+    },
+    {
+      "label": "endorsements",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 724,
+        "y": 273,
+        "width": 261,
+        "height": 49
+      },
+      "type": "alphaUpper",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^A-Z\\,\\/ ]",
+        "validationRegex": "[A-Z\\,\\/ ]{1,}",
+        "whitelistPattern": "1,|[A-Z\\,\\/ ]"
+      },
+      "preprocessingParameterDict": {}
+    },
+    {
+      "label": "restrictions",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 700,
+        "y": 320,
+        "width": 294,
+        "height": 54
+      },
+      "type": "alphaUpper",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^A-Z\\,\\/ ]",
+        "validationRegex": "[A-Z\\,\\/ ]{1,}",
+        "whitelistPattern": "1,|[A-Z\\,\\/ ]"
+      },
+      "preprocessingParameterDict": {}
+    },
+    {
+      "label": "lastName",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 574,
+        "y": 407,
+        "width": 886,
+        "height": 43
+      },
+      "type": "genericUpper",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^A-Z\\.\\-\\(\\)\\,\\'\\/ ]",
+        "validationRegex": "[A-Z\\.\\-\\(\\)\\,\\'\\/ ]{1,}",
+        "whitelistPattern": "1,|[A-Z\\.\\-\\(\\)\\,\\'\\/ ]"
+      },
+      "preprocessingParameterDict": {}
+    },
+    {
+      "label": "firstName",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 574,
+        "y": 456,
+        "width": 886,
+        "height": 43
+      },
+      "type": "genericUpper",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^A-Z\\.\\-\\(\\)\\,\\'\\/ ]",
+        "validationRegex": "[A-Z\\.\\-\\(\\)\\,\\'\\/ ]{1,}",
+        "whitelistPattern": "1,|[A-Z\\.\\-\\(\\)\\,\\'\\/ ]"
+      },
+      "preprocessingParameterDict": {}
+    },
+    {
+      "label": "address",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 569,
+        "y": 546,
+        "width": 891,
+        "height": 40
+      },
+      "type": "addressUpper",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^A-Z0-9\\.\\/\\-\\(\\)\\,\\#\\'\\/ ]",
+        "validationRegex": "[A-Z0-9\\.\\/\\-\\(\\)\\,\\#\\'\\/ ]{1,}",
+        "whitelistPattern": "1,|[A-Z0-9\\.\\/\\-\\(\\)\\,\\#\\'\\/ ]"
+      },
+      "preprocessingParameterDict": {}
+    },
+    {
+      "label": "address",
+      "positionIndex": 0,
+      "lineIndex": 1,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 566,
+        "y": 590,
+        "width": 894,
+        "height": 38
+      },
+      "type": "addressUpper",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^A-Z0-9\\.\\/\\-\\(\\)\\,\\#\\'\\/ ]",
+        "validationRegex": "[A-Z0-9\\.\\/\\-\\(\\)\\,\\#\\'\\/ ]{1,}",
+        "whitelistPattern": "1,|[A-Z0-9\\.\\/\\-\\(\\)\\,\\#\\'\\/ ]"
+      },
+      "preprocessingParameterDict": {}
+    },
+    {
+      "label": "address",
+      "positionIndex": 0,
+      "lineIndex": 2,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 566,
+        "y": 630,
+        "width": 902,
+        "height": 40
+      },
+      "type": "addressUpper",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^A-Z0-9\\.\\/\\-\\(\\)\\,\\#\\'\\/ ]",
+        "validationRegex": "[A-Z0-9\\.\\/\\-\\(\\)\\,\\#\\'\\/ ]{1,}",
+        "whitelistPattern": "1,|[A-Z0-9\\.\\/\\-\\(\\)\\,\\#\\'\\/ ]"
+      },
+      "preprocessingParameterDict": {}
+    },
+    {
+      "label": "sex",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 531,
+        "y": 765,
+        "width": 43,
+        "height": 46
+      },
+      "type": "alphaUpper",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^A-Z\\,\\-\\/ ]",
+        "validationRegex": "[A-Z\\,\\-\\/ ]{1,}",
+        "whitelistPattern": "1,|[A-Z\\,\\-\\/ ]"
+      },
+      "preprocessingParameterDict": {}
+    },
+    {
+      "label": "height",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 618,
+        "y": 758,
+        "width": 122,
+        "height": 46
+      },
+      "type": "numericNumber",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^0-9\\-\\/ ]",
+        "validationRegex": "[0-9\\-\\/ ]{1,}",
+        "whitelistPattern": "1,|[0-9\\-\\/ ]"
+      },
+      "preprocessingParameterDict": {}
+    },
+    {
+      "label": "weight",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 751,
+        "y": 758,
+        "width": 122,
+        "height": 51
+      },
+      "type": "alphaNumericNumber",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^0-9]",
+        "validationRegex": "[0-9]{1,}",
+        "whitelistPattern": "1,|[0-9]"
+      },
+      "preprocessingParameterDict": {}
+    },
+    {
+      "label": "eyes",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 907,
+        "y": 758,
+        "width": 106,
+        "height": 54
+      },
+      "type": "genericUpper",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^A-Z\\,\\-\\/ ]",
+        "validationRegex": "[A-Z\\,\\-\\/ ]{1,}",
+        "whitelistPattern": "1,|[A-Z\\,\\-\\/ ]"
+      },
+      "preprocessingParameterDict": {}
+    },
+    {
+      "label": "hair",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1049,
+        "y": 758,
+        "width": 106,
+        "height": 46
+      },
+      "type": "genericUpper",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^A-Z\\,\\-\\/ ]",
+        "validationRegex": "[A-Z\\,\\-\\/ ]{1,}",
+        "whitelistPattern": "1,|[A-Z\\,\\-\\/ ]"
+      },
+      "preprocessingParameterDict": {}
+    },
+    {
+      "label": "documentDiscriminator",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 615,
+        "y": 830,
+        "width": 330,
+        "height": 46
+      },
+      "type": "numericNumber",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^0-9\\-\\/ ]",
+        "validationRegex": "[0-9\\-\\/ ]{1,}",
+        "whitelistPattern": "1,|[0-9\\-\\/ ]"
+      },
+      "preprocessingParameterDict": {}
+    },
+    {
+      "label": "licenseNumber",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1193,
+        "y": 200,
+        "width": 250,
+        "height": 50
+      },
+      "type": "alphaNumericNumber",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^A-Z0-9\\-\\/ ]",
+        "validationRegex": "[A-Z0-9\\-\\/ ]{1,}",
+        "whitelistPattern": "1,|[A-Z0-9\\-\\/ ]"
+      },
+      "preprocessingParameterDict": {}
+    },
+    {
+      "label": "dateOfIssue",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1237,
+        "y": 257,
+        "width": 204,
+        "height": 40
+      },
+      "type": "date",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^\\d]",
+        "whitelistPattern": "1,|[\\d\\-\\/\\. ]",
+        "validationRegex": "(0[1-9]|1[0-2]){1}(0[1-9]|[12][0-9]|3[01]){1}(19|20){1}[0-9]{2}"
+      },
+      "preprocessingParameterDict": {
+        "useEAST": 0
+      }
+    },
+    {
+      "label": "dateOfExpiry",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1239,
+        "y": 298,
+        "width": 201,
+        "height": 40
+      },
+      "type": "date",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^\\d]",
+        "whitelistPattern": "1,|[\\d\\-\\/\\. ]",
+        "validationRegex": "(0[1-9]|1[0-2]){1}(0[1-9]|[12][0-9]|3[01]){1}(19|20){1}[0-9]{2}"
+      },
+      "preprocessingParameterDict": {}
+    },
+    {
+      "label": "dateOfBirth",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1212,
+        "y": 344,
+        "width": 231,
+        "height": 46
+      },
+      "type": "date",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^\\d]",
+        "whitelistPattern": "1,|[\\d\\-\\/\\. ]",
+        "validationRegex": "(0[1-9]|1[0-2]){1}(0[1-9]|[12][0-9]|3[01]){1}(19|20){1}[0-9]{2}"
+      },
+      "preprocessingParameterDict": {}
+    },
+    {
+      "label": "labelState",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 26,
+        "y": 40,
+        "width": 460,
+        "height": 125
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labelCountry",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 492,
+        "y": 45,
+        "width": 35,
+        "height": 114
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labelthegemstate",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 535,
+        "y": 40,
+        "width": 264,
+        "height": 46
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labelDL",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 725,
+        "y": 90,
+        "width": 417,
+        "height": 51
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labelclass",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 582,
+        "y": 224,
+        "width": 230,
+        "height": 46
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labelEnd",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 552,
+        "y": 273,
+        "width": 420,
+        "height": 49
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labelRestr",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 503,
+        "y": 320,
+        "width": 480,
+        "height": 54
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labellastName",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 525,
+        "y": 407,
+        "width": 920,
+        "height": 43
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labelfirstName",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 520,
+        "y": 456,
+        "width": 920,
+        "height": 43
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labeladdress",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 522,
+        "y": 546,
+        "width": 920,
+        "height": 40
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labelsex",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 487,
+        "y": 712,
+        "width": 128,
+        "height": 45
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labelHgt",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 621,
+        "y": 712,
+        "width": 128,
+        "height": 45
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labelWgt",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 746,
+        "y": 712,
+        "width": 128,
+        "height": 45
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labeleyes",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 890,
+        "y": 712,
+        "width": 145,
+        "height": 45
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labelhair",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1032,
+        "y": 712,
+        "width": 140,
+        "height": 45
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labelDD",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 505,
+        "y": 830,
+        "width": 435,
+        "height": 46
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labelLicNr",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1027,
+        "y": 200,
+        "width": 415,
+        "height": 50
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labelDoi",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1027,
+        "y": 257,
+        "width": 415,
+        "height": 50
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labelDoe",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1024,
+        "y": 298,
+        "width": 415,
+        "height": 40
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labelDob",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1046,
+        "y": 344,
+        "width": 405,
+        "height": 46
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labeldonor",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1422,
+        "y": 694,
+        "width": 59,
+        "height": 165
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "face",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 23,
+        "y": 171,
+        "width": 455,
+        "height": 570
+      },
+      "type": "image"
+    },
+    {
+      "label": "signature",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 21,
+        "y": 753,
+        "width": 450,
+        "height": 160
+      },
+      "type": "image"
+    },
+    {
+      "label": "heart",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1380,
+        "y": 858,
+        "width": 90,
+        "height": 80
+      },
+      "type": "image"
+    },
+    {
+      "label": "face",
+      "positionIndex": 0,
+      "lineIndex": 1,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1242,
+        "y": 691,
+        "width": 165,
+        "height": 195
+      },
+      "type": "image"
+    }
+  ],
+  "height": 927,
+  "width": 1500,
+  "postprocessingParameters": {
+    "dateFormat": "mmddyyyy"
+  },
+  "preprocessingParameters": {
+    "templateType": "drivingLicense"
+  }
+}

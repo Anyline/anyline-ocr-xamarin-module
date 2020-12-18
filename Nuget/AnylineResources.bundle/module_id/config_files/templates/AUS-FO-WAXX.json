@@ -1,0 +1,339 @@
+{
+  "dataFields": [
+    {
+      "label": "surname",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 24,
+        "y": 371,
+        "width": 1029,
+        "height": 51
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^A-ZÄÖÜß\\.\\/\\-\\(\\)\\,\\' ]",
+        "validationRegex": "[A-ZÄÖÜß\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+        "whitelistPattern": "1,|[A-ZÄÖÜß\\.\\/\\-\\(\\)\\,\\' ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "givenNames",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 81,
+        "y": 420,
+        "width": 975,
+        "height": 58
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^A-ZÄÖÜß\\.\\/\\-\\(\\)\\,\\' ]",
+        "validationRegex": "[A-ZÄÖÜß\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+        "whitelistPattern": "1,|[A-ZÄÖÜß\\.\\/\\-\\(\\)\\,\\' ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "licenceNumber",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1226,
+        "y": 277,
+        "width": 209,
+        "height": 63
+      },
+      "type": "documentNumber",
+      "postprocessingParameterDict": {
+        "validationRegex": "[0-9]{7}",
+        "cleanRegex": "[^0-9]",
+        "whitelistPattern": "7|[0-9]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28,
+        "useEAST": 0
+      }
+    },
+    {
+      "label": "address",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 24,
+        "y": 479,
+        "width": 1032,
+        "height": 49
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^A-ZÄÖÜß0-9\\.\\/\\-\\(\\)\\,\\' ]",
+        "validationRegex": "[A-ZÄÖÜß0-9\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+        "whitelistPattern": "1,|[A-ZÄÖÜß0-9\\.\\/\\-\\(\\)\\,\\' ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "address",
+      "positionIndex": 0,
+      "lineIndex": 1,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 19,
+        "y": 529,
+        "width": 1037,
+        "height": 54
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^A-ZÄÖÜß0-9\\.\\/\\-\\(\\)\\,\\' ]",
+        "validationRegex": "[A-ZÄÖÜß0-9\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+        "whitelistPattern": "1,|[A-ZÄÖÜß0-9\\.\\/\\-\\(\\)\\,\\' ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "dateOfExpiry",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 24,
+        "y": 637,
+        "width": 387,
+        "height": 58
+      },
+      "type": "date",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^0-9A-Za-z]",
+        "whitelistPattern": "1,|[A-Za-z0-9\\-\\/\\. ]",
+        "validationRegex": "(0[1-9]|[12][0-9]|3[01]){1}[A-Z]{1}[a-z]{2}(19|20){1}[0-9]{2}"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.1
+      }
+    },
+    {
+      "label": "dateOfBirth",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 527,
+        "y": 634,
+        "width": 373,
+        "height": 61
+      },
+      "type": "date",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^0-9A-Za-z]",
+        "whitelistPattern": "1,|[A-Za-z0-9\\-\\/\\. ]",
+        "validationRegex": "(0[1-9]|[12][0-9]|3[01]){1}[A-Z]{1}[a-z]{2}(19|20){1}[0-9]{2}"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.1
+      }
+    },
+    {
+      "label": "class",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 24,
+        "y": 743,
+        "width": 423,
+        "height": 61
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^A-Z\\-]",
+        "validationRegex": "[A-Z\\-]{1,}",
+        "whitelistPattern": "1,|[A-Z\\-]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "labelType",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 349,
+        "y": 30,
+        "width": 797,
+        "height": 68
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labelDep",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1118,
+        "y": 148,
+        "width": 235,
+        "height": 35
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labelTran",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1120,
+        "y": 178,
+        "width": 164,
+        "height": 44
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labelLicNr",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1136,
+        "y": 237,
+        "width": 291,
+        "height": 39
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labelExpDate",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 22,
+        "y": 590,
+        "width": 253,
+        "height": 47
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labelDob",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 523,
+        "y": 592,
+        "width": 282,
+        "height": 39
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labelClass",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 27,
+        "y": 698,
+        "width": 141,
+        "height": 47
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "face",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1068,
+        "y": 369,
+        "width": 331,
+        "height": 479
+      },
+      "type": "image"
+    },
+    {
+      "label": "signature",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 71,
+        "y": 811,
+        "width": 942,
+        "height": 112
+      },
+      "type": "image"
+    },
+    {
+      "label": "labelState",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 436,
+        "y": 96,
+        "width": 611,
+        "height": 56
+      },
+      "type": "MATCHING"
+    }
+  ],
+  "height": 950,
+  "width": 1500,
+  "postprocessingParameters": {
+    "dateFormat": "ddMMMyyyy"
+  },
+  "preprocessingParameters": {
+    "templateType": "drivingLicense",
+    "detectionMethod": "FengThreshold",
+    "expandSpecsBy": 1,
+    "fengAlpha": 0.11,
+    "fengK1": 0.04,
+    "fengK2": 0.03,
+    "fengSize1": 11,
+    "fengSize2": 40,
+    "homomorphicFiltering": 1,
+    "homomorphicFilteringAlpha": 2,
+    "homomorphicFilteringBeta": 0.5,
+    "homomorphicFilteringSigma": 30,
+    "maxCharHeight": 80,
+    "maxCharHeightHyph": 7,
+    "maxCharRatio": 5.72,
+    "maxCharRatioHyph": 4.5,
+    "maxCharWidth": 80,
+    "maxCharWidthHyph": 15,
+    "medianWordDist": 15.5,
+    "minCharHeight": 20,
+    "minCharHeightHyph": 3,
+    "minCharRatio": 0.12,
+    "minCharRatioHyph": 1.2,
+    "minCharWidth": 3,
+    "minCharWidthHyph": 7,
+    "minIntersectionRatio": 0.15,
+    "minIntersectionRatioLine": 0.01,
+    "wordMaxXDistance": 2.5,
+    "classificationModel": "tfAUT"
+  }
+}

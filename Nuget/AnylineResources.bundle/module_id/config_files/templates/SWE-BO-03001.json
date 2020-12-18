@@ -1,0 +1,518 @@
+{
+  "dataFields": [
+    {
+      "label": "surname",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 35,
+        "y": 125,
+        "width": 663,
+        "height": 58
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+        "cleanRegex": "[^A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]",
+        "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "givenNames",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 35,
+        "y": 213,
+        "width": 663,
+        "height": 52
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+        "cleanRegex": "[^A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]",
+        "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "sex",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 417,
+        "y": 297,
+        "width": 92,
+        "height": 54
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+        "cleanRegex": "[^A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]",
+        "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "nationality",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 593,
+        "y": 299,
+        "width": 418,
+        "height": 54
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+        "cleanRegex": "[^A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]",
+        "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "dateOfBirth",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 417,
+        "y": 386,
+        "width": 414,
+        "height": 52
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+        "cleanRegex": "[^A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]",
+        "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "personalNumber",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 412,
+        "y": 468,
+        "width": 317,
+        "height": 66
+      },
+      "type": "documentNumber",
+      "postprocessingParameterDict": {
+        "validationRegex": "[0-9]{8}",
+        "cleanRegex": "[^0-9]",
+        "whitelistPattern": "8|[0-9]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "documentNumber",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 32,
+        "y": 565,
+        "width": 257,
+        "height": 69
+      },
+      "type": "documentNumber",
+      "postprocessingParameterDict": {
+        "validationRegex": "[0-9]{8}",
+        "cleanRegex": "[^0-9]",
+        "whitelistPattern": "8|[0-9]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "height",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 414,
+        "y": 553,
+        "width": 180,
+        "height": 75
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+        "cleanRegex": "[^A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]",
+        "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "dateOfIssue",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 32,
+        "y": 676,
+        "width": 382,
+        "height": 63
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+        "cleanRegex": "[^A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]",
+        "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "dateOfExpiry",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 30,
+        "y": 763,
+        "width": 385,
+        "height": 59
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+        "cleanRegex": "[^A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]",
+        "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "authority",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 25,
+        "y": 846,
+        "width": 791,
+        "height": 64
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+        "cleanRegex": "[^A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]",
+        "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "photo",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1016,
+        "y": 154,
+        "width": 436,
+        "height": 578
+      },
+      "type": "image"
+    },
+    {
+      "label": "signature",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 829,
+        "y": 741,
+        "width": 665,
+        "height": 139
+      },
+      "type": "image"
+    },
+    {
+      "label": "photo_small",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 634,
+        "y": 619,
+        "width": 165,
+        "height": 201
+      },
+      "type": "image"
+    },
+    {
+      "label": "sverige_sweden_suede",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 37,
+        "y": 20,
+        "width": 737,
+        "height": 56
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "efternamn",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 33,
+        "y": 90,
+        "width": 307,
+        "height": 42
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "fornamn",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 33,
+        "y": 174,
+        "width": 343,
+        "height": 44
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "Kön_sex",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 414,
+        "y": 259,
+        "width": 139,
+        "height": 46
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "nationalitet",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 590,
+        "y": 266,
+        "width": 354,
+        "height": 39
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "födelsedatum",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 414,
+        "y": 348,
+        "width": 421,
+        "height": 40
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "personn",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 411,
+        "y": 432,
+        "width": 423,
+        "height": 37
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "kortnummer",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 25,
+        "y": 527,
+        "width": 343,
+        "height": 42
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "height_",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 411,
+        "y": 527,
+        "width": 221,
+        "height": 37
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "utfardat_date_of_issue",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 25,
+        "y": 643,
+        "width": 341,
+        "height": 34
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "giltig_date_of_expiry",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 28,
+        "y": 732,
+        "width": 413,
+        "height": 39
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "myndighet_authority",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 23,
+        "y": 817,
+        "width": 322,
+        "height": 39
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "nationellt_identitetskort",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 987,
+        "y": 20,
+        "width": 469,
+        "height": 47
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "national_identity_card",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 984,
+        "y": 60,
+        "width": 358,
+        "height": 30
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "carte_national_d_identité",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 986,
+        "y": 84,
+        "width": 416,
+        "height": 42
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "namnteckung_signature",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 977,
+        "y": 881,
+        "width": 399,
+        "height": 46
+      },
+      "type": "MATCHING"
+    }    
+  ],
+  "height": 950,
+  "width": 1500,
+  "postprocessingParameters": {
+    "dateFormat": "ddmmyyyy"
+  },
+  "preprocessingParameters": {
+    "templateType": "idFront",
+    "detectionMethod": "FengThreshold",
+    "expandSpecsBy": 1,
+    "fengAlpha": 0.11,
+    "fengK1": 0.04,
+    "fengK2": 0.03,
+    "fengSize1": 11,
+    "fengSize2": 40,
+    "homomorphicFiltering": 1,
+    "homomorphicFilteringAlpha": 2,
+    "homomorphicFilteringBeta": 0.5,
+    "homomorphicFilteringSigma": 30,
+    "maxCharHeight": 80,
+    "maxCharHeightHyph": 7,
+    "maxCharRatio": 5.72,
+    "maxCharRatioHyph": 4.5,
+    "maxCharWidth": 80,
+    "maxCharWidthHyph": 15,
+    "medianWordDist": 15.5,
+    "minCharHeight": 20,
+    "minCharHeightHyph": 3,
+    "minCharRatio": 0.12,
+    "minCharRatioHyph": 1.2,
+    "minCharWidth": 3,
+    "minCharWidthHyph": 7,
+    "minIntersectionRatio": 0.15,
+    "minIntersectionRatioLine": 0.01,
+    "wordMaxXDistance": 2.5,
+    "classificationModel": "tfAUT"
+  }
+}

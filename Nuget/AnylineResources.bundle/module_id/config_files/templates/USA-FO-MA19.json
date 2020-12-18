@@ -1,0 +1,501 @@
+{
+  "dataFields": [
+    {
+      "label": "dateOfIssue",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 830,
+        "y": 295,
+        "width": 250,
+        "height": 65
+      },
+      "type": "date",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^\\d]",
+        "whitelistPattern": "1,|[\\d\\- ]",
+        "validationRegex": "(0[1-9]|1[0-2]){1}(0[1-9]|[12][0-9]|3[01]){1}(19|20){1}[0-9]{2}"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.1
+      }
+    },
+    {
+      "label": "licenseNumber",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1145,
+        "y": 290,
+        "width": 300,
+        "height": 70
+      },
+      "type": "documentNumber",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-Z0-9]{9}",
+        "cleanRegex": "[^A-Z0-9]",
+        "whitelistPattern": "9|[A-Z0-9]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28,
+        "useEAST": 0
+      }
+    },
+    {
+      "label": "dateOfExpiry",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 830,
+        "y": 380,
+        "width": 250,
+        "height": 65
+      },
+      "type": "date",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^\\d]",
+        "whitelistPattern": "1,|[\\d\\- ]",
+        "validationRegex": "(0[1-9]|1[0-2]){1}(0[1-9]|[12][0-9]|3[01]){1}(19|20){1}[0-9]{2}"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.1
+      }
+    },
+    {
+      "label": "dateOfBirth",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1145,
+        "y": 380,
+        "width": 300,
+        "height": 60
+      },
+      "type": "date",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^\\d]",
+        "whitelistPattern": "1,|[\\d\\- ]",
+        "validationRegex": "(0[1-9]|1[0-2]){1}(0[1-9]|[12][0-9]|3[01]){1}(19|20){1}[0-9]{2}"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "class",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 830,
+        "y": 469,
+        "width": 110,
+        "height": 36
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-Z\\- ]{1,}",
+        "cleanRegex": "[^A-Z\\- ]",
+        "whitelistPattern": "1,|[A-Z\\- ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28,
+        "useEAST": 0
+      }
+    },
+    {
+      "label": "restrictions",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 996,
+        "y": 469,
+        "width": 115,
+        "height": 36
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-Z\\- ]{1,}",
+        "cleanRegex": "[^A-Z\\- ]",
+        "whitelistPattern": "1,|[A-Z\\- ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28,
+        "useEAST": 0
+      }
+    },
+    {
+      "label": "endorsements",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1210,
+        "y": 469,
+        "width": 150,
+        "height": 34
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-Z\\- ]{1,}",
+        "cleanRegex": "[^A-Z\\- ]",
+        "whitelistPattern": "1,|[A-Z\\- ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28,
+        "useEAST": 0
+      }
+    },
+    {
+      "label": "lastName",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 640,
+        "y": 510,
+        "width": 800,
+        "height": 65
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-Z\u00c4\u00d6\u00dc\u00df\\- ]{1,}",
+        "cleanRegex": "[^A-Z\u00c4\u00d6\u00dc\u00df\\- ]",
+        "whitelistPattern": "1,|[A-Z\u00c4\u00d6\u00dc\u00df\\- ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "firstName",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 640,
+        "y": 575,
+        "width": 800,
+        "height": 50
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-Z\u00c4\u00d6\u00dc\u00df\\- ]{1,}",
+        "cleanRegex": "[^A-Z\u00c4\u00d6\u00dc\u00df\\- ]",
+        "whitelistPattern": "1,|[A-Z\u00c4\u00d6\u00dc\u00df\\- ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "address",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 640,
+        "y": 630,
+        "width": 800,
+        "height": 50
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[0-9A-Z\u00c4\u00d6\u00dc\u00df\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+        "cleanRegex": "[^0-9A-Z\u00c4\u00d6\u00dc\u00df\\.\\/\\-\\(\\)\\,\\' ]",
+        "whitelistPattern": "1,|[0-9A-Z\u00c4\u00d6\u00dc\u00df\\.\\/\\-\\(\\)\\,\\' ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "address",
+      "positionIndex": 0,
+      "lineIndex": 1,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 640,
+        "y": 675,
+        "width": 800,
+        "height": 50
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[0-9A-Z\u00c4\u00d6\u00dc\u00df\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+        "cleanRegex": "[^0-9A-Z\u00c4\u00d6\u00dc\u00df\\.\\/\\-\\(\\)\\,\\' ]",
+        "whitelistPattern": "1,|[0-9A-Z\u00c4\u00d6\u00dc\u00df\\.\\/\\-\\(\\)\\,\\' ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "address",
+      "positionIndex": 0,
+      "lineIndex": 2,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 640,
+        "y": 720,
+        "width": 800,
+        "height": 50
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[0-9A-Z\u00c4\u00d6\u00dc\u00df\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+        "cleanRegex": "[^0-9A-Z\u00c4\u00d6\u00dc\u00df\\.\\/\\-\\(\\)\\,\\' ]",
+        "whitelistPattern": "1,|[0-9A-Z\u00c4\u00d6\u00dc\u00df\\.\\/\\-\\(\\)\\,\\' ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "sex",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 750,
+        "y": 815,
+        "width": 50,
+        "height": 50
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-Z\\- ]{1,}",
+        "cleanRegex": "[^A-Z\\- ]",
+        "whitelistPattern": "1,|[A-Z\\- ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28,
+        "useEAST": 0
+      }
+    },
+    {
+      "label": "height",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 915,
+        "y": 815,
+        "width": 110,
+        "height": 50
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^0-9\\-\\'\" ]",
+        "validationRegex": "[4-7]{1}(\\')?(\\-)?( )?(0[0-9]{1}|1[01])[\\']{0,2}",
+        "whitelistPattern": "1,|[0-9\\-\\'\" ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28,
+        "useEAST": 0
+      }
+    },
+    {
+      "label": "documentDiscriminator",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 740,
+        "y": 865,
+        "width": 135,
+        "height": 40
+      },
+      "type": "documentNumber",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^\\d/]",
+        "whitelistPattern": "1,|[\\d\\/ ]",
+        "validationRegex": "[0-9]{2}[/]?[0-9]{2}[/]?[0-9]{4}"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28,
+        "useEAST": 0
+      }
+    },
+    {
+      "label": "revoked",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 930,
+        "y": 865,
+        "width": 140,
+        "height": 40
+      },
+      "type": "documentNumber",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^\\d/]",
+        "whitelistPattern": "1,|[\\d\\/ ]",
+        "validationRegex": "[0-9]{2}[/]?[0-9]{2}[/]?[0-9]{4}"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28,
+        "useEAST": 0
+      }
+    },
+    {
+      "label": "signature",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 29,
+        "y": 788,
+        "width": 640,
+        "height": 138
+      },
+      "type": "image"
+    },
+    {
+      "label": "photo",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 54,
+        "y": 180,
+        "width": 554,
+        "height": 610
+      },
+      "type": "image"
+    },
+    {
+      "label": "birthdate_bottom_right",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1145,
+        "y": 830,
+        "width": 300,
+        "height": 80
+      },
+      "type": "image"
+    },
+    {
+      "label": "massachusetts",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 50,
+        "y": 50,
+        "width": 700,
+        "height": 100
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "DRIVERS_LICENSE",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 920,
+        "y": 50,
+        "width": 280,
+        "height": 140
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "ddRevokedLine",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 670,
+        "y": 860,
+        "width": 350,
+        "height": 40
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "sexHeightLabel",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 670,
+        "y": 815,
+        "width": 330,
+        "height": 40
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "BIRTHDATE_BOTTOM_RIGHT",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1145,
+        "y": 830,
+        "width": 300,
+        "height": 80
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "SIGNATURE",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 29,
+        "y": 760,
+        "width": 640,
+        "height": 138
+      },
+      "type": "MATCHING"
+    }
+  ],
+  "height": 948,
+  "width": 1500,
+  "postprocessingParameters": {
+    "dateFormat": "mmddyyyy"
+  },
+  "preprocessingParameters": {
+    "templateType": "drivingLicense",
+    "detectionMethod": "FengThreshold",
+    "expandSpecsBy": 1,
+    "fengAlpha": 0.11,
+    "fengK1": 0.04,
+    "fengK2": 0.03,
+    "fengSize1": 11,
+    "fengSize2": 40,
+    "homomorphicFiltering": 1,
+    "homomorphicFilteringAlpha": 2,
+    "homomorphicFilteringBeta": 0.5,
+    "homomorphicFilteringSigma": 30,
+    "maxCharHeight": 80,
+    "maxCharHeightHyph": 7,
+    "maxCharRatio": 5.72,
+    "maxCharRatioHyph": 4.5,
+    "maxCharWidth": 80,
+    "maxCharWidthHyph": 15,
+    "medianWordDist": 15.5,
+    "minCharHeight": 20,
+    "minCharHeightHyph": 3,
+    "minCharRatio": 0.12,
+    "minCharRatioHyph": 1.2,
+    "minCharWidth": 3,
+    "minCharWidthHyph": 7,
+    "minIntersectionRatio": 0.15,
+    "minIntersectionRatioLine": 0.01,
+    "wordMaxXDistance": 2.5,
+    "classificationModel": "tfAUT"
+  }
+}

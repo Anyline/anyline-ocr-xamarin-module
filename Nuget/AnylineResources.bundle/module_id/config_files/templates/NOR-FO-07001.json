@@ -1,0 +1,484 @@
+{
+  "dataFields": [
+    {
+      "label": "surname",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 465,
+        "y": 121,
+        "width": 616,
+        "height": 46
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+        "cleanRegex": "[^A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]",
+        "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "givenNames",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 463,
+        "y": 188,
+        "width": 619,
+        "height": 49
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+        "cleanRegex": "[^A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]",
+        "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "dateOfBirth",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 462,
+        "y": 254,
+        "width": 232,
+        "height": 49
+      },
+      "type": "date",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^\\d]",
+        "whitelistPattern": "1,|[\\d\\-\\/\\. ]",
+        "validationRegex": "(0[1-9]|[12][0-9]|3[01]){1}(0[1-9]|1[0-2]){1}(19|20){1}[0-9]{2}"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.1
+      }
+    },
+    {
+      "label": "placeOfBirth",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 701,
+        "y": 253,
+        "width": 382,
+        "height": 52
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+        "cleanRegex": "[^A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]",
+        "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "dateOfIssue",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 460,
+        "y": 323,
+        "width": 230,
+        "height": 51
+      },
+      "type": "date",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^\\d]",
+        "whitelistPattern": "1,|[\\d\\-\\/\\. ]",
+        "validationRegex": "(0[1-9]|[12][0-9]|3[01]){1}(0[1-9]|1[0-2]){1}(19|20){1}[0-9]{2}"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.1
+      }
+    },
+    {
+      "label": "dateOfExpiry",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 460,
+        "y": 387,
+        "width": 232,
+        "height": 51
+      },
+      "type": "date",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^\\d]",
+        "whitelistPattern": "1,|[\\d\\-\\/\\. ]",
+        "validationRegex": "(0[1-9]|[12][0-9]|3[01]){1}(0[1-9]|1[0-2]){1}(19|20){1}[0-9]{2}"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.1
+      }
+    },
+    {
+      "label": "authority",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 830,
+        "y": 317,
+        "width": 409,
+        "height": 56
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+        "cleanRegex": "[^A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]",
+        "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "personalNumber",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 829,
+        "y": 381,
+        "width": 295,
+        "height": 61
+      },
+      "type": "documentNumber",
+      "postprocessingParameterDict": {
+        "validationRegex": "[0-9]{11}",
+        "cleanRegex": "[^0-9]",
+        "whitelistPattern": "11|[0-9]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "documentNumber",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 458,
+        "y": 449,
+        "width": 327,
+        "height": 71
+      },
+      "type": "documentNumber",
+      "postprocessingParameterDict": {
+        "validationRegex": "[0-9]{11}",
+        "cleanRegex": "[^0-9]",
+        "whitelistPattern": "11|[0-9]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "signature",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 457,
+        "y": 529,
+        "width": 639,
+        "height": 148
+      },
+      "type": "image"
+    },
+    {
+      "label": "photo",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 18,
+        "y": 203,
+        "width": 365,
+        "height": 489
+      },
+      "type": "image"
+    },
+    {
+      "label": "photo_right",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1266,
+        "y": 517,
+        "width": 127,
+        "height": 165
+      },
+      "type": "image"
+    },
+    {
+      "label": "categories",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 79,
+        "y": 703,
+        "width": 406,
+        "height": 54
+      },
+      "type": "categories",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^(AM|A1|A2|A|B1|B|C1|C|D1|D|BE|C1E|CE|D1E|DE|S|T| )]",
+        "whitelistPattern": "1,|[(AM|A1|A2|A|B1|B|C1|C|D1|D|BE|C1E|CE|D1E|DE|S|T| )]",
+        "validationRegex": "[(AM|A1|A2|A|B1|B|C1|C|D1|D|BE|C1E|CE|D1E|DE|S|T| )]{1,}"
+    },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.3
+      }
+    },
+    {
+      "label": "N",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 107,
+        "y": 53,
+        "width": 126,
+        "height": 133
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "forerkort",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 395,
+        "y": 31,
+        "width": 358,
+        "height": 68
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "forarkort",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 791,
+        "y": 29,
+        "width": 380,
+        "height": 69
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "norge",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1257,
+        "y": 17,
+        "width": 172,
+        "height": 56
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "noreg",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1257,
+        "y": 73,
+        "width": 175,
+        "height": 49
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "1",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 394,
+        "y": 119,
+        "width": 54,
+        "height": 52
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "2",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 392,
+        "y": 186,
+        "width": 51,
+        "height": 54
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "3",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 392,
+        "y": 254,
+        "width": 54,
+        "height": 52
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "4a",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 392,
+        "y": 319,
+        "width": 71,
+        "height": 58
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "4b",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 390,
+        "y": 389,
+        "width": 71,
+        "height": 54
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "4c",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 755,
+        "y": 319,
+        "width": 75,
+        "height": 58
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "4c",
+      "positionIndex": 0,
+      "lineIndex": 1,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 754,
+        "y": 386,
+        "width": 78,
+        "height": 59
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "5",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 390,
+        "y": 454,
+        "width": 56,
+        "height": 58
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "7",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 392,
+        "y": 556,
+        "width": 54,
+        "height": 66
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "9",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 16,
+        "y": 698,
+        "width": 56,
+        "height": 58
+      },
+      "type": "MATCHING"
+    }
+  ],
+  "height": 950,
+  "width": 1500,
+  "postprocessingParameters": {
+    "dateFormat": "ddmmyyyy"
+  },
+  "preprocessingParameters": {
+    "templateType": "drivingLicense",
+    "detectionMethod": "FengThreshold",
+    "expandSpecsBy": 1,
+    "fengAlpha": 0.11,
+    "fengK1": 0.04,
+    "fengK2": 0.03,
+    "fengSize1": 11,
+    "fengSize2": 40,
+    "homomorphicFiltering": 1,
+    "homomorphicFilteringAlpha": 2,
+    "homomorphicFilteringBeta": 0.5,
+    "homomorphicFilteringSigma": 30,
+    "maxCharHeight": 80,
+    "maxCharHeightHyph": 7,
+    "maxCharRatio": 5.72,
+    "maxCharRatioHyph": 4.5,
+    "maxCharWidth": 80,
+    "maxCharWidthHyph": 15,
+    "medianWordDist": 15.5,
+    "minCharHeight": 20,
+    "minCharHeightHyph": 3,
+    "minCharRatio": 0.12,
+    "minCharRatioHyph": 1.2,
+    "minCharWidth": 3,
+    "minCharWidthHyph": 7,
+    "minIntersectionRatio": 0.15,
+    "minIntersectionRatioLine": 0.01,
+    "wordMaxXDistance": 2.5,
+    "classificationModel": "tfAUT"
+  }
+}

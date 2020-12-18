@@ -1,0 +1,570 @@
+{
+  "dataFields": [
+    {
+      "label": "surname",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 466,
+        "y": 172,
+        "width": 632,
+        "height": 44
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+        "cleanRegex": "[^A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]",
+        "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "surname",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 464,
+        "y": 216,
+        "width": 634,
+        "height": 36
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+        "cleanRegex": "[^A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]",
+        "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "givenNames",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 461,
+        "y": 284,
+        "width": 635,
+        "height": 45
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+        "cleanRegex": "[^A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]",
+        "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "nationality",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 458,
+        "y": 367,
+        "width": 637,
+        "height": 45
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+        "cleanRegex": "[^A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]",
+        "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "dateOfBirth",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 458,
+        "y": 451,
+        "width": 448,
+        "height": 47
+      },
+      "type": "date",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^\\d]",
+        "whitelistPattern": "1,|[\\d\\-\\/\\. ]",
+        "validationRegex": "(0[1-9]|[12][0-9]|3[01]){1}(0[1-9]|1[0-2]){1}(19|20){1}[0-9]{2}"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.1
+      }
+    },
+    {
+      "label": "placeOfBirth",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 457,
+        "y": 535,
+        "width": 846,
+        "height": 39
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+        "cleanRegex": "[^A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]",
+        "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "sex",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1378,
+        "y": 538,
+        "width": 64,
+        "height": 38
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+        "cleanRegex": "[^A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]",
+        "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "authority",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 461,
+        "y": 614,
+        "width": 679,
+        "height": 45
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+        "cleanRegex": "[^A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]",
+        "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "signature",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 458,
+        "y": 660,
+        "width": 1036,
+        "height": 121
+      },
+      "type": "image"
+    },
+    {
+      "label": "photo",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 22,
+        "y": 157,
+        "width": 352,
+        "height": 559
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "documentNumber",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 57,
+        "y": 855,
+        "width": 451,
+        "height": 76
+      },
+      "type": "documentNumber",
+      "postprocessingParameterDict": {
+        "validationRegex": "[0-9]{8}",
+        "cleanRegex": "[^0-9]",
+        "whitelistPattern": "8|[0-9]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "dateOfIssue",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 644,
+        "y": 858,
+        "width": 355,
+        "height": 67
+      },
+      "type": "date",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^\\d]",
+        "whitelistPattern": "1,|[\\d\\-\\/\\. ]",
+        "validationRegex": "(0[1-9]|[12][0-9]|3[01]){1}(0[1-9]|1[0-2]){1}(19|20){1}[0-9]{2}"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.1
+      }
+    },
+    {
+      "label": "dateOfExpiry",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1067,
+        "y": 861,
+        "width": 362,
+        "height": 60
+      },
+      "type": "date",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^\\d]",
+        "whitelistPattern": "1,|[\\d\\-\\/\\. ]",
+        "validationRegex": "(0[1-9]|[12][0-9]|3[01]){1}(0[1-9]|1[0-2]){1}(19|20){1}[0-9]{2}"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.1
+      }
+    },
+    {
+      "label": "grand_duche_de",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 47,
+        "y": 17,
+        "width": 234,
+        "height": 32
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "luxembourg_",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 45,
+        "y": 46,
+        "width": 260,
+        "height": 41
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "carte_d_identite",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 45,
+        "y": 85,
+        "width": 266,
+        "height": 36
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "grand_duchy_of",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 457,
+        "y": 18,
+        "width": 234,
+        "height": 30
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "luxembourg_",
+      "positionIndex": 0,
+      "lineIndex": 1,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 455,
+        "y": 49,
+        "width": 260,
+        "height": 39
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "identity_card_",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 455,
+        "y": 87,
+        "width": 224,
+        "height": 38
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "grossherzogtum_",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 829,
+        "y": 12,
+        "width": 234,
+        "height": 35
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "luxemburg",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 827,
+        "y": 47,
+        "width": 237,
+        "height": 38
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "personalausweis_",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 824,
+        "y": 85,
+        "width": 251,
+        "height": 33
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "letzebuerg_",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1190,
+        "y": 43,
+        "width": 263,
+        "height": 44
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "nom_name_",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 457,
+        "y": 145,
+        "width": 157,
+        "height": 27
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "prenomes_given_names",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 458,
+        "y": 248,
+        "width": 309,
+        "height": 36
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "natiaonalite_nationality",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 455,
+        "y": 332,
+        "width": 361,
+        "height": 36
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "date_de_naissance_date_of_birth",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 455,
+        "y": 419,
+        "width": 483,
+        "height": 32
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "lieu_de_naissance_plae_of_birth",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 455,
+        "y": 503,
+        "width": 497,
+        "height": 33
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "municipality_of_issue",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 458,
+        "y": 582,
+        "width": 644,
+        "height": 30
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "sinature_du_titulare",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1137,
+        "y": 576,
+        "width": 327,
+        "height": 38
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "sexe_sex",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1304,
+        "y": 508,
+        "width": 160,
+        "height": 33
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "holders_signature_",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1135,
+        "y": 610,
+        "width": 274,
+        "height": 39
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "identity_card_no",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 45,
+        "y": 794,
+        "width": 556,
+        "height": 33
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "valid_from_until",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 708,
+        "y": 790,
+        "width": 507,
+        "height": 36
+      },
+      "type": "MATCHING"
+    }
+  ],
+  "height": 950,
+  "width": 1500,
+  "postprocessingParameters": {
+    "dateFormat": "ddmmyyyy"
+  },
+  "preprocessingParameters": {
+    "templateType": "idFront",
+    "detectionMethod": "FengThreshold",
+    "expandSpecsBy": 1,
+    "fengAlpha": 0.11,
+    "fengK1": 0.04,
+    "fengK2": 0.03,
+    "fengSize1": 11,
+    "fengSize2": 40,
+    "homomorphicFiltering": 1,
+    "homomorphicFilteringAlpha": 2,
+    "homomorphicFilteringBeta": 0.5,
+    "homomorphicFilteringSigma": 30,
+    "maxCharHeight": 80,
+    "maxCharHeightHyph": 7,
+    "maxCharRatio": 5.72,
+    "maxCharRatioHyph": 4.5,
+    "maxCharWidth": 80,
+    "maxCharWidthHyph": 15,
+    "medianWordDist": 15.5,
+    "minCharHeight": 20,
+    "minCharHeightHyph": 3,
+    "minCharRatio": 0.12,
+    "minCharRatioHyph": 1.2,
+    "minCharWidth": 3,
+    "minCharWidthHyph": 7,
+    "minIntersectionRatio": 0.15,
+    "minIntersectionRatioLine": 0.01,
+    "wordMaxXDistance": 2.5,
+    "classificationModel": "tfAUT"
+  }
+}

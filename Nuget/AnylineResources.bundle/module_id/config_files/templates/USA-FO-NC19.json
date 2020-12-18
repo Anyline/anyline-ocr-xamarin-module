@@ -1,0 +1,738 @@
+{
+  "dataFields": [
+    {
+      "label": "photo",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 61,
+        "y": 232,
+        "width": 408,
+        "height": 552
+      },
+      "type": "image"
+    },
+    {
+      "label": "signature",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 19,
+        "y": 781,
+        "width": 452,
+        "height": 146
+      },
+      "type": "image"
+    },
+    {
+      "label": "licenseNumber",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 589,
+        "y": 238,
+        "width": 396,
+        "height": 56
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[0-9]{12}",
+        "cleanRegex": "[^0-9]",
+        "whitelistPattern": "12|[0-9]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "dateOfBirth",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1152,
+        "y": 238,
+        "width": 263,
+        "height": 48
+      },
+      "type": "date",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^\\d]",
+        "whitelistPattern": "1,|[\\d\\- ]",
+        "validationRegex": "(0[1-9]|1[0-2]){1}(0[1-9]|[12][0-9]|3[01]){1}(19|20){1}[0-9]{2}"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.1
+      }
+    },
+    {
+      "label": "dateOfExpiry",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1161,
+        "y": 284,
+        "width": 254,
+        "height": 52
+      },
+      "type": "date",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^\\d]",
+        "whitelistPattern": "1,|[\\d\\- ]",
+        "validationRegex": "(0[1-9]|1[0-2]){1}(0[1-9]|[12][0-9]|3[01]){1}(19|20){1}[0-9]{2}"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "lastName",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 501,
+        "y": 346,
+        "width": 916,
+        "height": 50
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-ZÄÖÜß\\- ]{1,}",
+        "cleanRegex": "[^A-ZÄÖÜß\\- ]",
+        "whitelistPattern": "1,|[A-ZÄÖÜß\\- ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "firstName",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 503,
+        "y": 394,
+        "width": 916,
+        "height": 46
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-ZÄÖÜß\\- ]{1,}",
+        "cleanRegex": "[^A-ZÄÖÜß\\- ]",
+        "whitelistPattern": "1,|[A-ZÄÖÜß\\- ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "address",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 499,
+        "y": 447,
+        "width": 920,
+        "height": 39
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[0-9A-ZÄÖÜß\\-\\, ]{1,}",
+        "cleanRegex": "[^0-9A-ZÄÖÜß\\-\\, ]",
+        "whitelistPattern": "1,|[A-ZÄÖÜß\\-\\, ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "address",
+      "positionIndex": 0,
+      "lineIndex": 1,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 501,
+        "y": 486,
+        "width": 918,
+        "height": 46
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[0-9A-ZÄÖÜß\\-\\, ]{1,}",
+        "cleanRegex": "[^0-9A-ZÄÖÜß\\-\\, ]",
+        "whitelistPattern": "1,|[A-ZÄÖÜß\\-\\, ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "address",
+      "positionIndex": 0,
+      "lineIndex": 2,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 501,
+        "y": 536,
+        "width": 918,
+        "height": 46
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[0-9A-ZÄÖÜß\\-\\, ]{1,}",
+        "cleanRegex": "[^0-9A-ZÄÖÜß\\-\\, ]",
+        "whitelistPattern": "1,|[A-ZÄÖÜß\\-\\, ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "endorsements",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 849,
+        "y": 609,
+        "width": 129,
+        "height": 46
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-Z\\- ]{1,}",
+        "cleanRegex": "[^A-Z\\- ]",
+        "whitelistPattern": "1,|[A-Z\\- ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28,
+        "useEAST": 0
+      }
+    },
+    {
+      "label": "class",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 621,
+        "y": 613,
+        "width": 92,
+        "height": 43
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-Z\\- ]{1,}",
+        "cleanRegex": "[^A-Z\\- ]",
+        "whitelistPattern": "1,|[A-Z\\- ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28,
+        "useEAST": 0
+      }
+    },
+    {
+      "label": "restrictions",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 626,
+        "y": 653,
+        "width": 96,
+        "height": 39
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[0-0A-Z\\- ]{1,}",
+        "cleanRegex": "[^0-9A-Z\\- ]",
+        "whitelistPattern": "1,|[0-9A-Z\\- ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28,
+        "useEAST": 0
+      }
+    },
+    {
+      "label": "sex",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 580,
+        "y": 692,
+        "width": 56,
+        "height": 48
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-Z]{1,}",
+        "cleanRegex": "[^A-Z]",
+        "whitelistPattern": "1,|[A-Z]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28,
+        "useEAST": 0
+      }
+    },
+    {
+      "label": "height",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 582,
+        "y": 732,
+        "width": 118,
+        "height": 48
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[0-9\\-\\' ]{1,}",
+        "cleanRegex": "[^0-9\\-\\' ]",
+        "whitelistPattern": "1,|[0-9\\'\\- ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28,
+        "useEAST": 0
+      }
+    },
+    {
+      "label": "eyes",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 825,
+        "y": 692,
+        "width": 103,
+        "height": 46
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-Z]{1,}",
+        "cleanRegex": "[^A-Z]",
+        "whitelistPattern": "1,|[A-Z]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28,
+        "useEAST": 0
+      }
+    },
+    {
+      "label": "hair",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 828,
+        "y": 729,
+        "width": 103,
+        "height": 46
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-Z]{1,}",
+        "cleanRegex": "[^A-Z]",
+        "whitelistPattern": "1,|[A-Z]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28,
+        "useEAST": 0
+      }
+    },
+    {
+      "label": "dateOfIssue",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 569,
+        "y": 804,
+        "width": 230,
+        "height": 48
+      },
+      "type": "date",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^\\d]",
+        "whitelistPattern": "1,|[\\d\\- ]",
+        "validationRegex": "(0[1-9]|1[0-2]){1}(0[1-9]|[12][0-9]|3[01]){1}(19|20){1}[0-9]{2}"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.1
+      }
+    },
+    {
+      "label": "documentDiscriminator",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 569,
+        "y": 848,
+        "width": 236,
+        "height": 48
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[0-9]{10}",
+        "cleanRegex": "[^0-9]",
+        "whitelistPattern": "10|[0-9]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28,
+        "useEAST": 0
+      }
+    },
+    {
+      "label": "duplicate",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 503,
+        "y": 300,
+        "width": 87,
+        "height": 37
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-Z\\- ]{1,}",
+        "cleanRegex": "[^A-Z\\- ]",
+        "whitelistPattern": "1,|[A-Z\\- ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "labelState",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 43,
+        "y": 52,
+        "width": 681,
+        "height": 89
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labelType",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 808,
+        "y": 67,
+        "width": 464,
+        "height": 70
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labelLN",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 475,
+        "y": 238,
+        "width": 510,
+        "height": 59
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labelDob",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1036,
+        "y": 245,
+        "width": 385,
+        "height": 43
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labelDoe",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1029,
+        "y": 291,
+        "width": 390,
+        "height": 48
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "label1",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 472,
+        "y": 344,
+        "width": 322,
+        "height": 59
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "label2",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 470,
+        "y": 398,
+        "width": 341,
+        "height": 41
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "label8",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 470,
+        "y": 440,
+        "width": 545,
+        "height": 46
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labelClass",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 477,
+        "y": 613,
+        "width": 212,
+        "height": 39
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labelEnd",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 733,
+        "y": 615,
+        "width": 230,
+        "height": 41
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labelRest",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 477,
+        "y": 655,
+        "width": 190,
+        "height": 41
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labelSex",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 472,
+        "y": 694,
+        "width": 164,
+        "height": 41
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labelEyes",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 700,
+        "y": 694,
+        "width": 217,
+        "height": 39
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labelHgt",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 479,
+        "y": 734,
+        "width": 212,
+        "height": 41
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labelHair",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 705,
+        "y": 734,
+        "width": 221,
+        "height": 41
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labelR",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 937,
+        "y": 734,
+        "width": 96,
+        "height": 41
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labelDoi",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 472,
+        "y": 811,
+        "width": 322,
+        "height": 37
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "labelDD",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 470,
+        "y": 852,
+        "width": 317,
+        "height": 46
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "extraDob",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 900,
+        "y": 837,
+        "width": 326,
+        "height": 70
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "secondaryFace",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1073,
+        "y": 453,
+        "width": 230,
+        "height": 269
+      },
+      "type": "image"
+    },
+    {
+      "label": "holographicFace",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1242,
+        "y": 631,
+        "width": 219,
+        "height": 276
+      },
+      "type": "image"
+    },
+    {
+      "label": "signatureOff",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 76,
+        "y": 144,
+        "width": 374,
+        "height": 85
+      },
+      "type": "image"
+    }
+  ],
+  "height": 948,
+  "width": 1500,
+  "postprocessingParameters": {
+    "dateFormat": "mmddyyyy"
+  },
+  "preprocessingParameters": {
+    "templateType": "drivingLicense",
+    "detectionMethod": "FengThreshold",
+    "expandSpecsBy": 1,
+    "fengAlpha": 0.11,
+    "fengK1": 0.04,
+    "fengK2": 0.03,
+    "fengSize1": 11,
+    "fengSize2": 40,
+    "homomorphicFiltering": 1,
+    "homomorphicFilteringAlpha": 2,
+    "homomorphicFilteringBeta": 0.5,
+    "homomorphicFilteringSigma": 30,
+    "maxCharHeight": 80,
+    "maxCharHeightHyph": 7,
+    "maxCharRatio": 5.72,
+    "maxCharRatioHyph": 4.5,
+    "maxCharWidth": 80,
+    "maxCharWidthHyph": 15,
+    "medianWordDist": 15.5,
+    "minCharHeight": 20,
+    "minCharHeightHyph": 3,
+    "minCharRatio": 0.12,
+    "minCharRatioHyph": 1.2,
+    "minCharWidth": 3,
+    "minCharWidthHyph": 7,
+    "minIntersectionRatio": 0.15,
+    "minIntersectionRatioLine": 0.01,
+    "wordMaxXDistance": 2.5,
+    "classificationModel": "tfAUT"
+  }
+}

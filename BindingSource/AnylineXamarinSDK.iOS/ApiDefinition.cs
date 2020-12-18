@@ -189,6 +189,84 @@ namespace AnylineXamarinSDK.iOS
         IntPtr Constructor(CGRect frame, ALFlashButtonConfig flashButtonConfig);
     }
 
+    // @interface ALIndexPath : NSObject
+    [BaseType(typeof(NSObject))]
+    interface ALIndexPath
+    {
+        // @property (nonatomic) NSInteger line;
+        [Export("line")]
+        nint Line { get; set; }
+
+        // @property (nonatomic) NSInteger positionInLine;
+        [Export("positionInLine")]
+        nint PositionInLine { get; set; }
+
+        // -(instancetype)initWithPosition:(NSInteger)position inLine:(NSInteger)line;
+        [Export("initWithPosition:inLine:")]
+        IntPtr Constructor(nint position, nint line);
+
+        // -(NSComparisonResult)compare:(id)object;
+        [Export("compare:")]
+        NSComparisonResult Compare(NSObject @object);
+    }
+
+    // @interface ALImage : NSObject
+    [BaseType(typeof(NSObject))]
+    interface ALImage
+    {
+        // @property (nonatomic, strong) UIImage * uiImage;
+        [Export("uiImage", ArgumentSemantic.Strong)]
+        UIImage UiImage { get; set; }
+
+        // -(UIImage *)uiImageWithSpecOverlay:(ALROISpec *)displaySpec;
+        //[Export("uiImageWithSpecOverlay:")]
+        //UIImage UiImageWithSpecOverlay(ALROISpec displaySpec);
+
+        // -(UIImage *)uiImageWithDisplayResults:(ALDisplayResult *)displayResult;
+        [Export("uiImageWithDisplayResults:")]
+        UIImage UiImageWithDisplayResults(ALDisplayResult displayResult);
+
+        // -(UIImage *)uiImageWithDigitOverlay:(ALDataPoint *)digitSpec;
+        [Export("uiImageWithDigitOverlay:")]
+        UIImage UiImageWithDigitOverlay(ALDataPoint digitSpec);
+
+        // -(UIImage *)uiImageWithRectOverlay:(CGRect)rectToDraw;
+        [Export("uiImageWithRectOverlay:")]
+        UIImage UiImageWithRectOverlay(CGRect rectToDraw);
+
+        // -(UIImage *)uiImageWithSquareOverlay:(ALSquare *)square;
+        [Export("uiImageWithSquareOverlay:")]
+        UIImage UiImageWithSquareOverlay(ALSquare square);
+
+        // -(UIImage *)uiImageWithHorizontalLines:(NSArray *)lines;
+        [Export("uiImageWithHorizontalLines:")]
+        UIImage UiImageWithHorizontalLines(NSObject[] lines);
+
+        // -(UIImage *)uiImageWithVerticalLines:(NSArray *)lines;
+        [Export("uiImageWithVerticalLines:")]
+        UIImage UiImageWithVerticalLines(NSObject[] lines);
+
+        // -(UIImage *)uiImageWithContours:(ALContours *)contours;
+        [Export("uiImageWithContours:")]
+        UIImage UiImageWithContours(ALContours contours);
+
+        // -(instancetype)initWithUIImage:(UIImage *)uiImage;
+        [Export("initWithUIImage:")]
+        IntPtr Constructor(UIImage uiImage);
+
+        // -(instancetype)initWithBGRAImageBuffer:(CVImageBufferRef)imageBuffer rotate:(CGFloat)degrees;
+        //[Export("initWithBGRAImageBuffer:rotate:")]
+        //unsafe IntPtr Constructor(CVImageBufferRef* imageBuffer, nfloat degrees);
+
+        // -(instancetype)initWithBGRAImageBuffer:(CVImageBufferRef)imageBuffer rotate:(CGFloat)degrees cutout:(CGRect)cutout;
+        //[Export("initWithBGRAImageBuffer:rotate:cutout:")]
+        //unsafe IntPtr Constructor(CVImageBufferRef* imageBuffer, nfloat degrees, CGRect cutout);
+
+        // -(BOOL)isEmpy;
+        [Export("isEmpy")]
+        bool IsEmpy { get; }
+    }
+
     // @interface ALCameraConfig : NSObject
     [BaseType(typeof(NSObject))]
     interface ALCameraConfig
@@ -561,84 +639,6 @@ namespace AnylineXamarinSDK.iOS
         // -(instancetype _Nullable)initWithCameraConfig:(ALCameraConfig * _Nonnull)cameraConfig flashButtonConfig:(ALFlashButtonConfig * _Nonnull)flashButtonConfig scanViewPluginConfig:(ALScanViewPluginConfig * _Nonnull)scanViewPluginConfig;
         [Export("initWithCameraConfig:flashButtonConfig:scanViewPluginConfig:")]
         IntPtr Constructor(ALCameraConfig cameraConfig, ALFlashButtonConfig flashButtonConfig, ALScanViewPluginConfig scanViewPluginConfig);
-    }
-
-    // @interface ALIndexPath : NSObject
-    [BaseType(typeof(NSObject))]
-    interface ALIndexPath
-    {
-        // @property (nonatomic) NSInteger line;
-        [Export("line")]
-        nint Line { get; set; }
-
-        // @property (nonatomic) NSInteger positionInLine;
-        [Export("positionInLine")]
-        nint PositionInLine { get; set; }
-
-        // -(instancetype)initWithPosition:(NSInteger)position inLine:(NSInteger)line;
-        [Export("initWithPosition:inLine:")]
-        IntPtr Constructor(nint position, nint line);
-
-        // -(NSComparisonResult)compare:(id)object;
-        [Export("compare:")]
-        NSComparisonResult Compare(NSObject @object);
-    }
-
-    // @interface ALImage : NSObject
-    [BaseType(typeof(NSObject))]
-    interface ALImage
-    {
-        // @property (nonatomic, strong) UIImage * uiImage;
-        [Export("uiImage", ArgumentSemantic.Strong)]
-        UIImage UiImage { get; set; }
-
-        // -(UIImage *)uiImageWithSpecOverlay:(ALROISpec *)displaySpec;
-        //[Export("uiImageWithSpecOverlay:")]
-        //UIImage UiImageWithSpecOverlay(ALROISpec displaySpec);
-
-        // -(UIImage *)uiImageWithDisplayResults:(ALDisplayResult *)displayResult;
-        [Export("uiImageWithDisplayResults:")]
-        UIImage UiImageWithDisplayResults(ALDisplayResult displayResult);
-
-        // -(UIImage *)uiImageWithDigitOverlay:(ALDataPoint *)digitSpec;
-        [Export("uiImageWithDigitOverlay:")]
-        UIImage UiImageWithDigitOverlay(ALDataPoint digitSpec);
-
-        // -(UIImage *)uiImageWithRectOverlay:(CGRect)rectToDraw;
-        [Export("uiImageWithRectOverlay:")]
-        UIImage UiImageWithRectOverlay(CGRect rectToDraw);
-
-        // -(UIImage *)uiImageWithSquareOverlay:(ALSquare *)square;
-        [Export("uiImageWithSquareOverlay:")]
-        UIImage UiImageWithSquareOverlay(ALSquare square);
-
-        // -(UIImage *)uiImageWithHorizontalLines:(NSArray *)lines;
-        [Export("uiImageWithHorizontalLines:")]
-        UIImage UiImageWithHorizontalLines(NSObject[] lines);
-
-        // -(UIImage *)uiImageWithVerticalLines:(NSArray *)lines;
-        [Export("uiImageWithVerticalLines:")]
-        UIImage UiImageWithVerticalLines(NSObject[] lines);
-
-        // -(UIImage *)uiImageWithContours:(ALContours *)contours;
-        [Export("uiImageWithContours:")]
-        UIImage UiImageWithContours(ALContours contours);
-
-        // -(instancetype)initWithUIImage:(UIImage *)uiImage;
-        [Export("initWithUIImage:")]
-        IntPtr Constructor(UIImage uiImage);
-
-        // -(instancetype)initWithBGRAImageBuffer:(CVImageBufferRef)imageBuffer rotate:(CGFloat)degrees;
-        //[Export("initWithBGRAImageBuffer:rotate:")]
-        //unsafe IntPtr Constructor(CVImageBufferRef* imageBuffer, nfloat degrees);
-
-        // -(instancetype)initWithBGRAImageBuffer:(CVImageBufferRef)imageBuffer rotate:(CGFloat)degrees cutout:(CGRect)cutout;
-        //[Export("initWithBGRAImageBuffer:rotate:cutout:")]
-        //unsafe IntPtr Constructor(CVImageBufferRef* imageBuffer, nfloat degrees, CGRect cutout);
-
-        // -(BOOL)isEmpy;
-        [Export("isEmpy")]
-        bool IsEmpy { get; }
     }
 
     // @interface ALContours : NSObject
@@ -2068,40 +2068,53 @@ namespace AnylineXamarinSDK.iOS
     [BaseType(typeof(ALScanResult))]
     interface ALBarcodeResult
     {
-        // +(ALBarcodeFormat)barcodeFormatForString:(NSString * _Nonnull)barcodeFormatString;
-        [Static]
-        [Export("barcodeFormatForString:")]
-        ALBarcodeFormat BarcodeFormatForString(string barcodeFormatString);
-
-        // +(NSString * _Nonnull)barcodeStringForFormat:(ALBarcodeFormat)barcodeFormat;
-        [Static]
-        [Export("barcodeStringForFormat:")]
-        string BarcodeStringForFormat(ALBarcodeFormat barcodeFormat);
-
         // -(instancetype _Nullable)initWithResult:(NSArray<ALBarcode *> * _Nonnull)result image:(UIImage * _Nullable)image fullImage:(UIImage * _Nullable)fullImage confidence:(NSInteger)confidence pluginID:(NSString * _Nonnull)pluginID;
         [Export("initWithResult:image:fullImage:confidence:pluginID:")]
         IntPtr Constructor(ALBarcode[] result, [NullAllowed] UIImage image, [NullAllowed] UIImage fullImage, nint confidence, string pluginID);
+
+        // @property (nonatomic, strong) NSArray<ALBarcode *> * _Nonnull barcodes;
+        [Export ("barcodes", ArgumentSemantic.Strong)]
+        ALBarcode[] Barcodes { get; set; }
+
+        // @property (nonatomic, strong) NSArray<ALBarcode *> * _Nonnull result;
+        [Export ("result", ArgumentSemantic.Strong)]
+        ALBarcode[] Result { get; set; }
     }
 
     // @interface ALBarcode : NSObject
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     interface ALBarcode
     {
-        // @property (readonly, assign, nonatomic) ALBarcodeFormat barcodeFormat;
-        [Export("barcodeFormat", ArgumentSemantic.Assign)]
-        ALBarcodeFormat BarcodeFormat { get; }
+        // @property (readonly, nonatomic, strong) NSString * _Nonnull barcodeFormat;
+        [Export ("barcodeFormat", ArgumentSemantic.Strong)]
+        string BarcodeFormat { get; }
 
-        // @property (readonly, assign, nonatomic) NSString * _Nonnull value;
-        [Export("value")]
+        // @property (readonly, copy, nonatomic) NSString * _Nonnull value;
+        [Export ("value")]
         string Value { get; }
 
-        // -(instancetype _Nonnull)initWithValue:(NSString * _Nonnull)value format:(ALBarcodeFormat)barcodeFormat;
-        [Export("initWithValue:format:")]
-        IntPtr Constructor(string value, ALBarcodeFormat barcodeFormat);
+        // -(instancetype _Nonnull)initWithValue:(NSString * _Nonnull)value format:(NSString * _Nonnull)barcodeFormat;
+        [Export ("initWithValue:format:")]
+        IntPtr Constructor (string value, string barcodeFormat);
 
         // -(NSString * _Nonnull)toJSONString;
-        [Export("toJSONString")]
+        [Export ("toJSONString")]
         string ToJSONString { get; }
+
+        // +(NSArray<NSString *> * _Nullable)allBarcodeFormats;
+        [Static]
+        [NullAllowed, Export ("allBarcodeFormats")]
+        NSObject AllBarcodeFormats { get; }
+
+        // +(NSArray<NSString *> * _Nullable)basicBarcodeFormats;
+        [Static]
+        [NullAllowed, Export ("basicBarcodeFormats")]
+        NSObject BasicBarcodeFormats { get; }
+
+        // +(NSArray<NSString *> * _Nullable)advancedBarcodeFormats;
+        [Static]
+        [NullAllowed, Export ("advancedBarcodeFormats")]
+        NSObject AdvancedBarcodeFormats { get; }
     }
 
     // @interface ALBarcodeScanPlugin : ALAbstractScanPlugin
@@ -2114,17 +2127,12 @@ namespace AnylineXamarinSDK.iOS
         IntPtr Constructor([NullAllowed] string pluginID, string licenseKey, NSObject @delegate, [NullAllowed] out NSError error);
 
         // @property (readonly, nonatomic, strong) NSHashTable<ALBarcodeScanPluginDelegate> * _Nullable delegates;
-        [NullAllowed, Export("delegates", ArgumentSemantic.Strong)]
-        NSSet Delegates { get; }
+        [NullAllowed, Export ("delegates", ArgumentSemantic.Strong)]
+        ALBarcodeScanPluginDelegate Delegates { get; }
 
         // @property (assign, nonatomic) ALBarcodeFormatOptions barcodeFormatOptions;
         [Export("barcodeFormatOptions", ArgumentSemantic.Assign)]
         NSObject BarcodeFormatOptions { get; set; }
-
-        // -(ALBarcodeFormat)barcodeFormatForString:(NSString * _Nullable)barcodeFormatString;
-        [Export("barcodeFormatForString:")]
-        ALBarcodeFormat BarcodeFormatForString([NullAllowed] string barcodeFormatString);
-
 
         // -(void)addDelegate:(id<ALBarcodeScanPluginDelegate> _Nonnull)delegate;
         [Export("addDelegate:")]

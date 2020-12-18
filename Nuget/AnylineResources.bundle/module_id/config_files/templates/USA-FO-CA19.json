@@ -1,0 +1,631 @@
+{
+    "dataFields": [
+        {
+            "label": "licenseNumber",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^A-Z0-9]",
+                "validationRegex": "[A-Z]{1}[0-9]{7}",
+                "whitelistPattern": "1|[A-Z];8|[0-9]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            },
+            "shapeAttributes": {
+                "height": 75,
+                "type": "bboxUR",
+                "width": 310,
+                "x": 575,
+                "y": 218
+            },
+            "type": "documentNumber"
+        },
+        {
+            "label": "dateOfExpiry",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^\\d]",
+                "validationRegex": "(0[1-9]|1[0-2]){1}(0[1-9]|[12][0-9]|3[01]){1}(19|20){1}[0-9]{2}",
+                "whitelistPattern": "1,|[\\d\\/ ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.1
+            },
+            "shapeAttributes": {
+                "height": 65,
+                "type": "bboxUR",
+                "width": 310,
+                "x": 595,
+                "y": 290
+            },
+            "type": "date"
+        },
+        {
+            "label": "lastName",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^A-ZÄÖÜß\\.\\/\\-\\(\\)\\,\\' ]",
+                "validationRegex": "[A-ZÄÖÜß\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+                "whitelistPattern": "1,|[A-ZÄÖÜß\\.\\/\\-\\(\\)\\,\\' ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            },
+            "shapeAttributes": {
+                "height": 60,
+                "type": "bboxUR",
+                "width": 650,
+                "x": 575,
+                "y": 360
+            },
+            "type": "generic"
+        },
+        {
+            "label": "firstName",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^A-ZÄÖÜß\\.\\/\\-\\(\\)\\,\\' ]",
+                "validationRegex": "[A-ZÄÖÜß\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+                "whitelistPattern": "1,|[A-ZÄÖÜß\\.\\/\\-\\(\\)\\,\\' ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            },
+            "shapeAttributes": {
+                "height": 60,
+                "type": "bboxUR",
+                "width": 650,
+                "x": 565,
+                "y": 418
+            },
+            "type": "generic"
+        },
+        {
+            "label": "address",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^A-ZÄÖÜß0-9\\.\\/\\-\\(\\)\\,\\' ]",
+                "validationRegex": "[A-ZÄÖÜß0-9\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+                "whitelistPattern": "1,|[A-ZÄÖÜß0-9\\.\\/\\-\\(\\)\\,\\' ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            },
+            "shapeAttributes": {
+                "height": 50,
+                "type": "bboxUR",
+                "width": 700,
+                "x": 510,
+                "y": 470
+            },
+            "type": "generic"
+        },
+        {
+            "label": "address",
+            "lineIndex": 1,
+            "positionIndex": 0,
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^A-ZÄÖÜß0-9\\.\\/\\-\\(\\)\\,\\' ]",
+                "validationRegex": "[A-ZÄÖÜß0-9\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+                "whitelistPattern": "1,|[A-ZÄÖÜß0-9\\.\\/\\-\\(\\)\\,\\' ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            },
+            "shapeAttributes": {
+                "height": 50,
+                "type": "bboxUR",
+                "width": 700,
+                "x": 510,
+                "y": 514
+            },
+            "type": "generic"
+        },
+        {
+            "label": "dateOfBirth",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^\\d]",
+                "validationRegex": "(0[1-9]|1[0-2]){1}(0[1-9]|[12][0-9]|3[01]){1}(19|20){1}[0-9]{2}",
+                "whitelistPattern": "1,|[\\d\\/ ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.1
+            },
+            "shapeAttributes": {
+                "height": 65,
+                "type": "bboxUR",
+                "width": 300,
+                "x": 605,
+                "y": 560
+            },
+            "type": "date"
+        },
+        {
+            "label": "restrictions",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^A-ZÄÖÜß0-9\\.\\/\\-\\(\\)\\,\\' ]",
+                "validationRegex": "[A-ZÄÖÜß0-9\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+                "whitelistPattern": "1,|[A-ZÄÖÜß0-9\\.\\/\\-\\(\\)\\,\\' ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            },
+            "shapeAttributes": {
+                "height": 55,
+                "type": "bboxUR",
+                "width": 260,
+                "x": 625,
+                "y": 620
+            },
+            "type": "generic"
+        },
+        {
+            "label": "dateOfIssue",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^\\d]",
+                "validationRegex": "(0[1-9]|1[0-2]){1}(0[1-9]|[12][0-9]|3[01]){1}(19|20){1}[0-9]{2}",
+                "whitelistPattern": "1,|[\\d\\/ ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.1
+            },
+            "shapeAttributes": {
+                "height": 50,
+                "type": "bboxUR",
+                "width": 220,
+                "x": 1245,
+                "y": 860
+            },
+            "type": "date"
+        },
+        {
+            "label": "class",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^A-Z0-9 ]",
+                "validationRegex": "[A-Z0-9 ]{1,}",
+                "whitelistPattern": "1,|[A-Z ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            },
+            "shapeAttributes": {
+                "height": 55,
+                "type": "bboxUR",
+                "width": 210,
+                "x": 1160,
+                "y": 200
+            },
+            "type": "generic"
+        },
+        {
+            "label": "endorsements",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^A-Z ]",
+                "validationRegex": "[A-Z ]{1,}",
+                "whitelistPattern": "1,|[A-Z ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            },
+            "shapeAttributes": {
+                "height": 55,
+                "type": "bboxUR",
+                "width": 265,
+                "x": 1115,
+                "y": 300
+            },
+            "type": "generic"
+        },
+        {
+            "label": "sex",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^A-Z\\- ]",
+                "validationRegex": "[A-Z\\- ]{1,}",
+                "whitelistPattern": "1,|[A-Z\\- ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            },
+            "shapeAttributes": {
+                "height": 50,
+                "type": "bboxUR",
+                "width": 70,
+                "x": 765,
+                "y": 755
+            },
+            "type": "generic"
+        },
+        {
+            "label": "height",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^0-9\\-\\'\" ]",
+                "validationRegex": "[4-7]{1}(\\')?(\\-)?( )?(0[0-9]{1}|1[01])[\\']{0,2}",
+                "whitelistPattern": "1,|[0-9\\- ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            },
+            "shapeAttributes": {
+                "height": 50,
+                "type": "bboxUR",
+                "width": 123,
+                "x": 765,
+                "y": 800
+            },
+            "type": "generic"
+        },
+        {
+            "label": "hair",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^A-Z]",
+                "validationRegex": "[A-Z]{3}",
+                "whitelistPattern": "3|[A-Z]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            },
+            "shapeAttributes": {
+                "height": 50,
+                "type": "bboxUR",
+                "width": 110,
+                "x": 1020,
+                "y": 755
+            },
+            "type": "generic"
+        },
+        {
+            "label": "weight",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^0-9]",
+                "validationRegex": "[0-9]{1,}",
+                "whitelistPattern": "1,|[0-9]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            },
+            "shapeAttributes": {
+                "height": 50,
+                "type": "bboxUR",
+                "width": 130,
+                "x": 1020,
+                "y": 800
+            },
+            "type": "generic"
+        },
+        {
+            "label": "eyes",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^A-Z]",
+                "validationRegex": "[A-Z]{3}",
+                "whitelistPattern": "3|[A-Z]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            },
+            "shapeAttributes": {
+                "height": 50,
+                "type": "bboxUR",
+                "width": 110,
+                "x": 1280,
+                "y": 755
+            },
+            "type": "generic"
+        },
+        {
+            "label": "documentDiscriminator",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^0-9A-Z\\/]",
+                "validationRegex": "[0-9]{2}\\/[0-9]{2}\\/[0-9]{4}[0-9A-Z]{5}\\/[0-9A-Z]{4}\\/[0-9A-Z]{2}",
+                "whitelistPattern": "8|[0-9]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            },
+            "shapeAttributes": {
+                "height": 58,
+                "type": "bboxUR",
+                "width": 458,
+                "x": 728,
+                "y": 854
+            },
+            "type": "documentNumber"
+        },
+        {
+            "label": "photo",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 606,
+                "type": "bboxUR",
+                "width": 451,
+                "x": 43,
+                "y": 160
+            },
+            "type": "image"
+        },
+        {
+            "label": "photo_small",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 302,
+                "type": "bboxUR",
+                "width": 227,
+                "x": 922,
+                "y": 512
+            },
+            "type": "image"
+        },
+        {
+            "label": "signature",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 163,
+                "type": "bboxUR",
+                "width": 626,
+                "x": 43,
+                "y": 764
+            },
+            "type": "image"
+        },
+        {
+            "label": "DOB_IN_PHOTO_",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 97,
+                "type": "bboxUR",
+                "width": 304,
+                "x": 130,
+                "y": 628
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "CALIFORNIA_",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 100,
+                "type": "bboxUR",
+                "width": 745,
+                "x": 50,
+                "y": 50
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "DRIVER_LICENSE_",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 62,
+                "type": "bboxUR",
+                "width": 450,
+                "x": 675,
+                "y": 50
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "SEX_",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 38,
+                "type": "bboxUR",
+                "width": 131,
+                "x": 675,
+                "y": 758
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "HGT_",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 42,
+                "type": "bboxUR",
+                "width": 207,
+                "x": 676,
+                "y": 802
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "HAIR_",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 45,
+                "type": "bboxUR",
+                "width": 202,
+                "x": 914,
+                "y": 756
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "WGT_",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 41,
+                "type": "bboxUR",
+                "width": 231,
+                "x": 913,
+                "y": 808
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "EYES_",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 48,
+                "type": "bboxUR",
+                "width": 204,
+                "x": 1172,
+                "y": 752
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "CLASS_",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 44,
+                "type": "bboxUR",
+                "width": 198,
+                "x": 1000,
+                "y": 200
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "END_",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 59,
+                "type": "bboxUR",
+                "width": 243,
+                "x": 1000,
+                "y": 300
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "DL_",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 77,
+                "type": "bboxUR",
+                "width": 365,
+                "x": 522,
+                "y": 220
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "EXP_",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 70,
+                "type": "bboxUR",
+                "width": 373,
+                "x": 524,
+                "y": 282
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "RSTR_",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 47,
+                "type": "bboxUR",
+                "width": 240,
+                "x": 522,
+                "y": 620
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "DOB_",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 65,
+                "type": "bboxUR",
+                "width": 382,
+                "x": 524,
+                "y": 558
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "DOB_RIGHT",
+            "lineIndex": 0,
+            "positionIndex": 0,
+            "shapeAttributes": {
+                "height": 55,
+                "type": "bboxUR",
+                "width": 230,
+                "x": 1220,
+                "y": 630
+            },
+            "type": "MATCHING"
+        }
+    ],
+    "height": 950,
+    "postprocessingParameters": {
+        "dateFormat": "mmddyyyy"
+    },
+    "preprocessingParameters": {
+        "classificationModel": "tfAUT",
+        "detectionMethod": "FengThreshold",
+        "expandSpecsBy": 1,
+        "fengAlpha": 0.11,
+        "fengK1": 0.04,
+        "fengK2": 0.03,
+        "fengSize1": 11,
+        "fengSize2": 40,
+        "homomorphicFiltering": 1,
+        "homomorphicFilteringAlpha": 2,
+        "homomorphicFilteringBeta": 0.5,
+        "homomorphicFilteringSigma": 30,
+        "maxCharHeight": 80,
+        "maxCharHeightHyph": 7,
+        "maxCharRatio": 5.72,
+        "maxCharRatioHyph": 4.5,
+        "maxCharWidth": 80,
+        "maxCharWidthHyph": 15,
+        "medianWordDist": 15.5,
+        "minCharHeight": 20,
+        "minCharHeightHyph": 3,
+        "minCharRatio": 0.12,
+        "minCharRatioHyph": 1.2,
+        "minCharWidth": 3,
+        "minCharWidthHyph": 7,
+        "minIntersectionRatio": 0.15,
+        "minIntersectionRatioLine": 0.01,
+        "templateType": "drivingLicense",
+        "wordMaxXDistance": 2.5
+    },
+    "width": 1500
+}

@@ -1,0 +1,541 @@
+{
+  "dataFields": [
+    {
+      "label": "surname",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 428,
+        "y": 175,
+        "width": 739,
+        "height": 50
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+        "cleanRegex": "[^A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]",
+        "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "givenNames",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 426,
+        "y": 233,
+        "width": 740,
+        "height": 45
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+        "cleanRegex": "[^A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]",
+        "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "sex",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 573,
+        "y": 312,
+        "width": 83,
+        "height": 53
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+        "cleanRegex": "[^A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]",
+        "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "documentNumber",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 903,
+        "y": 312,
+        "width": 260,
+        "height": 50
+      },
+      "type": "documentNumber",
+      "postprocessingParameterDict": {
+        "validationRegex": "[0-9]{9}",
+        "cleanRegex": "[^0-9]",
+        "whitelistPattern": "9|[0-9]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "nationality",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1362,
+        "y": 300,
+        "width": 99,
+        "height": 57
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+        "cleanRegex": "[^A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]",
+        "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "dateOfBirth",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 434,
+        "y": 470,
+        "width": 266,
+        "height": 57
+      },
+      "type": "date",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^\\d]",
+        "whitelistPattern": "1,|[\\d\\-\\/\\. ]",
+        "validationRegex": "(0[1-9]|[12][0-9]|3[01]){1}(0[1-9]|1[0-2]){1}(19|20){1}[0-9]{2}"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.1
+      }
+    },
+    {
+      "label": "dateOfIssue",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 440,
+        "y": 558,
+        "width": 260,
+        "height": 56
+      },
+      "type": "date",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^\\d]",
+        "whitelistPattern": "1,|[\\d\\-\\/\\. ]",
+        "validationRegex": "(0[1-9]|[12][0-9]|3[01]){1}(0[1-9]|1[0-2]){1}(19|20){1}[0-9]{2}"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.1
+      }
+    },
+    {
+      "label": "dateOfExpiry",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 438,
+        "y": 634,
+        "width": 266,
+        "height": 48
+      },
+      "type": "date",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^\\d]",
+        "whitelistPattern": "1,|[\\d\\-\\/\\. ]",
+        "validationRegex": "(0[1-9]|[12][0-9]|3[01]){1}(0[1-9]|1[0-2]){1}(19|20){1}[0-9]{2}"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.1
+      }
+    },
+    {
+      "label": "signature",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 68,
+        "y": 777,
+        "width": 952,
+        "height": 170
+      },
+      "type": "image"
+    },
+    {
+      "label": "idCode",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 730,
+        "y": 473,
+        "width": 109,
+        "height": 54
+      },
+      "type": "documentNumber",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-Z0-9]{4}",
+        "cleanRegex": "[^A-Z0-9]",
+        "whitelistPattern": "4|[A-Z0-9]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "suomi_",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 362,
+        "y": 47,
+        "width": 306,
+        "height": 60
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "finland_",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 739,
+        "y": 49,
+        "width": 405,
+        "height": 62
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "Henkilökortti_identitetskort_identity_card",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 271,
+        "y": 104,
+        "width": 969,
+        "height": 57
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "sukunimi_efternamn",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 53,
+        "y": 178,
+        "width": 336,
+        "height": 47
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "etunimet_fornamn",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 51,
+        "y": 238,
+        "width": 314,
+        "height": 41
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "date_of_birth_",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 54,
+        "y": 558,
+        "width": 326,
+        "height": 51
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "date_of_expiry_",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 51,
+        "y": 617,
+        "width": 349,
+        "height": 39
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "date_of_expiry_",
+      "positionIndex": 0,
+      "lineIndex": 1,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 50,
+        "y": 657,
+        "width": 315,
+        "height": 38
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "signature_",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 59,
+        "y": 706,
+        "width": 304,
+        "height": 41
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "signature_",
+      "positionIndex": 0,
+      "lineIndex": 1,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 57,
+        "y": 742,
+        "width": 457,
+        "height": 38
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "date_of_birth_",
+      "positionIndex": 0,
+      "lineIndex": 1,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 425,
+        "y": 373,
+        "width": 192,
+        "height": 35
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "date_of_birth_",
+      "positionIndex": 0,
+      "lineIndex": 2,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 425,
+        "y": 409,
+        "width": 246,
+        "height": 42
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "sex_",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 425,
+        "y": 290,
+        "width": 158,
+        "height": 38
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "sex_",
+      "positionIndex": 0,
+      "lineIndex": 1,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 423,
+        "y": 323,
+        "width": 121,
+        "height": 39
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "document_number_",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 679,
+        "y": 285,
+        "width": 196,
+        "height": 44
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "document_number_",
+      "positionIndex": 0,
+      "lineIndex": 1,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 679,
+        "y": 325,
+        "width": 182,
+        "height": 41
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "nationality_",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1160,
+        "y": 287,
+        "width": 196,
+        "height": 42
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "nationality_",
+      "positionIndex": 0,
+      "lineIndex": 1,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1158,
+        "y": 325,
+        "width": 199,
+        "height": 41
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "id_code_",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 678,
+        "y": 375,
+        "width": 120,
+        "height": 39
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "id_code_",
+      "positionIndex": 0,
+      "lineIndex": 1,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 678,
+        "y": 409,
+        "width": 112,
+        "height": 42
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "photo",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 1045,
+        "y": 360,
+        "width": 414,
+        "height": 544
+      },
+      "type": "image"
+    },
+    {
+      "label": "photo_small_top",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 893,
+        "y": 401,
+        "width": 120,
+        "height": 140
+      },
+      "type": "image"
+    },
+    {
+      "label": "photo_small_bottom",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 710,
+        "y": 610,
+        "width": 132,
+        "height": 157
+      },
+      "type": "MATCHING"
+    }
+  ],
+  "height": 950,
+  "width": 1500,
+  "postprocessingParameters": {
+    "dateFormat": "ddmmyyyy"
+  },
+  "preprocessingParameters": {
+    "templateType": "idFront",
+    "detectionMethod": "FengThreshold",
+    "expandSpecsBy": 1,
+    "fengAlpha": 0.11,
+    "fengK1": 0.04,
+    "fengK2": 0.03,
+    "fengSize1": 11,
+    "fengSize2": 40,
+    "homomorphicFiltering": 1,
+    "homomorphicFilteringAlpha": 2,
+    "homomorphicFilteringBeta": 0.5,
+    "homomorphicFilteringSigma": 30,
+    "maxCharHeight": 80,
+    "maxCharHeightHyph": 7,
+    "maxCharRatio": 5.72,
+    "maxCharRatioHyph": 4.5,
+    "maxCharWidth": 80,
+    "maxCharWidthHyph": 15,
+    "medianWordDist": 15.5,
+    "minCharHeight": 20,
+    "minCharHeightHyph": 3,
+    "minCharRatio": 0.12,
+    "minCharRatioHyph": 1.2,
+    "minCharWidth": 3,
+    "minCharWidthHyph": 7,
+    "minIntersectionRatio": 0.15,
+    "minIntersectionRatioLine": 0.01,
+    "wordMaxXDistance": 2.5,
+    "classificationModel": "tfAUT"
+  }
+}

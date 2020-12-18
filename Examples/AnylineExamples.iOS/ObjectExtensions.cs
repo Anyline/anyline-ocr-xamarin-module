@@ -130,8 +130,6 @@ namespace AnylineExamples.iOS
         /// <param name="value"></param>
         public static void AddProperty(this Dictionary<string, object> dict, string name, object value)
         {
-
-            Debug.WriteLine("{0}: {1}", name, value);
             if (value != null)
             {
                 if (value is ALMRZIdentification

@@ -1,0 +1,398 @@
+{
+  "dataFields": [
+    {
+      "label": "surname",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 578,
+        "y": 171,
+        "width": 629,
+        "height": 51
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+        "cleanRegex": "[^A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]",
+        "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.32
+      }
+    },
+    {
+      "label": "givenNames",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 576,
+        "y": 217,
+        "width": 633,
+        "height": 49
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+        "cleanRegex": "[^A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]",
+        "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "dateOfBirth",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 574,
+        "y": 265,
+        "width": 242,
+        "height": 47
+      },
+      "type": "date",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^\\d]",
+        "whitelistPattern": "1,|[\\d\\-\\/\\. ]",
+        "validationRegex": "(0[1-9]|[12][0-9]|3[01]){1}(0[1-9]|1[0-2]){1}(19|20){1}[0-9]{2}"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.1
+      }
+    },
+    {
+      "label": "placeOfBirth",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 817,
+        "y": 263,
+        "width": 394,
+        "height": 51
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+        "cleanRegex": "[^A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]",
+        "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "dateOfIssue",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 576,
+        "y": 316,
+        "width": 244,
+        "height": 44
+      },
+      "type": "date",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^\\d]",
+        "whitelistPattern": "1,|[\\d\\-\\/\\. ]",
+        "validationRegex": "(0[1-9]|[12][0-9]|3[01]){1}(0[1-9]|1[0-2]){1}(19|20){1}[0-9]{2}"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.1
+      }
+    },
+    {
+      "label": "dateOfExpiry",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 576,
+        "y": 355,
+        "width": 245,
+        "height": 49
+      },
+      "type": "date",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^\\d]",
+        "whitelistPattern": "1,|[\\d\\-\\/\\. ]",
+        "validationRegex": "(0[1-9]|[12][0-9]|3[01]){1}(0[1-9]|1[0-2]){1}(19|20){1}[0-9]{2}"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.1
+      }
+    },
+    {
+      "label": "authority",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 897,
+        "y": 316,
+        "width": 315,
+        "height": 46
+      },
+      "type": "generic",
+      "postprocessingParameterDict": {
+        "validationRegex": "[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+        "cleanRegex": "[^A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]",
+        "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "documentNumber",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 574,
+        "y": 401,
+        "width": 273,
+        "height": 52
+      },
+      "type": "documentNumber",
+      "postprocessingParameterDict": {
+        "validationRegex": "[0-9]{10}",
+        "cleanRegex": "[^0-9]",
+        "whitelistPattern": "10|[0-9]"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.28
+      }
+    },
+    {
+      "label": "signature",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 574,
+        "y": 452,
+        "width": 541,
+        "height": 126
+      },
+      "type": "image"
+    },
+    {
+      "label": "photo",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 78,
+        "y": 210,
+        "width": 395,
+        "height": 599
+      },
+      "type": "image"
+    },
+    {
+      "label": "categories",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 132,
+        "y": 848,
+        "width": 725,
+        "height": 51
+      },
+      "type": "categories",
+      "postprocessingParameterDict": {
+        "cleanRegex": "[^(AM|A1|A2|A|B|BE|B1|C1|C1E|C|CE|D1|D1E|D|DE|G| )]",
+        "whitelistPattern": "1,|[(AM|A1|A2|A|B|BE|B1|C1|C1E|C|CE|D1|D1E|D|DE|G| )]",
+        "validationRegex": "(AM|A1|A2|A|B|BE|B1|C1|C1E|C|CE|D1|D1E|D|DE|G| ){1,}"
+      },
+      "preprocessingParameterDict": {
+        "splitRatio": 1.3
+      }
+    },
+    {
+      "label": "B_in_flag",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 107,
+        "y": 99,
+        "width": 85,
+        "height": 73
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "rijbewijs",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 235,
+        "y": 56,
+        "width": 1244,
+        "height": 80
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "1",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 525,
+        "y": 181,
+        "width": 49,
+        "height": 44
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "2",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 525,
+        "y": 222,
+        "width": 51,
+        "height": 47
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "3",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 523,
+        "y": 268,
+        "width": 49,
+        "height": 47
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "4a",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 522,
+        "y": 319,
+        "width": 61,
+        "height": 42
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "4b",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 523,
+        "y": 365,
+        "width": 61,
+        "height": 46
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "4c",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 844,
+        "y": 314,
+        "width": 56,
+        "height": 47
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "5",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 515,
+        "y": 401,
+        "width": 59,
+        "height": 52
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "7",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 513,
+        "y": 452,
+        "width": 61,
+        "height": 46
+      },
+      "type": "MATCHING"
+    },
+    {
+      "label": "9",
+      "positionIndex": 0,
+      "lineIndex": 0,
+      "shapeAttributes": {
+        "type": "bboxUR",
+        "x": 79,
+        "y": 853,
+        "width": 52,
+        "height": 51
+      },
+      "type": "MATCHING"
+    }
+  ],
+  "height": 950,
+  "width": 1500,
+  "postprocessingParameters": {
+    "dateFormat": "ddmmyyyy"
+  },
+  "preprocessingParameters": {
+    "templateType": "drivingLicense",
+    "classificationModel": "tfAUT",
+    "detectionMethod": "FengThreshold",
+    "expandSpecsBy": 1,
+    "fengAlpha": 0.16,
+    "fengK1": 0.04,
+    "fengK2": 0.03,
+    "fengSize1": 17,
+    "fengSize2": 27,
+    "homomorphicFiltering": 1,
+    "homomorphicFilteringAlpha": 2,
+    "homomorphicFilteringBeta": 0.5,
+    "homomorphicFilteringSigma": 10,
+    "maxCharHeight": 38,
+    "maxCharHeightHyph": 6,
+    "maxCharRatio": 3.2,
+    "maxCharRatioHyph": 5.3,
+    "maxCharWidth": 35,
+    "maxCharWidthHyph": 16,
+    "medianWordDist": 15.5,
+    "minCharHeight": 18,
+    "minCharHeightHyph": 6,
+    "minCharRatio": 0.12,
+    "minCharRatioHyph": 2.6,
+    "minCharWidth": 5,
+    "minCharWidthHyph": 16,
+    "minIntersectionRatio": 0.15,
+    "minIntersectionRatioLine": 0.01,
+    "wordMaxXDistance": 3.5
+  }
+}

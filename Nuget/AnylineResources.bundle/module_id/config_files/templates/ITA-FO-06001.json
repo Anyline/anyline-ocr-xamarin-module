@@ -1,0 +1,412 @@
+{
+    "dataFields": [
+        {
+            "label": "surname",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 488.73483535528595,
+                "y": 105.55555555555556,
+                "width": 842.2876949740034,
+                "height": 55.416666666666664
+            },
+            "type": "generic",
+            "postprocessingParameterDict": {
+                "validationRegex": "[A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+                "cleanRegex": "[^A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]",
+                "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            }
+        },
+        {
+            "label": "givenNames",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 480.9358752166377,
+                "y": 163.61111111111111,
+                "width": 855.2859618717504,
+                "height": 63.33333333333333
+            },
+            "type": "generic",
+            "postprocessingParameterDict": {
+                "validationRegex": "[A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+                "cleanRegex": "[^A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]",
+                "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß\\.\\/\\-\\(\\)\\,\\' ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            }
+        },
+        {
+            "label": "dateOfBirth",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 488.73483535528595,
+                "y": 232.22222222222223,
+                "width": 233.9688041594454,
+                "height": 65.0
+            },
+            "type": "date",
+            "postprocessingParameterDict": {
+                "dateFormat": "ddmmyy",
+                "cleanRegex": "[^\\d]",
+                "whitelistPattern": "1,|[\\d\\- ]",
+                "validationRegex": "(0[1-9]|[12][0-9]|3[01]){1}(0[1-9]|1[0-2]){1}[0-9]{2}"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.1
+            }
+        },
+        {
+            "label": "placeOfBirth",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 720.1039861351819,
+                "y": 234.86111111111111,
+                "width": 618.7175043327555,
+                "height": 50.138888888888886
+            },
+            "type": "generic",
+            "postprocessingParameterDict": {
+                "validationRegex": "[A-Z\u00c4\u00d6\u00dc\u00df\\-\\(\\) ]{1,}",
+                "cleanRegex": "[^A-Z\u00c4\u00d6\u00dc\u00df\\-\\(\\) ]",
+                "whitelistPattern": "1,|[A-Z\u00c4\u00d6\u00dc\u00df\\-\\(\\) ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            }
+        },
+        {
+            "label": "dateOfIssue",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 499.13344887348353,
+                "y": 292.9166666666667,
+                "width": 267.7642980935875,
+                "height": 60.69444444444444
+            },
+            "type": "date",
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^\\d]",
+                "whitelistPattern": "1,|[\\d\\-\\/\\. ]",
+                "validationRegex": "(0[1-9]|[12][0-9]|3[01]){1}(0[1-9]|1[0-2]){1}(19|20){1}[0-9]{2}"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.1
+            }
+        },
+        {
+            "label": "dateOfExpiry",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 501.7331022530329,
+                "y": 361.52777777777777,
+                "width": 275.5632582322357,
+                "height": 68.61111111111111
+            },
+            "type": "date",
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^\\d]",
+                "whitelistPattern": "1,|[\\d\\-\\/\\. ]",
+                "validationRegex": "(0[1-9]|[12][0-9]|3[01]){1}(0[1-9]|1[0-2]){1}(19|20){1}[0-9]{2}"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.1
+            }
+        },
+        {
+            "label": "authority",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 837.0883882149046,
+                "y": 295.55555555555554,
+                "width": 501.7331022530329,
+                "height": 63.33333333333333
+            },
+            "type": "generic",
+            "postprocessingParameterDict": {
+                "validationRegex": "[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]{1,}",
+                "cleanRegex": "[^A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]",
+                "whitelistPattern": "1,|[A-ZÄÖÜa-zäöüß0-9\\.\\/\\-\\(\\)\\,\\' ]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            }
+        },
+        {
+            "label": "documentNumber",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 496.5337954939341,
+                "y": 432.77777777777777,
+                "width": 280.76256499133444,
+                "height": 65.97222222222221
+            },
+            "type": "documentNumber",
+            "postprocessingParameterDict": {
+                "validationRegex": "[A-Z0-9]{7,}",
+                "cleanRegex": "[^A-Z0-9]",
+                "whitelistPattern": "7,|[A-Z0-9]"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.28
+            }
+        },
+        {
+            "label": "signature",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 493.9341421143847,
+                "y": 506.66666666666663,
+                "width": 852.686308492201,
+                "height": 197.91666666666666
+            },
+            "type": "image"
+        },
+        {
+            "label": "categories",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 85.78856152512998,
+                "y": 707.2222222222222,
+                "width": 431.5424610051993,
+                "height": 71.25
+            },
+            "type": "categories",
+            "postprocessingParameterDict": {
+                "cleanRegex": "[^(AM|A1|A2|A|B|BE|B1|C1|C1E|C|CE|D1|D1E|D|F)/ ]",
+                "whitelistPattern": "1,|[(AM|A1|A2|A|B|BE|B1|C1|C1E|C|CE|D1|D1E|D|F)/ ]",
+                "validationRegex": "((AM)|(A1)|(A2)|(A)|(B)|(BE)|(B1)|(C1)|(C1E)|(C)|(CE)|(D1)|(D1E)|(D)|(F)| |/){1,}"
+            },
+            "preprocessingParameterDict": {
+                "splitRatio": 1.3
+            }
+        },
+        {
+            "label": "photo",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 51.99306759098786,
+                "y": 255.97222222222223,
+                "width": 335.35528596187174,
+                "height": 380.0
+            },
+            "type": "image"
+        },
+        {
+            "label": "Country initial in eu flag",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 127.38301559792026,
+                "y": 68.61111111111111,
+                "width": 187.17504332755632,
+                "height": 147.77777777777777
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "patente_di_guida",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 413.34488734835355,
+                "y": 31.666666666666664,
+                "width": 470.5372616984402,
+                "height": 60.69444444444444
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "repubblica_italiana",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 907.2790294627382,
+                "y": 26.38888888888889,
+                "width": 561.5251299826689,
+                "height": 68.61111111111111
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "1",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 410.74523396880414,
+                "y": 110.83333333333333,
+                "width": 70.19064124783361,
+                "height": 63.33333333333333
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "2",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 413.34488734835355,
+                "y": 176.80555555555554,
+                "width": 72.790294627383,
+                "height": 73.88888888888889
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "3",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 408.14558058925473,
+                "y": 245.41666666666666,
+                "width": 77.9896013864818,
+                "height": 63.33333333333333
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "4a",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 413.34488734835355,
+                "y": 311.38888888888886,
+                "width": 88.38821490467937,
+                "height": 60.69444444444444
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "4c",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 766.897746967071,
+                "y": 298.19444444444446,
+                "width": 70.19064124783361,
+                "height": 63.33333333333333
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "4b",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 410.74523396880414,
+                "y": 366.80555555555554,
+                "width": 90.98786828422877,
+                "height": 68.61111111111111
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "5",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 405.5459272097053,
+                "y": 427.5,
+                "width": 90.98786828422877,
+                "height": 73.88888888888889
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "7",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 402.946273830156,
+                "y": 498.75,
+                "width": 93.58752166377816,
+                "height": 63.33333333333333
+            },
+            "type": "MATCHING"
+        },
+        {
+            "label": "9",
+            "positionIndex": 0,
+            "lineIndex": 0,
+            "shapeAttributes": {
+                "type": "bboxUR",
+                "x": 23.39688041594454,
+                "y": 704.5833333333334,
+                "width": 70.19064124783361,
+                "height": 73.88888888888889
+            },
+            "type": "MATCHING"
+        }
+    ],
+    "height": 950,
+    "width": 1500,
+    "postprocessingParameters": {
+        "dateFormat": "ddmmyyyy"
+    },
+    "preprocessingParameters": {
+        "templateType": "drivingLicense",
+        "detectionMethod": "FengThreshold",
+        "expandSpecsBy": 1,
+        "fengAlpha": 0.11,
+        "fengK1": 0.04,
+        "fengK2": 0.03,
+        "fengSize1": 11,
+        "fengSize2": 40,
+        "homomorphicFiltering": 1,
+        "homomorphicFilteringAlpha": 2,
+        "homomorphicFilteringBeta": 0.5,
+        "homomorphicFilteringSigma": 30,
+        "maxCharHeight": 80,
+        "maxCharHeightHyph": 7,
+        "maxCharRatio": 5.72,
+        "maxCharRatioHyph": 4.5,
+        "maxCharWidth": 80,
+        "maxCharWidthHyph": 15,
+        "medianWordDist": 15.5,
+        "minCharHeight": 20,
+        "minCharHeightHyph": 3,
+        "minCharRatio": 0.12,
+        "minCharRatioHyph": 1.2,
+        "minCharWidth": 3,
+        "minCharWidthHyph": 7,
+        "minIntersectionRatio": 0.15,
+        "minIntersectionRatioLine": 0.01,
+        "wordMaxXDistance": 2.5,
+        "classificationModel": "tfAUT"
+    }
+}
