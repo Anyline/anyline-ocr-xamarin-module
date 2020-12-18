@@ -48,6 +48,15 @@
  */
 @property (nonatomic, strong) NSArray<NSString*> * _Nonnull barcodeFormatOptions;
 
+
+/**
+ *
+ *  Enables / Disables multi barcode scanning
+ *
+ */
+
+@property (nonatomic, assign) BOOL multiBarcode;
+
 - (void)addDelegate:(id<ALBarcodeScanPluginDelegate> _Nonnull)delegate;
 
 - (void)removeDelegate:(id<ALBarcodeScanPluginDelegate> _Nonnull)delegate;

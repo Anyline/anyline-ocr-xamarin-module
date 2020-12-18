@@ -88,6 +88,13 @@ namespace AnylineExamples.iOS
                                             resultArray.GetItem<Foundation.NSObject>(i).CreatePropertyDictionary().ToList().ForEach(x => dict.AddProperty(x.Key, x.Value));
                                         }
                                     }
+                                    else if (value is System.Array array)
+                                    {
+                                        for (int i = 0; i < array.Length; i++)
+                                        {
+                                            array.GetValue(i).CreatePropertyDictionary().ToList().ForEach(x => dict.AddProperty(x.Key, x.Value));
+                                        }
+                                    }
                                     else
                                     {
                                         dict.AddProperty(prop.Name, value);

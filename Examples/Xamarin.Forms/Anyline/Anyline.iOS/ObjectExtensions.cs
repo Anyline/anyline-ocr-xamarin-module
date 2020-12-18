@@ -61,6 +61,12 @@ namespace Anyline.iOS
                         case "AccessibilityTextualContext":
                         case "AccessibilityUserInputLabels":
                         case "ToJSONString":
+                        case "IsAbsolutePath":
+                        case "LastPathComponent":
+                        case "Length":
+                        case "LocalizedCapitalizedString":
+                        case "LocalizedLowercaseString":
+                        case "LocalizedUppercaseString":
                             break;
                         default:
                             try
@@ -88,6 +94,13 @@ namespace Anyline.iOS
                                         for (nuint i = 0; i < resultArray.Count; i++)
                                         {
                                             resultArray.GetItem<Foundation.NSObject>(i).CreatePropertyDictionary().ToList().ForEach(x => dict.AddProperty(x.Key, x.Value));
+                                        }
+                                    }
+                                    else if (value is System.Array array)
+                                    {
+                                        for (int i = 0; i < array.Length; i++)
+                                        {
+                                            array.GetValue(i).CreatePropertyDictionary().ToList().ForEach(x => dict.AddProperty(x.Key, x.Value));
                                         }
                                     }
                                     else

@@ -41,12 +41,19 @@
   <ItemGroup>
     <Compile Include="Extra.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Anyline.linkwith.cs">
+      <DependentUpon>Anyline.a</DependentUpon>
+    </Compile>
+
   </ItemGroup>
   <ItemGroup>
     <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
   </ItemGroup>
   <ItemGroup>
     <ObjcBindingCoreSource Include="Structs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingNativeLibrary Include="Anyline.a" />
   </ItemGroup>
   <ItemGroup>
     <NativeReference Include="Anyline.framework">
