@@ -1,23 +1,3 @@
-//
-//  ALMeterScanViewPlugin.h
-//  Anyline
-//
-//  Created by Daniel Albertini on 19/09/2017.
-//  Copyright © 2017 9Yards GmbH. All rights reserved.
-//
-
-#import "ALAbstractScanViewPlugin.h"
-#import "ALMeterResult.h"
-#import "ALMeterScanPlugin.h"
-#import "ALBarcodeScanPlugin.h"
-
-@interface ALMeterScanViewPlugin : ALAbstractScanViewPlugin
-
-@property (nullable, nonatomic, strong) ALMeterScanPlugin *meterScanPlugin;
-
-- (_Nullable instancetype)initWithScanPlugin:(ALMeterScanPlugin *_Nonnull)meterScanPlugin;
-
-- (_Nullable instancetype)initWithScanPlugin:(ALMeterScanPlugin *_Nonnull)meterScanPlugin
-                        scanViewPluginConfig:(ALScanViewPluginConfig *_Nonnull)scanViewPluginConfig;
-
-@end
+version https://git-lfs.github.com/spec/v1
+oid sha256:08d958efd5eff142f94888eb6ddde7efb7dd0694d6481be17e5e357d6347ea47
+size 706

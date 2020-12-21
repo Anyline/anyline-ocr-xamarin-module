@@ -1,25 +1,3 @@
-//
-//  ALAssetContext.h
-//  Anyline
-//
-//  Created by Angela Brett on 22.01.20.
-//  Copyright © 2020 Anyline GmbH. All rights reserved.
-//
-
-#import <Foundation/Foundation.h>
-
-NS_ASSUME_NONNULL_BEGIN
-
-@interface ALAssetContext : NSObject
-
-@property NSString *apiKey;
-@property NSString *projectID;
-@property NSString *stage;
-@property NSString *anylineVersion;
-@property NSString *training;
-
-- (NSString *)toJSON;
-
-@end
-
-NS_ASSUME_NONNULL_END
+version https://git-lfs.github.com/spec/v1
+oid sha256:d1a2d6657345d5f3a6c7c5a38ed2b850d2fa054d91141b88dccee8d51111ff10
+size 443

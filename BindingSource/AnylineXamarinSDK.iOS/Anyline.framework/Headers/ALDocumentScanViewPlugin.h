@@ -1,21 +1,3 @@
-//
-//  ALDocumentScanViewPlugin.h
-//  Anyline
-//
-//  Created by Daniel Albertini on 24/10/2017.
-//  Copyright © 2017 9Yards GmbH. All rights reserved.
-//
-
-#import "ALAbstractScanViewPlugin.h"
-#import "ALDocumentScanPlugin.h"
-
-@interface ALDocumentScanViewPlugin : ALAbstractScanViewPlugin
-
-@property (nullable, nonatomic, strong) ALDocumentScanPlugin *documentScanPlugin;
-
-- (_Nullable instancetype)initWithScanPlugin:(ALDocumentScanPlugin *_Nonnull)documentScanPlugin;
-
-- (_Nullable instancetype)initWithScanPlugin:(ALDocumentScanPlugin *_Nonnull)documentScanPlugin
-                        scanViewPluginConfig:(ALScanViewPluginConfig *_Nonnull)scanViewPluginConfig;
-
-@end
+version https://git-lfs.github.com/spec/v1
+oid sha256:461b01bf14b057b8cfcf740bb647c9d69d39f43df548b1503af76e9cbdf0029d
+size 675

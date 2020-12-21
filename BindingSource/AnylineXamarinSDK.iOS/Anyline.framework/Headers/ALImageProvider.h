@@ -1,32 +1,3 @@
-//
-//  ALImageProvider.h
-//  Anyline
-//
-//  Created by Daniel Albertini on 19/04/15.
-//  Copyright (c) 2015 9Yards GmbH. All rights reserved.
-//
-
-#import "ALImage.h"
-
-@protocol ALImageProvider <NSObject>
-
-/**
- *  The block definition which will provide the callback for the next image.
- *
- *  @param image The next image to analyse.
- */
-typedef void (^ALImageProviderBlock)(ALImage *image, ALImage *fullImage, CGRect cropRect, NSError *error);
-
-/**
- *  Method with which Anyline will request the next Image to analyse.
- *
- *  @param completionHandler The completion handler which should be called when the next frame/image
- *                           is available.
- */
-- (void)provideNewImageWithCompletionBlock:(ALImageProviderBlock)completionHandler;
-
-- (void)provideNewFullResolutionImageWithCompletionBlock:(ALImageProviderBlock)completionHandler;
-
-- (void)provideNewStillImageWithCompletionBlock:(ALImageProviderBlock)completionHandler;
-
-@end
+version https://git-lfs.github.com/spec/v1
+oid sha256:684296b6a99a55dcaec55c580f256ee53290a1a1084a913a04d6bb0971b05dc2
+size 949

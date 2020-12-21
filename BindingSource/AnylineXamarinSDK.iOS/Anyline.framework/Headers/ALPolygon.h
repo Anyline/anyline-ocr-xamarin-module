@@ -1,19 +1,3 @@
-//
-//  ALPolygon.h
-//  Anyline
-//
-//  Created by David on 13.09.16.
-//  Copyright © 2016 9Yards GmbH. All rights reserved.
-//
-
-#import <Foundation/Foundation.h>
-
-@interface ALPolygon : NSObject
-
-@property (nonatomic, strong, readonly) NSArray * points;
-
-- (instancetype)initWithPoints:(NSArray*)points;
-
-- (ALPolygon *)polygonWithScale:(CGFloat)scale;
-
-@end
+version https://git-lfs.github.com/spec/v1
+oid sha256:cbb5e68ccbbfa6806edd4abf9ed8df38ad6649ad1de6b1d04ed909c08105d953
+size 359

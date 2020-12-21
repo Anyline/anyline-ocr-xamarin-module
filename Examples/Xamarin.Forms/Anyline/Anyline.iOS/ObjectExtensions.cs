@@ -71,7 +71,6 @@ namespace Anyline.iOS
                         default:
                             try
                             {
-
                                 var value = prop.GetValue(obj, null);
 
                                 if (value != null)

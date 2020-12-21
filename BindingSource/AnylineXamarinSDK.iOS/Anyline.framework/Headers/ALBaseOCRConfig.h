@@ -1,18 +1,3 @@
-//
-//  ALBaseOCRConfig.h
-//  Anyline
-//
-//  Created by Philipp Müller on 03/05/2019.
-//  Copyright © 2019 Anyline GmbH. All rights reserved.
-//
-
-#import <Foundation/Foundation.h>
-
-/**
- *  A base class used to configure the Anyline OCR module.
- */
-@interface ALBaseOCRConfig : NSObject
-
-- (instancetype _Nullable)initWithJsonDictionary:(NSDictionary * _Nonnull)configDict;
-
-@end
+version https://git-lfs.github.com/spec/v1
+oid sha256:7ba20cf7a6a79e929b787be84e6bff6e4c7754144d535880be6af18a8d8f10c3
+size 380

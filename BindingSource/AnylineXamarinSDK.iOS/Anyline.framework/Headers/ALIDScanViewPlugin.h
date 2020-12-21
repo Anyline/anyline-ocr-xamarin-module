@@ -1,22 +1,3 @@
-//
-//  ALIdentityDocumentScanViewPlugin.h
-//  Anyline
-//
-//  Created by Daniel Albertini on 29/05/2017.
-//  Copyright © 2017 9Yards GmbH. All rights reserved.
-//
-
-#import <UIKit/UIKit.h>
-#import "ALIDScanPlugin.h"
-#import "ALAbstractScanViewPlugin.h"
-
-@interface ALIDScanViewPlugin : ALAbstractScanViewPlugin
-
-@property (nullable, nonatomic, strong) ALIDScanPlugin *idScanPlugin;
-
-- (_Nullable instancetype)initWithScanPlugin:(ALIDScanPlugin *_Nonnull)idScanPlugin;
-
-- (_Nullable instancetype)initWithScanPlugin:(ALIDScanPlugin *_Nonnull)idScanPlugin
-                        scanViewPluginConfig:(ALScanViewPluginConfig *_Nonnull)scanViewPluginConfig;
-
-@end
+version https://git-lfs.github.com/spec/v1
+oid sha256:982dad76a6695c540264fdb0b032eb2519b2b254031790b7ea68c3c3b63e97f6
+size 659

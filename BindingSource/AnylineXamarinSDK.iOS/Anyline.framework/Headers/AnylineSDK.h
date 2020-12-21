@@ -1,19 +1,3 @@
-//
-//  AnylineSDK.h
-//  Anyline
-//
-//  Created by David Dengg on 04.11.20.
-//  Copyright © 2020 Anyline GmbH. All rights reserved.
-//
-
-#import <Foundation/Foundation.h>
-
-NS_ASSUME_NONNULL_BEGIN
-
-@interface AnylineSDK : NSObject
-
-+ (BOOL)setupWithLicenseKey:(NSString*)licenseKey error:(NSError**)error;
-
-@end
-
-NS_ASSUME_NONNULL_END
+version https://git-lfs.github.com/spec/v1
+oid sha256:83aaa84b88e88c8b59c8ccc232f2e39d90812471b4915d8f0c611a85f512503b
+size 333

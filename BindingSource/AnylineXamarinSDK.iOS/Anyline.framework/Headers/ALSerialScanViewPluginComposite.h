@@ -1,18 +1,3 @@
-//
-//  ALSerialScanViewPluginComposite.h
-//  Anyline
-//
-//  Created by Angela Brett on 13.11.19.
-//  Copyright © 2019 Anyline GmbH. All rights reserved.
-//
-
-#import "ALAbstractScanViewPluginComposite.h"
-
-NS_ASSUME_NONNULL_BEGIN
-
-@interface ALSerialScanViewPluginComposite : ALAbstractScanViewPluginComposite
-- (BOOL)startFromID:(NSString * _Nonnull)pluginID andReturnError:(NSError * _Nullable * _Nullable)error;
-
-@end
-
-NS_ASSUME_NONNULL_END
+version https://git-lfs.github.com/spec/v1
+oid sha256:91ef676a8a269d9e88ed571ebc9f0b26cafb48ea8aa2fd65adfab023467faa1b
+size 443

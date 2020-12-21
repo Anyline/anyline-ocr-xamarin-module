@@ -1,21 +1,3 @@
-//
-//  ALOCRScanViewPlugin.h
-//  Anyline
-//
-//  Created by Daniel Albertini on 18/10/2017.
-//  Copyright © 2017 9Yards GmbH. All rights reserved.
-//
-
-#import "ALAbstractScanViewPlugin.h"
-#import "ALOCRScanPlugin.h"
-
-@interface ALOCRScanViewPlugin : ALAbstractScanViewPlugin
-
-@property (nullable, nonatomic, strong) ALOCRScanPlugin *ocrScanPlugin;
-
-- (_Nullable instancetype)initWithScanPlugin:(ALOCRScanPlugin *_Nonnull)ocrScanPlugin;
-
-- (_Nullable instancetype)initWithScanPlugin:(ALOCRScanPlugin *_Nonnull)ocrScanPlugin
-                        scanViewPluginConfig:(ALScanViewPluginConfig *_Nonnull)scanViewPluginConfig;
-
-@end
+version https://git-lfs.github.com/spec/v1
+oid sha256:8a68450622a165030a3b1c575887b6b1ca837a416ac6c96e0b2efa2c2225c9fe
+size 630

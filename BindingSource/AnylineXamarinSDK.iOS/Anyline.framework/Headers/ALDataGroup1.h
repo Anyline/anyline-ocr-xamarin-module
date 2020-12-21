@@ -1,31 +1,3 @@
-//
-//  ALDataGroup1.h
-//  Anyline
-//
-//  Created by Angela Brett on 07.10.19.
-//  Copyright © 2019 Anyline GmbH. All rights reserved.
-//
-
-#import <Foundation/Foundation.h>
-
-NS_ASSUME_NONNULL_BEGIN
-
-@interface ALDataGroup1 : NSObject
-
-@property NSString *documentType;
-@property NSString *issuingStateCode;
-@property NSString *documentNumber;
-@property NSDate *dateOfExpiry;
-@property NSString *gender;
-@property NSString *nationality;
-@property NSString *lastName;
-@property NSString *firstName;
-@property NSDate *dateOfBirth;
-
-- (instancetype)initWithDocumentType:(NSString *)documentType issuingStateCode:(NSString *)issuingStateCode documentNumber:(NSString *)documentNumber dateOfExpiry:(NSDate *)dateOfExpiry gender:(NSString *)gender nationality:(NSString *)nationality lastName:(NSString *)lastName firstName:(NSString *)firstName dateOfBirth:(NSDate *)dateOfBirth;
-
-- (instancetype)initWithPassportDataElements:(NSDictionary<NSString *,NSString *> *)passportDataElements;
-
-@end
-
-NS_ASSUME_NONNULL_END
+version https://git-lfs.github.com/spec/v1
+oid sha256:39148ced89614f34d4a0f9f5c4611ee722b0670496317b2fa1d6f49a4b4e04af
+size 1010

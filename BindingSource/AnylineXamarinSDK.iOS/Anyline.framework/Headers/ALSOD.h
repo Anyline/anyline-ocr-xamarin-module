@@ -1,26 +1,3 @@
-//
-//  ALSOD.h
-//  Anyline
-//
-//  Created by Angela Brett on 07.10.19.
-//  Copyright © 2019 Anyline GmbH. All rights reserved.
-//
-
-#import <Foundation/Foundation.h>
-
-NS_ASSUME_NONNULL_BEGIN
-
-@interface ALSOD : NSObject
-
-@property NSString *issuerCountry;
-@property NSString *issuerCertificationAuthority;
-@property NSString *issuerOrganization;
-@property NSString *issuerOrganizationalUnit;
-@property NSString *signatureAlgorithm;
-@property NSString *ldsHashAlgorithm;
-@property NSString *validFromString;
-@property NSString *validUntilString;
-
-@end
-
-NS_ASSUME_NONNULL_END
+version https://git-lfs.github.com/spec/v1
+oid sha256:4d9bc9bbaffae382ea8604487f497491b730b3170e4dbbcc46543e64e869e3e1
+size 574

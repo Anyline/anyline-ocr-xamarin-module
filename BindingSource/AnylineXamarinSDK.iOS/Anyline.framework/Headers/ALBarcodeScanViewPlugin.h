@@ -1,27 +1,3 @@
-//
-//  ALBarcodeScanViewPlugin.h
-//  Anyline
-//
-//  Created by Daniel Albertini on 20/10/2017.
-//  Copyright © 2017 9Yards GmbH. All rights reserved.
-//
-
-#import "ALAbstractScanViewPlugin.h"
-#import "ALBarcodeScanPlugin.h"
-
-@interface ALBarcodeScanViewPlugin : ALAbstractScanViewPlugin
-
-@property (nullable, nonatomic, strong) ALBarcodeScanPlugin *barcodeScanPlugin;
-
-- (_Nullable instancetype)initWithScanPlugin:(ALBarcodeScanPlugin *_Nonnull)barcodeScanPlugin;
-
-- (_Nullable instancetype)initWithScanPlugin:(ALBarcodeScanPlugin *_Nonnull)barcodeScanPlugin
-                        scanViewPluginConfig:(ALScanViewPluginConfig *_Nonnull)scanViewPluginConfig;
-
-/**
- *  When set to YES we only use the iOS native Barcode scanning.
- *  That one uses less computing power, but is worse under low light conditions.
- */
-@property (nonatomic, assign) BOOL useOnlyNativeBarcodeScanning;
-
-@end
+version https://git-lfs.github.com/spec/v1
+oid sha256:625d64a5a8887fc9c7be0fe5b6bd9b973ebbffcbbfff0fd71c5c64eb78ca6cbe
+size 886

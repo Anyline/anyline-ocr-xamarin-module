@@ -1,17 +1,3 @@
-
-//
-//  ALCattleTagConfig.h
-//  Anyline
-//
-//  Created by Philipp Müller on 03/05/2019.
-//  Copyright © 2019 Anyline GmbH. All rights reserved.
-//
-
-#import "ALBaseOCRConfig.h"
-
-/**
- *  A class used to configure the Anyline OCR plugin for CattleTags.
- */
-@interface ALCattleTagConfig : ALBaseOCRConfig
-
-@end
+version https://git-lfs.github.com/spec/v1
+oid sha256:507fae1c044df99703f495a013c597a9a92720755087f12becd5369ce793786d
+size 309

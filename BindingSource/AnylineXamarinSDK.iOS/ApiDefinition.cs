@@ -2071,14 +2071,14 @@ namespace AnylineXamarinSDK.iOS
         // -(instancetype _Nullable)initWithResult:(NSArray<ALBarcode *> * _Nonnull)result image:(UIImage * _Nullable)image fullImage:(UIImage * _Nullable)fullImage confidence:(NSInteger)confidence pluginID:(NSString * _Nonnull)pluginID;
         [Export("initWithResult:image:fullImage:confidence:pluginID:")]
         IntPtr Constructor(ALBarcode[] result, [NullAllowed] UIImage image, [NullAllowed] UIImage fullImage, nint confidence, string pluginID);
-
+        /*
         // @property (nonatomic, strong) NSArray<ALBarcode *> * _Nonnull barcodes;
         [Export ("barcodes", ArgumentSemantic.Strong)]
         ALBarcode[] Barcodes { get; set; }
-
+        */
         // @property (nonatomic, strong) NSArray<ALBarcode *> * _Nonnull result;
         [Export ("result", ArgumentSemantic.Strong)]
-        ALBarcode[] Result { get; set; }
+        NSObject Result { get; set; }
     }
 
     // @interface ALBarcode : NSObject
@@ -2096,11 +2096,11 @@ namespace AnylineXamarinSDK.iOS
         // -(instancetype _Nonnull)initWithValue:(NSString * _Nonnull)value format:(NSString * _Nonnull)barcodeFormat;
         [Export ("initWithValue:format:")]
         IntPtr Constructor (string value, string barcodeFormat);
-
+        /*
         // -(NSString * _Nonnull)toJSONString;
         [Export ("toJSONString")]
         string ToJSONString { get; }
-
+        
         // +(NSArray<NSString *> * _Nullable)allBarcodeFormats;
         [Static]
         [NullAllowed, Export ("allBarcodeFormats")]
@@ -2115,6 +2115,7 @@ namespace AnylineXamarinSDK.iOS
         [Static]
         [NullAllowed, Export ("advancedBarcodeFormats")]
         NSObject AdvancedBarcodeFormats { get; }
+        */
     }
 
     // @interface ALBarcodeScanPlugin : ALAbstractScanPlugin

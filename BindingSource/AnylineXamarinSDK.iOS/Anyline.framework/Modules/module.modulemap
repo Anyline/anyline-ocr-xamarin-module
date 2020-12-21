@@ -1,6 +1,3 @@
-framework module Anyline {
-  umbrella header "Anyline.h"
-
-  export *
-  module * { export * }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:77e785c35e57c39103106092792abd227152fe5274a30f2e73941ca26e6051de
+size 95
