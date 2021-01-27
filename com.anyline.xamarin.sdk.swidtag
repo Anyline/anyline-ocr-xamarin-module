@@ -5,7 +5,7 @@
     <Directory location="" name="">
       <File SHA256:hash="e1ef3f48bc27783f6cd7a88814b7f55e56a696e47efd6315c10f18e6a728811b" name="LICENSE.md" size="130277" version="28.0.0"/>
       <File SHA256:hash="c59b3d790229cf380b8beef28ce754998ec83e91673dbc26739c7781be5c6d7d" name="Makefile" size="13306" version="28.0.0"/>
-      <File SHA256:hash="5f5e091a6c2ac6639c7f27952463110ba3a059805c6888844f9e1c86652fb841" name="com.anyline.xamarin.examples_28.0.0.apk" size="57951599" version="28.0.0"/>
+      <File SHA256:hash="ea1b15beefb01318a41e3a557b2e63a00dc2a43464ed075e082bcc4d7602964a" name="com.anyline.xamarin.examples_28.0.0.apk" size="58677229" version="28.0.0"/>
       <File SHA256:hash="061f446d54b33700d90a4a97f641dbefc7d32f9fa233119aa14dfe2e29379024" name="README.md" size="4300" version="28.0.0"/>
     </Directory>
     <Directory location="" name="BindingSource">
@@ -17,12 +17,12 @@
       <File SHA256:hash="47b2aa64e2308af37c0ac270dc85d1e1ecd0bd5563f340a9c7f8639c9b7a5485" name="ApiDefinition.cs" size="191955" version="28.0.0"/>
       <File SHA256:hash="549978acd9073ee58a6ec440fbac2579a069e991b0ffc4ffce1cc38b99466d0a" name="AnylineXamarinSDK.iOS.csproj" size="2873" version="28.0.0"/>
       <File SHA256:hash="43dc410308cc20cfed938def8914fbbff4f8e4e5e531178c1b768efd37ca23b7" name="Anyline.linkwith.cs" size="2499" version="28.0.0"/>
-      <File SHA256:hash="01d1ba85a8e406917f2307691e4ce807edb627b406d7af98fb931b825c496f23" name="Anyline.a" size="89265744" version="28.0.0"/>
+      <File SHA256:hash="b15e2f3928400951bfdab7e2a9036e888934c41e67a25ffdd6dcdc5a5ea1a22e" name="Anyline.a" size="89298640" version="28.0.0"/>
       <File SHA256:hash="9c50727b75f7a1fc5321a24975a6e5c8360ca164c107d426afb1f3a9c7c6bfd7" name="Structs.cs" size="9080" version="28.0.0"/>
     </Directory>
     <Directory location="BindingSource/AnylineXamarinSDK.iOS" name="Anyline.framework">
-      <File SHA256:hash="01d1ba85a8e406917f2307691e4ce807edb627b406d7af98fb931b825c496f23" name="Anyline" size="89265744" version="28.0.0"/>
-      <File SHA256:hash="7797f77f6719b8f7ed7279c7f993d2fe13d0403162eac438695cbe831863cb99" name="Info.plist" size="817" version="28.0.0"/>
+      <File SHA256:hash="b15e2f3928400951bfdab7e2a9036e888934c41e67a25ffdd6dcdc5a5ea1a22e" name="Anyline" size="89298640" version="28.0.0"/>
+      <File SHA256:hash="ce5543dd05868b8ed0a6e4cd345b7129ab304a090bbd141c434bc7460fbf6efd" name="Info.plist" size="817" version="28.0.0"/>
     </Directory>
     <Directory location="BindingSource/AnylineXamarinSDK.iOS/Anyline.framework" name="_CodeSignature">
       <File SHA256:hash="2a7dfeb9bffc777605f1daf18f5f0b8cfa9269302d14f710aaf736164a5c9bdc" name="CodeResources" size="22744" version="28.0.0"/>
@@ -140,7 +140,7 @@
       <File SHA256:hash="515bc5ea7cf5681180d47fd3303b7255f2b59da9c66bf623811b847653701b00" name="AnylineXamarinSDK.Droid.csproj" size="4730" version="28.0.0"/>
     </Directory>
     <Directory location="BindingSource/AnylineXamarinSDK.Droid" name="Jars">
-      <File SHA256:hash="bd310466b1e4ca5f31c4266b3873bd4d44174dfb04cf467d949a25f003f710de" name="anylinesdk.aar" size="75246292" version="28.0.0"/>
+      <File SHA256:hash="6ac2d67bd7015b89c51468ae6865e08397e0319c894761146ef92bf9d707a5bf" name="anylinesdk.aar" size="47220096" version="28.0.0"/>
     </Directory>
     <Directory location="BindingSource/AnylineXamarinSDK.Droid" name="Additions">
       <File SHA256:hash="22bdd136c20c7d0fc4c79a4c1774d3b23f036b1528fe2e66d2df8a333eb2d652" name="AbstractBaseScanViewPlugin.cs" size="4239" version="28.0.0"/>
@@ -159,7 +159,7 @@
     <Directory location="BindingSource/AnylineXamarinSDK.Droid" name="Assets"/>
     <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets" name="tools">
       <File SHA256:hash="8322306e5d71f2a785329d8454cb4237eb0416ab00327f28842c5f6e4b668d11" name="clean.bat" size="171" version="28.0.0"/>
-      <File SHA256:hash="0d6bc6e28e26d131fe4ea2f8e3334ded9b1113a073e118ca53d426744d05a5d7" name="Generated.xml" size="537072" version="28.0.0"/>
+      <File SHA256:hash="80b4a7f87898883e5c9e29cd4eb09a7b4e52c689e860908f7010d4495fc797ef" name="Generated.xml" size="182902" version="28.0.0"/>
       <File SHA256:hash="57bff726267cbc28aec253a43e5b30160505e17e6b7939ebcf3671dcc57bfd9c" name="clean.sh" size="174" version="28.0.0"/>
     </Directory>
     <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools" name="dist">
@@ -168,273 +168,9 @@
       <File SHA256:hash="33e0707785ebca0d45acf42b9bba76c3cee91bb46adad2a21ce2111b6e005890" name="GetJavaSignatures.pyc" size="2959" version="28.0.0"/>
       <File SHA256:hash="d95827921264a739631681ccc1fd37f84f2048de282f4e1ace7b9db9ce2cfd37" name="GetXMLMetadata.py" size="8426" version="28.0.0"/>
     </Directory>
-    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools" name="javadoc">
-      <File SHA256:hash="de88d947c2d56109e358f45ad2ef3960500110fbb255364e7ba4871d47f6c426" name="constant-values.html" size="23958" version="28.0.0"/>
-      <File SHA256:hash="f738b8c7f3bc160c8b1de81e42a8682769efc26ccb62f17ccfa5aef65de0a929" name="overview-tree.html" size="44720" version="28.0.0"/>
-      <File SHA256:hash="039e24dc4921febd00f49e8c555843a93e61fc525bbbcbee2ff298a1153508f7" name="index.html" size="2859" version="28.0.0"/>
-      <File SHA256:hash="f88894f83b616b2462f2189a49bb4f6697a94f97316461aaecbf301f868c3933" name="overview-frame.html" size="2082" version="28.0.0"/>
-      <File SHA256:hash="c5f0482ca41e66fb9c50448ae95b753f6a1c6aab2d4a7c2cf8bf0a675b0cc62c" name="allclasses-noframe.html" size="25586" version="28.0.0"/>
-      <File SHA256:hash="b79a5a8871ee85c3dc562881fd811252d16e367ad588682ff61f8b4b0eb61359" name="index-all.html" size="684042" version="28.0.0"/>
-      <File SHA256:hash="9db6a73fa538f4b45a4b4c1d7bd18cb0221bd05c667d794e02f2bc1a96921a70" name="deprecated-list.html" size="38921" version="28.0.0"/>
-      <File SHA256:hash="506393161b692568f588d68beaecf9ad5d33f147abad909d9cde12918dbce7b7" name="script.js" size="827" version="28.0.0"/>
-      <File SHA256:hash="1bd7e17fe3d51bcd775fff086f66b19fc97a2f467248f382d8310c6b114c4d5e" name="stylesheet.css" size="12842" version="28.0.0"/>
-      <File SHA256:hash="2df92f9865bbb4890de09a45aff250bce9f1abe07f2866bd63feb13deae37d74" name="overview-summary.html" size="5965" version="28.0.0"/>
-      <File SHA256:hash="a4aec0f8e45c8d32d61fcc8c341837b90f5edd4434469e7edc7dc3d38cc2242f" name="help-doc.html" size="8163" version="28.0.0"/>
-      <File SHA256:hash="2e9c613d81a882301d07e114df2d27bd36d0d8b162aefe083916df139b9af89e" name="allclasses-frame.html" size="29206" version="28.0.0"/>
-      <File SHA256:hash="72c144069c38767d77089ee257cc4e2a5ac40d622cb89fcf0219c544bb2419d7" name="package-list" size="317" version="28.0.0"/>
-    </Directory>
-    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc" name="io"/>
-    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc/io" name="anyline"/>
-    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc/io/anyline" name="plugin">
-      <File SHA256:hash="bd4f5a42f3d63f12b8d1098845e15eea6978f7e61cf8ae85ac74bf1efc6f1a95" name="ScanInfo.html" size="10802" version="28.0.0"/>
-      <File SHA256:hash="f088faaf30e8c9cf064cdbb37cefc7d3a32d31fcd911872d73c9855bfdb6ec50" name="AbstractScanPlugin.html" size="42197" version="28.0.0"/>
-      <File SHA256:hash="63f1e62ff8a569704e43cf4269a1ee6a8092c9289538c7cf474504c23815a40b" name="ScanRunSkippedReason.html" size="10805" version="28.0.0"/>
-      <File SHA256:hash="353780b48dbe99280e5b43fc15c7337d1fec4443391db917a180bf6bc3b671e3" name="package-frame.html" size="1772" version="28.0.0"/>
-      <File SHA256:hash="dae8073b1a9a1165865b54541eda87e8e1808c5975079a888550d54e3a49467a" name="package-summary.html" size="8272" version="28.0.0"/>
-      <File SHA256:hash="1d631afaad7a04d0f496592e467b3e779941d11f9c9b17e3a402e03f37b70221" name="ScanPlugin.html" size="19347" version="28.0.0"/>
-      <File SHA256:hash="9a5611d8dce22f871cba0f4c221ac136bae8734722dfd61c7ee05ccbc01e5f89" name="ScanInfoListener.html" size="8035" version="28.0.0"/>
-      <File SHA256:hash="d63a17c7f4df216cf4744afb9720ac506add1544155cf865a4e748c9801d756b" name="package-tree.html" size="6293" version="28.0.0"/>
-      <File SHA256:hash="268601a0cd12f9fe9802c4f2e7e756b5cdac5ef25eae4c39ce0263382ea6f68b" name="ScanResultListener.html" size="8290" version="28.0.0"/>
-      <File SHA256:hash="4822917dcd2a48459bfaa6a9ec07412c3a754788b4e15e41058f107ea2eb7e2c" name="ScanRunSkippedListener.html" size="8356" version="28.0.0"/>
-      <File SHA256:hash="7db77ef5900d1c212eda352add3664b4a0dd36d4c43243c574e4900f7712999f" name="ScanResult.html" size="15703" version="28.0.0"/>
-    </Directory>
-    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc/io/anyline/plugin" name="licenseplate">
-      <File SHA256:hash="c3b2f70f1040b1e8cf7e569165f64cfa348caaf45f845080d4c19de029ba77bd" name="LicensePlateScanViewPlugin.html" size="13898" version="28.0.0"/>
-      <File SHA256:hash="7afbd6ca2bda4f49c3c05d03903ab3b11f005784f75254f7aa3d887da6dbfa09" name="package-frame.html" size="1296" version="28.0.0"/>
-      <File SHA256:hash="b87cfb34d0d54c19e59d093f27b11f0d039382e64cf97c463d555455b9ecc145" name="package-summary.html" size="6032" version="28.0.0"/>
-      <File SHA256:hash="4f611e74227795ad286c613a863afa4923eeaa319ff9bb19b5aa2efda49d9267" name="LicensePlateScanPlugin.html" size="28562" version="28.0.0"/>
-      <File SHA256:hash="a9335bec98cf29a4feb1a7d4cb0d253ac8bd96a8565c64ff51d3391013090194" name="package-tree.html" size="6851" version="28.0.0"/>
-      <File SHA256:hash="1b6cf1d942107110784b18d03d5580e6c58b5f6febe3aa915d5e7c5ccf3711c2" name="LicensePlateScanMode.html" size="37948" version="28.0.0"/>
-      <File SHA256:hash="f05688a29612c8b804fb6ea52e1fa17b950ecba8f4881a6281861c6fb3ee34ba" name="LicensePlateScanResult.html" size="13490" version="28.0.0"/>
-    </Directory>
-    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc/io/anyline/plugin" name="ocr">
-      <File SHA256:hash="6f2c5623ef152e8c4197eb2b06db59a5b2ac45fa6e0ba579e9664818eaef1327" name="AnylineTINConfig.html" size="14416" version="28.0.0"/>
-      <File SHA256:hash="11cb97d95da8794c6b416594ee3bac27e79c0bd821820781ad7efc2ebfca6d87" name="OcrScanPlugin.html" size="21243" version="28.0.0"/>
-      <File SHA256:hash="bab97aa376c5f21fb799db5ffe433acaf3206598bb89fcde8a9128287a26762e" name="AnylineTINConfig.TINUpsideDownMode.html" size="14075" version="28.0.0"/>
-      <File SHA256:hash="e091eabbfbfd95ccf9971e167ab773eab8833c7223ce8ecb00d12cc89656e8e1" name="AnylineCattleTagConfig.html" size="8111" version="28.0.0"/>
-      <File SHA256:hash="4f1293449c142e9ceab5b3cd7ffef3fe1aa4ba462ce8c4e7c7ae7955adddb1ec" name="AnylineOcrBaseConfig.html" size="9953" version="28.0.0"/>
-      <File SHA256:hash="c40c74729b8cf275ef00a589eb6b2e05acf1581e72a3fe5b7c02ade58dcf7b68" name="AnylineOcrConfig.ScanMode.html" size="15207" version="28.0.0"/>
-      <File SHA256:hash="744a5a768893a488c3bbe9f3152e20071bc732a53403a469a844ab405049682a" name="OcrScanResult.html" size="13774" version="28.0.0"/>
-      <File SHA256:hash="2a544ea629e82f2399fe018bc356abf2f1151ea6e25506fc9088a78e1ef369f3" name="package-frame.html" size="2674" version="28.0.0"/>
-      <File SHA256:hash="89bcdaeb8cdc5f38e282012147cbb4ddd8152c2038e6930ed7d36d9a3ea3dd5f" name="TINResult.html" size="13631" version="28.0.0"/>
-      <File SHA256:hash="670149402db39613c70292cb8971d395e3331ab33d5f69e4ca4caf745b31966a" name="package-summary.html" size="9180" version="28.0.0"/>
-      <File SHA256:hash="ebcd1e2bdbf5137d5f9882d958a21179b162cadab2e08e0c716989436523e8d7" name="AnylineContainerConfig.ContainerScanMode.html" size="13793" version="28.0.0"/>
-      <File SHA256:hash="388e1545f1f881cc47476c072d37db4e92e77739d6636413af52204bc5774bca" name="AnylineTINConfig.TINScanMode.html" size="13377" version="28.0.0"/>
-      <File SHA256:hash="8ef350353756f091dcc5b5cffadc7b1d45df8f80f0f6597d1414166e6fda7b3d" name="package-tree.html" size="9077" version="28.0.0"/>
-      <File SHA256:hash="91100a9cae06c239669c835edddc6d152a4df5532682f40578d1d9ba9c98e597" name="OcrScanViewPlugin.html" size="19085" version="28.0.0"/>
-      <File SHA256:hash="0d3682894892d7cffcfb6b2e647d80852b983e917ed57b6c56d43ef8ea5f9ef9" name="AnylineVINConfig.html" size="11980" version="28.0.0"/>
-      <File SHA256:hash="aea06cf3d1b4bac47fcdf8d0a95022ea91f94fd784dbcd3db17e5169a4e4f8c5" name="AnylineOcrConfig.AnylineOcrRegex.html" size="17170" version="28.0.0"/>
-      <File SHA256:hash="1b4a4f398214e2a7adb71fdc9cf0743c75e8060919ff143bed5ffe857e3444a3" name="AnylineOcrConfig.html" size="38302" version="28.0.0"/>
-      <File SHA256:hash="e36547f9b1d8b77f6ba35d080d764c443fe0c4a3a1978d356ae79e7e75467a06" name="AnylineContainerConfig.html" size="14866" version="28.0.0"/>
-    </Directory>
-    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc/io/anyline/plugin" name="document">
-      <File SHA256:hash="364c1dc57531bb1f58ad33ee848aca26be63eb7dd14c38db24cc5b110364e355" name="DocumentScanPlugin.html" size="39868" version="28.0.0"/>
-      <File SHA256:hash="f44eb9f1d9fe4208a33d741bc74e50c5c5d91dcd2070ca04de6e0f74b03c097a" name="DocumentScanViewPlugin.DocumentRatio.html" size="18500" version="28.0.0"/>
-      <File SHA256:hash="e67128fb08524d3f6450d0c0704f74f774fd76ac697df9abbd1dfdd615a23088" name="DocumentNotifierListener.html" size="8639" version="28.0.0"/>
-      <File SHA256:hash="e3e2c505f17fda579e7781c1e34ead372bbef9b9a4a367c1750e6a9f012e23ef" name="DocumentScanResultListener.html" size="22373" version="28.0.0"/>
-      <File SHA256:hash="789fd35f31d55b314b12aa87bed331961c1d428b8d4a8fa8e46e30ef00be26bd" name="DocumentScanState.html" size="14123" version="28.0.0"/>
-      <File SHA256:hash="6f2e43f7b92c8146602a9eb6e0f4507a303ba75ed71d54f2d349b3b4cb8de5a1" name="DocumentScanViewPlugin.DocumentError.html" size="20465" version="28.0.0"/>
-      <File SHA256:hash="93afcebed816dbbd999599a2d9cc7fe3e1c6b1fa965bf8d5785d439b1adea2f5" name="package-frame.html" size="1873" version="28.0.0"/>
-      <File SHA256:hash="244b680ac080a0ce8e559348062bf08468d4645af628a862d3883a4188178134" name="package-summary.html" size="7796" version="28.0.0"/>
-      <File SHA256:hash="b6f0d8ede431507e154b729338754ac9e7364addfe06b45bca5093dfdba44048" name="DocumentScanViewPlugin.html" size="31226" version="28.0.0"/>
-      <File SHA256:hash="c1e915cc6baaa6471d5989f9e69e0d6e8402fd9df11d5c14323ec1569f111660" name="package-tree.html" size="7386" version="28.0.0"/>
-    </Directory>
-    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc/io/anyline/plugin" name="id">
-      <File SHA256:hash="b040c73f607a15ce3e8619ce262dd0ddef5a0f53e7423337375edcb6beac4667" name="IdConfig.html" size="17150" version="28.0.0"/>
-      <File SHA256:hash="bf08b864acf4ddea281eef74878d47219c0d9163d1b8ee9c45e385420a5c4757" name="IdScanViewPlugin.html" size="15505" version="28.0.0"/>
-      <File SHA256:hash="b7f070be52e66098b872000f36c98822d96e8fcd43472eb772d1310b4d164983" name="DrivingLicenseIdentification.html" size="52923" version="28.0.0"/>
-      <File SHA256:hash="254cbf9670ffa15dbaa04a6dc333031dfa01e8a52b366e7dcf99ca0dee89805e" name="Identification.html" size="12055" version="28.0.0"/>
-      <File SHA256:hash="fb29c3b3e55da2717fff89213a79b8ed76dbb2855e4f893f51a3647da6e1d900" name="IDFieldScanOptions.html" size="10349" version="28.0.0"/>
-      <File SHA256:hash="6e6b106af53301ed911c829254b2e54cdb8daccfe5bf529b32f2106ee7f1d6ca" name="UniversalIdConfig.html" size="16375" version="28.0.0"/>
-      <File SHA256:hash="e2b1d905bbb271a3e5a17df02327830780475f8e1d9715e9b225c042bc14bb65" name="DrivingLicenseFieldConfidences.html" size="18864" version="28.0.0"/>
-      <File SHA256:hash="d277a9313588a818b7c8cc56ac1ede0317fff5f59e2ba292eea402612cbe5fbb" name="TemplateFieldConfidences.html" size="10853" version="28.0.0"/>
-      <File SHA256:hash="ad162c94e60f5a2cd8f02ce9098c16aa36daa62023d8e6ef097a7692f7528f56" name="MrzConfig.html" size="13615" version="28.0.0"/>
-      <File SHA256:hash="2e56eea11fd3bdcba4f49ca3f12d0ffbdda1cf2554651d01e071f65e29a3d2e2" name="ID.html" size="13931" version="28.0.0"/>
-      <File SHA256:hash="0c318ae1556c1b3da967db3dd5c4af07640adb7c3b8bb3c7c14a8d4f12377674" name="GermanIdFrontConfig.html" size="9912" version="28.0.0"/>
-      <File SHA256:hash="ff67af912302d92bd88ca2b7165ba735d7451eb563ce299aab3853b8aec84b6e" name="TemplateConfig.html" size="11559" version="28.0.0"/>
-      <File SHA256:hash="db0ed89beeef97e4de2c7791c5ee0bdbbb4f9f00fd17aa60b9bcc1e9377e7afe" name="DataObject.html" size="5020" version="28.0.0"/>
-      <File SHA256:hash="30ce07ceb62fd98d29b28197b9ee0b513236a2debaf2e11b475975ce471e8d08" name="NFCConfig.html" size="10548" version="28.0.0"/>
-      <File SHA256:hash="303c1bd421ebd0818495b972873d06672a11d36f4d8fedfaba7697662d7ae3d1" name="IDFieldScanOptions.FieldScanOption.html" size="16106" version="28.0.0"/>
-      <File SHA256:hash="a1f3ccef7c3ec8e01baebdb5eda75d4f7fddfd7d6d18e8689bc23ad9723041e4" name="IDFieldConfidences.html" size="9278" version="28.0.0"/>
-      <File SHA256:hash="e666b603cefae0eba3a43193a39c6bd16fbb61045252caf853d4e3e257f77f4c" name="DrivingLicenseConfig.DrivingLicenseCountry.html" size="15865" version="28.0.0"/>
-      <File SHA256:hash="9713bb18c03db5a23f1e74d90852a4a6d53189b47f899e94dae11d13ea5aabe9" name="DrivingLicenseFieldScanOptions.html" size="25777" version="28.0.0"/>
-      <File SHA256:hash="f5333021b15c10a42f642128e7f9e0bb216354bf5b17ea6dc2a563d0edad0477" name="TemplateFieldScanOptions.html" size="11813" version="28.0.0"/>
-      <File SHA256:hash="115c62c1ba52cfdfadd964a4b064514be1fb25e792d07d202cd06b5d8e7e40ad" name="LayoutDefinition.html" size="13716" version="28.0.0"/>
-      <File SHA256:hash="ad453687f355606625f5f5037ed379bb26daf856fa41022a18b184a49e98b188" name="UniversalIdLayoutType.html" size="13554" version="28.0.0"/>
-      <File SHA256:hash="4dfd2216e3eb5c3d64343e77264e2955d9d85390a99b7dc7547d59a4c308c8b9" name="IdScanPlugin.html" size="23580" version="28.0.0"/>
-      <File SHA256:hash="5d5939c35bf8c67a7652db5e918a57efffd3d8e57b30f03e90e0bbf8526a4d11" name="package-frame.html" size="5031" version="28.0.0"/>
-      <File SHA256:hash="c81a797d7d57e4dd0606c789d8a0b6ff967991ae368fbf3bcafbc96d379e9a27" name="GermanIdFrontFieldScanOptions.html" size="24143" version="28.0.0"/>
-      <File SHA256:hash="031c2a1729c34b16ca458c06cbb3b0e6e15f23dc0fda21edacdf349e3fa38483" name="GermanIdFrontIdentification.html" size="40321" version="28.0.0"/>
-      <File SHA256:hash="1f4e03236919b48d00e31397f54f7ef613744d6ce4e204a1ca12c3c8cb88b4e9" name="MrzFieldScanOptions.html" size="33928" version="28.0.0"/>
-      <File SHA256:hash="b935982105670631499708b8cbc11aabcaca30650c6076e1bb0456312e8e6372" name="package-summary.html" size="13155" version="28.0.0"/>
-      <File SHA256:hash="bf4bac2c23af7a1f98bc90d4d676dc1f850f0f7df148cd200fe3d2e925614721" name="UniversalIdLayoutType.LayoutType.html" size="5161" version="28.0.0"/>
-      <File SHA256:hash="5370e96d26804e5ef593a2ebb3eeec4b4cb0327c3593962c67fff39eef7c3ff2" name="UniversalIdFieldConfidences.html" size="13901" version="28.0.0"/>
-      <File SHA256:hash="d950b0480416966724e15e7a5403a85b85c44f0d113a4d14ae477366ee22b67c" name="MrzIdentification.html" size="82147" version="28.0.0"/>
-      <File SHA256:hash="65041aea7bc171af99bb691b20c4af65c8bf2cdb924b19c082c47df4666b28ff" name="DrivingLicenseConfig.html" size="13649" version="28.0.0"/>
-      <File SHA256:hash="343540b502c0e86d68f30c8a325bf2212c44602f8e272e325ba6ec0cb4127d00" name="package-tree.html" size="12743" version="28.0.0"/>
-      <File SHA256:hash="69ab893bd4df87a4c7c969e51be2cffa4025c90fc69c99528bb910e045913879" name="MrzFieldConfidences.html" size="34443" version="28.0.0"/>
-      <File SHA256:hash="547662ba3f8d7fc5c55e45efd61f8ec501da880d3562872770aade4116630060" name="GermanIDFrontFieldConfidences.html" size="17911" version="28.0.0"/>
-      <File SHA256:hash="ceb7703bbcefb363ea42ac28d842f07ec66896c0d417d35cdc057f8a0b5df802" name="UniversalIdFieldScanOptions.html" size="15480" version="28.0.0"/>
-    </Directory>
-    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc/io/anyline/plugin" name="barcode">
-      <File SHA256:hash="7e674ef3e4332e825cd2237ecf3e71c5d51cccc030ec6452cb63a81024bc9a3c" name="BarcodeScanViewPlugin.html" size="17495" version="28.0.0"/>
-      <File SHA256:hash="c1fcc88961bd6cc39f56571fbac91b4ed60778646ccd7bc81e2ea2aa47def5fe" name="Barcode.html" size="9915" version="28.0.0"/>
-      <File SHA256:hash="2f01e6cd810bce3140f624f085934bb7a4110738c289ed9d9c035cd7cb898fd6" name="package-frame.html" size="1324" version="28.0.0"/>
-      <File SHA256:hash="e9b4cc91f41c5039f2afc43742f316c66bf65de4715b9c0c2649c7dbd7c10119" name="BarcodeFormat.html" size="36106" version="28.0.0"/>
-      <File SHA256:hash="32b5c4d8d1b12d3910f53163249a9433257b0a0fc7c7c5341be5260b88239afc" name="package-summary.html" size="6291" version="28.0.0"/>
-      <File SHA256:hash="7f15f688540c0ad6ff09741cda18c0fe32d9d6d59088ad8800c22b1a76e58e18" name="BarcodeScanResult.html" size="11735" version="28.0.0"/>
-      <File SHA256:hash="f504c7fb9c664d13ca33d15c5cd6922a2bd897940ea0232ea0932aee9eaa493f" name="package-tree.html" size="6921" version="28.0.0"/>
-      <File SHA256:hash="5e7d08a2920212e4e9b736afb3d3dbee9eb7cc668da7825b01d51c53dfec4546" name="BarcodeScanPlugin.html" size="22216" version="28.0.0"/>
-    </Directory>
-    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc/io/anyline/plugin" name="meter">
-      <File SHA256:hash="c3d14eb0c7389c2eb47b39f84b2a5b268c278aa8ee4b8d11286d50c4fb623c2d" name="MeterScanPlugin.html" size="23618" version="28.0.0"/>
-      <File SHA256:hash="fee82c5be40aad9a9751bd9c1fbc8d62a383689a5201e10ee3d6609e2bd99f86" name="MeterScanResult.html" size="13758" version="28.0.0"/>
-      <File SHA256:hash="85c6627b7e951aca5062a6c99367ba84f44df1931c05627c09bf7bbf0e833218" name="package-frame.html" size="1191" version="28.0.0"/>
-      <File SHA256:hash="0dcf66076b45dc68547ee5aa8fb47d61161d549910ee516ee2ca9cb40926412b" name="package-summary.html" size="6216" version="28.0.0"/>
-      <File SHA256:hash="ced5f80505ef49d7f7b77f9311e7d773e2d6e0f09479129099090ed4b38469d0" name="MeterScanMode.html" size="18717" version="28.0.0"/>
-      <File SHA256:hash="e6e727709a6e7a656715b9dbfcaae1ff3f6947f1b775c6a2be0a895b0cbc3719" name="package-tree.html" size="6692" version="28.0.0"/>
-      <File SHA256:hash="d46ead26b114120c037cd59dbc5aa48020bb2b01aaafb6fc676e38be8b7332e3" name="MeterScanViewPlugin.html" size="20005" version="28.0.0"/>
-    </Directory>
-    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc/io/anyline" name="view">
-      <File SHA256:hash="cdb914e9a5c46c5bcc16a4c697de0b635390641cf704b86997c1502feda4c01d" name="ScanViewRefactor.html" size="7327" version="28.0.0"/>
-      <File SHA256:hash="be45a42ecce2a2f1a6b463402ccf15a8c27e79e9747cf84c727821dd99cf8363" name="FlashViewConfig.FlashAlignment.html" size="16692" version="28.0.0"/>
-      <File SHA256:hash="8da19f0a969b99635fec88cb70224cdc033513d4e4330b9fb014a9d75d268103" name="BrightnessHelper.html" size="9814" version="28.0.0"/>
-      <File SHA256:hash="72e7a2fb3767f873ebcf3cf1ccb003b51afe99668810b7b6a88573cfb9477de1" name="AnylineFeedbackView.html" size="27947" version="28.0.0"/>
-      <File SHA256:hash="fa89dcc6eaebf7bfe6749f272311bddc17bdd0c9ef9ddfb970873259ab8a21ff" name="CutoutRect.html" size="14763" version="28.0.0"/>
-      <File SHA256:hash="59ca7c6af7b5e114dac0d5fa578e46320847a6a502fa865efeef1c3beef9ff1d" name="DebugUtil.html" size="7189" version="28.0.0"/>
-      <File SHA256:hash="dabe30d0b32137067eae031ad5f4f8708cc0a5c09e8777815e891186a8402b88" name="AbstractScanViewPlugin.html" size="33549" version="28.0.0"/>
-      <File SHA256:hash="65abd3cfc3f38e8fb8f5214268aaceab55c5cff4d160fb9fef36b1d2c9ed2609" name="CutoutConfig.CutoutAlignment.html" size="15362" version="28.0.0"/>
-      <File SHA256:hash="83a9077886052c744afd25e116ea172487a5517c67ad5735b92cba484d317868" name="CutoutConfig.CutoutStyle.html" size="14760" version="28.0.0"/>
-      <File SHA256:hash="009476fdeeb115ad1a6612a4a3d1f4153ea8c1e10ff21dbd55abc48f574f81a0" name="LightLevelHelper.LightLevelListener.html" size="8535" version="28.0.0"/>
-      <File SHA256:hash="dd70708a7158331f30fdc0cd8752e2e1289faffad97730d3f7a5a861bd50110b" name="UIChangeListener.html" size="9199" version="28.0.0"/>
-      <File SHA256:hash="af1bc217188da67be80625cd65c39110316192fa2f70ec2b685115adb378ef31" name="FlashView.html" size="40396" version="28.0.0"/>
-      <File SHA256:hash="0ccbed0dcbdaf216d8b3b59aa71701fa285dc63ddb4d1bed29cb9686087d3c32" name="ScanPage.html" size="21656" version="28.0.0"/>
-      <File SHA256:hash="9609b4ed5605795160bd9a4c10c99725dd3999885745a042d56c42e2038c8b8e" name="AnylineWebView.html" size="47455" version="28.0.0"/>
-      <File SHA256:hash="8c81af409ba79b6a091ced34b97e28d8cc46892e802162257f40fecd36c95f21" name="IAnylineViewConfig.html" size="7762" version="28.0.0"/>
-      <File SHA256:hash="d243a63f402b257f16df5f43b2fba221ca168b745588d70eaa317b2fe7d9f822" name="AbstractBaseScanViewPlugin.html" size="22386" version="28.0.0"/>
-      <File SHA256:hash="ea2b017692804a6e578dde63a9d3f70f4874b9b9dbe1b6223f8cd7afd1a08634" name="AnylineViewConfig.html" size="10136" version="28.0.0"/>
-      <File SHA256:hash="29d2447ba68d6758b90cf8cae9d134b30e00c43e74443ad7edb37c9defa55116" name="FlashViewConfig.FlashMode.html" size="14870" version="28.0.0"/>
-      <File SHA256:hash="8c678f6f08273bd005e214f0ee88857731a3e5d3d8e2ce7afca6c29a24337fa0" name="LightLevelHelper.html" size="12454" version="28.0.0"/>
-      <File SHA256:hash="6ba20dce5029e9a028edaa576aa4a5ebcb9e6f0528a50252179ad40882d355f9" name="package-frame.html" size="5613" version="28.0.0"/>
-      <File SHA256:hash="9ee16f2f6b9a6fd2b967bdcc762abb7ec26a6bba703f60600f74361c3beb3286" name="CutoutConfig.AnimationStyle.html" size="14726" version="28.0.0"/>
-      <File SHA256:hash="f8baf6557d6acafbbe829e9895173438746a5ecf1486fbf814fe6dad33fbd027" name="LicenseKeyExceptionListener.html" size="7405" version="28.0.0"/>
-      <File SHA256:hash="28215f1872efbf016748bb3077bc793bb65e9917cb69552a29e502eba68f7e02" name="ScanViewCameraConfig.html" size="23750" version="28.0.0"/>
-      <File SHA256:hash="28f46b38aaeb7edb6f14a71e55a8e21923abd8431971f5b3933e02d2f61203ee" name="package-summary.html" size="14034" version="28.0.0"/>
-      <File SHA256:hash="289cbe1b15173efd970a18118e829ec83d01a97365ad53bd90d18fc040fab4b8" name="SerialScanViewComposite.html" size="18472" version="28.0.0"/>
-      <File SHA256:hash="4c7ae4c8b2f332c237d1ffe83d5b9eeb2f5b314d7a7a552e929315e8fb66c3f3" name="AbstractWebView.html" size="43418" version="28.0.0"/>
-      <File SHA256:hash="a1c9961656d569113df94021ac15336822166bdb19763dd4a3b5053978c592fb" name="LightLevelHelper.BrightnessLevel.html" size="13673" version="28.0.0"/>
-      <File SHA256:hash="4cbfeb99472e1d5e3c1b022e7392b2ff7cb2997d721448f1ef618bc10a0fc848" name="BrightnessHelper.BrightnessFeedback.html" size="13751" version="28.0.0"/>
-      <File SHA256:hash="c8f4d06fc968e3da40e452d66a4f947d5444e0b05958ef9c382a2699d423bf83" name="package-tree.html" size="13428" version="28.0.0"/>
-      <File SHA256:hash="ad9b7e30302dd725fbb639819be07654ad4ed993becb593f234e418e69d643fe" name="CutoutConfigChangedListener.html" size="7645" version="28.0.0"/>
-      <File SHA256:hash="cf9a26ab5a417743edaf417aa821a2a8c77011aa0176e9f51161d1fdd53eec96" name="LightLevelHelper.AmbientLightLevel.html" size="14184" version="28.0.0"/>
-      <File SHA256:hash="b76681d43fac9fd0d74a93579da792c904696ce006d20b76bbadf50511e78aaf" name="BaseScanViewConfig.html" size="12508" version="28.0.0"/>
-      <File SHA256:hash="5fa24c97f49adcdb0aea3bfdce58735bb6c82aa1c306ec8915b6e650938a2a7b" name="JsonParser.html" size="10460" version="28.0.0"/>
-      <File SHA256:hash="6fe94b069ce2d0b59b85a5fe6dccb19217385311698f6e2ee9f31d6300862d86" name="FlashViewConfig.html" size="21250" version="28.0.0"/>
-      <File SHA256:hash="410dbd7b0f462c3e4745833c16113cfe5d424e4a9b9df27ea2d06b4f4fad90a0" name="AnylineCutoutBase.html" size="9585" version="28.0.0"/>
-      <File SHA256:hash="17e8a41e91e7e16e78b26261e1a5d1b6d71a44a224f9e3ba6c89bc63bb736e80" name="ScanView.html" size="60910" version="28.0.0"/>
-      <File SHA256:hash="0ad53a36d7369a099e7bfd9f8f92d488649096ae7dc6d9fd189712a9edfb2c45" name="AbstractScanViewPluginComposite.html" size="32548" version="28.0.0"/>
-      <File SHA256:hash="fef994079f8d8831197db86d43ba70c7bcd9a5c2d80392c2a793d22cc272d486" name="CutoutConfig.html" size="49099" version="28.0.0"/>
-      <File SHA256:hash="eeba897f52e48a49056e6a4a16a0f9c2c58901d0a86195a9234687ee1d77fa62" name="ParallelScanViewComposite.html" size="15778" version="28.0.0"/>
-      <File SHA256:hash="662b20be23c9ed806960626e441298661b596cd850cd6e40cc88393066c20b15" name="ScanViewUtil.html" size="15955" version="28.0.0"/>
-      <File SHA256:hash="b13eeffdb392544b32f8435a76cb6f703e6f5260aeb29c0d39b368fd79a4747d" name="ScanViewPluginConfig.html" size="17105" version="28.0.0"/>
-    </Directory>
+    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools" name="javadoc"/>
     <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc" name="META-INF">
       <File SHA256:hash="566ad1a80220026d05099562645ce968ff0e7c36cde22634332605bb34cc3eff" name="MANIFEST.MF" size="25" version="28.0.0"/>
-    </Directory>
-    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc" name="at"/>
-    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc/at" name="nineyards"/>
-    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc/at/nineyards" name="anyline">
-      <File SHA256:hash="700c7f21068055f346d73c16379e09770d5f930ca1ee72b149c5d5239e2aea2c" name="ImageProvider.html" size="9598" version="28.0.0"/>
-      <File SHA256:hash="7384b6385a6f45643437230fbcf91028d40d367dce5c1b26c2d1bb26b52c7892" name="AnylineDebugListener.html" size="31039" version="28.0.0"/>
-      <File SHA256:hash="65ec0438553dc64695ad38e9c1297a461e5941c8f42625a07b7bdb0a6847ee67" name="SimpleImageProvider.html" size="15100" version="28.0.0"/>
-      <File SHA256:hash="cdd0ffe28da46ee1bd8523d0f6cc4ae4fdfb5bc63211e8834866941fe4f4009e" name="package-frame.html" size="1426" version="28.0.0"/>
-      <File SHA256:hash="2a4ece28139eecb4e30d62c675dca686e87df89425bbacdde52a225a9223e664" name="package-summary.html" size="6223" version="28.0.0"/>
-      <File SHA256:hash="cea689e86105d5f7367e460cb63286bcccf9c84e01dc1d402b22206f5de36b32" name="package-tree.html" size="5369" version="28.0.0"/>
-      <File SHA256:hash="79fae4ec8cb21162e1e23e7337d87854ef4cc6f665d7beddd38b53333aafb275" name="AnylineListener.html" size="10161" version="28.0.0"/>
-      <File SHA256:hash="e7326aca21211144ae8b1dae5247aca36a37482ff090bbecb0d5437cb50432c0" name="AnylineController.html" size="33456" version="28.0.0"/>
-    </Directory>
-    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc/at/nineyards/anyline" name="util">
-      <File SHA256:hash="31a7225e5ae4ad6d9621550a9429ae83d752c8111ec1e317680088d7cebcc7da" name="ColorUtil.html" size="9332" version="28.0.0"/>
-      <File SHA256:hash="60602ffe391e64d411484839735ee87ea10a6bca53eaba78ebd11db50a425c3d" name="AssetUtil.html" size="22920" version="28.0.0"/>
-      <File SHA256:hash="73ddbc941e5ae4593b934c049bd1129de60d45c5a02f457ea7e995fecd10f73b" name="SoundUtil.html" size="12243" version="28.0.0"/>
-      <File SHA256:hash="8a51d4d5d1279578f8573f64aeae892990e0a7202c641f76e211ae61f268105c" name="ConstantUtil.html" size="22712" version="28.0.0"/>
-      <File SHA256:hash="229b7e9a3cde6eb1318f82efce95458b396b548252fd114148ff404a6b071327" name="NumUtil.html" size="11596" version="28.0.0"/>
-      <File SHA256:hash="3995a5b5d7b9b328c8db64c5be806ed4d1807d08ad93f46a6418d23dc7e871b9" name="package-frame.html" size="1669" version="28.0.0"/>
-      <File SHA256:hash="ad7d6c29b7347b47d898eb3bd5efa58032fc89bce45bb529ede2f45fd9eb64f2" name="package-summary.html" size="6832" version="28.0.0"/>
-      <File SHA256:hash="a302463cd66db6872373f30f7065236435dcf6765fd2488bf7c43be36b3c6f18" name="package-tree.html" size="6176" version="28.0.0"/>
-      <File SHA256:hash="7c10daefecdf79a758c763951db318434f9d71e9c3af9fa79224d2678ab49638" name="TempFileUtil.html" size="10793" version="28.0.0"/>
-      <File SHA256:hash="d31f2948064f5b489b29b78f2209f7d2b4dc8c54f46359cffe2eee30914f9847" name="VersionUtil.html" size="8690" version="28.0.0"/>
-      <File SHA256:hash="0d215103b51885f59b1a3bce8202d609bfde37b3ad4b7bddf46ac65dedb89352" name="ArrayUtil.html" size="11072" version="28.0.0"/>
-      <File SHA256:hash="a8375f3a7c975b01e3f13278054ede81453f69b7db6b9f3295e173048f567ad2" name="DimensUtil.html" size="13082" version="28.0.0"/>
-    </Directory>
-    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc/at/nineyards/anyline" name="camera">
-      <File SHA256:hash="d4567c7269e1c2aa5e91fa3adfa6fc142ab68e9795ef60f5d804e6b48e5c82da" name="CameraFeatures.html" size="26891" version="28.0.0"/>
-      <File SHA256:hash="6acbfe0580191c56c75b8c4559cc516fcc5ec5c3cc3b6ee61b069b11aa51dda4" name="ImageReceiver.html" size="11206" version="28.0.0"/>
-      <File SHA256:hash="aa9408dff3e97d4414489580ed88968b0256c882c3ab41744582c489b4b5b000" name="CameraController.CameraControllerListener.html" size="7878" version="28.0.0"/>
-      <File SHA256:hash="1dd2f9d54ddc40848b3f6d34541a4edc545018df97537104f17f0cb5032298cd" name="CameraController2.html" size="47307" version="28.0.0"/>
-      <File SHA256:hash="3b80d71bde611ee7d3c56440ba186250885efb42b87bf8d4f5860c9ef4f4b3b6" name="CameraView.html" size="79316" version="28.0.0"/>
-      <File SHA256:hash="8d7be1e6b6f1a2a069cb5bb5705c2c0b3ba981ef70e2b4fd40b62e77d39ed1d9" name="CameraFeatures.LensFacing.html" size="18919" version="28.0.0"/>
-      <File SHA256:hash="9fc86a397ece34fb93284b14093c96fdc8f92753041e9a4d4922bd15c35de279" name="NativeBarcodeDetectionThread.html" size="10252" version="28.0.0"/>
-      <File SHA256:hash="a9221750e8c7961c9a0d3e057aae0c7e1a8255af0e23fa462b5cf3191fb9ef74" name="AbstractZoomHandler.html" size="12953" version="28.0.0"/>
-      <File SHA256:hash="8cfeaf7c7af7e262688edf74c7e5d7ef88c2bcd709e38d8c516e302c6ac17b2c" name="CameraFeatures1.html" size="14367" version="28.0.0"/>
-      <File SHA256:hash="8e67560e1a79a9afc312df353634d372bbfb8c5efe7585975a3d98a979930d5b" name="CameraFeatures.OutputFormat.html" size="24593" version="28.0.0"/>
-      <File SHA256:hash="e7e74434eedb09bfe44c81695d72a7e8ff7e80bae552a2dce624b19c1b630f30" name="HighResolutionImageListener.html" size="9232" version="28.0.0"/>
-      <File SHA256:hash="b7227b27e90b8a0ecc9037d470ffb944500190088fb24c192a0605539e9dce7b" name="CameraFeatures.FocusMode.html" size="20798" version="28.0.0"/>
-      <File SHA256:hash="16eb839b54b6edca33ac0450584826c8afa6be81c353f32be85bacd3188269d8" name="NativeBarcodeDetector.html" size="15430" version="28.0.0"/>
-      <File SHA256:hash="295aee021d3e05e9ccc534c8f865ea5af3526418a2b0f21a8d87f3087adb2403" name="CameraOpenListener.html" size="9369" version="28.0.0"/>
-      <File SHA256:hash="72cebff6bd49b47a269c4f076bdb897c9899852748790b51d03b63cf64bb1774" name="CameraSize.html" size="14030" version="28.0.0"/>
-      <File SHA256:hash="0345a23060fd9420772a63d86208ccc7dec3a292dd330937f848439623f6d598" name="SimpleZoomHandlerBuilder.html" size="11897" version="28.0.0"/>
-      <File SHA256:hash="c37c340b8abddaef116d40fed733db59a987c5e566de9354dcb89f1053e24d14" name="FocusConfig.html" size="9898" version="28.0.0"/>
-      <File SHA256:hash="96477f36c70e34445740e8fc53ecd44ef3ad7a9795bab4650dc286f60a2d1ad2" name="CameraFeatures.SceneMode.html" size="26998" version="28.0.0"/>
-      <File SHA256:hash="cf2a1752fdeded5f8126c89845fafb199386c486d2a2b9c60bc3aea7899061f9" name="FlashControl.Mode.html" size="13598" version="28.0.0"/>
-      <File SHA256:hash="7ba99bcc49c1b6c61554310950221c58b8be461239c9338d46e5c9bab227bdc4" name="package-frame.html" size="7775" version="28.0.0"/>
-      <File SHA256:hash="c1a019c5aef4ef4aaf0427c1addfb4e2a89540ed26e9d86e45ef72a1034a96db" name="CameraUtil.html" size="24236" version="28.0.0"/>
-      <File SHA256:hash="5827d5020a7cd1ad4604d98db1be98aa5a8dbb45fe78997c49b0d124b698a6c9" name="package-summary.html" size="19333" version="28.0.0"/>
-      <File SHA256:hash="5caf2a261d0d539a1b699a9579c74302554af22c74efd0467b90beb8b349b3df" name="ZoomEventHandler.html" size="7644" version="28.0.0"/>
-      <File SHA256:hash="12628784a7bc7d95111cb2779a2a2f8224a047e4f714a971ea50134312f1e3f7" name="SimpleZoomHandler.html" size="12542" version="28.0.0"/>
-      <File SHA256:hash="63acd07b32ad6f64de4fcd126107be4961b151b4fd26be0458d698c8443d7f49" name="VisualFeedbackConfig.FeedbackStyle.html" size="17359" version="28.0.0"/>
-      <File SHA256:hash="cb5eb1b9d876354c18448bb1b83fcc330c4414a3c68186aaf8c9ed275f88d541" name="HighResolutionImageProvider.html" size="11533" version="28.0.0"/>
-      <File SHA256:hash="fdd2b182af0a7e74343fcee3cf988ed288cd93d66863331490778f0fc27f4614" name="VisualFeedbackConfig.AnimationStyle.html" size="18168" version="28.0.0"/>
-      <File SHA256:hash="8859b6c8d6c9b65536efe307b4ef3b61370c5a2a1d53b0ce7688ef98fe715d46" name="ActiveArrayZoomHandler.html" size="13239" version="28.0.0"/>
-      <File SHA256:hash="e5353ff8e1b2ba164b98884cecfe81b3c98f277afa56f25cc71ca0b6ecf39ff9" name="CameraController.html" size="46797" version="28.0.0"/>
-      <File SHA256:hash="64150b17a45026636918231e8f8fc2df1ce52d8b6464b7253170d94b52d4ea06" name="CameraPermissionHelper.html" size="15574" version="28.0.0"/>
-      <File SHA256:hash="c26b1a3be8a7248f347631d7a47b09ff46f3053726f749a01feda8ec4c60e0b2" name="CameraFeatures2.AutoExposureMode.html" size="17718" version="28.0.0"/>
-      <File SHA256:hash="a6e5a22ce47e5db9520c98aa50d7167a217ae5b274225ace506d337270e2d134" name="FlashControl.html" size="13726" version="28.0.0"/>
-      <File SHA256:hash="618066356cff1fcd96268353a086fa718665395c7f2318c749e13484e5713609" name="package-tree.html" size="16216" version="28.0.0"/>
-      <File SHA256:hash="eb28d2f592b0efe81b3fe35cb1b48855fdb736cf958618ca3d5ce3378c52ac43" name="CameraUtil.AspectRatio.html" size="16531" version="28.0.0"/>
-      <File SHA256:hash="af493024527701c121dda2db5c36959e4ca20da6a353d7156e92c0a994de2f64" name="CutoutUpdateListener.html" size="8290" version="28.0.0"/>
-      <File SHA256:hash="782c37819440f2008b113bd3ad94c89570653f13a6c2b5397778a6c67dc7e0ca" name="ActiveArrayZoomHandlerBuilder.html" size="13012" version="28.0.0"/>
-      <File SHA256:hash="426d36d3313d96925200b418836af0bfbe1b962d06b9fee183cc2a5416a269b6" name="SimpleZoomHandler.IZoomHandlerListener.html" size="7867" version="28.0.0"/>
-      <File SHA256:hash="3002709d2ba5cfcf2172ea17c5608ef0bc31e22d66a9625103fe2df5a9949d69" name="CameraFeatures2.html" size="16914" version="28.0.0"/>
-      <File SHA256:hash="740a1b57032537723dd5745787c04cdd7305b3df3fca99f768978dd06f5ac5b9" name="NativeBarcodeResultListener.html" size="8788" version="28.0.0"/>
-      <File SHA256:hash="4b6b2a28b347ead43738594fbf0a4d7fa473cdc225a32ea0217c1ca3fab0b18f" name="FaceDetector.html" size="11068" version="28.0.0"/>
-      <File SHA256:hash="c8a8d10fc5a22c7ecc9e75c4d4db9ff1ba65af72a78c379e2c5f1b9ca4356d17" name="ActiveArrayZoomHandler.IZoomHandlerListener.html" size="8013" version="28.0.0"/>
-      <File SHA256:hash="b3009141e421008f39e061d2fdc086cb2ab8fcdba5516f5808290391834f4d5c" name="CameraConfig.html" size="48366" version="28.0.0"/>
-      <File SHA256:hash="fed7962d828be3d5804472fd66e86e84ae56f937477477a836a17eda7f37dc23" name="VisualFeedbackConfig.html" size="29644" version="28.0.0"/>
-      <File SHA256:hash="97c9fa772017b5d294b83d16f7103914436d94723044c461a6c63cdf45fc57ea" name="FaceDetector.FaceDetectionResultHandler.html" size="8845" version="28.0.0"/>
-      <File SHA256:hash="0a62a5ba6edc6dda886bb03956a4a2dd9e1cd580e734952cd17d75180dea3a1e" name="CameraFeatures.FpsRange.html" size="14574" version="28.0.0"/>
-      <File SHA256:hash="e3a3edf540246ccf2dc6b83df2a930a5e5e5141de04e1d3cd3ac5daa772d92a6" name="CameraController2.State.html" size="15858" version="28.0.0"/>
-      <File SHA256:hash="6459ca6bafdc1f9a4bfe01dce5cadbcdb3959e2e7f96fd5e77f571fc817e695f" name="ImageListener.html" size="9010" version="28.0.0"/>
-      <File SHA256:hash="5d451e2b5d4dbfd8459d5966f9dfb2cac593a7f35a5c4827bd9d0d41dd9e9d88" name="FocusConfig.Builder.html" size="21369" version="28.0.0"/>
-      <File SHA256:hash="fc365c7c7bb1ea0611216c6882614804f66c36cd7ebd84d345656c6552540d5c" name="CameraController1.html" size="50991" version="28.0.0"/>
-      <File SHA256:hash="4aeba8064a350522449583893970f086533f4cdcb4c19611d493fefdb6d9fd1b" name="CameraController.CameraOrientation.html" size="16732" version="28.0.0"/>
-    </Directory>
-    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc/at/nineyards/anyline" name="models">
-      <File SHA256:hash="1325a2eb4595d9ad3e4f43ecfba29f604b0e45bb5238bcf2df44ddb3669598d8" name="AnylineImage.html" size="16921" version="28.0.0"/>
-      <File SHA256:hash="e10cc3d4b4af17b34b0c7c76e8b051831b9fb63113bc4b06c533e3c8e4135461" name="AnylineScanResult.html" size="14381" version="28.0.0"/>
-      <File SHA256:hash="820624ad136ba117be3ffa71d2f74e292aa0783429e7190631fef3f52bf4fb7a" name="package-frame.html" size="1162" version="28.0.0"/>
-      <File SHA256:hash="338c03848478560731e057503ff59d7ad084d791c5c7838a2f2862bfe96da563" name="AnylineRawResult.html" size="15364" version="28.0.0"/>
-      <File SHA256:hash="940f0aa3fd7f242638eaead189f25086e3fb121227bf5a16f4e6862417d519cf" name="package-summary.html" size="5728" version="28.0.0"/>
-      <File SHA256:hash="8d2ce48bf0c3c9733aa5f49c62a969fb1be09c8d2b9af929564533db48b4cf34" name="package-tree.html" size="5324" version="28.0.0"/>
-      <File SHA256:hash="ef7056db011575582b8ff3177083208ffe6a8d7afb4a838fdf7b968bd4aaf628" name="AnylineYuvImage.html" size="26246" version="28.0.0"/>
-    </Directory>
-    <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets/tools/javadoc/at/nineyards/anyline" name="modules">
-      <File SHA256:hash="4ccf803841fef7bba8f585dffa95e3ae0f2504c6f8e40892c81a5ef885c70c53" name="LicenseExpirationHelper.html" size="9286" version="28.0.0"/>
-      <File SHA256:hash="5a69edf615959e0d6517cde3213d2b57c986098324c245a2e38ca9a304dacedf" name="AnylineModuleResultListener.html" size="9003" version="28.0.0"/>
-      <File SHA256:hash="5a9a094ec467633293bbd28f80ded8af08676fa4a51347294e67270603d69abe" name="package-frame.html" size="1226" version="28.0.0"/>
-      <File SHA256:hash="588db027407cf02b5e532eeb595f971934b8e9a51897a71908bcf9aac7aa8e9a" name="AnylineModule.html" size="14526" version="28.0.0"/>
-      <File SHA256:hash="4c63f481d6532c7c2bf7c997a14361b935d3150c3ed8c6661260e6e014ecb0e9" name="package-summary.html" size="6192" version="28.0.0"/>
-      <File SHA256:hash="edb5716be48d97707b328089c278330d1846783f660513ebbf608bf2ee41c778" name="package-tree.html" size="5166" version="28.0.0"/>
     </Directory>
     <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets" name="raw">
       <File SHA256:hash="312a409d0ce3d0a00b7cd2c917142eb2fb8bad19c2bc970c0b5d3c69908ac42d" name="al_d6f3e042d13f4cc06b77dbdb2d2dcebaf46326e6.txt" size="7137" version="28.0.0"/>
@@ -710,7 +446,7 @@
       <File SHA256:hash="215c770a72231443b27e3febc09f5bf72423c49efad3d2814f39f77855f96ed4" name="AnylineViewController.designer.cs" size="463" version="28.0.0"/>
       <File SHA256:hash="3c68af9b1ed81578c7ae57a9b825699b440d0d1b5b439048a90d09bc498d0d15" name="AnylineViewController.cs" size="9711" version="28.0.0"/>
       <File SHA256:hash="f85e35b434eba230e71be08b8621de8555badf1282d029648836690a079fa56e" name="Main.cs" size="586" version="28.0.0"/>
-      <File SHA256:hash="ad6fae59c0ab09f4706715732c42532b1052c16e7101a054c18eae2093991f19" name="AnylineExamples.iOS.csproj" size="8196" version="28.0.0"/>
+      <File SHA256:hash="d553deee498863e09db25d95fab9ff08be2971372945483fa8a2c0e5a640dad7" name="AnylineExamples.iOS.csproj" size="8225" version="28.0.0"/>
       <File SHA256:hash="51f8a1f9357d76ce47b0e19ccbbadd4cc32635fe873883caf314adf7cf597df2" name="NFCScanViewController.cs" size="10360" version="28.0.0"/>
       <File SHA256:hash="50edb93db0cf405cc763e444d1cb1ba770f1fc8135ed52c0db144fccfc547199" name="ScanViewController.cs" size="6233" version="28.0.0"/>
       <File SHA256:hash="263fa0a9628d52249eca37381bec34f844d716e16801000ddf8bc498cb5479bb" name="MainStoryboard.storyboard" size="2270" version="28.0.0"/>
@@ -758,24 +494,24 @@
       <File SHA256:hash="c15a958fcd35c87c85b4602eb052c2b28a46a5bde264621889a5acab09ea24ef" name="AssemblyInfo.cs" size="1412" version="28.0.0"/>
     </Directory>
     <Directory location="" name="Nuget">
-      <File SHA256:hash="2191bafa5fc8b5aa1f12f500d8ff761f071bb805e54a2310aa1df50201e5656a" name="Anyline.Xamarin.SDK.Droid.28.0.0.nupkg" size="77007853" version="28.0.0"/>
+      <File SHA256:hash="9ddaa597cda393431c22cd83cff6d801e685b040bb48241aabf311ff477a4142" name="Anyline.Xamarin.SDK.Droid.28.0.0.nupkg" size="49708939" version="28.0.0"/>
       <File SHA256:hash="2232f236dcb819193fde686b7dc9a650e567c6953eabd5647cd793fffd77f877" name="Anyline.Xamarin.SDK.iOS.nuspec" size="2161" version="28.0.0"/>
-      <File SHA256:hash="9301fe1805d9f7b92a5dc4a10a08f44725342ff20309e0333822f612bb343b89" name="Anyline.Xamarin.SDK.iOS.28.0.0.nupkg" size="145399552" version="28.0.0"/>
+      <File SHA256:hash="821d86e387b7c89efcd4159369f72475e0afa92986f095c12424d93005b5f2e1" name="Anyline.Xamarin.SDK.iOS.28.0.0.nupkg" size="146317419" version="28.0.0"/>
       <File SHA256:hash="2d1708e9165eabd1ca9aa6d10644cf2b4fd5984f5b6a046bdf0830a669af3560" name="Anyline.Xamarin.SDK.Droid.nuspec" size="1881" version="28.0.0"/>
     </Directory>
     <Directory location="Nuget" name="lib"/>
     <Directory location="Nuget/lib" name="Xamarin.iOS10">
-      <File SHA256:hash="e509621fc403cddbdba028512b8aaae1a24b8d43b53fbf08e95bf83e9ddd9c46" name="AnylineXamarinSDK.iOS.dll" size="134636032" version="28.0.0"/>
+      <File SHA256:hash="017f70ad691513ce21c075a011af6dae8a6e61d12ee6c8a0c9685cdb6f3a76b7" name="AnylineXamarinSDK.iOS.dll" size="134676992" version="28.0.0"/>
     </Directory>
     <Directory location="Nuget/lib" name="MonoAndroid10">
-      <File SHA256:hash="ac79ec157f87ea76bc90476ab8311fe66e03e10c2d8f6e02390ab86b85e41477" name="AnylineXamarinSDK.Droid.dll" size="79596032" version="28.0.0"/>
+      <File SHA256:hash="d3fc3fdff5875376c9a691090f7e8db09a17ddeb607f9d338605980b807838ed" name="AnylineXamarinSDK.Droid.dll" size="51692032" version="28.0.0"/>
     </Directory>
     <Directory location="Nuget" name="build">
       <File SHA256:hash="765c48481d6a316673ad580f6ac89d112c76ecd3f316a79a03e4e3130114271d" name="Anyline.Xamarin.SDK.iOS.targets" size="1847" version="28.0.0"/>
     </Directory>
     <Directory location="Nuget" name="AnylineResources.bundle">
-      <File SHA256:hash="8861c8ff0763fd57c6dba41850a29a08ba7f93f9268fba4d77e69a6d922afec7" name="Anyline-Info.plist" size="899" version="28.0.0"/>
-      <File SHA256:hash="2e20bed0e1bf5cb6f4e1ef309f1d7b25881cf77f22e695ae5e8246e41f11e61a" name="threshold_all.ale" size="2872" version="28.0.0"/>
+      <File SHA256:hash="0cbe2dc73425d58416bba84230637e454b8da535895d9ac8ec2a6017237fc877" name="Anyline-Info.plist" size="897" version="28.0.0"/>
+      <File SHA256:hash="1953522ffc1a085d308203cdc5279c7b202e3bcc4c0a504630ab667998336f07" name="threshold_all.ale" size="2872" version="28.0.0"/>
       <File SHA256:hash="5068123befd877a33f7bbbea03f84996d122bf95532c536f933dfbfa59478188" name="subscript_function_list.md" size="2491" version="28.0.0"/>
     </Directory>
     <Directory location="Nuget/AnylineResources.bundle" name="ui">
@@ -805,14 +541,14 @@
       <File SHA256:hash="4bb358b7729e14b45bf234df0ca4d81d4614d9b0cf9831390cbbbf2313c4c375" name="anyIcon.ebceaedb.svg" size="1722" version="28.0.0"/>
     </Directory>
     <Directory location="Nuget/AnylineResources.bundle" name="module_barcode">
-      <File SHA256:hash="61bc90f54d21eb6321e1352c354d62118be8239cdcabbcb7fc4d119841a80996" name="ean.ale" size="10444" version="28.0.0"/>
-      <File SHA256:hash="56e1d1883aff0aaa54e84cf062526fbdd5dc89439d699ec047cccf6b2cb3ae06" name="noscript_barcode.ale" size="1612" version="28.0.0"/>
+      <File SHA256:hash="4c92368071a2d36e48d906bee28d5d9b3beea1e9a1b977a17d011b6cf3c740ad" name="ean.ale" size="10444" version="28.0.0"/>
+      <File SHA256:hash="1a28b58a0b233b34ce784e321d0e77293aa8c93bf915c7c414e4815c21364f92" name="noscript_barcode.ale" size="1612" version="28.0.0"/>
     </Directory>
     <Directory location="Nuget/AnylineResources.bundle" name="ui_2_0">
       <File SHA256:hash="f297b744f6c4c22a28c1fcbdb19e1996c9a3b724ca40314f494c4761c9de3e44" name="favicon.ico" size="15086" version="28.0.0"/>
       <File SHA256:hash="ea9db93a5d2e8cd2d83d0cf0e602bf43acb28ee5df8bcd62ab47b84fd82a5c1e" name="index.html" size="2140" version="28.0.0"/>
       <File SHA256:hash="12cdd52477187b231ace264cf89429cf858edb7b9515a398e9b22075a7743b52" name="asset-manifest.json" size="792" version="28.0.0"/>
-      <File SHA256:hash="76441792b756910193375212d75440d168dd7e43bf5f7ecd38b69ac62a2ac9de" name="manifest.json" size="293" version="28.0.0"/>
+      <File SHA256:hash="f72d4c84c2d49e601d50163172919f43b8c98391d3778d639e4f96b91b0ae2a9" name="manifest.json" size="308" version="28.0.0"/>
     </Directory>
     <Directory location="Nuget/AnylineResources.bundle/ui_2_0" name="static"/>
     <Directory location="Nuget/AnylineResources.bundle/ui_2_0/static" name="css">
@@ -833,24 +569,24 @@
       <File SHA256:hash="ef253a62b7c9e19c514b3a8e2985d13954dbaa3631acfd519ed51261d4c629f1" name="anyline_logo_white.dat" size="4506" version="28.0.0"/>
     </Directory>
     <Directory location="Nuget/AnylineResources.bundle" name="module_document">
-      <File SHA256:hash="bdc115ada1db7c45b5aed439159eb8a28e71cb0a0dea2c353a9f4947777a1d1f" name="document.ale" size="50380" version="28.0.0"/>
+      <File SHA256:hash="bc8e5366349ce4de1efc1c0abcf3972edf41295a6fcc00762b44fed06ecc6fc8" name="document.ale" size="50380" version="28.0.0"/>
     </Directory>
     <Directory location="Nuget/AnylineResources.bundle/module_document" name="trained_models">
       <File SHA256:hash="59be727caab25d6e614ca0875e8bbf54a8b9ee053c7cf9e8aad6664bf29dd780" name="doc_model_3_25.any" size="258440" version="28.0.0"/>
       <File SHA256:hash="c62250447d59b98570604e3a2587bebc705554e219b63d2628ee0c54b4334e94" name="doc_model_3_27.any" size="258440" version="28.0.0"/>
     </Directory>
     <Directory location="Nuget/AnylineResources.bundle" name="module_energy">
-      <File SHA256:hash="3a6f4818a7256f4dcacaf53005eb1a7debfd5b1fd44edf1e51670244234bfa40" name="analog_meter.ale" size="37280" version="28.0.0"/>
-      <File SHA256:hash="1586a1d5f92ba27d1b277d7fd8694845a7281d08ee111d201ba19f878413d2e4" name="digital_meter.ale" size="37452" version="28.0.0"/>
-      <File SHA256:hash="a6a2f3a7ffeb31f7625205137610fb00d33646f6f17acc56800c55a53413eec0" name="digital_meter_multifields.ale" size="38112" version="28.0.0"/>
-      <File SHA256:hash="0825035a63406c56a15df497b65a4042ff6c7aa8d9afa7c06c24d881d7704bad" name="brightness.ale" size="396" version="28.0.0"/>
-      <File SHA256:hash="fe24f17f2a4d3dceaeff88b845030e2f7ce2e45f966d5fe2d6d654007b0545f3" name="dot_matrix_meter.ale" size="8312" version="28.0.0"/>
-      <File SHA256:hash="1cead50e632bd4cd594b1a84f0f6e815cc3716386aef163a23577620c6c97671" name="energy_serial_alnum_3_letters.ale" size="21112" version="28.0.0"/>
-      <File SHA256:hash="e528b0f9830ca6015f6f57881f67cd2562f191e40eef42d401697e278849cc66" name="analog_digital_auto_mode.ale" size="37560" version="28.0.0"/>
-      <File SHA256:hash="5294322bc56d87ca8d1b10b1d8b224e2dd047915525e6ef64305e3d0b03fed0d" name="energy_serial.ale" size="8460" version="28.0.0"/>
-      <File SHA256:hash="6787f78d36f6eab037a4dd40d7a910784adea8080c5ba1ae1e3616dd6e9071b3" name="digital_heat_meter.ale" size="8248" version="28.0.0"/>
-      <File SHA256:hash="b415538ecc22f3b8d87c434785b71c07d804c79b1ccf635a6f6ebca13905f4b3" name="dial_meter.ale" size="3936" version="28.0.0"/>
-      <File SHA256:hash="935ef9a995288da3efc88ca5a54133d34c9c04597c015e3bdc672a2f9b88bfdd" name="energy_serial_capital_letters.ale" size="12620" version="28.0.0"/>
+      <File SHA256:hash="38e76352f7cb057853b9c7ae5a80a282937af0dd01b94c3925b54bf620b31337" name="analog_meter.ale" size="37344" version="28.0.0"/>
+      <File SHA256:hash="87dc9ca566709889cb5a5f1e886641725597178b18768e74b2e11550be432354" name="digital_meter.ale" size="37516" version="28.0.0"/>
+      <File SHA256:hash="c46831686ed35ea2cc799f11a1632ab04e53c9603947fdc47069bfc205659b22" name="digital_meter_multifields.ale" size="38112" version="28.0.0"/>
+      <File SHA256:hash="01bd31e0ee0eebc95da974f2702c55607282f460fdc1acfbc4ce342face64f65" name="brightness.ale" size="396" version="28.0.0"/>
+      <File SHA256:hash="54008100be25c0d3262ea09a7601d30b4e4263a55b7090cafffa28901501147f" name="dot_matrix_meter.ale" size="8312" version="28.0.0"/>
+      <File SHA256:hash="7cf2279fdf217dc7fc2d04f1fa0f30fdc08245ba15975ae68e4617812bd7ee23" name="energy_serial_alnum_3_letters.ale" size="21112" version="28.0.0"/>
+      <File SHA256:hash="7e2c26769d886d432c5c9fb5527f6131f9fdae279efd14371e6bd063a4d9ad0b" name="analog_digital_auto_mode.ale" size="37624" version="28.0.0"/>
+      <File SHA256:hash="89ca36ad10ce5f435d2dee736c7e7d731131e2e8d59bae3207fe5cf601e93c26" name="energy_serial.ale" size="8460" version="28.0.0"/>
+      <File SHA256:hash="af8a38e0af4deff8fcc88693488b6bdd1d8a85b8af0f96e0759d6c370f86b970" name="digital_heat_meter.ale" size="8248" version="28.0.0"/>
+      <File SHA256:hash="832bfa95a5921fe283958ba3a396de75bf221fba4aa06b4caa4f353c6a50607f" name="dial_meter.ale" size="3936" version="28.0.0"/>
+      <File SHA256:hash="387912ae8334fc2513cf8b3fb57df1a08d25a1edd43553022441d4169adb9c5b" name="energy_serial_capital_letters.ale" size="12620" version="28.0.0"/>
     </Directory>
     <Directory location="Nuget/AnylineResources.bundle/module_energy" name="trained_models">
       <File SHA256:hash="7ac646a318cf6fc96603197bcccd0eb342b0336c31596654e3a3bc3e2db4caf6" name="crnn_auto_synth.any" size="8559624" version="28.0.0"/>
@@ -861,14 +597,14 @@
       <File SHA256:hash="5e5629f188dbcd864422ce5b1285ab96211eb4b3cb2bb02535a8f972d2dc4267" name="CNN_serialnumbers_combined.any" size="472936" version="28.0.0"/>
     </Directory>
     <Directory location="Nuget/AnylineResources.bundle" name="module_anyline_ocr">
-      <File SHA256:hash="c046c52f851e3528ac1b7e0008047c970bdad9f2b22dcb4b694dbf5c96145404" name="tin.ale" size="33548" version="28.0.0"/>
-      <File SHA256:hash="78ded20a15caa94030ae5866e481459a75ec0feb634fbd2bb5e547e3b1ac9fba" name="vin.ale" size="18336" version="28.0.0"/>
-      <File SHA256:hash="0fd05ae8c0d92e49ea40f928ad75c69add3a9af4e5a1d1837ea28dc393da2870" name="container_scanner_vertical.ale" size="21900" version="28.0.0"/>
-      <File SHA256:hash="6b390386db2aae2a910a34e8d6af1252e1d5db94eb73bc7e50d31f1945abd6b7" name="cow_tag_scanner.ale" size="21856" version="28.0.0"/>
-      <File SHA256:hash="acf100e14adae4bb784a96f5072ce5c0e1dbbe29609c2b91a7da95e2f5c7ae57" name="container_scanner.ale" size="14624" version="28.0.0"/>
-      <File SHA256:hash="2351e51e473002c5b7c47d1e8d465cac74e3ade5bb05fb4a6bca41fa1c97783f" name="anyline_ocr_grid_any.ale" size="22988" version="28.0.0"/>
-      <File SHA256:hash="344834697cbf97c88b8d46b4f9f901206b37f8a5f5db42bc6ccbb4fb5b72c8b8" name="anyline_ocr_auto_any.ale" size="25484" version="28.0.0"/>
-      <File SHA256:hash="29edb9e9d7532e13aacb093a766ef1575526dcc6f319ad2f6b74e15a69c9e955" name="anyline_ocr_line_any.ale" size="19000" version="28.0.0"/>
+      <File SHA256:hash="a260c570da0f5dee5a78778c846ea43bf0d0706f3af2d0139403ac7fef4feef2" name="tin.ale" size="33548" version="28.0.0"/>
+      <File SHA256:hash="5c94ac0087e1d5bc65a15fe5642a35cd3b33b3921c5c53c03fe0d389d4ee8af3" name="vin.ale" size="18336" version="28.0.0"/>
+      <File SHA256:hash="863330b54e01aba637b329454e437956f5f324d834db3b6f668ea164281b2b66" name="container_scanner_vertical.ale" size="21900" version="28.0.0"/>
+      <File SHA256:hash="c75092581a55aaff69e5b5a91794597c032c66722eb4c1fcb5c491177c68950e" name="cow_tag_scanner.ale" size="21856" version="28.0.0"/>
+      <File SHA256:hash="e6c103854fc1ecf20ef777fb45cd4ef642a5763c9c654c574dd5bcbe08449a1d" name="container_scanner.ale" size="14624" version="28.0.0"/>
+      <File SHA256:hash="349418aa01f47be87548761cbf7bc519f2e0a5b3ba42e366081ed597e64f7639" name="anyline_ocr_grid_any.ale" size="22988" version="28.0.0"/>
+      <File SHA256:hash="db3c5d8aa4c421cf9754edb27dbc0c4b2871facb134f878b3520ac7629c8aba9" name="anyline_ocr_auto_any.ale" size="25484" version="28.0.0"/>
+      <File SHA256:hash="a876682641f91eabeac7c3404195d601ed40219bb7df12ba62240590f8a69d96" name="anyline_ocr_line_any.ale" size="19000" version="28.0.0"/>
     </Directory>
     <Directory location="Nuget/AnylineResources.bundle/module_anyline_ocr" name="trained_models">
       <File SHA256:hash="4dd25af6486ee3853f6819e9d86b696f912941cb99deaef669789f487b236871" name="comb_rw_10Lite.any" size="258456" version="28.0.0"/>
@@ -885,7 +621,7 @@
       <File SHA256:hash="45f3b68233c2a2c60bc847d3911d52a44b14053f005b9b6503ec0e87a69ec680" name="goodyear.txt" size="224" version="28.0.0"/>
     </Directory>
     <Directory location="Nuget/AnylineResources.bundle" name="module_license_plate">
-      <File SHA256:hash="171d8dbfed551dfde3c273c0c66bbf7a6bc9d2a5833038f316a501d9a907349b" name="license_plates_combined.ale" size="197068" version="28.0.0"/>
+      <File SHA256:hash="4bdc5d7aaa881ebd446a76c8f007e84d8412856a1911358e6ea27474542fcb0f" name="license_plates_combined.ale" size="197068" version="28.0.0"/>
     </Directory>
     <Directory location="Nuget/AnylineResources.bundle/module_license_plate" name="trained_models">
       <File SHA256:hash="0f4913a6704534f7b05516d218d0dd89cb18f25de6814488de9e719d4193920b" name="LPT.any" size="1297272" version="28.0.0"/>
@@ -894,25 +630,25 @@
       <File SHA256:hash="8b21c1906ec134d7cfdee540bdeb6a1b67d558d8d9f8f0d766ac767e5e1ec676" name="beep.wav" size="9702" version="28.0.0"/>
     </Directory>
     <Directory location="Nuget/AnylineResources.bundle" name="module_id">
-      <File SHA256:hash="846786d86034c11d4aa131cbaddfe7d8804889e7ea1fed8e8d0918e2b21cca8c" name="functions_template.ale" size="137164" version="28.0.0"/>
-      <File SHA256:hash="64abfefedcdcd24383be49c5fc808b54dc01881009ca152ece1a802337163cee" name="anyline_driving_license_belgium.ale" size="39544" version="28.0.0"/>
-      <File SHA256:hash="17f7af5c006fb9a472fe7646f900b42698abdd75bd1b5643f1f0d5e6ac7b4bdc" name="anyline_driving_license.ale" size="251488" version="28.0.0"/>
-      <File SHA256:hash="5d122119f6f89a135ba5c38d337b128aed20ee6b73754ccae936651796d4c6a4" name="mrz_scanning.ale" size="385356" version="28.0.0"/>
-      <File SHA256:hash="a4f2b1cbcd39223661a44266c2ed4b386cefa4f28e06d247a68ffcb034a46e6f" name="main_id_scanner.ale" size="10380" version="28.0.0"/>
-      <File SHA256:hash="1003ed97cbddbc111c26788a371c16a6dece493d8293b00a4584b78fd8a187dd" name="anyline_german_id_front.ale" size="130764" version="28.0.0"/>
-      <File SHA256:hash="9f0429e6675d51c0e11f6cd7e4c69875b07f3cd9d1a4af1272bc14854b01996b" name="anyline_driving_license_netherlands.ale" size="73824" version="28.0.0"/>
-      <File SHA256:hash="f328e0da553f48c4be727a9e5eb71ad70d753bfeac51b4bea1f470270ac5c509" name="functions_card_rectification.ale" size="4600" version="28.0.0"/>
-      <File SHA256:hash="a53be7be3678b13f74342657f5e70a07c46099ff7ebb08c1c6fafc1cf9c08dba" name="auto_mode_standalone.ale" size="2764" version="28.0.0"/>
-      <File SHA256:hash="f7154114f1c513544918be33a514156217c333581f8bdeebcc8b8d015593ea3b" name="functions_template_scanning.ale" size="75872" version="28.0.0"/>
-      <File SHA256:hash="03456121692e0f5fe923fc779e0df05ebc1d0145f2399f21170b3e5e6860bd7c" name="functions_square_from_edges.ale" size="32352" version="28.0.0"/>
-      <File SHA256:hash="04b2185672de81e2a4fb43a12a156621e17872d5c0b288919d0817b91c8ea2d1" name="functions_auto_mode.ale" size="38944" version="28.0.0"/>
-      <File SHA256:hash="7a5396ada20382e966279e15a16d89ee8ad930c53646db5fbcddcb346343f02d" name="functions_card_detection.ale" size="41484" version="28.0.0"/>
-      <File SHA256:hash="e210e1d46141c9f9878c016517d0e2b537cdb9132529b5d96fab9187c1b01c19" name="functions_field_detection.ale" size="5472" version="28.0.0"/>
-      <File SHA256:hash="9d170d3c742cb972653a3bbfdea97db8015628a90be345b2c121fe8f4dc6e9c1" name="template_scanning_standalone.ale" size="93452" version="28.0.0"/>
-      <File SHA256:hash="f55325402434e8e9fe9b5cdf329beda280af46206f5648c7b5a94a8f78c7046c" name="card_detection_function_test.ale" size="13856" version="28.0.0"/>
-      <File SHA256:hash="9447b5cf030c71c36f9c74ee9f4932372456cdcc85bbefc37b51bf7d23752788" name="functions_common.ale" size="5024" version="28.0.0"/>
-      <File SHA256:hash="c6f16afd6ebc1cbebca6c3d571e2293dd310687f86684852eb6b34307502c624" name="functions_mrz_scanning.ale" size="518348" version="28.0.0"/>
-      <File SHA256:hash="b8d2e45c90bcb74d6150e5eb81d685f5ba20768d0d74e9d1cd35f8291e9b8355" name="functions_anonymize_id.ale" size="5792" version="28.0.0"/>
+      <File SHA256:hash="a6f70c40edf548e2a800648991b06f1665cca7ac72fec203b2d17f0c84c6ba7c" name="functions_template.ale" size="154016" version="28.0.0"/>
+      <File SHA256:hash="328244dfbb71e44d02fb3e75a388578d6ed5d2677092b91cdb62086ed937ceb1" name="anyline_driving_license_belgium.ale" size="39544" version="28.0.0"/>
+      <File SHA256:hash="dc1b9739b37d915126701e0f4102de88bfaddde33efe67d707f86b4dce4a44f1" name="anyline_driving_license.ale" size="251488" version="28.0.0"/>
+      <File SHA256:hash="e9e7074160914847141e6be2b8f7bd10a5c315c768d11f14552497bc154c8894" name="mrz_scanning.ale" size="385356" version="28.0.0"/>
+      <File SHA256:hash="0882705d0939cea427ae2da318e16b18d8c44576663182318e3ebac2fcdaada8" name="main_id_scanner.ale" size="10380" version="28.0.0"/>
+      <File SHA256:hash="7e538ab7944e962aeb0e7f435c9939959c589dbc230e4ccfe260b62faad1e822" name="anyline_german_id_front.ale" size="130764" version="28.0.0"/>
+      <File SHA256:hash="5f3e58f222d204da9dce9a2fc54139f6ced27e10568ea9c6c1a31e30705392ca" name="anyline_driving_license_netherlands.ale" size="73824" version="28.0.0"/>
+      <File SHA256:hash="3d2730ecd9c8af566b7a08d7072fceada47835cae8fd3bff5ccb6682b769b8af" name="functions_card_rectification.ale" size="4600" version="28.0.0"/>
+      <File SHA256:hash="c69fbaf02a09f9d7104a13d7aa5ebbbf570a21e5d8b0c4e27b1c5b2868e8fa47" name="auto_mode_standalone.ale" size="2764" version="28.0.0"/>
+      <File SHA256:hash="88c183f0d1b04af2c6a03df841cce1e80fc97289adf323af4a1900556e80ca39" name="functions_template_scanning.ale" size="76384" version="28.0.0"/>
+      <File SHA256:hash="deed9907157b7b315c3ff9d4235cc0ac4db33be2517e8b459f8615662f6c8c99" name="functions_square_from_edges.ale" size="32352" version="28.0.0"/>
+      <File SHA256:hash="192f3819524ef415dc39e9daa28d693c4537d88b22ce111380d994eb7330ec5f" name="functions_auto_mode.ale" size="38944" version="28.0.0"/>
+      <File SHA256:hash="cafe588327b1f86412ee57f5e1126db4c9d9e6b6c098ac8f8a3675c6f93e4490" name="functions_card_detection.ale" size="41484" version="28.0.0"/>
+      <File SHA256:hash="f67621ecba795bce209509d527ddf74414075521e944a0e7bd59274c70e1117f" name="functions_field_detection.ale" size="5472" version="28.0.0"/>
+      <File SHA256:hash="ce7b74f463aed26f627262b65ace420cf15a759b817797db01f0166b9dc1eb93" name="template_scanning_standalone.ale" size="93452" version="28.0.0"/>
+      <File SHA256:hash="38ea4d414504dde850ac582e1858f03a2a7699da5e76f2a7b98f147bd9e1c3fc" name="card_detection_function_test.ale" size="13856" version="28.0.0"/>
+      <File SHA256:hash="cd9cd59fd52f1503d0fffe5bdce17a38e2c2dd9c8ea8778e3e69c39f40da6b1a" name="functions_common.ale" size="5024" version="28.0.0"/>
+      <File SHA256:hash="1b089e424fa20a55e3b2469098115508a0124dfa0a58db793f9f848245ca3130" name="functions_mrz_scanning.ale" size="518348" version="28.0.0"/>
+      <File SHA256:hash="9fee2bf0fc96974c61f29ffb939b17eadc755441e14262f53f9976d138c3c1ce" name="functions_anonymize_id.ale" size="5792" version="28.0.0"/>
     </Directory>
     <Directory location="Nuget/AnylineResources.bundle/module_id" name="trained_models">
       <File SHA256:hash="a0f7ac982db5a78b6db8d59a9237591f0cda762c4dfcb01deb7b6f89067b4ffa" name="crnnID_quant.any" size="1136120" version="28.0.0"/>
@@ -924,161 +660,177 @@
       <File SHA256:hash="3990e21b0752e22656d1f3346b8acd62d6ff2cc15faa60a69325525a1b044df3" name="USNr.any" size="904712" version="28.0.0"/>
     </Directory>
     <Directory location="Nuget/AnylineResources.bundle/module_id" name="config_files">
-      <File SHA256:hash="333c5747c91773cc264417e09d52b2a8520526a7863f42855f0db23c049123dd" name="ID_default_start_variables.ale" size="1740" version="28.0.0"/>
+      <File SHA256:hash="1ff40d0c1d92f14f9380cf91261cd0d47d279f783f110c3bd9b18d5cae7a3ccf" name="ID_default_start_variables.ale" size="2424" version="28.0.0"/>
     </Directory>
     <Directory location="Nuget/AnylineResources.bundle/module_id/config_files" name="templates">
-      <File SHA256:hash="137bb774d1b81fe6f4d6283fc6f10707083f4b7b36f7073a752ecf77b86a899f" name="LVA-FO-01003.ale" size="20492" version="28.0.0"/>
-      <File SHA256:hash="1321b82c93d5ed8358e8eb617c6e2f9d8bbc69800e267758e06c6adbecc64592" name="HUN-BO-05004_05003_05002_05001.ale" size="11148" version="28.0.0"/>
-      <File SHA256:hash="dfeaf8450da3603422fa765b76f22df50e1dd5d8f87f7a888d1f301621cb1d51" name="EST-BO-03001.ale" size="10252" version="28.0.0"/>
-      <File SHA256:hash="67dbd76d891cd1106d681d2117c463e268e0a320a4d2a9b75afbe3fcafc43c60" name="DNK-FO-03001.ale" size="19576" version="28.0.0"/>
-      <File SHA256:hash="71167afd9810ea59c2a551898e5b50e8fe1aa0c507874bec88aa699b2bf86310" name="AUS-FO-VIC09.ale" size="11104" version="28.0.0"/>
-      <File SHA256:hash="05f2af2505fa6898b0bb8a2bfa24e0c5804fd91f0b80db6fdbe06b6d35569f38" name="CYP-FO-03001.ale" size="24416" version="28.0.0"/>
-      <File SHA256:hash="53c9fe0f1b0cf04b7ddf56fbc2486237d7750bfd1d43b4302a566a90a8f00984" name="USA-FO-FL19.ale" size="23712" version="28.0.0"/>
-      <File SHA256:hash="60b2e3d421ac9d7f20ff79ffbd6b79ebef52c9e10535902acd0fffcc03e52cdb" name="LVA-FO-01002.ale" size="20920" version="28.0.0"/>
-      <File SHA256:hash="8d2c94476e71f3bf032e6d7e46a3832ae918b35c4de8945bd4f668b9609ef0eb" name="SVN-BO-02001.ale" size="8824" version="28.0.0"/>
-      <File SHA256:hash="7f33007ee6bac3eacc8b6e992c1c64b9dc5627f3e8f4ee2e60a19090edd29828" name="USA-FO-IA19.ale" size="18488" version="28.0.0"/>
-      <File SHA256:hash="bf2cd49e75cada3352bf08151595d9f7a19aa3c21a339cd1e8b4964e3a6b0d36" name="USA-FO-MD19.ale" size="16760" version="28.0.0"/>
-      <File SHA256:hash="0d1117e07cea5aab0cc5c385481f953304bbe8ac8ac8d82ff91920b07bcceaa9" name="LUX-BO-02005.ale" size="15008" version="28.0.0"/>
-      <File SHA256:hash="a9bb8e5037cf4ee8f24716a84dc89b7908305c0e16eb318d959d9c1f652e0e19" name="USA-FO-WY19.ale" size="20512" version="28.0.0"/>
-      <File SHA256:hash="9a5d720ea4cc5e9141a6fc075acaf58701a12088ea51273ef96394599ec4cd4f" name="DEU-FO-02007.ale" size="18488" version="28.0.0"/>
-      <File SHA256:hash="4a1e4c907a5cf975c83328733931155e9bac66621097f32aa27c3cc6397cea72" name="USA-FO-IA19_v2.ale" size="18488" version="28.0.0"/>
-      <File SHA256:hash="47d8599b0a11702dbfc64975889f51d31f58f3662659ff48c9a4ade559aa272d" name="SWE-FO-05001_04001.ale" size="15584" version="28.0.0"/>
-      <File SHA256:hash="aaf8327b7d59090e0aaa79b19e66f581ee8b5ecb4264a4bc90a7380bd3868ed3" name="USA-FO-MI19_v2.ale" size="20704" version="28.0.0"/>
-      <File SHA256:hash="7dc35ad5e23bc361fb71a16c87b04188b68782c3e29a248f839f8062394358c7" name="LUX-BO-02004.ale" size="17976" version="28.0.0"/>
-      <File SHA256:hash="ca94660f1bfd3b732c34afd5d3699e0ccee4cefd9126555659a647c9689059d0" name="USA-FO-VT19.ale" size="19704" version="28.0.0"/>
-      <File SHA256:hash="704f62c6e4969c712aa0e260eaf49147e097e8b802eff03187eb6f2961d2ebfc" name="AUS-FO-QLD19.ale" size="15800" version="28.0.0"/>
-      <File SHA256:hash="6969ebcb8d55f30b576c1f26afc0789781ceec0c14a8f03620e6eacfb2e37a5b" name="LVA-BO-02001.ale" size="12256" version="28.0.0"/>
-      <File SHA256:hash="6c6c3ee9545bab6675811a85fec74210e60c0c9f8c0d8af6a712e2d6b60957d3" name="USA-FO-TN19_v2.ale" size="20960" version="28.0.0"/>
-      <File SHA256:hash="40340089abfc2272e215c5d88a87b603afe075a198fd11cea185f978a1af0bcb" name="LUX-FO-01010.ale" size="19532" version="28.0.0"/>
-      <File SHA256:hash="6255870e908fb9cd1e432850d39dc095cdf537aa7390e78c7a91f21add27acb5" name="ISL-FO-06001.ale" size="19040" version="28.0.0"/>
-      <File SHA256:hash="cc29bf04b9fe581c62b0d79f2ec14148eaa3b59474023250ad6f4b762607e94a" name="SWE-BO-03001.ale" size="16652" version="28.0.0"/>
-      <File SHA256:hash="8c579f675540112818884e421ea4bca320bc016f9abc9daebd29b79d82a6e473" name="USA-FO-NV19.ale" size="19192" version="28.0.0"/>
-      <File SHA256:hash="f163faa635758916bbffa58ae38085dcf4e4a613fe9a9351edec7cdd3307d1e0" name="FRA-FO-07001_06001.ale" size="18976" version="28.0.0"/>
-      <File SHA256:hash="8c39170c7ecf4f91859c625fd2f5cee6d6f7ed481945af4495eb0f3536490a9b" name="USA-FO-NM19.ale" size="16632" version="28.0.0"/>
-      <File SHA256:hash="a56cb092a28ec4c4558976c6fd2fe4cd7355e816934bd5eb3eb85767691415a1" name="AUS-FO-ACT11.ale" size="9996" version="28.0.0"/>
-      <File SHA256:hash="651e9281f76210ffbe38ae58f51c080cf4ef3edd87e631e3e89a3a48d0389975" name="EST-FO-02004.ale" size="20640" version="28.0.0"/>
-      <File SHA256:hash="4390e4f15200483330ed4a853dc8119c2c555315dd3f04cbc5e93b810d231b7d" name="PRT-BO-03004_03003_03002_03001.ale" size="10656" version="28.0.0"/>
-      <File SHA256:hash="4139f936254c084af8318e7711a0d30f8792cf2fe5572720740e93b9ced0de1a" name="HUN-FO-02001.ale" size="19020" version="28.0.0"/>
-      <File SHA256:hash="9f5a0b92ecc23bdd4d9607e28e24a468645b6a8c543826fc0d3c4c89f60d5155" name="CHE-BO-01003_01002_01001.ale" size="6880" version="28.0.0"/>
-      <File SHA256:hash="036c240fb4898382a465bca61da5e9d99f6026aeb44f15bf8af68ad49c0d17e4" name="MEX-BO-G.ale" size="14284" version="28.0.0"/>
-      <File SHA256:hash="9e66ae760daccaf37a783973a626d5c09dc9d8c28c97e24b3cee7275394faa6b" name="USA-FO-NJ19.ale" size="18616" version="28.0.0"/>
-      <File SHA256:hash="88d628bfbde2c1c32ba857486ee4d32d0b0d06c7114ae5a27cee025ff7c39ba5" name="USA-FO-TN19.ale" size="20960" version="28.0.0"/>
-      <File SHA256:hash="4bd431e2ec803563c9137c702e6893f6cdc8a826455c5b0075a368ac858a6225" name="USA-FO-PA19_v2.ale" size="21304" version="28.0.0"/>
-      <File SHA256:hash="fc3bcdb8c94f0aeb4e130b8d097e9243aade419625f2c6c202a523dcbafbb5d3" name="PRT-FO-06001.ale" size="22220" version="28.0.0"/>
-      <File SHA256:hash="f4883120a6c149f589c7b99cb81736181b74afcd01c543d80ac620fe5890961e" name="AUS-FO-TAS15.ale" size="10528" version="28.0.0"/>
-      <File SHA256:hash="1e17c83df94d1fcceb6ee52acd8c0182666f343ae23e056a621c6bf8ae6eea75" name="NLD-BO-05001_04001.ale" size="10976" version="28.0.0"/>
-      <File SHA256:hash="65f3d846350d101e0fa379c423a1752b49d8606f69e36f2ce1212c0b0e4be2dd" name="USA-FO-CT19_v2.ale" size="19360" version="28.0.0"/>
-      <File SHA256:hash="b662c5891d3896e6987f4fb6de036d88d2317996da0479866960905cf43c3e6f" name="AUT-BO-02003_02002_02001.ale" size="11340" version="28.0.0"/>
-      <File SHA256:hash="7efacca481883a8a724c7eb003d4ca36da088a4458c791c884adc3323117e945" name="POL-BO-04001.ale" size="12384" version="28.0.0"/>
-      <File SHA256:hash="a2d679d6a71c4480b7385a119e62ba9f72d6c318e7d33b5cb9cb7d95d6566864" name="FRA-BO-02002_02001.ale" size="12280" version="28.0.0"/>
-      <File SHA256:hash="7ee038decba56ab99de270a83188f5f7810031060847ae27944f2a4c16393a91" name="BEL-FO-05001_04003_04002_04001_03001.ale" size="12664" version="28.0.0"/>
-      <File SHA256:hash="540381c9f79cc30b839f073cf92733a70837fc15d2900eeccf911f9e1de27894" name="SWE-FO-06001.ale" size="19896" version="28.0.0"/>
-      <File SHA256:hash="e274e1777e0d8201ecba41e88b271a9080e4a0ede94288ca910556ef3d27e8e2" name="ROU-BO-03001_02002_02001_01002.ale" size="15992" version="28.0.0"/>
-      <File SHA256:hash="cba0026c0b191bd5e575e25d86175c33d8bb270ebfbdc2f4120568e850e0c869" name="BEL-FO-02003_02002_02001.ale" size="14988" version="28.0.0"/>
-      <File SHA256:hash="f848e6303cc027f46d57c381b28d8335bc31d12dc27debc92264614ea995b11c" name="BGR-BO-02001.ale" size="17632" version="28.0.0"/>
-      <File SHA256:hash="c2012ba770111c090465963bf5f9f6bd5b49279fbdd0d3e1a6ac6e9116e8bdc1" name="USA-FO-CA19.ale" size="24972" version="28.0.0"/>
-      <File SHA256:hash="60f9c9fd6fa81598f38031eac3208840cfebc7369ed4b9b9f14d3871768f04d6" name="USA-FO-HI19.ale" size="20620" version="28.0.0"/>
-      <File SHA256:hash="c15d69b2c228d09088371a364e70c01d62e55fec6ef23e5ebbb6d017bef6e44b" name="LTU-FO-02004_02003.ale" size="19104" version="28.0.0"/>
-      <File SHA256:hash="59e9c14463ab342012bf8ee736add52438d5273353de771c87ce0a29a700b978" name="DEU-FO-02006_02003_02002_02001.ale" size="14712" version="28.0.0"/>
-      <File SHA256:hash="081f784fce36ccf45df25719c1db825fe90a3f5e0e7a0e0d94e4378f8d95b6d3" name="NOR-FO-06001.ale" size="20748" version="28.0.0"/>
-      <File SHA256:hash="bc0afe85a094f7d8a6c8b6b8ca25931e8e5328a89152066ab6668aee236123d3" name="CYP-BO-04001.ale" size="15308" version="28.0.0"/>
-      <File SHA256:hash="d566cf3486dbf14e1fb10b6d9f27b0862298d5a2017084a1767549509847f984" name="USA-FO-WA19.ale" size="19360" version="28.0.0"/>
-      <File SHA256:hash="ba954ad283507672044263b7274a77cf82d0f8a82306133102dbad6c57a5c495" name="USA-FO-ME19.ale" size="19276" version="28.0.0"/>
-      <File SHA256:hash="29adc9ea12b20bd60fea1a376bdd0ac5a5b342ee19a3ead7857556196c3d104c" name="USA-FO-SD19.ale" size="19168" version="28.0.0"/>
-      <File SHA256:hash="b3e8f71387d841798b8dc152dac58bba2b75792665846204d6c05b5f13bfdea2" name="LTU-BO-02002_02001.ale" size="12428" version="28.0.0"/>
-      <File SHA256:hash="1aca75159acb06105c3835d9c760ddd39d7ce1d2700a62d8f57422edff6e7532" name="MEX-BO-E.ale" size="17952" version="28.0.0"/>
-      <File SHA256:hash="e7b20828ec4ad7397abcdafcf63794a036ad65c4c71ef7d437fd35252d587159" name="USA-FO-NH19.ale" size="19384" version="28.0.0"/>
-      <File SHA256:hash="2728be17ea03a4408f1d0ffd7b8a3c551ed4a79901abde81bafd8fa20b3903d7" name="FIN-BO-09001.ale" size="14496" version="28.0.0"/>
-      <File SHA256:hash="138411dd63acb793916221da961629f394105ba9c9f82417aa2fb6eed2defe2e" name="USA-FO-MA19.ale" size="16460" version="28.0.0"/>
-      <File SHA256:hash="899e0d93fc102d64ebe22cf9a88be807560d749c6b7fb629fd1f8faa37e74259" name="USA-FO-ID19.ale" size="20960" version="28.0.0"/>
-      <File SHA256:hash="8d8855e7561b009375c7ff33fd004630445b3adbd6e9e1d39d7e5f6a2e9efab6" name="ITA-FO-06001.ale" size="18252" version="28.0.0"/>
-      <File SHA256:hash="70182508143b63e6b5040479072187d7abb10d52a680cedf2c231874594c6f9a" name="NLD-FO-05001.ale" size="13048" version="28.0.0"/>
-      <File SHA256:hash="802e41287ab2fcbace20f2d7899371f6b8a73b79974192b3e75ba97a8dd2e612" name="USA-FO-AZ19.ale" size="27680" version="28.0.0"/>
-      <File SHA256:hash="7726f7a609a749a3b6afeba69135410953a7dd69d41381a1146c92a9453a7188" name="USA-FO-RI19.ale" size="22112" version="28.0.0"/>
-      <File SHA256:hash="3a7b1369bd8baa244b44e28cc09c95d86772765416d964e8e6d591458e88f755" name="MLT-BO-03001.ale" size="10764" version="28.0.0"/>
-      <File SHA256:hash="99d9719d0b436e44063aa62fd054369922757d5532d6ca2f06dfefb39595816b" name="USA-FO-RI19_v2.ale" size="22520" version="28.0.0"/>
-      <File SHA256:hash="d6c11c175cd091b15af7af8162def9f3e934e2d08a2a5b8375c30a7f36aa52c8" name="HRV-FO-02001.ale" size="19552" version="28.0.0"/>
-      <File SHA256:hash="25ddcd7d7a2519bb0e8894f15edeeb202d441e684c3de9e5c1908582ad0727ba" name="FIN-FO-04001.ale" size="20088" version="28.0.0"/>
-      <File SHA256:hash="ee00f3a320fcb245c222707cd0d035ecb69fe1013214e277bbce60b937dcb291" name="USA-FO-KY19.ale" size="17760" version="28.0.0"/>
-      <File SHA256:hash="36b386e36c09dfb42544ff5a083801ca5d4442a2f9be51d9a7b93a4281a55c87" name="LTU-FO-04001.ale" size="19936" version="28.0.0"/>
-      <File SHA256:hash="7a62ad2e2d6904c31cebc51318f6e8c2b817127592112816a319948f3e010e6e" name="AUS-FO-WAXX.ale" size="10764" version="28.0.0"/>
-      <File SHA256:hash="321a575e211e5891adeda57489d609f82bf29bfe7f5c11604701cbf9bfe77fa0" name="USA-FO-MO19_v2.ale" size="17376" version="28.0.0"/>
-      <File SHA256:hash="467566c99800c8ea56c3df05804785d47e4f6062fd6ec8b821649f38e6aac169" name="MEX-BO-C.ale" size="18508" version="28.0.0"/>
-      <File SHA256:hash="148ca0b6727435f4e8632007b846ed85d839b55d3f0c9783573356f231fea648" name="USA-FO-MT19.ale" size="18744" version="28.0.0"/>
-      <File SHA256:hash="aa433f6a8b8553b405437bf643d868286a5b7651d7639a3a55c5ba7085242da7" name="USA-FO-MO19.ale" size="17376" version="28.0.0"/>
-      <File SHA256:hash="c1073364dca5fb2b7ba0ad09a80439f3e5462c18676d7dc444aef254f5875f24" name="USA-FO-NY19.ale" size="15200" version="28.0.0"/>
-      <File SHA256:hash="afb10399d636c27202f7e8930f54a26a49fb6672b5bdfa1ef9392d680106416c" name="ESP-FO-04002.ale" size="14200" version="28.0.0"/>
-      <File SHA256:hash="0acb31d3b805c8c679270dd0d6123c5242edb12be08251d16970160d6f40c82f" name="USA-FO-UT19.ale" size="20384" version="28.0.0"/>
-      <File SHA256:hash="b0186b941f7f91b25617f130582833774613c9f9dd205cb348532becf53ebc87" name="USA-FO-UT19_v2.ale" size="20384" version="28.0.0"/>
-      <File SHA256:hash="a95a0d9b025aa9059934165d4f47aa6804df2303f913eb3005e9ec512e4e2c02" name="USA-FO-OK19.ale" size="17740" version="28.0.0"/>
-      <File SHA256:hash="461054fd301c8578f488eb660a6496779bf7bc0a48fb9fa7756fc52076002f2d" name="LVA-BO-01001.ale" size="12192" version="28.0.0"/>
-      <File SHA256:hash="ddcf0afa7b8ccce95d6cbfb8e07e61d518cecdb776a2f786a6245223eb63acae" name="USA-FO-DC19.ale" size="20940" version="28.0.0"/>
-      <File SHA256:hash="b72f7b7caaccaad8163fdcc90b64ff681d6236f6a508fb5028efe334ae36d8c7" name="USA-FO-OR19.ale" size="19192" version="28.0.0"/>
-      <File SHA256:hash="0b3a56803da0a03e0cecedbe9f73e71728436bcda4e7c9c8c9bae8e872a721d3" name="ESP-BO-05001.ale" size="13388" version="28.0.0"/>
-      <File SHA256:hash="98a4850ea9320f008505a6d752c5188ba1754059588c294725ec4ceaa24c75b1" name="BEL-BO-09003_09002_09001.ale" size="15180" version="28.0.0"/>
-      <File SHA256:hash="1d013951b3fcb606652e5afef0b3e7beb263a7d71b261b54d655b69e6fdc0ef9" name="GRC-FO-03002.ale" size="21856" version="28.0.0"/>
-      <File SHA256:hash="7e157f5a6280e3e3f17ef6eef8236a47318aba240bf4c91b23bf37f54d7c784a" name="USA-FO-PA19.ale" size="21304" version="28.0.0"/>
-      <File SHA256:hash="5ca3a8b8c611b2bc0f51772a375d32a0fce0e037ce31b1e9222f40b6c7541d2b" name="USA-FO-WI19.ale" size="25464" version="28.0.0"/>
-      <File SHA256:hash="fa9b0bc3e8e082bf45c2826cc1a30da3f987e1d8c76f8a22f5e56b9dd6e1a515" name="USA-FO-AR19.ale" size="17400" version="28.0.0"/>
-      <File SHA256:hash="e402106b8a84c4068e1d7831074876e71e116a043f18c0c39c06d0649d4411f3" name="HUN-FO-04001_03001.ale" size="17696" version="28.0.0"/>
-      <File SHA256:hash="525d9d09e2233688cfc9416ccb61b20fe0181bcbfa771d164f99b5a84c5288cf" name="USA-FO-ND19.ale" size="19020" version="28.0.0"/>
-      <File SHA256:hash="3f1307919fec80903bb55068e9a1653873c03d1315eea982ae4a3a267311df81" name="DEU-BO-02001.ale" size="13560" version="28.0.0"/>
-      <File SHA256:hash="9f414f6601f1f4b37d7d7c8301fe79678c72e9ad36203c67ed1db45e5ade6dbe" name="POL-BO-03001_02003_02002.ale" size="10400" version="28.0.0"/>
-      <File SHA256:hash="dc5c7c68138df5053bb08747010f06778938a46f3c296572db035fb833085de9" name="USA-FO-MI19.ale" size="20384" version="28.0.0"/>
-      <File SHA256:hash="8ab2d9b1d97e6ddf8f76d4faa2626affe9db89893270d6f7a8059d1bcbe2f864" name="USA-FO-IL19.ale" size="26912" version="28.0.0"/>
-      <File SHA256:hash="0696f21eed5f397e0e39a9ba0b6c58c78f86c7eff89b5c9a7c33f825027269bd" name="USA-FO-WV19.ale" size="19488" version="28.0.0"/>
-      <File SHA256:hash="bc7279d82b83d16bcec8c868e9e9516d127566f0fad9753035a0d257193d1f76" name="USA-FO-DE19.ale" size="18892" version="28.0.0"/>
-      <File SHA256:hash="7288bea50b2b9ef1c09ee0d614b40d518d1f4add2059a1d39a8871403c2fc94b" name="USA-FO-KS19.ale" size="20064" version="28.0.0"/>
-      <File SHA256:hash="c6c9e84b7418481063949554aac1c495d322c1b8b94fc3af0d9a3da7d169a1ff" name="AUS-FO-SA13.ale" size="9804" version="28.0.0"/>
-      <File SHA256:hash="ce58c5504dc253be1c39e4338eff1807423a80a52931a74c1d3dca8ea6d72fb1" name="GBR-FO-09002_09001_08002_08001.ale" size="16800" version="28.0.0"/>
-      <File SHA256:hash="2acdae3536aaadaffd4a3c9c9d8c7610bd76e7a1568d371c46918bca4cb23e24" name="USA-FO-CT19.ale" size="19148" version="28.0.0"/>
-      <File SHA256:hash="f9c180946acfc3fd9c10c3b73e151da8976c06173ff3750379abf426036da6f9" name="HRV-BO-03002_03001.ale" size="11960" version="28.0.0"/>
-      <File SHA256:hash="fcf2384a3618f209cf63b53e96ad09ecd6312fab5a68657b65c5a90156f343ae" name="AUS-FO-NSW12.ale" size="10656" version="28.0.0"/>
-      <File SHA256:hash="3717ddd834f2d5a3d33135411e9939b80b3aba7bc3b212917f236f54c03b7767" name="USA-FO-CO19.ale" size="21472" version="28.0.0"/>
-      <File SHA256:hash="f924734402273473a2713223d4e8b203c1790df2462046be6cba1dbcb75bc71c" name="GBR-FO-07001.ale" size="15928" version="28.0.0"/>
-      <File SHA256:hash="61cbae532bc94e24c06fcf6bf2f0c22b2206f5940381d543dfc7497ae3373204" name="BEL-BO-10001.ale" size="14604" version="28.0.0"/>
-      <File SHA256:hash="5e6fe724b637a4ab0ebd608f4ae19544c69f5221833507a71501b6c11cece926" name="USA-FO-IN19.ale" size="20748" version="28.0.0"/>
-      <File SHA256:hash="14b6855645804f1a8af3db1339a0a969c5d98864d30043452ea6472f65f778ae" name="AUS-FO-NT06.ale" size="12940" version="28.0.0"/>
-      <File SHA256:hash="4c0f05d0c2f164172c2c5e5376cf5fea18189c96ea358a959f7d607f1b910c32" name="USA-FO-AK19.ale" size="20408" version="28.0.0"/>
-      <File SHA256:hash="9982f1df983fa481c68e3f7b4e8608bf1a6245c1fc73b58ff81bdff68a8799e7" name="USA-FO-VA19.ale" size="18272" version="28.0.0"/>
-      <File SHA256:hash="ace7d63389341a7020c7c21c15389a33723c86d2c323508f2cff54c7a8510fcd" name="NOR-FO-07001.ale" size="15008" version="28.0.0"/>
-      <File SHA256:hash="57c1b90aa0f32bbc8a8aa5858eb343dd58d0f4d689be73272103746092849c1e" name="BGR-FO-02001.ale" size="27040" version="28.0.0"/>
-      <File SHA256:hash="c7bdfaf0aef2e70299d332670824ae2e5326bbda60468b7bc69e9d6bbe931423" name="SVK-FO-04001_03001.ale" size="18936" version="28.0.0"/>
-      <File SHA256:hash="179832780d4c96a922d0dfdbf34a56a5336e0763a08af60c40e9909a94beae16" name="SVN-FO-04001.ale" size="16076" version="28.0.0"/>
-      <File SHA256:hash="d43682768a8109bc82bb9eb2328a92b294971bf68e08aac1d3f2b59de3e1922d" name="USA-FO-OH19.ale" size="15160" version="28.0.0"/>
-      <File SHA256:hash="71979d0dd5e71bb3a7f317b6fe3175c9289a763714b522a20fee8bd5a732abe6" name="DNK-FO-04001.ale" size="19404" version="28.0.0"/>
-      <File SHA256:hash="cf8e0108280039095caf54b9ac7d24ac5f035a2667996a422745f47cac4b5914" name="CZE-BO-04002_04001.ale" size="14688" version="28.0.0"/>
-      <File SHA256:hash="a543c23c4061a8f966d5c38b3c5b02a05bc2a842044a75a5fefe089b1f342705" name="NLD-FO-06001.ale" size="14072" version="28.0.0"/>
-      <File SHA256:hash="d80dc4a19046a66ddfdea402690bf2e1bff8652a26edc49b4765d73cdf246c63" name="ESP-BO-03001.ale" size="10316" version="28.0.0"/>
-      <File SHA256:hash="b5bc5594e92855918b17db834fffd4d72d6ea1e1c579b97c26dd490cb4508f24" name="FIN-BO-06001.ale" size="16460" version="28.0.0"/>
-      <File SHA256:hash="675e30172189a52ba6817d6debd5ea3b000843ca55c2da414759bb2445012040" name="ITA-FO-05001.ale" size="19852" version="28.0.0"/>
-      <File SHA256:hash="b2050afb8736ed005e0893994fc0604ed594e678e66188e262c59994f6e920ce" name="USA-FO-AL19.ale" size="22604" version="28.0.0"/>
-      <File SHA256:hash="0f712ecb8ac7cb159c52219929aa27de496ed9a7c9085a2ab6688e86fcb15263" name="SVK-BO-05002_05001_04001_03001_02001.ale" size="11104" version="28.0.0"/>
-      <File SHA256:hash="c89ecfdb37e06d9e2a0345faf8947d7147871744361c50731f45d2a01dce793e" name="USA-FO-NC19.ale" size="22092" version="28.0.0"/>
-      <File SHA256:hash="72704db9ed7fea2747084eea38a85509e9152c61f65c9241682d0e84a4c9f4be" name="BGR-FO-02002.ale" size="29432" version="28.0.0"/>
-      <File SHA256:hash="6cf44bd5c6d17e0ec2d196803e9446f56371f174dc35cafea4ec0b9a8a5628cb" name="USA-FO-MN19.ale" size="20128" version="28.0.0"/>
-      <File SHA256:hash="be9df7156a6e460f898b11ea706a98f43a4baf16f3b518429af56be2eae3434c" name="LTU-FO-03002_03001.ale" size="18784" version="28.0.0"/>
-      <File SHA256:hash="d2fbfec90f33f2b7a90aa8ea23dd5de60d6a4e039747232714e180df739ab256" name="SWE-FO-07001.ale" size="20940" version="28.0.0"/>
-      <File SHA256:hash="1db730414ab299738a314148f53e58f2c7270c3003f371984f5eae9eb4c8f609" name="NOR-FO-05002_05001.ale" size="19640" version="28.0.0"/>
-      <File SHA256:hash="5005547a3fd5c9fdd4a280be616a614433c315f8aabf62234ea8a6fb510a4a56" name="NZL-FO-14.ale" size="11916" version="28.0.0"/>
-      <File SHA256:hash="d8ea75e873c1625c3a6efd44b5f512c3adf2cf0dc2122a4bbfd110ee063951cc" name="CZE-FO-02003_02002_02001.ale" size="20556" version="28.0.0"/>
-      <File SHA256:hash="8da456c4bb9608a5fa9de300e8b1e9c94019951804b50b4083ef7a65290749c5" name="POL-FO-04001.ale" size="22028" version="28.0.0"/>
-      <File SHA256:hash="389afda5f7a0e646cbd728166c5b08a526f7ab9300a9c27d8e28bc21b652a7de" name="AUT-FO-04001.ale" size="14584" version="28.0.0"/>
-      <File SHA256:hash="aa238e01ec4daec0f2c4cdfeb8acc24bb7f1a3f113f6729a9c2a8e3a189cb52f" name="ROU-FO-06001_05001.ale" size="16032" version="28.0.0"/>
-      <File SHA256:hash="6a764867258184e7461103512454ff4a28887c44a5f3e35f70796a393aa85423" name="GBR-BO-02001_01001.ale" size="13152" version="28.0.0"/>
-      <File SHA256:hash="8cb55af935aa676eee4908ca2c9f327518ce3a1b6ac4a943e3e75f981204a5a5" name="USA-FO-NV19_v2.ale" size="19192" version="28.0.0"/>
-      <File SHA256:hash="17f18273ba854e937e178e69a44041c28e750d72b0ed1bc34f19a03987fcfd38" name="USA-FO-TX19.ale" size="17720" version="28.0.0"/>
-      <File SHA256:hash="2ebf93d49694d664f41e86390d649cd7aee4d5055030384070800f1f6adcc205" name="CHE-FO-02001.ale" size="17912" version="28.0.0"/>
-      <File SHA256:hash="e04f570eb0a7aeded8bed4f9174376815e8f9f77dd0ac6d98976d6efbac86016" name="USA-FO-MS19.ale" size="17208" version="28.0.0"/>
-      <File SHA256:hash="dacf470d0fabe73e4d7f53c34825289b679365ee99adbd8d6a5e70d407e20d23" name="ITA-BO-04004.ale" size="17464" version="28.0.0"/>
-      <File SHA256:hash="7ecb79bf1f01fd0f343719b4e0679284f89dd11d327344c278d2ef5c007984b0" name="USA-FO-NE19.ale" size="19916" version="28.0.0"/>
-      <File SHA256:hash="0395e27ae29385371a279d77d684d3327430ad0a9d254607933023e4830d06fc" name="AUT-FO-05002_05001.ale" size="14732" version="28.0.0"/>
-      <File SHA256:hash="3603d66ef15581d1fd5ab26c87f67a47768b6dc95a67dae8546fe2467baa59b9" name="USA-FO-FL19_v2.ale" size="18592" version="28.0.0"/>
-      <File SHA256:hash="319f176a5da0e781f23260889d332b5f9eb500c7ea717fafcdcb3c0131cd179a" name="FIN-FO-05001.ale" size="20064" version="28.0.0"/>
-      <File SHA256:hash="990fa537a71590180d34c8e8b7a13328dbb6ed5f5ffdb3dbe44027175b81a27c" name="MLT-FO-03001.ale" size="19064" version="28.0.0"/>
-      <File SHA256:hash="deb47dd254790f5f6e681c1ad1de8371b147190fb5a4ce9d0149c7a22277edbe" name="USA-FO-LA19.ale" size="19212" version="28.0.0"/>
-      <File SHA256:hash="50d7a96c304a614834f308c51aa2479f8c606f2265be716b7568af50f9ad1846" name="NLD-FO-04001.ale" size="15032" version="28.0.0"/>
-      <File SHA256:hash="940368761c39bbebb894eb985f5d957c34d4222b9618303e37d486ee94c851ae" name="IRL-FO-04001.ale" size="23928" version="28.0.0"/>
+      <File SHA256:hash="9274da9bd0c4e1976a1319f3047c5ae9308516aef4a99619a0ade1e4028fb7b4" name="LVA-FO-01003.ale" size="19084" version="28.0.0"/>
+      <File SHA256:hash="8a7d4a5a41e266ea9148c1c76da028d46b951e69012249457311b88bd231a7ee" name="CAN-FO-QC19.ale" size="18208" version="28.0.0"/>
+      <File SHA256:hash="c2e3cb4210f394684cc0f4ef6e7424e0e32e11ed840cac6f4198fa2c4a1a4420" name="HUN-BO-05004_05003_05002_05001.ale" size="12792" version="28.0.0"/>
+      <File SHA256:hash="e015f49545d64913648ccf455fc1999b97a7b58aa10651706430332889a94789" name="EST-BO-03001.ale" size="11552" version="28.0.0"/>
+      <File SHA256:hash="63739b8fae362033966de814228e10d115629a1cf7bd23b7ce067f2eec5e09c9" name="DNK-FO-03001.ale" size="18296" version="28.0.0"/>
+      <File SHA256:hash="5a977568998862caf741c657f420c26cbe3a9c0c4dd1d82c551e9bdcf68bb6eb" name="AUS-FO-VIC09.ale" size="12192" version="28.0.0"/>
+      <File SHA256:hash="d136704ebd7f574f6b72e2ededc70ef42b4ddd72b4f1406f0f6c2046caad8b63" name="CYP-FO-03001.ale" size="23136" version="28.0.0"/>
+      <File SHA256:hash="f83e7d13e7d614465bbee8a27d71c38a5ddcaa67b32b51d11373acae6aa1e268" name="USA-FO-FL19.ale" size="21900" version="28.0.0"/>
+      <File SHA256:hash="d9e90ae5614ce504331b198933bec791f7dcc442de20c077d63e48ddceeb4406" name="LVA-FO-01002.ale" size="19704" version="28.0.0"/>
+      <File SHA256:hash="73bc577ebb3e75501c7e5be898cfbb275c7404417a122a9bbd2017edac9496df" name="SVN-BO-02001.ale" size="9784" version="28.0.0"/>
+      <File SHA256:hash="2867e93ba609cf7315bb780e4277b5b063f65a632deb9fdbf4594ed958e3dc96" name="USA-FO-IA19.ale" size="23840" version="28.0.0"/>
+      <File SHA256:hash="0d0d3d8c3aa00907d9ffd67957f8856c6a9e77268d633317f3024e73a758bde6" name="USA-FO-MD19.ale" size="21624" version="28.0.0"/>
+      <File SHA256:hash="ba9d1484ec68f5b95b6111b786dcfb30389442220f6a84377d57ba474162e4f6" name="USA-FO-GA20.ale" size="21816" version="28.0.0"/>
+      <File SHA256:hash="7fa6b8e4895a404f3200b464e14c08095b8567df519b7d003bda8e6ef1d1b400" name="LUX-BO-02005.ale" size="17868" version="28.0.0"/>
+      <File SHA256:hash="fb600bdde24e8aff3b22a394b3d3ab855d67006b27bdd7d36f153bb622a86653" name="USA-FO-WY19.ale" size="26592" version="28.0.0"/>
+      <File SHA256:hash="0638666dc20e6f1569103e4764f3d0512992fed73b2b321a39f70916c346ba89" name="DEU-FO-02007.ale" size="17248" version="28.0.0"/>
+      <File SHA256:hash="3153073a6f65c3b08147662a8fefa311d51feff73fa9ff388517a004e1ae41f4" name="USA-FO-IA19_v2.ale" size="23840" version="28.0.0"/>
+      <File SHA256:hash="5783d2df1ca2b63eb4404e609b8f0240a1a7dddbc9aae615db05892f62fdd2f4" name="SWE-FO-05001_04001.ale" size="19192" version="28.0.0"/>
+      <File SHA256:hash="5b7da3575ce343376201c5aa1f6bb709d36653243c2d8421b938e5c148703cd1" name="USA-FO-MI19_v2.ale" size="24012" version="28.0.0"/>
+      <File SHA256:hash="f2463777a5c06f2da236d2a8a7c88cba51a14b66bc7f07bdd9ac2a66ee042c71" name="LUX-BO-02004.ale" size="21664" version="28.0.0"/>
+      <File SHA256:hash="feac5f1d4f62f57415e5a56df8451a8900ae5102ab427d6affe3c145b86c48bb" name="USA-FO-VT19.ale" size="25484" version="28.0.0"/>
+      <File SHA256:hash="303a2ef4bd5a58dd74a8f0f715f00b6cb3ed102ae74a1f7d24ef874abdf41e26" name="AUS-FO-QLD19.ale" size="17932" version="28.0.0"/>
+      <File SHA256:hash="3a63a43b9f15d94ddff370301c3854fe72bbab2cb8d3476bf8c2abf4f5035cd6" name="LVA-BO-02001.ale" size="14136" version="28.0.0"/>
+      <File SHA256:hash="7577bfa4c4ab1d167e011b65f82a785fcce7c0e28a3583cb2bed9c5f323e365f" name="USA-FO-TN19_v2.ale" size="20832" version="28.0.0"/>
+      <File SHA256:hash="81b8e346b3b2f5425d08e37f8bdaea600469570d7664d1cb2ee9080e1247fb2f" name="LUX-FO-01010.ale" size="18252" version="28.0.0"/>
+      <File SHA256:hash="79ab0e6cc174378b8091742b213d4cf501bf0b0126201e64f472dbafdfdd6be8" name="ISL-FO-06001.ale" size="17760" version="28.0.0"/>
+      <File SHA256:hash="02fb9315d41cdd2b0e19985def42986671fcca9e8b9b6fa0b20f697cc55b866d" name="USA-FO-SC19.ale" size="20108" version="28.0.0"/>
+      <File SHA256:hash="2cd9a0147b484a2c01f3fcb2f5d37345d5530c502320dc4fff0466427ee83808" name="SWE-BO-03001.ale" size="20108" version="28.0.0"/>
+      <File SHA256:hash="59cebb0a987bc25d2fe75d1a64c0c2088c3cebf5602eda230e8a281509ced742" name="USA-FO-NV19.ale" size="24588" version="28.0.0"/>
+      <File SHA256:hash="043da1826cd08c1bdbf6ce5937bd7fca85444d708743191b74df006701c5d2de" name="FRA-FO-07001_06001.ale" size="17656" version="28.0.0"/>
+      <File SHA256:hash="626ad5ee9f4460aac1eb6dd8314ed9ea091df08ec633ec29fd5d3b8a26083ae4" name="CAN-FO-AB19.ale" size="18720" version="28.0.0"/>
+      <File SHA256:hash="fbeb749848a4f0ced8a7a6a8ac0da8d6cc4c2182cc26b2a150cf26bc4015818e" name="USA-FO-NM19.ale" size="21452" version="28.0.0"/>
+      <File SHA256:hash="0e9b37a4c0d36ad2add0734864f6834ddaf460923bacfe7c02b42f7c88001b61" name="CAN-FO-MB19.ale" size="20556" version="28.0.0"/>
+      <File SHA256:hash="0057e77825d4e9488c277e0cc1d4823d1ce20cec71a20984b8b542eb837f4910" name="AUS-FO-ACT11.ale" size="11552" version="28.0.0"/>
+      <File SHA256:hash="1f12225aadbe750f71d68fe77884cedee05a8f79f6a37035f6f0a44b976777b6" name="EST-FO-02004.ale" size="19320" version="28.0.0"/>
+      <File SHA256:hash="8498b89a3f988fa1dbbb5bd5773e28b5cd34f390add984956a6f303ea947914e" name="PRT-BO-03004_03003_03002_03001.ale" size="12088" version="28.0.0"/>
+      <File SHA256:hash="41fa88d7be79ef478c2867456ffcb88fcde8cfdf504fbda860999124d5b176f8" name="HUN-FO-02001.ale" size="17696" version="28.0.0"/>
+      <File SHA256:hash="e5ab8e1334d7215aa65f6864b4e17c014da23e6bbf296ec75c13c89c5e0abb22" name="CHE-BO-01003_01002_01001.ale" size="7352" version="28.0.0"/>
+      <File SHA256:hash="7b5f1f7add73315cd29f1c6a91f18bb75745f704d84b442238b7aa790ed5563e" name="MEX-BO-G.ale" size="19680" version="28.0.0"/>
+      <File SHA256:hash="dbd11581551c7f9b097ab44946748ceebbe18c759f5fdcc8b2d1c95769d55f05" name="CAN-FO-NS19.ale" size="19192" version="28.0.0"/>
+      <File SHA256:hash="215a5106052756ce0bcc8fa411cffea9468766dd0ebc313c23d71353669d3731" name="USA-FO-NJ19.ale" size="21836" version="28.0.0"/>
+      <File SHA256:hash="7568b3e199f5df531281cc109ec7213533fed54b069cb6547c76ec12228e9eed" name="USA-FO-TN19.ale" size="20832" version="28.0.0"/>
+      <File SHA256:hash="1d782fef181505df7a4f8db619238926cbf694d5adb10932e5bc3669f0a021e3" name="USA-FO-PA19_v2.ale" size="24844" version="28.0.0"/>
+      <File SHA256:hash="414771844bcec9845b1024f6e5d32835aaf309fc0aa0636ef8a38d022e6cfe6a" name="PRT-FO-06001.ale" size="20344" version="28.0.0"/>
+      <File SHA256:hash="713861e847bee0caff881996f6500a6f9f00a39a285c722a30b15bab7d105f4f" name="AUS-FO-TAS15.ale" size="11960" version="28.0.0"/>
+      <File SHA256:hash="0e71863d0714e42618f53a5954e1f663e0a1b6c7394fa86fa64c4ac2844b058e" name="NLD-BO-05001_04001.ale" size="12512" version="28.0.0"/>
+      <File SHA256:hash="e3bbb42857070493b53c7da331472a063818748cd83c6df6da375944ce8f2db6" name="USA-FO-CT19_v2.ale" size="22712" version="28.0.0"/>
+      <File SHA256:hash="fbec74b50eb8e79e6f21c44aac4534718201eacb0e1338e35f54b7cd80c02bcf" name="AUT-BO-02003_02002_02001.ale" size="13196" version="28.0.0"/>
+      <File SHA256:hash="bb472df6a4815b1ee52f10ed777e6e7b258983db485c3ad763bcb9a1831ac0a8" name="POL-BO-04001.ale" size="14368" version="28.0.0"/>
+      <File SHA256:hash="2ac9b87caa407f95694195e90597f562cee73f27223c663da33e775a19c32ece" name="FRA-BO-02002_02001.ale" size="14476" version="28.0.0"/>
+      <File SHA256:hash="daf116b63439287af44846594f5a59f52b80b9e7fc978fbda464f45111b806ea" name="BEL-FO-05001_04003_04002_04001_03001.ale" size="14668" version="28.0.0"/>
+      <File SHA256:hash="d28fee41dc6f7033acc005d62faa1e46d605297d1eea9daf4653983112630961" name="SWE-FO-06001.ale" size="18592" version="28.0.0"/>
+      <File SHA256:hash="472e5441a0893c8282084cb3441b95c6395aed7a7d0e41c033e6e895f8b94a1e" name="ROU-BO-03001_02002_02001_01002.ale" size="19020" version="28.0.0"/>
+      <File SHA256:hash="e0ef96ac5787211a7ec00d1b7ae0363099c7ac27eb4d9b3d03226d0a09a6c84a" name="BEL-FO-02003_02002_02001.ale" size="17676" version="28.0.0"/>
+      <File SHA256:hash="e087336da37a21b5bea26d405c7179a54fed606c6169551f9bfd978748170b24" name="BGR-BO-02001.ale" size="21304" version="28.0.0"/>
+      <File SHA256:hash="d50feeac98c7d1bcde83b7d245b0f71f9b137daf59b86d22fd73c254b17dbef0" name="USA-FO-CA19.ale" size="23008" version="28.0.0"/>
+      <File SHA256:hash="965ad118879dc4e9f242eb20aeb2d389b0c4b93f9ddd4f6a5a849ef52dd02848" name="USA-FO-HI19.ale" size="26892" version="28.0.0"/>
+      <File SHA256:hash="001cc183f2143d80b198e45e960fd2078f81bb86ec623e556c71d999a88d2ce8" name="LTU-FO-02004_02003.ale" size="17784" version="28.0.0"/>
+      <File SHA256:hash="773b3648a0c8f20a6ed2a8865bda208dfdaf87cfea1f0b652a0b8ff6072b9ee2" name="DEU-FO-02006_02003_02002_02001.ale" size="17272" version="28.0.0"/>
+      <File SHA256:hash="6c6dcb2a04d43738f01c2b8a194f5e40be337d6d8c9e60abef8791b1d9c0ecb7" name="NOR-FO-06001.ale" size="19360" version="28.0.0"/>
+      <File SHA256:hash="edcfe19e8ad6b3a2ef00ae4d9ce94b06eac9bb330edf586d1d304e5ccc171809" name="CYP-BO-04001.ale" size="18272" version="28.0.0"/>
+      <File SHA256:hash="18eed78d7dff767d96e7e963712e442fafdee7fc66d4ba3b94d1207d56d1fc69" name="USA-FO-WA19.ale" size="24952" version="28.0.0"/>
+      <File SHA256:hash="ddab2b14c823e93142bc5bb2d9c40a0b24f7d6eeb4c3162109bc792d65dfe2ac" name="USA-FO-ME19.ale" size="25036" version="28.0.0"/>
+      <File SHA256:hash="52ce3db4e323d68e13d22319cff09e6ee259dcc890db3be12392e21be36fc747" name="USA-FO-SD19.ale" size="24992" version="28.0.0"/>
+      <File SHA256:hash="7a2299497c465eeb5a1740be0e82026257e34102799a5ab46aef93249f11df65" name="LTU-BO-02002_02001.ale" size="14412" version="28.0.0"/>
+      <File SHA256:hash="9fa6baf8f63862fe9ce591a92eca01d81fdf08e79f6286d9a374c77e1c011abb" name="MEX-BO-E.ale" size="24992" version="28.0.0"/>
+      <File SHA256:hash="66a0c75e352948cb6e501fdfefd204f1ce938db3a9ac9fd04b9a241f1f57f53c" name="USA-FO-NH19.ale" size="25036" version="28.0.0"/>
+      <File SHA256:hash="6f449d24f126389cd9b81bd22a1a360ff26b126172af8b94d98670cf820712e9" name="FIN-BO-09001.ale" size="16352" version="28.0.0"/>
+      <File SHA256:hash="6f67aa5c5ada0c06bcbadc1442399260531c96519d2f75ee3567c7f998ce9f65" name="USA-FO-MA19.ale" size="18616" version="28.0.0"/>
+      <File SHA256:hash="449acde8da3a8a7780c2943888f370400e8c64fa94c13b2b1b65f44e7dac42ea" name="USA-FO-ID19.ale" size="26848" version="28.0.0"/>
+      <File SHA256:hash="2807bf6c8f5443ab881b3d1824bb596613cfa0b5eed04aee7a5dde9748fa1471" name="ITA-HI-01f.ale" size="6860" version="28.0.0"/>
+      <File SHA256:hash="a267b250f05b36c7eccf6b00250d321a6c5fd4473f36f9dfd6c95dd49a0e690e" name="ITA-FO-06001.ale" size="16800" version="28.0.0"/>
+      <File SHA256:hash="0354d47097c437b208bd0b2574741d81b851cdf75969184ca4b698d8b8127b03" name="NLD-FO-05001.ale" size="15136" version="28.0.0"/>
+      <File SHA256:hash="868983618003b386941d2308818185e272de34bc5138121f78553d7f1cf011a5" name="USA-FO-AZ19.ale" size="26016" version="28.0.0"/>
+      <File SHA256:hash="8b2f4878a4b86d74a9b0ffdcda3a9743719fb07e1d13540008ceff673c6240d8" name="USA-FO-RI19.ale" size="25868" version="28.0.0"/>
+      <File SHA256:hash="6d56e9793c3813e2cdca36521ea18eedba2a728f5fccfa550e92050b93bcc2bf" name="MLT-BO-03001.ale" size="12512" version="28.0.0"/>
+      <File SHA256:hash="ba7a1b7c5673791dcc32600afd11981d62f87c4322de030b4041171806e0382e" name="USA-FO-RI19_v2.ale" size="26252" version="28.0.0"/>
+      <File SHA256:hash="22a78bcdb5a85193625f802a2da34897889d34aa2f440197c9fbb5923b25f0ee" name="HRV-FO-02001.ale" size="18272" version="28.0.0"/>
+      <File SHA256:hash="52b1fb995eca909298bc26016fa5980c1cbadf0f5b67017866c49e525f79b668" name="FIN-FO-04001.ale" size="18808" version="28.0.0"/>
+      <File SHA256:hash="88993ff3ade520894b3eef0fbe492a13a382d71e2c4499ff84a0eed77b476902" name="USA-FO-KY19.ale" size="22988" version="28.0.0"/>
+      <File SHA256:hash="43514ddfff3d2281cab08019bac9e07a63442cebe31fb2d04a22c73424dcf0bb" name="LTU-FO-04001.ale" size="18656" version="28.0.0"/>
+      <File SHA256:hash="40a7a70bf401dd81baaabec410e04017e8b651f413a298a69a2ff427819aaf6c" name="AUS-FO-WAXX.ale" size="12108" version="28.0.0"/>
+      <File SHA256:hash="a9a3bea67701afa188ffe82aa94de0229227a16268e349d49dc72fbc5c7c9e32" name="USA-FO-MO19_v2.ale" size="22008" version="28.0.0"/>
+      <File SHA256:hash="3aade8f693397fbb1902309e49144842b7da129d09e599f7f67bbc1647b77d1e" name="MEX-BO-C.ale" size="25696" version="28.0.0"/>
+      <File SHA256:hash="e1d35087e1ddead86dd4745613031d608384f61803416c4b80067e09c01fa419" name="USA-FO-MT19.ale" size="24160" version="28.0.0"/>
+      <File SHA256:hash="6009bbddf732a7116c01ecef64098586575b95fceba9c96e96abe0cf5ad8f815" name="AUT-HI-01f.ale" size="10424" version="28.0.0"/>
+      <File SHA256:hash="86885288d4428ed10883dbb17615dd7b8eab5b2c50ec42ad4d8adf359a5a2048" name="USA-FO-MO19.ale" size="22008" version="28.0.0"/>
+      <File SHA256:hash="7627440e002f9c134c0c43ee00e8a98e7efa9992a08f4cfb410613a3719e4f9a" name="USA-FO-NY19.ale" size="17440" version="28.0.0"/>
+      <File SHA256:hash="e5564a30762f080e07c42b836e019a2a52308cddff78b5b91de273e5a3a15377" name="ESP-FO-04002.ale" size="16652" version="28.0.0"/>
+      <File SHA256:hash="3b1ef0915ebaa67d1fa0c30e638ece0fdedba417e82eafa1d9cfe50bcca3d492" name="USA-FO-UT19.ale" size="26188" version="28.0.0"/>
+      <File SHA256:hash="c47ed5eeed4dd1b5b815c26653591664042b1446bd3ac44acd91cb897974ef95" name="USA-FO-UT19_v2.ale" size="26188" version="28.0.0"/>
+      <File SHA256:hash="ddaad5272a3fb426004470c237919a5f08536606040f01dd6e3dd7354b0339de" name="USA-FO-OK19.ale" size="22752" version="28.0.0"/>
+      <File SHA256:hash="ce11c8b90521d57e1995e9fe302d8e3134402b68d03f79822fc268efc7bb69a5" name="LVA-BO-01001.ale" size="14048" version="28.0.0"/>
+      <File SHA256:hash="a91bb845b760c01cb5c078c55ff64ed7c6ef16270e3452b6a49d345dcb92dc8b" name="USA-FO-DC19.ale" size="26872" version="28.0.0"/>
+      <File SHA256:hash="a0b617307912bf6e2124ac7c3d4ab5e88ca9e5128eaa9a1744866e6d0c97f4b6" name="USA-FO-OR19.ale" size="24780" version="28.0.0"/>
+      <File SHA256:hash="b123a41ede615ae3185ddbe38f86575d9e599fdde308cb49b303c73aabca0ff8" name="DEU-HI-01f.ale" size="10464" version="28.0.0"/>
+      <File SHA256:hash="5501326122dba4024669e80e1e4af9db79d6ccec9264eacb4ba6f7ba07cef1e9" name="ESP-BO-05001.ale" size="15608" version="28.0.0"/>
+      <File SHA256:hash="c15fd11ef084b3e2262fa7ce065f0836a2379ac4f299cc92f1264fda1f37d9ee" name="BEL-BO-09003_09002_09001.ale" size="18060" version="28.0.0"/>
+      <File SHA256:hash="9d01219d2a0731ba2ee60511a4802668e8dad53dc4ed0a67ffe35955a476e790" name="ESP-HI-01f.ale" size="8908" version="28.0.0"/>
+      <File SHA256:hash="a39826700bd22e453bc7f1baf54bf5bdc7ce2af928cfb499bed5860e1077d566" name="GRC-FO-03002.ale" size="20620" version="28.0.0"/>
+      <File SHA256:hash="0b9eaa4bb2175b5c3baddbd04571cdea427d41ecad8d96c9b3950a4ee73ee301" name="CAN-FO-NB19.ale" size="18232" version="28.0.0"/>
+      <File SHA256:hash="5f96679d5f208ebc7fa9714b2dfe643be84a9d8d92cd7459441dc3a6e5f3deca" name="USA-FO-PA19.ale" size="24844" version="28.0.0"/>
+      <File SHA256:hash="56c88e825058a107d926e9530b5d0807aaa6c645e4e6e4dcb24c39be481f017c" name="USA-FO-WI19.ale" size="25464" version="28.0.0"/>
+      <File SHA256:hash="b4067212fed0931cf0693daecd0d20321694f88075931304fa40800a7143053e" name="USA-FO-AR19.ale" size="22476" version="28.0.0"/>
+      <File SHA256:hash="cb75c5fb8394e0f6f36a9144bd0ba921af82939333ac9dd00670fd00793a5cb2" name="HUN-FO-04001_03001.ale" size="16376" version="28.0.0"/>
+      <File SHA256:hash="28c7f4acf954463e3b997a6fa8a063489412565ab93dfb8b90a1d695bbd573eb" name="USA-FO-ND19.ale" size="24416" version="28.0.0"/>
+      <File SHA256:hash="660266d74ecd3ee352bbf6677bb86fcb758bcc8cd6aa42625ddc6e1bf53c75ce" name="DEU-BO-02001.ale" size="10656" version="28.0.0"/>
+      <File SHA256:hash="0947af3baad6477e834133c0f20c525eeeb1c12d856a64621812eb9ed970e2dc" name="POL-BO-03001_02003_02002.ale" size="12024" version="28.0.0"/>
+      <File SHA256:hash="38e4abb97e69934b75df7a3510d93218962449afd11c6f74ccb0e02eeb300f97" name="USA-FO-MI19.ale" size="24012" version="28.0.0"/>
+      <File SHA256:hash="1610ed6fc2f94c1238a821fed3bca2c13c446634b073897782f9605958242e82" name="USA-FO-IL19.ale" size="24992" version="28.0.0"/>
+      <File SHA256:hash="86d9b0d217572025fc491178e7b1931f89f21dd27717617371d28a2c0177e315" name="USA-FO-WV19.ale" size="25208" version="28.0.0"/>
+      <File SHA256:hash="4e32ef2bf8d077204cd00c85ec71ec58695e0db47a0419c1edc93ab013409366" name="USA-FO-DE19.ale" size="24248" version="28.0.0"/>
+      <File SHA256:hash="f6ada65940f24cbc88739b57dfa1eb01cf1fae7cc587b4f28c0837f8bc3455c1" name="USA-FO-KS19.ale" size="25912" version="28.0.0"/>
+      <File SHA256:hash="8d4569e4465370761fc2d398eacf71076e5ac77e3245b5f109c29a3bf2d496d1" name="AUS-FO-SA13.ale" size="10572" version="28.0.0"/>
+      <File SHA256:hash="6e2d988c7e6ab04a6466252b08348dcd2fa9f755e08416fb3f0159b690c03b9b" name="GBR-FO-09002_09001_08002_08001.ale" size="19980" version="28.0.0"/>
+      <File SHA256:hash="d628a8bfa1e1bf55545fc4d1ebf2bccabb2123345a75a59d44b6354646ec7b74" name="FRA-HI-01f.ale" size="6476" version="28.0.0"/>
+      <File SHA256:hash="e29d2ca5f8600cf7bc69aed1118985b2a86b6f7d70fc47f5cc5228c8aa61f6ab" name="USA-FO-CT19.ale" size="22752" version="28.0.0"/>
+      <File SHA256:hash="599ac5c4aa5f975da8e52ad587b8e86c50d43d38088db6d614a069292f8ba5f1" name="HRV-BO-03002_03001.ale" size="13920" version="28.0.0"/>
+      <File SHA256:hash="6603bd9e315496c49a3d4d4c0ab8acf04f9ac73f77c49309a322923517debd19" name="AUS-FO-NSW12.ale" size="11488" version="28.0.0"/>
+      <File SHA256:hash="351635ce195aef368195b8463d569b30e895028bb286a1b221b82b5e0952f40b" name="USA-FO-CO19.ale" size="27384" version="28.0.0"/>
+      <File SHA256:hash="f66edf738ecf727300399da678d672d331ebdb193bd2bcda9212559131bb0ed0" name="GBR-FO-07001.ale" size="18616" version="28.0.0"/>
+      <File SHA256:hash="f0b600f2720f7d4b096a9019ae53800a5bf832e7f73a3536209e0048a0478839" name="BEL-BO-10001.ale" size="17376" version="28.0.0"/>
+      <File SHA256:hash="d3b08b03e2003b1fcf51cd28c965c37fc86a3957d4c4022a438a8d1ff16a6726" name="USA-FO-IN19.ale" size="26508" version="28.0.0"/>
+      <File SHA256:hash="7a2deab7d01a165d2c802096cad9459e42d5f3a4c555f53a3d6b91cf49d1f77c" name="AUS-FO-NT06.ale" size="15052" version="28.0.0"/>
+      <File SHA256:hash="be8e2a6079ac3f45901bef1299961d903466a80db48e7fcf0daec2b634ba4879" name="USA-FO-AK19.ale" size="26444" version="28.0.0"/>
+      <File SHA256:hash="993e48f52bd710314bf28d3b376d334c037ca77ba5cd7c158eb7517a7a635497" name="USA-FO-VA19.ale" size="23800" version="28.0.0"/>
+      <File SHA256:hash="11d3b3ca7693bd40443ff0362e9b8bc595a66fee912138348729fe83cc7e3e37" name="NOR-FO-07001.ale" size="17676" version="28.0.0"/>
+      <File SHA256:hash="d09081fec64236c828d98476645c9ea539c8dcaabd4ad3d12a94dc62b97298bd" name="BGR-FO-02001.ale" size="25720" version="28.0.0"/>
+      <File SHA256:hash="082cabb475f5673c8c2fabe556f7d36a81d38048ee8b0fafa6c24aed38bd8ebf" name="SVK-FO-04001_03001.ale" size="17528" version="28.0.0"/>
+      <File SHA256:hash="77d1f82931b4649925ffe7153703cfce6a08fc39995dad934c1abcf212c64910" name="SVN-FO-04001.ale" size="19040" version="28.0.0"/>
+      <File SHA256:hash="9f0822f1376eb62ef39a692322eebb03a330a7f6125a3fb70c4c3c035b0d4155" name="USA-FO-OH19.ale" size="17548" version="28.0.0"/>
+      <File SHA256:hash="a0935d091c7dcb2720865962d89136ed8959efdefe40b4140590662fc6e05a49" name="DNK-FO-04001.ale" size="18016" version="28.0.0"/>
+      <File SHA256:hash="ee8ba5d1685cb609fe5d2f4ffc0247e522a365d83ee906042799761ab1700951" name="CAN-FO-BC19.ale" size="18252" version="28.0.0"/>
+      <File SHA256:hash="5e8aeef54789ca26b430f15e9f9fe7981a11e5d624ca7bcf81ef198c1bda7ac8" name="CZE-BO-04002_04001.ale" size="17356" version="28.0.0"/>
+      <File SHA256:hash="5f4482b2c36b39cb8692ea00bff21d40c7fe92f9297de91785fea067cc096a30" name="NLD-FO-06001.ale" size="16504" version="28.0.0"/>
+      <File SHA256:hash="e92f92d19563f6e5fee8a582cdbcd9f019ef94bb8811582086b1476d6a3d8726" name="ESP-BO-03001.ale" size="11640" version="28.0.0"/>
+      <File SHA256:hash="0ed052ed6c11327897eec5448a54393c1d41dc7e37395da437b306c8ad4b3962" name="FIN-BO-06001.ale" size="19680" version="28.0.0"/>
+      <File SHA256:hash="f276bbece62cb24e509c1c2eae5009c6eeba765fcbfa8e4888af2bb15e588d09" name="ITA-FO-05001.ale" size="18380" version="28.0.0"/>
+      <File SHA256:hash="b497919f3a2fc0cd23d32f460a44d93512765fa47a51ac1cce0b5e06114eaceb" name="USA-FO-AL19.ale" size="22604" version="28.0.0"/>
+      <File SHA256:hash="00a8ae07574d71c8a6137a7cf5fb8736ea710a37d4fa4ccda9c85099150ddce3" name="GBR-HI-01f.ale" size="8908" version="28.0.0"/>
+      <File SHA256:hash="e903173bd104470536c5d7d56299c750c60d3ab95b5035163225e555002544c1" name="SVK-BO-05002_05001_04001_03001_02001.ale" size="12536" version="28.0.0"/>
+      <File SHA256:hash="cd426ff0d4d56a47b4b7f34f23e1e53698c64075622bee14590c7f0f4d4af9c0" name="USA-FO-NC19.ale" size="26508" version="28.0.0"/>
+      <File SHA256:hash="237a516f2e6ac33e0f48d33f732d03ccf2138f9d5ec013af08ba14dea79258f8" name="BGR-FO-02002.ale" size="28280" version="28.0.0"/>
+      <File SHA256:hash="1276e8dd11945f3c53c170e2df782a110a1c8e58553c9af1045075b53ca3452e" name="USA-FO-MN19.ale" size="26016" version="28.0.0"/>
+      <File SHA256:hash="0b860727603c10a2e5b02d629810dadf099743afedf33657eab00764ee66a9a3" name="LTU-FO-03002_03001.ale" size="17400" version="28.0.0"/>
+      <File SHA256:hash="5ecb7f6621b13b738c8a9fc77f03260d5d041f5e39775cc8be57ac126a7fdc27" name="SWE-FO-07001.ale" size="19660" version="28.0.0"/>
+      <File SHA256:hash="cce20485f7645be39d5d80511d7af1ea59e802a4992a1a0346fae22bea70587a" name="NOR-FO-05002_05001.ale" size="18232" version="28.0.0"/>
+      <File SHA256:hash="f03d882589150f0366a1925ff0a9505a53fb59d89a5717d52fc7e5bd7f035196" name="NZL-FO-14.ale" size="13728" version="28.0.0"/>
+      <File SHA256:hash="9953c315959cfdcd2bdaa7c0fd1fe20077424b8d8bc1c78bced809380cf90990" name="CZE-FO-02003_02002_02001.ale" size="19232" version="28.0.0"/>
+      <File SHA256:hash="1f0cda215574162e25ed7e18c1231b709013d71ec35fabfc2abc07db1b3e43f6" name="POL-FO-04001.ale" size="20684" version="28.0.0"/>
+      <File SHA256:hash="99e8f131bdc05d3e15a1181b6eb1d982f745fe4c7b24af5a1d66e5cad00558a7" name="AUT-FO-04001.ale" size="17164" version="28.0.0"/>
+      <File SHA256:hash="b56587aeea05402d5ddee3a9be841b2e51633d16a34acc2b95b05b04e888ed11" name="ROU-FO-06001_05001.ale" size="17356" version="28.0.0"/>
+      <File SHA256:hash="0134d940320063ee87781793a277b67c267b361e887b27c555de163143037e16" name="GBR-BO-02001_01001.ale" size="15372" version="28.0.0"/>
+      <File SHA256:hash="882243aca984e323a2c86dd2a70941392fcbe05d9404acab903e19ffa5d43334" name="USA-FO-NV19_v2.ale" size="24588" version="28.0.0"/>
+      <File SHA256:hash="0f60d27ffcecab9d7fd02434cbb3da7e175d2ea6b96f518f8c9236702b644eaa" name="USA-FO-TX19.ale" size="20748" version="28.0.0"/>
+      <File SHA256:hash="ea21c57b2725df0365fbb21d314d6f6d609f74602cef0b1abf65c89442cb1c37" name="CHE-FO-02001.ale" size="16568" version="28.0.0"/>
+      <File SHA256:hash="56bb685f125ce8fd282d8807e77dca6d80be928299d177e663fe489a0be4b633" name="USA-FO-MS19.ale" size="22008" version="28.0.0"/>
+      <File SHA256:hash="327cebbb44114fdb83ed7049bd8e1cdfa40aa1b4a63794496fd497c6cb89461c" name="ITA-BO-04004.ale" size="20960" version="28.0.0"/>
+      <File SHA256:hash="6cb63f57ffb644b965cf4755422b6466f11ac5c77787cb7e7eb5f1d5ff446ead" name="CAN-FO-SK19.ale" size="17504" version="28.0.0"/>
+      <File SHA256:hash="790bb4662ca41abd712c5ddb62b1cb8228c0caddd93da81d496177dc597f5d70" name="USA-FO-NE19.ale" size="25720" version="28.0.0"/>
+      <File SHA256:hash="e2bfd64d3a327059573aa0596764c68bc99b738b96db5af5562514511fc9d87f" name="AUT-FO-05002_05001.ale" size="16608" version="28.0.0"/>
+      <File SHA256:hash="4c3053f94a61c07ac74ef00ebcd9613ad1ca4abe1eadb47d84c85a35c5556562" name="USA-FO-FL19_v2.ale" size="21920" version="28.0.0"/>
+      <File SHA256:hash="6245f603cc2180d14293aff6da4553e696ae089529953380027f1ed9270a8ab2" name="FIN-FO-05001.ale" size="18784" version="28.0.0"/>
+      <File SHA256:hash="16b7c12bb1208804d1a7af055887a40fba82bbf11be9ded31ae4d6f36960267a" name="MLT-FO-03001.ale" size="17548" version="28.0.0"/>
+      <File SHA256:hash="c33e067d633477a25b45a9ca7745bf048caed9a4c8177b4bffa7889100693788" name="USA-FO-LA19.ale" size="24908" version="28.0.0"/>
+      <File SHA256:hash="8f5f6e092b8ca79a93b627dbe07adeefe25c3e1ced2a5544b8a388c2e1e7c104" name="NLD-FO-04001.ale" size="17720" version="28.0.0"/>
+      <File SHA256:hash="f186d2d5d73ff8e7e4e33874df31c1214c42320201481a572f9dca172f9d076f" name="IRL-FO-04001.ale" size="22540" version="28.0.0"/>
+      <File SHA256:hash="68467d72ddbdc5dcec961d17e84cbc00974fef7af91578dc36a8ba8b2cf3ddf0" name="CAN-FO-ON19.ale" size="16824" version="28.0.0"/>
     </Directory>
   </Payload>
 </SoftwareIdentity>
