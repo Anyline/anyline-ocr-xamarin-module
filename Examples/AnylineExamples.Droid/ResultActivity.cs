@@ -69,6 +69,7 @@ namespace AnylineExamples.Droid
                     case "Outline":
                     case "Class":
                     case "FieldNames":
+                    case "Coordinates":
                         break;
                     default:
 
