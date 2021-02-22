@@ -54,7 +54,7 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Anyline.Xamarin.SDK.Droid" Version="28.1.0" />
+    <PackageReference Include="Anyline.Xamarin.SDK.Droid" Version="28.1.1" />
     <PackageReference Include="Xamarin.Firebase.ML.Vision">
       <Version>71.1700.4</Version>
     </PackageReference>
