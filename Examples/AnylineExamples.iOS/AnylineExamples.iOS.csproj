@@ -51,7 +51,6 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <MtouchLink>Full</MtouchLink>
-    <CodesignProvision>DevelopmentPP_Wildcard</CodesignProvision>
     <CodesignExtraArgs />
     <CodesignResourceRules />
     <MtouchNoSymbolStrip>false</MtouchNoSymbolStrip>
@@ -163,7 +162,7 @@
     </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Anyline.Xamarin.SDK.iOS" Version="28.1.0" />
+    <PackageReference Include="Anyline.Xamarin.SDK.iOS" Version="28.1.1" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
   <Import Project="..\AnylineExamples.Shared\AnylineExamples.Shared.projitems" Label="Shared" />

@@ -1105,13 +1105,9 @@ namespace AnylineXamarinSDK.iOS
         [NullAllowed, Export("delegate", ArgumentSemantic.Weak)]
         NSObject WeakDelegate { get; set; }
 
-        // -(instancetype _Nullable)initWithLicenseKey:(NSString * _Nonnull)licenseKey;
-        [Export("initWithLicenseKey:")]
-        IntPtr Constructor(string licenseKey);
-
-        // -(instancetype _Nullable)initWithLicenseKey:(NSString * _Nonnull)licenseKey delegate:(id<ALCoreControllerDelegate> _Nullable)delegate;
-        [Export("initWithLicenseKey:delegate:")]
-        IntPtr Constructor(string licenseKey, [NullAllowed] NSObject @delegate);
+        // -(instancetype _Nullable)initWithDelegate:(id<ALCoreControllerDelegate> _Nullable)delegate error:(NSError * _Nullable * _Nullable)error;
+        [Export ("initWithDelegate:error:")]
+        IntPtr Constructor ([NullAllowed] NSObject @delegate, [NullAllowed] out NSError error);
 
         // -(BOOL)loadScript:(NSString * _Nonnull)script bundlePath:(NSString * _Nonnull)bundlePath error:(NSError * _Nullable * _Nullable)error;
         [Export("loadScript:bundlePath:error:")]
@@ -1169,11 +1165,11 @@ namespace AnylineXamarinSDK.iOS
 
         string BuildNumber { get; }
 
-        // +(NSString * _Nullable)licenseExpirationDateForLicense:(NSString * _Nullable)licenseKey error:(NSError * _Nullable * _Nullable)error;
+        // +(NSString * _Nullable)licenseExpirationDateForLicense:(NSString * _Nonnull)licenseKey;
         [Static]
-        [Export("licenseExpirationDateForLicense:error:")]
+        [Export ("licenseExpirationDateForLicense:")]
         [return: NullAllowed]
-        string LicenseExpirationDateForLicense([NullAllowed] string licenseKey, [NullAllowed] out NSError error);
+        string LicenseExpirationDateForLicense (string licenseKey);
 
         // +(NSBundle * _Nonnull)frameworkBundle;
         [Static]
@@ -1683,11 +1679,11 @@ namespace AnylineXamarinSDK.iOS
         [NullAllowed, Export("scanViewPluginConfig", ArgumentSemantic.Copy)]
         ALScanViewPluginConfig ScanViewPluginConfig { get; set; }
 
-        // +(instancetype _Nullable)scanViewPluginForConfigDict:(NSDictionary * _Nonnull)configDict licenseKey:(NSString * _Nonnull)licenseKey delegate:(id _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
+        // +(instancetype _Nullable)scanViewPluginForConfigDict:(NSDictionary * _Nonnull)configDict delegate:(id _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
         [Static]
-        [Export("scanViewPluginForConfigDict:licenseKey:delegate:error:")]
+        [Export ("scanViewPluginForConfigDict:delegate:error:")]
         [return: NullAllowed]
-        ALAbstractScanViewPlugin ScanViewPluginForConfigDict(NSDictionary configDict, string licenseKey, NSObject @delegate, [NullAllowed] out NSError error);
+        ALAbstractScanViewPlugin ScanViewPluginForConfigDict (NSDictionary configDict, NSObject @delegate, [NullAllowed] out NSError error);
 
         // -(BOOL)startAndReturnError:(NSError * _Nullable * _Nullable)error;
         [Export("startAndReturnError:")]
@@ -1886,15 +1882,15 @@ namespace AnylineXamarinSDK.iOS
 
         // +(instancetype _Nullable)scanViewForFrame:(CGRect)frame configPath:(NSString * _Nonnull)configPath delegate:(id _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
         [Static]
-        [Export("scanViewForFrame:configPath:delegate:error:")]
+        [Export ("scanViewForFrame:configPath:delegate:error:")]
         [return: NullAllowed]
-        ALScanView ScanViewForFrame(CGRect frame, string configPath, NSObject @delegate, [NullAllowed] out NSError error);
+        ALScanView ScanViewForFrame (CGRect frame, string configPath, NSObject @delegate, [NullAllowed] out NSError error);
 
-        // +(instancetype _Nullable)scanViewForFrame:(CGRect)frame configDict:(NSDictionary * _Nonnull)configDict licenseKey:(NSString * _Nonnull)licenseKey delegate:(id _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
+        // +(instancetype _Nullable)scanViewForFrame:(CGRect)frame configDict:(NSDictionary * _Nonnull)configDict delegate:(id _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
         [Static]
-        [Export("scanViewForFrame:configDict:licenseKey:delegate:error:")]
+        [Export ("scanViewForFrame:configDict:delegate:error:")]
         [return: NullAllowed]
-        ALScanView ScanViewForFrame(CGRect frame, NSDictionary configDict, string licenseKey, NSObject @delegate, [NullAllowed] out NSError error);
+        ALScanView ScanViewForFrame (CGRect frame, NSDictionary configDict, NSObject @delegate, [NullAllowed] out NSError error);
 
         // -(void)startCamera;
         [Export("startCamera")]
@@ -1949,9 +1945,9 @@ namespace AnylineXamarinSDK.iOS
     [DisableDefaultCtor]
     interface ALMeterScanPlugin
     {
-        // -(instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID licenseKey:(NSString * _Nonnull)licenseKey delegate:(id<ALMeterScanPluginDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
-        [Export("initWithPluginID:licenseKey:delegate:error:")]
-        IntPtr Constructor([NullAllowed] string pluginID, string licenseKey, NSObject @delegate, [NullAllowed] out NSError error);
+        // -(instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID delegate:(id<ALMeterScanPluginDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
+        [Export ("initWithPluginID:delegate:error:")]
+        IntPtr Constructor ([NullAllowed] string pluginID, NSObject @delegate, [NullAllowed] out NSError error);
 
         // @property (readonly, nonatomic, strong) NSHashTable<ALMeterScanPluginDelegate> * _Nullable delegates;
         [NullAllowed, Export("delegates", ArgumentSemantic.Strong)]
@@ -2123,9 +2119,9 @@ namespace AnylineXamarinSDK.iOS
     [DisableDefaultCtor]
     interface ALBarcodeScanPlugin
     {
-        // -(instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID licenseKey:(NSString * _Nonnull)licenseKey delegate:(id<ALBarcodeScanPluginDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
-        [Export("initWithPluginID:licenseKey:delegate:error:")]
-        IntPtr Constructor([NullAllowed] string pluginID, string licenseKey, NSObject @delegate, [NullAllowed] out NSError error);
+        // -(instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID delegate:(id<ALBarcodeScanPluginDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
+        [Export ("initWithPluginID:delegate:error:")]
+	    IntPtr Constructor ([NullAllowed] string pluginID, NSObject @delegate, [NullAllowed] out NSError error);
 
         // @property (readonly, nonatomic, strong) NSHashTable<ALBarcodeScanPluginDelegate> * _Nullable delegates;
         [NullAllowed, Export ("delegates", ArgumentSemantic.Strong)]
@@ -3408,9 +3404,9 @@ namespace AnylineXamarinSDK.iOS
     [DisableDefaultCtor]
     interface ALOCRScanPlugin
     {
-        // -(instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID licenseKey:(NSString * _Nonnull)licenseKey delegate:(id<ALOCRScanPluginDelegate> _Nonnull)delegate ocrConfig:(ALOCRConfig * _Nonnull)ocrConfig error:(NSError * _Nullable * _Nullable)error;
-        [Export("initWithPluginID:licenseKey:delegate:ocrConfig:error:")]
-        IntPtr Constructor([NullAllowed] string pluginID, string licenseKey, NSObject @delegate, ALOCRConfig ocrConfig, [NullAllowed] out NSError error);
+        // -(instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID delegate:(id<ALOCRScanPluginDelegate> _Nonnull)delegate ocrConfig:(ALBaseOCRConfig * _Nonnull)ocrConfig error:(NSError * _Nullable * _Nullable)error;
+        [Export ("initWithPluginID:delegate:ocrConfig:error:")]
+        IntPtr Constructor ([NullAllowed] string pluginID, NSObject @delegate, ALBaseOCRConfig ocrConfig, [NullAllowed] out NSError error);
 
         // @property (readonly, nonatomic, strong) NSHashTable<ALOCRScanPluginDelegate> * _Nullable delegates;
         [NullAllowed, Export("delegates", ArgumentSemantic.Strong)]
@@ -3534,10 +3530,10 @@ namespace AnylineXamarinSDK.iOS
         [Export("justDetectCornersIfPossible")]
         bool JustDetectCornersIfPossible { get; set; }
 
-        // -(instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID licenseKey:(NSString * _Nonnull)licenseKey delegate:(id<ALDocumentScanPluginDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error __attribute__((objc_designated_initializer));
-        [Export("initWithPluginID:licenseKey:delegate:error:")]
+        // -(instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID delegate:(id<ALDocumentScanPluginDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error __attribute__((objc_designated_initializer));
+        [Export ("initWithPluginID:delegate:error:")]
         [DesignatedInitializer]
-        IntPtr Constructor([NullAllowed] string pluginID, string licenseKey, NSObject @delegate, [NullAllowed] out NSError error);
+        IntPtr Constructor ([NullAllowed] string pluginID, NSObject @delegate, [NullAllowed] out NSError error);
 
         // -(BOOL)start:(id<ALImageProvider> _Nonnull)imageProvider error:(NSError * _Nullable * _Nullable)error;
         [Export("start:error:")]
@@ -3673,10 +3669,10 @@ namespace AnylineXamarinSDK.iOS
     [DisableDefaultCtor]
     interface ALLicensePlateScanPlugin
     {
-        // -(instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID licenseKey:(NSString * _Nonnull)licenseKey delegate:(id<ALLicensePlateScanPluginDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error __attribute__((objc_designated_initializer));
-        [Export("initWithPluginID:licenseKey:delegate:error:")]
+        // -(instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID delegate:(id<ALLicensePlateScanPluginDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error __attribute__((objc_designated_initializer));
+        [Export ("initWithPluginID:delegate:error:")]
         [DesignatedInitializer]
-        IntPtr Constructor([NullAllowed] string pluginID, string licenseKey, NSObject @delegate, [NullAllowed] out NSError error);
+        IntPtr Constructor ([NullAllowed] string pluginID, NSObject @delegate, [NullAllowed] out NSError error);
 
 		// @property (readonly, assign, nonatomic) ALLicensePlateScanMode scanMode;
 		[Export ("scanMode", ArgumentSemantic.Assign)]
