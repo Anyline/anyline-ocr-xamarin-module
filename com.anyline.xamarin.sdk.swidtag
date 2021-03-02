@@ -14,7 +14,7 @@
     </Directory>
     <Directory location="BindingSource" name="AnylineXamarinSDK.iOS">
       <File SHA256:hash="1221a7d6a8a4ac2683404cecf1e221c045a0c034572dc9398db98cb0a77655f1" name="Extra.cs" size="325" version="28.1.1"/>
-      <File SHA256:hash="47b2aa64e2308af37c0ac270dc85d1e1ecd0bd5563f340a9c7f8639c9b7a5485" name="ApiDefinition.cs" size="191955" version="28.1.1"/>
+      <File SHA256:hash="365f957853b8f0306cdfb40050739bf29059d6708cce55c580a54f920114dd66" name="ApiDefinition.cs" size="191205" version="28.1.1"/>
       <File SHA256:hash="549978acd9073ee58a6ec440fbac2579a069e991b0ffc4ffce1cc38b99466d0a" name="AnylineXamarinSDK.iOS.csproj" size="2873" version="28.1.1"/>
       <File SHA256:hash="43dc410308cc20cfed938def8914fbbff4f8e4e5e531178c1b768efd37ca23b7" name="Anyline.linkwith.cs" size="2499" version="28.1.1"/>
       <File SHA256:hash="83bf198c40f7efdfcb3d6c3e1680adbb824a1ba1a24415ad35975d4590a3381c" name="Anyline.a" size="89298736" version="28.1.1"/>
@@ -134,7 +134,7 @@
       <File SHA256:hash="813625846dc564cc5a547a272a441be6f17dc159e435402fa65c64462c74f990" name="unicodedata.pyd" size="692224" version="28.1.1"/>
     </Directory>
     <Directory location="BindingSource/AnylineXamarinSDK.iOS" name="Properties">
-      <File SHA256:hash="b0c1c6c4675b529813c3725f2241a3b737582661ab400c3c3866420d4c24ebeb" name="AssemblyInfo.cs" size="1383" version="28.1.1"/>
+      <File SHA256:hash="673ee231e67cef6f28b8ff76dd330c5317d862ca45bcfe3a08898754d7f89bb6" name="AssemblyInfo.cs" size="1383" version="28.1.1"/>
     </Directory>
     <Directory location="BindingSource" name="AnylineXamarinSDK.Droid">
       <File SHA256:hash="515bc5ea7cf5681180d47fd3303b7255f2b59da9c66bf623811b847653701b00" name="AnylineXamarinSDK.Droid.csproj" size="4730" version="28.1.1"/>
@@ -458,7 +458,7 @@
       <File SHA256:hash="f3364528ab34dfe11415eb43fb214699ac91b0a4b0d87d27666e3c9755e6b60e" name="AndroidExampleModelWrapper.cs" size="666" version="28.1.1"/>
     </Directory>
     <Directory location="Examples/AnylineExamples.Droid" name="Resources">
-      <File SHA256:hash="287faa808f0127d14cd655f297a97eb3146bcab2ec349cad7ec4350844e881af" name="Resource.designer.cs" size="307177" version="28.1.1"/>
+      <File SHA256:hash="0b5bb25fc197bb18342fc7d40b2992059dda01fb2ab158b8461a67041ab247dd" name="Resource.designer.cs" size="297458" version="28.1.1"/>
       <File SHA256:hash="961d7d15547f8a2f2381b65d2e70200b4cf81f200e15a1b5e89ef95a5892af78" name="AboutResources.txt" size="1693" version="28.1.1"/>
     </Directory>
     <Directory location="Examples/AnylineExamples.Droid/Resources" name="mipmap-mdpi">
@@ -607,7 +607,7 @@
       <File SHA256:hash="0b5fd5a9f444e1b49ce9a4b0c41dc5b44695995f431dd642603a42f0e9858de6" name="Entitlements.plist" size="193" version="28.1.1"/>
       <File SHA256:hash="a60c1578d55223460656b48830b1a7cfa44bcba64d909213e83fdf678ed1a7a1" name="AppDelegate.cs" size="1100" version="28.1.1"/>
       <File SHA256:hash="f6bff62ca073dbad87469c92ec081da0e328da6bec2eb4157a136eb79ef63817" name="ObjectExtensions.cs" size="8154" version="28.1.1"/>
-      <File SHA256:hash="92a050bc1c148327a88f12c9ad676d1fa08b4e5ee0f5452d61bdc552109c7c15" name="Anyline.iOS.csproj" size="7075" version="28.1.1"/>
+      <File SHA256:hash="5a7fb8ca0845c506f2ffaeabde0558a503d0bd40a7929bb4415e6ef6bf11c57d" name="Anyline.iOS.csproj" size="7075" version="28.1.1"/>
       <File SHA256:hash="3e60f520861fbbaeb67faab99fc31420bdf8f76dad1678979ab0da6f4463b436" name="AnylineSDKService.cs" size="695" version="28.1.1"/>
       <File SHA256:hash="2646059343d4318fe9f292cc7906161457c90d46962f892ac6acec6ad233ec4d" name="Main.cs" size="481" version="28.1.1"/>
       <File SHA256:hash="37bf55b8de961beb9e2727270b4ef3bf99d30cd75437fddc5a1d17e2a5f7702e" name="ScanResultDelegate.cs" size="2712" version="28.1.1"/>
@@ -710,12 +710,12 @@
       <File SHA256:hash="215c770a72231443b27e3febc09f5bf72423c49efad3d2814f39f77855f96ed4" name="AnylineViewController.designer.cs" size="463" version="28.1.1"/>
       <File SHA256:hash="3c68af9b1ed81578c7ae57a9b825699b440d0d1b5b439048a90d09bc498d0d15" name="AnylineViewController.cs" size="9711" version="28.1.1"/>
       <File SHA256:hash="f85e35b434eba230e71be08b8621de8555badf1282d029648836690a079fa56e" name="Main.cs" size="586" version="28.1.1"/>
-      <File SHA256:hash="c9a4802994ea860bcd0f9450c93175138c217aa94a783379ecfeb852395c197c" name="AnylineExamples.iOS.csproj" size="8225" version="28.1.1"/>
+      <File SHA256:hash="f722259083bbed863c4820d16e8ff8371c1d1c3cb55205ab9da7fb18ae60e0ae" name="AnylineExamples.iOS.csproj" size="8159" version="28.1.1"/>
       <File SHA256:hash="51f8a1f9357d76ce47b0e19ccbbadd4cc32635fe873883caf314adf7cf597df2" name="NFCScanViewController.cs" size="10360" version="28.1.1"/>
       <File SHA256:hash="50edb93db0cf405cc763e444d1cb1ba770f1fc8135ed52c0db144fccfc547199" name="ScanViewController.cs" size="6233" version="28.1.1"/>
       <File SHA256:hash="263fa0a9628d52249eca37381bec34f844d716e16801000ddf8bc498cb5479bb" name="MainStoryboard.storyboard" size="2270" version="28.1.1"/>
       <File SHA256:hash="e7ccd57b642f38f7fd56812fc54f2ff2a85e3059cf380e365fb28a4712566bbb" name="ScanResultDelegate.cs" size="2914" version="28.1.1"/>
-      <File SHA256:hash="c4af3edf455d1a1a17543c5ab68363fafa02b40f0e7772927892bae9976c938b" name="Info.plist" size="1212" version="28.1.1"/>
+      <File SHA256:hash="f3d8cd694c5c05366a2d3a08cef8299a3e8029c6e8a2732fcca3ff3e31d815c5" name="Info.plist" size="1212" version="28.1.1"/>
     </Directory>
     <Directory location="Examples/AnylineExamples.iOS" name="Resources">
       <File SHA256:hash="b34779f1aa5980fe7c0b04e139e2fc568759386013d6769cdf1f58b2b9575553" name="mro_config_vin.json" size="1014" version="28.1.1"/>
@@ -759,16 +759,16 @@
     </Directory>
     <Directory location="" name="Nuget">
       <File SHA256:hash="e30e837b0ba9c630c0a0ad93552022025184687af1146d261c209168df85e4ce" name="Anyline.Xamarin.SDK.Droid.28.1.1.nupkg" size="50001307" version="28.1.1"/>
-      <File SHA256:hash="70989eb97bf82f6a5f97f6ab2cd3df3b0a1811a783ffb4fea0324e7e3e6fef1d" name="Anyline.Xamarin.SDK.iOS.nuspec" size="2161" version="28.1.1"/>
+      <File SHA256:hash="f0d18dd184d8331d3f54e80010e3ffe474b12cae8fae54f4f13ee0c6dfcd17df" name="Anyline.Xamarin.SDK.iOS.nuspec" size="2161" version="28.1.1"/>
       <File SHA256:hash="6a8786db6b9241b926bf7500dde6362e792789aaa5e199295b8a90b868afc754" name="Anyline.Xamarin.SDK.Droid.nuspec" size="1881" version="28.1.1"/>
       <File SHA256:hash="e9c666eef2316ddf69e98cb3973de7652a2908610c9959d51755a45e044d5c9e" name="Anyline.Xamarin.SDK.iOS.28.1.0.nupkg" size="146310353" version="28.1.1"/>
     </Directory>
     <Directory location="Nuget" name="lib"/>
     <Directory location="Nuget/lib" name="Xamarin.iOS10">
-      <File SHA256:hash="7c5ab54a41f761630276d5799d3469529015d7391a90c5d3d69a9190803674bf" name="AnylineXamarinSDK.iOS.dll" size="134670336" version="28.1.1"/>
+      <File SHA256:hash="772f86b95a39e4c5193a7e9d886bb8dd5987984e9dc17f24af10607036957f8c" name="AnylineXamarinSDK.iOS.dll" size="134700544" version="28.1.1"/>
     </Directory>
     <Directory location="Nuget/lib" name="MonoAndroid10">
-      <File SHA256:hash="9fef7da756fb254522754987a6c2bfa0673e8e15d70ff137410b4c5cc08d8565" name="AnylineXamarinSDK.Droid.dll" size="51986432" version="28.1.1"/>
+      <File SHA256:hash="1eea0ad44972e7796c4f24e3d043dd46d83fdf4a9043683e9837751d0b5b30ca" name="AnylineXamarinSDK.Droid.dll" size="51986432" version="28.1.1"/>
     </Directory>
     <Directory location="Nuget" name="build">
       <File SHA256:hash="765c48481d6a316673ad580f6ac89d112c76ecd3f316a79a03e4e3130114271d" name="Anyline.Xamarin.SDK.iOS.targets" size="1847" version="28.1.1"/>
