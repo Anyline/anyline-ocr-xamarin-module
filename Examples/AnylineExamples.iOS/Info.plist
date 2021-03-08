@@ -12,7 +12,7 @@
 		<integer>2</integer>
 	</array>
 	<key>CFBundleShortVersionString</key>
-	<string>28.1.1</string>
+	<string>29.0.0</string>
 	<key>UILaunchStoryboardName</key>
 	<string>MainStoryboard.storyboard</string>
 	<key>UIMainStoryboardFile</key>

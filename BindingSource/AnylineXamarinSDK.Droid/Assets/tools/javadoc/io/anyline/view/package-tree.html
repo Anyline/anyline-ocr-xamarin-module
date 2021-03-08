@@ -94,6 +94,11 @@
 <li type="circle">io.anyline.view.<a href="../../../io/anyline/view/AnylineViewConfig.html" title="class in io.anyline.view"><span class="typeNameLink">AnylineViewConfig</span></a></li>
 <li type="circle">io.anyline.view.<a href="../../../io/anyline/view/BaseScanViewConfig.html" title="class in io.anyline.view"><span class="typeNameLink">BaseScanViewConfig</span></a> (implements io.anyline.view.<a href="../../../io/anyline/view/IAnylineViewConfig.html" title="interface in io.anyline.view">IAnylineViewConfig</a>)</li>
 <li type="circle">io.anyline.view.<a href="../../../io/anyline/view/BrightnessHelper.html" title="class in io.anyline.view"><span class="typeNameLink">BrightnessHelper</span></a></li>
+<li type="circle">CameraView
+<ul>
+<li type="circle">io.anyline.view.<a href="../../../io/anyline/view/ScanView.html" title="class in io.anyline.view"><span class="typeNameLink">ScanView</span></a> (implements io.anyline.plugin.document.<a href="../../../io/anyline/plugin/document/DocumentNotifierListener.html" title="interface in io.anyline.plugin.document">DocumentNotifierListener</a>, io.anyline.view.<a href="../../../io/anyline/view/UIChangeListener.html" title="interface in io.anyline.view">UIChangeListener</a>)</li>
+</ul>
+</li>
 <li type="circle">io.anyline.view.<a href="../../../io/anyline/view/CutoutConfig.html" title="class in io.anyline.view"><span class="typeNameLink">CutoutConfig</span></a></li>
 <li type="circle">io.anyline.view.<a href="../../../io/anyline/view/CutoutRect.html" title="class in io.anyline.view"><span class="typeNameLink">CutoutRect</span></a></li>
 <li type="circle">io.anyline.view.<a href="../../../io/anyline/view/DebugUtil.html" title="class in io.anyline.view"><span class="typeNameLink">DebugUtil</span></a></li>
@@ -110,7 +115,7 @@
 <li type="circle">io.anyline.view.<a href="../../../io/anyline/view/AnylineFeedbackView.html" title="class in io.anyline.view"><span class="typeNameLink">AnylineFeedbackView</span></a></li>
 <li type="circle">android.widget.ImageView
 <ul>
-<li type="circle">io.anyline.view.<a href="../../../io/anyline/view/FlashView.html" title="class in io.anyline.view"><span class="typeNameLink">FlashView</span></a> (implements at.nineyards.anyline.camera.<a href="../../../at/nineyards/anyline/camera/FlashControl.html" title="interface in at.nineyards.anyline.camera">FlashControl</a>)</li>
+<li type="circle">io.anyline.view.<a href="../../../io/anyline/view/FlashView.html" title="class in io.anyline.view"><span class="typeNameLink">FlashView</span></a></li>
 </ul>
 </li>
 <li type="circle">android.view.ViewGroup (implements android.view.ViewManager, android.view.ViewParent)
@@ -123,11 +128,6 @@
 <li type="circle">io.anyline.view.<a href="../../../io/anyline/view/AnylineWebView.html" title="class in io.anyline.view"><span class="typeNameLink">AnylineWebView</span></a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li type="circle">at.nineyards.anyline.camera.<a href="../../../at/nineyards/anyline/camera/CameraView.html" title="class in at.nineyards.anyline.camera"><span class="typeNameLink">CameraView</span></a>
-<ul>
-<li type="circle">io.anyline.view.<a href="../../../io/anyline/view/ScanView.html" title="class in io.anyline.view"><span class="typeNameLink">ScanView</span></a> (implements io.anyline.plugin.document.<a href="../../../io/anyline/plugin/document/DocumentNotifierListener.html" title="interface in io.anyline.plugin.document">DocumentNotifierListener</a>, io.anyline.view.<a href="../../../io/anyline/view/UIChangeListener.html" title="interface in io.anyline.view">UIChangeListener</a>)</li>
 </ul>
 </li>
 </ul>
@@ -151,14 +151,14 @@
 <ul>
 <li type="circle">java.lang.Enum&lt;E&gt; (implements java.lang.Comparable&lt;T&gt;, java.io.Serializable)
 <ul>
-<li type="circle">io.anyline.view.<a href="../../../io/anyline/view/FlashViewConfig.FlashAlignment.html" title="enum in io.anyline.view"><span class="typeNameLink">FlashViewConfig.FlashAlignment</span></a></li>
-<li type="circle">io.anyline.view.<a href="../../../io/anyline/view/LightLevelHelper.AmbientLightLevel.html" title="enum in io.anyline.view"><span class="typeNameLink">LightLevelHelper.AmbientLightLevel</span></a></li>
-<li type="circle">io.anyline.view.<a href="../../../io/anyline/view/CutoutConfig.CutoutStyle.html" title="enum in io.anyline.view"><span class="typeNameLink">CutoutConfig.CutoutStyle</span></a></li>
-<li type="circle">io.anyline.view.<a href="../../../io/anyline/view/CutoutConfig.AnimationStyle.html" title="enum in io.anyline.view"><span class="typeNameLink">CutoutConfig.AnimationStyle</span></a></li>
-<li type="circle">io.anyline.view.<a href="../../../io/anyline/view/BrightnessHelper.BrightnessFeedback.html" title="enum in io.anyline.view"><span class="typeNameLink">BrightnessHelper.BrightnessFeedback</span></a></li>
-<li type="circle">io.anyline.view.<a href="../../../io/anyline/view/CutoutConfig.CutoutAlignment.html" title="enum in io.anyline.view"><span class="typeNameLink">CutoutConfig.CutoutAlignment</span></a></li>
 <li type="circle">io.anyline.view.<a href="../../../io/anyline/view/LightLevelHelper.BrightnessLevel.html" title="enum in io.anyline.view"><span class="typeNameLink">LightLevelHelper.BrightnessLevel</span></a></li>
+<li type="circle">io.anyline.view.<a href="../../../io/anyline/view/BrightnessHelper.BrightnessFeedback.html" title="enum in io.anyline.view"><span class="typeNameLink">BrightnessHelper.BrightnessFeedback</span></a></li>
 <li type="circle">io.anyline.view.<a href="../../../io/anyline/view/FlashViewConfig.FlashMode.html" title="enum in io.anyline.view"><span class="typeNameLink">FlashViewConfig.FlashMode</span></a></li>
+<li type="circle">io.anyline.view.<a href="../../../io/anyline/view/CutoutConfig.CutoutAlignment.html" title="enum in io.anyline.view"><span class="typeNameLink">CutoutConfig.CutoutAlignment</span></a></li>
+<li type="circle">io.anyline.view.<a href="../../../io/anyline/view/LightLevelHelper.AmbientLightLevel.html" title="enum in io.anyline.view"><span class="typeNameLink">LightLevelHelper.AmbientLightLevel</span></a></li>
+<li type="circle">io.anyline.view.<a href="../../../io/anyline/view/CutoutConfig.AnimationStyle.html" title="enum in io.anyline.view"><span class="typeNameLink">CutoutConfig.AnimationStyle</span></a></li>
+<li type="circle">io.anyline.view.<a href="../../../io/anyline/view/FlashViewConfig.FlashAlignment.html" title="enum in io.anyline.view"><span class="typeNameLink">FlashViewConfig.FlashAlignment</span></a></li>
+<li type="circle">io.anyline.view.<a href="../../../io/anyline/view/CutoutConfig.CutoutStyle.html" title="enum in io.anyline.view"><span class="typeNameLink">CutoutConfig.CutoutStyle</span></a></li>
 </ul>
 </li>
 </ul>

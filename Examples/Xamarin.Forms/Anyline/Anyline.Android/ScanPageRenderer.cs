@@ -5,7 +5,7 @@ using Android.Runtime;
 using Android.Views;
 using Anyline;
 using Anyline.Droid;
-using AT.Nineyards.Anyline.Models;
+using IO.Anyline.Models;
 using IO.Anyline.Plugin;
 using IO.Anyline.Plugin.ID;
 using IO.Anyline.View;
@@ -68,7 +68,7 @@ namespace Anyline.Droid
             }
         }
 
-        private void ScanView_CameraOpened(object sender, AT.Nineyards.Anyline.Camera.CameraOpenedEventArgs e)
+        private void ScanView_CameraOpened(object sender, IO.Anyline.Camera.CameraOpenedEventArgs e)
         {
             if (scanView != null)
                 scanView.Start();

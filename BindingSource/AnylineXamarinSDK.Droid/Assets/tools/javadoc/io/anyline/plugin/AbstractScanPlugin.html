@@ -124,7 +124,7 @@ extends java.lang.Object
 implements <a href="../../../io/anyline/plugin/ScanPlugin.html" title="interface in io.anyline.plugin">ScanPlugin</a>&lt;ResultType&gt;</pre>
 <div class="block"><p>
  An abstract implementation of the <a href="../../../io/anyline/plugin/ScanPlugin.html" title="interface in io.anyline.plugin"><code>ScanPlugin</code></a> interface,
- that provides useful stuff for Plugins that use the <a href="../../../at/nineyards/anyline/AnylineController.html" title="class in at.nineyards.anyline"><code>AnylineController</code></a>.
+ that provides useful stuff for Plugins that use the <code>AnylineController</code>.
  </p><p>
  This class is in ALPHA state and may change in a future version.
  </p></div>
@@ -190,7 +190,7 @@ implements <a href="../../../io/anyline/plugin/ScanPlugin.html" title="interface
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/anyline/plugin/AbstractScanPlugin.html#cancelController--">cancelController</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code><a href="../../../at/nineyards/anyline/AnylineController.html" title="class in at.nineyards.anyline">AnylineController</a></code></td>
+<td class="colFirst"><code>AnylineController</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/anyline/plugin/AbstractScanPlugin.html#getAnylineController--">getAnylineController</a></span>()</code>
 <div class="block">Get the anyline controller (the underlying entity that controls the image processing).</div>
 </td>
@@ -208,7 +208,7 @@ implements <a href="../../../io/anyline/plugin/ScanPlugin.html" title="interface
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/anyline/plugin/AbstractScanPlugin.html#getId--">getId</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i8" class="altColor">
-<td class="colFirst"><code><a href="../../../at/nineyards/anyline/ImageProvider.html" title="interface in at.nineyards.anyline">ImageProvider</a></code></td>
+<td class="colFirst"><code>ImageProvider</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../io/anyline/plugin/AbstractScanPlugin.html#getImageProvider--">getImageProvider</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i9" class="rowColor">
@@ -284,7 +284,7 @@ implements <a href="../../../io/anyline/plugin/ScanPlugin.html" title="interface
 </tr>
 <tr id="i24" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/anyline/plugin/AbstractScanPlugin.html#setImageProvider-at.nineyards.anyline.ImageProvider-">setImageProvider</a></span>(<a href="../../../at/nineyards/anyline/ImageProvider.html" title="interface in at.nineyards.anyline">ImageProvider</a>&nbsp;imageProvider)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/anyline/plugin/AbstractScanPlugin.html#setImageProvider-ImageProvider-">setImageProvider</a></span>(ImageProvider&nbsp;imageProvider)</code>
 <div class="block">Set the provider, where the plugin can get the images from.</div>
 </td>
 </tr>
@@ -390,18 +390,18 @@ implements <a href="../../../io/anyline/plugin/ScanPlugin.html" title="interface
 <pre>public&nbsp;void&nbsp;setId(java.lang.String&nbsp;id)</pre>
 </li>
 </ul>
-<a name="setImageProvider-at.nineyards.anyline.ImageProvider-">
+<a name="setImageProvider-ImageProvider-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>setImageProvider</h4>
-<pre>public&nbsp;void&nbsp;setImageProvider(<a href="../../../at/nineyards/anyline/ImageProvider.html" title="interface in at.nineyards.anyline">ImageProvider</a>&nbsp;imageProvider)</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../io/anyline/plugin/ScanPlugin.html#setImageProvider-at.nineyards.anyline.ImageProvider-">ScanPlugin</a></code></span></div>
+<pre>public&nbsp;void&nbsp;setImageProvider(ImageProvider&nbsp;imageProvider)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../io/anyline/plugin/ScanPlugin.html#setImageProvider-ImageProvider-">ScanPlugin</a></code></span></div>
 <div class="block">Set the provider, where the plugin can get the images from.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../io/anyline/plugin/ScanPlugin.html#setImageProvider-at.nineyards.anyline.ImageProvider-">setImageProvider</a></code>&nbsp;in interface&nbsp;<code><a href="../../../io/anyline/plugin/ScanPlugin.html" title="interface in io.anyline.plugin">ScanPlugin</a>&lt;<a href="../../../io/anyline/plugin/AbstractScanPlugin.html" title="type parameter in AbstractScanPlugin">ResultType</a> extends <a href="../../../io/anyline/plugin/ScanResult.html" title="class in io.anyline.plugin">ScanResult</a>&gt;</code></dd>
+<dd><code><a href="../../../io/anyline/plugin/ScanPlugin.html#setImageProvider-ImageProvider-">setImageProvider</a></code>&nbsp;in interface&nbsp;<code><a href="../../../io/anyline/plugin/ScanPlugin.html" title="interface in io.anyline.plugin">ScanPlugin</a>&lt;<a href="../../../io/anyline/plugin/AbstractScanPlugin.html" title="type parameter in AbstractScanPlugin">ResultType</a> extends <a href="../../../io/anyline/plugin/ScanResult.html" title="class in io.anyline.plugin">ScanResult</a>&gt;</code></dd>
 </dl>
 </li>
 </ul>
@@ -411,7 +411,7 @@ implements <a href="../../../io/anyline/plugin/ScanPlugin.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>getImageProvider</h4>
-<pre>public&nbsp;<a href="../../../at/nineyards/anyline/ImageProvider.html" title="interface in at.nineyards.anyline">ImageProvider</a>&nbsp;getImageProvider()</pre>
+<pre>public&nbsp;ImageProvider&nbsp;getImageProvider()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../io/anyline/plugin/ScanPlugin.html#getImageProvider--">getImageProvider</a></code>&nbsp;in interface&nbsp;<code><a href="../../../io/anyline/plugin/ScanPlugin.html" title="interface in io.anyline.plugin">ScanPlugin</a>&lt;<a href="../../../io/anyline/plugin/AbstractScanPlugin.html" title="type parameter in AbstractScanPlugin">ResultType</a> extends <a href="../../../io/anyline/plugin/ScanResult.html" title="class in io.anyline.plugin">ScanResult</a>&gt;</code></dd>
@@ -643,7 +643,7 @@ implements <a href="../../../io/anyline/plugin/ScanPlugin.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>getAnylineController</h4>
-<pre>public&nbsp;<a href="../../../at/nineyards/anyline/AnylineController.html" title="class in at.nineyards.anyline">AnylineController</a>&nbsp;getAnylineController()</pre>
+<pre>public&nbsp;AnylineController&nbsp;getAnylineController()</pre>
 <div class="block">Get the anyline controller (the underlying entity that controls the image processing).</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>

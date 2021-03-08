@@ -117,13 +117,12 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd>android.graphics.drawable.Drawable.Callback, android.view.accessibility.AccessibilityEventSource, android.view.KeyEvent.Callback, <a href="../../../at/nineyards/anyline/camera/FlashControl.html" title="interface in at.nineyards.anyline.camera">FlashControl</a></dd>
+<dd>android.graphics.drawable.Drawable.Callback, android.view.accessibility.AccessibilityEventSource, android.view.KeyEvent.Callback</dd>
 </dl>
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">FlashView</span>
-extends android.widget.ImageView
-implements <a href="../../../at/nineyards/anyline/camera/FlashControl.html" title="interface in at.nineyards.anyline.camera">FlashControl</a></pre>
+extends android.widget.ImageView</pre>
 <div class="block">A simple view that provides basic flash functionality.</div>
 </li>
 </ul>
@@ -150,13 +149,6 @@ implements <a href="../../../at/nineyards/anyline/camera/FlashControl.html" titl
 </a>
 <h3>Nested classes/interfaces inherited from class&nbsp;android.view.View</h3>
 <code>android.view.View.AccessibilityDelegate, android.view.View.BaseSavedState, android.view.View.DragShadowBuilder, android.view.View.MeasureSpec, android.view.View.OnApplyWindowInsetsListener, android.view.View.OnAttachStateChangeListener, android.view.View.OnCapturedPointerListener, android.view.View.OnClickListener, android.view.View.OnContextClickListener, android.view.View.OnCreateContextMenuListener, android.view.View.OnDragListener, android.view.View.OnFocusChangeListener, android.view.View.OnGenericMotionListener, android.view.View.OnHoverListener, android.view.View.OnKeyListener, android.view.View.OnLayoutChangeListener, android.view.View.OnLongClickListener, android.view.View.OnScrollChangeListener, android.view.View.OnSystemUiVisibilityChangeListener, android.view.View.OnTouchListener, android.view.View.OnUnhandledKeyEventListener</code></li>
-</ul>
-<ul class="blockList">
-<li class="blockList"><a name="nested.classes.inherited.from.class.at.nineyards.anyline.camera.FlashControl">
-<!--   -->
-</a>
-<h3>Nested classes/interfaces inherited from interface&nbsp;at.nineyards.anyline.camera.<a href="../../../at/nineyards/anyline/camera/FlashControl.html" title="interface in at.nineyards.anyline.camera">FlashControl</a></h3>
-<code><a href="../../../at/nineyards/anyline/camera/FlashControl.Mode.html" title="enum in at.nineyards.anyline.camera">FlashControl.Mode</a></code></li>
 </ul>
 </li>
 </ul>
@@ -244,10 +236,7 @@ implements <a href="../../../at/nineyards/anyline/camera/FlashControl.html" titl
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/anyline/view/FlashView.html#setCameraController-at.nineyards.anyline.camera.CameraController-">setCameraController</a></span>(<a href="../../../at/nineyards/anyline/camera/CameraController.html" title="class in at.nineyards.anyline.camera">CameraController</a>&nbsp;cameraController)</code>
-<div class="block">
- A camera is required to set the flash (at least for android < M).</div>
-</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/anyline/view/FlashView.html#setCameraController-CameraController-">setCameraController</a></span>(CameraController&nbsp;cameraController)</code>&nbsp;</td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
@@ -269,7 +258,7 @@ implements <a href="../../../at/nineyards/anyline/camera/FlashControl.html" titl
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/anyline/view/FlashView.html#setMode-at.nineyards.anyline.camera.FlashControl.Mode-">setMode</a></span>(<a href="../../../at/nineyards/anyline/camera/FlashControl.Mode.html" title="enum in at.nineyards.anyline.camera">FlashControl.Mode</a>&nbsp;mode)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../io/anyline/view/FlashView.html#setMode-Mode-">setMode</a></span>(Mode&nbsp;mode)</code>
 <div class="block">Set the flash to the given Mode (On/Off or Auto).</div>
 </td>
 </tr>
@@ -411,18 +400,16 @@ implements <a href="../../../at/nineyards/anyline/camera/FlashControl.html" titl
 <pre>public&nbsp;void&nbsp;hide()</pre>
 </li>
 </ul>
-<a name="setMode-at.nineyards.anyline.camera.FlashControl.Mode-">
+<a name="setMode-Mode-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>setMode</h4>
-<pre>public&nbsp;void&nbsp;setMode(<a href="../../../at/nineyards/anyline/camera/FlashControl.Mode.html" title="enum in at.nineyards.anyline.camera">FlashControl.Mode</a>&nbsp;mode)</pre>
+<pre>public&nbsp;void&nbsp;setMode(Mode&nbsp;mode)</pre>
 <div class="block">Set the flash to the given Mode (On/Off or Auto).
  Setting to auto will do nothing if auto is not enabled.</div>
 <dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../at/nineyards/anyline/camera/FlashControl.html#setMode-at.nineyards.anyline.camera.FlashControl.Mode-">setMode</a></code>&nbsp;in interface&nbsp;<code><a href="../../../at/nineyards/anyline/camera/FlashControl.html" title="interface in at.nineyards.anyline.camera">FlashControl</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>mode</code> - the mode to set to.</dd>
 </dl>
@@ -440,8 +427,6 @@ implements <a href="../../../at/nineyards/anyline/camera/FlashControl.html" titl
  but you still have to call <a href="../../../io/anyline/view/FlashView.html#setFlashOnIfAuto-boolean-"><code>setFlashOnIfAuto(boolean)</code></a>
  to set the flash according to your own "auto" logic.</div>
 <dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../at/nineyards/anyline/camera/FlashControl.html#setAutoModeEnabled-boolean-">setAutoModeEnabled</a></code>&nbsp;in interface&nbsp;<code><a href="../../../at/nineyards/anyline/camera/FlashControl.html" title="interface in at.nineyards.anyline.camera">FlashControl</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>isEnabled</code> - true if the auto mode should be enabled</dd>
 </dl>
@@ -457,34 +442,18 @@ implements <a href="../../../at/nineyards/anyline/camera/FlashControl.html" titl
 <div class="block">Call this to set the flash on or off in auto mode.
  Only has an effect if the current mode is AUTO.</div>
 <dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../at/nineyards/anyline/camera/FlashControl.html#setFlashOnIfAuto-boolean-">setFlashOnIfAuto</a></code>&nbsp;in interface&nbsp;<code><a href="../../../at/nineyards/anyline/camera/FlashControl.html" title="interface in at.nineyards.anyline.camera">FlashControl</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>setFlashOn</code> - true if flash should be on</dd>
 </dl>
 </li>
 </ul>
-<a name="setCameraController-at.nineyards.anyline.camera.CameraController-">
+<a name="setCameraController-CameraController-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>setCameraController</h4>
-<pre>public&nbsp;void&nbsp;setCameraController(<a href="../../../at/nineyards/anyline/camera/CameraController.html" title="class in at.nineyards.anyline.camera">CameraController</a>&nbsp;cameraController)</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../at/nineyards/anyline/camera/FlashControl.html#setCameraController-at.nineyards.anyline.camera.CameraController-">FlashControl</a></code></span></div>
-<div class="block"><p>
- A camera is required to set the flash (at least for android < M).
- Implementer should check if flash is possible for this device in here, and don't show the view at all if not.
- </p><p>
- Implementer should set the gui back to default when this is called with a none null camera. (This may be called
- in the background, so post gui stuff)
- </p></div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../at/nineyards/anyline/camera/FlashControl.html#setCameraController-at.nineyards.anyline.camera.CameraController-">setCameraController</a></code>&nbsp;in interface&nbsp;<code><a href="../../../at/nineyards/anyline/camera/FlashControl.html" title="interface in at.nineyards.anyline.camera">FlashControl</a></code></dd>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>cameraController</code> - the camera to use</dd>
-</dl>
+<pre>public&nbsp;void&nbsp;setCameraController(CameraController&nbsp;cameraController)</pre>
 </li>
 </ul>
 <a name="layout-int-int-int-int-">

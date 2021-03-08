@@ -29,69 +29,70 @@
 
   <remove-node path="/api/package[@name='at.nineyards.anyline.core']"/>
   <remove-node path="/api/package[@name='at.nineyards.anyline.core.custom']"/>
-  <remove-node path="/api/package[@name='at.nineyards.anyline.reporter']"/>
+  <remove-node path="/api/package[@name='io.anyline.reporter']"/>
 
-  <remove-node path="/api/package[@name='at.nineyards.anyline']/interface[@name='AnylineListener']"/>
-  <remove-node path="/api/package[@name='at.nineyards.anyline']/interface[@name='AnylineDebugListener']"/>
+  <remove-node path="/api/package[@name='io.anyline']/interface[@name='AnylineListener']"/>
+  <remove-node path="/api/package[@name='io.anyline']/interface[@name='AnylineDebugListener']"/>
 
-  <remove-node path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineYuvImage']/method[@name='getAsCvMat']"/>
-  <remove-node path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineImage']/method[@name='getCvMat']"/>
-  <remove-node path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineImage']/method[@name='getGreyCvMat']"/>
-  <remove-node path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineImage']/method[@name='getRgbCvMat']"/>
+  <remove-node path="/api/package[@name='io.anyline.models']/class[@name='AnylineYuvImage']/method[@name='getAsCvMat']"/>
+  <remove-node path="/api/package[@name='io.anyline.models']/class[@name='AnylineImage']/method[@name='getCvMat']"/>
+  <remove-node path="/api/package[@name='io.anyline.models']/class[@name='AnylineImage']/method[@name='getGreyCvMat']"/>
+  <remove-node path="/api/package[@name='io.anyline.models']/class[@name='AnylineImage']/method[@name='getRgbCvMat']"/>
   
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/interface[@name='CameraController.CameraControllerListener']"/>
+  <remove-node path="/api/package[@name='io.anyline.camera']/interface[@name='CameraController.CameraControllerListener']"/>
 
   <!--Fixes warning BG8401: Skipping ... -->
 
+  <remove-node path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='Barcode']/field[@name='coordinates']" />
   <remove-node path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='Barcode']/field[@name='barcodeFormat']" />
   <remove-node path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='Barcode']/field[@name='value']" />
 
   
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='AbstractZoomHandler']/field[@name='zoomLevel']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='AbstractZoomHandler']/field[@name='zoomLevel']" />
 
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='opticalStabilizationEnabled']" />
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='autoExposureRegionEnabled']" />
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='autoFocusInterval']" />
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='fallbackLensFacings']" />
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='focalLength']" />
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='focusMode']" />
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='focusOnTouchEnabled']" />
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='focusRegionEnabled']" />
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='frameSize']" />
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='frameToViewScale']" />
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='lensFacing']" />
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='maxFocalLength']" />
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='maxZoomRatio']" />
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='pictureSize']" />
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='previewSize']" />
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='sceneMode']" />
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='updateRegionsOnAutoFocusEnabled']" />
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='videoStabilizationEnabled']" />
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='zoomGestureEnabled']" />
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraConfig']/field[@name='zoomRatio']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraConfig']/field[@name='opticalStabilizationEnabled']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraConfig']/field[@name='autoExposureRegionEnabled']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraConfig']/field[@name='autoFocusInterval']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraConfig']/field[@name='fallbackLensFacings']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraConfig']/field[@name='focalLength']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraConfig']/field[@name='focusMode']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraConfig']/field[@name='focusOnTouchEnabled']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraConfig']/field[@name='focusRegionEnabled']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraConfig']/field[@name='frameSize']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraConfig']/field[@name='frameToViewScale']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraConfig']/field[@name='lensFacing']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraConfig']/field[@name='maxFocalLength']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraConfig']/field[@name='maxZoomRatio']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraConfig']/field[@name='pictureSize']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraConfig']/field[@name='previewSize']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraConfig']/field[@name='sceneMode']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraConfig']/field[@name='updateRegionsOnAutoFocusEnabled']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraConfig']/field[@name='videoStabilizationEnabled']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraConfig']/field[@name='zoomGestureEnabled']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraConfig']/field[@name='zoomRatio']" />
 
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/field[@name='cameraConfig']" />
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/field[@name='cameraFeatures']" />
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/field[@name='cameraOrientation']" />
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/field[@name='preferredCameraConfig']" />
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/field[@name='previewView']" />
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/field[@name='autoFocusTimer']" />
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraController']/method[@name='setCameraControllerListener']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraController']/field[@name='cameraConfig']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraController']/field[@name='cameraFeatures']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraController']/field[@name='cameraOrientation']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraController']/field[@name='preferredCameraConfig']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraController']/field[@name='previewView']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraController']/field[@name='autoFocusTimer']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraController']/method[@name='setCameraControllerListener']" />
   
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraFeatures']/field[@name='exposureStep']" />
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraFeatures']/field[@name='focusModes']" />
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraFeatures']/field[@name='lensFacing']" />
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraFeatures']/field[@name='maxAutoExposureRegions']" />
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraFeatures']/field[@name='maxExposure']" />
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraFeatures']/field[@name='maxFocusRegions']" />
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraFeatures']/field[@name='minExposure']" />
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraFeatures']/field[@name='pictureSizes']" />
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraFeatures']/field[@name='previewSizes']" />
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraFeatures']/field[@name='sceneModes']" />
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraFeatures']/field[@name='sensorOrientation']" />
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraFeatures']/field[@name='videoSizes']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraFeatures']/field[@name='exposureStep']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraFeatures']/field[@name='focusModes']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraFeatures']/field[@name='lensFacing']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraFeatures']/field[@name='maxAutoExposureRegions']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraFeatures']/field[@name='maxExposure']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraFeatures']/field[@name='maxFocusRegions']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraFeatures']/field[@name='minExposure']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraFeatures']/field[@name='pictureSizes']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraFeatures']/field[@name='previewSizes']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraFeatures']/field[@name='sceneModes']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraFeatures']/field[@name='sensorOrientation']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraFeatures']/field[@name='videoSizes']" />
 
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/field[@name='cameraController']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraView']/field[@name='cameraController']" />
 
   <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/field[@name='id']" />
   <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/field[@name='imageProvider']" />
@@ -210,7 +211,7 @@
 
   <remove-node path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='setCancelOnResult' and count(parameter)=0]"/>
 
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/interface[@name='NativeBarcodeResultListener']"/>
+  <remove-node path="/api/package[@name='io.anyline.camera']/interface[@name='NativeBarcodeResultListener']"/>
   
   <!-- remove methods with dependencies to removed classes -->
   
@@ -233,14 +234,14 @@
   <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/method[@name='invokeOnRunSkipped']" />
   <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/method[@name='onAbortRun']" />
 
-  <remove-node path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineRawResult']/method[@name='getCoreResult']" />
+  <remove-node path="/api/package[@name='io.anyline.models']/class[@name='AnylineRawResult']/method[@name='getCoreResult']" />
 
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='CameraView']/method[@name='enableBarcodeDetection']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraView']/method[@name='enableBarcodeDetection']" />
   
-  <remove-node path="/api/package[@name='at.nineyards.anyline.camera']/class[@name='NativeBarcodeDetector']/method[@name='enableBarcodeDetection']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='NativeBarcodeDetector']/method[@name='enableBarcodeDetection']" />
 
-  <remove-node path="/api/package[@name='at.nineyards.anyline']/class[@name='AnylineController']/constructor[@name='AnylineController']"/>
-  <remove-node path="/api/package[@name='at.nineyards.anyline.models']/class[@name='AnylineRawResult']/constructor[@name='AnylineRawResult' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.core.CoreResult']]"/>
+  <remove-node path="/api/package[@name='io.anyline']/class[@name='AnylineController']/constructor[@name='AnylineController']"/>
+  <remove-node path="/api/package[@name='io.anyline.models']/class[@name='AnylineRawResult']/constructor[@name='AnylineRawResult' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.core.CoreResult']]"/>
   
   <!--Fixes Error CS0507 'SerialScanViewComposite.CutoutRect': cannot change access modifiers when overriding 'protected' inherited member 'ScanViewPluginComposite.CutoutRect'	AnylineXamarinSDK.Droid	-->
   <attr path="/api/package[@name='io.anyline.view']/class[@name='SerialScanViewComposite']/method[@name='getCutoutRect' and count(parameter)=0]" name="visibility">protected</attr>
@@ -254,9 +255,9 @@
 
   <remove-node path="/api/package[@name='io.anyline.view']/interface[@name='LicenseKeyExceptionListener']"/>
 
-  <remove-node path="/api/package[@name='at.nineyards.anyline.trainer']"/>
+  <remove-node path="/api/package[@name='io.anyline.trainer']"/>
   <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/field[@name='trainerContext']" />
   
-  <remove-node path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='initAsync' and count(parameter)=2 and parameter[1][@type='at.nineyards.anyline.trainer.TrainerContext'] and parameter[2][@type='at.nineyards.anyline.trainer.TrainerUtils.ViewConfigResultHandler']]" />
+  <remove-node path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='initAsync' and count(parameter)=2 and parameter[1][@type='io.anyline.trainer.TrainerContext'] and parameter[2][@type='io.anyline.trainer.TrainerUtils.ViewConfigResultHandler']]" />
 
 </metadata>
