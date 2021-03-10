@@ -254,14 +254,14 @@
 <!-- DocumentScanState.valueOf(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.plugin.document']/class[@name='DocumentScanState']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
 <!-- File: IO.Anyline.View.IUIChangeListener.cs -->
-<!-- UIChangeListener.onCutoutChanged(io.anyline.view.CutoutRect) -->
+<!-- UIChangeListener.drawVisualFeedback(java.lang.Object, java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.view']/interface[@name='UIChangeListener']/method[@name='drawVisualFeedback' and count(parameter)=2 and parameter[1][@type='java.lang.Object'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">reportedObject</attr>
+<attr path="/api/package[@name='io.anyline.view']/interface[@name='UIChangeListener']/method[@name='drawVisualFeedback' and count(parameter)=2 and parameter[1][@type='java.lang.Object'] and parameter[2][@type='java.lang.String']]/parameter[2]" name="managedName">id</attr>
+<!-- UIChangeListener.onCutoutChanged(io.anyline.view.CutoutRect) -->
 <attr path="/api/package[@name='io.anyline.view']/interface[@name='UIChangeListener']/method[@name='onCutoutChanged' and count(parameter)=1 and parameter[1][@type='io.anyline.view.CutoutRect']]/parameter[1]" name="managedName">cutoutRect</attr>
 <!-- UIChangeListener.onCutoutVisibility(java.lang.String, boolean) -->
 <attr path="/api/package[@name='io.anyline.view']/interface[@name='UIChangeListener']/method[@name='onCutoutVisibility' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='boolean']]/parameter[1]" name="managedName">id</attr>
 <attr path="/api/package[@name='io.anyline.view']/interface[@name='UIChangeListener']/method[@name='onCutoutVisibility' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='boolean']]/parameter[2]" name="managedName">visible</attr>
-<!-- UIChangeListener.onScanFeedbackConfigChanged(java.lang.Object, java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.view']/interface[@name='UIChangeListener']/method[@name='onScanFeedbackConfigChanged' and count(parameter)=2 and parameter[1][@type='java.lang.Object'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">scanFeedbackConfig</attr>
-<attr path="/api/package[@name='io.anyline.view']/interface[@name='UIChangeListener']/method[@name='onScanFeedbackConfigChanged' and count(parameter)=2 and parameter[1][@type='java.lang.Object'] and parameter[2][@type='java.lang.String']]/parameter[2]" name="managedName">id</attr>
 <!-- File: IO.Anyline.Nfc.TagProvider.cs -->
 <!-- TagProvider.setTag(android.nfc.tech.IsoDep) -->
 <!-- TagProvider.setTimeout(int) -->
@@ -596,6 +596,9 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='calculateBrightnessCount' and count(parameter)=1 and parameter[1][@type='double']]/parameter[1]" name="managedName">brightness</attr>
 <!-- ScanView.drawShape(java.util.List&lt;android.graphics.PointF&gt;) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='drawShape' and count(parameter)=1 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;']]/parameter[1]" name="managedName">outline</attr>
+<!-- ScanView.drawVisualFeedback(java.lang.Object, java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='drawVisualFeedback' and count(parameter)=2 and parameter[1][@type='java.lang.Object'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">reportedObject</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='drawVisualFeedback' and count(parameter)=2 and parameter[1][@type='java.lang.Object'] and parameter[2][@type='java.lang.String']]/parameter[2]" name="managedName">id</attr>
 <!-- ScanView.init(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='init' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">configFileName</attr>
 <!-- ScanView.init(org.json.JSONObject) -->
@@ -611,9 +614,6 @@
 <!-- ScanView.onCutoutVisibility(java.lang.String, boolean) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='onCutoutVisibility' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='boolean']]/parameter[1]" name="managedName">id</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='onCutoutVisibility' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='boolean']]/parameter[2]" name="managedName">visible</attr>
-<!-- ScanView.onScanFeedbackConfigChanged(java.lang.Object, java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='onScanFeedbackConfigChanged' and count(parameter)=2 and parameter[1][@type='java.lang.Object'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">drawObject</attr>
-<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='onScanFeedbackConfigChanged' and count(parameter)=2 and parameter[1][@type='java.lang.Object'] and parameter[2][@type='java.lang.String']]/parameter[2]" name="managedName">id</attr>
 <!-- ScanView.setCountsForAutoFlash(int, int, int, int) -->
 <!-- ScanView.setCropRect(io.anyline.opencv.core.Rect) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='setCropRect' and count(parameter)=1 and parameter[1][@type='io.anyline.opencv.core.Rect']]/parameter[1]" name="managedName">cropRect</attr>
@@ -2778,7 +2778,7 @@
 <!-- File: IO.Anyline.Camera.FaceDetector.cs -->
 <!-- FaceDetector.FaceDetectionResultHandler.onFailure(java.lang.String) -->
 <!-- FaceDetector.FaceDetectionResultHandler.onSuccess(io.anyline.models.AnylineImage) -->
-<!-- FaceDetector.FaceDetector(io.anyline.camera.FaceDetector.FaceDetectionResultHandler, android.content.Context) -->
+<!-- FaceDetector.FaceDetector(io.anyline.camera.FaceDetector.FaceDetectionResultHandler, int) -->
 <!-- FaceDetector.startFaceDetection(io.anyline.models.AnylineImage) -->
 <!-- File: IO.Anyline.Nfc.NFC.Doc9303Apdu.cs -->
 <!-- Doc9303Apdu.buildDO87(byte[]) -->
