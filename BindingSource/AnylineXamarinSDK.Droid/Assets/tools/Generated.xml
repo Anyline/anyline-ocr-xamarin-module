@@ -2778,7 +2778,7 @@
 <!-- File: IO.Anyline.Camera.FaceDetector.cs -->
 <!-- FaceDetector.FaceDetectionResultHandler.onFailure(java.lang.String) -->
 <!-- FaceDetector.FaceDetectionResultHandler.onSuccess(io.anyline.models.AnylineImage) -->
-<!-- FaceDetector.FaceDetector(io.anyline.camera.FaceDetector.FaceDetectionResultHandler, int) -->
+<!-- FaceDetector.FaceDetector(io.anyline.camera.FaceDetector.FaceDetectionResultHandler) -->
 <!-- FaceDetector.startFaceDetection(io.anyline.models.AnylineImage) -->
 <!-- File: IO.Anyline.Nfc.NFC.Doc9303Apdu.cs -->
 <!-- Doc9303Apdu.buildDO87(byte[]) -->
