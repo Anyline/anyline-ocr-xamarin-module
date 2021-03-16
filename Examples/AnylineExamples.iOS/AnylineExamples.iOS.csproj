@@ -54,7 +54,6 @@
     <CodesignExtraArgs />
     <CodesignResourceRules />
     <MtouchNoSymbolStrip>false</MtouchNoSymbolStrip>
-    <CodesignProvision>Xamarin_NFCenabled_Development</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
