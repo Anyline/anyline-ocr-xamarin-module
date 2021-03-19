@@ -4,7 +4,7 @@
   <Payload n8060:envVarPrefix="$" n8060:envVarSuffix="" n8060:pathSeparator="/">
     <Directory location="" name="">
       <File SHA256:hash="341834e6e84399c191251af6e392a1c1d659255ac167dd0e92122dcbba4e2aa7" name="LICENSE.md" size="130299" version="29.1.0"/>
-      <File SHA256:hash="a9bff7873713fb7e3ab058f8dc7b11013caa15ddc075ed601fccd50bc6c0d971" name="com.anyline.xamarin.examples_29.1.0.apk" size="71002960" version="29.1.0"/>
+      <File SHA256:hash="10054c3da0c83bedd5f96eee22d79366f046ecfb5aa0078404f50258a4bfe0c2" name="com.anyline.xamarin.examples_29.1.1.apk" size="71002939" version="29.1.0"/>
       <File SHA256:hash="c59b3d790229cf380b8beef28ce754998ec83e91673dbc26739c7781be5c6d7d" name="Makefile" size="13306" version="29.1.0"/>
       <File SHA256:hash="63495861cb02849b9fa591c474a00ad3ff3a98759411ebb9a6c10d4ba016ca44" name="README.md" size="4300" version="29.1.0"/>
     </Directory>
@@ -140,7 +140,7 @@
       <File SHA256:hash="515bc5ea7cf5681180d47fd3303b7255f2b59da9c66bf623811b847653701b00" name="AnylineXamarinSDK.Droid.csproj" size="4730" version="29.1.0"/>
     </Directory>
     <Directory location="BindingSource/AnylineXamarinSDK.Droid" name="Jars">
-      <File SHA256:hash="3fa632a035e1de18eb088cdb00a6d1d513c900bf4569324e3d494378d0c307f6" name="anylinesdk.aar" size="59545392" version="29.1.0"/>
+      <File SHA256:hash="36706e39829c6962ce49ce82b498f606d35754bed70078a54b5a7acd333818ab" name="anylinesdk.aar" size="59545023" version="29.1.0"/>
     </Directory>
     <Directory location="BindingSource/AnylineXamarinSDK.Droid" name="Additions">
       <File SHA256:hash="22bdd136c20c7d0fc4c79a4c1774d3b23f036b1528fe2e66d2df8a333eb2d652" name="AbstractBaseScanViewPlugin.cs" size="4239" version="29.1.0"/>
@@ -154,7 +154,7 @@
       <File SHA256:hash="57e0fd165a4ce35c20a2c440539bca05fa23005d64d107825b22b08da3132e69" name="EnumFields.xml" size="632" version="29.1.0"/>
     </Directory>
     <Directory location="BindingSource/AnylineXamarinSDK.Droid" name="Properties">
-      <File SHA256:hash="d368167dcd8a3dc86c9dec631588d00e08c259550bf31e843828df90554acda3" name="AssemblyInfo.cs" size="1317" version="29.1.0"/>
+      <File SHA256:hash="5c692e5d2dd795fdc3110014a44375b65926b04e258b50f2d0a490df3d3de4f5" name="AssemblyInfo.cs" size="1317" version="29.1.0"/>
     </Directory>
     <Directory location="BindingSource/AnylineXamarinSDK.Droid" name="Assets"/>
     <Directory location="BindingSource/AnylineXamarinSDK.Droid/Assets" name="tools">
@@ -352,7 +352,7 @@
       <File SHA256:hash="ece7128a072b1105ae0914c004943f08a5db3a24e8c03cf87e932890b6006ca5" name="Util.cs" size="3496" version="29.1.0"/>
       <File SHA256:hash="65f9ac0800b2f86426b01ef8556d41067304fad96445616e6d89e3a0c894f26f" name="ScanActivity.cs" size="4808" version="29.1.0"/>
       <File SHA256:hash="334f2a8da4f13c90f84c926ba96c245f87107d5c1d97a4fd85d2a17b93d8cb58" name="ResultListAdapter.cs" size="8155" version="29.1.0"/>
-      <File SHA256:hash="d48a15157bd1afe487f00350b2cefcdcae5324c8f6fb54219c2130d52005b36a" name="AnylineExamples.Droid.csproj" size="10027" version="29.1.0"/>
+      <File SHA256:hash="ace76b21a72ba0b63543809248f7ad846007d71f5d0f0009271ae56132041f2c" name="AnylineExamples.Droid.csproj" size="10027" version="29.1.0"/>
       <File SHA256:hash="0d340d5b8424e6c68705abfdca6a3bec8e365af5f1f53cbe9e2e0a56be118f6f" name="ScanResultListener.cs" size="1849" version="29.1.0"/>
       <File SHA256:hash="782bcc6994c92a1a8166240e671a05d61d2545a01262c9a78cb36fd21af0bbaa" name="DocScanUIMainActivity.cs" size="14450" version="29.1.0"/>
       <File SHA256:hash="aeb8e6b101e690f029ab1618a1880359e3f4634e51014f01dc9988020bada49f" name="DocumentScanViewUIActivity.cs" size="4973" version="29.1.0"/>
@@ -419,7 +419,7 @@
     </Directory>
     <Directory location="Examples/AnylineExamples.Droid" name="Properties">
       <File SHA256:hash="7fa47aa48a0781207d64d33597033a13aa918afefa06b8e625155029453399b3" name="AssemblyInfo.cs" size="1080" version="29.1.0"/>
-      <File SHA256:hash="363a39c5b4cd93310ef116428d3d4970a018c546a55b76939c0896b6f361b9ad" name="AndroidManifest.xml" size="633" version="29.1.0"/>
+      <File SHA256:hash="25ab9a45b1bfd9aee37a3f39c397ab8db0071a27a38282a80da252ebd9686a28" name="AndroidManifest.xml" size="633" version="29.1.0"/>
     </Directory>
     <Directory location="Examples/AnylineExamples.Droid" name="Assets">
       <File SHA256:hash="b34779f1aa5980fe7c0b04e139e2fc568759386013d6769cdf1f58b2b9575553" name="mro_config_vin.json" size="1014" version="29.1.0"/>
@@ -454,7 +454,7 @@
     <Directory location="Examples/Xamarin.Forms/Anyline" name="Anyline.Android">
       <File SHA256:hash="7624e678cd62a4bb654f47a9ea7e4a3a2fac24bc783e00053256278e37aa3459" name="ScanPageRenderer.cs" size="8746" version="29.1.0"/>
       <File SHA256:hash="74b8d90a4820396cc1ce80727bd91783b01f3bc3368a872ae30e4e8a3fe7bddb" name="AnylineSDKService.cs" size="656" version="29.1.0"/>
-      <File SHA256:hash="5975d1290ae6c6c3db9f6afacd079b6ee5f36ea2e759501e34edf7318fc348fc" name="Anyline.Android.csproj" size="5503" version="29.1.0"/>
+      <File SHA256:hash="3eb3e759447c6ecff4d082846ddf8e3685488e976c4ba3d80ff6b6a69ae49e1f" name="Anyline.Android.csproj" size="5503" version="29.1.0"/>
       <File SHA256:hash="8e208164f3e986adecfcf887f6e33cef01d3c93e97c19e763f045576c366501c" name="MainActivity.cs" size="3008" version="29.1.0"/>
     </Directory>
     <Directory location="Examples/Xamarin.Forms/Anyline/Anyline.Android" name="Resources">
@@ -664,17 +664,17 @@
       <File SHA256:hash="c15a958fcd35c87c85b4602eb052c2b28a46a5bde264621889a5acab09ea24ef" name="AssemblyInfo.cs" size="1412" version="29.1.0"/>
     </Directory>
     <Directory location="" name="Nuget">
-      <File SHA256:hash="ed01b2d90a0bdd17038ff81a9c55adbe0fe53f98dfc76540c4fe5aab98812750" name="Anyline.Xamarin.SDK.Droid.29.1.0.nupkg" size="62039442" version="29.1.0"/>
       <File SHA256:hash="28c167e09d1b0d4fe6dd6b05a65ffc91ca92cf2ddd8c7109832ead3333318cf5" name="Anyline.Xamarin.SDK.iOS.nuspec" size="2161" version="29.1.0"/>
-      <File SHA256:hash="6bc1d89d42b5a2162413f8b4e6885ab2f931beed868d8f274e4d0ebd199e75f4" name="Anyline.Xamarin.SDK.Droid.nuspec" size="1881" version="29.1.0"/>
-      <File SHA256:hash="d843009d97197ab1a14523034d7f5b740806c0d9eea59cda101cbaa45f685fb9" name="Anyline.Xamarin.SDK.iOS.29.1.0.nupkg" size="170785072" version="29.1.0"/>
+      <File SHA256:hash="2d2f38f062d609675680f194b93473253f174a8e8e72ed56a10bd66a9eb995b5" name="Anyline.Xamarin.SDK.Droid.29.1.1.nupkg" size="62039070" version="29.1.0"/>
+      <File SHA256:hash="97d1f0c6f52111aa64948f432f1f5de8c98d366dc2dbbaff0b8d24976938536f" name="Anyline.Xamarin.SDK.Droid.nuspec" size="1881" version="29.1.0"/>
+      <File SHA256:hash="5ef7be38bbe310699332904189d26596a70b5c0e8da9549f8d36ede5fc4c86eb" name="Anyline.Xamarin.SDK.iOS.29.1.0.nupkg" size="170785045" version="29.1.0"/>
     </Directory>
     <Directory location="Nuget" name="lib"/>
     <Directory location="Nuget/lib" name="Xamarin.iOS10">
-      <File SHA256:hash="e13d47ee9276249d47ab1a1b0ae7df9ca3009892b05be1c2acbb6ed97d5bf466" name="AnylineXamarinSDK.iOS.dll" size="135165952" version="29.1.0"/>
+      <File SHA256:hash="14b8b97d6a753033605bc71f59291ef7b5ef998fa7cb4b7a91270e33bd48be16" name="AnylineXamarinSDK.iOS.dll" size="135166464" version="29.1.0"/>
     </Directory>
     <Directory location="Nuget/lib" name="MonoAndroid10">
-      <File SHA256:hash="b8647ccfc05159327937f2d017aa4277695314aa501d6b000ccae2876b0bb1fb" name="AnylineXamarinSDK.Droid.dll" size="64008192" version="29.1.0"/>
+      <File SHA256:hash="ecaffb5779ed7e618d0da8b56b98a33cfeb269094cc091655b4e6e06e5b71204" name="AnylineXamarinSDK.Droid.dll" size="64008192" version="29.1.0"/>
     </Directory>
     <Directory location="Nuget" name="build">
       <File SHA256:hash="765c48481d6a316673ad580f6ac89d112c76ecd3f316a79a03e4e3130114271d" name="Anyline.Xamarin.SDK.iOS.targets" size="1847" version="29.1.0"/>
