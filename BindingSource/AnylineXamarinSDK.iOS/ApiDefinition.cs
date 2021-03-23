@@ -2074,7 +2074,7 @@ namespace AnylineXamarinSDK.iOS
         */
         // @property (nonatomic, strong) NSArray<ALBarcode *> * _Nonnull result;
         [Export ("result", ArgumentSemantic.Strong)]
-        NSObject Result { get; set; }
+	    ALBarcode[] Result { get; set; }
     }
 
     // @interface ALBarcode : NSObject
