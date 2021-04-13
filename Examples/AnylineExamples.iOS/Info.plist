@@ -1,39 +1,38 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <plist version="1.0">
-<dict>
-	<key>CFBundleDisplayName</key>
-	<string>Xamarin.iOS Examples</string>
-	<key>MinimumOSVersion</key>
-	<string>12.0</string>
-	<key>UIDeviceFamily</key>
-	<array>
-		<integer>1</integer>
-		<integer>2</integer>
-	</array>
-	<key>CFBundleShortVersionString</key>
-	<string>29.1.0</string>
-	<key>UILaunchStoryboardName</key>
-	<string>MainStoryboard.storyboard</string>
-	<key>UIMainStoryboardFile</key>
-	<string>MainStoryboard</string>
-	<key>UISupportedInterfaceOrientations</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-	</array>
-	<key>NSCameraUsageDescription</key>
-	<string>Yes we scan!</string>
-	<key>com.apple.developer.nfc.readersession.iso7816.select-identifiers</key>
-	<array>
-		<string>A0000002471001</string>
-	</array>
-	<key>NFCReaderUsageDescription</key>
-	<string>Please allow NFC access to read passports</string>
-	<key>CFBundleName</key>
-	<string>Xamarin.iOS Examples</string>
-	<key>CFBundleVersion</key>
-	<string>1</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.anyline.xamarin.examples</string>
-</dict>
+  <dict>
+    <key>CFBundleDisplayName</key>
+    <string>Xamarin.iOS Examples</string>
+    <key>MinimumOSVersion</key>
+    <string>12.0</string>
+    <key>UIDeviceFamily</key>
+    <array>
+      <integer>1</integer>
+      <integer>2</integer>
+    </array>
+    <key>CFBundleShortVersionString</key>
+    <string>30.0.0</string>
+    <key>UILaunchStoryboardName</key>
+    <string>MainStoryboard.storyboard</string>
+    <key>UIMainStoryboardFile</key>
+    <string>MainStoryboard</string>
+    <key>UISupportedInterfaceOrientations</key>
+    <array>
+      <string>UIInterfaceOrientationPortrait</string>
+    </array>
+    <key>NSCameraUsageDescription</key>
+    <string>Yes we scan!</string>
+    <key>com.apple.developer.nfc.readersession.iso7816.select-identifiers</key>
+    <array>
+      <string>A0000002471001</string>
+    </array>
+    <key>NFCReaderUsageDescription</key>
+    <string>Please allow NFC access to read passports</string>
+    <key>CFBundleName</key>
+    <string>Xamarin.iOS Examples</string>
+    <key>CFBundleVersion</key>
+    <string>1</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.anyline.xamarin.examples</string>
+  </dict>
 </plist>

@@ -1,18 +1,16 @@
 ## The recipes depends on the following Environment Variables: ##
 
-RUNNING_ON_CICD = true
-
 # //////////////////////////////////////////////////////////// RELEASE //////////////////////////////////////////////////////////// #
 # MAJOR_VERSION
 # MINOR_VERSION
-# BUILD_NUMBER
+# PATCH_VERSION
 # //////////////////////////////////////////////////////////// RELEASE //////////////////////////////////////////////////////////// #
 
 
 # ////////////////////////////////////////////////////////////// iOS ////////////////////////////////////////////////////////////// #
 # MAJOR_VERSION_IOS
 # MINOR_VERSION_IOS
-# BUILD_NUMBER_IOS
+# PATCH_VERSION_IOS
 # BUNDLE_VERSION_IOS
 # ////////////////////////////////////////////////////////////// iOS ////////////////////////////////////////////////////////////// #
 
@@ -20,7 +18,7 @@ RUNNING_ON_CICD = true
 # //////////////////////////////////////////////////////////// ANDROID //////////////////////////////////////////////////////////// #
 # MAJOR_VERSION_ANDROID
 # MINOR_VERSION_ANDROID
-# BUILD_NUMBER_ANDROID
+# PATCH_VERSION_ANDROID
 # VERSION_CODE_ANDROID	- Used in the Android Examples App - Cannot be 0.
 # KEYSTORE_PATH			- Used to sign the final Examples APK
 # KEYSTORE_RELEASE_PW	- Used to sign the final Examples APK
@@ -124,7 +122,7 @@ endif
 	@zipalign -f 4 "Examples/AnylineExamples.Droid/bin/Release/com.anyline.xamarin.examples-Signed.apk" "Examples/AnylineExamples.Droid/bin/Release/com.anyline.xamarin.examples.apk"
 	
 	@rm -rf *.apk
-	@mv "Examples/AnylineExamples.Droid/bin/Release/com.anyline.xamarin.examples.apk" "com.anyline.xamarin.examples_$(MAJOR_VERSION_ANDROID).$(MINOR_VERSION_ANDROID).$(BUILD_NUMBER_ANDROID).apk"
+	@mv "Examples/AnylineExamples.Droid/bin/Release/com.anyline.xamarin.examples.apk" "com.anyline.xamarin.examples_$(MAJOR_VERSION_ANDROID).$(MINOR_VERSION_ANDROID).$(PATCH_VERSION_ANDROID).apk"
 
 
 build-ios-sdk:
@@ -200,7 +198,7 @@ bundle-and-draft-new-github-release: bundle-release draft-github-release upload-
 
 create-corpus-swid-tag:
 ifneq ($(CORPUS_SWID_SCRIPT_PATH),)
-	python $(CORPUS_SWID_SCRIPT_PATH) "Anyline Xamarin SDK" "com.anyline.xamarin" "$(MAJOR_VERSION).$(MINOR_VERSION).0" "$(SWID_TAG_NAME)" "." "."
+	python $(CORPUS_SWID_SCRIPT_PATH) "Anyline Xamarin SDK" "com.anyline.xamarin" "$(MAJOR_VERSION).$(MINOR_VERSION).$(PATCH_VERSION)" "$(SWID_TAG_NAME)" "." "."
 endif
 
 #SETUP
@@ -208,27 +206,27 @@ endif
 set-anyline-android-version:
 ifeq ($(OS),Windows_NT)
 # Change SDK version
-	@sed -i "s/^\[assembly: AssemblyVersion.*/\[assembly: AssemblyVersion(\"$(MAJOR_VERSION_ANDROID).$(MINOR_VERSION_ANDROID).$(BUILD_NUMBER_ANDROID)\")\]/" BindingSource/AnylineXamarinSDK.Droid/Properties/AssemblyInfo.cs
+	@sed -i "s/^\[assembly: AssemblyVersion.*/\[assembly: AssemblyVersion(\"$(MAJOR_VERSION_ANDROID).$(MINOR_VERSION_ANDROID).$(PATCH_VERSION_ANDROID)\")\]/" BindingSource/AnylineXamarinSDK.Droid/Properties/AssemblyInfo.cs
 # Change NuGet package version
-	@sed -i "s/<version>.*/<version>$(MAJOR_VERSION_ANDROID).$(MINOR_VERSION_ANDROID).$(BUILD_NUMBER_ANDROID)<\/version>/" Nuget/Anyline.Xamarin.SDK.Droid.nuspec
+	@sed -i "s/<version>.*/<version>$(MAJOR_VERSION_ANDROID).$(MINOR_VERSION_ANDROID).$(PATCH_VERSION_ANDROID)<\/version>/" Nuget/Anyline.Xamarin.SDK.Droid.nuspec
 else
 # Change SDK version
-	@sed -i '' "s/^\[assembly: AssemblyVersion.*/\[assembly: AssemblyVersion(\"$(MAJOR_VERSION_ANDROID).$(MINOR_VERSION_ANDROID).$(BUILD_NUMBER_ANDROID)\")\]/" BindingSource/AnylineXamarinSDK.Droid/Properties/AssemblyInfo.cs
+	@sed -i '' "s/^\[assembly: AssemblyVersion.*/\[assembly: AssemblyVersion(\"$(MAJOR_VERSION_ANDROID).$(MINOR_VERSION_ANDROID).$(PATCH_VERSION_ANDROID)\")\]/" BindingSource/AnylineXamarinSDK.Droid/Properties/AssemblyInfo.cs
 # Change NuGet package version
-	@sed -i '' "s/<version>.*/<version>$(MAJOR_VERSION_ANDROID).$(MINOR_VERSION_ANDROID).$(BUILD_NUMBER_ANDROID)<\/version>/" Nuget/Anyline.Xamarin.SDK.Droid.nuspec
+	@sed -i '' "s/<version>.*/<version>$(MAJOR_VERSION_ANDROID).$(MINOR_VERSION_ANDROID).$(PATCH_VERSION_ANDROID)<\/version>/" Nuget/Anyline.Xamarin.SDK.Droid.nuspec
 endif
 
 set-anyline-ios-version:
 ifeq ($(OS),Windows_NT)
 # Change SDK version
-	@sed -i "s/^\[assembly: AssemblyVersion.*/\[assembly: AssemblyVersion(\"$(MAJOR_VERSION_IOS).$(MINOR_VERSION_IOS).$(BUILD_NUMBER_IOS)\")\]/" BindingSource/AnylineXamarinSDK.iOS/Properties/AssemblyInfo.cs
+	@sed -i "s/^\[assembly: AssemblyVersion.*/\[assembly: AssemblyVersion(\"$(MAJOR_VERSION_IOS).$(MINOR_VERSION_IOS).$(PATCH_VERSION_IOS)\")\]/" BindingSource/AnylineXamarinSDK.iOS/Properties/AssemblyInfo.cs
 # Change NuGet package version
-	@sed -i "s/<version>.*/<version>$(MAJOR_VERSION_IOS).$(MINOR_VERSION_IOS).$(BUILD_NUMBER_IOS)<\/version>/" Nuget/Anyline.Xamarin.SDK.iOS.nuspec
+	@sed -i "s/<version>.*/<version>$(MAJOR_VERSION_IOS).$(MINOR_VERSION_IOS).$(PATCH_VERSION_IOS)<\/version>/" Nuget/Anyline.Xamarin.SDK.iOS.nuspec
 else
 # Change SDK version
-	@sed -i '' "s/^\[assembly: AssemblyVersion.*/\[assembly: AssemblyVersion(\"$(MAJOR_VERSION_IOS).$(MINOR_VERSION_IOS).$(BUILD_NUMBER_IOS)\")\]/" BindingSource/AnylineXamarinSDK.iOS/Properties/AssemblyInfo.cs
+	@sed -i '' "s/^\[assembly: AssemblyVersion.*/\[assembly: AssemblyVersion(\"$(MAJOR_VERSION_IOS).$(MINOR_VERSION_IOS).$(PATCH_VERSION_IOS)\")\]/" BindingSource/AnylineXamarinSDK.iOS/Properties/AssemblyInfo.cs
 # Change NuGet package version
-	@sed -i '' "s/<version>.*/<version>$(MAJOR_VERSION_IOS).$(MINOR_VERSION_IOS).$(BUILD_NUMBER_IOS)<\/version>/" Nuget/Anyline.Xamarin.SDK.iOS.nuspec
+	@sed -i '' "s/<version>.*/<version>$(MAJOR_VERSION_IOS).$(MINOR_VERSION_IOS).$(PATCH_VERSION_IOS)<\/version>/" Nuget/Anyline.Xamarin.SDK.iOS.nuspec
 endif
 
 create-local-nuget-source: clean-nuget-anyline-cache
@@ -239,23 +237,23 @@ reference-android-nuget-package: create-local-nuget-source
 	# Referece the generated NuGet packages
 	@-dotnet remove Examples/AnylineExamples.Droid/AnylineExamples.Droid.csproj package Anyline.Xamarin.SDK.Droid
 	@-dotnet remove Examples/Xamarin.Forms/Anyline/Anyline.Android/Anyline.Android.csproj package Anyline.Xamarin.SDK.Droid
-	@dotnet add Examples/AnylineExamples.Droid/AnylineExamples.Droid.csproj package Anyline.Xamarin.SDK.Droid -v $(MAJOR_VERSION_ANDROID).$(MINOR_VERSION_ANDROID).$(BUILD_NUMBER_ANDROID)
-	@dotnet add Examples/Xamarin.Forms/Anyline/Anyline.Android/Anyline.Android.csproj package Anyline.Xamarin.SDK.Droid -v $(MAJOR_VERSION_ANDROID).$(MINOR_VERSION_ANDROID).$(BUILD_NUMBER_ANDROID)
+	@dotnet add Examples/AnylineExamples.Droid/AnylineExamples.Droid.csproj package Anyline.Xamarin.SDK.Droid -v $(MAJOR_VERSION_ANDROID).$(MINOR_VERSION_ANDROID).$(PATCH_VERSION_ANDROID)
+	@dotnet add Examples/Xamarin.Forms/Anyline/Anyline.Android/Anyline.Android.csproj package Anyline.Xamarin.SDK.Droid -v $(MAJOR_VERSION_ANDROID).$(MINOR_VERSION_ANDROID).$(PATCH_VERSION_ANDROID)
 
 reference-ios-nuget-package: create-local-nuget-source
 	# Referece the generated NuGet packages
 	@-dotnet remove Examples/AnylineExamples.iOS/AnylineExamples.iOS.csproj package Anyline.Xamarin.SDK.iOS
 	@-dotnet remove Examples/Xamarin.Forms/Anyline/Anyline.iOS/Anyline.iOS.csproj package Anyline.Xamarin.SDK.iOS
-	@dotnet add Examples/AnylineExamples.iOS/AnylineExamples.iOS.csproj package Anyline.Xamarin.SDK.iOS -v $(MAJOR_VERSION_IOS).$(MINOR_VERSION_IOS).$(BUILD_NUMBER_IOS)
-	@dotnet add Examples/Xamarin.Forms/Anyline/Anyline.iOS/Anyline.iOS.csproj package Anyline.Xamarin.SDK.iOS -v $(MAJOR_VERSION_IOS).$(MINOR_VERSION_IOS).$(BUILD_NUMBER_IOS)
+	@dotnet add Examples/AnylineExamples.iOS/AnylineExamples.iOS.csproj package Anyline.Xamarin.SDK.iOS -v $(MAJOR_VERSION_IOS).$(MINOR_VERSION_IOS).$(PATCH_VERSION_IOS)
+	@dotnet add Examples/Xamarin.Forms/Anyline/Anyline.iOS/Anyline.iOS.csproj package Anyline.Xamarin.SDK.iOS -v $(MAJOR_VERSION_IOS).$(MINOR_VERSION_IOS).$(PATCH_VERSION_IOS)
 
 #GitHub
 
 draft-github-release:
-	gh release create v$(MAJOR_VERSION).$(MINOR_VERSION) -d -t "Anyline Xamarin SDK $(MAJOR_VERSION).$(MINOR_VERSION)" -n "https://documentation.anyline.com/toc/platforms/xamarin/release_guide/index.html" --target "$(BRANCH)" -R github.com/Anyline/anyline-ocr-xamarin-module 
+	gh release create v$(MAJOR_VERSION).$(MINOR_VERSION).$(PATCH_VERSION) -d -t "Anyline Xamarin SDK $(MAJOR_VERSION).$(MINOR_VERSION).$(PATCH_VERSION)" -n "https://documentation.anyline.com/toc/platforms/xamarin/release_guide/index.html" --target "$(BRANCH)" -R github.com/Anyline/anyline-ocr-xamarin-module 
 
 upload-release-bundle:
-	gh release upload v$(MAJOR_VERSION).$(MINOR_VERSION) anyline-ocr-xamarin-module.zip -R github.com/Anyline/anyline-ocr-xamarin-module
+	gh release upload v$(MAJOR_VERSION).$(MINOR_VERSION).$(PATCH_VERSION) anyline-ocr-xamarin-module.zip -R github.com/Anyline/anyline-ocr-xamarin-module
 
 # CLEAN
 
