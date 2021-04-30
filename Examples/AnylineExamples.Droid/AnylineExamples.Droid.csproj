@@ -135,7 +135,7 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher_round.png" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Anyline.Xamarin.SDK.Droid" Version="30.0.0" />
+    <PackageReference Include="Anyline.Xamarin.SDK.Droid" Version="30.1.0" />
     <PackageReference Include="Xamarin.Android.Support.Compat" Version="28.0.0.3" />
     <PackageReference Include="Xamarin.Android.Support.Core.UI" Version="28.0.0.3" />
     <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.3" />
