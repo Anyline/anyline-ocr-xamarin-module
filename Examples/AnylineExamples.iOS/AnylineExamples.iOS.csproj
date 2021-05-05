@@ -110,6 +110,7 @@
     <BundleResource Include="Resources\mro_config_tin.json" />
     <BundleResource Include="Resources\workflows_config_parallel_scanning.json" />
     <BundleResource Include="Resources\id_config_universal.json" />
+    <BundleResource Include="Resources\iban_view_config.json" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

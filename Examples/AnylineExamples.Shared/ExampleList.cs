@@ -51,6 +51,7 @@ namespace AnylineExamples.Shared
         public static readonly string Document = "Document";
         //public static readonly string DocumentUI = "Document (Extended UI)";
         public static readonly string VoucherCode = "Voucher Code";
+        public static readonly string IBAN = "IBAN";
         public static readonly string CowTag = "Cattle Tag";
         public static readonly string SerialScanning = "Serial Scanning (LPT > DL > VIN)";
         public static readonly string ParallelScanning = "Parallel Scanning (Meter / Barcode)";
@@ -87,6 +88,7 @@ namespace AnylineExamples.Shared
             new ExampleModel(ItemType.Header, Category.Others, Category.Others, ""),
             new ExampleModel(ItemType.Item, Example.Barcode, Category.Others, "others_config_barcode.json"),
             new ExampleModel(ItemType.Item, Example.VoucherCode, Category.Others, "others_config_voucher_code.json"),
+            new ExampleModel(ItemType.Item, Example.IBAN, Category.Others, "iban_view_config.json"),
             new ExampleModel(ItemType.Item, Example.CowTag, Category.Others, "others_config_cow_tag.json"),
 
             new ExampleModel(ItemType.Header, Category.Workflows, Category.Workflows, ""),
