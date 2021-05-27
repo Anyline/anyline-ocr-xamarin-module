@@ -611,6 +611,9 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='init' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">configFileName</attr>
 <!-- ScanView.init(org.json.JSONObject) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='init' and count(parameter)=1 and parameter[1][@type='org.json.JSONObject']]/parameter[1]" name="managedName">configJsonObject</attr>
+<!-- ScanView.initAsync(io.anyline.trainer.ProjectContext, io.anyline.trainer.TrainerUtils.ViewConfigResultHandler) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='initAsync' and count(parameter)=2 and parameter[1][@type='io.anyline.trainer.ProjectContext'] and parameter[2][@type='io.anyline.trainer.TrainerUtils.ViewConfigResultHandler']]/parameter[1]" name="managedName">projectContext</attr>
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='initAsync' and count(parameter)=2 and parameter[1][@type='io.anyline.trainer.ProjectContext'] and parameter[2][@type='io.anyline.trainer.TrainerUtils.ViewConfigResultHandler']]/parameter[2]" name="managedName">resultHandler</attr>
 <!-- ScanView.initComposite(org.json.JSONObject) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='initComposite' and count(parameter)=1 and parameter[1][@type='org.json.JSONObject']]/parameter[1]" name="managedName">jsonObject</attr>
 <!-- ScanView.notifyDrawDocumentFeedback(java.util.List&lt;android.graphics.PointF&gt;) -->
@@ -830,6 +833,10 @@
 <!-- CameraFeatures2.AutoExposureMode.valueOf(java.lang.String) -->
 <!-- CameraFeatures2.CameraFeatures2(java.lang.String, android.hardware.camera2.CameraCharacteristics) -->
 <!-- CameraFeatures2.getForAllCameras(android.content.Context) -->
+<!-- File: IO.Anyline.Trainer.IAssetDelegate.cs -->
+<!-- IAssetDelegate.onAssetDownloadProgress(java.lang.String, float) -->
+<!-- IAssetDelegate.onAssetUpdateAvailable(boolean) -->
+<!-- IAssetDelegate.onAssetUpdateError(java.lang.String) -->
 <!-- File: IO.Anyline.View.JsonParser.cs -->
 <!-- JsonParser.init(org.json.JSONObject, android.content.Context) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='JsonParser']/method[@name='init' and count(parameter)=2 and parameter[1][@type='org.json.JSONObject'] and parameter[2][@type='android.content.Context']]/parameter[1]" name="managedName">jsonObject</attr>
@@ -988,7 +995,9 @@
 <!-- MatOfDouble.fromList(java.util.List&lt;java.lang.Double&gt;) -->
 <!-- MatOfDouble.fromNativeAddr(long) -->
 <!-- File: IO.Anyline.Products.AnylineUpdater.cs -->
-<!-- File: IO.Anyline.Util.NumUtil.cs -->
+<!-- AnylineUpdater.getLocalAssetVersion(io.anyline.trainer.AssetContext) -->
+<!-- AnylineUpdater.update(android.content.Context, io.anyline.trainer.AssetContext, io.anyline.products.IAnylineUpdateDelegate) -->
+<!-- File: IO.Anyline.Util.NumUtil.cs -->
 <!-- NumUtil.asDouble(java.lang.Object) -->
 <!-- NumUtil.asFloat(java.lang.Object) -->
 <!-- NumUtil.asInteger(java.lang.Object) -->
@@ -1202,6 +1211,14 @@
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIDFrontFieldConfidences']/method[@name='setPlaceOfBirth' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">placeOfBirth</attr>
 <!-- GermanIDFrontFieldConfidences.setSurname(int) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIDFrontFieldConfidences']/method[@name='setSurname' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">surname</attr>
+<!-- File: IO.Anyline.Trainer.AssetContext.cs -->
+<!-- AssetContext.AssetContext(android.content.Context, java.lang.String) -->
+<!-- AssetContext.AssetContext(android.content.Context, java.lang.String, io.anyline.Version) -->
+<!-- AssetContext.AssetContext(android.content.Context, java.lang.String, io.anyline.Version, java.lang.String) -->
+<!-- AssetContext.AssetContext(android.content.Context, java.lang.String, java.lang.String) -->
+<!-- AssetContext.AssetContext(android.content.Context, org.json.JSONObject) -->
+<!-- AssetContext.getParameter(java.lang.String) -->
+<!-- AssetContext.setParameter(java.lang.String, java.lang.Object) -->
 <!-- File: IO.Anyline.Opencv.ML.KNearest.cs -->
 <!-- KNearest.KNearest(long) -->
 <!-- KNearest.setAlgorithmType(int) -->
@@ -1308,6 +1325,10 @@
 <!-- AnylineScanResult.AnylineScanResult(java.util.List&lt;android.graphics.PointF&gt;, java.lang.Integer, io.anyline.models.AnylineImage, io.anyline.models.AnylineImage, io.anyline.models.AnylineImage, T, java.lang.String) -->
 <!-- AnylineScanResult.AnylineScanResult(java.util.List&lt;android.graphics.PointF&gt;, java.lang.Integer, io.anyline.models.AnylineImage, io.anyline.models.AnylineImage, T, java.lang.String) -->
 <!-- AnylineScanResult.setOutline(java.util.List&lt;android.graphics.PointF&gt;) -->
+<!-- AnylineScanResult.reportCorrectedResult(android.content.Context, java.lang.String, java.lang.String, io.anyline.trainer.TrainerUtils.ReportCorrectedResultHandler) -->
+<!-- AnylineScanResult.reportCorrectedResult(android.content.Context, java.lang.String, java.lang.String, java.lang.String, io.anyline.trainer.TrainerUtils.ReportCorrectedResultHandler) -->
+<!-- AnylineScanResult.reportCorrectedResult(android.content.Context, java.lang.String, java.util.Map&lt;java.lang.String, java.lang.String&gt;, java.lang.String, io.anyline.trainer.TrainerUtils.ReportCorrectedResultHandler) -->
+<!-- AnylineScanResult.reportCorrectedResult(android.content.Context, java.util.Map&lt;java.lang.String, java.lang.String&gt;, java.lang.String, io.anyline.trainer.TrainerUtils.ReportCorrectedResultHandler) -->
 <!-- File: IO.Anyline.Opencv.Core.MatOfDMatch.cs -->
 <!-- MatOfDMatch.MatOfDMatch(io.anyline.opencv.core.DMatch...) -->
 <!-- MatOfDMatch.MatOfDMatch(io.anyline.opencv.core.Mat) -->
@@ -2042,6 +2063,12 @@
 <!-- ActiveArrayZoomHandlerBuilder.setZoomListener(io.anyline.camera.ActiveArrayZoomHandler.IZoomHandlerListener) -->
 <!-- File: IO.Anyline.Nfc.Converter.ASN1Converter.cs -->
 <!-- ASN1Converter.translateAsn1Oid(java.lang.String) -->
+<!-- File: IO.Anyline.Products.ProductContext.cs -->
+<!-- ProductContext.ProductContext(android.content.Context, java.lang.String, io.anyline.products.Product) -->
+<!-- ProductContext.ProductContext(android.content.Context, java.lang.String, io.anyline.products.Product, io.anyline.Version) -->
+<!-- ProductContext.ProductContext(android.content.Context, java.lang.String, io.anyline.products.Product, io.anyline.Version, java.lang.String) -->
+<!-- ProductContext.ProductContext(android.content.Context, java.lang.String, io.anyline.products.Product, java.lang.String) -->
+<!-- ProductContext.ProductContext(android.content.Context, org.json.JSONObject) -->
 <!-- File: IO.Anyline.Plugin.ID.MrzFieldScanOptions.cs -->
 <!-- MrzFieldScanOptions.setAddress(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldScanOptions']/method[@name='setAddress' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">address</attr>
@@ -2563,6 +2590,13 @@
 <!-- FlashControl.setCameraController(io.anyline.camera.CameraController) -->
 <!-- FlashControl.setFlashOnIfAuto(boolean) -->
 <!-- FlashControl.setMode(io.anyline.camera.FlashControl.Mode) -->
+<!-- File: IO.Anyline.Trainer.TrainerUtils.cs -->
+<!-- TrainerUtils.ReportCorrectedResultHandler.onReportCorrectedResult(java.lang.String) -->
+<!-- TrainerUtils.TokenResultHandler.onTokenResult(java.lang.String) -->
+<!-- TrainerUtils.ViewConfigResultHandler.onViewConfigResult(org.json.JSONObject) -->
+<!-- TrainerUtils.getAuthToken(io.anyline.trainer.ProjectContext, io.anyline.trainer.TrainerUtils.TokenResultHandler) -->
+<!-- TrainerUtils.getViewConfigJsonAsync(io.anyline.trainer.ProjectContext, io.anyline.trainer.TrainerUtils.ViewConfigResultHandler) -->
+<!-- TrainerUtils.reportCorrectedResults(io.anyline.trainer.AssetContext, java.lang.String, java.lang.String, io.anyline.trainer.TrainerUtils.ReportCorrectedResultHandler) -->
 <!-- File: IO.Anyline.Plugin.ID.DrivingLicenseFieldScanOptions.cs -->
 <!-- DrivingLicenseFieldScanOptions.setAuthority(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOptions']/method[@name='setAuthority' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">authority</attr>
@@ -2856,6 +2890,14 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPluginComposite']/method[@name='setImageProvider' and count(parameter)=1 and parameter[1][@type='io.anyline.ImageProvider']]/parameter[1]" name="managedName">imageProvider</attr>
 <!-- File: IO.Anyline.Camera.NativeBarcodeDetector.cs -->
 <!-- NativeBarcodeDetector.setCameraView(io.anyline.camera.CameraView) -->
+<!-- File: IO.Anyline.Trainer.ProjectContext.cs -->
+<!-- ProjectContext.ProjectContext(android.content.Context, java.lang.String, java.lang.String, java.lang.String) -->
+<!-- ProjectContext.ProjectContext(android.content.Context, java.lang.String, java.lang.String, java.lang.String, io.anyline.Version) -->
+<!-- ProjectContext.ProjectContext(android.content.Context, java.lang.String, java.lang.String, java.lang.String, io.anyline.Version, java.lang.String) -->
+<!-- ProjectContext.ProjectContext(android.content.Context, java.lang.String, java.lang.String, java.lang.String, java.lang.String) -->
+<!-- ProjectContext.ProjectContext(android.content.Context, org.json.JSONObject) -->
+<!-- ProjectContext.setApiKey(java.lang.String) -->
+<!-- ProjectContext.setProjectId(java.lang.String) -->
 <!-- File: IO.Anyline.Opencv.Features2d.DescriptorMatcher.cs -->
 <!-- DescriptorMatcher.DescriptorMatcher(long) -->
 <!-- DescriptorMatcher.add(java.util.List&lt;io.anyline.opencv.core.Mat&gt;) -->

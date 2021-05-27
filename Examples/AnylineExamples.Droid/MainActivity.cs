@@ -13,10 +13,16 @@ using System.Threading.Tasks;
 namespace AnylineExamples.Droid
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
-    public class MainActivity : AppCompatActivity
+    public class MainActivity : AppCompatActivity, IO.Anyline.Products.IAnylineUpdateDelegate
     {
+        // the "IO.Anyline.Products.IAnylineUpdateDelegate" interface is only necessary when using the Anyline Trainer - OTA
+        // for the default usage, it is not necessary to implement this interface
+
         private ActivityListAdapter listAdapter;
         private ListView listView;
+
+        private IO.Anyline.Trainer.ProjectContext projectContext;
+
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -65,6 +71,9 @@ namespace AnylineExamples.Droid
                 Toast.MakeText(this, e.Message, ToastLength.Long).Show();
                 System.Diagnostics.Debug.WriteLine(e.Message);
             }
+
+            TriggerAnylineTrainerUpdate();
+
         }
 
         private void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs a)
@@ -92,10 +101,6 @@ namespace AnylineExamples.Droid
             try
             {
                 var intent = new Intent(ApplicationContext, typeof(ScanActivity));
-                //if (item.Model.Type == ItemType.DocumentUI)
-                //{
-                //    intent = new Intent(ApplicationContext, typeof(DocScanUIMainActivity));
-                //}
 
                 intent.PutExtra("jsonPath", jsonPath);
                 intent.PutExtra("title", item.Model.Name);
@@ -119,6 +124,40 @@ namespace AnylineExamples.Droid
             int id = item.ItemId;
             return base.OnOptionsItemSelected(item);
         }
+
+        #region Anyline Trainer  - OTA
+        private void TriggerAnylineTrainerUpdate()
+        {
+            //The id of the project on the Anyline Trainer
+            string projectId = "";
+            //The API key for the project
+            string apiKey = "";
+            // The Asset ID
+            string assetId = "";
+            // An id for the Anyline Scan Plugin that will be using these assets
+            string pluginId = "";
+            //projectContext = new IO.Anyline.Trainer.ProjectContext(this, pluginId, projectId, apiKey, assetId);
+
+            //IO.Anyline.Products.AnylineUpdater.Update(this, projectContext, this);
+            /* Check the methods OnUpdateError, OnUpdateFinished and OnUpdateProgress for the callbacks of the Update method. */
+        }
+
+        public void OnUpdateError(string error)
+        {
+            System.Diagnostics.Debug.WriteLine("Update FAILED");
+        }
+
+        public void OnUpdateFinished()
+        {
+            System.Diagnostics.Debug.WriteLine("Update Finished");
+        }
+
+        public void OnUpdateProgress(string p0, float p1)
+        {
+            float updateProgress = (int)(p1 * 100);
+            System.Diagnostics.Debug.WriteLine("Update progress: %" + updateProgress);
+        }
+        #endregion
     }
 }
 

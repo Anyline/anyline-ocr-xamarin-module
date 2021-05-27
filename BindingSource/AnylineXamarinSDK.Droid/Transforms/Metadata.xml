@@ -26,7 +26,7 @@
   <remove-node path="/api/package[@name='io.anyline.opencv.ml']/class[@name='SVM']"/>
 
   <!-- remove anyline components -->
-
+  
   <remove-node path="/api/package[@name='at.nineyards.anyline.core']"/>
   <remove-node path="/api/package[@name='at.nineyards.anyline.core.custom']"/>
   <remove-node path="/api/package[@name='io.anyline.reporter']"/>
@@ -42,6 +42,8 @@
   <remove-node path="/api/package[@name='io.anyline.camera']/interface[@name='CameraController.CameraControllerListener']"/>
 
   <!--Fixes warning BG8401: Skipping ... -->
+
+  <remove-node path="/api/package[@name='io.anyline']/class[@name='AnylineSDK']/field[@name='TRAINER_ENVIRONMENT']" />
 
   <remove-node path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='Barcode']/field[@name='coordinates']" />
   <remove-node path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='Barcode']/field[@name='barcodeFormat']" />
@@ -70,6 +72,7 @@
   <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraConfig']/field[@name='videoStabilizationEnabled']" />
   <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraConfig']/field[@name='zoomGestureEnabled']" />
   <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraConfig']/field[@name='zoomRatio']" />
+  <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraConfig']/field[@name='frameToViewScaleWidth']" />
 
   <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraController']/field[@name='cameraConfig']" />
   <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraController']/field[@name='cameraFeatures']" />
@@ -234,30 +237,31 @@
   <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/method[@name='invokeOnRunSkipped']" />
   <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/method[@name='onAbortRun']" />
 
-  <remove-node path="/api/package[@name='io.anyline.models']/class[@name='AnylineRawResult']/method[@name='getCoreResult']" />
 
   <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='CameraView']/method[@name='enableBarcodeDetection']" />
   
   <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='NativeBarcodeDetector']/method[@name='enableBarcodeDetection']" />
 
   <remove-node path="/api/package[@name='io.anyline']/class[@name='AnylineController']/constructor[@name='AnylineController']"/>
-  <remove-node path="/api/package[@name='io.anyline.models']/class[@name='AnylineRawResult']/constructor[@name='AnylineRawResult' and count(parameter)=1 and parameter[1][@type='at.nineyards.anyline.core.CoreResult']]"/>
   
-  <!--Fixes Error CS0507 'SerialScanViewComposite.CutoutRect': cannot change access modifiers when overriding 'protected' inherited member 'ScanViewPluginComposite.CutoutRect'	AnylineXamarinSDK.Droid	-->
+  <!--Fixes Error CS0507 'SerialScanViewComposite.CutoutRect': cannot change access modifiers when overriding 'protected' inherited member 'ScanViewPluginComposite.CutoutRect' AnylineXamarinSDK.Droid -->
   <attr path="/api/package[@name='io.anyline.view']/class[@name='SerialScanViewComposite']/method[@name='getCutoutRect' and count(parameter)=0]" name="visibility">protected</attr>
   <attr path="/api/package[@name='io.anyline.view']/class[@name='ParallelScanViewComposite']/method[@name='getCutoutRect' and count(parameter)=0]" name="visibility">protected</attr>
   <attr path="/api/package[@name='io.anyline.plugin.document']/class[@name='DocumentScanViewPlugin']/method[@name='setupListenersForScanView' and count(parameter)=0]" name="visibility">protected</attr>
   <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPlugin']/method[@name='getCutoutRect' and count(parameter)=0]" name="visibility">protected</attr>
-
-  <!--Fixes Error	CS0542	'FieldScanOption': member names cannot be the same as their enclosing type-->
+  
+  <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPlugin']/method[@name='getCutoutRect' and count(parameter)=0]" name="visibility">protected</attr>
+  
+  <remove-node path="/api/package[@name='io.anyline.trainer']/class[@name='AssetController']" />
+  <remove-node path="/api/package[@name='io.anyline.products']/class[@name='AnylineUpdater']/method[@name='getControllerForPluginId']"/>
+    
+  <remove-node path="/api/package[@name='io.anyline.models']/class[@name='AnylineRawResult']/constructor[@name='AnylineRawResult' and count(parameter)=1]" />-->
+  <remove-node path="/api/package[@name='io.anyline.models']/class[@name='AnylineRawResult']/method[@name='getCoreResult']" />
+  
+  <!--Fixes Error   CS0542  'FieldScanOption': member names cannot be the same as their enclosing type-->
   <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IDFieldScanOptions.FieldScanOption']/field[@name='fieldScanOption']" name="managedName">IDFieldScanOption</attr>
   <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IDFieldScanOptions.FieldScanOption']/field[@name='fieldScanOption']" name="visibility">public</attr>
 
   <remove-node path="/api/package[@name='io.anyline.view']/interface[@name='LicenseKeyExceptionListener']"/>
-
-  <remove-node path="/api/package[@name='io.anyline.trainer']"/>
-  <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/field[@name='trainerContext']" />
-  
-  <remove-node path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='initAsync' and count(parameter)=2 and parameter[1][@type='io.anyline.trainer.TrainerContext'] and parameter[2][@type='io.anyline.trainer.TrainerUtils.ViewConfigResultHandler']]" />
 
 </metadata>
