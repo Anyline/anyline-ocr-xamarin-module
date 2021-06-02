@@ -70,6 +70,15 @@ replace-android-sdk:
 	@rm -rf "javadoc.jar"
 	@echo "Android SDK and Javadoc replaced"
 
+replace-ios-sdk:
+	@-rm -rf BindingSource/AnylineXamarinSDK.iOS/Anyline.framework
+	@-rm BindingSource/AnylineXamarinSDK.iOS/Anyline.a
+	@-rm -rf Nuget/AnylineResources.bundle
+	@cp -r $(IOS_FRAMEWORK_PATH)/Anyline.framework BindingSource/AnylineXamarinSDK.iOS/Anyline.framework
+	@cp $(IOS_FRAMEWORK_PATH)/Anyline.framework/Anyline BindingSource/AnylineXamarinSDK.iOS/Anyline.a
+	@cp -r $(IOS_FRAMEWORK_PATH)/AnylineResources.bundle Nuget/
+	@echo "iOS Framework replaced"
+ 
 # BUILD
 
 build-android-sdk:

@@ -2067,14 +2067,14 @@ namespace AnylineXamarinSDK.iOS
         // -(instancetype _Nullable)initWithResult:(NSArray<ALBarcode *> * _Nonnull)result image:(UIImage * _Nullable)image fullImage:(UIImage * _Nullable)fullImage confidence:(NSInteger)confidence pluginID:(NSString * _Nonnull)pluginID;
         [Export("initWithResult:image:fullImage:confidence:pluginID:")]
         IntPtr Constructor(ALBarcode[] result, [NullAllowed] UIImage image, [NullAllowed] UIImage fullImage, nint confidence, string pluginID);
-        /*
+        
         // @property (nonatomic, strong) NSArray<ALBarcode *> * _Nonnull barcodes;
         [Export ("barcodes", ArgumentSemantic.Strong)]
         ALBarcode[] Barcodes { get; set; }
-        */
+
         // @property (nonatomic, strong) NSArray<ALBarcode *> * _Nonnull result;
         [Export ("result", ArgumentSemantic.Strong)]
-	    ALBarcode[] Result { get; set; }
+        ALBarcode[] Result { get; set; }
     }
 
     // @interface ALBarcode : NSObject
@@ -2089,9 +2089,22 @@ namespace AnylineXamarinSDK.iOS
         [Export ("value")]
         string Value { get; }
 
+        // @property (readonly, copy, nonatomic) NSString * _Nonnull base64;
+        [Export ("base64")]
+        string Base64 { get; }
+
+        // @property (readonly, copy, nonatomic) ALSquare * _Nullable coordinates;
+        [NullAllowed, Export ("coordinates", ArgumentSemantic.Copy)]
+        ALSquare Coordinates { get; }
+
         // -(instancetype _Nonnull)initWithValue:(NSString * _Nonnull)value format:(NSString * _Nonnull)barcodeFormat;
         [Export ("initWithValue:format:")]
         IntPtr Constructor (string value, string barcodeFormat);
+
+        // -(instancetype _Nonnull)initWithValue:(NSString * _Nonnull)value format:(NSString * _Nonnull)barcodeFormat coordinates:(NSString * _Nonnull)coordinates base64:(NSString * _Nonnull)base64;
+        [Export ("initWithValue:format:coordinates:base64:")]
+        IntPtr Constructor (string value, string barcodeFormat, string coordinates, string base64);
+
         /*
         // -(NSString * _Nonnull)toJSONString;
         [Export ("toJSONString")]
@@ -2127,9 +2140,13 @@ namespace AnylineXamarinSDK.iOS
         [NullAllowed, Export ("delegates", ArgumentSemantic.Strong)]
         ALBarcodeScanPluginDelegate Delegates { get; }
 
-        // @property (assign, nonatomic) ALBarcodeFormatOptions barcodeFormatOptions;
-        [Export("barcodeFormatOptions", ArgumentSemantic.Assign)]
-        NSObject BarcodeFormatOptions { get; set; }
+        // @property (nonatomic, strong) NSArray<NSString *> * _Nonnull barcodeFormatOptions;
+        [Export ("barcodeFormatOptions", ArgumentSemantic.Strong)]
+        string[] BarcodeFormatOptions { get; set; }
+
+        // @property (assign, nonatomic) BOOL multiBarcode;
+        [Export ("multiBarcode")]
+        bool MultiBarcode { get; set; }
 
         // -(void)addDelegate:(id<ALBarcodeScanPluginDelegate> _Nonnull)delegate;
         [Export("addDelegate:")]
@@ -2150,9 +2167,13 @@ namespace AnylineXamarinSDK.iOS
         [Export("anylineBarcodeScanPlugin:didFindResult:")]
         void DidFindResult (ALBarcodeScanPlugin anylineBarcodeScanPlugin, ALBarcodeResult scanResult);
 
-        // @optional -(void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin * _Nonnull)anylineBarcodeScanPlugin updatedBarcodeFormats:(ALBarcodeFormatOptions)formats;
-        //[Export("anylineBarcodeScanPlugin:updatedBarcodeFormats:")]
-        //void UpdatedBarcodeFormats(ALBarcodeScanPlugin anylineBarcodeScanPlugin, NSSet formats);
+        // @optional -(void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin * _Nonnull)anylineBarcodeScanPlugin scannedBarcodes:(ALBarcodeResult * _Nonnull)scanResult;
+        [Export ("anylineBarcodeScanPlugin:scannedBarcodes:")]
+        void ScannedBarcodes (ALBarcodeScanPlugin anylineBarcodeScanPlugin, ALBarcodeResult scanResult);
+
+        // @optional -(void)anylineBarcodeScanPlugin:(ALBarcodeScanPlugin * _Nonnull)anylineBarcodeScanPlugin updatedBarcodeFormats:(NSArray<NSString *> * _Nonnull)barcodeFormats;
+        [Export ("anylineBarcodeScanPlugin:updatedBarcodeFormats:")]
+        void UpdatedBarcodeFormats (ALBarcodeScanPlugin anylineBarcodeScanPlugin, string[] barcodeFormats);
     }
 
     // @interface ALMeterScanViewPlugin : ALAbstractScanViewPlugin
@@ -2510,6 +2531,14 @@ namespace AnylineXamarinSDK.iOS
     	// @property (nonatomic, strong) ALLayoutDefinition * _Nullable layoutDefinition;
     	[NullAllowed, Export ("layoutDefinition", ArgumentSemantic.Strong)]
     	ALLayoutDefinition LayoutDefinition { get; set; }
+
+        // @property (nonatomic, strong) UIImage * _Nullable faceImage;
+        [NullAllowed, Export ("faceImage", ArgumentSemantic.Strong)]
+        UIImage FaceImage { get; set; }
+
+        // @property (assign, nonatomic) CGRect faceImageBounds;
+        [Export ("faceImageBounds", ArgumentSemantic.Assign)]
+        CGRect FaceImageBounds { get; set; }
 
     	// -(void)addField:(NSString * _Nonnull)fieldName value:(NSString * _Nonnull)value;
     	[Export ("addField:value:")]
@@ -3094,6 +3123,10 @@ namespace AnylineXamarinSDK.iOS
     [BaseType (typeof(ALScanResult))]
     interface ALIDResult
     {
+        // @property (readonly, assign, nonatomic) BOOL allCheckDigitsValid __attribute__((deprecated("Deprecated since Version 10. Please use the property "allCheckDigitsValid" from any Identification Object (ALMRZIdentification, ALGermanIDFrontIdentification or ALDrivingLicenseIdentification) instead.")));
+        [Export ("allCheckDigitsValid")]
+        bool AllCheckDigitsValid { get; }
+
     	// -(instancetype _Nullable)initWithResult:(ObjectType _Nonnull)result image:(UIImage * _Nullable)image fullImage:(UIImage * _Nullable)fullImage confidence:(NSInteger)confidence pluginID:(NSString * _Nonnull)pluginID;
     	[Export ("initWithResult:image:fullImage:confidence:pluginID:")]
     	IntPtr Constructor (NSObject result, [NullAllowed] UIImage image, [NullAllowed] UIImage fullImage, nint confidence, string pluginID);
