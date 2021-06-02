@@ -72,6 +72,9 @@
 <!-- File: IO.Anyline.Camera.ICameraOpenListener.cs -->
 <!-- CameraOpenListener.onCameraError(java.lang.Exception) -->
 <!-- CameraOpenListener.onCameraOpened(io.anyline.camera.CameraController, int, int) -->
+<!-- File: IO.Anyline.Plugin.ID.ArabicIdConfig.cs -->
+<!-- ArabicIdConfig.ArabicIdConfig(org.json.JSONObject) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='ArabicIdConfig']/constructor[@name='ArabicIdConfig' and count(parameter)=1 and parameter[1][@type='org.json.JSONObject']]/parameter[1]" name="managedName">arabicIdJsonConfig</attr>
 <!-- File: IO.Anyline.Plugin.ID.IdScanViewPlugin.cs -->
 <!-- IdScanViewPlugin.IdScanViewPlugin(android.content.Context, io.anyline.plugin.AbstractScanPlugin, io.anyline.view.ScanViewPluginConfig) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdScanViewPlugin']/constructor[@name='IdScanViewPlugin' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='io.anyline.plugin.AbstractScanPlugin'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig']]/parameter[1]" name="managedName">context</attr>
@@ -785,7 +788,6 @@
 <attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='BarcodeScanPlugin']/method[@name='setBarcodeFormats' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.barcode.BarcodeFormat...']]/parameter[1]" name="managedName">formats</attr>
 <!-- BarcodeScanPlugin.setMultiBarcode(boolean) -->
 <attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='BarcodeScanPlugin']/method[@name='setMultiBarcode' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">multiBarcode</attr>
-<!-- BarcodeScanPlugin.setScanMode(java.lang.Enum&lt;io.anyline.plugin.barcode.BarcodeScanPlugin.ScanMode&gt;) -->
 <!-- File: IO.Anyline.ICombinedImageProvider.cs -->
 <!-- File: IO.Anyline.Opencv.ML.DTrees.cs -->
 <!-- DTrees.DTrees(long) -->
@@ -972,6 +974,9 @@
 <!-- IAnylineViewConfig.init(android.content.Context, org.json.JSONObject) -->
 <attr path="/api/package[@name='io.anyline.view']/interface[@name='IAnylineViewConfig']/method[@name='init' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='org.json.JSONObject']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='io.anyline.view']/interface[@name='IAnylineViewConfig']/method[@name='init' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='org.json.JSONObject']]/parameter[2]" name="managedName">json</attr>
+<!-- File: IO.Anyline.Plugin.ID.Script.cs -->
+<!-- Script.valueOf(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='Script']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
 <!-- File: IO.Anyline.Opencv.Core.Range.cs -->
 <!-- Range.Range(double[]) -->
 <!-- Range.Range(int, int) -->
@@ -1163,6 +1168,8 @@
 <!-- File: IO.Anyline.Plugin.Barcode.Barcode.cs -->
 <!-- Barcode.setBarcodeFormat(io.anyline.plugin.barcode.BarcodeFormat) -->
 <attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='Barcode']/method[@name='setBarcodeFormat' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.barcode.BarcodeFormat']]/parameter[1]" name="managedName">barcodeFormat</attr>
+<!-- Barcode.setBase64(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='Barcode']/method[@name='setBase64' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">base64</attr>
 <!-- Barcode.setCoordinates(java.util.List&lt;io.anyline.opencv.core.Point&gt;) -->
 <attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='Barcode']/method[@name='setCoordinates' and count(parameter)=1 and parameter[1][@type='java.util.List&lt;io.anyline.opencv.core.Point&gt;']]/parameter[1]" name="managedName">coordinates</attr>
 <!-- Barcode.setValue(java.lang.String) -->

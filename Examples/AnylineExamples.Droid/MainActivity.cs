@@ -128,17 +128,17 @@ namespace AnylineExamples.Droid
         #region Anyline Trainer  - OTA
         private void TriggerAnylineTrainerUpdate()
         {
-            //The id of the project on the Anyline Trainer
-            string projectId = "";
-            //The API key for the project
-            string apiKey = "";
-            // The Asset ID
-            string assetId = "";
-            // An id for the Anyline Scan Plugin that will be using these assets
-            string pluginId = "";
-            //projectContext = new IO.Anyline.Trainer.ProjectContext(this, pluginId, projectId, apiKey, assetId);
+            // //The id of the project on the Anyline Trainer
+            // string projectId = "";
+            // //The API key for the project
+            // string apiKey = "";
+            // // The Asset ID
+            // string assetId = "";
+            // // An id for the Anyline Scan Plugin that will be using these assets
+            // string pluginId = "";
+            // projectContext = new IO.Anyline.Trainer.ProjectContext(this, pluginId, projectId, apiKey, assetId);
 
-            //IO.Anyline.Products.AnylineUpdater.Update(this, projectContext, this);
+            // IO.Anyline.Products.AnylineUpdater.Update(this, projectContext, this);
             /* Check the methods OnUpdateError, OnUpdateFinished and OnUpdateProgress for the callbacks of the Update method. */
         }
 
@@ -152,11 +152,12 @@ namespace AnylineExamples.Droid
             System.Diagnostics.Debug.WriteLine("Update Finished");
         }
 
-        public void OnUpdateProgress(string p0, float p1)
+        public void OnUpdateProgress(string filename, float progress)
         {
-            float updateProgress = (int)(p1 * 100);
+            float updateProgress = (int)(progress * 100);
             System.Diagnostics.Debug.WriteLine("Update progress: %" + updateProgress);
         }
+
         #endregion
     }
 }

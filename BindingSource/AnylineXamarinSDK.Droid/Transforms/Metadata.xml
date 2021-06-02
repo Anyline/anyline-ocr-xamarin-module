@@ -48,6 +48,7 @@
   <remove-node path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='Barcode']/field[@name='coordinates']" />
   <remove-node path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='Barcode']/field[@name='barcodeFormat']" />
   <remove-node path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='Barcode']/field[@name='value']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='Barcode']/field[@name='base64']" />
 
   
   <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='AbstractZoomHandler']/field[@name='zoomLevel']" />
