@@ -144,6 +144,7 @@ namespace AnylineExamples.iOS
                     || value is ALGermanIDFrontIdentification
                     || value is ALLayoutDefinition)
                 {
+                    dict.Remove("AllCheckDigitsValid");
                     value.CreatePropertyDictionary().ToList().ForEach(x => dict.AddProperty(x.Key, x.Value));
                 }
                 else if (value is ALUniversalIDIdentification universalIDIdentification)
