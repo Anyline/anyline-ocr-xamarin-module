@@ -1,4 +1,4 @@
-## The recipes depends on the following Environment Variables: ##
+## The recipes depend on the following Environment Variables: ##
 
 # //////////////////////////////////////////////////////////// RELEASE //////////////////////////////////////////////////////////// #
 # MAJOR_VERSION
