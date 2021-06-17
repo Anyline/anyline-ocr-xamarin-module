@@ -109,6 +109,10 @@ namespace AnylineExamples.Droid
                                     var bitmap = (value as AnylineImage).Clone().Bitmap;
                                     dict.Add(prop.Name, bitmap);
                                 }
+                                else if (value is Android.Graphics.Bitmap bitmap)
+                                {
+                                    dict.Add(prop.Name, bitmap);
+                                }
                                 else if (value is ID id)
                                 {
                                     var sublist = CreatePropertyList(id);

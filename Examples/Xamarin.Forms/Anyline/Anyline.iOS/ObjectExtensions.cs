@@ -160,7 +160,7 @@ namespace Anyline.iOS
                     {
                         dict.AddProperty(field, universalIDIdentification.ValueForField(field));
                     }
-
+                    dict.AddProperty("FaceImage", universalIDIdentification.FaceImage);
                     dict.AddProperty("LayoutDefinition", universalIDIdentification.LayoutDefinition);
                 }
                 else if (value is ALIDFieldConfidences)

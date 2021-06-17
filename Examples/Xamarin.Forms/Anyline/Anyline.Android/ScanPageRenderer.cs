@@ -181,6 +181,14 @@ namespace Anyline.Droid
 
                                     dict.Add(prop.Name, bitmapData);
                                 }
+                                else if (value is Android.Graphics.Bitmap bitmap)
+                                {
+                                    MemoryStream stream = new MemoryStream();
+                                    bitmap.Compress(Bitmap.CompressFormat.Jpeg, 100, stream);
+                                    byte[] bitmapData = stream.ToArray();
+
+                                    dict.Add(prop.Name, bitmapData);
+                                }
                                 else if (value is ID)
                                 {
                                     var sublist = CreatePropertyList(value as ID);
@@ -190,6 +198,11 @@ namespace Anyline.Droid
                                 {
                                     var sublist = CreatePropertyList(value as IDFieldConfidences);
                                     sublist.ToList().ForEach(x => dict.Add($"{x.Key} (field confidence)", x.Value));
+                                }
+                                else if (value is LayoutDefinition universalIDInfo)
+                                {
+                                    var sublist = CreatePropertyList(universalIDInfo);
+                                    sublist.ToList().ForEach(x => dict.Add($"{x.Key}", x.Value));
                                 }
                                 else if (value is JavaDictionary<String, String> dictionaryValues)
                                 {

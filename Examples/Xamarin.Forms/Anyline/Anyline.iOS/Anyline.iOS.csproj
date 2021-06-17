@@ -79,6 +79,7 @@
     <BundleResource Include="Resources\others_config_barcode.json" />
     <BundleResource Include="Resources\vehicle_config_license_plate.json" />
     <Compile Include="AnylineSDKService.cs" />
+    <BundleResource Include="Resources\id_config_universal.json" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

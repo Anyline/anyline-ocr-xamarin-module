@@ -16,6 +16,7 @@ namespace Anyline
             var scanMode_configurations = new List<KeyValuePair<string, string>>()
             {
                 new KeyValuePair<string, string>("Barcode","others_config_barcode"),
+                new KeyValuePair<string, string>("Universal ID","id_config_universal"),
                 new KeyValuePair<string, string>("License Plate","vehicle_config_license_plate"),
                 new KeyValuePair<string, string>("Meter","energy_config_analog_digital"),
                 new KeyValuePair<string, string>("USNR","mro_config_usnr")

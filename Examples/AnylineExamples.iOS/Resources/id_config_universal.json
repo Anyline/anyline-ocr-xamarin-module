@@ -12,6 +12,7 @@
       "id":"ID",
       "idPlugin": {
         "universalIdConfig": {
+          "faceDetection": true,
           "allowedLayouts": {
             "mrz": [],
             "drivingLicense": [],
