@@ -43,6 +43,7 @@ namespace AnylineExamples.Shared
         public static readonly string MRZ = "MRZ / Passport";
         public static readonly string DrivingLicense = "AT/DE/UK Driving License";
         public static readonly string GermanIDFront = "German ID Front";
+        public static readonly string JapaneseLandingPermission = "Japanese Landing Permission";
         public static readonly string LicensePlate = "EU License Plate";
         public static readonly string UniversalSerialNumber = "Universal Serial Number";
         public static readonly string VIN = "Vehicle Identification Number";
@@ -50,7 +51,6 @@ namespace AnylineExamples.Shared
         public static readonly string ShippingContainer = "Shipping Container";
         public static readonly string Barcode = "Barcode";
         public static readonly string Document = "Document";
-        //public static readonly string DocumentUI = "Document (Extended UI)";
         public static readonly string VoucherCode = "Voucher Code";
         public static readonly string IBAN = "IBAN";
         public static readonly string CowTag = "Cattle Tag";
@@ -73,6 +73,7 @@ namespace AnylineExamples.Shared
             new ExampleModel(ItemType.Item, Example.MRZ, Category.ID, "id_config_mrz.json"),
             new ExampleModel(ItemType.Item, Example.DrivingLicense, Category.ID, "id_config_driving_license.json"),
             new ExampleModel(ItemType.Item, Example.GermanIDFront, Category.ID, "id_config_german_id_front.json"),
+            new ExampleModel(ItemType.Item, Example.JapaneseLandingPermission, Category.ID, "id_config_jlp.json"),
 
             new ExampleModel(ItemType.Header, Category.Vehicle, Category.Vehicle, ""),
             new ExampleModel(ItemType.Item, Example.LicensePlate, Category.Vehicle, "vehicle_config_license_plate.json"),
@@ -85,7 +86,6 @@ namespace AnylineExamples.Shared
 
             new ExampleModel(ItemType.Header, Category.Document, Category.Document, ""),
             new ExampleModel(ItemType.Item, Example.Document, Category.Document, "document_config.json"),
-            //new ExampleModel(ItemType.DocumentUI, Example.DocumentUI, Category.Document, "document_view_config.json"),
 
             new ExampleModel(ItemType.Header, Category.Others, Category.Others, ""),
             new ExampleModel(ItemType.Item, Example.Barcode, Category.Others, "others_config_barcode.json"),

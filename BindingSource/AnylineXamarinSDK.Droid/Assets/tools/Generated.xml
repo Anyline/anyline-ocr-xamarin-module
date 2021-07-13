@@ -513,6 +513,9 @@
 <!-- File: IO.Anyline.View.ICutoutConfigChangedListener.cs -->
 <!-- CutoutConfigChangedListener.onCutoutConfigChanged(io.anyline.view.CutoutConfig) -->
 <attr path="/api/package[@name='io.anyline.view']/interface[@name='CutoutConfigChangedListener']/method[@name='onCutoutConfigChanged' and count(parameter)=1 and parameter[1][@type='io.anyline.view.CutoutConfig']]/parameter[1]" name="managedName">cutoutConfig</attr>
+<!-- File: IO.Anyline.Plugin.ID.JapaneseLandingPermissionConfig.cs -->
+<!-- JapaneseLandingPermissionConfig.JapaneseLandingPermissionConfig(org.json.JSONObject) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='JapaneseLandingPermissionConfig']/constructor[@name='JapaneseLandingPermissionConfig' and count(parameter)=1 and parameter[1][@type='org.json.JSONObject']]/parameter[1]" name="managedName">japaneseLandingPermissionConfig</attr>
 <!-- File: IO.Anyline.Camera.CameraController2.cs -->
 <!-- CameraController2.State.valueOf(java.lang.String) -->
 <!-- CameraController2.setZoomRatio(double) -->

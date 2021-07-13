@@ -112,6 +112,7 @@
     <BundleResource Include="Resources\id_config_universal.json" />
     <BundleResource Include="Resources\iban_view_config.json" />
     <BundleResource Include="Resources\id_config_arabic.json" />
+    <BundleResource Include="Resources\id_config_jlp.json" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -164,7 +165,7 @@
     </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Anyline.Xamarin.SDK.iOS" Version="31.1.0" />
+    <PackageReference Include="Anyline.Xamarin.SDK.iOS" Version="32.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
   <Import Project="..\AnylineExamples.Shared\AnylineExamples.Shared.projitems" Label="Shared" />

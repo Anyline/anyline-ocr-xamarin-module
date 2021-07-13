@@ -59,6 +59,9 @@ namespace AnylineExamples.Droid
                 // the initialization parses the json configuration and builds the whole use-case
                 _scanView.Init(jsonPath);
 
+                // Activates Face Detection if the MRZ Scanner was initialized
+                (((_scanView.ScanViewPlugin as IdScanViewPlugin)?.ScanPlugin as IdScanPlugin)?.IdConfig as MrzConfig)?.EnableFaceDetection(true);
+
                 /*
                  * Depending on your config/use-case, the ScanViewPlugin is of a different type.
                  * You need to add your implementation of IO.Anyline.Plugin.IScanResultListener to retrieve scan results.
