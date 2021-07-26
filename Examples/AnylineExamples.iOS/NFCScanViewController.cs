@@ -19,7 +19,7 @@ namespace AnylineXamarinAppiOS
         ALNFCDetector nfcDetector;
         UIView hintView;
 
-        //keep the last values we read from the MRZ so we can retry reading NFC if NFC failed for reasons other than getting these details wrong
+        // keep the last values we read from the MRZ so we can retry reading NFC if NFC failed for reasons other than getting these details wrong
         string passportNumberForNFC;
         NSDate dateOfBirth;
         NSDate dateOfExpiry;
@@ -78,8 +78,8 @@ namespace AnylineXamarinAppiOS
             mrzConfig.IdFieldScanOptions = scanOptions;
 
             NSError error = null;
-            //Init the anyline ID ScanPlugin with an ID, Licensekey, the delegate,
-            //  the MRZConfig (which will configure the scan Plugin for MRZ scanning), and an error
+            // Init the anyline ID ScanPlugin with an ID, Licensekey, the delegate,
+            // the MRZConfig (which will configure the scan Plugin for MRZ scanning), and an error
             this.mrzScanPlugin = new ALIDScanPlugin(@"ModuleID", this, mrzConfig, out error);
 
             nfcDetector = new ALNFCDetector(this);
@@ -186,8 +186,10 @@ namespace AnylineXamarinAppiOS
 
         public void NfcSucceededWithResult(ALNFCResult nfcResult)
         {
-            var resultViewController = new ResultViewController(nfcResult);
-            BeginInvokeOnMainThread(() => NavigationController?.PushViewController(resultViewController, false));
+            BeginInvokeOnMainThread(() => { 
+                var resultViewController = new ResultViewController(nfcResult);
+                NavigationController?.PushViewController(resultViewController, false);
+            });
         }
 
         public void NfcFailedWithError(NSError error)

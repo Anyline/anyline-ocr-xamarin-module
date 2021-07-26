@@ -19,33 +19,25 @@ namespace Anyline.iOS
         private ALScanView _scanView;
         ScanResultDelegate _resultDelegate;
 
+        protected override void OnElementChanged(VisualElementChangedEventArgs e)
+        {
+            base.OnElementChanged(e);
+
+            if (e.OldElement != null || Element == null)
+            {
+                return;
+            }
+
+            InitializeAnyline();
+        }
+
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
 
-            // initialize anyline if not already initialized
-            InitializeAnyline();
-
             if (!initialized) return;
 
             StartAnyline();
-        }
-
-        private void StartAnyline()
-        {
-            NSError error = null;
-            var success = _scanView.ScanViewPlugin.StartAndReturnError(out error);
-            if (!success)
-            {
-                if (error != null)
-                {
-                    ShowAlert("Start Scanning Error", error.DebugDescription);
-                }
-                else
-                {
-                    ShowAlert("Start Scanning Error", "error is null");
-                }
-            }
         }
 
         private void InitializeAnyline()
@@ -85,6 +77,23 @@ namespace Anyline.iOS
             catch (Exception e)
             {
                 ShowAlert("Init Error", e.Message);
+            }
+        }
+
+        private void StartAnyline()
+        {
+            NSError error = null;
+            var success = _scanView.ScanViewPlugin.StartAndReturnError(out error);
+            if (!success)
+            {
+                if (error != null)
+                {
+                    ShowAlert("Start Scanning Error", error.DebugDescription);
+                }
+                else
+                {
+                    ShowAlert("Start Scanning Error", "error is null");
+                }
             }
         }
 

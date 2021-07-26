@@ -56,6 +56,9 @@ namespace Anyline.Droid
 
                     scanView.Init(configurationFile);
 
+                    // Activates Face Detection if the MRZ Scanner was initialized
+                    (((scanView.ScanViewPlugin as IdScanViewPlugin)?.ScanPlugin as IdScanPlugin)?.IdConfig as MrzConfig)?.EnableFaceDetection(true);
+
                     scanView.ScanViewPlugin.AddScanResultListener(this);
 
                     scanView.CameraOpened += ScanView_CameraOpened;

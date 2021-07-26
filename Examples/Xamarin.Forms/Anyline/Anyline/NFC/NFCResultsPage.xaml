@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Anyline.NFC.NFCResultsPage"
+             Title="NFC Scan Results"
+             BackgroundColor="#1A1A1A">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="FillAndExpand" Padding="20" >
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Label Text="MRZ - Given Names" TextColor="#32ADFF" FontSize="15" Grid.Column="0" Grid.Row="0" />
+                    <Label Text="NFC - First Name" TextColor="#32ADFF" FontSize="15" Grid.Column="1" Grid.Row="0" />
+
+                    <Label x:Name="lbMRZGivenNames" TextColor="White" FontSize="17" FontAttributes="Bold" Grid.Column="0" Grid.Row="1" />
+                    <Label x:Name="lbNFCFirstName" TextColor="White" FontSize="17" FontAttributes="Bold" Grid.Column="1" Grid.Row="1" />
+                    
+                    <Label Text="MRZ - Surname" TextColor="#32ADFF" FontSize="15" Grid.Column="0" Grid.Row="2" />
+                    <Label Text="NFC - Surname" TextColor="#32ADFF" FontSize="15" Grid.Column="1" Grid.Row="2" />
+
+                    <Label x:Name="lbMRZSurname" TextColor="White" FontSize="17" FontAttributes="Bold" Grid.Column="0" Grid.Row="3" />
+                    <Label x:Name="lbNFCLastName" TextColor="White" FontSize="17" FontAttributes="Bold" Grid.Column="1" Grid.Row="3" />
+                    
+                    <Label Text="MRZ - Passport Number" TextColor="#32ADFF" FontSize="15" Grid.Column="0" Grid.Row="4" />
+                    <Label Text="NFC - Document Number" TextColor="#32ADFF" FontSize="15" Grid.Column="1" Grid.Row="4" />
+
+                    <Label x:Name="lbMRZPassportNumber" TextColor="White" FontSize="17" FontAttributes="Bold" Grid.Column="0" Grid.Row="5" />
+                    <Label x:Name="lbNFCDocumentNumber" TextColor="White" FontSize="17" FontAttributes="Bold" Grid.Column="1" Grid.Row="5" />
+
+                    <Label Text="Face Image - MRZ" TextColor="#32ADFF" FontSize="15" Grid.Column="0" Grid.Row="6" />
+                    <Label Text="Face Image - NFC" TextColor="#32ADFF" FontSize="15" Grid.Column="1" Grid.Row="6" />
+
+                    <Image x:Name="imMrzFaceImage" Aspect="AspectFit" Grid.Column="0" Grid.Row="7" />
+                    <Image x:Name="imNFCFaceImage" Aspect="AspectFit" Grid.Column="1" Grid.Row="7" />
+
+                </Grid>
+
+                <Label Text="Cutout Image" TextColor="#32ADFF" FontSize="15" />
+                <Image x:Name="imCutout" Aspect="AspectFit" />
+
+                <Label Text="Full Image" TextColor="#32ADFF" FontSize="15" />
+                <Image x:Name="imFull" Aspect="AspectFit" />
+
+                <BoxView HeightRequest="1" BackgroundColor="#30FFFFFF" />
+
+                <Grid Padding="0,10" ColumnSpacing="15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btHome" Text="Home" BackgroundColor="#32ADFF" TextColor="White" HorizontalOptions="FillAndExpand" />
+                    <Button x:Name="btScanAgain" Text="Scan again" BackgroundColor="#32ADFF" TextColor="White" Grid.Column="1" HorizontalOptions="FillAndExpand" />
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

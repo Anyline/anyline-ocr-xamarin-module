@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Anyline.NFC;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -19,7 +20,8 @@ namespace Anyline
                 new KeyValuePair<string, string>("Universal ID","id_config_universal"),
                 new KeyValuePair<string, string>("License Plate","vehicle_config_license_plate"),
                 new KeyValuePair<string, string>("Meter","energy_config_analog_digital"),
-                new KeyValuePair<string, string>("USNR","mro_config_usnr")
+                new KeyValuePair<string, string>("USNR","mro_config_usnr"),
+                new KeyValuePair<string, string>("NFC", "id_config_mrz")
             };
 
             // YOUR LICENSE KEY HERE
@@ -56,8 +58,12 @@ namespace Anyline
                 await Permissions.RequestAsync<Permissions.Camera>();
             }
 
-            (sender as Button).IsEnabled = false;
-            await Navigation.PushAsync(new ScanExamplePage(((Button)sender).ClassId));
+            (sender as Button).IsEnabled = false;            
+            if ((sender as Button).Text == "NFC")
+                await Navigation.PushAsync(new NFCScanExamplePage(((Button)sender).ClassId));
+            else
+                await Navigation.PushAsync(new ScanExamplePage(((Button)sender).ClassId));
+
             (sender as Button).IsEnabled = true;
         }
     }

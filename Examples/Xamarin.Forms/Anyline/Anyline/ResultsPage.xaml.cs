@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using Anyline.NFC;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -16,10 +17,13 @@ namespace Anyline
             Task.Run(() => ShowResults(results));
 
             btHome.Clicked += async (s, e) => await Navigation.PopToRootAsync();
-            btScanAgain.Clicked += async (s, e) =>
+            btScanAgain.Clicked += (s, e) =>
             {
-                Navigation.InsertPageBefore(new ScanExamplePage(configurationFile), this);
-                await Navigation.PopAsync();
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+                    Navigation.InsertPageBefore(new NFCScanExamplePage(configurationFile), this);
+                    await Navigation.PopAsync();
+                });
             };
         }
 

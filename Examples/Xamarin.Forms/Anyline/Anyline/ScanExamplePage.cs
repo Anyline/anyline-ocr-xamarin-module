@@ -11,7 +11,7 @@ namespace Anyline
     public class ScanExamplePage : ContentPage
     {
         public string ConfigurationFile = "";
-        public Action<Object> ShowResultsAction;
+        public Action<object> ShowResultsAction;
 
         public ScanExamplePage(string configurationFile)
         {
