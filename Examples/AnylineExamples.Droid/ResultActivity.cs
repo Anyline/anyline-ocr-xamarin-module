@@ -8,6 +8,7 @@ using Android.Views;
 using Android.Widget;
 using AnylineExamples.Shared;
 using IO.Anyline.Models;
+using IO.Anyline.Nfc.NFC;
 using IO.Anyline.Plugin;
 using IO.Anyline.Plugin.ID;
 using Java.Util;
@@ -37,9 +38,19 @@ namespace AnylineExamples.Droid
             SetContentView(Resource.Layout.result_activity);
             _resultListView = FindViewById<ListView>(Resource.Id.result_list_view);
 
+            bool isNFCResult = Intent.GetBooleanExtra("Is_NFC_Result", false);
             var handle = new IntPtr(Intent.GetIntExtra("handle", 0));
-            var scanResult = GetObject<ScanResult>(handle, JniHandleOwnership.DoNotTransfer);
-            
+
+            Java.Lang.Object scanResult = null;
+            if (isNFCResult)
+            {
+                scanResult = GetObject<NFCResult>(handle, JniHandleOwnership.DoNotTransfer);
+            }
+            else
+            {
+                scanResult = GetObject<ScanResult>(handle, JniHandleOwnership.DoNotTransfer);
+            }
+
             if (scanResult != null)
             {
                 Title = scanResult.GetType().Name;
@@ -132,6 +143,21 @@ namespace AnylineExamples.Droid
                                 {
                                     foreach (var v in dictionaryValues)
                                         dict.Add(v.Key, new Java.Lang.String(v.Value.ToString()).ReplaceAll("\\\\n", "\\\n"));
+                                }
+                                else if (value is DataGroup1 dg1)
+                                {
+                                    var sublist = CreatePropertyList(dg1);
+                                    sublist.ToList().ForEach(x => dict.Add($"{x.Key}", x.Value));
+                                }
+                                else if (value is DataGroup2 dg2)
+                                {
+                                    var sublist = CreatePropertyList(dg2);
+                                    sublist.ToList().ForEach(x => dict.Add($"{x.Key}", x.Value));
+                                }
+                                else if (value is SOD sod)
+                                {
+                                    var sublist = CreatePropertyList(sod);
+                                    sublist.ToList().ForEach(x => dict.Add($"{x.Key}", x.Value));
                                 }
                                 else
                                 {

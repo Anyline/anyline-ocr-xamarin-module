@@ -11,10 +11,10 @@
       "id": "ID_PLUGIN",
       "idPlugin": {
         "mrzConfig": {
-          "faceDetection": true,
-          "mrzFieldScanOptions": {
-            "vizAddress": "optional",
-            "vizDateOfIssue": "optional"
+          "mrzMinFieldConfidences": {
+            "documentNumber": 90,
+            "dateOfBirth": 90,
+            "dateOfExpiry": 90
           }
         }
       }

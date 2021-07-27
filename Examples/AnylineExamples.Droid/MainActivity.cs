@@ -59,7 +59,7 @@ namespace AnylineExamples.Droid
             {
                 System.Diagnostics.Debug.WriteLine("Permission Granted!");
             }
-         
+
             // INSERT YOUR LICENSE KEY HERE
             string licenseKey = "ewogICJsaWNlbnNlS2V5VmVyc2lvbiI6IDIsCiAgImRlYnVnUmVwb3J0aW5nIjogIm9uIiwKICAiaW1hZ2VSZXBvcnRDYWNoaW5nIjogdHJ1ZSwKICAibWFqb3JWZXJzaW9uIjogIjI1IiwKICAibWF4RGF5c05vdFJlcG9ydGVkIjogNSwKICAiYWR2YW5jZWRCYXJjb2RlIjogdHJ1ZSwKICAibXVsdGlCYXJjb2RlIjogdHJ1ZSwKICAic3VwcG9ydGVkQmFyY29kZUZvcm1hdHMiOiBbCiAgICAiQUxMIgogIF0sCiAgInBpbmdSZXBvcnRpbmciOiB0cnVlLAogICJwbGF0Zm9ybSI6IFsKICAgICJpT1MiLAogICAgIkFuZHJvaWQiCiAgXSwKICAic2NvcGUiOiBbCiAgICAiQUxMIgogIF0sCiAgInNob3dQb3BVcEFmdGVyRXhwaXJ5IjogdHJ1ZSwKICAic2hvd1dhdGVybWFyayI6IHRydWUsCiAgInRvbGVyYW5jZURheXMiOiA5MCwKICAidmFsaWQiOiAiMjAyMS0xMi0zMSIsCiAgImlvc0lkZW50aWZpZXIiOiBbCiAgICAiY29tLmFueWxpbmUueGFtYXJpbi5leGFtcGxlcyIsCiAgICAiY29tLmFueWxpbmUueGFtYXJpbi5mb3Jtcy5leGFtcGxlcyIKICBdLAogICJhbmRyb2lkSWRlbnRpZmllciI6IFsKICAgICJjb20uYW55bGluZS54YW1hcmluLmV4YW1wbGVzIiwKICAgICJjb20uYW55bGluZS54YW1hcmluLmZvcm1zLmV4YW1wbGVzIgogIF0KfQpHUXhMK3NHQ3ZPWG50NGlqc1RGNzQ1dWZaSCtpZGw4VVUrRnBaWGVPSlJjVnNzRmduemJkL0JLZVh1N09iS25tYVpSbExqeldQS3BuclgvOGsrSEtDa0dQWDMraXhGQSs1SG0yeGRoRkZsQVRKUnBzVWdFUFo4R1BTazd2UENlNVBKejF0cU1kdjFraVhLMHkzRVRKVzBaNm4xeFQvdTBxaTRjZXVueTd6MU1pOXp1L05CZGk0dldRSnE5TTVCaUNobk13RDhKNDQ3WHNFazNMMndlOERtZjdzdDZrVkdWbkNJUktUQllqRzVjTEV6S09aY0YrMXAwand6UDcxN05IR21IMktHM2V1cCsremNud0tiaVY0SS83azNmb3hIY2pITUlyUjZrSkw4NzU2RGxBTTJ6bSs2VGtWTENLSmtRRDRScDlwMDFmaWIyTEZWUzZocWFSaHc9PQ==";
             try
@@ -100,12 +100,23 @@ namespace AnylineExamples.Droid
                 return;
             try
             {
-                var intent = new Intent(ApplicationContext, typeof(ScanActivity));
 
-                intent.PutExtra("jsonPath", jsonPath);
-                intent.PutExtra("title", item.Model.Name);
-                StartActivity(intent);
+                if (item.Model.Name == "Scan NFC of Passports")
+                {
+                    var intent = new Intent(ApplicationContext, typeof(NFC.MRZScanActivity));
 
+                    intent.PutExtra("jsonPath", jsonPath);
+                    intent.PutExtra("title", item.Model.Name);
+                    StartActivity(intent);
+                }
+                else
+                {
+                    var intent = new Intent(ApplicationContext, typeof(ScanActivity));
+
+                    intent.PutExtra("jsonPath", jsonPath);
+                    intent.PutExtra("title", item.Model.Name);
+                    StartActivity(intent);
+                }
             }
             catch (Java.Lang.ClassNotFoundException e)
             {

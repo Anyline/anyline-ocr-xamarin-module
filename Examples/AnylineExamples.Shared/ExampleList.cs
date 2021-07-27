@@ -22,6 +22,7 @@ namespace AnylineExamples.Shared
         public static readonly string Document = "Documents";
         public static readonly string Others = "Others";
         public static readonly string Workflows = "Workflows";
+        public static readonly string NFC = "NFC";
         public static readonly string Version = "Version";
 
         public static List<string> GetItems()
@@ -56,6 +57,7 @@ namespace AnylineExamples.Shared
         public static readonly string CowTag = "Cattle Tag";
         public static readonly string SerialScanning = "Serial Scanning (LPT > DL > VIN)";
         public static readonly string ParallelScanning = "Parallel Scanning (Meter / Barcode)";
+        public static readonly string NFCScanning = "Scan NFC of Passports";
 
     }
     
@@ -97,7 +99,11 @@ namespace AnylineExamples.Shared
             new ExampleModel(ItemType.Item, Example.SerialScanning, Category.Workflows, "workflows_config_serial_scanning.json"),
             new ExampleModel(ItemType.Item, Example.ParallelScanning, Category.Workflows, "workflows_config_parallel_scanning.json"),
 
+            new ExampleModel(ItemType.Header, Category.NFC, Category.NFC, ""),
+            new ExampleModel(ItemType.Item, Example.NFCScanning, Category.NFC, "id_config_mrz.json"),
+
             new ExampleModel(ItemType.Header, Category.Version, Category.Version, ""),
+
         };
     }
 }

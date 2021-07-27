@@ -71,6 +71,8 @@
     <Compile Include="ScanActivity.cs" />
     <Compile Include="ScanResultListener.cs" />
     <Compile Include="Util.cs" />
+    <Compile Include="NFC\MRZScanActivity.cs" />
+    <Compile Include="NFC\NFCScanActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\energy_config_dial.json" />
@@ -136,6 +138,7 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher_round.png" />
+    <AndroidResource Include="Resources\layout\activity_nfc.axml" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Anyline.Xamarin.SDK.Droid" Version="33.0.0" />
@@ -181,6 +184,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NFC\" />
   </ItemGroup>
   <Import Project="..\AnylineExamples.Shared\AnylineExamples.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

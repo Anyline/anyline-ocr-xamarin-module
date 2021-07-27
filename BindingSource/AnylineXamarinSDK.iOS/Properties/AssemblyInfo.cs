@@ -17,7 +17,7 @@ using Foundation;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Anyline")]
 [assembly: AssemblyProduct("AnylineXamarinSDK.iOS")]
-[assembly: AssemblyCopyright("Copyright © Anyline GmbH")]
+[assembly: AssemblyCopyright("Copyright © 2021 Anyline GmbH")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

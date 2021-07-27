@@ -1,5 +1,4 @@
-<resources>
-  <string name="app_name">Xamarin.Android Examples</string>
+﻿<resources>
   <string name="nfc_scan_now">Scan the NFC now</string>
   <string name="nfc_explanation">Hold the back of your device against the passport and wait until the reading is finished.</string>
 </resources>
