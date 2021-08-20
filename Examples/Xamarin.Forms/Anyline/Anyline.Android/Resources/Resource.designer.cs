@@ -13210,31 +13210,37 @@ namespace Anyline.Droid
 			public const int mtrl_picker_toggle_to_year_selection = 2131689591;
 			
 			// aapt resource value: 0x7F0F0078
-			public const int ok = 2131689592;
+			public const int nfc_explanation = 2131689592;
 			
 			// aapt resource value: 0x7F0F0079
-			public const int open_permission_settings = 2131689593;
+			public const int nfc_scan_now = 2131689593;
 			
 			// aapt resource value: 0x7F0F007A
-			public const int password_toggle_content_description = 2131689594;
+			public const int ok = 2131689594;
 			
 			// aapt resource value: 0x7F0F007B
-			public const int path_password_eye = 2131689595;
+			public const int open_permission_settings = 2131689595;
 			
 			// aapt resource value: 0x7F0F007C
-			public const int path_password_eye_mask_strike_through = 2131689596;
+			public const int password_toggle_content_description = 2131689596;
 			
 			// aapt resource value: 0x7F0F007D
-			public const int path_password_eye_mask_visible = 2131689597;
+			public const int path_password_eye = 2131689597;
 			
 			// aapt resource value: 0x7F0F007E
-			public const int path_password_strike_through = 2131689598;
+			public const int path_password_eye_mask_strike_through = 2131689598;
 			
 			// aapt resource value: 0x7F0F007F
-			public const int search_menu_title = 2131689599;
+			public const int path_password_eye_mask_visible = 2131689599;
 			
 			// aapt resource value: 0x7F0F0080
-			public const int status_bar_notification_info_overflow = 2131689600;
+			public const int path_password_strike_through = 2131689600;
+			
+			// aapt resource value: 0x7F0F0081
+			public const int search_menu_title = 2131689601;
+			
+			// aapt resource value: 0x7F0F0082
+			public const int status_bar_notification_info_overflow = 2131689602;
 			
 			static String()
 			{

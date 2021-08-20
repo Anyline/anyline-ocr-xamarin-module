@@ -70,17 +70,6 @@ namespace AnylineExamples.iOS
             TableView.Source = new TableSource(TableItems, this);
         }
 
-        // Lock orientation to portrait
-        public override UIInterfaceOrientationMask GetSupportedInterfaceOrientations()
-        {
-            return UIInterfaceOrientationMask.Portrait;
-        }
-
-        // Don't allow rotation
-        public override bool ShouldAutorotate()
-        {
-            return false;
-        }
     };
 
     public class TableSource : UITableViewSource
@@ -94,20 +83,9 @@ namespace AnylineExamples.iOS
         private readonly object @lock = new object();
         private bool isNavigating = false;
 
-        private bool nfcSupported = true;
-
         public TableSource(Dictionary<string, List<ExampleModel>> tableItems, AnylineViewController parent)
         {
             TableItems = tableItems;
-
-            // adds NFC as special case once it's supported
-            if (nfcSupported)
-            {
-                var lastItem = TableItems.Last();
-                TableItems.Remove(lastItem.Key);
-                TableItems.Add("NFC-Item", new List<ExampleModel> { new ExampleModel(ItemType.Item, "Scan NFC of Passports", Category.Workflows, "") });
-                TableItems.Add(lastItem.Key, lastItem.Value);
-            }
 
             AnylineScanViewController = parent;
         }

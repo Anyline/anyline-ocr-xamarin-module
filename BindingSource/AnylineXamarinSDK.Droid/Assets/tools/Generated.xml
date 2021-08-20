@@ -128,6 +128,7 @@
 <!-- MeterScanPlugin.setScanMode(io.anyline.plugin.meter.MeterScanMode) -->
 <attr path="/api/package[@name='io.anyline.plugin.meter']/class[@name='MeterScanPlugin']/method[@name='setScanMode' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.meter.MeterScanMode']]/parameter[1]" name="managedName">scanMode</attr>
 <!-- MeterScanPlugin.onFinishedWithOutput(java.lang.Object) -->
+<!-- MeterScanPlugin.onFinishedWithOutput(java.lang.Object, io.anyline.models.AnylineImage) -->
 <!-- MeterScanPlugin.setSerialNumberCharWhitelist(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.plugin.meter']/class[@name='MeterScanPlugin']/method[@name='setSerialNumberCharWhitelist' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">whiteList</attr>
 <!-- MeterScanPlugin.setSerialNumberValidationRegex(java.lang.String) -->
@@ -729,6 +730,7 @@
 <!-- DocumentScanPlugin.setPostProcessingEnabled(boolean) -->
 <attr path="/api/package[@name='io.anyline.plugin.document']/class[@name='DocumentScanPlugin']/method[@name='setPostProcessingEnabled' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">enabled</attr>
 <!-- DocumentScanPlugin.onFinishedWithOutput(java.lang.Object) -->
+<!-- DocumentScanPlugin.onFinishedWithOutput(java.lang.Object, io.anyline.models.AnylineImage) -->
 <!-- DocumentScanPlugin.setDocumentNotifierListener(io.anyline.plugin.document.DocumentNotifierListener) -->
 <attr path="/api/package[@name='io.anyline.plugin.document']/class[@name='DocumentScanPlugin']/method[@name='setDocumentNotifierListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.document.DocumentNotifierListener']]/parameter[1]" name="managedName">listener</attr>
 <!-- DocumentScanPlugin.setDocumentRatios(java.lang.Double...) -->
@@ -787,6 +789,7 @@
 <!-- BarcodeScanPlugin.addScannedBarcodesListener(io.anyline.plugin.barcode.ScannedBarcodesListener) -->
 <attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='BarcodeScanPlugin']/method[@name='addScannedBarcodesListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.barcode.ScannedBarcodesListener']]/parameter[1]" name="managedName">listener</attr>
 <!-- BarcodeScanPlugin.onFinishedWithOutput(java.lang.Object) -->
+<!-- BarcodeScanPlugin.onFinishedWithOutput(java.lang.Object, io.anyline.models.AnylineImage) -->
 <!-- BarcodeScanPlugin.setBarcodeFormats(io.anyline.plugin.barcode.BarcodeFormat...) -->
 <attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='BarcodeScanPlugin']/method[@name='setBarcodeFormats' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.barcode.BarcodeFormat...']]/parameter[1]" name="managedName">formats</attr>
 <!-- BarcodeScanPlugin.setMultiBarcode(boolean) -->
@@ -980,6 +983,9 @@
 <!-- File: IO.Anyline.Plugin.ID.Script.cs -->
 <!-- Script.valueOf(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='Script']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
+<!-- File: IO.Anyline.Opencv.Android.UtilsProviderImpl.cs -->
+<!-- UtilsProviderImpl.bitmapToMat(android.graphics.Bitmap, io.anyline.opencv.core.Mat, boolean) -->
+<!-- UtilsProviderImpl.matToBitmap(io.anyline.opencv.core.Mat, android.graphics.Bitmap) -->
 <!-- File: IO.Anyline.Opencv.Core.Range.cs -->
 <!-- Range.Range(double[]) -->
 <!-- Range.Range(int, int) -->
@@ -1203,6 +1209,8 @@
 <!-- AnylineViewConfig.AnylineViewConfig(android.content.Context, java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineViewConfig']/constructor[@name='AnylineViewConfig' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineViewConfig']/constructor[@name='AnylineViewConfig' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String']]/parameter[2]" name="managedName">configFilName</attr>
+<!-- File: IO.Anyline.DI.IFileOutputStreamProvider.cs -->
+<!-- FileOutputStreamProvider.provideFileOutputStream(java.io.File) -->
 <!-- File: IO.Anyline.Plugin.ID.TemplateFieldScanOptions.cs -->
 <!-- File: IO.Anyline.Plugin.ID.GermanIDFrontFieldConfidences.cs -->
 <!-- GermanIDFrontFieldConfidences.setCardAccessNumber(int) -->
@@ -1237,6 +1245,8 @@
 <!-- KNearest.findNearest(io.anyline.opencv.core.Mat, int, io.anyline.opencv.core.Mat) -->
 <!-- KNearest.findNearest(io.anyline.opencv.core.Mat, int, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
 <!-- KNearest.setIsClassifier(boolean) -->
+<!-- File: IO.Anyline.DI.FileOutputStreamProviderImpl.cs -->
+<!-- FileOutputStreamProviderImpl.provideFileOutputStream(java.io.File) -->
 <!-- File: IO.Anyline.Opencv.Android.BaseLoaderCallback.cs -->
 <!-- BaseLoaderCallback.BaseLoaderCallback(android.content.Context) -->
 <!-- BaseLoaderCallback.onManagerConnected(int) -->
@@ -1249,7 +1259,9 @@
 <!-- File: IO.Anyline.Nfc.Parser.EFSODParser.cs -->
 <!-- EFSODParser.EFSODParser(byte[]) -->
 <!-- File: IO.Anyline.Util.ConstantUtil.cs -->
-<!-- File: IO.Anyline.Opencv.Core.MatOfPoint2f.cs -->
+<!-- File: IO.Anyline.Opencv.Imgproc.ImgprocProviderImpl.cs -->
+<!-- ImgprocProviderImpl.cvtColor(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, int) -->
+<!-- File: IO.Anyline.Opencv.Core.MatOfPoint2f.cs -->
 <!-- MatOfPoint2f.MatOfPoint2f(io.anyline.opencv.core.Mat) -->
 <!-- MatOfPoint2f.MatOfPoint2f(io.anyline.opencv.core.Point...) -->
 <!-- MatOfPoint2f.MatOfPoint2f(long) -->
@@ -1287,7 +1299,8 @@
 <!-- HOGDescriptor.save(java.lang.String) -->
 <!-- HOGDescriptor.save(java.lang.String, java.lang.String) -->
 <!-- HOGDescriptor.setSVMDetector(io.anyline.opencv.core.Mat) -->
-<!-- File: IO.Anyline.Camera.CameraFeatures.cs -->
+<!-- File: IO.Anyline.Opencv.Android.UtilsProviderFactory.cs -->
+<!-- File: IO.Anyline.Camera.CameraFeatures.cs -->
 <!-- CameraFeatures.FocusMode.fromCamera1(java.lang.String) -->
 <!-- CameraFeatures.FocusMode.fromCamera2(int) -->
 <!-- CameraFeatures.FocusMode.valueOf(java.lang.String) -->
@@ -1322,7 +1335,8 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineFeedbackView']/method[@name='translateX' and count(parameter)=1 and parameter[1][@type='float']]/parameter[1]" name="managedName">x</attr>
 <!-- AnylineFeedbackView.translateY(float) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineFeedbackView']/method[@name='translateY' and count(parameter)=1 and parameter[1][@type='float']]/parameter[1]" name="managedName">y</attr>
-<!-- File: IO.Anyline.Util.DimensUtil.cs -->
+<!-- File: IO.Anyline.Opencv.Imgproc.ImgprocProviderFactory.cs -->
+<!-- File: IO.Anyline.Util.DimensUtil.cs -->
 <!-- DimensUtil.dpToPx(android.content.Context, float) -->
 <!-- DimensUtil.getDpFromPix(android.content.Context, int) -->
 <!-- DimensUtil.getPixFromDp(android.content.Context, int) -->
@@ -1420,6 +1434,7 @@
 <!-- IdScanPlugin.onFailure(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdScanPlugin']/method[@name='onFailure' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">e</attr>
 <!-- IdScanPlugin.onFinishedWithOutput(java.lang.Object) -->
+<!-- IdScanPlugin.onFinishedWithOutput(java.lang.Object, io.anyline.models.AnylineImage) -->
 <!-- IdScanPlugin.onSuccess(io.anyline.models.AnylineImage) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdScanPlugin']/method[@name='onSuccess' and count(parameter)=1 and parameter[1][@type='io.anyline.models.AnylineImage']]/parameter[1]" name="managedName">faceImage</attr>
 <!-- File: IO.Anyline.Nfc.NFC.NFCResult.cs -->
@@ -1427,6 +1442,8 @@
 <!-- NFCResult.setDataGroup1(io.anyline.nfc.NFC.DataGroup1) -->
 <!-- NFCResult.setDataGroup2(io.anyline.nfc.NFC.DataGroup2) -->
 <!-- NFCResult.setSod(io.anyline.nfc.NFC.SOD) -->
+<!-- File: IO.Anyline.Models.IBitmapCreator.cs -->
+<!-- BitmapCreator.createBitmap(int, int, android.graphics.Bitmap.Config) -->
 <!-- File: IO.Anyline.Opencv.Imgcodecs.Imgcodecs.cs -->
 <!-- Imgcodecs.imdecode(io.anyline.opencv.core.Mat, int) -->
 <!-- Imgcodecs.imencode(java.lang.String, io.anyline.opencv.core.Mat, io.anyline.opencv.core.MatOfByte) -->
@@ -1559,9 +1576,13 @@
 <attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='BarcodeScanResult']/constructor[@name='BarcodeScanResult' and count(parameter)=7 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[3][@type='java.lang.Integer'] and parameter[4][@type='io.anyline.models.AnylineImage'] and parameter[5][@type='io.anyline.models.AnylineImage'] and parameter[6][@type='java.util.List&lt;io.anyline.plugin.barcode.Barcode&gt;'] and parameter[7][@type='java.lang.String']]/parameter[5]" name="managedName">fullImage</attr>
 <attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='BarcodeScanResult']/constructor[@name='BarcodeScanResult' and count(parameter)=7 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[3][@type='java.lang.Integer'] and parameter[4][@type='io.anyline.models.AnylineImage'] and parameter[5][@type='io.anyline.models.AnylineImage'] and parameter[6][@type='java.util.List&lt;io.anyline.plugin.barcode.Barcode&gt;'] and parameter[7][@type='java.lang.String']]/parameter[6]" name="managedName">result</attr>
 <attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='BarcodeScanResult']/constructor[@name='BarcodeScanResult' and count(parameter)=7 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[3][@type='java.lang.Integer'] and parameter[4][@type='io.anyline.models.AnylineImage'] and parameter[5][@type='io.anyline.models.AnylineImage'] and parameter[6][@type='java.util.List&lt;io.anyline.plugin.barcode.Barcode&gt;'] and parameter[7][@type='java.lang.String']]/parameter[7]" name="managedName">blobKey</attr>
+<!-- File: IO.Anyline.Opencv.Core.MatProviderImpl.cs -->
+<!-- MatProviderImpl.provideMat(io.anyline.opencv.core.Size, int) -->
 <!-- File: IO.Anyline.Opencv.Photo.MergeExposures.cs -->
 <!-- MergeExposures.MergeExposures(long) -->
 <!-- MergeExposures.process(java.util.List&lt;io.anyline.opencv.core.Mat&gt;, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
+<!-- File: IO.Anyline.Opencv.Core.IMatProvider.cs -->
+<!-- MatProvider.provideMat(io.anyline.opencv.core.Size, int) -->
 <!-- File: IO.Anyline.Plugin.Ocr.OcrScanPlugin.cs -->
 <!-- OcrScanPlugin.OcrScanPlugin(android.content.Context, java.lang.String, io.anyline.plugin.ocr.AnylineOcrBaseConfig) -->
 <attr path="/api/package[@name='io.anyline.plugin.ocr']/class[@name='OcrScanPlugin']/constructor[@name='OcrScanPlugin' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='io.anyline.plugin.ocr.AnylineOcrBaseConfig']]/parameter[1]" name="managedName">context</attr>
@@ -1570,6 +1591,7 @@
 <!-- OcrScanPlugin.setAnylineOcrConfig(io.anyline.plugin.ocr.AnylineOcrBaseConfig) -->
 <attr path="/api/package[@name='io.anyline.plugin.ocr']/class[@name='OcrScanPlugin']/method[@name='setAnylineOcrConfig' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ocr.AnylineOcrBaseConfig']]/parameter[1]" name="managedName">anylineOcrConfig</attr>
 <!-- OcrScanPlugin.onFinishedWithOutput(java.lang.Object) -->
+<!-- OcrScanPlugin.onFinishedWithOutput(java.lang.Object, io.anyline.models.AnylineImage) -->
 <!-- File: IO.Anyline.Plugin.Barcode.BarcodeFormat.cs -->
 <!-- BarcodeFormat.fromBarcodeScanViewBarcodeFormat(io.anyline.plugin.barcode.BarcodeFormat) -->
 <attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='BarcodeFormat']/method[@name='fromBarcodeScanViewBarcodeFormat' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.barcode.BarcodeFormat']]/parameter[1]" name="managedName">barcodeFormat</attr>
@@ -1666,6 +1688,8 @@
 <attr path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanPlugin']/method[@name='removeScanResultListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanResultListener&lt;ResultType&gt;']]/parameter[1]" name="managedName">listener</attr>
 <!-- ScanPlugin.removeScanRunSkippedListener(io.anyline.plugin.ScanRunSkippedListener) -->
 <attr path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanPlugin']/method[@name='removeScanRunSkippedListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanRunSkippedListener']]/parameter[1]" name="managedName">listener</attr>
+<!-- File: IO.Anyline.Opencv.Imgproc.IImgprocProvider.cs -->
+<!-- ImgprocProvider.cvtColor(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, int) -->
 <!-- File: IO.Anyline.SimpleImageProvider.cs -->
 <!-- SimpleImageProvider.setNewImage(io.anyline.models.AnylineImage) -->
 <!-- SimpleImageProvider.setNewImage(android.graphics.Bitmap) -->
@@ -2066,7 +2090,8 @@
 <!-- Boost.setBoostType(int) -->
 <!-- Boost.setWeakCount(int) -->
 <!-- Boost.setWeightTrimRate(double) -->
-<!-- File: IO.Anyline.Camera.ActiveArrayZoomHandlerBuilder.cs -->
+<!-- File: Com.Gemalto.Jp2.BuildConfig.cs -->
+<!-- File: IO.Anyline.Camera.ActiveArrayZoomHandlerBuilder.cs -->
 <!-- ActiveArrayZoomHandlerBuilder.forView(android.view.View, int, io.anyline.camera.CameraController) -->
 <!-- ActiveArrayZoomHandlerBuilder.setActiveArraySize(android.graphics.Rect) -->
 <!-- ActiveArrayZoomHandlerBuilder.setMaxZoom(float) -->
@@ -2079,6 +2104,9 @@
 <!-- ProductContext.ProductContext(android.content.Context, java.lang.String, io.anyline.products.Product, io.anyline.Version, java.lang.String) -->
 <!-- ProductContext.ProductContext(android.content.Context, java.lang.String, io.anyline.products.Product, java.lang.String) -->
 <!-- ProductContext.ProductContext(android.content.Context, org.json.JSONObject) -->
+<!-- File: IO.Anyline.Opencv.Android.IUtilsProvider.cs -->
+<!-- UtilsProvider.bitmapToMat(android.graphics.Bitmap, io.anyline.opencv.core.Mat, boolean) -->
+<!-- UtilsProvider.matToBitmap(io.anyline.opencv.core.Mat, android.graphics.Bitmap) -->
 <!-- File: IO.Anyline.Plugin.ID.MrzFieldScanOptions.cs -->
 <!-- MrzFieldScanOptions.setAddress(io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldScanOptions']/method[@name='setAddress' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.IDFieldScanOptions.FieldScanOption']]/parameter[1]" name="managedName">address</attr>
@@ -2277,6 +2305,7 @@
 <!-- CameraSize.CameraSize(android.util.Size) -->
 <!-- CameraSize.CameraSize(int, int) -->
 <!-- File: IO.Anyline.Plugin.ID.GermanIdFrontConfig.cs -->
+<!-- File: IO.Anyline.Opencv.Core.MatProviderFactory.cs -->
 <!-- File: IO.Anyline.Opencv.Core.MatOfInt.cs -->
 <!-- MatOfInt.MatOfInt(int...) -->
 <!-- MatOfInt.MatOfInt(io.anyline.opencv.core.Mat) -->
@@ -2330,6 +2359,7 @@
 <!-- AbstractScanPlugin.invokeOnInfo(java.lang.String, java.lang.Object) -->
 <!-- AbstractScanPlugin.invokeOnResult(ResultType) -->
 <!-- AbstractScanPlugin.onFinishedWithOutput(java.lang.Object) -->
+<!-- AbstractScanPlugin.onFinishedWithOutput(java.lang.Object, io.anyline.models.AnylineImage) -->
 <!-- AbstractScanPlugin.onReportsVariable(java.lang.String, java.lang.Object) -->
 <!-- AbstractScanPlugin.removeScanInfoListener(io.anyline.plugin.ScanInfoListener) -->
 <attr path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/method[@name='removeScanInfoListener' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanInfoListener']]/parameter[1]" name="managedName">listener</attr>
@@ -2354,6 +2384,7 @@
 <!-- AbstractScanPlugin.setReportingEnabled(boolean) -->
 <attr path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/method[@name='setReportingEnabled' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">isReportingEnabled</attr>
 <!-- AbstractScanPlugin.onFinishedWithOutput(java.lang.Object) -->
+<!-- AbstractScanPlugin.onFinishedWithOutput(java.lang.Object, io.anyline.models.AnylineImage) -->
 <!-- File: IO.Anyline.Nfc.Tools.Crypto.cs -->
 <!-- Crypto.calculate3DESEncryptionKey(byte[]) -->
 <!-- Crypto.calculate3DESMac(byte[], byte[], boolean) -->
@@ -2500,6 +2531,13 @@
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IDFieldScanOptions']/method[@name='initDictionaryStartVariableFromJsonObject' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='org.json.JSONObject'] and parameter[3][@type='java.lang.Object']]/parameter[2]" name="managedName">json</attr>
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IDFieldScanOptions']/method[@name='initDictionaryStartVariableFromJsonObject' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='org.json.JSONObject'] and parameter[3][@type='java.lang.Object']]/parameter[3]" name="managedName">object</attr>
 <!-- IDFieldScanOptions.setIdFieldScanOptionsStartVariable(io.anyline.plugin.id.IDFieldScanOptions) -->
+<!-- File: Com.Gemalto.Jp2.JP2Decoder.cs -->
+<!-- JP2Decoder.JP2Decoder(byte[]) -->
+<!-- JP2Decoder.JP2Decoder(java.io.InputStream) -->
+<!-- JP2Decoder.JP2Decoder(java.lang.String) -->
+<!-- JP2Decoder.isJPEG2000(byte[]) -->
+<!-- JP2Decoder.setLayersToDecode(int) -->
+<!-- JP2Decoder.setSkipResolutions(int) -->
 <!-- File: IO.Anyline.Opencv.Photo.AlignExposures.cs -->
 <!-- AlignExposures.AlignExposures(long) -->
 <!-- AlignExposures.process(java.util.List&lt;io.anyline.opencv.core.Mat&gt;, java.util.List&lt;io.anyline.opencv.core.Mat&gt;, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
@@ -2638,6 +2676,8 @@
 <!-- KeyPoint.KeyPoint(float, float, float, float, float) -->
 <!-- KeyPoint.KeyPoint(float, float, float, float, float, int) -->
 <!-- KeyPoint.KeyPoint(float, float, float, float, float, int, int) -->
+<!-- File: IO.Anyline.Models.BitmapCreatorImpl.cs -->
+<!-- BitmapCreatorImpl.createBitmap(int, int, android.graphics.Bitmap.Config) -->
 <!-- File: IO.Anyline.Nfc.Reader.AesReader.cs -->
 <!-- AesReader.calculateEncryptionKey(byte[]) -->
 <!-- AesReader.calculateMac(byte[], byte[]) -->
@@ -2690,6 +2730,14 @@
 <!-- MatOfFloat6.fromArray(float...) -->
 <!-- MatOfFloat6.fromList(java.util.List&lt;java.lang.Float&gt;) -->
 <!-- MatOfFloat6.fromNativeAddr(long) -->
+<!-- File: Com.Gemalto.Jp2.JP2Encoder.cs -->
+<!-- JP2Encoder.JP2Encoder(android.graphics.Bitmap) -->
+<!-- JP2Encoder.encode(java.io.OutputStream) -->
+<!-- JP2Encoder.encode(java.lang.String) -->
+<!-- JP2Encoder.setCompressionRatio(float...) -->
+<!-- JP2Encoder.setNumResolutions(int) -->
+<!-- JP2Encoder.setOutputFormat(int) -->
+<!-- JP2Encoder.setVisualQuality(float...) -->
 <!-- File: IO.Anyline.Opencv.Core.TermCriteria.cs -->
 <!-- TermCriteria.TermCriteria(double[]) -->
 <!-- TermCriteria.TermCriteria(int, int, double) -->
@@ -2735,6 +2783,7 @@
 <attr path="/api/package[@name='io.anyline.plugin.licenseplate']/class[@name='LicensePlateScanPlugin']/method[@name='mapToStartVariableString' and count(parameter)=3 and parameter[1][@type='java.util.Map&lt;io.anyline.plugin.licenseplate.LicensePlateScanMode, java.lang.String&gt;'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[2]" name="managedName">separator</attr>
 <attr path="/api/package[@name='io.anyline.plugin.licenseplate']/class[@name='LicensePlateScanPlugin']/method[@name='mapToStartVariableString' and count(parameter)=3 and parameter[1][@type='java.util.Map&lt;io.anyline.plugin.licenseplate.LicensePlateScanMode, java.lang.String&gt;'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[3]" name="managedName">delimiter</attr>
 <!-- LicensePlateScanPlugin.onFinishedWithOutput(java.lang.Object) -->
+<!-- LicensePlateScanPlugin.onFinishedWithOutput(java.lang.Object, io.anyline.models.AnylineImage) -->
 <!-- File: IO.Anyline.Camera.CameraController1.cs -->
 <!-- CameraController1.setZoomRatio(double) -->
 <!-- CameraController1.setCameraOrientation(io.anyline.camera.CameraController.CameraOrientation) -->
@@ -2831,7 +2880,8 @@
 <!-- LineSegmentDetector.detect(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
 <!-- LineSegmentDetector.detect(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
 <!-- LineSegmentDetector.drawSegments(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
-<!-- File: IO.Anyline.Plugin.Ocr.AnylineTINConfig.cs -->
+<!-- File: IO.Anyline.DI.FileOutputStreamProviderFactory.cs -->
+<!-- File: IO.Anyline.Plugin.Ocr.AnylineTINConfig.cs -->
 <!-- AnylineTINConfig.TINScanMode.valueOf(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.plugin.ocr']/class[@name='AnylineTINConfig.TINScanMode']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
 <!-- AnylineTINConfig.TINUpsideDownMode.valueOf(java.lang.String) -->
@@ -2927,7 +2977,8 @@
 <!-- DescriptorMatcher.radiusMatch(io.anyline.opencv.core.Mat, java.util.List&lt;io.anyline.opencv.core.MatOfDMatch&gt;, float, java.util.List&lt;io.anyline.opencv.core.Mat&gt;, boolean) -->
 <!-- DescriptorMatcher.read(java.lang.String) -->
 <!-- DescriptorMatcher.write(java.lang.String) -->
-<!-- File: IO.Anyline.Plugin.IScanRunSkippedListener.cs -->
+<!-- File: IO.Anyline.Models.BitmapCreatorFactory.cs -->
+<!-- File: IO.Anyline.Plugin.IScanRunSkippedListener.cs -->
 <!-- ScanRunSkippedListener.onRunSkipped(io.anyline.plugin.ScanRunSkippedReason) -->
 <attr path="/api/package[@name='io.anyline.plugin']/interface[@name='ScanRunSkippedListener']/method[@name='onRunSkipped' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ScanRunSkippedReason']]/parameter[1]" name="managedName">reason</attr>
 <!-- File: IO.Anyline.Camera.CameraPermissionHelper.cs -->

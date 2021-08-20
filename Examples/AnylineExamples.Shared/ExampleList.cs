@@ -42,8 +42,9 @@ namespace AnylineExamples.Shared
         public static readonly string UniversalID = "Universal ID";
         public static readonly string ArabicID = "Arabic ID";
         public static readonly string MRZ = "MRZ / Passport";
-        public static readonly string DrivingLicense = "AT/DE/UK Driving License";
-        public static readonly string GermanIDFront = "German ID Front";
+        /* Deprecated modes -> Will be removed in December/2021 */
+        //public static readonly string DrivingLicense = "AT/DE/UK Driving License";
+        //public static readonly string GermanIDFront = "German ID Front";
         public static readonly string JapaneseLandingPermission = "Japanese Landing Permission";
         public static readonly string LicensePlate = "EU License Plate";
         public static readonly string UniversalSerialNumber = "Universal Serial Number";
@@ -73,8 +74,8 @@ namespace AnylineExamples.Shared
             new ExampleModel(ItemType.Item, Example.UniversalID, Category.ID, "id_config_universal.json"),
             new ExampleModel(ItemType.Item, Example.ArabicID, Category.ID, "id_config_arabic.json"),
             new ExampleModel(ItemType.Item, Example.MRZ, Category.ID, "id_config_mrz.json"),
-            new ExampleModel(ItemType.Item, Example.DrivingLicense, Category.ID, "id_config_driving_license.json"),
-            new ExampleModel(ItemType.Item, Example.GermanIDFront, Category.ID, "id_config_german_id_front.json"),
+            //new ExampleModel(ItemType.Item, Example.DrivingLicense, Category.ID, "id_config_driving_license.json"),
+            //new ExampleModel(ItemType.Item, Example.GermanIDFront, Category.ID, "id_config_german_id_front.json"),
             new ExampleModel(ItemType.Item, Example.JapaneseLandingPermission, Category.ID, "id_config_jlp.json"),
 
             new ExampleModel(ItemType.Header, Category.Vehicle, Category.Vehicle, ""),

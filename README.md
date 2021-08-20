@@ -61,7 +61,7 @@ For a detailed setup guide on how to integrate Anyline for your scanning applica
 - [**Barcode:**](https://documentation.anyline.com/toc/products/barcode/index.html)  Scan 23 types of international barcode & QR code formats.
 - [**Meter:**](https://documentation.anyline.com/toc/products/meter/index.html) Scan meter readings of various electric, gas, and water meters.
 - [**Document:**](https://documentation.anyline.com/toc/products/document/index.html) Detect and scan documents for further processing.
-- [**ID:**](https://documentation.anyline.com/toc/products/id/index.html) Reliable scanning of data from passports' and IDs' machine readable zones (MRZ).
+- [**ID:**](https://documentation.anyline.com/toc/products/id/index.html) Reliable scanning of data from passports, IDs, Driver's Licenses, and  IDs' machine readable zones (MRZ).
 - [**Anyline OCR:**](https://documentation.anyline.com/toc/products/anyline_ocr/index.html) Create your own custom use case.
 - [**License Plate:**](https://documentation.anyline.com/toc/products/license_plate/index.html) Scan license plates.
 
@@ -81,6 +81,8 @@ For a detailed setup guide on how to integrate Anyline for your scanning applica
 - minimum iOS 12.0
 - minimum iPhone 5s
 - A Mac computer for building / deploying to the iPhone
+
+To be able to use the NFC reader on iOS, your `Provisioning Profile` must contain the `NFC Capability`, and the `Entitlements.plist` file must be referenced in the `CodesignEntitlements` (or `Custom Entitlements`) part of the iOS project's properties. Check the [Advanced Topics](https://documentation.anyline.com/toc/platforms/xamarin/advanced.html) for more information.
 
 
 ## License

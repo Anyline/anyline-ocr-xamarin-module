@@ -15,17 +15,13 @@
     },
     "cutoutConfig": {
       "style": "rect",
-      "alignment": "top",
+      "alignment": "top_half",
       "strokeWidth": 2,
       "strokeColor": "FFFFFF",
       "cornerRadius": 4,
       "outerColor": "000000",
       "outerAlpha": 0.5,
-      "feedbackStrokeColor": "0099FF",
-      "offset": {
-        "x": 0,
-        "y": 120
-      }
+      "feedbackStrokeColor": "0099FF"
     },
     "scanFeedback": {
       "style": "RECT",

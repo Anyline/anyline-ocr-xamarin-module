@@ -49,15 +49,13 @@ namespace Anyline.iOS
 
             try
             {
-                frame = View.Bounds;
-
                 string configurationFile = (Element as ScanExamplePage).ConfigurationFile.Replace(".json", "");
 
                 // Use the JSON file name that you want to load here
                 var configPath = NSBundle.MainBundle.PathForResource(configurationFile, @"json");
                 // This is the main intialization method that will create our use case depending on the JSON configuration.
                 _resultDelegate = new ScanResultDelegate((Element as ScanExamplePage).ShowResultsAction);
-                _scanView = ALScanView.ScanViewForFrame(frame, configPath, _resultDelegate, out error);
+                _scanView = ALScanView.ScanViewForFrame(View.Bounds, configPath, _resultDelegate, out error);
 
                 if (error != null)
                 {
@@ -65,11 +63,19 @@ namespace Anyline.iOS
                 }
 
 
-                // KNOWN ISSUE: the result delegate has to be added specifically to the scan plugin.
-                // this should be automatically done already with the ScanViewForFrame call.
                 ConnectDelegateToScanPlugin();
 
                 View.AddSubview(_scanView);
+
+                // Pin the leading edge of the scan view to the parent view
+
+                _scanView.TranslatesAutoresizingMaskIntoConstraints = false;
+
+                _scanView.LeadingAnchor.ConstraintEqualTo(View.LeadingAnchor).Active = true;
+                _scanView.TrailingAnchor.ConstraintEqualTo(View.TrailingAnchor).Active = true;
+                _scanView.TopAnchor.ConstraintEqualTo(View.SafeAreaLayoutGuide.TopAnchor).Active = true;
+                _scanView.BottomAnchor.ConstraintEqualTo(View.SafeAreaLayoutGuide.BottomAnchor).Active = true;
+
                 _scanView.StartCamera();
 
                 initialized = true;

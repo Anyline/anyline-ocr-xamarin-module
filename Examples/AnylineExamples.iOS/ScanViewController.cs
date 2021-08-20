@@ -10,11 +10,12 @@ namespace AnylineExamples.iOS
     public sealed class ScanViewController : UIViewController
     {
         string jsonPath;
-        CGRect frame;
         bool initialized = false;
 
         ALScanView scanView;
         ScanResultDelegate resultDelegate;
+        string configPath = null;
+
         public ScanViewController(string name, string jsonPath)
         {
             Title = name;
@@ -33,55 +34,30 @@ namespace AnylineExamples.iOS
 
             try
             {
-                frame = UIScreen.MainScreen.ApplicationFrame;
-                frame = new CGRect(frame.X,
-                    frame.Y + NavigationController.NavigationBar.Frame.Size.Height,
-                    frame.Width,
-                    frame.Height - NavigationController.NavigationBar.Frame.Size.Height);
-
                 // Use the JSON file name that you want to load here
-                var configPath = NSBundle.MainBundle.PathForResource(@"" + jsonPath.Replace(".json", ""), @"json");
+                configPath = NSBundle.MainBundle.PathForResource(@"" + jsonPath.Replace(".json", ""), @"json");
 
                 // This is the main intialization method that will create our use case depending on the JSON configuration.
-                scanView = ALScanView.ScanViewForFrame(frame, configPath, resultDelegate, out error);
+                scanView = ALScanView.ScanViewForFrame(View.Bounds, configPath, resultDelegate, out error);
 
                 if (error != null)
                 {
                     throw new Exception(error.LocalizedDescription);
                 }
 
-                // KNOWN ISSUE (OCRScanPlugin only): the customCmdFile is not loading the file correctly. therefore, it has to be added via code:
-                if (scanView.ScanViewPlugin is ALOCRScanViewPlugin)
-                {
-
-                    var file = File.ReadAllText(configPath);
-                    NSData data = NSData.FromString(file);
-                    NSDictionary dict = NSJsonSerialization.Deserialize(data, 0, out error) as NSDictionary;
-
-                    var customCmdFileName = dict.ValueForKeyPath(new NSString(@"viewPlugin.plugin.ocrPlugin.customCmdFile"));
-
-                    if (customCmdFileName != null)
-                    {
-                        var name = customCmdFileName.ToString().Split('.');
-                        if (name.Length == 2)
-                        {
-                            var config = (scanView.ScanViewPlugin as ALOCRScanViewPlugin).OcrScanPlugin.OcrConfig;
-                            config.CustomCmdFilePath = NSBundle.MainBundle.PathForResource(name[0], name[1]);
-
-                            // explicitly call this method so everything is updated internally
-                            (scanView.ScanViewPlugin as ALOCRScanViewPlugin).OcrScanPlugin.SetOCRConfig(config, out error);
-
-                            if (error != null)
-                                ShowAlert("OCR Config Error", error.DebugDescription);
-                        }
-                    }
-                }
-
-                // KNOWN ISSUE: the result delegate has to be added specifically to the scan plugin.
-                // this should be automatically done already with the ScanViewForFrame call.
                 ConnectDelegateToScanPlugin();
 
                 View.AddSubview(scanView);
+
+                // Pin the leading edge of the scan view to the parent view
+
+                scanView.TranslatesAutoresizingMaskIntoConstraints = false;
+
+                scanView.LeadingAnchor.ConstraintEqualTo(View.LeadingAnchor).Active = true;
+                scanView.TrailingAnchor.ConstraintEqualTo(View.TrailingAnchor).Active = true;
+                scanView.TopAnchor.ConstraintEqualTo(View.SafeAreaLayoutGuide.TopAnchor).Active = true;
+                scanView.BottomAnchor.ConstraintEqualTo(View.SafeAreaLayoutGuide.BottomAnchor).Active = true;
+
                 scanView.StartCamera();
 
                 initialized = true;
@@ -124,7 +100,6 @@ namespace AnylineExamples.iOS
                     if (error != null)
                     {
                         ShowAlert("Start Scanning Error", error.DebugDescription);
-
                     }
                     else
                     {
@@ -133,6 +108,7 @@ namespace AnylineExamples.iOS
                 }
             });
         }
+
         #region teardown
         public override void ViewWillDisappear(bool animated)
         {

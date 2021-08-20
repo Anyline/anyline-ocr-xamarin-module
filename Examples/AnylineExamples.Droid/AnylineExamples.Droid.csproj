@@ -32,13 +32,12 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AndroidLinkMode>None</AndroidLinkMode>
     <JavaMaximumHeapSize>
     </JavaMaximumHeapSize>
     <AndroidDexTool>d8</AndroidDexTool>
     <AndroidUseAapt2>true</AndroidUseAapt2>
     <AndroidUseSharedRuntime>true</AndroidUseSharedRuntime>
-    <AndroidSupportedAbis>arm64-v8a;armeabi-v7a;x86;x86_64</AndroidSupportedAbis>
+    <AndroidSupportedAbis>armeabi-v7a;x86;x86_64;arm64-v8a</AndroidSupportedAbis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>PdbOnly</DebugType>
@@ -190,15 +189,21 @@
   </ItemGroup>
   <Import Project="..\AnylineExamples.Shared\AnylineExamples.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
-    Other similar extension points exist, see Microsoft.Common.targets.
-    <Target Name="BeforeBuild">
-    </Target>
-    <Target Name="AfterBuild">
-    </Target>
-  -->
+  
   <Target Name="BeforeBuild" Condition=" '$(RUNNING_ON_CICD)' == 'true' ">
     <XmlPoke XmlInputPath="Properties\AndroidManifest.xml" Namespaces="&lt;Namespace Prefix='android' Uri='http://schemas.android.com/apk/res/android' /&gt;" Query="manifest/@android:versionCode" Value="$(VERSION_CODE_ANDROID)" />
     <XmlPoke XmlInputPath="Properties\AndroidManifest.xml" Namespaces="&lt;Namespace Prefix='android' Uri='http://schemas.android.com/apk/res/android' /&gt;" Query="manifest/@android:versionName" Value="$(MAJOR_VERSION_ANDROID).$(MINOR_VERSION_ANDROID).$(PATCH_VERSION_ANDROID)" />
   </Target>
+    
+  <Target Name="RemoveModules" BeforeTargets="_CreateBaseApkWithAapt2">
+    <!--
+    <RemoveDir Directories="$(ProjectDir)obj\$(Configuration)\assets\anyline\module_id" />
+    <RemoveDir Directories="$(ProjectDir)obj\$(Configuration)\assets\anyline\module_license_plate" />
+    <RemoveDir Directories="$(ProjectDir)obj\$(Configuration)\assets\anyline\module_anyline_ocr" />
+    <RemoveDir Directories="$(ProjectDir)obj\$(Configuration)\assets\anyline\module_energy" />
+    <RemoveDir Directories="$(ProjectDir)obj\$(Configuration)\assets\anyline\module_document" />
+    <RemoveDir Directories="$(ProjectDir)obj\$(Configuration)\assets\anyline\module_barcode" />
+    -->
+  </Target>
+
 </Project>

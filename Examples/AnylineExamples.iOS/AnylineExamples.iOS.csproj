@@ -54,8 +54,6 @@
     <CodesignExtraArgs />
     <CodesignResourceRules />
     <MtouchNoSymbolStrip>false</MtouchNoSymbolStrip>
-    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <CodesignProvision>Xamarin_NFCenabled_Development</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -176,4 +174,16 @@
     <XmlPoke XmlInputPath="Info.plist" Query="//dict/key[. = 'CFBundleVersion']/following-sibling::string[1]" Value="$(BUNDLE_VERSION_IOS)" />
     <XmlPoke XmlInputPath="Info.plist" Query="//dict/key[. = 'CFBundleShortVersionString']/following-sibling::string[1]" Value="$(MAJOR_VERSION_IOS).$(MINOR_VERSION_IOS).$(PATCH_VERSION_IOS)" />
   </Target>
+   
+  <Target Name="RemoveModules" BeforeTargets="_CreateAssetPackManifest">
+    <!-- 
+    <RemoveDir Directories="$(AppBundleDir)\AnylineResources.bundle\module_id" />
+    <RemoveDir Directories="$(AppBundleDir)\AnylineResources.bundle\module_license_plate" />
+    <RemoveDir Directories="$(AppBundleDir)\AnylineResources.bundle\module_anyline_ocr" />
+    <RemoveDir Directories="$(AppBundleDir)\AnylineResources.bundle\module_energy" />
+    <RemoveDir Directories="$(AppBundleDir)\AnylineResources.bundle\module_document" />
+    <RemoveDir Directories="$(AppBundleDir)\AnylineResources.bundle\module_barcode" />
+    -->
+  </Target>
+    
 </Project>
