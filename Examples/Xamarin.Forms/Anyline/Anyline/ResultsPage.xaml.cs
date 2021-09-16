@@ -21,7 +21,7 @@ namespace Anyline
             {
                 Device.BeginInvokeOnMainThread(async () =>
                 {
-                    Navigation.InsertPageBefore(new NFCScanExamplePage(configurationFile), this);
+                    Navigation.InsertPageBefore(new ScanExamplePage(configurationFile), this);
                     await Navigation.PopAsync();
                 });
             };
