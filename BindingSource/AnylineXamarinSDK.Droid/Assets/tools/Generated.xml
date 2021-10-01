@@ -458,6 +458,9 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='CutoutRect']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='float']]/parameter[5]" name="managedName">scale</attr>
 <!-- File: IO.Anyline.Camera.IImageListener.cs -->
 <!-- ImageListener.onImageAvailable(io.anyline.camera.ImageReceiver) -->
+<!-- File: IO.Anyline.Plugin.ID.AlphabetMapper.cs -->
+<!-- AlphabetMapper.map(org.json.JSONObject) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='AlphabetMapper']/method[@name='map' and count(parameter)=1 and parameter[1][@type='org.json.JSONObject']]/parameter[1]" name="managedName">objectToMap</attr>
 <!-- File: IO.Anyline.Plugin.ID.LayoutDefinition.cs -->
 <!-- LayoutDefinition.LayoutDefinition(java.lang.String, java.lang.String, java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='LayoutDefinition']/constructor[@name='LayoutDefinition' and count(parameter)=3 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[1]" name="managedName">type</attr>
@@ -860,7 +863,9 @@
 <!-- Rect.contains(io.anyline.opencv.core.Point) -->
 <!-- Rect.set(double[]) -->
 <!-- File: IO.Anyline.Plugin.ID.IdConfig.cs -->
-<!-- IdConfig.setIdFieldScanOptions(TFieldScanOptions) -->
+<!-- IdConfig.setAlphabet(io.anyline.plugin.id.Alphabet) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdConfig']/method[@name='setAlphabet' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.id.Alphabet']]/parameter[1]" name="managedName">alphabet</attr>
+<!-- IdConfig.setIdFieldScanOptions(TFieldScanOptions) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdConfig']/method[@name='setIdFieldScanOptions' and count(parameter)=1 and parameter[1][@type='TFieldScanOptions']]/parameter[1]" name="managedName">idFieldScanOptions</attr>
 <!-- IdConfig.setIdMinFieldConfidences(TFieldConfidences) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IdConfig']/method[@name='setIdMinFieldConfidences' and count(parameter)=1 and parameter[1][@type='TFieldConfidences']]/parameter[1]" name="managedName">idMinFieldConfidences</attr>
@@ -980,9 +985,6 @@
 <!-- IAnylineViewConfig.init(android.content.Context, org.json.JSONObject) -->
 <attr path="/api/package[@name='io.anyline.view']/interface[@name='IAnylineViewConfig']/method[@name='init' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='org.json.JSONObject']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='io.anyline.view']/interface[@name='IAnylineViewConfig']/method[@name='init' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='org.json.JSONObject']]/parameter[2]" name="managedName">json</attr>
-<!-- File: IO.Anyline.Plugin.ID.Script.cs -->
-<!-- Script.valueOf(java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='Script']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
 <!-- File: IO.Anyline.Opencv.Android.UtilsProviderImpl.cs -->
 <!-- UtilsProviderImpl.bitmapToMat(android.graphics.Bitmap, io.anyline.opencv.core.Mat, boolean) -->
 <!-- UtilsProviderImpl.matToBitmap(io.anyline.opencv.core.Mat, android.graphics.Bitmap) -->
@@ -2280,6 +2282,7 @@
 <!-- AnylineController.setCmdFile(java.lang.String, java.lang.String) -->
 <!-- AnylineController.setCropRect(android.graphics.RectF) -->
 <!-- AnylineController.setDelayScanTime(double, double) -->
+<!-- AnylineController.setHeaderVariable(java.lang.String, java.lang.Object) -->
 <!-- AnylineController.setId(java.lang.String) -->
 <!-- AnylineController.setImageProvider(io.anyline.ImageProvider) -->
 <!-- AnylineController.setIsFullFrameScanning(boolean) -->
@@ -2615,6 +2618,8 @@
 <!-- MatOfKeyPoint.fromArray(io.anyline.opencv.core.KeyPoint...) -->
 <!-- MatOfKeyPoint.fromList(java.util.List&lt;io.anyline.opencv.core.KeyPoint&gt;) -->
 <!-- MatOfKeyPoint.fromNativeAddr(long) -->
+<!-- File: IO.Anyline.IMapper.cs -->
+<!-- Mapper.map(From) -->
 <!-- File: IO.Anyline.Nfc.Parser.DG2Parser.cs -->
 <!-- DG2Parser.DG2Parser(byte[]) -->
 <!-- File: IO.Anyline.Camera.ICutoutUpdateListener.cs -->
@@ -2834,6 +2839,11 @@
 <!-- MatOfPoint3.fromArray(io.anyline.opencv.core.Point3...) -->
 <!-- MatOfPoint3.fromList(java.util.List&lt;io.anyline.opencv.core.Point3&gt;) -->
 <!-- MatOfPoint3.fromNativeAddr(long) -->
+<!-- File: IO.Anyline.Plugin.ID.Alphabet.cs -->
+<!-- Alphabet.fromString(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='Alphabet']/method[@name='fromString' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">stringValue</attr>
+<!-- Alphabet.valueOf(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='Alphabet']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
 <!-- File: IO.Anyline.View.SerialScanViewComposite.cs -->
 <!-- SerialScanViewComposite.SerialScanViewComposite(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='SerialScanViewComposite']/constructor[@name='SerialScanViewComposite' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">id</attr>
