@@ -13,12 +13,12 @@
       "idPlugin": {
         "universalIdConfig": {
           "faceDetection": true,
+          "alphabet": "cyrillic",
           "allowedLayouts": {
             "mrz": [],
             "drivingLicense": [],
             "idFront": []
           },
-          "alphabet": "cyrillic",
           "drivingLicense": {
             "lastName": {"scanOption": 0, "minConfidence": 40},
             "lastName@cyr": {"scanOption": 0, "minConfidence": 40},
