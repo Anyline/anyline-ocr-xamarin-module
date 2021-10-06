@@ -52,7 +52,7 @@ namespace AnylineExamples.Shared
         public static readonly string LicensePlateAfrica = "License Plate - Africa";
         public static readonly string UniversalSerialNumber = "Universal Serial Number";
         public static readonly string VIN = "Vehicle Identification Number";
-        public static readonly string TIN = "Tire Identification Number";
+        public static readonly string TIN = "Tire Identification Number (DOT)";
         public static readonly string ShippingContainerHorizontal = "Shipping Container - Horizontal";
         public static readonly string ShippingContainerVertical = "Shipping Container - Vertical";
         public static readonly string Barcode = "Barcode";

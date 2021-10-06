@@ -111,6 +111,7 @@
 <!-- AssetUtil.copyAssetFileWithoutPath(android.content.Context, java.lang.String, java.io.File, java.lang.String) -->
 <!-- AssetUtil.copyDirectory(java.io.File, java.io.File) -->
 <!-- AssetUtil.deleteDirectory(java.io.File) -->
+<!-- AssetUtil.fileExists(java.lang.String, java.lang.String) -->
 <!-- AssetUtil.getAnylineAssetsJson(android.content.Context, java.lang.String) -->
 <!-- AssetUtil.getRootPathForProduct(android.content.Context, io.anyline.products.Product) -->
 <!-- AssetUtil.getRootPathForScanPlugin(android.content.Context, java.lang.Class&lt;?&gt;) -->
@@ -798,7 +799,10 @@
 <!-- BarcodeScanPlugin.setMultiBarcode(boolean) -->
 <attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='BarcodeScanPlugin']/method[@name='setMultiBarcode' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">multiBarcode</attr>
 <!-- File: IO.Anyline.ICombinedImageProvider.cs -->
-<!-- File: IO.Anyline.Opencv.ML.DTrees.cs -->
+<!-- File: IO.Anyline.Plugin.ID.CyrillicIdConfig.cs -->
+<!-- CyrillicIdConfig.CyrillicIdConfig(org.json.JSONObject) -->
+<attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='CyrillicIdConfig']/constructor[@name='CyrillicIdConfig' and count(parameter)=1 and parameter[1][@type='org.json.JSONObject']]/parameter[1]" name="managedName">cyrillicIdJsonConfig</attr>
+<!-- File: IO.Anyline.Opencv.ML.DTrees.cs -->
 <!-- DTrees.DTrees(long) -->
 <!-- DTrees.setCVFolds(int) -->
 <!-- DTrees.setMaxCategories(int) -->
