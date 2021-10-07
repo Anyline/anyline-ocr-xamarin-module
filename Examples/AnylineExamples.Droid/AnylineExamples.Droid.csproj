@@ -82,7 +82,7 @@
     <AndroidAsset Include="Assets\mro_config_vin.json" />
     <AndroidAsset Include="Assets\vehicle_config_license_plate.json" />
     <AndroidAsset Include="Assets\mro_config_usnr.json" />
-    <AndroidAsset Include="Assets\mro_config_shipping_container.json" />
+    <AndroidAsset Include="Assets\mro_config_shipping_container_horizontal.json" />
     <AndroidAsset Include="Assets\others_config_barcode.json" />
     <AndroidAsset Include="Assets\others_config_voucher_code.json" />
     <AndroidAsset Include="Assets\id_config_german_id_front.json" />
@@ -98,6 +98,10 @@
     <None Include="Properties\AndroidManifest.xml" />
     <AndroidAsset Include="Assets\id_config_arabic.json" />
     <AndroidAsset Include="Assets\id_config_jlp.json" />
+    <AndroidAsset Include="Assets\mro_config_shipping_container_vertical.json" />
+    <AndroidAsset Include="Assets\id_config_cyrillic.json" />
+    <AndroidAsset Include="Assets\vehicle_config_license_plate_africa.json" />
+    <AndroidAsset Include="Assets\vehicle_config_license_plate_us.json" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\activity_doc_scan_ui_main.axml">
@@ -140,7 +144,7 @@
     <AndroidResource Include="Resources\layout\activity_nfc.axml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Anyline.Xamarin.SDK.Droid" Version="33.0.0" />
+    <PackageReference Include="Anyline.Xamarin.SDK.Droid" Version="34.0.0" />
     <PackageReference Include="Xamarin.Android.Support.Compat" Version="28.0.0.3" />
     <PackageReference Include="Xamarin.Android.Support.Core.UI" Version="28.0.0.3" />
     <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.3" />

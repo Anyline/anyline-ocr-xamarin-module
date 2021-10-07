@@ -3689,9 +3689,13 @@ namespace AnylineXamarinSDK.iOS
     interface ALLicensePlateResult
     {
         // @property (readonly, nonatomic, strong) NSString * _Nullable country;
-        [NullAllowed, Export("country", ArgumentSemantic.Strong)]
+        [NullAllowed, Export ("country", ArgumentSemantic.Strong)]
         string Country { get; }
 
+        // @property (readonly, nonatomic, strong) NSString * _Nullable area;
+        [NullAllowed, Export ("area", ArgumentSemantic.Strong)]
+        string Area { get; }
+        
         // -(instancetype _Nullable)initWithResult:(NSString * _Nonnull)result image:(UIImage * _Nonnull)image fullImage:(UIImage * _Nullable)fullImage confidence:(NSInteger)confidence pluginID:(NSString * _Nonnull)pluginID country:(NSString * _Nullable)country;
         [Export("initWithResult:image:fullImage:confidence:pluginID:country:")]
         IntPtr Constructor(string result, UIImage image, [NullAllowed] UIImage fullImage, nint confidence, string pluginID, [NullAllowed] string country);

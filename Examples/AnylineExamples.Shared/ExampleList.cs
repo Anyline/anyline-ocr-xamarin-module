@@ -40,17 +40,21 @@ namespace AnylineExamples.Shared
         public static readonly string AnalogDigital = "Analog/Digital Meter";
         public static readonly string DialMeter = "Dial Meter";
         public static readonly string UniversalID = "Universal ID";
-        public static readonly string ArabicID = "Arabic ID";
+        public static readonly string ArabicID = "Arabic IDs";
+        public static readonly string CyrillicID = "Cyrillic IDs";
         public static readonly string MRZ = "MRZ / Passport";
         /* Deprecated modes -> Will be removed in December/2021 */
         //public static readonly string DrivingLicense = "AT/DE/UK Driving License";
         //public static readonly string GermanIDFront = "German ID Front";
         public static readonly string JapaneseLandingPermission = "Japanese Landing Permission";
-        public static readonly string LicensePlate = "EU License Plate";
+        public static readonly string LicensePlate = "License Plates";
+        public static readonly string LicensePlateUS = "License Plate - US";
+        public static readonly string LicensePlateAfrica = "License Plate - Africa";
         public static readonly string UniversalSerialNumber = "Universal Serial Number";
         public static readonly string VIN = "Vehicle Identification Number";
-        public static readonly string TIN = "Tire Identification Number";
-        public static readonly string ShippingContainer = "Shipping Container";
+        public static readonly string TIN = "Tire Identification Number (DOT)";
+        public static readonly string ShippingContainerHorizontal = "Shipping Container - Horizontal";
+        public static readonly string ShippingContainerVertical = "Shipping Container - Vertical";
         public static readonly string Barcode = "Barcode";
         public static readonly string Document = "Document";
         public static readonly string VoucherCode = "Voucher Code";
@@ -73,6 +77,7 @@ namespace AnylineExamples.Shared
             new ExampleModel(ItemType.Header, Category.ID, Category.ID, ""),
             new ExampleModel(ItemType.Item, Example.UniversalID, Category.ID, "id_config_universal.json"),
             new ExampleModel(ItemType.Item, Example.ArabicID, Category.ID, "id_config_arabic.json"),
+            new ExampleModel(ItemType.Item, Example.CyrillicID, Category.ID, "id_config_cyrillic.json"),
             new ExampleModel(ItemType.Item, Example.MRZ, Category.ID, "id_config_mrz.json"),
             //new ExampleModel(ItemType.Item, Example.DrivingLicense, Category.ID, "id_config_driving_license.json"),
             //new ExampleModel(ItemType.Item, Example.GermanIDFront, Category.ID, "id_config_german_id_front.json"),
@@ -80,12 +85,15 @@ namespace AnylineExamples.Shared
 
             new ExampleModel(ItemType.Header, Category.Vehicle, Category.Vehicle, ""),
             new ExampleModel(ItemType.Item, Example.LicensePlate, Category.Vehicle, "vehicle_config_license_plate.json"),
+            new ExampleModel(ItemType.Item, Example.LicensePlateUS, Category.Vehicle, "vehicle_config_license_plate_us.json"),
+            new ExampleModel(ItemType.Item, Example.LicensePlateAfrica, Category.Vehicle, "vehicle_config_license_plate_africa.json"),
             
             new ExampleModel(ItemType.Header, Category.MRO, Category.MRO, ""),
             new ExampleModel(ItemType.Item, Example.UniversalSerialNumber, Category.MRO, "mro_config_usnr.json"),
             new ExampleModel(ItemType.Item, Example.VIN, Category.MRO, "mro_config_vin.json"),
             new ExampleModel(ItemType.Item, Example.TIN, Category.MRO, "mro_config_tin.json"),
-            new ExampleModel(ItemType.Item, Example.ShippingContainer, Category.MRO, "mro_config_shipping_container.json"),
+            new ExampleModel(ItemType.Item, Example.ShippingContainerHorizontal, Category.MRO, "mro_config_shipping_container_horizontal.json"),
+            new ExampleModel(ItemType.Item, Example.ShippingContainerVertical, Category.MRO, "mro_config_shipping_container_vertical.json"),
 
             new ExampleModel(ItemType.Header, Category.Document, Category.Document, ""),
             new ExampleModel(ItemType.Item, Example.Document, Category.Document, "document_config.json"),
