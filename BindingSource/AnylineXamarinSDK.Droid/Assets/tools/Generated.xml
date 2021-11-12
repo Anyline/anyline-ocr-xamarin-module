@@ -2896,16 +2896,16 @@
 <!-- LineSegmentDetector.drawSegments(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
 <!-- File: IO.Anyline.DI.FileOutputStreamProviderFactory.cs -->
 <!-- File: IO.Anyline.Plugin.Ocr.AnylineTINConfig.cs -->
-<!-- AnylineTINConfig.TINScanMode.valueOf(java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.plugin.ocr']/class[@name='AnylineTINConfig.TINScanMode']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
-<!-- AnylineTINConfig.TINUpsideDownMode.valueOf(java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.plugin.ocr']/class[@name='AnylineTINConfig.TINUpsideDownMode']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
+<!-- AnylineTINConfig.ScanMode.valueOf(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.ocr']/class[@name='AnylineTINConfig.ScanMode']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
+<!-- AnylineTINConfig.UpsideDownMode.valueOf(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.ocr']/class[@name='AnylineTINConfig.UpsideDownMode']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
 <!-- AnylineTINConfig.AnylineTINConfig(org.json.JSONObject) -->
 <attr path="/api/package[@name='io.anyline.plugin.ocr']/class[@name='AnylineTINConfig']/constructor[@name='AnylineTINConfig' and count(parameter)=1 and parameter[1][@type='org.json.JSONObject']]/parameter[1]" name="managedName">anylineTINConfigJson</attr>
-<!-- AnylineTINConfig.setScanMode(io.anyline.plugin.ocr.AnylineTINConfig.TINScanMode) -->
-<attr path="/api/package[@name='io.anyline.plugin.ocr']/class[@name='AnylineTINConfig']/method[@name='setScanMode' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ocr.AnylineTINConfig.TINScanMode']]/parameter[1]" name="managedName">scanMode</attr>
-<!-- AnylineTINConfig.setUpsideDownMode(io.anyline.plugin.ocr.AnylineTINConfig.TINUpsideDownMode) -->
-<attr path="/api/package[@name='io.anyline.plugin.ocr']/class[@name='AnylineTINConfig']/method[@name='setUpsideDownMode' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ocr.AnylineTINConfig.TINUpsideDownMode']]/parameter[1]" name="managedName">upsideDownMode</attr>
+<!-- AnylineTINConfig.setScanMode(io.anyline.plugin.ocr.AnylineTINConfig.ScanMode) -->
+<attr path="/api/package[@name='io.anyline.plugin.ocr']/class[@name='AnylineTINConfig']/method[@name='setScanMode' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ocr.AnylineTINConfig.ScanMode']]/parameter[1]" name="managedName">strictMode</attr>
+<!-- AnylineTINConfig.setUpsideDownMode(io.anyline.plugin.ocr.AnylineTINConfig.UpsideDownMode) -->
+<attr path="/api/package[@name='io.anyline.plugin.ocr']/class[@name='AnylineTINConfig']/method[@name='setUpsideDownMode' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.ocr.AnylineTINConfig.UpsideDownMode']]/parameter[1]" name="managedName">upsideDownMode</attr>
 <!-- File: IO.Anyline.Camera.FaceDetector.cs -->
 <!-- FaceDetector.FaceDetectionResultHandler.onFailure(java.lang.String) -->
 <!-- FaceDetector.FaceDetectionResultHandler.onSuccess(io.anyline.models.AnylineImage) -->

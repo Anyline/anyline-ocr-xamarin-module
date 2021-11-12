@@ -52,7 +52,8 @@ namespace AnylineExamples.Shared
         public static readonly string LicensePlateAfrica = "License Plate - Africa";
         public static readonly string UniversalSerialNumber = "Universal Serial Number";
         public static readonly string VIN = "Vehicle Identification Number";
-        public static readonly string TIN = "Tire Identification Number (DOT)";
+        public static readonly string TIN_UNIVERSAL = "Tire Identification Number - Universal";
+        public static readonly string TIN_DOT = "Tire Identification Number - DOT (North America only)";
         public static readonly string ShippingContainerHorizontal = "Shipping Container - Horizontal";
         public static readonly string ShippingContainerVertical = "Shipping Container - Vertical";
         public static readonly string Barcode = "Barcode";
@@ -91,7 +92,8 @@ namespace AnylineExamples.Shared
             new ExampleModel(ItemType.Header, Category.MRO, Category.MRO, ""),
             new ExampleModel(ItemType.Item, Example.UniversalSerialNumber, Category.MRO, "mro_config_usnr.json"),
             new ExampleModel(ItemType.Item, Example.VIN, Category.MRO, "mro_config_vin.json"),
-            new ExampleModel(ItemType.Item, Example.TIN, Category.MRO, "mro_config_tin.json"),
+            new ExampleModel(ItemType.Item, Example.TIN_UNIVERSAL, Category.MRO, "mro_config_tin_universal.json"),
+            new ExampleModel(ItemType.Item, Example.TIN_DOT, Category.MRO, "mro_config_tin_dot.json"),
             new ExampleModel(ItemType.Item, Example.ShippingContainerHorizontal, Category.MRO, "mro_config_shipping_container_horizontal.json"),
             new ExampleModel(ItemType.Item, Example.ShippingContainerVertical, Category.MRO, "mro_config_shipping_container_vertical.json"),
 
