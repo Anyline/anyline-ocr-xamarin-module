@@ -116,6 +116,13 @@
 <!-- AssetUtil.getRootPathForProduct(android.content.Context, io.anyline.products.Product) -->
 <!-- AssetUtil.getRootPathForScanPlugin(android.content.Context, java.lang.Class&lt;?&gt;) -->
 <!-- AssetUtil.readFile(java.lang.String, java.lang.String) -->
+<!-- File: IO.Anyline.Plugin.Barcode.PDF417.cs -->
+<!-- PDF417.setAamvaVersion(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='PDF417']/method[@name='setAamvaVersion' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">aamvaVersion</attr>
+<!-- PDF417.setAdditionalInformation(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='PDF417']/method[@name='setAdditionalInformation' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">additionalInformation</attr>
+<!-- PDF417.setBody(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='PDF417']/method[@name='setBody' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">body</attr>
 <!-- File: IO.Anyline.Models.AnylineYuvImage.cs -->
 <!-- AnylineYuvImage.AnylineYuvImage(android.media.Image, int, int, int, int, int, boolean) -->
 <!-- AnylineYuvImage.AnylineYuvImage(int, int, int, byte[], int, boolean) -->
@@ -1187,6 +1194,8 @@
 <attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='Barcode']/method[@name='setBase64' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">base64</attr>
 <!-- Barcode.setCoordinates(java.util.List&lt;io.anyline.opencv.core.Point&gt;) -->
 <attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='Barcode']/method[@name='setCoordinates' and count(parameter)=1 and parameter[1][@type='java.util.List&lt;io.anyline.opencv.core.Point&gt;']]/parameter[1]" name="managedName">coordinates</attr>
+<!-- Barcode.setParsedPDF417(io.anyline.plugin.barcode.PDF417) -->
+<attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='Barcode']/method[@name='setParsedPDF417' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.barcode.PDF417']]/parameter[1]" name="managedName">parsedPDF417</attr>
 <!-- Barcode.setValue(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='Barcode']/method[@name='setValue' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">value</attr>
 <!-- File: IO.Anyline.View.ScanViewUtil.cs -->

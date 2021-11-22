@@ -47,6 +47,13 @@ namespace AnylineExamples.iOS
 
                 ConnectDelegateToScanPlugin();
 
+                // Activates PDF 417 parsing
+                // (you can activate this when scanning the barcode on US Driver's Licenses)
+                if (scanView.ScanViewPlugin is ALBarcodeScanViewPlugin barcodeSVP)
+                {
+                    barcodeSVP.BarcodeScanPlugin.ParsePDF417 = true;
+                }
+                
                 View.AddSubview(scanView);
 
                 // Pin the leading edge of the scan view to the parent view

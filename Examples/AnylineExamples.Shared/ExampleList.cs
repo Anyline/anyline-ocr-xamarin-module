@@ -18,6 +18,7 @@ namespace AnylineExamples.Shared
         public static readonly string Energy = "Energy";
         public static readonly string ID = "Identity Documents";
         public static readonly string Vehicle = "Vehicle";
+        public static readonly string TIN = "Tire Identification Number (TIN)";
         public static readonly string MRO = "MRO";
         public static readonly string Document = "Documents";
         public static readonly string Others = "Others";
@@ -50,10 +51,10 @@ namespace AnylineExamples.Shared
         public static readonly string LicensePlate = "License Plates";
         public static readonly string LicensePlateUS = "License Plate - US";
         public static readonly string LicensePlateAfrica = "License Plate - Africa";
+        public static readonly string VIN = "Vehicle Identification Number (VIN)";
+        public static readonly string TIN_UNIVERSAL = "TIN - Universal";
+        public static readonly string TIN_DOT = "TIN - DOT (North America only)";
         public static readonly string UniversalSerialNumber = "Universal Serial Number";
-        public static readonly string VIN = "Vehicle Identification Number";
-        public static readonly string TIN_UNIVERSAL = "Tire Identification Number - Universal";
-        public static readonly string TIN_DOT = "Tire Identification Number - DOT (North America only)";
         public static readonly string ShippingContainerHorizontal = "Shipping Container - Horizontal";
         public static readonly string ShippingContainerVertical = "Shipping Container - Vertical";
         public static readonly string Barcode = "Barcode";
@@ -88,12 +89,14 @@ namespace AnylineExamples.Shared
             new ExampleModel(ItemType.Item, Example.LicensePlate, Category.Vehicle, "vehicle_config_license_plate.json"),
             new ExampleModel(ItemType.Item, Example.LicensePlateUS, Category.Vehicle, "vehicle_config_license_plate_us.json"),
             new ExampleModel(ItemType.Item, Example.LicensePlateAfrica, Category.Vehicle, "vehicle_config_license_plate_africa.json"),
-            
+            new ExampleModel(ItemType.Item, Example.VIN, Category.Vehicle, "mro_config_vin.json"),
+
+            new ExampleModel(ItemType.Header, Category.TIN, Category.TIN, ""),
+            new ExampleModel(ItemType.Item, Example.TIN_UNIVERSAL, Category.TIN, "mro_config_tin_universal.json"),
+            new ExampleModel(ItemType.Item, Example.TIN_DOT, Category.TIN, "mro_config_tin_dot.json"),
+
             new ExampleModel(ItemType.Header, Category.MRO, Category.MRO, ""),
             new ExampleModel(ItemType.Item, Example.UniversalSerialNumber, Category.MRO, "mro_config_usnr.json"),
-            new ExampleModel(ItemType.Item, Example.VIN, Category.MRO, "mro_config_vin.json"),
-            new ExampleModel(ItemType.Item, Example.TIN_UNIVERSAL, Category.MRO, "mro_config_tin_universal.json"),
-            new ExampleModel(ItemType.Item, Example.TIN_DOT, Category.MRO, "mro_config_tin_dot.json"),
             new ExampleModel(ItemType.Item, Example.ShippingContainerHorizontal, Category.MRO, "mro_config_shipping_container_horizontal.json"),
             new ExampleModel(ItemType.Item, Example.ShippingContainerVertical, Category.MRO, "mro_config_shipping_container_vertical.json"),
 
