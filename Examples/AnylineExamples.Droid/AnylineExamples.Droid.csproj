@@ -102,6 +102,8 @@
     <AndroidAsset Include="Assets\id_config_cyrillic.json" />
     <AndroidAsset Include="Assets\vehicle_config_license_plate_africa.json" />
     <AndroidAsset Include="Assets\vehicle_config_license_plate_us.json" />
+    <AndroidAsset Include="Assets\mro_config_tin_dot.json" />
+    <AndroidAsset Include="Assets\mro_config_tin_universal.json" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\activity_doc_scan_ui_main.axml">
@@ -144,7 +146,7 @@
     <AndroidResource Include="Resources\layout\activity_nfc.axml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Anyline.Xamarin.SDK.Droid" Version="34.0.0" />
+    <PackageReference Include="Anyline.Xamarin.SDK.Droid" Version="35.0.0" />
     <PackageReference Include="Xamarin.Android.Support.Compat" Version="28.0.0.3" />
     <PackageReference Include="Xamarin.Android.Support.Core.UI" Version="28.0.0.3" />
     <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.3" />
@@ -157,6 +159,7 @@
     <PackageReference Include="Xamarin.Google.MLKit.BarcodeScanning" Version="116.1.2" />
     <PackageReference Include="Xamarin.GooglePlayServices.MLKit.FaceDetection" Version="116.1.7" />
     <PackageReference Include="Xamarin.Google.Dagger" Version="2.27.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\example_activities.xml">

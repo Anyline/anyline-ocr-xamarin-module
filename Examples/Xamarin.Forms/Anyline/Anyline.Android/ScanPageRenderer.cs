@@ -1,5 +1,6 @@
 ﻿using Android.App;
 using Android.Content;
+using Android.Content.Res;
 using Android.Graphics;
 using Android.Runtime;
 using Android.Views;
@@ -39,7 +40,16 @@ namespace Anyline.Droid
             {
                 return;
             }
+        }
 
+        protected override void OnAttachedToWindow()
+        {
+            base.OnAttachedToWindow();
+            InitializeAnyline();
+        }
+
+        void InitializeAnyline()
+        {
             string configurationFile = (Element as ScanExamplePage).ConfigurationFile.Replace(".json", "") + ".json";
 
             try
@@ -90,6 +100,13 @@ namespace Anyline.Droid
             view.Layout(0, 0, w, h);
         }
 
+        protected override void OnConfigurationChanged(Configuration newConfig)
+        {
+            base.OnConfigurationChanged(newConfig);
+            DisposeAnyline();
+            InitializeAnyline();
+        }
+
         public void OnResult(Java.Lang.Object result)
         {
             var processedResults = CreatePropertyList((result as AnylineScanResult));
@@ -98,21 +115,16 @@ namespace Anyline.Droid
 
         protected override void Dispose(bool disposing)
         {
-            DisposeResources();
+            DisposeAnyline();
             base.Dispose(disposing);
         }
 
-        protected override void OnDetachedFromWindow()
-        {
-            scanView.Stop();
-            scanView.CameraView.ReleaseCameraInBackground();
-            base.OnDetachedFromWindow();
-        }
-
-        private void DisposeResources()
+        private void DisposeAnyline()
         {
             if (scanView != null)
             {
+                scanView.Stop();
+                scanView.ReleaseCameraInBackground();
                 scanView.Dispose();
                 scanView = null;
             }

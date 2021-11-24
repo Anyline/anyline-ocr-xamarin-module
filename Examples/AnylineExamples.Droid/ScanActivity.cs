@@ -62,6 +62,13 @@ namespace AnylineExamples.Droid
                 // Activates Face Detection if the MRZ Scanner was initialized
                 (((_scanView.ScanViewPlugin as IdScanViewPlugin)?.ScanPlugin as IdScanPlugin)?.IdConfig as MrzConfig)?.EnableFaceDetection(true);
 
+                // Activates PDF 417 parsing
+                // (you can activate this when scanning the barcode on US Driver's Licenses)
+                if (_scanView.ScanViewPlugin is BarcodeScanViewPlugin barcodeSVP)
+                {
+                    (barcodeSVP.ScanPlugin as BarcodeScanPlugin).EnablePDF417Parsing();
+                }
+
                 /*
                  * Depending on your config/use-case, the ScanViewPlugin is of a different type.
                  * You need to add your implementation of IO.Anyline.Plugin.IScanResultListener to retrieve scan results.
