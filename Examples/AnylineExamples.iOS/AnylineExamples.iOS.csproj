@@ -117,6 +117,8 @@
     <BundleResource Include="Resources\id_config_cyrillic.json" />
     <BundleResource Include="Resources\vehicle_config_license_plate_us.json" />
     <BundleResource Include="Resources\vehicle_config_license_plate_africa.json" />
+    <BundleResource Include="Resources\mro_config_tin_dot.json" />
+    <BundleResource Include="Resources\mro_config_tin_universal.json" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -169,7 +171,7 @@
     </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Anyline.Xamarin.SDK.iOS" Version="34.0.0" />
+    <PackageReference Include="Anyline.Xamarin.SDK.iOS" Version="35.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
   <Import Project="..\AnylineExamples.Shared\AnylineExamples.Shared.projitems" Label="Shared" />

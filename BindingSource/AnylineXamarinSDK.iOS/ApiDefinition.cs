@@ -2097,13 +2097,17 @@ namespace AnylineXamarinSDK.iOS
         [NullAllowed, Export ("coordinates", ArgumentSemantic.Copy)]
         ALSquare Coordinates { get; }
 
+        // @property (readonly, copy, nonatomic) NSDictionary * _Nonnull parsedPDF417;
+        [Export ("parsedPDF417", ArgumentSemantic.Copy)]
+        NSDictionary ParsedPDF417 { get; }
+
         // -(instancetype _Nonnull)initWithValue:(NSString * _Nonnull)value format:(NSString * _Nonnull)barcodeFormat;
         [Export ("initWithValue:format:")]
         IntPtr Constructor (string value, string barcodeFormat);
 
-        // -(instancetype _Nonnull)initWithValue:(NSString * _Nonnull)value format:(NSString * _Nonnull)barcodeFormat coordinates:(NSString * _Nonnull)coordinates base64:(NSString * _Nonnull)base64;
-        [Export ("initWithValue:format:coordinates:base64:")]
-        IntPtr Constructor (string value, string barcodeFormat, string coordinates, string base64);
+        // -(instancetype _Nonnull)initWithValue:(NSString * _Nonnull)value format:(NSString * _Nonnull)barcodeFormat coordinates:(NSString * _Nullable)coordinates base64:(NSString * _Nullable)base64 parsedPDF417:(NSString * _Nullable)parsedPDF417;
+        [Export ("initWithValue:format:coordinates:base64:parsedPDF417:")]
+        IntPtr Constructor (string value, string barcodeFormat, [NullAllowed] string coordinates, [NullAllowed] string base64, [NullAllowed] string parsedPDF417);
 
         /*
         // -(NSString * _Nonnull)toJSONString;
@@ -2147,6 +2151,10 @@ namespace AnylineXamarinSDK.iOS
         // @property (assign, nonatomic) BOOL multiBarcode;
         [Export ("multiBarcode")]
         bool MultiBarcode { get; set; }
+
+        // @property (assign, nonatomic) BOOL parsePDF417;
+        [Export ("parsePDF417")]
+        bool ParsePDF417 { get; set; }
 
         // -(void)addDelegate:(id<ALBarcodeScanPluginDelegate> _Nonnull)delegate;
         [Export("addDelegate:")]

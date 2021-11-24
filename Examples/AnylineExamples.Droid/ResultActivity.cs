@@ -159,6 +159,14 @@ namespace AnylineExamples.Droid
                                     var sublist = CreatePropertyList(sod);
                                     sublist.ToList().ForEach(x => dict.Add($"{x.Key}", x.Value));
                                 }
+                                else if (value is IO.Anyline.Plugin.Barcode.PDF417 pdf417)
+                                {
+                                    var body = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, string>>(pdf417.Body);
+                                    body.ToList().ForEach(x => dict.Add($"{x.Key} (parsed info)", x.Value));
+
+                                    var additionalInfo = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, string>>(pdf417.AdditionalInformation);
+                                    additionalInfo.ToList().ForEach(x => dict.Add($"{x.Key} (parsed info)", x.Value));
+                                }
                                 else
                                 {
                                     var str = new Java.Lang.String(value.ToString()).ReplaceAll("\\\\n", "\\\n");
