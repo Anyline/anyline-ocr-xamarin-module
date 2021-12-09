@@ -172,8 +172,6 @@ namespace AnylineExamples.iOS
             if (value != null)
             {
                 if (value is ALMRZIdentification
-                    || value is ALDrivingLicenseIdentification
-                    || value is ALGermanIDFrontIdentification
                     || value is ALLayoutDefinition)
                 {
                     dict.Remove("AllCheckDigitsValid");
