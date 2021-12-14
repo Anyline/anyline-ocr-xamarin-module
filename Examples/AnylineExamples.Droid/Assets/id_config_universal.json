@@ -20,8 +20,6 @@
             "insuranceCard" : []
           },
           "drivingLicense": {
-            "surname": {"scanOption": 0, "minConfidence": 40},
-            "givenNames": {"scanOption": 0, "minConfidence": 40},
             "dateOfBirth": {"scanOption": 0, "minConfidence": 50},
             "placeOfBirth": {"scanOption": 1, "minConfidence": 50},
             "dateOfIssue": {"scanOption": 0, "minConfidence": 50},
@@ -32,8 +30,6 @@
             "address": {"scanOption": 1}
           },
           "idFront": {
-            "surname": {"scanOption": 0, "minConfidence": 60},
-            "givenNames": {"scanOption": 0, "minConfidence": 60},
             "dateOfBirth": {"scanOption": 0, "minConfidence": 60},
             "placeOfBirth": {"scanOption": 1, "minConfidence": 60},
             "dateOfExpiry": {"scanOption": 1, "minConfidence": 60},
@@ -43,8 +39,6 @@
           },
           "insuranceCard": {
             "nationality": {"scanOption": 0, "minConfidence": 50},
-            "surname": {"scanOption": 0, "minConfidence": 50},
-            "givenNames": {"scanOption": 0, "minConfidence": 50},
             "dateOfBirth": {"scanOption": 0, "minConfidence": 50},
             "personalNumber": {"scanOption": 0, "minConfidence": 50},
             "authority": {"scanOption": 0, "minConfidence": 50},

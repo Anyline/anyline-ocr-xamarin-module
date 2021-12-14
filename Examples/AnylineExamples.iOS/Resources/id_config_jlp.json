@@ -39,7 +39,7 @@
       "feedbackStrokeColor": "0099FF"
     },
     "scanFeedback": {
-      "style": "CONTOUR_RECT",
+      "style": "RECT",
       "visualFeedbackRedrawTimeout": 100,
       "strokeColor": "0099FF",
       "fillColor": "220099FF",
