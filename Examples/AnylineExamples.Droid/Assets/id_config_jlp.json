@@ -13,11 +13,11 @@
           "idPlugin": {
             "japaneseLandingPermissionConfig": {
               "miscellaneous": {
-                "dateOfIssue": { "scanOption": 0, "minConfidence": 35 },
+                "dateOfIssue": { "scanOption": 0, "minConfidence": 35 }, 
                 "dateOfExpiry": { "scanOption": 0, "minConfidence": 35 },
                 "status": { "scanOption": 1, "minConfidence": 35 },
                 "duration": { "scanOption": 0, "minConfidence": 35 },
-                "airport": { "scanOption": 0, "minConfidence": 35 }
+                "airport": { "scanOption": 1, "minConfidence": 35 }
               }
             }
           }
