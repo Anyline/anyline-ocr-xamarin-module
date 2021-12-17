@@ -361,17 +361,6 @@ namespace AnylineXamarinSDK.iOS
     }
 
     [Native]
-    public enum ALDrivingLicenseScanMode : long
-    {
-        At,
-        De,
-        Uk,
-        Nl,
-        Be,
-        Auto
-    }
-
-    [Native]
     public enum ALUniversalIDLayoutType : long
     {
         DrivingLicense = 0,

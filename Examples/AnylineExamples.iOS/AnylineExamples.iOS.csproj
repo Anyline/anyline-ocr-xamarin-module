@@ -96,7 +96,6 @@
     <BundleResource Include="Resources\document_config.json" />
     <BundleResource Include="Resources\energy_config_analog_digital.json" />
     <BundleResource Include="Resources\energy_config_dial.json" />
-    <BundleResource Include="Resources\id_config_driving_license.json" />
     <BundleResource Include="Resources\id_config_mrz.json" />
     <BundleResource Include="Resources\mro_config_shipping_container_vertical.json" />
     <BundleResource Include="Resources\mro_config_usnr.json" />
@@ -104,7 +103,6 @@
     <BundleResource Include="Resources\others_config_barcode.json" />
     <BundleResource Include="Resources\others_config_voucher_code.json" />
     <BundleResource Include="Resources\vehicle_config_license_plate.json" />
-    <BundleResource Include="Resources\id_config_german_id_front.json" />
     <BundleResource Include="Resources\others_config_cow_tag.json" />
     <BundleResource Include="Resources\workflows_config_serial_scanning.json" />
     <BundleResource Include="Resources\mro_config_tin.json" />
@@ -171,7 +169,7 @@
     </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Anyline.Xamarin.SDK.iOS" Version="35.0.0" />
+    <PackageReference Include="Anyline.Xamarin.SDK.iOS" Version="36.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
   <Import Project="..\AnylineExamples.Shared\AnylineExamples.Shared.projitems" Label="Shared" />

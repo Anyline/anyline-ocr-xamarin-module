@@ -1,52 +1,52 @@
-{
-  "camera": {
-    "captureResolution": "1080p",
-    "zoomGesture": true
-  },
-  "flash": {
-    "mode": "manual",
-    "alignment": "bottom_right"
-  },
-  "viewPlugin" : {
-    "plugin": {
-      "id": "ID",
-      "idPlugin": {
-        "japaneseLandingPermissionConfig": {
-          "miscellaneous": {
-            "dateOfIssue": {"scanOption": 0,"minConfidence": 35},
-            "dateOfExpiry": {"scanOption": 0,"minConfidence": 35},
-            "status": {"scanOption": 1,"minConfidence": 35},
-            "duration": {"scanOption": 0,"minConfidence": 35},
-            "airport": {"scanOption": 0,"minConfidence": 35}
-          }
-        }
-      }
-    },
-    "cutoutConfig": {
-      "style": "rect",
-      "maxWidthPercent": "70%",
-      "maxHeightPercent": "70%",
-      "alignment": "center",
-      "strokeWidth": 2,
-      "cornerRadius": 4,
-      "strokeColor": "FFFFFF",
-      "outerColor": "000000",
-      "outerAlpha": 0.3,
-      "ratioFromSize": {
-        "width": 440,
-        "height": 615
+    {
+      "camera": {
+        "captureResolution": "1080p",
+        "zoomGesture": true
       },
-      "feedbackStrokeColor": "0099FF"
-    },
-    "scanFeedback": {
-      "style": "CONTOUR_RECT",
-      "visualFeedbackRedrawTimeout": 100,
-      "strokeColor": "0099FF",
-      "fillColor": "220099FF",
-      "beepOnResult": true,
-      "vibrateOnResult": true,
-      "strokeWidth": 2
-    },
-    "cancelOnResult": true
-  }
-}
+      "flash": {
+        "mode": "manual",
+        "alignment": "bottom_right"
+      },
+      "viewPlugin": {
+        "plugin": {
+          "id": "ID",
+          "idPlugin": {
+            "japaneseLandingPermissionConfig": {
+              "miscellaneous": {
+                "dateOfIssue": { "scanOption": 0, "minConfidence": 35 }, 
+                "dateOfExpiry": { "scanOption": 0, "minConfidence": 35 },
+                "status": { "scanOption": 1, "minConfidence": 35 },
+                "duration": { "scanOption": 0, "minConfidence": 35 },
+                "airport": { "scanOption": 1, "minConfidence": 35 }
+              }
+            }
+          }
+        },
+        "cutoutConfig": {
+          "style": "rect",
+          "maxWidthPercent": "70%",
+          "maxHeightPercent": "70%",
+          "alignment": "center",
+          "strokeWidth": 2,
+          "cornerRadius": 4,
+          "strokeColor": "FFFFFF",
+          "outerColor": "000000",
+          "outerAlpha": 0.3,
+          "ratioFromSize": {
+            "width": 440,
+            "height": 615
+          },
+          "feedbackStrokeColor": "0099FF"
+        },
+        "scanFeedback": {
+          "style": "RECT",
+          "visualFeedbackRedrawTimeout": 100,
+          "strokeColor": "0099FF",
+          "fillColor": "220099FF",
+          "beepOnResult": true,
+          "vibrateOnResult": true,
+          "strokeWidth": 2
+        },
+        "cancelOnResult": true
+      }
+    }
