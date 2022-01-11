@@ -9,8 +9,8 @@ that has at least one parameter.
 # returns the string between two given characters
 def find_between(s, first, last):
     try:
-        start = s.index(first) + len(first)
-        end = s.index(last, start)
+        start = s.rindex(first) + len(first)
+        end = s.rindex(last, start)
         return s[start:end]
     except ValueError:
         return ""
