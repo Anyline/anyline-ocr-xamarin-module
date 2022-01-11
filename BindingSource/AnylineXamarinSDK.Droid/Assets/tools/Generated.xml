@@ -1310,8 +1310,7 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineFeedbackView']/method[@name='translateX' and count(parameter)=1 and parameter[1][@type='float']]/parameter[1]" name="managedName">x</attr>
 <!-- AnylineFeedbackView.translateY(float) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineFeedbackView']/method[@name='translateY' and count(parameter)=1 and parameter[1][@type='float']]/parameter[1]" name="managedName">y</attr>
-<!-- File: IO.Anyline.Opencv.Imgproc.ImgprocProviderFactory.cs -->
-<!-- File: IO.Anyline.Util.DimensUtil.cs -->
+<!-- File: IO.Anyline.Util.DimensUtil.cs -->
 <!-- DimensUtil.dpToPx(android.content.Context, float) -->
 <!-- DimensUtil.getDpFromPix(android.content.Context, int) -->
 <!-- DimensUtil.getPixFromDp(android.content.Context, int) -->
@@ -2238,8 +2237,7 @@
 <!-- CameraSize.CameraSize(android.hardware.Camera.Size) -->
 <!-- CameraSize.CameraSize(android.util.Size) -->
 <!-- CameraSize.CameraSize(int, int) -->
-<!-- File: IO.Anyline.Opencv.Core.MatProviderFactory.cs -->
-<!-- File: IO.Anyline.Opencv.Core.MatOfInt.cs -->
+<!-- File: IO.Anyline.Opencv.Core.MatOfInt.cs -->
 <!-- MatOfInt.MatOfInt(int...) -->
 <!-- MatOfInt.MatOfInt(io.anyline.opencv.core.Mat) -->
 <!-- MatOfInt.MatOfInt(long) -->
