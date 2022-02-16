@@ -102,6 +102,8 @@
     <AndroidAsset Include="Assets\vehicle_config_license_plate_us.json" />
     <AndroidAsset Include="Assets\mro_config_tin_dot.json" />
     <AndroidAsset Include="Assets\mro_config_tin_universal.json" />
+    <AndroidAsset Include="Assets\commercial_tire_id.json" />
+    <AndroidAsset Include="Assets\tire_size.json" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\activity_doc_scan_ui_main.axml">
@@ -144,7 +146,7 @@
     <AndroidResource Include="Resources\layout\activity_nfc.axml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Anyline.Xamarin.SDK.Droid" Version="36.0.0" />
+    <PackageReference Include="Anyline.Xamarin.SDK.Droid" Version="37.0.0" />
     <PackageReference Include="Xamarin.Android.Support.Compat" Version="28.0.0.3" />
     <PackageReference Include="Xamarin.Android.Support.Core.UI" Version="28.0.0.3" />
     <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.3" />

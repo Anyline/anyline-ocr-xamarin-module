@@ -339,8 +339,9 @@ namespace AnylineXamarinSDK.iOS
     [Native]
     public enum ALTINScanMode : long
     {
-        Standard,
-        Flexible
+        DotStrict,
+        Dot,
+        Universal
     }
 
     [Native]

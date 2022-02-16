@@ -18,7 +18,7 @@ namespace AnylineExamples.Shared
         public static readonly string Energy = "Energy";
         public static readonly string ID = "Identity Documents";
         public static readonly string Vehicle = "Vehicle";
-        public static readonly string TIN = "Tire Identification Number (TIN)";
+        public static readonly string TIRE = "Tire";
         public static readonly string MRO = "MRO";
         public static readonly string Document = "Documents";
         public static readonly string Others = "Others";
@@ -49,8 +49,11 @@ namespace AnylineExamples.Shared
         public static readonly string LicensePlateUS = "License Plate - US";
         public static readonly string LicensePlateAfrica = "License Plate - Africa";
         public static readonly string VIN = "Vehicle Identification Number (VIN)";
+        public static readonly string TIN_OCR = "TIN - OCR";
         public static readonly string TIN_UNIVERSAL = "TIN - Universal";
         public static readonly string TIN_DOT = "TIN - DOT (North America only)";
+        public static readonly string TireSize = "Tire Size Specifications";
+        public static readonly string CommercialTireID = "Commercial Tire Identification Numbers";
         public static readonly string UniversalSerialNumber = "Universal Serial Number";
         public static readonly string ShippingContainerHorizontal = "Shipping Container - Horizontal";
         public static readonly string ShippingContainerVertical = "Shipping Container - Vertical";
@@ -59,7 +62,7 @@ namespace AnylineExamples.Shared
         public static readonly string VoucherCode = "Voucher Code";
         public static readonly string IBAN = "IBAN";
         public static readonly string CowTag = "Cattle Tag";
-        public static readonly string SerialScanning = "Serial Scanning (LPT > DL > VIN)";
+        public static readonly string SerialScanning = "Serial Scanning (LPT > ID > VIN)";
         public static readonly string ParallelScanning = "Parallel Scanning (Meter / Barcode)";
         public static readonly string NFCScanning = "Scan NFC of Passports";
 
@@ -86,9 +89,11 @@ namespace AnylineExamples.Shared
             new ExampleModel(ItemType.Item, Example.LicensePlateAfrica, Category.Vehicle, "vehicle_config_license_plate_africa.json"),
             new ExampleModel(ItemType.Item, Example.VIN, Category.Vehicle, "mro_config_vin.json"),
 
-            new ExampleModel(ItemType.Header, Category.TIN, Category.TIN, ""),
-            new ExampleModel(ItemType.Item, Example.TIN_UNIVERSAL, Category.TIN, "mro_config_tin_universal.json"),
-            new ExampleModel(ItemType.Item, Example.TIN_DOT, Category.TIN, "mro_config_tin_dot.json"),
+            new ExampleModel(ItemType.Header, Category.TIRE, Category.TIRE, ""),
+            new ExampleModel(ItemType.Item, Example.TIN_UNIVERSAL, Category.TIRE, "mro_config_tin_universal.json"),
+            new ExampleModel(ItemType.Item, Example.TIN_DOT, Category.TIRE, "mro_config_tin_dot.json"),
+            new ExampleModel(ItemType.Item, Example.TireSize, Category.TIRE, "tire_size.json"),
+            new ExampleModel(ItemType.Item, Example.CommercialTireID, Category.TIRE, "commercial_tire_id.json"),
 
             new ExampleModel(ItemType.Header, Category.MRO, Category.MRO, ""),
             new ExampleModel(ItemType.Item, Example.UniversalSerialNumber, Category.MRO, "mro_config_usnr.json"),

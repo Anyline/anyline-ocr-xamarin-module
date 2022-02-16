@@ -9,7 +9,7 @@
   "viewPlugin": {
     "plugin": {
       "id": "TIN_ID",
-      "ocrPlugin": {
+      "tirePlugin": {
         "tinConfig": {}
       }
     },

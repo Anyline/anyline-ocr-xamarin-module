@@ -3038,19 +3038,31 @@ namespace AnylineXamarinSDK.iOS
     {
     }
 
-    // @interface ALTINConfig : ALBaseOCRConfig
-    [BaseType(typeof(ALBaseOCRConfig))]
+    // @interface ALBaseTireConfig : ALBaseOCRConfig
+    [BaseType (typeof(ALBaseOCRConfig))]
+    interface ALBaseTireConfig
+    {
+        // -(instancetype _Nullable)initWithJsonDictionary:(NSDictionary * _Nonnull)configDict;
+        [Export ("initWithJsonDictionary:")]
+        IntPtr Constructor (NSDictionary configDict);
+    }
+
+    // @interface ALTINConfig : ALBaseTireConfig
+    [BaseType (typeof(ALBaseTireConfig))]
     interface ALTINConfig
     {
         // @property (assign, nonatomic) ALTINScanMode scanMode;
-        [Export("scanMode", ArgumentSemantic.Assign)]
+        [Export ("scanMode", ArgumentSemantic.Assign)]
         ALTINScanMode ScanMode { get; set; }
 
         // @property (assign, nonatomic) ALTINUpsideDownMode upsideDownMode;
-        [Export("upsideDownMode", ArgumentSemantic.Assign)]
+        [Export ("upsideDownMode", ArgumentSemantic.Assign)]
         ALTINUpsideDownMode UpsideDownMode { get; set; }
-    }
 
+        // @property (assign, nonatomic) NSUInteger minConfidence;
+        [Export ("minConfidence")]
+        nuint MinConfidence { get; set; }
+    }
 
     // @interface ALOCRScanPlugin : ALAbstractScanPlugin
     [BaseType(typeof(ALAbstractScanPlugin))]
@@ -3073,11 +3085,6 @@ namespace AnylineXamarinSDK.iOS
         [Export("setOCRConfig:error:")]
         bool SetOCRConfig(ALOCRConfig ocrConfig, [NullAllowed] out NSError error);
 
-        // -(BOOL)copyTrainedData:(NSString * _Nonnull)trainedDataPath fileHash:(NSString * _Nullable)hash error:(NSError * _Nullable * _Nullable)error __attribute__((deprecated("Deprecated since 3.20. Copy of traineddata's is not needed anymore with new languages property.")));
-        //[Obsolete("", false)]
-        //[Export("copyTrainedData:fileHash:error:")]
-        //bool CopyTrainedData(string trainedDataPath, [NullAllowed] string hash, [NullAllowed] out NSError error);
-
         // -(void)addDelegate:(id<ALOCRScanPluginDelegate> _Nonnull)delegate;
         [Export("addDelegate:")]
         void AddDelegate(NSObject @delegate);
@@ -3098,6 +3105,116 @@ namespace AnylineXamarinSDK.iOS
         void DidFindResult(ALOCRScanPlugin anylineOCRScanPlugin, ALOCRResult result);
     }
 
+    // @interface ALTireResult : ALScanResult
+    [BaseType (typeof(ALScanResult))]
+    interface ALTireResult
+    {
+        // @property (readonly, nonatomic, strong) UIImage * _Nullable thresholdedImage;
+        [NullAllowed, Export ("thresholdedImage", ArgumentSemantic.Strong)]
+        UIImage ThresholdedImage { get; }
+
+        // -(instancetype _Nullable)initWithResult:(NSString * _Nonnull)result image:(UIImage * _Nonnull)image fullImage:(UIImage * _Nullable)fullImage confidence:(NSInteger)confidence pluginID:(NSString * _Nonnull)pluginID thresholdedImage:(UIImage * _Nullable)thresholdedImage;
+        [Export ("initWithResult:image:fullImage:confidence:pluginID:thresholdedImage:")]
+        IntPtr Constructor (string result, UIImage image, [NullAllowed] UIImage fullImage, nint confidence, string pluginID, [NullAllowed] UIImage thresholdedImage);
+    }
+
+    // @interface ALTireConfig : ALBaseTireConfig
+    [BaseType (typeof(ALBaseTireConfig))]
+    interface ALTireConfig
+    {
+        // -(instancetype _Nullable)initWithJsonDictionary:(NSDictionary * _Nonnull)configDict error:(NSError * _Nullable * _Nullable)error;
+        [Export ("initWithJsonDictionary:error:")]
+        IntPtr Constructor (NSDictionary configDict, [NullAllowed] out NSError error);
+
+        // @property (nonatomic, strong) NSString * _Nullable customCmdFilePath;
+        [NullAllowed, Export ("customCmdFilePath", ArgumentSemantic.Strong)]
+        string CustomCmdFilePath { get; set; }
+
+        // @property (nonatomic, strong) NSString * _Nullable customCmdFileString;
+        [NullAllowed, Export ("customCmdFileString", ArgumentSemantic.Strong)]
+        string CustomCmdFileString { get; set; }
+
+        // @property (assign, nonatomic) NSUInteger minConfidence;
+        [Export ("minConfidence")]
+        nuint MinConfidence { get; set; }
+
+        // -(NSDictionary * _Nullable)startVariablesOrError:(NSError * _Nullable * _Nullable)error assetPath:(NSString * _Nullable)assetPath;
+        [Export ("startVariablesOrError:assetPath:")]
+        [return: NullAllowed]
+        NSDictionary StartVariablesOrError ([NullAllowed] out NSError error, [NullAllowed] string assetPath);
+
+        // -(NSString * _Nullable)toJsonString;
+        [NullAllowed, Export ("toJsonString")]
+        string ToJsonString { get; }
+    }
+
+    // @interface ALTireSizeConfig : ALBaseTireConfig
+    [BaseType (typeof(ALBaseTireConfig))]
+    interface ALTireSizeConfig
+    {
+        // @property (assign, nonatomic) ALTINUpsideDownMode upsideDownMode;
+        [Export ("upsideDownMode", ArgumentSemantic.Assign)]
+        ALTINUpsideDownMode UpsideDownMode { get; set; }
+
+        // @property (assign, nonatomic) NSUInteger minConfidence;
+        [Export ("minConfidence")]
+        nuint MinConfidence { get; set; }
+    }
+
+    // @interface ALCommercialTireIdConfig : ALBaseTireConfig
+    [BaseType (typeof(ALBaseTireConfig))]
+    interface ALCommercialTireIdConfig
+    {
+        // @property (assign, nonatomic) NSUInteger minConfidence;
+        [Export ("minConfidence")]
+        nuint MinConfidence { get; set; }
+    }
+
+    // @interface ALTireScanPlugin : ALAbstractScanPlugin
+    [BaseType (typeof(ALAbstractScanPlugin))]
+    [DisableDefaultCtor]
+    interface ALTireScanPlugin
+    {
+        // -(instancetype _Nullable)initWithPluginID:(NSString * _Nullable)pluginID delegate:(id<ALTireScanPluginDelegate> _Nonnull)delegate tireConfig:(ALBaseTireConfig * _Nonnull)tireConfig error:(NSError * _Nullable * _Nullable)error;
+        [Export ("initWithPluginID:delegate:tireConfig:error:")]
+        IntPtr Constructor ([NullAllowed] string pluginID, ALTireScanPluginDelegate @delegate, ALBaseTireConfig tireConfig, [NullAllowed] out NSError error);
+
+        // @property (readonly, nonatomic, strong) NSPointerArray<ALTireScanPluginDelegate> * _Nullable delegates;
+        [NullAllowed, Export ("delegates", ArgumentSemantic.Strong)]
+        ALTireScanPluginDelegate Delegates { get; }
+
+        // @property (readonly, nonatomic, strong) ALBaseTireConfig * _Nullable tireConfig;
+        [NullAllowed, Export ("tireConfig", ArgumentSemantic.Strong)]
+        ALBaseTireConfig TireConfig { get; }
+
+        // -(BOOL)setTireConfig:(ALBaseTireConfig * _Nonnull)tireConfig error:(NSError * _Nullable * _Nullable)error;
+        [Export ("setTireConfig:error:")]
+        bool SetTireConfig (ALBaseTireConfig tireConfig, [NullAllowed] out NSError error);
+
+        // -(void)addDelegate:(id<ALTireScanPluginDelegate> _Nonnull)delegate;
+        [Export ("addDelegate:")]
+        void AddDelegate (ALTireScanPluginDelegate @delegate);
+
+        // -(void)removeDelegate:(id<ALTireScanPluginDelegate> _Nonnull)delegate;
+        [Export ("removeDelegate:")]
+        void RemoveDelegate (ALTireScanPluginDelegate @delegate);
+    }
+
+    // @protocol ALTireScanPluginDelegate <NSObject>
+    [Protocol, Model (AutoGeneratedName = true)]
+    [BaseType (typeof(NSObject))]
+    interface ALTireScanPluginDelegate
+    {
+        // @required -(void)anylineTireScanPlugin:(ALTireScanPlugin * _Nonnull)anylineTireScanPlugin didFindResult:(ALTireResult * _Nonnull)result;
+        [Abstract]
+        [Export ("anylineTireScanPlugin:didFindResult:")]
+        void DidFindResult (ALTireScanPlugin anylineTireScanPlugin, ALTireResult result);
+
+        // @optional -(void)anylineTireScanPlugin:(ALTireScanPlugin * _Nonnull)anylineTireScanPlugin tireConfigUpdated:(ALBaseTireConfig * _Nullable)tireConfig;
+        [Export ("anylineTireScanPlugin:tireConfigUpdated:")]
+        void TireConfigUpdated (ALTireScanPlugin anylineTireScanPlugin, [NullAllowed] ALBaseTireConfig tireConfig);
+    }
+
     // @interface ALOCRScanViewPlugin : ALAbstractScanViewPlugin
     [BaseType(typeof(ALAbstractScanViewPlugin))]
     interface ALOCRScanViewPlugin
@@ -3113,6 +3230,23 @@ namespace AnylineXamarinSDK.iOS
         // -(instancetype _Nullable)initWithScanPlugin:(ALOCRScanPlugin * _Nonnull)ocrScanPlugin scanViewPluginConfig:(ALScanViewPluginConfig * _Nonnull)scanViewPluginConfig;
         [Export("initWithScanPlugin:scanViewPluginConfig:")]
         IntPtr Constructor(ALOCRScanPlugin ocrScanPlugin, ALScanViewPluginConfig scanViewPluginConfig);
+    }
+
+    // @interface ALTireScanViewPlugin : ALAbstractScanViewPlugin
+    [BaseType (typeof(ALAbstractScanViewPlugin))]
+    interface ALTireScanViewPlugin
+    {
+        // @property (nonatomic, strong) ALTireScanPlugin * _Nullable tireScanPlugin;
+        [NullAllowed, Export ("tireScanPlugin", ArgumentSemantic.Strong)]
+        ALTireScanPlugin TireScanPlugin { get; set; }
+
+        // -(instancetype _Nullable)initWithScanPlugin:(ALTireScanPlugin * _Nonnull)tireScanPlugin;
+        [Export ("initWithScanPlugin:")]
+        IntPtr Constructor (ALTireScanPlugin tireScanPlugin);
+
+        // -(instancetype _Nullable)initWithScanPlugin:(ALTireScanPlugin * _Nonnull)tireScanPlugin scanViewPluginConfig:(ALScanViewPluginConfig * _Nonnull)scanViewPluginConfig;
+        [Export ("initWithScanPlugin:scanViewPluginConfig:")]
+        IntPtr Constructor (ALTireScanPlugin tireScanPlugin, ALScanViewPluginConfig scanViewPluginConfig);
     }
 
     partial interface Constants

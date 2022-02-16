@@ -25,7 +25,7 @@
             "style": "rect",
             "maxWidthPercent": "80%",
             "maxHeightPercent": "80%",
-            "alignment": "center",
+            "alignment": "top_half",
             "ratioFromSize": {
               "width": 2,
               "height": 1
@@ -53,37 +53,51 @@
       {
         "viewPlugin": {
           "plugin": {
-            "id": "DRIVING_LICENSE",
+            "id": "ID",
             "idPlugin": {
-              "drivingLicenseConfig": {
-                "scanMode": "AUTO"
+              "universalIdConfig": {
+                "faceDetection": true,
+                "allowedLayouts": {
+                  "mrz": [],
+                  "drivingLicense": [],
+                  "idFront": [],
+                  "insuranceCard": []
+                }
               }
             }
           },
           "cutoutConfig": {
-            "style": "rect",
-            "maxWidthPercent": "99%",
-            "maxHeightPercent": "100%",
+            "style": "animated_rect",
+            "maxWidthPercent": "90%",
+            "maxHeightPercent": "90%",
             "alignment": "center",
-            "ratioFromSize": {
-              "width": 560,
-              "height": 354
-            },
             "strokeWidth": 2,
             "cornerRadius": 4,
             "strokeColor": "FFFFFF",
             "outerColor": "000000",
             "outerAlpha": 0.3,
+            "ratioFromSize": {
+              "width": 50,
+              "height": 31
+            },
+            "cropPadding": {
+              "x": -50,
+              "y": -50
+            },
+            "cropOffset": {
+              "x": 0,
+              "y": 0
+            },
             "feedbackStrokeColor": "0099FF"
           },
           "scanFeedback": {
-            "fillColor": "220099FF",
-            "style": "CONTOUR_POINT",
+            "style": "CONTOUR_RECT",
+            "visualFeedbackRedrawTimeout": 100,
             "strokeColor": "0099FF",
-            "strokeWidth": 2,
-            "blinkOnResult": true,
+            "fillColor": "220099FF",
             "beepOnResult": true,
-            "vibrateOnResult": true
+            "vibrateOnResult": true,
+            "strokeWidth": 2
           },
           "cancelOnResult": true
         }
@@ -99,7 +113,7 @@
           "cutoutConfig": {
             "style": "rect",
             "maxWidthPercent": "70%",
-            "alignment": "center",
+            "alignment": "top_half",
             "ratioFromSize": {
               "width": 62,
               "height": 9
