@@ -9,7 +9,7 @@
   "viewPlugin": {
     "plugin": {
       "id": "TIN_ID",
-      "ocrPlugin": {
+      "tirePlugin": {
         "tinConfig": {
           "scanMode": "UNIVERSAL",
           "upsideDownMode": "auto"
@@ -47,7 +47,6 @@
       "blinkAnimationOnResult": true,
       "cancelOnResult": true
     },
-    "cancelOnResult": true,
-    "reportingEnabled": true
+    "cancelOnResult": true
   }
 }

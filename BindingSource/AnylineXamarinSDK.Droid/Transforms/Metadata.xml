@@ -25,6 +25,11 @@
   <remove-node path="/api/package[@name='io.anyline.opencv.calib3d']/class[@name='Calib3d']"/>
   <remove-node path="/api/package[@name='io.anyline.opencv.ml']/class[@name='SVM']"/>
 
+  <remove-node path="/api/package[@name='io.anyline.opencv.core']/class[@name='MatProviderFactory']"/>
+  <remove-node path="/api/package[@name='io.anyline.opencv.imgproc']/class[@name='ImgprocProviderFactory']"/>
+  
+  <remove-node path="/api/package[@name='io.anyline.opencv.android']/class[@name='UtilsProviderFactory']/field[@name='utilsProvider']" />
+
   <!-- remove anyline components -->
   
   <remove-node path="/api/package[@name='at.nineyards.anyline.core']"/>
@@ -39,6 +44,8 @@
   <remove-node path="/api/package[@name='io.anyline.models']/class[@name='AnylineImage']/method[@name='getGreyCvMat']"/>
   <remove-node path="/api/package[@name='io.anyline.models']/class[@name='AnylineImage']/method[@name='getRgbCvMat']"/>
   
+  <remove-node path="/api/package[@name='io.anyline.models']/class[@name='BitmapCreatorFactory']/field[@name='bitmapCreator']" />
+
   <remove-node path="/api/package[@name='io.anyline.camera']/interface[@name='CameraController.CameraControllerListener']"/>
 
   <!--Fixes warning BG8401: Skipping ... -->
@@ -49,6 +56,7 @@
   <remove-node path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='Barcode']/field[@name='barcodeFormat']" />
   <remove-node path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='Barcode']/field[@name='value']" />
   <remove-node path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='Barcode']/field[@name='base64']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='Barcode']/field[@name='parsedPDF417']" />
 
   
   <remove-node path="/api/package[@name='io.anyline.camera']/class[@name='AbstractZoomHandler']/field[@name='zoomLevel']" />
@@ -101,6 +109,7 @@
   <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/field[@name='id']" />
   <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/field[@name='imageProvider']" />
   <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/field[@name='anylineController']" />
+  <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='AbstractScanPlugin']/field[@name='currentImage']" />
 
   <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='ScanInfo']/field[@name='pluginId']" />
   <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='ScanInfo']/field[@name='key']" />
@@ -111,44 +120,6 @@
   <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='ScanRunSkippedReason']/field[@name='pluginId']" />
   <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='ScanRunSkippedReason']/field[@name='code']" />
   <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='ScanRunSkippedReason']/field[@name='text']" />
-
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldConfidences']/field[@name='surname']" />
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldConfidences']/field[@name='givenNames']" />
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldConfidences']/field[@name='dateOfBirth']" />
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldConfidences']/field[@name='placeOfBirth']" />
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldConfidences']/field[@name='dateOfIssue']" />
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldConfidences']/field[@name='dateOfExpiry']" />
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldConfidences']/field[@name='authority']" />
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldConfidences']/field[@name='documentNumber']" />
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldConfidences']/field[@name='categories']" />
-  
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOptions']/field[@name='surname']" />
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOptions']/field[@name='givenNames']" />
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOptions']/field[@name='dateOfBirth']" />
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOptions']/field[@name='placeOfBirth']" />
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOptions']/field[@name='dateOfIssue']" />
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOptions']/field[@name='dateOfExpiry']" />
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOptions']/field[@name='authority']" />
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOptions']/field[@name='documentNumber']" />
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldScanOptions']/field[@name='categories']" />
-
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIDFrontFieldConfidences']/field[@name='surname']" />
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIDFrontFieldConfidences']/field[@name='givenNames']" />
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIDFrontFieldConfidences']/field[@name='dateOfBirth']" />
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIDFrontFieldConfidences']/field[@name='nationality']" />
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIDFrontFieldConfidences']/field[@name='placeOfBirth']" />
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIDFrontFieldConfidences']/field[@name='dateOfExpiry']" />
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIDFrontFieldConfidences']/field[@name='documentNumber']" />
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIDFrontFieldConfidences']/field[@name='cardAccessNumber']" />
-
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontFieldScanOptions']/field[@name='surname']" />
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontFieldScanOptions']/field[@name='givenNames']" />
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontFieldScanOptions']/field[@name='dateOfBirth']" />
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontFieldScanOptions']/field[@name='nationality']" />
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontFieldScanOptions']/field[@name='placeOfBirth']" />
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontFieldScanOptions']/field[@name='dateOfExpiry']" />
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontFieldScanOptions']/field[@name='documentNumber']" />
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIdFrontFieldScanOptions']/field[@name='cardAccessNumber']" />
 
   <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='ID']/field[@name='fieldConfidences']" />
 
@@ -191,12 +162,12 @@
   <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldScanOptions']/field[@name='vizGivenNames']" />
   <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldScanOptions']/field[@name='vizSurname']" />
 
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='DrivingLicenseFieldConfidences']/method[@name='setDrivingLicenseFieldConfidences']" />
-  <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='GermanIDFrontFieldConfidences']/method[@name='setGermanIdFrontConfidences']" />
   <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzFieldConfidences']/method[@name='setMrzFieldConfidences']" />
   
   <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='UniversalIdFieldConfidences']/field[@name='fieldNames']" />
   <remove-node path="/api/package[@name='io.anyline.plugin.id']/class[@name='UniversalIdFieldScanOptions']/field[@name='fieldNames']" />
+  
+  <remove-node path="/api/package[@name='io.anyline.di']/class[@name='FileOutputStreamProviderFactory']/field[@name='fileOutputStreamProvider']" />
 
   <remove-node path="/api/package[@name='io.anyline.plugin.licenseplate']/class[@name='LicensePlateScanPlugin']/field[@name='charWhiteList']" />
   <remove-node path="/api/package[@name='io.anyline.plugin.licenseplate']/class[@name='LicensePlateScanPlugin']/field[@name='validationRegex']" />
@@ -209,6 +180,7 @@
 
   <remove-node path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPluginComposite']/field[@name='id']" />
   <remove-node path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPluginComposite']/field[@name='imageProvider']" />
+  
 
 
   <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/method[@name='getScanViewPluginConfig' and count(parameter)=0]" name="visibility">public</attr>

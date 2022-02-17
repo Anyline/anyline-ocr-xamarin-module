@@ -11,6 +11,7 @@ namespace AnylineExamples.iOS
     public sealed class ScanResultDelegate : NSObject,
         IALIDPluginDelegate,
         IALOCRScanPluginDelegate,
+        IALTireScanPluginDelegate,
         IALMeterScanPluginDelegate,
         IALDocumentScanPluginDelegate,
         IALLicensePlateScanPluginDelegate,
@@ -71,6 +72,11 @@ namespace AnylineExamples.iOS
         }
 
         public void DidFindResult(ALAbstractScanViewPluginComposite anylineCompositeScanPlugin, ALCompositeResult scanResult)
+        {
+            HandleResult(scanResult);
+        }
+
+        public void DidFindResult(ALTireScanPlugin anylineTireScanPlugin, ALTireResult scanResult)
         {
             HandleResult(scanResult);
         }
