@@ -64,6 +64,7 @@ For a detailed setup guide on how to integrate Anyline for your scanning applica
 - [**ID:**](https://documentation.anyline.com/toc/products/id/index.html) Reliable scanning of data from passports, IDs, Driver's Licenses, and  IDs' machine readable zones (MRZ).
 - [**Anyline OCR:**](https://documentation.anyline.com/toc/products/anyline_ocr/index.html) Create your own custom use case.
 - [**License Plate:**](https://documentation.anyline.com/toc/products/license_plate/index.html) Scan license plates.
+- [**Tire:**](https://documentation.anyline.com/toc/products/tire/index.html) Scan license plates.
 
 ### Requirements
 

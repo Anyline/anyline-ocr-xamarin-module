@@ -201,7 +201,7 @@ android-release: set-anyline-android-version build-android-sdk reference-android
 
 ios-release: set-anyline-ios-version build-ios-sdk reference-ios-nuget-package build-ios-examples-ipa
 
-bundle-release: android-release ios-release clean-build-files-and-folders create-corpus-swid-tag archive
+bundle-release: clean-nuget-anyline-cache android-release ios-release clean-build-files-and-folders create-corpus-swid-tag archive
 
 bundle-and-draft-new-github-release: bundle-release draft-github-release upload-release-bundle
 
