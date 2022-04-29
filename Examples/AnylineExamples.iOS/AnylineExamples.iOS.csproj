@@ -178,7 +178,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="BeforeBuild" Condition=" '$(RUNNING_ON_CICD)' == 'true' ">
     <XmlPoke XmlInputPath="Info.plist" Query="//dict/key[. = 'CFBundleVersion']/following-sibling::string[1]" Value="$(BUNDLE_VERSION_IOS)" />
-    <XmlPoke XmlInputPath="Info.plist" Query="//dict/key[. = 'CFBundleShortVersionString']/following-sibling::string[1]" Value="$(MAJOR_VERSION_IOS).$(MINOR_VERSION_IOS).$(PATCH_VERSION_IOS)" />
+    <XmlPoke XmlInputPath="Info.plist" Query="//dict/key[. = 'CFBundleShortVersionString']/following-sibling::string[1]" Value="$(ANYLINE_IOS_SDK_VERSION)" />
   </Target>
    
   <Target Name="RemoveModules" BeforeTargets="_CreateAssetPackManifest">

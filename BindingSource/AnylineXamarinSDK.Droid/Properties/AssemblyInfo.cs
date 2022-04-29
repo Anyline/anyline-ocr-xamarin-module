@@ -11,7 +11,7 @@ using Android.App;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Anyline")]
 [assembly: AssemblyProduct("AnylineXamarinSDK.Droid")]
-[assembly: AssemblyCopyright("Copyright © 2021 Anyline GmbH")]
+[assembly: AssemblyCopyright("Copyright © 2022 Anyline GmbH")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]

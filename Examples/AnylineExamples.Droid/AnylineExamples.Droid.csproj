@@ -199,7 +199,7 @@
   
   <Target Name="BeforeBuild" Condition=" '$(RUNNING_ON_CICD)' == 'true' ">
     <XmlPoke XmlInputPath="Properties\AndroidManifest.xml" Namespaces="&lt;Namespace Prefix='android' Uri='http://schemas.android.com/apk/res/android' /&gt;" Query="manifest/@android:versionCode" Value="$(VERSION_CODE_ANDROID)" />
-    <XmlPoke XmlInputPath="Properties\AndroidManifest.xml" Namespaces="&lt;Namespace Prefix='android' Uri='http://schemas.android.com/apk/res/android' /&gt;" Query="manifest/@android:versionName" Value="$(MAJOR_VERSION_ANDROID).$(MINOR_VERSION_ANDROID).$(PATCH_VERSION_ANDROID)" />
+    <XmlPoke XmlInputPath="Properties\AndroidManifest.xml" Namespaces="&lt;Namespace Prefix='android' Uri='http://schemas.android.com/apk/res/android' /&gt;" Query="manifest/@android:versionName" Value="$(ANYLINE_ANDROID_SDK_VERSION)" />
   </Target>
     
   <Target Name="RemoveModules" BeforeTargets="_CreateBaseApkWithAapt2">
