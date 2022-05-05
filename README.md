@@ -86,6 +86,18 @@ For a detailed setup guide on how to integrate Anyline for your scanning applica
 To be able to use the NFC reader on iOS, your `Provisioning Profile` must contain the `NFC Capability`, and the `Entitlements.plist` file must be referenced in the `CodesignEntitlements` (or `Custom Entitlements`) part of the iOS project's properties. Check the [Advanced Topics](https://documentation.anyline.com/toc/platforms/xamarin/advanced.html) for more information.
 
 
+## Get Help (Support)
+
+We don't actively monitor the Github Issues, please raise a support request using the [Anyline Helpdesk](https://anyline.atlassian.net/servicedesk/customer/portal/2/group/6).
+When raising a support request based on this Github Issue, please fill out and include the following information:
+
+```
+Support request concerning Anyline Github Repository: anyline-ocr-xamarin-module
+```
+
+Thank you!
+
+
 ## License
 
 See LICENSE file.
