@@ -235,7 +235,7 @@
   <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IDFieldScanOptions.FieldScanOption']/field[@name='fieldScanOption']" name="managedName">IDFieldScanOption</attr>
   <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IDFieldScanOptions.FieldScanOption']/field[@name='fieldScanOption']" name="visibility">public</attr>
 
-  <remove-node path="/api/package[starts-with(@name, 'org.spongycastle')]" />
+  <remove-node path="/api/package[starts-with(@name, 'io.anyline.nfc.bouncycastle')]" />
 
   <remove-node path="/api/package[@name='io.anyline.view']/interface[@name='LicenseKeyExceptionListener']"/>
 
