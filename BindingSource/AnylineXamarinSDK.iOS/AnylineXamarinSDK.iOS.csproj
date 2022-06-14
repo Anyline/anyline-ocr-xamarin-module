@@ -66,6 +66,6 @@
     <PostBuildEvent>xcopy "$(TargetPath)" "$(ProjectDir)..\..\Nuget\lib\Xamarin.iOS10\" /Y</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup Condition=" $([MSBuild]::IsOsPlatform(OSX)) ">
-    <PostBuildEvent>cp "$(TargetPath)" "$(ProjectDir)..\..\Nuget\lib\Xamarin.iOS10\"</PostBuildEvent>
+    <PostBuildEvent>mkdir -p "$(ProjectDir)..\..\Nuget\lib\Xamarin.iOS10\" &amp; cp "$(TargetPath)" "$(ProjectDir)..\..\Nuget\lib\Xamarin.iOS10\"</PostBuildEvent>
   </PropertyGroup>
 </Project>

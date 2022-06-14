@@ -81,7 +81,7 @@
     <PostBuildEvent>python "$(ProjectDir)Assets\tools\dist\GetXMLMetadata.py" "$(ProjectDir)obj\$(ConfigurationName)\generated\src" "$(ProjectDir)Assets\tools\Generated.xml" "$(ProjectDir)Assets\tools\javadoc" 0 &amp; xcopy "$(TargetPath)" "$(ProjectDir)..\..\Nuget\lib\MonoAndroid10\" /Y</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup Condition=" $([MSBuild]::IsOsPlatform(OSX)) ">
-    <PostBuildEvent>python "$(ProjectDir)Assets\tools\dist\GetXMLMetadata.py" "$(ProjectDir)obj\$(ConfigurationName)\generated\src\" "$(ProjectDir)Assets\tools\Generated.xml" "$(ProjectDir)Assets\tools\javadoc" 0 &amp; cp "$(TargetPath)" "$(ProjectDir)..\..\Nuget\lib\MonoAndroid10\"</PostBuildEvent>
+    <PostBuildEvent>python "$(ProjectDir)Assets\tools\dist\GetXMLMetadata.py" "$(ProjectDir)obj\$(ConfigurationName)\generated\src\" "$(ProjectDir)Assets\tools\Generated.xml" "$(ProjectDir)Assets\tools\javadoc" 0 &amp; mkdir -p "$(ProjectDir)..\..\Nuget\lib\MonoAndroid10\" &amp; cp "$(TargetPath)" "$(ProjectDir)..\..\Nuget\lib\MonoAndroid10\"</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup Condition=" $([MSBuild]::IsOsPlatform(Windows)) ">
     <PreBuildEvent>"$(ProjectDir)Assets\tools\clean.bat" "$(ProjectDir)Assets\tools\Generated.xml"</PreBuildEvent>
