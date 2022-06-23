@@ -100,4 +100,4 @@ Thank you!
 
 ## License
 
-See LICENSE file.
+See LICENSE file. 
