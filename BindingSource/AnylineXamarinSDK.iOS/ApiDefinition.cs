@@ -2452,6 +2452,10 @@ namespace AnylineXamarinSDK.iOS
         [Export ("faceImageBounds", ArgumentSemantic.Assign)]
         CGRect FaceImageBounds { get; set; }
 
+        // @property (readonly, nonatomic) NSDictionary<NSString *,NSString *> * _Nonnull resultData;
+        [Export ("resultData")]
+        NSDictionary<NSString, NSString> ResultData { get; }
+
     	// -(void)addField:(NSString * _Nonnull)fieldName value:(NSString * _Nonnull)value;
     	[Export ("addField:value:")]
     	void AddField (string fieldName, string value);
