@@ -202,15 +202,28 @@
     <XmlPoke XmlInputPath="Properties\AndroidManifest.xml" Namespaces="&lt;Namespace Prefix='android' Uri='http://schemas.android.com/apk/res/android' /&gt;" Query="manifest/@android:versionName" Value="$(ANYLINE_ANDROID_SDK_VERSION)" />
   </Target>
     
-  <Target Name="RemoveModules" BeforeTargets="_CreateBaseApkWithAapt2">
-    <!--
-    <RemoveDir Directories="$(ProjectDir)obj\$(Configuration)\assets\anyline\module_id" />
-    <RemoveDir Directories="$(ProjectDir)obj\$(Configuration)\assets\anyline\module_license_plate" />
-    <RemoveDir Directories="$(ProjectDir)obj\$(Configuration)\assets\anyline\module_anyline_ocr" />
-    <RemoveDir Directories="$(ProjectDir)obj\$(Configuration)\assets\anyline\module_energy" />
-    <RemoveDir Directories="$(ProjectDir)obj\$(Configuration)\assets\anyline\module_document" />
-    <RemoveDir Directories="$(ProjectDir)obj\$(Configuration)\assets\anyline\module_barcode" />
-    -->
+
+  <!-- 
+  Starting with Anyline SDK 41, to reduce the final app size
+  just add the folowing target to your ".csproj" file and remove the modules not required from the "ModulesToKeep" property.
+  please refer to https://documentation.anyline.com/toc/platforms/xamarin/reduce_app_size.html for documentation
+  -->
+  <Target Name="FilterAnylineAssets" BeforeTargets="_CreateBaseApkWithAapt2">
+    <MSBuild Properties="ModulesToKeep=ocr;barcode;document;energy;id;license_plate;tire" Projects="$(MSBuildProjectFile)" Targets="_RemoveAnylineModules" />
   </Target>
+
+  <!-- 
+    For Anyline SDK <= 40, use the following target to remove modules that are not required:
+
+    <Target Name="RemoveModules" BeforeTargets="_CreateBaseApkWithAapt2">
+      <RemoveDir Directories="$(ProjectDir)obj\$(Configuration)\assets\anyline\module_id" />
+      <RemoveDir Directories="$(ProjectDir)obj\$(Configuration)\assets\anyline\module_license_plate" />
+      <RemoveDir Directories="$(ProjectDir)obj\$(Configuration)\assets\anyline\module_anyline_ocr" />
+      <RemoveDir Directories="$(ProjectDir)obj\$(Configuration)\assets\anyline\module_energy" />
+      <RemoveDir Directories="$(ProjectDir)obj\$(Configuration)\assets\anyline\module_document" />
+      <RemoveDir Directories="$(ProjectDir)obj\$(Configuration)\assets\anyline\module_barcode" />
+    </Target>
+  -->
+
 
 </Project>

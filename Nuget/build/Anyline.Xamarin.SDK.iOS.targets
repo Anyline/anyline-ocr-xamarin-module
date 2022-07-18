@@ -28,4 +28,34 @@
 
   </Target>
 
+
+  <Target Name="_RemoveAnylineModules">
+
+    <!-- <Message Text="Modules to Keep: $(ModulesToKeep)" /> -->
+  
+    <ItemGroup>
+        <SplitModules Include="$(ModulesToKeep.Split(';'))" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <_ToNotRemove Condition="%(SplitModules.Identity) == 'ocr'" Include="**\AnylineResources.bundle\module_anyline_ocr\**\*" />
+        <_ToNotRemove Condition="%(SplitModules.Identity) == 'barcode'" Include="**\AnylineResources.bundle\module_barcode\**\*" />
+        <_ToNotRemove Condition="%(SplitModules.Identity) == 'document'" Include="**\AnylineResources.bundle\module_document\**\*" />
+        <_ToNotRemove Condition="%(SplitModules.Identity) == 'energy'" Include="**\AnylineResources.bundle\module_energy\**\*" />
+        <_ToNotRemove Condition="%(SplitModules.Identity) == 'id'" Include="**\AnylineResources.bundle\module_id\**\*" />
+        <_ToNotRemove Condition="%(SplitModules.Identity) == 'license_plate'" Include="**\AnylineResources.bundle\module_license_plate\**\*" />
+        <_ToNotRemove Condition="%(SplitModules.Identity) == 'tire'" Include="**\AnylineResources.bundle\module_tire\**\*" />
+    </ItemGroup>
+
+    <!-- <Message Importance="high" Text="To Not Remove: @(_ToNotRemove)" /> -->
+
+    <ItemGroup>
+      <_AnylineAssetsToRemove 
+            Include="**\AnylineResources.bundle\module_*\**\*"
+            Exclude="@(_ToNotRemove)" />
+    </ItemGroup>
+    <Delete Files="@(_AnylineAssetsToRemove)" />
+
+  </Target>
+
 </Project>

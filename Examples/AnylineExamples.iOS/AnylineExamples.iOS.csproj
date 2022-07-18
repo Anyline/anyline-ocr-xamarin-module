@@ -181,15 +181,27 @@
     <XmlPoke XmlInputPath="Info.plist" Query="//dict/key[. = 'CFBundleShortVersionString']/following-sibling::string[1]" Value="$(ANYLINE_IOS_SDK_VERSION)" />
   </Target>
    
-  <Target Name="RemoveModules" BeforeTargets="_CreateAssetPackManifest">
-    <!-- 
-    <RemoveDir Directories="$(AppBundleDir)\AnylineResources.bundle\module_id" />
-    <RemoveDir Directories="$(AppBundleDir)\AnylineResources.bundle\module_license_plate" />
-    <RemoveDir Directories="$(AppBundleDir)\AnylineResources.bundle\module_anyline_ocr" />
-    <RemoveDir Directories="$(AppBundleDir)\AnylineResources.bundle\module_energy" />
-    <RemoveDir Directories="$(AppBundleDir)\AnylineResources.bundle\module_document" />
-    <RemoveDir Directories="$(AppBundleDir)\AnylineResources.bundle\module_barcode" />
-    -->
+  <!-- 
+  Starting with Anyline SDK 41, to reduce the final app size
+  just add the folowing target to your ".csproj" file and remove the modules not required from the "ModulesToKeep" property.
+  please refer to https://documentation.anyline.com/toc/platforms/xamarin/reduce_app_size.html for documentation 
+  -->
+  <Target Name="FilterAnylineAssets" BeforeTargets="_CreateAssetPackManifest">
+    <MSBuild Properties="ModulesToKeep=ocr;barcode;document;energy;id;license_plate;tire" Projects="$(MSBuildProjectFile)" Targets="_RemoveAnylineModules" />
   </Target>
+
+  <!-- 
+    For Anyline SDK <= 40, use the following target to remove modules that are not required:
+
+    <Target Name="RemoveModules" BeforeTargets="_CreateAssetPackManifest"> 
+      <RemoveDir Directories="$(AppBundleDir)\AnylineResources.bundle\module_anyline_ocr" />
+      <RemoveDir Directories="$(AppBundleDir)\AnylineResources.bundle\module_barcode" />
+      <RemoveDir Directories="$(AppBundleDir)\AnylineResources.bundle\module_document" />
+      <RemoveDir Directories="$(AppBundleDir)\AnylineResources.bundle\module_energy" />
+      <RemoveDir Directories="$(AppBundleDir)\AnylineResources.bundle\module_id" />
+      <RemoveDir Directories="$(AppBundleDir)\AnylineResources.bundle\module_license_plate" />
+      <RemoveDir Directories="$(AppBundleDir)\AnylineResources.bundle\module_tire" />
+    </Target>
+  -->
     
 </Project>
