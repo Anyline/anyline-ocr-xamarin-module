@@ -58,7 +58,7 @@ For a detailed setup guide on how to integrate Anyline for your scanning applica
 
 
 ### Available Technical Capabilities
-- [**Barcode:**](https://documentation.anyline.com/toc/products/barcode/index.html)  Scan 23 types of international barcode & QR code formats.
+- [**Barcode:**](https://documentation.anyline.com/toc/products/barcode/index.html)  Scan 40+ types of international barcode & QR code formats.
 - [**Meter:**](https://documentation.anyline.com/toc/products/meter/index.html) Scan meter readings of various electric, gas, and water meters.
 - [**ID:**](https://documentation.anyline.com/toc/products/id/index.html) Reliable scanning of data from passports, IDs, Driver's Licenses, and  IDs' machine readable zones (MRZ).
 - [**OCR:**](https://documentation.anyline.com/toc/products/anyline_ocr/index.html) Create your own custom use case.
