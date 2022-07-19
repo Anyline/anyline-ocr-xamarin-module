@@ -57,30 +57,29 @@ The [Examples](Examples) directory provides source code for the Anyline Xamarin.
 For a detailed setup guide on how to integrate Anyline for your scanning application, please visit the [Anyline Xamarin documentation](https://documentation.anyline.io/toc/platforms/xamarin/index.html).
 
 
-### Available Modules
+### Available Technical Capabilities
 - [**Barcode:**](https://documentation.anyline.com/toc/products/barcode/index.html)  Scan 23 types of international barcode & QR code formats.
 - [**Meter:**](https://documentation.anyline.com/toc/products/meter/index.html) Scan meter readings of various electric, gas, and water meters.
-- [**Document:**](https://documentation.anyline.com/toc/products/document/index.html) Detect and scan documents for further processing.
 - [**ID:**](https://documentation.anyline.com/toc/products/id/index.html) Reliable scanning of data from passports, IDs, Driver's Licenses, and  IDs' machine readable zones (MRZ).
-- [**Anyline OCR:**](https://documentation.anyline.com/toc/products/anyline_ocr/index.html) Create your own custom use case.
+- [**OCR:**](https://documentation.anyline.com/toc/products/anyline_ocr/index.html) Create your own custom use case.
 - [**License Plate:**](https://documentation.anyline.com/toc/products/license_plate/index.html) Scan license plates.
-- [**Tire:**](https://documentation.anyline.com/toc/products/tire/index.html) Scan license plates.
+- [**Tire:**](https://documentation.anyline.com/toc/products/tire/index.html) Scan tire side-wall information such as *identification number* and *size*.
 
 ### Requirements
 
-- Visual Studio with the "Mobile development with .NET" (Xamarin) package installed
+- Visual Studio with the "Mobile development with .NET" (Xamarin) package installed.
 
 
 #### Android
 
-- Android device with SDK >= 21
-- decent camera functionality (recommended: 720p and adequate auto focus)
+- Android device with SDK >= 21.
+- Ddecent camera functionality (recommended: 720p and adequate auto focus).
 
 
 #### iOS
 
-- minimum iOS 12.0
-- minimum iPhone 5s
+- Minimum iOS 12.0
+- Minimum iPhone 5s
 - A Mac computer for building / deploying to the iPhone
 
 To be able to use the NFC reader on iOS, your `Provisioning Profile` must contain the `NFC Capability`, and the `Entitlements.plist` file must be referenced in the `CodesignEntitlements` (or `Custom Entitlements`) part of the iOS project's properties. Check the [Advanced Topics](https://documentation.anyline.com/toc/platforms/xamarin/advanced.html) for more information.
@@ -88,11 +87,11 @@ To be able to use the NFC reader on iOS, your `Provisioning Profile` must contai
 
 ## Get Help (Support)
 
-We don't actively monitor the Github Issues, please raise a support request using the [Anyline Helpdesk](https://anyline.atlassian.net/servicedesk/customer/portal/2/group/6).
-When raising a support request based on this Github Issue, please fill out and include the following information:
+We don't actively monitor the GitHub Issues, please raise a support request using the [Anyline Helpdesk](https://anyline.atlassian.net/servicedesk/customer/portal/2/group/6).
+When raising a support request based on this GitHub Issue, please fill out and include the following information:
 
 ```
-Support request concerning Anyline Github Repository: anyline-ocr-xamarin-module
+Support request concerning Anyline GitHub Repository: anyline-ocr-xamarin-module
 ```
 
 Thank you!
