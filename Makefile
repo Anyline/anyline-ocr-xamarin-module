@@ -16,8 +16,8 @@
 # VERSION_CODE_ANDROID	- Used in the Android Examples App - Cannot be 0.
 # KEYSTORE_PATH			- Used to sign the final Examples APK
 # KEYSTORE_RELEASE_PW	- Used to sign the final Examples APK
-# ANDROID_SDK_URL		- Used for the download-android-sdk recipe		| 	Both env. variables are required
-# ANDROID_JAVADOC_URL	- Used for the download-android-sdk recipe		| 	for the download-android-sdk recipe
+# ANDROID_SDK_URL		- Used in the replace-android-sdk recipe		| 	Both env. variables are required
+# ANDROID_JAVADOC_URL	- Used in the replace-android-sdk recipe		| 	for the download-android-sdk recipe
 # //////////////////////////////////////////////////////////// ANDROID //////////////////////////////////////////////////////////// #
 
 
