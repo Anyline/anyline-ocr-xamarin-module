@@ -1651,7 +1651,7 @@ namespace AnylineXamarinSDK.iOS
 
     // @interface ALAbstractScanViewPlugin : UIView <ALInfoDelegate>
     [BaseType(typeof(UIView))]
-    interface ALAbstractScanViewPlugin : IALInfoDelegate
+    interface ALAbstractScanViewPlugin : IALInfoDelegate, INativeObject
     {
         // @property (nonatomic, strong) ALSampleBufferImageProvider * _Nullable sampleBufferImageProvider;
         [NullAllowed, Export("sampleBufferImageProvider", ArgumentSemantic.Strong)]
@@ -3549,6 +3549,10 @@ namespace AnylineXamarinSDK.iOS
         // @property BOOL isRunning;
         [Export("isRunning")]
         bool IsRunning { get; set; }
+
+        // @property (readonly, nonatomic) NSDictionary<NSString *,ALAbstractScanViewPlugin *> * _Nullable childPlugins;
+        [NullAllowed, Export ("childPlugins")]
+        NSDictionary<NSString, ALAbstractScanViewPlugin> ChildPlugins { get; }
 
         // -(void)addPlugin:(ALAbstractScanViewPlugin * _Nonnull)plugin;
         [Export("addPlugin:")]

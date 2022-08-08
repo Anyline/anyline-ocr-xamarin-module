@@ -2,6 +2,8 @@
 using CoreGraphics;
 using Foundation;
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using UIKit;
 
@@ -53,7 +55,7 @@ namespace AnylineExamples.iOS
                 {
                     barcodeSVP.BarcodeScanPlugin.ParsePDF417 = true;
                 }
-                
+
                 View.AddSubview(scanView);
 
                 // Pin the leading edge of the scan view to the parent view
@@ -83,8 +85,30 @@ namespace AnylineExamples.iOS
             (scanView.ScanViewPlugin as ALMeterScanViewPlugin)?.MeterScanPlugin.AddDelegate(resultDelegate);
             (scanView.ScanViewPlugin as ALDocumentScanViewPlugin)?.DocumentScanPlugin.AddDelegate(resultDelegate);
             (scanView.ScanViewPlugin as ALLicensePlateScanViewPlugin)?.LicensePlateScanPlugin.AddDelegate(resultDelegate);
-            (scanView.ScanViewPlugin as ALSerialScanViewPluginComposite)?.AddDelegate(resultDelegate);
-            (scanView.ScanViewPlugin as ALParallelScanViewPluginComposite)?.AddDelegate(resultDelegate);
+
+            // add listener to the composite as a whole (to get the information once all the results are available)
+            (scanView.ScanViewPlugin as ALAbstractScanViewPluginComposite)?.AddDelegate(resultDelegate);
+
+            // OR 
+
+            //// add individual listeners (in case you need to listen to partial results and interrupt the workflow)
+            //// -> in this case, remember to call "scanView.ScanViewPlugin.StopAndReturnError(out error)" after the result to stop scanning.
+
+            //var parallelComposite = (scanView.ScanViewPlugin as ALParallelScanViewPluginComposite);
+            //if (parallelComposite != null)
+            //{
+            //    foreach (ALAbstractScanViewPlugin item in parallelComposite.ChildPlugins.Values)
+            //    {
+            //        if (item is ALMeterScanViewPlugin meterScanViewPlugin)
+            //        {
+            //            meterScanViewPlugin.MeterScanPlugin.AddDelegate(resultDelegate);
+            //        }
+            //        else if (item is ALBarcodeScanViewPlugin barcodeScanViewPlugin)
+            //        {
+            //            barcodeScanViewPlugin.BarcodeScanPlugin.AddDelegate(resultDelegate);
+            //        }
+            //    }
+            //}
         }
 
         public override void ViewDidAppear(bool animated)
