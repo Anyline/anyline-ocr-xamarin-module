@@ -29,7 +29,7 @@
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.anyline.xamarin.forms.examples</string>
+	<string>com.anyline.xamarin.forms.examples.ios</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1</string>
 	<key>NSCameraUsageDescription</key>
