@@ -225,6 +225,8 @@
   
   <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPlugin']/method[@name='getCutoutRect' and count(parameter)=0]" name="visibility">protected</attr>
   
+  <attr path="/api/package[@name='io.anyline.plugin.tire']/class[@name='TireSizeScanResult']/method[@name='getResult' and count(parameter)=0]" name="managedReturn">Java.Lang.Object</attr>
+  
   <remove-node path="/api/package[@name='io.anyline.trainer']/class[@name='AssetController']" />
   <remove-node path="/api/package[@name='io.anyline.products']/class[@name='AnylineUpdater']/method[@name='getControllerForPluginId']"/>
     
