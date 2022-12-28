@@ -75,29 +75,29 @@ namespace AnylineExamples.iOS
                                             Dictionary<string, object> barcodeProperties = barcode.CreatePropertyDictionary();
                                             barcodeProperties.ToList().ForEach(x => dict.Add(x.Key, x.Value));
 
-                                            if (barcode.ParsedPDF417 != null)
-                                            {
-                                                // removes the "grouping" as we will parse it here
-                                                dict.Remove("Result group 0");
+                                            //if (barcode.ParsedPDF417 != null)
+                                            //{
+                                            //    // removes the "grouping" as we will parse it here
+                                            //    dict.Remove("Result group 0");
 
-                                                if (barcode.ParsedPDF417.ContainsKey(new Foundation.NSString("AAMVA_version")))
-                                                {
-                                                    string AAMVA_VERSION = barcode.ParsedPDF417.ValueForKey(new Foundation.NSString("AAMVA_version")).ToString();
-                                                    dict.Add("AAMVA_VERSION (parsed info)", AAMVA_VERSION);
-                                                }
+                                            //    if (barcode.ParsedPDF417.ContainsKey(new Foundation.NSString("AAMVA_version")))
+                                            //    {
+                                            //        string AAMVA_VERSION = barcode.ParsedPDF417.ValueForKey(new Foundation.NSString("AAMVA_version")).ToString();
+                                            //        dict.Add("AAMVA_VERSION (parsed info)", AAMVA_VERSION);
+                                            //    }
 
-                                                if (barcode.ParsedPDF417.ContainsKey(new Foundation.NSString("body-part")))
-                                                {
-                                                    Foundation.NSDictionary body_part = barcode.ParsedPDF417.ValueForKey(new Foundation.NSString("body-part")) as Foundation.NSDictionary;
-                                                    body_part.ToList().ForEach(x => dict.Add($"{x.Key} (parsed info)", x.Value));
-                                                }
+                                            //    if (barcode.ParsedPDF417.ContainsKey(new Foundation.NSString("body-part")))
+                                            //    {
+                                            //        Foundation.NSDictionary body_part = barcode.ParsedPDF417.ValueForKey(new Foundation.NSString("body-part")) as Foundation.NSDictionary;
+                                            //        body_part.ToList().ForEach(x => dict.Add($"{x.Key} (parsed info)", x.Value));
+                                            //    }
 
-                                                if (barcode.ParsedPDF417.ContainsKey(new Foundation.NSString("additional-part")))
-                                                {
-                                                    Foundation.NSDictionary additional_part = barcode.ParsedPDF417.ValueForKey(new Foundation.NSString("additional-part")) as Foundation.NSDictionary;
-                                                    additional_part.ToList().ForEach(x => dict.Add($"{x.Key} (parsed info)", x.Value));
-                                                }
-                                            }
+                                            //    if (barcode.ParsedPDF417.ContainsKey(new Foundation.NSString("additional-part")))
+                                            //    {
+                                            //        Foundation.NSDictionary additional_part = barcode.ParsedPDF417.ValueForKey(new Foundation.NSString("additional-part")) as Foundation.NSDictionary;
+                                            //        additional_part.ToList().ForEach(x => dict.Add($"{x.Key} (parsed info)", x.Value));
+                                            //    }
+                                            //}
                                         }
                                     }
                                     else if (value is Foundation.NSDictionary results)
@@ -171,26 +171,27 @@ namespace AnylineExamples.iOS
         {
             if (value != null)
             {
-                if (value is ALMRZIdentification
-                    || value is ALLayoutDefinition)
-                {
-                    dict.Remove("AllCheckDigitsValid");
-                    value.CreatePropertyDictionary().ToList().ForEach(x => dict.AddProperty(x.Key, x.Value));
-                }
-                else if (value is ALUniversalIDIdentification universalIDIdentification)
-                {
-                    foreach (var field in universalIDIdentification.FieldNames)
-                    {
-                        dict.AddProperty(field, universalIDIdentification.ValueForField(field));
-                    }
-                    dict.AddProperty("FaceImage", universalIDIdentification.FaceImage);
-                    dict.AddProperty("LayoutDefinition", universalIDIdentification.LayoutDefinition);
-                }
-                else if (value is ALIDFieldConfidences)
-                {
-                    value.CreatePropertyDictionary().ToList().ForEach(x => dict.Add($"{x.Key} (field confidence)", x.Value));
-                }
-                else if (value is UIImage && value != null)
+                //if (value is ALMRZIdentification
+                //    || value is ALLayoutDefinition)
+                //{
+                //    dict.Remove("AllCheckDigitsValid");
+                //    value.CreatePropertyDictionary().ToList().ForEach(x => dict.AddProperty(x.Key, x.Value));
+                //}
+                //else if (value is ALUniversalIDIdentification universalIDIdentification)
+                //{
+                //    foreach (var field in universalIDIdentification.FieldNames)
+                //    {
+                //        dict.AddProperty(field, universalIDIdentification.ValueForField(field));
+                //    }
+                //    dict.AddProperty("FaceImage", universalIDIdentification.FaceImage);
+                //    dict.AddProperty("LayoutDefinition", universalIDIdentification.LayoutDefinition);
+                //}
+                //else if (value is ALIDFieldConfidences)
+                //{
+                //    value.CreatePropertyDictionary().ToList().ForEach(x => dict.Add($"{x.Key} (field confidence)", x.Value));
+                //}
+                //else
+                if (value is UIImage && value != null)
                 {
                     dict.Add(name, value);
                 }

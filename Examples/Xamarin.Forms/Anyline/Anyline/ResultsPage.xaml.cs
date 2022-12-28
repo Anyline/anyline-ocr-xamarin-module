@@ -29,10 +29,27 @@ namespace Anyline
 
         private void ShowResults(Dictionary<string, object> results)
         {
-            StackLayout slResults = new StackLayout();
-            foreach (var item in results)
+            StackLayout slResults = CreateResultView(results);
+
+            Device.BeginInvokeOnMainThread(() => cvContent.Content = slResults);
+        }
+
+        int _resultPadding = 0;
+
+        private StackLayout CreateResultView(Dictionary<string, object> dict)
+        {
+            StackLayout slItemResults = new StackLayout() { Padding = new Thickness(5, 0, 0, 0) };
+
+            foreach (var item in dict)
             {
-                slResults.Children.Add(new Label { Text = item.Key, TextColor = Color.FromHex("32ADFF"), FontSize = 15 });
+                string[] name_type = item.Key.Split(' ');
+
+                var formmattedString = new FormattedString();
+                formmattedString.Spans.Add(new Span() { Text = name_type[0] + " ", TextColor = Color.FromHex("32ADFF"), FontSize = 15, FontAttributes = FontAttributes.Bold });
+                formmattedString.Spans.Add(new Span() { Text = name_type[1], TextColor = Color.FromHex("32ADFF"), FontSize = 10 });
+
+                slItemResults.Children.Add(new Label() { FormattedText = formmattedString });
+
                 if (item.Value.GetType() == typeof(byte[]))
                 {
                     var img = new Image()
@@ -41,15 +58,19 @@ namespace Anyline
                         Source = ImageSource.FromStream(() => new MemoryStream(item.Value as byte[]))
                     };
 
-                    slResults.Children.Add(img);
+                    slItemResults.Children.Add(img);
+                }
+                else if (item.Value is Dictionary<string, object> subItems)
+                {
+                    slItemResults.Children.Add(CreateResultView(subItems));
                 }
                 else
                 {
-                    slResults.Children.Add(new Label { Text = item.Value.ToString(), TextColor = Color.White, FontAttributes = FontAttributes.Bold, FontSize = 17 });
+                    slItemResults.Children.Add(new Label { Text = item.Value.ToString(), TextColor = Color.White, FontAttributes = FontAttributes.Bold, FontSize = 17 });
                 }
             }
 
-            Device.BeginInvokeOnMainThread(() => cvContent.Content = slResults);
+            return slItemResults;
         }
     }
 }

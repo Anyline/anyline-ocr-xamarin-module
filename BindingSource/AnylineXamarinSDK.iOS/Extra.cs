@@ -6,6 +6,7 @@ using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
 using UIKit;
+using ObjCRuntime;
 
 namespace AnylineXamarinSDK.iOS
 {

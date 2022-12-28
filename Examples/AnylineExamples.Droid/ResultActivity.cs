@@ -41,23 +41,24 @@ namespace AnylineExamples.Droid
             bool isNFCResult = Intent.GetBooleanExtra("Is_NFC_Result", false);
             var handle = new IntPtr(Intent.GetIntExtra("handle", 0));
 
-            Java.Lang.Object scanResult = null;
+            IO.Anyline2.ScanResult scanResult = null;
             if (isNFCResult)
             {
-                scanResult = GetObject<NFCResult>(handle, JniHandleOwnership.DoNotTransfer);
+                //scanResult = GetObject<NFCResult>(handle, JniHandleOwnership.DoNotTransfer);
             }
             else
             {
-                scanResult = GetObject<ScanResult>(handle, JniHandleOwnership.DoNotTransfer);
+                scanResult = GetObject<IO.Anyline2.ScanResult>(handle, JniHandleOwnership.DoNotTransfer);
             }
 
             if (scanResult != null)
             {
                 Title = scanResult.GetType().Name;
 
-                var dict = CreatePropertyList(scanResult);
+                //var dict = CreatePropertyList(scanResult.PluginResult);
 
-                var listAdapter = new ResultListAdapter(this, dict);
+                //var listAdapter = new ResultListAdapter(this, dict);
+                var listAdapter = new ResultListAdapter(this, scanResult.Result);
                 _resultListView.Adapter = listAdapter;
                 Util.SetListViewHeightBasedOnChildren(_resultListView, this);
             }

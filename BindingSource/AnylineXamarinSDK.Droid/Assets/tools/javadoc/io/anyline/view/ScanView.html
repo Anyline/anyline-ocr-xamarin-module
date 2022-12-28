@@ -313,38 +313,38 @@ implements <a href="UIChangeListener.html" title="interface in io.anyline.view">
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i7" class="rowColor">
-<td class="colFirst"><code><a href="AbstractBaseScanViewPlugin.html" title="class in io.anyline.view">AbstractBaseScanViewPlugin</a>&lt;?&gt;</code></td>
+<td class="colFirst"><code>ScanViewPlugin</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getScanViewPlugin()">getScanViewPlugin</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i8" class="altColor">
+<td class="colFirst"><code>ScanViewPlugin</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getScanViewPlugin(int)">getScanViewPlugin</a></span>&#8203;(int&nbsp;index)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code><a href="ScanViewPluginConfig.html" title="class in io.anyline.view">ScanViewPluginConfig</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getScanViewPluginConfig()">getScanViewPluginConfig</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#init(java.lang.String)">init</a></span>&#8203;(java.lang.String&nbsp;configFileName)</code></th>
 <td class="colLast">
 <div class="block">Initializes the ScanView with the file path to a JSON config file and a license key.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#init(org.json.JSONObject)">init</a></span>&#8203;(org.json.JSONObject&nbsp;configJsonObject)</code></th>
 <td class="colLast">
 <div class="block">Initializes the ScanView with the file path to a JSON config file and a license key.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#initAsync(ProjectContext,TrainerUtils.ViewConfigResultHandler)">initAsync</a></span>&#8203;(ProjectContext&nbsp;projectContext,
          TrainerUtils.ViewConfigResultHandler&nbsp;resultHandler)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i12" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#initComposite(org.json.JSONObject)">initComposite</a></span>&#8203;(org.json.JSONObject&nbsp;jsonObject)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i13" class="rowColor">
@@ -583,7 +583,16 @@ implements <a href="UIChangeListener.html" title="interface in io.anyline.view">
 <ul class="blockList">
 <li class="blockList">
 <h4>getScanViewPlugin</h4>
-<pre class="methodSignature">public&nbsp;<a href="AbstractBaseScanViewPlugin.html" title="class in io.anyline.view">AbstractBaseScanViewPlugin</a>&lt;?&gt;&nbsp;getScanViewPlugin()</pre>
+<pre class="methodSignature">public&nbsp;ScanViewPlugin&nbsp;getScanViewPlugin()</pre>
+</li>
+</ul>
+<a id="getScanViewPlugin(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getScanViewPlugin</h4>
+<pre class="methodSignature">public&nbsp;ScanViewPlugin&nbsp;getScanViewPlugin&#8203;(int&nbsp;index)</pre>
 </li>
 </ul>
 <a id="getBrightnessFeedBack()">
@@ -679,15 +688,6 @@ implements <a href="UIChangeListener.html" title="interface in io.anyline.view">
 <li class="blockList">
 <h4>setCropRect</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;setCropRect&#8203;(<a href="../opencv/core/Rect.html" title="class in io.anyline.opencv.core">Rect</a>&nbsp;cropRect)</pre>
-</li>
-</ul>
-<a id="initComposite(org.json.JSONObject)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>initComposite</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;initComposite&#8203;(org.json.JSONObject&nbsp;jsonObject)</pre>
 </li>
 </ul>
 <a id="initAsync(ProjectContext,TrainerUtils.ViewConfigResultHandler)">

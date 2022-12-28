@@ -2,7 +2,7 @@
 	<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
 		<metadata>
 			<id>Anyline.Xamarin.SDK.Droid</id>
-			<version>42.3.0</version>
+			<version>43.0.0</version>
 			<title>Anyline Xamarin SDK (Android)</title>
 			<authors>Anyline GmbH</authors>
 			<owners>peteranyline</owners>
@@ -23,11 +23,13 @@
 			<dependencies>
 				<group targetFramework="MonoAndroid,Version=v9.0">
 					<dependency id="Xamarin.Google.Guava" version="27.1.0.4" />
-					<dependency id="Xamarin.Kotlin.StdLib" version="1.5.21" />			
+					<dependency id="Xamarin.Kotlin.StdLib" version="1.5.21" />		
+					<dependency id="Square.Moshi" version="1.8.0" />			
 				</group>
 				<group targetFramework="MonoAndroid,Version=v8.0">
 					<dependency id="Xamarin.Google.Guava" version="27.1.0.3" />
-					<dependency id="Xamarin.Kotlin.StdLib" version="1.5.21" />
+					<dependency id="Xamarin.Kotlin.StdLib" version="1.5.21" />	
+					<dependency id="Square.Moshi" version="1.8.0" />	
 				</group>
 			</dependencies>
 

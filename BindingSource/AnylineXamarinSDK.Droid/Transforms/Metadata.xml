@@ -48,6 +48,8 @@
 
   <remove-node path="/api/package[@name='io.anyline.camera']/interface[@name='CameraController.CameraControllerListener']"/>
 
+  <remove-node path="/api/package[@name='io.anyline2.core']"/>
+
   <!--Fixes warning BG8401: Skipping ... -->
 
   <remove-node path="/api/package[@name='io.anyline']/class[@name='AnylineSDK']/field[@name='TRAINER_ENVIRONMENT']" />
@@ -115,8 +117,6 @@
   <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='ScanInfo']/field[@name='key']" />
   <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='ScanInfo']/field[@name='value']" />
 
-  <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='ScanResult']/field[@name='pluginId']" />
-
   <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='ScanRunSkippedReason']/field[@name='pluginId']" />
   <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='ScanRunSkippedReason']/field[@name='code']" />
   <remove-node path="/api/package[@name='io.anyline.plugin']/class[@name='ScanRunSkippedReason']/field[@name='text']" />
@@ -169,7 +169,6 @@
   
   <remove-node path="/api/package[@name='io.anyline.di']/class[@name='FileOutputStreamProviderFactory']/field[@name='fileOutputStreamProvider']" />
 
-  <remove-node path="/api/package[@name='io.anyline.plugin.licenseplate']/class[@name='LicensePlateScanPlugin']/field[@name='charWhiteList']" />
   <remove-node path="/api/package[@name='io.anyline.plugin.licenseplate']/class[@name='LicensePlateScanPlugin']/field[@name='validationRegex']" />
 
   <remove-node path="/api/package[@name='io.anyline.view']/class[@name='AbstractBaseScanViewPlugin']/field[@name='cancelOnResult']" />

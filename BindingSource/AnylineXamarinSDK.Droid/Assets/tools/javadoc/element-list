@@ -5,11 +5,13 @@ io.anyline.modules
 io.anyline.opencv.core
 io.anyline.plugin
 io.anyline.plugin.barcode
+io.anyline.plugin.config
 io.anyline.plugin.document
 io.anyline.plugin.id
 io.anyline.plugin.licenseplate
 io.anyline.plugin.meter
 io.anyline.plugin.ocr
+io.anyline.plugin.result
 io.anyline.plugin.tire
 io.anyline.util
 io.anyline.view

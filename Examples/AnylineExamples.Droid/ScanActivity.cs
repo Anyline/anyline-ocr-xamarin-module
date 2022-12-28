@@ -4,15 +4,13 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Views;
-using IO.Anyline.Camera;
-using IO.Anyline.View;
 
 using Android.Support.V7.App;
 using Android.Util;
-using IO.Anyline.Plugin.ID;
-using IO.Anyline.Plugin.Barcode;
 using System.Collections;
-using IO.Anyline;
+using IO.Anyline.View;
+using IO.Anyline.Camera;
+using IO.Anyline2;
 
 namespace AnylineExamples.Droid
 {
@@ -27,13 +25,11 @@ namespace AnylineExamples.Droid
         private ScanView _scanView;
         private bool _isInitialized = false;
 
-        private ScanResultListener _scanResultListener;
+        private MyAnylineResultEventHandler _scanResultListener;
 
         public ScanActivity()
         {
-            // the document result listener is inheriting from ScanResultListener and additionally implementing the callbacks for document scanning
-            // therefore, we're using it here for all the use-cases.
-            _scanResultListener = new DocumentScanResultListener(this);
+            _scanResultListener = new MyAnylineResultEventHandler(this);
         }
 
         protected override void OnCreate(Bundle bundle)
@@ -60,20 +56,26 @@ namespace AnylineExamples.Droid
                 _scanView.Init(jsonPath);
 
                 // Activates Face Detection if the MRZ Scanner was initialized
-                (((_scanView.ScanViewPlugin as IdScanViewPlugin)?.ScanPlugin as IdScanPlugin)?.IdConfig as MrzConfig)?.EnableFaceDetection(true);
+                //(((_scanView.ScanViewPlugin as AbstractScanViewPlugin)?.ScanPlugin as IdScanPlugin)?.IdConfig as MrzConfig)?.EnableFaceDetection(true);
 
                 // Activates PDF 417 parsing
                 // (you can activate this when scanning the barcode on US Driver's Licenses)
-                if (_scanView.ScanViewPlugin is BarcodeScanViewPlugin barcodeSVP)
-                {
-                    (barcodeSVP.ScanPlugin as BarcodeScanPlugin).EnablePDF417Parsing();
-                }
+                //if (_scanView.ScanViewPlugin is BarcodeScanViewPlugin barcodeSVP)
+                //{
+                //   (barcodeSVP.ScanPlugin as BarcodeScanPlugin).EnablePDF417Parsing();
+                //}
 
                 /*
                  * Depending on your config/use-case, the ScanViewPlugin is of a different type.
                  * You need to add your implementation of IO.Anyline.Plugin.IScanResultListener to retrieve scan results.
                  */
-                _scanView.ScanViewPlugin.AddScanResultListener(_scanResultListener);
+                //_scanView.ScanViewPlugin.Result.AddScanResultListener(_scanResultListener);
+
+                //_scanView.ScanViewPlugin.RunSkippedReceived = _scanResultListener;
+                //_scanView.ScanViewPlugin.ErrorReceived = _scanResultListener;
+                //_scanView.ScanViewPlugin.VisualFeedbackReceived = _scanResultListener;
+                _scanView.ScanViewPlugin.ResultReceived = _scanResultListener;
+
                 //((_scanView.ScanViewPlugin as IdScanViewPlugin).ScanPlugin as IdScanPlugin).IdConfig
                 // handle camera open events
                 _scanView.CameraOpened += ScanView_CameraOpened;
@@ -88,6 +90,12 @@ namespace AnylineExamples.Droid
                 Util.ShowError(e.ToString(), this);
             }
         }
+
+        //public void EventReceived(Java.Lang.Object data)
+        //{
+        //    ScanResult sr = (data as ScanResult);
+        //    System.Diagnostics.Debug.WriteLine(sr.Result);
+        //}
 
         protected override void OnResume()
         {
@@ -164,6 +172,7 @@ namespace AnylineExamples.Droid
             catch (Exception) { }
             Finish();
         }
+
         #endregion
     }
 }

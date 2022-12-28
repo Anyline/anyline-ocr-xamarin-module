@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":9,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10};
+var data = {"i0":10,"i1":9,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -153,10 +153,11 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(android.content.Context,io.anyline.AnylineListener,java.lang.String,java.lang.String)">AnylineController</a></span>&#8203;(android.content.Context&nbsp;context,
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(android.content.Context,io.anyline.AnylineListener,java.lang.String,java.lang.String,boolean)">AnylineController</a></span>&#8203;(android.content.Context&nbsp;context,
                  <a href="AnylineListener.html" title="interface in io.anyline">AnylineListener</a>&nbsp;anylineListener,
                  java.lang.String&nbsp;moduleIdentifier,
-                 java.lang.String&nbsp;id)</code></th>
+                 java.lang.String&nbsp;id,
+                 boolean&nbsp;initWorkRunnable)</code></th>
 <td class="colLast">
 <div class="block">Create a new AnylineController instance.</div>
 </td>
@@ -209,26 +210,10 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#reportIncludeValues(java.lang.String)">reportIncludeValues</a></span>&#8203;(java.lang.String&nbsp;jsonString)</code></th>
-<td class="colLast">
-<div class="block">
- Adds the information in the json-string to the reporting model.</div>
-</td>
-</tr>
-<tr id="i6" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#reportTriggerScanningCanceled()">reportTriggerScanningCanceled</a></span>()</code></th>
-<td class="colLast">
-<div class="block">Notifies that the scanning process has been canceled from the user
- This triggers a scanning-canceled-report</div>
-</td>
-</tr>
-<tr id="i7" class="rowColor">
-<td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setArgumentExceptionListener(WorkerRunnableExceptionListener)">setArgumentExceptionListener</a></span>&#8203;(WorkerRunnableExceptionListener&nbsp;workerRunnableExceptionListener)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setAssetJsonPaths(java.lang.String...)">setAssetJsonPaths</a></span>&#8203;(java.lang.String...&nbsp;assetJsonPaths)</code></th>
 <td class="colLast">
@@ -236,14 +221,14 @@ extends java.lang.Object</pre>
  Set all the relevant json file names (relative path within the assets).</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCancelOnResult(boolean)">setCancelOnResult</a></span>&#8203;(boolean&nbsp;isCancelOnResult)</code></th>
 <td class="colLast">
 <div class="block">Set this to false if the thread should continue after a result was found (which is the default behaviour)</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCmdFile(java.lang.String)">setCmdFile</a></span>&#8203;(java.lang.String&nbsp;cmdFileName)</code></th>
 <td class="colLast">
@@ -251,7 +236,7 @@ extends java.lang.Object</pre>
  Load the script file with the given name.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCmdFile(java.lang.String,java.lang.String)">setCmdFile</a></span>&#8203;(java.lang.String&nbsp;cmdFileName,
           java.lang.String&nbsp;pathInAssets)</code></th>
@@ -260,25 +245,25 @@ extends java.lang.Object</pre>
  Load the script file with the given name from the given path within the assets.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCropRect(android.graphics.RectF)">setCropRect</a></span>&#8203;(android.graphics.RectF&nbsp;cutoutRect)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setDebug(boolean)">setDebug</a></span>&#8203;(boolean&nbsp;isDebug)</code></th>
 <td class="colLast">
 <div class="block">Enable/Disables debug output.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setDelayScanTime(double,double)">setDelayScanTime</a></span>&#8203;(double&nbsp;delayScanTime,
                 double&nbsp;startTime)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setHeaderVariable(java.lang.String,java.lang.Object)">setHeaderVariable</a></span>&#8203;(java.lang.String&nbsp;key,
                  java.lang.Object&nbsp;value)</code></th>
@@ -286,29 +271,29 @@ extends java.lang.Object</pre>
 <div class="block">Set the start variable with the given identifier to the given value.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setId(java.lang.String)">setId</a></span>&#8203;(java.lang.String&nbsp;id)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setImageProvider(io.anyline.ImageProvider)">setImageProvider</a></span>&#8203;(<a href="ImageProvider.html" title="interface in io.anyline">ImageProvider</a>&nbsp;imageProvider)</code></th>
 <td class="colLast">
 <div class="block">Set the image provider.</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setIsFullFrameScanning(boolean)">setIsFullFrameScanning</a></span>&#8203;(boolean&nbsp;b)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setProductName(java.lang.String)">setProductName</a></span>&#8203;(java.lang.String&nbsp;productName)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setScript(java.lang.String)">setScript</a></span>&#8203;(java.lang.String&nbsp;script)</code></th>
 <td class="colLast">
@@ -316,7 +301,7 @@ extends java.lang.Object</pre>
  Load the given script string (the actual script text, not the file name).</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setScript(java.lang.String,java.lang.String)">setScript</a></span>&#8203;(java.lang.String&nbsp;script,
          java.lang.String&nbsp;bundlePath)</code></th>
@@ -325,7 +310,7 @@ extends java.lang.Object</pre>
  Load the given script string (the actual script text, not the file name).</div>
 </td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setScript(java.lang.String,java.lang.String,java.lang.String)">setScript</a></span>&#8203;(java.lang.String&nbsp;scriptName,
          java.lang.String&nbsp;script,
@@ -335,7 +320,7 @@ extends java.lang.Object</pre>
  Load the given script string (the actual script text, not the file name).</div>
 </td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setStartVariable(java.lang.String,java.lang.Object)">setStartVariable</a></span>&#8203;(java.lang.String&nbsp;key,
                 java.lang.Object&nbsp;value)</code></th>
@@ -343,19 +328,19 @@ extends java.lang.Object</pre>
 <div class="block">Set the start variable with the given identifier to the given value.</div>
 </td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setTrainerReportedValues(java.lang.String)">setTrainerReportedValues</a></span>&#8203;(java.lang.String&nbsp;trainerReportedValues)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setWorkerThreadUncaughtExceptionHandler(java.lang.Thread.UncaughtExceptionHandler)">setWorkerThreadUncaughtExceptionHandler</a></span>&#8203;(java.lang.Thread.UncaughtExceptionHandler&nbsp;handler)</code></th>
 <td class="colLast">
 <div class="block">Set a handler to catch exceptions from the background thread.</div>
 </td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#start()">start</a></span>()</code></th>
 <td class="colLast">
@@ -386,7 +371,7 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a id="&lt;init&gt;(android.content.Context,io.anyline.AnylineListener,java.lang.String,java.lang.String)">
+<a id="&lt;init&gt;(android.content.Context,io.anyline.AnylineListener,java.lang.String,java.lang.String,boolean)">
 <!--   -->
 </a>
 <ul class="blockListLast">
@@ -395,7 +380,8 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;AnylineController&#8203;(android.content.Context&nbsp;context,
                          <a href="AnylineListener.html" title="interface in io.anyline">AnylineListener</a>&nbsp;anylineListener,
                          java.lang.String&nbsp;moduleIdentifier,
-                         java.lang.String&nbsp;id)</pre>
+                         java.lang.String&nbsp;id,
+                         boolean&nbsp;initWorkRunnable)</pre>
 <div class="block">Create a new AnylineController instance.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -644,20 +630,6 @@ extends java.lang.Object</pre>
  </p</div>
 </li>
 </ul>
-<a id="setDebug(boolean)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setDebug</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setDebug&#8203;(boolean&nbsp;isDebug)</pre>
-<div class="block">Enable/Disables debug output.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>isDebug</code> - true if debug output should be enabled, false otherwise</dd>
-</dl>
-</li>
-</ul>
 <a id="setTrainerReportedValues(java.lang.String)">
 <!--   -->
 </a>
@@ -677,6 +649,20 @@ extends java.lang.Object</pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>true if debug output is enabled.</dd>
+</dl>
+</li>
+</ul>
+<a id="setDebug(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDebug</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setDebug&#8203;(boolean&nbsp;isDebug)</pre>
+<div class="block">Enable/Disables debug output.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>isDebug</code> - true if debug output should be enabled, false otherwise</dd>
 </dl>
 </li>
 </ul>
@@ -705,37 +691,6 @@ extends java.lang.Object</pre>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>imageProvider</code> - the image provider to receive the input images from.</dd>
 </dl>
-</li>
-</ul>
-<a id="reportIncludeValues(java.lang.String)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>reportIncludeValues</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;reportIncludeValues&#8203;(java.lang.String&nbsp;jsonString)</pre>
-<div class="block"><p>
- Adds the information in the json-string to the reporting model.
- (Only if the identifier exists in a defined list of things expected to be reported.)
- </p><p>
- Note: This must be called before or after every start (values will not be remembered for multiple runs)
- </p></div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>jsonString</code> - a Json as string, containing information that should be added to the
-                   reporting model</dd>
-</dl>
-</li>
-</ul>
-<a id="reportTriggerScanningCanceled()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>reportTriggerScanningCanceled</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;reportTriggerScanningCanceled()</pre>
-<div class="block">Notifies that the scanning process has been canceled from the user
- This triggers a scanning-canceled-report</div>
 </li>
 </ul>
 <a id="setWorkerThreadUncaughtExceptionHandler(java.lang.Thread.UncaughtExceptionHandler)">

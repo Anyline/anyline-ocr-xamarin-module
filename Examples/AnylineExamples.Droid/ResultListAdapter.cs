@@ -1,12 +1,17 @@
 using Android.Content;
 using Android.Content.Res;
 using Android.Graphics;
+using Android.Nfc;
+using Android.Util;
 using Android.Views;
 using Android.Widget;
 using Java.Util;
+using Newtonsoft.Json.Linq;
+using Org.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using static Android.Provider.CalendarContract;
 
 namespace AnylineExamples.Droid
 {
@@ -26,7 +31,52 @@ namespace AnylineExamples.Droid
 
             _items = new List<Java.Lang.Object>();
             items.ToList().ForEach(x => { _items.Add(x.Key); _items.Add(x.Value); });
+        }
 
+        public ResultListAdapter(Context context, JSONObject jsonObject)
+        {
+            _context = context;
+            Resources res = context.Resources;
+
+            _items = ParseJSON(jsonObject);
+        }
+
+        private List<Java.Lang.Object> ParseJSON(JSONObject jsonObject)
+        {
+            var objectsList = new List<Java.Lang.Object>();
+
+            var keys = jsonObject.Keys();
+            while (keys.HasNext)
+            {
+                String key = keys.Next().ToString();
+                objectsList.Add(key);
+
+                Java.Lang.Object item = jsonObject.Get(key);
+                if (item is JSONObject jsonItem)
+                {
+                    LinkedHashMap hashItems = ParseSubItems(jsonItem);
+                    objectsList.Add(hashItems);
+                }
+                else
+                {
+                    objectsList.Add(item);
+                }
+            }
+
+            return objectsList;
+        }
+
+        private LinkedHashMap ParseSubItems(JSONObject item)
+        {
+            LinkedHashMap linkedHashMap = new LinkedHashMap();
+            var keys = item.Keys();
+            while (keys.HasNext)
+            {
+                var key = keys.Next().ToString();
+                linkedHashMap.Put(key, item.Get(key));
+            }
+
+            return linkedHashMap;
         }
 
         public override int GetItemViewType(int position)
@@ -98,6 +148,7 @@ namespace AnylineExamples.Droid
                         convertView = new ImageView(_context);
                         ((ImageView)convertView).SetPadding(padding, padding, padding, padding);
                         ((ImageView)convertView).SetImageBitmap(GetItem(position) as Bitmap);
+
                         break;
                     case TypeComposite:
                         convertView = new LinearLayout(_context);
@@ -115,23 +166,34 @@ namespace AnylineExamples.Droid
                             llPluginContent.LayoutParameters = parameters;
 
                             string keyPluginResult = scanningResult.ToString();
-                            Java.Util.LinkedHashMap pluginResults = serialScanningResults.Get(scanningResult) as Java.Util.LinkedHashMap;
 
-                            if (pluginResults.ContainsKey("PluginId"))
+                            var pluginResults = serialScanningResults.Get(scanningResult);
+
+                            if (pluginResults is Java.Util.LinkedHashMap pluginResultsHashMap)
                             {
-                                TextView tvPluginTitle = CreateTextView(pluginResults.Get("PluginId").ToString(), padding, padding4, padding, padding4, Android.Resource.Style.TextAppearanceLarge, Color.ParseColor("#007aff"), TypefaceStyle.Bold, TextAlignment.Center);
-                                llPluginContent.AddView(tvPluginTitle);
+                                if (pluginResultsHashMap.ContainsKey("PluginId"))
+                                {
+                                    TextView tvPluginTitle = CreateTextView(pluginResultsHashMap.Get("PluginId").ToString(), padding, padding4, padding, padding4, Android.Resource.Style.TextAppearanceLarge, Color.ParseColor("#007aff"), TypefaceStyle.Bold, TextAlignment.Center);
+                                    llPluginContent.AddView(tvPluginTitle);
+                                }
+
+                                foreach (var result in pluginResultsHashMap.KeySet())
+                                {
+                                    if (result.ToString().Equals("PluginId")) { continue; }
+                                    AddResult(result.ToString(), pluginResultsHashMap.Get(result.ToString()), llPluginContent);
+                                }
+
+                                (convertView as LinearLayout).AddView(llPluginContent);
+                                (convertView as LinearLayout).AddView(CreateLayoutDivider());
+                            }
+                            else
+                            {
+                                AddResult(keyPluginResult, pluginResults, llPluginContent);
+                                (convertView as LinearLayout).AddView(llPluginContent);
+                                (convertView as LinearLayout).AddView(CreateLayoutDivider(1, 1));
                             }
 
-                            foreach (var result in pluginResults.KeySet())
-                            {
-                                if (result.ToString().Equals("PluginId")) { continue; }
-                                AddResult(result.ToString(), pluginResults.Get(result.ToString()), llPluginContent);
-                            }
-                            (convertView as LinearLayout).AddView(llPluginContent);
-                            (convertView as LinearLayout).AddView(CreateLayoutDivider());
                         }
-
 
                         break;
                 }
@@ -185,11 +247,11 @@ namespace AnylineExamples.Droid
             return textView;
         }
 
-        private View CreateLayoutDivider()
+        private View CreateLayoutDivider(int paddingTop = 30, int paddingBottom = 30)
         {
             var divider = new View(_context);
             divider.SetBackgroundColor(Color.Black);
-            divider.SetPadding(0, 30, 0, 30);
+            divider.SetPadding(0, paddingTop, 0, paddingBottom);
             divider.LayoutParameters = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MatchParent, 30);
             return divider;
         }

@@ -40,7 +40,7 @@ namespace AnylineExamples.iOS
                 configPath = NSBundle.MainBundle.PathForResource(@"" + jsonPath.Replace(".json", ""), @"json");
 
                 // This is the main intialization method that will create our use case depending on the JSON configuration.
-                scanView = ALScanView.ScanViewForFrame(View.Bounds, configPath, resultDelegate, out error);
+                //scanView = ALScanView.ScanViewForFrame(View.Bounds, configPath, resultDelegate, out error);
 
                 if (error != null)
                 {
@@ -51,10 +51,10 @@ namespace AnylineExamples.iOS
 
                 // Activates PDF 417 parsing
                 // (you can activate this when scanning the barcode on US Driver's Licenses)
-                if (scanView.ScanViewPlugin is ALBarcodeScanViewPlugin barcodeSVP)
-                {
-                    barcodeSVP.BarcodeScanPlugin.ParsePDF417 = true;
-                }
+                //if (scanView.ScanViewPlugin is ALBarcodeScanViewPlugin barcodeSVP)
+                //{
+                //    barcodeSVP.BarcodeScanPlugin.ParsePDF417 = true;
+                //}
 
                 View.AddSubview(scanView);
 
@@ -79,15 +79,15 @@ namespace AnylineExamples.iOS
 
         private void ConnectDelegateToScanPlugin()
         {
-            (scanView.ScanViewPlugin as ALIDScanViewPlugin)?.IdScanPlugin.AddDelegate(resultDelegate);
-            (scanView.ScanViewPlugin as ALBarcodeScanViewPlugin)?.BarcodeScanPlugin.AddDelegate(resultDelegate);
-            (scanView.ScanViewPlugin as ALOCRScanViewPlugin)?.OcrScanPlugin.AddDelegate(resultDelegate);
-            (scanView.ScanViewPlugin as ALMeterScanViewPlugin)?.MeterScanPlugin.AddDelegate(resultDelegate);
-            (scanView.ScanViewPlugin as ALDocumentScanViewPlugin)?.DocumentScanPlugin.AddDelegate(resultDelegate);
-            (scanView.ScanViewPlugin as ALLicensePlateScanViewPlugin)?.LicensePlateScanPlugin.AddDelegate(resultDelegate);
+            //(scanView.ScanViewPlugin as ALIDScanViewPlugin)?.IdScanPlugin.AddDelegate(resultDelegate);
+            //(scanView.ScanViewPlugin as ALBarcodeScanViewPlugin)?.BarcodeScanPlugin.AddDelegate(resultDelegate);
+            //(scanView.ScanViewPlugin as ALOCRScanViewPlugin)?.OcrScanPlugin.AddDelegate(resultDelegate);
+            //(scanView.ScanViewPlugin as ALMeterScanViewPlugin)?.MeterScanPlugin.AddDelegate(resultDelegate);
+            //(scanView.ScanViewPlugin as ALDocumentScanViewPlugin)?.DocumentScanPlugin.AddDelegate(resultDelegate);
+            //(scanView.ScanViewPlugin as ALLicensePlateScanViewPlugin)?.LicensePlateScanPlugin.AddDelegate(resultDelegate);
 
-            // add listener to the composite as a whole (to get the information once all the results are available)
-            (scanView.ScanViewPlugin as ALAbstractScanViewPluginComposite)?.AddDelegate(resultDelegate);
+            //// add listener to the composite as a whole (to get the information once all the results are available)
+            //(scanView.ScanViewPlugin as ALAbstractScanViewPluginComposite)?.AddDelegate(resultDelegate);
 
             // OR 
 
@@ -124,19 +124,19 @@ namespace AnylineExamples.iOS
 
             BeginInvokeOnMainThread(() =>
             {
-                var success = scanView.ScanViewPlugin.StartAndReturnError(out error);
+                //var success = scanView.ScanViewPlugin.StartAndReturnError(out error);
 
-                if (!success)
-                {
-                    if (error != null)
-                    {
-                        ShowAlert("Start Scanning Error", error.DebugDescription);
-                    }
-                    else
-                    {
-                        ShowAlert("Start Scanning Error", "error is null");
-                    }
-                }
+                //if (!success)
+                //{
+                //    if (error != null)
+                //    {
+                //        ShowAlert("Start Scanning Error", error.DebugDescription);
+                //    }
+                //    else
+                //    {
+                //        ShowAlert("Start Scanning Error", "error is null");
+                //    }
+                //}
             });
         }
 
@@ -151,7 +151,7 @@ namespace AnylineExamples.iOS
                 return;
 
             NSError error;
-            scanView.ScanViewPlugin.StopAndReturnError(out error);
+            //scanView.ScanViewPlugin.StopAndReturnError(out error);
         }
 
         public override void ViewDidDisappear(bool animated)

@@ -23,9 +23,9 @@ using Android.App;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("42.3.0")]
+[assembly: AssemblyVersion("43.0.0")]
 //[assembly: AssemblyFileVersion("24.1.0.0")]
-//[assembly: AssemblyInformationalVersion("24.1.0-rc.1")]
+//[assembly: AssemblyInformationalVersion("43.0.0-preview.1")]
 
 
 [assembly: UsesPermission(Android.Manifest.Permission.Camera)]
