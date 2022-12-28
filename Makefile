@@ -304,4 +304,5 @@ clean-build-files-and-folders:
 
 	@rm -rf *.ipa
 
-	@echo "Cleared build file and folders"
+	@echo "Cleared"
+	@echo "Build file and folders"
