@@ -303,3 +303,5 @@ clean-build-files-and-folders:
 	@rm -rf Examples/Xamarin.Forms/Anyline/Anyline.UWP/obj
 
 	@rm -rf *.ipa
+
+	@echo "Cleared build file and folders"
