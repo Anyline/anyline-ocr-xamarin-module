@@ -79,15 +79,25 @@
     <Compile Include="ObjectExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\energy_config_analog_digital.json" />
-    <AndroidAsset Include="Assets\mro_config_usnr.json" />
-    <AndroidAsset Include="Assets\others_config_barcode.json" />
-    <AndroidAsset Include="Assets\vehicle_config_license_plate.json" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
-    <AndroidAsset Include="Assets\id_config_universal.json" />
-    <AndroidAsset Include="Assets\id_config_mrz.json" />
+    <AndroidAsset Include="Assets\universal_id_front_config.json" />
+    <AndroidAsset Include="Assets\horizontal_container_scanner_capture_config.json" />
+    <AndroidAsset Include="Assets\vertical_container_scanner_capture_config.json" />
+    <AndroidAsset Include="Assets\license_plate_af_config.json" />
+    <AndroidAsset Include="Assets\license_plate_eu_config.json" />
+    <AndroidAsset Include="Assets\license_plate_us_config.json" />
+    <AndroidAsset Include="Assets\meter_config.json" />
+    <AndroidAsset Include="Assets\serial_number_view_config.json" />
+    <AndroidAsset Include="Assets\commercial_tire_id_config.json" />
+    <AndroidAsset Include="Assets\tire_size_config.json" />
+    <AndroidAsset Include="Assets\tire_tin_config.json" />
+    <AndroidAsset Include="Assets\vin_ocr_config.json" />
+    <AndroidAsset Include="Assets\vrc_config.json" />
+    <AndroidAsset Include="Assets\sample_barcode_config.json" />
+    <AndroidAsset Include="Assets\sample_barcode_fullframe_config.json" />
+    <AndroidAsset Include="Assets\mrz_config.json" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Tabbar.xml" />

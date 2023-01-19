@@ -16,12 +16,13 @@ namespace Anyline
 
             var scanMode_configurations = new List<KeyValuePair<string, string>>()
             {
-                new KeyValuePair<string, string>("Barcode","others_config_barcode"),
+                new KeyValuePair<string, string>("Barcode","sample_barcode_config"),
+                new KeyValuePair<string, string>("Barcode - Full frame","sample_barcode_fullframe_config"),
                 new KeyValuePair<string, string>("Universal ID","universal_id_front_config"),
-                new KeyValuePair<string, string>("License Plate","vehicle_config_license_plate"),
-                new KeyValuePair<string, string>("Meter","energy_config_analog_digital"),
-                new KeyValuePair<string, string>("USNR","mro_config_usnr"),
-                new KeyValuePair<string, string>("NFC", "id_config_mrz")
+                new KeyValuePair<string, string>("License Plate - EU","license_plate_eu_config"),
+                new KeyValuePair<string, string>("Meter","meter_config"),
+                new KeyValuePair<string, string>("Universal Serial Number","serial_number_view_config"),
+                new KeyValuePair<string, string>("NFC", "mrz_config")
             };
 
             // YOUR LICENSE KEY HERE

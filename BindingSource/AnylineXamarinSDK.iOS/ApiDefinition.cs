@@ -2028,275 +2028,275 @@ namespace AnylineXamarinSDK.iOS
         [return: NullAllowed]
         ALArea WithValue (string value);
 
-        // +(ALArea * _Nonnull)alabama;
-        [Static]
-        [Export ("alabama")]
-        ALArea Alabama { get; }
+        // // +(ALArea * _Nonnull)alabama;
+        // [Static]
+        // [Export ("alabama")]
+        // ALArea Alabama { get; }
 
-        // +(ALArea * _Nonnull)alaska;
-        [Static]
-        [Export ("alaska")]
-        ALArea Alaska { get; }
+        // // +(ALArea * _Nonnull)alaska;
+        // [Static]
+        // [Export ("alaska")]
+        // ALArea Alaska { get; }
 
-        // +(ALArea * _Nonnull)americanSamoa;
-        [Static]
-        [Export ("americanSamoa")]
-        ALArea AmericanSamoa { get; }
+        // // +(ALArea * _Nonnull)americanSamoa;
+        // [Static]
+        // [Export ("americanSamoa")]
+        // ALArea AmericanSamoa { get; }
 
-        // +(ALArea * _Nonnull)arizona;
-        [Static]
-        [Export ("arizona")]
-        ALArea Arizona { get; }
+        // // +(ALArea * _Nonnull)arizona;
+        // [Static]
+        // [Export ("arizona")]
+        // ALArea Arizona { get; }
 
-        // +(ALArea * _Nonnull)arkansas;
-        [Static]
-        [Export ("arkansas")]
-        ALArea Arkansas { get; }
+        // // +(ALArea * _Nonnull)arkansas;
+        // [Static]
+        // [Export ("arkansas")]
+        // ALArea Arkansas { get; }
 
-        // +(ALArea * _Nonnull)california;
-        [Static]
-        [Export ("california")]
-        ALArea California { get; }
+        // // +(ALArea * _Nonnull)california;
+        // [Static]
+        // [Export ("california")]
+        // ALArea California { get; }
 
-        // +(ALArea * _Nonnull)colorado;
-        [Static]
-        [Export ("colorado")]
-        ALArea Colorado { get; }
+        // // +(ALArea * _Nonnull)colorado;
+        // [Static]
+        // [Export ("colorado")]
+        // ALArea Colorado { get; }
 
-        // +(ALArea * _Nonnull)connecticut;
-        [Static]
-        [Export ("connecticut")]
-        ALArea Connecticut { get; }
+        // // +(ALArea * _Nonnull)connecticut;
+        // [Static]
+        // [Export ("connecticut")]
+        // ALArea Connecticut { get; }
 
-        // +(ALArea * _Nonnull)delaware;
-        [Static]
-        [Export ("delaware")]
-        ALArea Delaware { get; }
+        // // +(ALArea * _Nonnull)delaware;
+        // [Static]
+        // [Export ("delaware")]
+        // ALArea Delaware { get; }
 
-        // +(ALArea * _Nonnull)districtOfColumbia;
-        [Static]
-        [Export ("districtOfColumbia")]
-        ALArea DistrictOfColumbia { get; }
+        // // +(ALArea * _Nonnull)districtOfColumbia;
+        // [Static]
+        // [Export ("districtOfColumbia")]
+        // ALArea DistrictOfColumbia { get; }
 
-        // +(ALArea * _Nonnull)florida;
-        [Static]
-        [Export ("florida")]
-        ALArea Florida { get; }
+        // // +(ALArea * _Nonnull)florida;
+        // [Static]
+        // [Export ("florida")]
+        // ALArea Florida { get; }
 
-        // +(ALArea * _Nonnull)georgia;
-        [Static]
-        [Export ("georgia")]
-        ALArea Georgia { get; }
+        // // +(ALArea * _Nonnull)georgia;
+        // [Static]
+        // [Export ("georgia")]
+        // ALArea Georgia { get; }
 
-        // +(ALArea * _Nonnull)guam;
-        [Static]
-        [Export ("guam")]
-        ALArea Guam { get; }
+        // // +(ALArea * _Nonnull)guam;
+        // [Static]
+        // [Export ("guam")]
+        // ALArea Guam { get; }
 
-        // +(ALArea * _Nonnull)hawaii;
-        [Static]
-        [Export ("hawaii")]
-        ALArea Hawaii { get; }
+        // // +(ALArea * _Nonnull)hawaii;
+        // [Static]
+        // [Export ("hawaii")]
+        // ALArea Hawaii { get; }
 
-        // +(ALArea * _Nonnull)idaho;
-        [Static]
-        [Export ("idaho")]
-        ALArea Idaho { get; }
+        // // +(ALArea * _Nonnull)idaho;
+        // [Static]
+        // [Export ("idaho")]
+        // ALArea Idaho { get; }
 
-        // +(ALArea * _Nonnull)illinois;
-        [Static]
-        [Export ("illinois")]
-        ALArea Illinois { get; }
+        // // +(ALArea * _Nonnull)illinois;
+        // [Static]
+        // [Export ("illinois")]
+        // ALArea Illinois { get; }
 
-        // +(ALArea * _Nonnull)indiana;
-        [Static]
-        [Export ("indiana")]
-        ALArea Indiana { get; }
+        // // +(ALArea * _Nonnull)indiana;
+        // [Static]
+        // [Export ("indiana")]
+        // ALArea Indiana { get; }
 
-        // +(ALArea * _Nonnull)iowa;
-        [Static]
-        [Export ("iowa")]
-        ALArea Iowa { get; }
+        // // +(ALArea * _Nonnull)iowa;
+        // [Static]
+        // [Export ("iowa")]
+        // ALArea Iowa { get; }
 
-        // +(ALArea * _Nonnull)kansas;
-        [Static]
-        [Export ("kansas")]
-        ALArea Kansas { get; }
+        // // +(ALArea * _Nonnull)kansas;
+        // [Static]
+        // [Export ("kansas")]
+        // ALArea Kansas { get; }
 
-        // +(ALArea * _Nonnull)kentucky;
-        [Static]
-        [Export ("kentucky")]
-        ALArea Kentucky { get; }
+        // // +(ALArea * _Nonnull)kentucky;
+        // [Static]
+        // [Export ("kentucky")]
+        // ALArea Kentucky { get; }
 
-        // +(ALArea * _Nonnull)louisiana;
-        [Static]
-        [Export ("louisiana")]
-        ALArea Louisiana { get; }
+        // // +(ALArea * _Nonnull)louisiana;
+        // [Static]
+        // [Export ("louisiana")]
+        // ALArea Louisiana { get; }
 
-        // +(ALArea * _Nonnull)maine;
-        [Static]
-        [Export ("maine")]
-        ALArea Maine { get; }
+        // // +(ALArea * _Nonnull)maine;
+        // [Static]
+        // [Export ("maine")]
+        // ALArea Maine { get; }
 
-        // +(ALArea * _Nonnull)maryland;
-        [Static]
-        [Export ("maryland")]
-        ALArea Maryland { get; }
+        // // +(ALArea * _Nonnull)maryland;
+        // [Static]
+        // [Export ("maryland")]
+        // ALArea Maryland { get; }
 
-        // +(ALArea * _Nonnull)massachusetts;
-        [Static]
-        [Export ("massachusetts")]
-        ALArea Massachusetts { get; }
+        // // +(ALArea * _Nonnull)massachusetts;
+        // [Static]
+        // [Export ("massachusetts")]
+        // ALArea Massachusetts { get; }
 
-        // +(ALArea * _Nonnull)michigan;
-        [Static]
-        [Export ("michigan")]
-        ALArea Michigan { get; }
+        // // +(ALArea * _Nonnull)michigan;
+        // [Static]
+        // [Export ("michigan")]
+        // ALArea Michigan { get; }
 
-        // +(ALArea * _Nonnull)minnesota;
-        [Static]
-        [Export ("minnesota")]
-        ALArea Minnesota { get; }
+        // // +(ALArea * _Nonnull)minnesota;
+        // [Static]
+        // [Export ("minnesota")]
+        // ALArea Minnesota { get; }
 
-        // +(ALArea * _Nonnull)mississippi;
-        [Static]
-        [Export ("mississippi")]
-        ALArea Mississippi { get; }
+        // // +(ALArea * _Nonnull)mississippi;
+        // [Static]
+        // [Export ("mississippi")]
+        // ALArea Mississippi { get; }
 
-        // +(ALArea * _Nonnull)missouri;
-        [Static]
-        [Export ("missouri")]
-        ALArea Missouri { get; }
+        // // +(ALArea * _Nonnull)missouri;
+        // [Static]
+        // [Export ("missouri")]
+        // ALArea Missouri { get; }
 
-        // +(ALArea * _Nonnull)montana;
-        [Static]
-        [Export ("montana")]
-        ALArea Montana { get; }
+        // // +(ALArea * _Nonnull)montana;
+        // [Static]
+        // [Export ("montana")]
+        // ALArea Montana { get; }
 
-        // +(ALArea * _Nonnull)nebraska;
-        [Static]
-        [Export ("nebraska")]
-        ALArea Nebraska { get; }
+        // // +(ALArea * _Nonnull)nebraska;
+        // [Static]
+        // [Export ("nebraska")]
+        // ALArea Nebraska { get; }
 
-        // +(ALArea * _Nonnull)nevada;
-        [Static]
-        [Export ("nevada")]
-        ALArea Nevada { get; }
+        // // +(ALArea * _Nonnull)nevada;
+        // [Static]
+        // [Export ("nevada")]
+        // ALArea Nevada { get; }
 
-        // +(ALArea * _Nonnull)newHampshire;
-        [Static]
-        [Export ("newHampshire")]
-        ALArea NewHampshire { get; }
+        // // +(ALArea * _Nonnull)newHampshire;
+        // [Static]
+        // [Export ("newHampshire")]
+        // ALArea NewHampshire { get; }
 
-        // +(ALArea * _Nonnull)newJersey;
-        [Static]
-        [Export ("newJersey")]
-        ALArea NewJersey { get; }
+        // // +(ALArea * _Nonnull)newJersey;
+        // [Static]
+        // [Export ("newJersey")]
+        // ALArea NewJersey { get; }
 
-        // +(ALArea * _Nonnull)newMexico;
-        [Static]
-        [Export ("newMexico")]
-        ALArea NewMexico { get; }
+        // // +(ALArea * _Nonnull)newMexico;
+        // [Static]
+        // [Export ("newMexico")]
+        // ALArea NewMexico { get; }
 
-        // +(ALArea * _Nonnull)newYork;
-        [Static]
-        [Export ("newYork")]
-        ALArea NewYork { get; }
+        // // +(ALArea * _Nonnull)newYork;
+        // [Static]
+        // [Export ("newYork")]
+        // ALArea NewYork { get; }
 
-        // +(ALArea * _Nonnull)northCarolina;
-        [Static]
-        [Export ("northCarolina")]
-        ALArea NorthCarolina { get; }
+        // // +(ALArea * _Nonnull)northCarolina;
+        // [Static]
+        // [Export ("northCarolina")]
+        // ALArea NorthCarolina { get; }
 
-        // +(ALArea * _Nonnull)northDakota;
-        [Static]
-        [Export ("northDakota")]
-        ALArea NorthDakota { get; }
+        // // +(ALArea * _Nonnull)northDakota;
+        // [Static]
+        // [Export ("northDakota")]
+        // ALArea NorthDakota { get; }
 
-        // +(ALArea * _Nonnull)ohio;
-        [Static]
-        [Export ("ohio")]
-        ALArea Ohio { get; }
+        // // +(ALArea * _Nonnull)ohio;
+        // [Static]
+        // [Export ("ohio")]
+        // ALArea Ohio { get; }
 
-        // +(ALArea * _Nonnull)oklahoma;
-        [Static]
-        [Export ("oklahoma")]
-        ALArea Oklahoma { get; }
+        // // +(ALArea * _Nonnull)oklahoma;
+        // [Static]
+        // [Export ("oklahoma")]
+        // ALArea Oklahoma { get; }
 
-        // +(ALArea * _Nonnull)oregon;
-        [Static]
-        [Export ("oregon")]
-        ALArea Oregon { get; }
+        // // +(ALArea * _Nonnull)oregon;
+        // [Static]
+        // [Export ("oregon")]
+        // ALArea Oregon { get; }
 
-        // +(ALArea * _Nonnull)pennsylvania;
-        [Static]
-        [Export ("pennsylvania")]
-        ALArea Pennsylvania { get; }
+        // // +(ALArea * _Nonnull)pennsylvania;
+        // [Static]
+        // [Export ("pennsylvania")]
+        // ALArea Pennsylvania { get; }
 
-        // +(ALArea * _Nonnull)puertoRico;
-        [Static]
-        [Export ("puertoRico")]
-        ALArea PuertoRico { get; }
+        // // +(ALArea * _Nonnull)puertoRico;
+        // [Static]
+        // [Export ("puertoRico")]
+        // ALArea PuertoRico { get; }
 
-        // +(ALArea * _Nonnull)rhodeIsland;
-        [Static]
-        [Export ("rhodeIsland")]
-        ALArea RhodeIsland { get; }
+        // // +(ALArea * _Nonnull)rhodeIsland;
+        // [Static]
+        // [Export ("rhodeIsland")]
+        // ALArea RhodeIsland { get; }
 
-        // +(ALArea * _Nonnull)southCarolina;
-        [Static]
-        [Export ("southCarolina")]
-        ALArea SouthCarolina { get; }
+        // // +(ALArea * _Nonnull)southCarolina;
+        // [Static]
+        // [Export ("southCarolina")]
+        // ALArea SouthCarolina { get; }
 
-        // +(ALArea * _Nonnull)southDakota;
-        [Static]
-        [Export ("southDakota")]
-        ALArea SouthDakota { get; }
+        // // +(ALArea * _Nonnull)southDakota;
+        // [Static]
+        // [Export ("southDakota")]
+        // ALArea SouthDakota { get; }
 
-        // +(ALArea * _Nonnull)tennessee;
-        [Static]
-        [Export ("tennessee")]
-        ALArea Tennessee { get; }
+        // // +(ALArea * _Nonnull)tennessee;
+        // [Static]
+        // [Export ("tennessee")]
+        // ALArea Tennessee { get; }
 
-        // +(ALArea * _Nonnull)texas;
-        [Static]
-        [Export ("texas")]
-        ALArea Texas { get; }
+        // // +(ALArea * _Nonnull)texas;
+        // [Static]
+        // [Export ("texas")]
+        // ALArea Texas { get; }
 
-        // +(ALArea * _Nonnull)utah;
-        [Static]
-        [Export ("utah")]
-        ALArea Utah { get; }
+        // // +(ALArea * _Nonnull)utah;
+        // [Static]
+        // [Export ("utah")]
+        // ALArea Utah { get; }
 
-        // +(ALArea * _Nonnull)vermont;
-        [Static]
-        [Export ("vermont")]
-        ALArea Vermont { get; }
+        // // +(ALArea * _Nonnull)vermont;
+        // [Static]
+        // [Export ("vermont")]
+        // ALArea Vermont { get; }
 
-        // +(ALArea * _Nonnull)virginia;
-        [Static]
-        [Export ("virginia")]
-        ALArea Virginia { get; }
+        // // +(ALArea * _Nonnull)virginia;
+        // [Static]
+        // [Export ("virginia")]
+        // ALArea Virginia { get; }
 
-        // +(ALArea * _Nonnull)washington;
-        [Static]
-        [Export ("washington")]
-        ALArea Washington { get; }
+        // // +(ALArea * _Nonnull)washington;
+        // [Static]
+        // [Export ("washington")]
+        // ALArea Washington { get; }
 
-        // +(ALArea * _Nonnull)westVirginia;
-        [Static]
-        [Export ("westVirginia")]
-        ALArea WestVirginia { get; }
+        // // +(ALArea * _Nonnull)westVirginia;
+        // [Static]
+        // [Export ("westVirginia")]
+        // ALArea WestVirginia { get; }
 
-        // +(ALArea * _Nonnull)wisconsin;
-        [Static]
-        [Export ("wisconsin")]
-        ALArea Wisconsin { get; }
+        // // +(ALArea * _Nonnull)wisconsin;
+        // [Static]
+        // [Export ("wisconsin")]
+        // ALArea Wisconsin { get; }
 
-        // +(ALArea * _Nonnull)wyoming;
-        [Static]
-        [Export ("wyoming")]
-        ALArea Wyoming { get; }
+        // // +(ALArea * _Nonnull)wyoming;
+        // [Static]
+        // [Export ("wyoming")]
+        // ALArea Wyoming { get; }
     }
 
     // @interface ALCountry : NSObject
@@ -2313,260 +2313,260 @@ namespace AnylineXamarinSDK.iOS
         [return: NullAllowed]
         ALCountry WithValue (string value);
 
-        // +(ALCountry * _Nonnull)a;
-        [Static]
-        [Export ("a")]
-        ALCountry A { get; }
+        // // +(ALCountry * _Nonnull)a;
+        // [Static]
+        // [Export ("a")]
+        // ALCountry A { get; }
 
-        // +(ALCountry * _Nonnull)af;
-        [Static]
-        [Export ("af")]
-        ALCountry Af { get; }
+        // // +(ALCountry * _Nonnull)af;
+        // [Static]
+        // [Export ("af")]
+        // ALCountry Af { get; }
 
-        // +(ALCountry * _Nonnull)al;
-        [Static]
-        [Export ("al")]
-        ALCountry Al { get; }
+        // // +(ALCountry * _Nonnull)al;
+        // [Static]
+        // [Export ("al")]
+        // ALCountry Al { get; }
 
-        // +(ALCountry * _Nonnull)am;
-        [Static]
-        [Export ("am")]
-        ALCountry Am { get; }
+        // // +(ALCountry * _Nonnull)am;
+        // [Static]
+        // [Export ("am")]
+        // ALCountry Am { get; }
 
-        // +(ALCountry * _Nonnull)and;
-        [Static]
-        [Export ("and")]
-        ALCountry And { get; }
+        // // +(ALCountry * _Nonnull)and;
+        // [Static]
+        // [Export ("and")]
+        // ALCountry And { get; }
 
-        // +(ALCountry * _Nonnull)az;
-        [Static]
-        [Export ("az")]
-        ALCountry Az { get; }
+        // // +(ALCountry * _Nonnull)az;
+        // [Static]
+        // [Export ("az")]
+        // ALCountry Az { get; }
 
-        // +(ALCountry * _Nonnull)b;
-        [Static]
-        [Export ("b")]
-        ALCountry B { get; }
+        // // +(ALCountry * _Nonnull)b;
+        // [Static]
+        // [Export ("b")]
+        // ALCountry B { get; }
 
-        // +(ALCountry * _Nonnull)bg;
-        [Static]
-        [Export ("bg")]
-        ALCountry Bg { get; }
+        // // +(ALCountry * _Nonnull)bg;
+        // [Static]
+        // [Export ("bg")]
+        // ALCountry Bg { get; }
 
-        // +(ALCountry * _Nonnull)bih;
-        [Static]
-        [Export ("bih")]
-        ALCountry Bih { get; }
+        // // +(ALCountry * _Nonnull)bih;
+        // [Static]
+        // [Export ("bih")]
+        // ALCountry Bih { get; }
 
-        // +(ALCountry * _Nonnull)by;
-        [Static]
-        [Export ("by")]
-        ALCountry By { get; }
+        // // +(ALCountry * _Nonnull)by;
+        // [Static]
+        // [Export ("by")]
+        // ALCountry By { get; }
 
-        // +(ALCountry * _Nonnull)ch;
-        [Static]
-        [Export ("ch")]
-        ALCountry Ch { get; }
+        // // +(ALCountry * _Nonnull)ch;
+        // [Static]
+        // [Export ("ch")]
+        // ALCountry Ch { get; }
 
-        // +(ALCountry * _Nonnull)cy;
-        [Static]
-        [Export ("cy")]
-        ALCountry Cy { get; }
+        // // +(ALCountry * _Nonnull)cy;
+        // [Static]
+        // [Export ("cy")]
+        // ALCountry Cy { get; }
 
-        // +(ALCountry * _Nonnull)cz;
-        [Static]
-        [Export ("cz")]
-        ALCountry Cz { get; }
+        // // +(ALCountry * _Nonnull)cz;
+        // [Static]
+        // [Export ("cz")]
+        // ALCountry Cz { get; }
 
-        // +(ALCountry * _Nonnull)d;
-        [Static]
-        [Export ("d")]
-        ALCountry D { get; }
+        // // +(ALCountry * _Nonnull)d;
+        // [Static]
+        // [Export ("d")]
+        // ALCountry D { get; }
 
-        // +(ALCountry * _Nonnull)dk;
-        [Static]
-        [Export ("dk")]
-        ALCountry Dk { get; }
+        // // +(ALCountry * _Nonnull)dk;
+        // [Static]
+        // [Export ("dk")]
+        // ALCountry Dk { get; }
 
-        // +(ALCountry * _Nonnull)e;
-        [Static]
-        [Export ("e")]
-        ALCountry E { get; }
+        // // +(ALCountry * _Nonnull)e;
+        // [Static]
+        // [Export ("e")]
+        // ALCountry E { get; }
 
-        // +(ALCountry * _Nonnull)empty;
-        [Static]
-        [Export ("empty")]
-        ALCountry Empty { get; }
+        // // +(ALCountry * _Nonnull)empty;
+        // [Static]
+        // [Export ("empty")]
+        // ALCountry Empty { get; }
 
-        // +(ALCountry * _Nonnull)est;
-        [Static]
-        [Export ("est")]
-        ALCountry Est { get; }
+        // // +(ALCountry * _Nonnull)est;
+        // [Static]
+        // [Export ("est")]
+        // ALCountry Est { get; }
 
-        // +(ALCountry * _Nonnull)f;
-        [Static]
-        [Export ("f")]
-        ALCountry F { get; }
+        // // +(ALCountry * _Nonnull)f;
+        // [Static]
+        // [Export ("f")]
+        // ALCountry F { get; }
 
-        // +(ALCountry * _Nonnull)fin;
-        [Static]
-        [Export ("fin")]
-        ALCountry Fin { get; }
+        // // +(ALCountry * _Nonnull)fin;
+        // [Static]
+        // [Export ("fin")]
+        // ALCountry Fin { get; }
 
-        // +(ALCountry * _Nonnull)fl;
-        [Static]
-        [Export ("fl")]
-        ALCountry Fl { get; }
+        // // +(ALCountry * _Nonnull)fl;
+        // [Static]
+        // [Export ("fl")]
+        // ALCountry Fl { get; }
 
-        // +(ALCountry * _Nonnull)gb;
-        [Static]
-        [Export ("gb")]
-        ALCountry Gb { get; }
+        // // +(ALCountry * _Nonnull)gb;
+        // [Static]
+        // [Export ("gb")]
+        // ALCountry Gb { get; }
 
-        // +(ALCountry * _Nonnull)ge;
-        [Static]
-        [Export ("ge")]
-        ALCountry Ge { get; }
+        // // +(ALCountry * _Nonnull)ge;
+        // [Static]
+        // [Export ("ge")]
+        // ALCountry Ge { get; }
 
-        // +(ALCountry * _Nonnull)gr;
-        [Static]
-        [Export ("gr")]
-        ALCountry Gr { get; }
+        // // +(ALCountry * _Nonnull)gr;
+        // [Static]
+        // [Export ("gr")]
+        // ALCountry Gr { get; }
 
-        // +(ALCountry * _Nonnull)h;
-        [Static]
-        [Export ("h")]
-        ALCountry H { get; }
+        // // +(ALCountry * _Nonnull)h;
+        // [Static]
+        // [Export ("h")]
+        // ALCountry H { get; }
 
-        // +(ALCountry * _Nonnull)hr;
-        [Static]
-        [Export ("hr")]
-        ALCountry Hr { get; }
+        // // +(ALCountry * _Nonnull)hr;
+        // [Static]
+        // [Export ("hr")]
+        // ALCountry Hr { get; }
 
-        // +(ALCountry * _Nonnull)i;
-        [Static]
-        [Export ("i")]
-        ALCountry I { get; }
+        // // +(ALCountry * _Nonnull)i;
+        // [Static]
+        // [Export ("i")]
+        // ALCountry I { get; }
 
-        // +(ALCountry * _Nonnull)ire;
-        [Static]
-        [Export ("ire")]
-        ALCountry Ire { get; }
+        // // +(ALCountry * _Nonnull)ire;
+        // [Static]
+        // [Export ("ire")]
+        // ALCountry Ire { get; }
 
-        // +(ALCountry * _Nonnull)is;
-        [Static]
-        [Export ("is")]
-        ALCountry Is { get; }
+        // // +(ALCountry * _Nonnull)is;
+        // [Static]
+        // [Export ("is")]
+        // ALCountry Is { get; }
 
-        // +(ALCountry * _Nonnull)l;
-        [Static]
-        [Export ("l")]
-        ALCountry L { get; }
+        // // +(ALCountry * _Nonnull)l;
+        // [Static]
+        // [Export ("l")]
+        // ALCountry L { get; }
 
-        // +(ALCountry * _Nonnull)lt;
-        [Static]
-        [Export ("lt")]
-        ALCountry Lt { get; }
+        // // +(ALCountry * _Nonnull)lt;
+        // [Static]
+        // [Export ("lt")]
+        // ALCountry Lt { get; }
 
-        // +(ALCountry * _Nonnull)lv;
-        [Static]
-        [Export ("lv")]
-        ALCountry Lv { get; }
+        // // +(ALCountry * _Nonnull)lv;
+        // [Static]
+        // [Export ("lv")]
+        // ALCountry Lv { get; }
 
-        // +(ALCountry * _Nonnull)m;
-        [Static]
-        [Export ("m")]
-        ALCountry M { get; }
+        // // +(ALCountry * _Nonnull)m;
+        // [Static]
+        // [Export ("m")]
+        // ALCountry M { get; }
 
-        // +(ALCountry * _Nonnull)mc;
-        [Static]
-        [Export ("mc")]
-        ALCountry Mc { get; }
+        // // +(ALCountry * _Nonnull)mc;
+        // [Static]
+        // [Export ("mc")]
+        // ALCountry Mc { get; }
 
-        // +(ALCountry * _Nonnull)mne;
-        [Static]
-        [Export ("mne")]
-        ALCountry Mne { get; }
+        // // +(ALCountry * _Nonnull)mne;
+        // [Static]
+        // [Export ("mne")]
+        // ALCountry Mne { get; }
 
-        // +(ALCountry * _Nonnull)mo;
-        [Static]
-        [Export ("mo")]
-        ALCountry Mo { get; }
+        // // +(ALCountry * _Nonnull)mo;
+        // [Static]
+        // [Export ("mo")]
+        // ALCountry Mo { get; }
 
-        // +(ALCountry * _Nonnull)n;
-        [Static]
-        [Export ("n")]
-        ALCountry N { get; }
+        // // +(ALCountry * _Nonnull)n;
+        // [Static]
+        // [Export ("n")]
+        // ALCountry N { get; }
 
-        // +(ALCountry * _Nonnull)nSpecial;
-        [Static]
-        [Export ("nSpecial")]
-        ALCountry NSpecial { get; }
+        // // +(ALCountry * _Nonnull)nSpecial;
+        // [Static]
+        // [Export ("nSpecial")]
+        // ALCountry NSpecial { get; }
 
-        // +(ALCountry * _Nonnull)nl;
-        [Static]
-        [Export ("nl")]
-        ALCountry Nl { get; }
+        // // +(ALCountry * _Nonnull)nl;
+        // [Static]
+        // [Export ("nl")]
+        // ALCountry Nl { get; }
 
-        // +(ALCountry * _Nonnull)nmk;
-        [Static]
-        [Export ("nmk")]
-        ALCountry Nmk { get; }
+        // // +(ALCountry * _Nonnull)nmk;
+        // [Static]
+        // [Export ("nmk")]
+        // ALCountry Nmk { get; }
 
-        // +(ALCountry * _Nonnull)p;
-        [Static]
-        [Export ("p")]
-        ALCountry P { get; }
+        // // +(ALCountry * _Nonnull)p;
+        // [Static]
+        // [Export ("p")]
+        // ALCountry P { get; }
 
-        // +(ALCountry * _Nonnull)pl;
-        [Static]
-        [Export ("pl")]
-        ALCountry Pl { get; }
+        // // +(ALCountry * _Nonnull)pl;
+        // [Static]
+        // [Export ("pl")]
+        // ALCountry Pl { get; }
 
-        // +(ALCountry * _Nonnull)ro;
-        [Static]
-        [Export ("ro")]
-        ALCountry Ro { get; }
+        // // +(ALCountry * _Nonnull)ro;
+        // [Static]
+        // [Export ("ro")]
+        // ALCountry Ro { get; }
 
-        // +(ALCountry * _Nonnull)rus;
-        [Static]
-        [Export ("rus")]
-        ALCountry Rus { get; }
+        // // +(ALCountry * _Nonnull)rus;
+        // [Static]
+        // [Export ("rus")]
+        // ALCountry Rus { get; }
 
-        // +(ALCountry * _Nonnull)s;
-        [Static]
-        [Export ("s")]
-        ALCountry S { get; }
+        // // +(ALCountry * _Nonnull)s;
+        // [Static]
+        // [Export ("s")]
+        // ALCountry S { get; }
 
-        // +(ALCountry * _Nonnull)sk;
-        [Static]
-        [Export ("sk")]
-        ALCountry Sk { get; }
+        // // +(ALCountry * _Nonnull)sk;
+        // [Static]
+        // [Export ("sk")]
+        // ALCountry Sk { get; }
 
-        // +(ALCountry * _Nonnull)slo;
-        [Static]
-        [Export ("slo")]
-        ALCountry Slo { get; }
+        // // +(ALCountry * _Nonnull)slo;
+        // [Static]
+        // [Export ("slo")]
+        // ALCountry Slo { get; }
 
-        // +(ALCountry * _Nonnull)srb;
-        [Static]
-        [Export ("srb")]
-        ALCountry Srb { get; }
+        // // +(ALCountry * _Nonnull)srb;
+        // [Static]
+        // [Export ("srb")]
+        // ALCountry Srb { get; }
 
-        // +(ALCountry * _Nonnull)tr;
-        [Static]
-        [Export ("tr")]
-        ALCountry Tr { get; }
+        // // +(ALCountry * _Nonnull)tr;
+        // [Static]
+        // [Export ("tr")]
+        // ALCountry Tr { get; }
 
-        // +(ALCountry * _Nonnull)ua;
-        [Static]
-        [Export ("ua")]
-        ALCountry Ua { get; }
+        // // +(ALCountry * _Nonnull)ua;
+        // [Static]
+        // [Export ("ua")]
+        // ALCountry Ua { get; }
 
-        // +(ALCountry * _Nonnull)us;
-        [Static]
-        [Export ("us")]
-        ALCountry Us { get; }
+        // // +(ALCountry * _Nonnull)us;
+        // [Static]
+        // [Export ("us")]
+        // ALCountry Us { get; }
     }
 
     // @interface ALType : NSObject

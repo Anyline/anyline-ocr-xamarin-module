@@ -29,14 +29,11 @@ namespace Anyline
 
         private void ShowResults(Dictionary<string, object> results)
         {
-            StackLayout slResults = CreateResultView(results);
-
-            Device.BeginInvokeOnMainThread(() => cvContent.Content = slResults);
+            View viewResults = CreateResultView(results);
+            Device.BeginInvokeOnMainThread(() => cvContent.Content = viewResults);
         }
 
-        int _resultPadding = 0;
-
-        private StackLayout CreateResultView(Dictionary<string, object> dict)
+        private View CreateResultView(Dictionary<string, object> dict)
         {
             StackLayout slItemResults = new StackLayout() { Padding = new Thickness(5, 0, 0, 0) };
 
@@ -70,7 +67,12 @@ namespace Anyline
                 }
             }
 
-            return slItemResults;
+            Grid grContent = new Grid() { };
+            grContent.ColumnDefinitions.Add(new ColumnDefinition { Width = 0.3 });
+            grContent.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Star });
+            grContent.Children.Add(new BoxView { BackgroundColor = Color.Gray }, 0, 0);
+            grContent.Children.Add(slItemResults, 1, 0);
+            return grContent;
         }
     }
 }

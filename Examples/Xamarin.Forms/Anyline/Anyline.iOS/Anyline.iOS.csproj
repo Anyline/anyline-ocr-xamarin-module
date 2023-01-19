@@ -74,14 +74,7 @@
     <None Include="Info.plist" />
     <Compile Include="ObjectExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <BundleResource Include="Resources\energy_config_analog_digital.json" />
-    <BundleResource Include="Resources\mro_config_usnr.json" />
-    <BundleResource Include="Resources\others_config_barcode.json" />
-    <BundleResource Include="Resources\vehicle_config_license_plate.json" />
     <Compile Include="AnylineSDKService.cs" />
-    <BundleResource Include="Resources\id_config_universal.json" />
-    <BundleResource Include="Resources\id_config_mrz.json" />
-    <BundleResource Include="Resources\universal_id_front_config.json" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -151,6 +144,22 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\anyline_logo.png" />
+    <BundleResource Include="Resources\license_plate_af_config.json" />
+    <BundleResource Include="Resources\license_plate_eu_config.json" />
+    <BundleResource Include="Resources\license_plate_us_config.json" />
+    <BundleResource Include="Resources\meter_config.json" />
+    <BundleResource Include="Resources\mrz_config.json" />
+    <BundleResource Include="Resources\sample_barcode_config.json" />
+    <BundleResource Include="Resources\sample_barcode_fullframe_config.json" />
+    <BundleResource Include="Resources\serial_number_view_config.json" />
+    <BundleResource Include="Resources\tire_size_config.json" />
+    <BundleResource Include="Resources\tire_tin_config.json" />
+    <BundleResource Include="Resources\universal_id_front_config.json" />
+    <BundleResource Include="Resources\vertical_container_scanner_capture_config.json" />
+    <BundleResource Include="Resources\vin_ocr_config.json" />
+    <BundleResource Include="Resources\vrc_config.json" />
+    <BundleResource Include="Resources\commercial_tire_id_config.json" />
+    <BundleResource Include="Resources\horizontal_container_scanner_capture_config.json" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default.png" />

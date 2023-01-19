@@ -53,17 +53,27 @@ namespace Anyline.iOS
                             break;
                         default:
                             var value = prop.GetValue(obj, null);
-                            
+
                             if (value == null) { continue; }
-
-                            System.Diagnostics.Debug.WriteLine(prop.Name + " - " + value);
-
+                            // For Anyline objects, expand to show each property
                             if (value.GetType().Namespace == "AnylineXamarinSDK.iOS")
                             {
-                                dict.Add($"{prop.Name} ({prop.PropertyType})", value.CreatePropertyDictionary());
+                                if (value is Array valueArray)
+                                {
+                                    for (int i = 0; i < valueArray.Length; i++)
+                                    {
+                                        var v = valueArray.GetValue(i);
+                                        dict.Add($"{prop.Name} [{i}]", v.CreatePropertyDictionary());
+                                    }
+                                }
+                                else
+                                {
+                                    dict.Add($"{prop.Name} ({prop.PropertyType})", value.CreatePropertyDictionary());
+                                }
                             }
                             else
                             {
+                                // Non-Anyline objects will be displayed with their default value, and only minor treatment
                                 dict.AddProperty($"{prop.Name} ({prop.PropertyType})", value);
                             }
                             break;
@@ -98,13 +108,6 @@ namespace Anyline.iOS
                     {
                         dict.Add(name, value);
                     }
-                    //else if (value is NSArray[] nsarray)
-                    //{
-                    //    foreach (var item in nsarray)
-                    //    {
-                    //        dict.Add(name, nsarray.CreatePropertyDictionary());
-                    //    }
-                    //}
                     else if (value.ToString() != "")
                     {
                         var str = value.ToString().Replace("\\n", Environment.NewLine);
