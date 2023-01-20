@@ -94,7 +94,7 @@ namespace Anyline.Droid.NFC
             {
                 GivenNames = mrzIdentification.GivenNames,
                 Surname = mrzIdentification.Surname,
-                CutoutImage = ConvertAnylineImageToByteArray(scanResult.CutoutImage),
+                CroppedImage = ConvertAnylineImageToByteArray(scanResult.CutoutImage),
                 FullImage = ConvertAnylineImageToByteArray(scanResult.FullImage),
                 FaceImage = ConvertBitmapToByteArray(mrzIdentification.FaceImage),
                 PassportNumber = mrzIdentification.DocumentNumber.Trim(),

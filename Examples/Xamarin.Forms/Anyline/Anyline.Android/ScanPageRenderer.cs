@@ -79,6 +79,7 @@ namespace Anyline.Droid
             }
             catch (Exception e)
             {
+                System.Diagnostics.Debug.WriteLine(e.Message);
                 Toast.MakeText(Context, "Anyline Init Failed: " + e.Message, ToastLength.Long).Show();
             }
         }

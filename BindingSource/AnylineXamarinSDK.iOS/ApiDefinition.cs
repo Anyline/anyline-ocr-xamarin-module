@@ -4908,11 +4908,11 @@ namespace AnylineXamarinSDK.iOS
 
         // -(instancetype _Nullable)initWithDelegate:(id<ALNFCDetectorDelegate> _Nonnull)delegate licenseUtil:(ALLicenseUtil * _Nonnull)licenseUtil;
         [Export ("initWithDelegate:licenseUtil:")]
-        IntPtr Constructor (ALNFCDetectorDelegate @delegate, ALLicenseUtil licenseUtil);
+        IntPtr Constructor (NSObject @delegate, ALLicenseUtil licenseUtil);
 
         // -(instancetype _Nullable)initWithDelegate:(id<ALNFCDetectorDelegate> _Nonnull)delegate;
         [Export ("initWithDelegate:")]
-        IntPtr Constructor (ALNFCDetectorDelegate @delegate);
+        IntPtr Constructor (NSObject @delegate);
 
         // -(void)startNfcDetectionWithPassportNumber:(NSString * _Nonnull)passportNumber dateOfBirth:(NSDate * _Nonnull)dateOfBirth expirationDate:(NSDate * _Nonnull)expirationDate;
         [Export ("startNfcDetectionWithPassportNumber:dateOfBirth:expirationDate:")]

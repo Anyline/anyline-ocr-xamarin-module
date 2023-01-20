@@ -36,7 +36,7 @@ namespace Anyline.NFC
             imMrzFaceImage.Source = ImageSource.FromStream(() => new MemoryStream(results.MRZResults.FaceImage));
             imNFCFaceImage.Source = ImageSource.FromStream(() => new MemoryStream(results.NFCResults.FaceImage));
 
-            imCutout.Source = ImageSource.FromStream(() => new MemoryStream(results.MRZResults.CutoutImage));
+            imCutout.Source = ImageSource.FromStream(() => new MemoryStream(results.MRZResults.CroppedImage));
             imFull.Source = ImageSource.FromStream(() => new MemoryStream(results.MRZResults.FullImage));
         }
     }

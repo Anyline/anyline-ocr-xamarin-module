@@ -42,7 +42,7 @@
                     "nationality": {"scanOption": 1,"minConfidence": 60},
                     "sex": {"scanOption": 1,"minConfidence": 60},
                     "personalNumber": {"scanOption": 1,"minConfidence": 60}
-                },
+                }
             },
             "cancelOnResult": true
         },

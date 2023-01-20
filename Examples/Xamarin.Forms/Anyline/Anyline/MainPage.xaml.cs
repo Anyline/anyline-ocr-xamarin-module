@@ -16,12 +16,28 @@ namespace Anyline
 
             var scanMode_configurations = new List<KeyValuePair<string, string>>()
             {
+                new KeyValuePair<string, string>("Meter","meter_config"),
+
+                new KeyValuePair<string, string>("Universal ID","universal_id_front_config"),
+                new KeyValuePair<string, string>("MRZ/Passport","mrz_config"),
+
+                new KeyValuePair<string, string>("License Plate - EU","license_plate_eu_config"),
+                new KeyValuePair<string, string>("License Plate - USA","license_plate_us_config"),
+                new KeyValuePair<string, string>("License Plate - Africa","license_plate_af_config"),
+                new KeyValuePair<string, string>("Vehicle Identification Number (VIN)","vin_ocr_config"),
+                new KeyValuePair<string, string>("Vehicle Registration Certificate","vrc_config"),
+
+                new KeyValuePair<string, string>("Tire Identification Number (TIN) - Universal","tire_tin_config"),
+                new KeyValuePair<string, string>("Tire Size Specification","tire_size_config"),
+                new KeyValuePair<string, string>("Commercial Tire Identification Number","commercial_tire_id_config"),
+
+                new KeyValuePair<string, string>("Universal Serial Number","serial_number_view_config"),
+                new KeyValuePair<string, string>("Shipping Container - Horizontal","horizontal_container_scanner_capture_config"),
+                new KeyValuePair<string, string>("Shipping Container - Vertical","vertical_container_scanner_capture_config"),
+
                 new KeyValuePair<string, string>("Barcode","sample_barcode_config"),
                 new KeyValuePair<string, string>("Barcode - Full frame","sample_barcode_fullframe_config"),
-                new KeyValuePair<string, string>("Universal ID","universal_id_front_config"),
-                new KeyValuePair<string, string>("License Plate - EU","license_plate_eu_config"),
-                new KeyValuePair<string, string>("Meter","meter_config"),
-                new KeyValuePair<string, string>("Universal Serial Number","serial_number_view_config"),
+
                 new KeyValuePair<string, string>("NFC", "mrz_config")
             };
 

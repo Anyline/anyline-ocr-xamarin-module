@@ -11,7 +11,7 @@ using Xamarin.Forms.Platform.iOS;
 [assembly: ExportRenderer(typeof(NFCScanExamplePage), typeof(NFCScanPageRenderer))]
 namespace Anyline.iOS.NFC
 {
-    public class NFCScanPageRenderer : PageRenderer, IALIDPluginDelegate, IALNFCDetectorDelegate
+    public class NFCScanPageRenderer : PageRenderer, IALScanPluginDelegate, IALNFCDetectorDelegate
     {
         private CGRect frame;
         private bool initialized;
@@ -58,14 +58,18 @@ namespace Anyline.iOS.NFC
                 // Use the JSON file name that you want to load here
                 var configPath = NSBundle.MainBundle.PathForResource(configurationFile, @"json");
                 // This is the main intialization method that will create our use case depending on the JSON configuration.
-                _scanView = ALScanView.ScanViewForFrame(View.Bounds, configPath, this, out error);
+                _scanView = ALScanViewFactory.WithConfigFilePath(configPath, this, out error);
 
                 if (error != null)
                 {
                     throw new Exception(error.LocalizedDescription);
                 }
 
-                (_scanView.ScanViewPlugin as ALIDScanViewPlugin)?.IdScanPlugin.AddDelegate(this);
+                ALScanViewPluginBase scanViewPluginBase = _scanView.ScanViewPlugin;
+                ALScanViewPlugin scanViewPlugin = (ALScanViewPlugin)scanViewPluginBase;
+                scanViewPluginBase = (ALScanViewPluginBase)scanViewPlugin;
+
+                scanViewPlugin.ScanPlugin.WeakDelegate = this;
 
                 View.AddSubview(_scanView);
 
@@ -79,7 +83,7 @@ namespace Anyline.iOS.NFC
                 _scanView.BottomAnchor.ConstraintEqualTo(View.SafeAreaLayoutGuide.BottomAnchor).Active = true;
 
                 _scanView.StartCamera();
-                
+
                 initialized = true;
             }
             catch (Exception e)
@@ -91,7 +95,7 @@ namespace Anyline.iOS.NFC
         private void StartMRZScanner()
         {
             NSError error = null;
-            var success = _scanView.ScanViewPlugin.StartAndReturnError(out error);
+            var success = _scanView.ScanViewPlugin.StartWithError(out error);
             if (!success)
             {
                 if (error != null)
@@ -106,28 +110,32 @@ namespace Anyline.iOS.NFC
             new UIAlertView(title, text, (IUIAlertViewDelegate)null, "OK", null).Show();
         }
 
-        public void DidFindResult(ALIDScanPlugin anylineIDScanPlugin, ALIDResult scanResult)
+        [Export("scanPlugin:resultReceived:")]
+        public void ResultReceived(ALScanPlugin scanPlugin, ALScanResult scanResult)
         {
-            ALMRZIdentification mrzIdentification = (ALMRZIdentification)scanResult.Result;
+            ALMrzResult mrzResult = scanResult.PluginResult.MrzResult;
 
             // Sends the MRZ results back to the Xamarin Forms application
             MyMRZScanResults myMRZScanResults = new MyMRZScanResults
             {
-                GivenNames = mrzIdentification.GivenNames,
-                Surname = mrzIdentification.Surname,
-                CutoutImage = scanResult.Image.AsJPEG().ToArray(),
-                FullImage = scanResult.FullImage.AsJPEG().ToArray(),
-                FaceImage = mrzIdentification.FaceImage.AsJPEG().ToArray(),
-                PassportNumber = mrzIdentification.DocumentNumber.Trim(),
-                DateOfBirth = mrzIdentification.DateOfBirth,
-                DateOfExpiry = mrzIdentification.DateOfExpiry
+                GivenNames = mrzResult.GivenNames,
+                Surname = mrzResult.Surname,
+                CroppedImage = scanResult.CroppedImage.AsJPEG().ToArray(),
+                FullImage = scanResult.FullSizeImage.AsJPEG().ToArray(),
+                FaceImage = scanResult.FaceImage.AsJPEG().ToArray(),
+                PassportNumber = mrzResult.DocumentNumber.Trim(),
+                DateOfBirth = mrzResult.DateOfBirth,
+                DateOfExpiry = mrzResult.DateOfExpiry
             };
             MessagingCenter.Send(App.Current, "MRZ_READING_DONE", myMRZScanResults);
 
             // Gets the data necessary for the NFC reading
-            string passportNumber = mrzIdentification.DocumentNumber.Trim();
-            NSDate dateOfBirth = mrzIdentification.DateOfBirthObject;
-            NSDate dateOfExpiry = mrzIdentification.DateOfExpiryObject;
+            string passportNumber = mrzResult.DocumentNumber.Trim();
+            //NSDate dateOfBirth = mrzResult.DateOfBirthObject;
+            //NSDate dateOfExpiry = mrzResult.DateOfExpiryObject;
+
+            NSDate dateOfBirth = null;
+            NSDate dateOfExpiry = null;
 
             // The passport number passed to the NFC chip must have a trailing < if there is one in the MRZ string.
             string passportNumberForNFC = String.Copy(passportNumber);
@@ -183,7 +191,7 @@ namespace Anyline.iOS.NFC
                 return;
 
             NSError error;
-            _scanView.ScanViewPlugin.StopAndReturnError(out error);
+            _scanView.ScanViewPlugin.Stop();
         }
 
         public override void ViewDidDisappear(bool animated)

@@ -55,8 +55,7 @@ namespace Anyline.iOS
                 var configPath = NSBundle.MainBundle.PathForResource(configurationFile, @"json");
                 // This is the main intialization method that will create our use case depending on the JSON configuration.
                 _resultDelegate = new ScanResultDelegate((Element as ScanExamplePage).ShowResultsAction);
-                //_scanView = ALScanView.ScanViewForFrame(View.Bounds, configPath, _resultDelegate, out error);
-
+               
                 NSString jsonConfig = new NSString(@"{
                                                     ""cameraConfig"": {
                                                     ""captureResolution"": ""1080p""
