@@ -131,11 +131,8 @@ namespace Anyline.iOS.NFC
 
             // Gets the data necessary for the NFC reading
             string passportNumber = mrzResult.DocumentNumber.Trim();
-            //NSDate dateOfBirth = mrzResult.DateOfBirthObject;
-            //NSDate dateOfExpiry = mrzResult.DateOfExpiryObject;
-
-            NSDate dateOfBirth = null;
-            NSDate dateOfExpiry = null;
+            NSDate dateOfBirth = ConvertToNSDate(mrzResult.DateOfBirthObject);
+            NSDate dateOfExpiry = ConvertToNSDate(mrzResult.DateOfExpiryObject);
 
             // The passport number passed to the NFC chip must have a trailing < if there is one in the MRZ string.
             string passportNumberForNFC = String.Copy(passportNumber);
@@ -150,6 +147,21 @@ namespace Anyline.iOS.NFC
             {
                 nfcDetector.StartNfcDetectionWithPassportNumber(passportNumberForNFC, dateOfBirth, dateOfExpiry);
             });
+        }
+
+        /// <summary>
+        /// Converts date strings from this: "Sun Apr 12 00:00:00 UTC 1977" to this: "04/12/1977"
+        /// </summary>
+        /// <param name="dateString">Date string to be converted</param>
+        /// <returns>NSDate of the informed date</returns>
+        private NSDate ConvertToNSDate(string dateString)
+        {
+            NSDateFormatter dateFormatter = new NSDateFormatter();
+            dateFormatter.TimeZone = NSTimeZone.FromAbbreviation("GMT+0:00");
+            dateFormatter.DateFormat = @"E MMM d HH:mm:ss zzz yyyy";
+            dateFormatter.Locale = NSLocale.FromLocaleIdentifier("en_US_POSIX");
+            NSDate nsDate = dateFormatter.Parse(dateString);
+            return nsDate;
         }
 
         #region NFC Result
@@ -190,7 +202,6 @@ namespace Anyline.iOS.NFC
             if (_scanView?.ScanViewPlugin == null)
                 return;
 
-            NSError error;
             _scanView.ScanViewPlugin.Stop();
         }
 
