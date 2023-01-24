@@ -14,6 +14,7 @@ namespace AnylineExamples.Droid
     public class MyAnylineResultEventHandler : Java.Lang.Object, IEvent
     {
         public static readonly string TAG = typeof(ScanResultListener).Name;
+        public string Title { get; set; }
         protected Activity Activity { get; set; }
 
         public MyAnylineResultEventHandler(Activity activity)
@@ -28,17 +29,12 @@ namespace AnylineExamples.Droid
         /// <param name="data">The scan result</param>
         public void EventReceived(Object data)
         {
-            var sr = data as IO.Anyline2.ScanResult;
-            
-            System.Diagnostics.Debug.WriteLine(sr.Image);
-            System.Diagnostics.Debug.WriteLine(sr.PluginResult.CropRect);
-            System.Diagnostics.Debug.WriteLine(sr.PluginResult.VinResult.Text);
             if (data != null)
             {
                 // because we can't simply pass the object through the intent, we'll pass the JNI handle & retrieve the object in the other activity
                 var intent = new Intent(Activity.ApplicationContext, typeof(ResultActivity));
                 intent.PutExtra("handle", data.Handle.ToInt32());
-
+                intent.PutExtra("title", Title);
                 Activity.StartActivity(intent);
             }
         }

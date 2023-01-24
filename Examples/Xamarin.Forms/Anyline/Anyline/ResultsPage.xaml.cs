@@ -47,12 +47,12 @@ namespace Anyline
 
                 slItemResults.Children.Add(new Label() { FormattedText = formmattedString });
 
-                if (item.Value.GetType() == typeof(byte[]))
+                if (item.Value is byte[] imageBytes)
                 {
                     var img = new Image()
                     {
                         Aspect = Aspect.AspectFit,
-                        Source = ImageSource.FromStream(() => new MemoryStream(item.Value as byte[]))
+                        Source = ImageSource.FromStream(() => new MemoryStream(imageBytes))
                     };
 
                     slItemResults.Children.Add(img);

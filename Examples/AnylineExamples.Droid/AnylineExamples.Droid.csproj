@@ -61,7 +61,6 @@
   <ItemGroup>
     <Compile Include="AndroidExampleModelWrapper.cs" />
     <Compile Include="DocumentScanResultListener.cs" />
-    <Compile Include="ResultListAdapter.cs" />
     <Compile Include="ActivityListAdapter.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
@@ -73,38 +72,11 @@
     <Compile Include="NFC\MRZScanActivity.cs" />
     <Compile Include="NFC\NFCScanActivity.cs" />
     <Compile Include="MyAnylineResultEventHandler.cs" />
+    <Compile Include="ObjectExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\energy_config_dial.json" />
-    <AndroidAsset Include="Assets\energy_config_analog_digital.json" />
-    <AndroidAsset Include="Assets\id_config_mrz.json" />
-    <AndroidAsset Include="Assets\document_config.json" />
-    <AndroidAsset Include="Assets\mro_config_vin.json" />
-    <AndroidAsset Include="Assets\vehicle_config_license_plate.json" />
-    <AndroidAsset Include="Assets\mro_config_usnr.json" />
-    <AndroidAsset Include="Assets\mro_config_shipping_container_horizontal.json" />
-    <AndroidAsset Include="Assets\others_config_barcode.json" />
-    <AndroidAsset Include="Assets\others_config_voucher_code.json" />
-    <AndroidAsset Include="Assets\others_config_cow_tag.json" />
-    <AndroidAsset Include="Assets\workflows_config_serial_scanning.json" />
-    <AndroidAsset Include="Assets\mro_config_tin.json" />
-    <AndroidAsset Include="Assets\document_view_config.json" />
-    <AndroidAsset Include="Assets\document_scan_view_config.json" />
-    <AndroidAsset Include="Assets\workflows_config_parallel_scanning.json" />
-    <AndroidAsset Include="Assets\id_config_universal.json" />
-    <AndroidAsset Include="Assets\iban_view_config.json" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
-    <AndroidAsset Include="Assets\id_config_arabic.json" />
-    <AndroidAsset Include="Assets\id_config_jlp.json" />
-    <AndroidAsset Include="Assets\mro_config_shipping_container_vertical.json" />
-    <AndroidAsset Include="Assets\id_config_cyrillic.json" />
-    <AndroidAsset Include="Assets\vehicle_config_license_plate_africa.json" />
-    <AndroidAsset Include="Assets\vehicle_config_license_plate_us.json" />
-    <AndroidAsset Include="Assets\mro_config_tin_dot.json" />
-    <AndroidAsset Include="Assets\mro_config_tin_universal.json" />
-    <AndroidAsset Include="Assets\commercial_tire_id.json" />
-    <AndroidAsset Include="Assets\tire_size.json" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\activity_doc_scan_ui_main.axml">
@@ -145,6 +117,10 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher_round.png" />
     <AndroidResource Include="Resources\layout\activity_nfc.axml" />
+    <AndroidResource Include="Resources\layout\result_activity.axml">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Anyline.Xamarin.SDK.Droid" Version="43.0.0" />
@@ -175,12 +151,6 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\result_activity.axml">
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\layout\demo_activity_document_scan_view_ui.axml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
@@ -194,6 +164,25 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="NFC\" />
+    <Folder Include="Assets\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\commercial_tire_id_config.json" />
+    <AndroidAsset Include="Assets\horizontal_container_scanner_capture_config.json" />
+    <AndroidAsset Include="Assets\license_plate_af_config.json" />
+    <AndroidAsset Include="Assets\license_plate_eu_config.json" />
+    <AndroidAsset Include="Assets\license_plate_us_config.json" />
+    <AndroidAsset Include="Assets\meter_config.json" />
+    <AndroidAsset Include="Assets\mrz_config.json" />
+    <AndroidAsset Include="Assets\sample_barcode_config.json" />
+    <AndroidAsset Include="Assets\sample_barcode_fullframe_config.json" />
+    <AndroidAsset Include="Assets\serial_number_view_config.json" />
+    <AndroidAsset Include="Assets\tire_size_config.json" />
+    <AndroidAsset Include="Assets\tire_tin_config.json" />
+    <AndroidAsset Include="Assets\universal_id_front_config.json" />
+    <AndroidAsset Include="Assets\vertical_container_scanner_capture_config.json" />
+    <AndroidAsset Include="Assets\vin_ocr_config.json" />
+    <AndroidAsset Include="Assets\vrc_config.json" />
   </ItemGroup>
   <Import Project="..\AnylineExamples.Shared\AnylineExamples.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

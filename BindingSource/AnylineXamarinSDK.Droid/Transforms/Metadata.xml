@@ -236,6 +236,10 @@
   <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IDFieldScanOptions.FieldScanOption']/field[@name='fieldScanOption']" name="managedName">IDFieldScanOption</attr>
   <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='IDFieldScanOptions.FieldScanOption']/field[@name='fieldScanOption']" name="visibility">public</attr>
 
+  <!--Fixes Error CS0115: 'ViewPluginComposite.InvokeChildren()': no suitable method found to override -->
+  <remove-node path="/api/package[@name='io.anyline2.viewplugin']/class[@name='ViewPluginComposite']/method[@name='getChildren' and count(parameter)=0]" />
+
+
   <remove-node path="/api/package[starts-with(@name, 'io.anyline.nfc.bouncycastle')]" />
 
   <remove-node path="/api/package[@name='io.anyline.view']/interface[@name='LicenseKeyExceptionListener']"/>

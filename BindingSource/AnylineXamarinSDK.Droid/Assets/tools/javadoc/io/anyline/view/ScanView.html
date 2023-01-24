@@ -318,13 +318,13 @@ implements <a href="UIChangeListener.html" title="interface in io.anyline.view">
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i8" class="altColor">
-<td class="colFirst"><code>ScanViewPlugin</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getScanViewPlugin(int)">getScanViewPlugin</a></span>&#8203;(int&nbsp;index)</code></th>
+<td class="colFirst"><code><a href="ScanViewPluginConfig.html" title="class in io.anyline.view">ScanViewPluginConfig</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getScanViewPluginConfig()">getScanViewPluginConfig</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i9" class="rowColor">
-<td class="colFirst"><code><a href="ScanViewPluginConfig.html" title="class in io.anyline.view">ScanViewPluginConfig</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getScanViewPluginConfig()">getScanViewPluginConfig</a></span>()</code></th>
+<td class="colFirst"><code>ViewPluginComposite</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getViewPluginComposite()">getViewPluginComposite</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i10" class="altColor">
@@ -563,6 +563,16 @@ implements <a href="UIChangeListener.html" title="interface in io.anyline.view">
 </dl>
 </li>
 </ul>
+<a id="getScanViewPlugin()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getScanViewPlugin</h4>
+<pre class="methodSignature">@Nullable
+public&nbsp;ScanViewPlugin&nbsp;getScanViewPlugin()</pre>
+</li>
+</ul>
 <a id="setScanViewPlugin(io.anyline.view.AbstractBaseScanViewPlugin)">
 <!--   -->
 </a>
@@ -577,22 +587,14 @@ implements <a href="UIChangeListener.html" title="interface in io.anyline.view">
 </dl>
 </li>
 </ul>
-<a id="getScanViewPlugin()">
+<a id="getViewPluginComposite()">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getScanViewPlugin</h4>
-<pre class="methodSignature">public&nbsp;ScanViewPlugin&nbsp;getScanViewPlugin()</pre>
-</li>
-</ul>
-<a id="getScanViewPlugin(int)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getScanViewPlugin</h4>
-<pre class="methodSignature">public&nbsp;ScanViewPlugin&nbsp;getScanViewPlugin&#8203;(int&nbsp;index)</pre>
+<h4>getViewPluginComposite</h4>
+<pre class="methodSignature">@Nullable
+public&nbsp;ViewPluginComposite&nbsp;getViewPluginComposite()</pre>
 </li>
 </ul>
 <a id="getBrightnessFeedBack()">
@@ -707,11 +709,18 @@ implements <a href="UIChangeListener.html" title="interface in io.anyline.view">
 <li class="blockList">
 <h4>init</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;init&#8203;(@NonNull
-                 java.lang.String&nbsp;configFileName)</pre>
+                 java.lang.String&nbsp;configFileName)
+          throws java.io.IOException,
+                 AnylineException,
+                 org.json.JSONException</pre>
 <div class="block">Initializes the ScanView with the file path to a JSON config file and a license key.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>configFileName</code> - the file path</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.io.IOException</code></dd>
+<dd><code>AnylineException</code></dd>
+<dd><code>org.json.JSONException</code></dd>
 </dl>
 </li>
 </ul>
@@ -731,11 +740,16 @@ implements <a href="UIChangeListener.html" title="interface in io.anyline.view">
 <li class="blockList">
 <h4>init</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;init&#8203;(@NonNull
-                 org.json.JSONObject&nbsp;configJsonObject)</pre>
+                 org.json.JSONObject&nbsp;configJsonObject)
+          throws AnylineException,
+                 org.json.JSONException</pre>
 <div class="block">Initializes the ScanView with the file path to a JSON config file and a license key.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>configJsonObject</code> - the config json Object</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>AnylineException</code></dd>
+<dd><code>org.json.JSONException</code></dd>
 </dl>
 </li>
 </ul>
@@ -759,7 +773,16 @@ implements <a href="UIChangeListener.html" title="interface in io.anyline.view">
 <ul class="blockList">
 <li class="blockList">
 <h4>setScanConfig</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setScanConfig&#8203;(java.lang.String&nbsp;pathFile)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setScanConfig&#8203;(java.lang.String&nbsp;pathFile)
+                   throws AnylineException,
+                          org.json.JSONException,
+                          java.io.IOException</pre>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>AnylineException</code></dd>
+<dd><code>org.json.JSONException</code></dd>
+<dd><code>java.io.IOException</code></dd>
+</dl>
 </li>
 </ul>
 <a id="setScanConfig(org.json.JSONObject)">
@@ -768,7 +791,14 @@ implements <a href="UIChangeListener.html" title="interface in io.anyline.view">
 <ul class="blockList">
 <li class="blockList">
 <h4>setScanConfig</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setScanConfig&#8203;(org.json.JSONObject&nbsp;jsonObject)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setScanConfig&#8203;(org.json.JSONObject&nbsp;jsonObject)
+                   throws AnylineException,
+                          org.json.JSONException</pre>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>AnylineException</code></dd>
+<dd><code>org.json.JSONException</code></dd>
+</dl>
 </li>
 </ul>
 <a id="onCutoutChanged(io.anyline.view.CutoutRect)">

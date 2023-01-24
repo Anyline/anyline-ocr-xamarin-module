@@ -189,7 +189,7 @@ namespace AnylineXamarinAppiOS
         public void NfcSucceededWithResult(ALNFCResult nfcResult)
         {
             BeginInvokeOnMainThread(() => { 
-                var resultViewController = new ResultViewController(nfcResult);
+                var resultViewController = new ResultTableViewController(nfcResult);
                 NavigationController?.PushViewController(resultViewController, false);
             });
         }

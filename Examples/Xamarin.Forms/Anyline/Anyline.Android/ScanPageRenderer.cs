@@ -58,7 +58,6 @@ namespace Anyline.Droid
             {
                 if (view == null)
                 {
-
                     var activity = Context as Activity;
                     view = activity.LayoutInflater.Inflate(Resource.Layout.ScanLayout, this, false);
 
@@ -88,7 +87,6 @@ namespace Anyline.Droid
         {
             var scanResult = data as IO.Anyline2.ScanResult;
             (Element as ScanExamplePage).ShowResultsAction?.Invoke(scanResult.CreatePropertyDictionary());
-
         }
 
         private void ScanView_CameraOpened(object sender, IO.Anyline.Camera.CameraOpenedEventArgs e)

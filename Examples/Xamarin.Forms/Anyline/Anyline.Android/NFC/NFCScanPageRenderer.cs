@@ -13,12 +13,13 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using IO.Anyline.Models;
 using System.IO;
+using IO.Anyline.Plugin.Result;
 
 [assembly: ExportRenderer(typeof(NFCScanExamplePage), typeof(NFCScanPageRenderer))]
 
 namespace Anyline.Droid.NFC
 {
-    public class NFCScanPageRenderer : PageRenderer, IScanResultListener
+    public class NFCScanPageRenderer : PageRenderer, IO.Anyline2.IEvent
     {
         private Context context;
         private Android.Views.View view;
@@ -58,7 +59,7 @@ namespace Anyline.Droid.NFC
                     // Activates Face Detection if the MRZ Scanner was initialized
                     //(((scanView.ScanViewPlugin as IdScanViewPlugin)?.ScanPlugin as IdScanPlugin)?.IdConfig as MrzConfig)?.EnableFaceDetection(true);
 
-                    //scanView.ScanViewPlugin.AddScanResultListener(this);
+                    scanView.ScanViewPlugin.ResultReceived = this;
 
                     scanView.CameraOpened += ScanView_CameraOpened;
                 }
@@ -76,44 +77,33 @@ namespace Anyline.Droid.NFC
                 scanView.Start();
         }
 
-        public void OnResult(Java.Lang.Object result)
+        public void EventReceived(Java.Lang.Object result)
         {
-            // when using Universal ID
-
-            //resultData = ((result as ScanResult).Result as Identification).ResultData;
-            //string documentNumber = resultData["documentNumber"].Trim();
-            //string dateOfBirth = resultData["dateOfBirth"];
-            //string expirationDate = resultData["dateOfExpiry"];
-
-            // when using MRZ Scanner
-            var scanResult = result as ScanResult;
-            var mrzIdentification = scanResult.Result as MrzIdentification;
+            var scanResult = result as IO.Anyline2.ScanResult;
+            PluginResult pluginResult = scanResult.PluginResult;
+            var mrzResult = pluginResult.MrzResult;
 
             // Sends the MRZ results back to the Xamarin Forms application
             MyMRZScanResults myMRZScanResults = new MyMRZScanResults
             {
-                GivenNames = mrzIdentification.GivenNames,
-                Surname = mrzIdentification.Surname,
-                CroppedImage = ConvertAnylineImageToByteArray(scanResult.CutoutImage),
-                FullImage = ConvertAnylineImageToByteArray(scanResult.FullImage),
-                FaceImage = ConvertBitmapToByteArray(mrzIdentification.FaceImage),
-                PassportNumber = mrzIdentification.DocumentNumber.Trim(),
-                DateOfBirth = mrzIdentification.DateOfBirth,
-                DateOfExpiry = mrzIdentification.DateOfExpiry
+                GivenNames = mrzResult.GivenNames,
+                Surname = mrzResult.Surname,
+                //CroppedImage = ConvertAnylineImageToByteArray(scanResult.CroppedImage),
+                FullImage = ConvertAnylineImageToByteArray(scanResult.Image),
+                //FaceImage = ConvertBitmapToByteArray(mrzResult.FaceImage),
+                PassportNumber = mrzResult.DocumentNumber.Trim(),
+                DateOfBirth = mrzResult.DateOfBirth,
+                DateOfExpiry = mrzResult.DateOfExpiry
             };
             MessagingCenter.Send(App.Current, "MRZ_READING_DONE", myMRZScanResults);
 
-            StartReadingNFCChip(mrzIdentification.DocumentNumber, mrzIdentification.DateOfBirthObject, mrzIdentification.DateOfExpiryObject);
+            StartReadingNFCChip(mrzResult.DocumentNumber, mrzResult.DateOfBirth, mrzResult.DateOfExpiry);
         }
 
-        private void StartReadingNFCChip(string documentNumber, Java.Util.Date dateOfBirthObject, Java.Util.Date dateOfExpiryObject)
+        private void StartReadingNFCChip(string documentNumber, string dateOfBirth, string dateOfExpiry)
         {
             // Gets the data necessary for the NFC reading
             string passportNumber = documentNumber.Trim();
-            Java.Util.Date dateOfBirth = dateOfBirthObject;
-            Java.Util.Date expirationDate = dateOfExpiryObject;
-            var dateFormat = new Android.Icu.Text.SimpleDateFormat("yyMMdd");
-
             // The passport number passed to the NFC chip must have a trailing < if there is one in the MRZ string.
             string passportNumberForNFC = string.Copy(passportNumber);
 
@@ -128,16 +118,16 @@ namespace Anyline.Droid.NFC
             var activity = this.Context as Activity;
             var nfcActivity = new Intent(activity, typeof(NFCScanActivity));
             nfcActivity.PutExtra("pn", passportNumberForNFC);
-            nfcActivity.PutExtra("db", dateFormat.Format(dateOfBirth));
-            nfcActivity.PutExtra("de", dateFormat.Format(expirationDate));
+            nfcActivity.PutExtra("db", dateOfBirth);
+            nfcActivity.PutExtra("de", dateOfExpiry);
             activity.StartActivity(nfcActivity);
         }
 
-        private byte[] ConvertAnylineImageToByteArray(AnylineImage anylineImage)
+        private byte[] ConvertAnylineImageToByteArray(IO.Anyline2.Image.AnylineImage anylineImage)
         {
             if (anylineImage == null) return null;
 
-            var bitmap = anylineImage.Clone().Bitmap;
+            var bitmap = anylineImage.Bitmap;
 
             MemoryStream stream = new MemoryStream();
             bitmap.Compress(Bitmap.CompressFormat.Jpeg, 100, stream);

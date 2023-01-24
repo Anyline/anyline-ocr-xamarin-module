@@ -1,6 +1,7 @@
 ﻿using AnylineXamarinSDK.iOS;
 using CoreGraphics;
 using Foundation;
+using SceneKit;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,8 +15,8 @@ namespace AnylineExamples.iOS
         string jsonPath;
         bool initialized = false;
 
-        ALScanView scanView;
-        ScanResultDelegate resultDelegate;
+        ALScanView _scanView;
+        ScanResultDelegate _resultDelegate;
         string configPath = null;
 
         public ScanViewController(string name, string jsonPath)
@@ -23,7 +24,7 @@ namespace AnylineExamples.iOS
             Title = name;
             this.jsonPath = jsonPath;
 
-            resultDelegate = new ScanResultDelegate(this);
+            _resultDelegate = new ScanResultDelegate(this);
         }
 
 
@@ -40,7 +41,11 @@ namespace AnylineExamples.iOS
                 configPath = NSBundle.MainBundle.PathForResource(@"" + jsonPath.Replace(".json", ""), @"json");
 
                 // This is the main intialization method that will create our use case depending on the JSON configuration.
-                //scanView = ALScanView.ScanViewForFrame(View.Bounds, configPath, resultDelegate, out error);
+                _scanView = ALScanViewFactory.WithConfigFilePath(configPath, _resultDelegate, out error);
+
+
+                (_scanView.ScanViewPlugin as ALScanViewPlugin).ScanPlugin.Delegate = _resultDelegate;
+
 
                 if (error != null)
                 {
@@ -56,18 +61,18 @@ namespace AnylineExamples.iOS
                 //    barcodeSVP.BarcodeScanPlugin.ParsePDF417 = true;
                 //}
 
-                View.AddSubview(scanView);
+                View.AddSubview(_scanView);
 
                 // Pin the leading edge of the scan view to the parent view
 
-                scanView.TranslatesAutoresizingMaskIntoConstraints = false;
+                _scanView.TranslatesAutoresizingMaskIntoConstraints = false;
 
-                scanView.LeadingAnchor.ConstraintEqualTo(View.LeadingAnchor).Active = true;
-                scanView.TrailingAnchor.ConstraintEqualTo(View.TrailingAnchor).Active = true;
-                scanView.TopAnchor.ConstraintEqualTo(View.SafeAreaLayoutGuide.TopAnchor).Active = true;
-                scanView.BottomAnchor.ConstraintEqualTo(View.SafeAreaLayoutGuide.BottomAnchor).Active = true;
+                _scanView.LeadingAnchor.ConstraintEqualTo(View.LeadingAnchor).Active = true;
+                _scanView.TrailingAnchor.ConstraintEqualTo(View.TrailingAnchor).Active = true;
+                _scanView.TopAnchor.ConstraintEqualTo(View.SafeAreaLayoutGuide.TopAnchor).Active = true;
+                _scanView.BottomAnchor.ConstraintEqualTo(View.SafeAreaLayoutGuide.BottomAnchor).Active = true;
 
-                scanView.StartCamera();
+                _scanView.StartCamera();
 
                 initialized = true;
             }
@@ -124,7 +129,7 @@ namespace AnylineExamples.iOS
 
             BeginInvokeOnMainThread(() =>
             {
-                //var success = scanView.ScanViewPlugin.StartAndReturnError(out error);
+                var success = _scanView.ScanViewPlugin.StartWithError(out error);
 
                 //if (!success)
                 //{
@@ -147,11 +152,10 @@ namespace AnylineExamples.iOS
 
             initialized = false;
 
-            if (scanView?.ScanViewPlugin == null)
+            if (_scanView?.ScanViewPlugin == null)
                 return;
 
-            NSError error;
-            //scanView.ScanViewPlugin.StopAndReturnError(out error);
+            _scanView.ScanViewPlugin.Stop();
         }
 
         public override void ViewDidDisappear(bool animated)
@@ -162,9 +166,9 @@ namespace AnylineExamples.iOS
 
         new void Dispose()
         {
-            scanView?.RemoveFromSuperview();
-            scanView?.Dispose();
-            scanView = null;
+            _scanView?.RemoveFromSuperview();
+            _scanView?.Dispose();
+            _scanView = null;
             base.Dispose();
         }
         #endregion

@@ -558,6 +558,22 @@
 <attr path="/api/package[@name='io.anyline.plugin.licenseplate']/class[@name='LicensePlateScanViewPlugin']/constructor[@name='LicensePlateScanViewPlugin' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[3][@type='java.lang.String']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='io.anyline.plugin.licenseplate']/class[@name='LicensePlateScanViewPlugin']/constructor[@name='LicensePlateScanViewPlugin' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[3][@type='java.lang.String']]/parameter[2]" name="managedName">config</attr>
 <attr path="/api/package[@name='io.anyline.plugin.licenseplate']/class[@name='LicensePlateScanViewPlugin']/constructor[@name='LicensePlateScanViewPlugin' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='io.anyline.view.ScanViewPluginConfig'] and parameter[3][@type='java.lang.String']]/parameter[3]" name="managedName">id</attr>
+<!-- File: IO.Anyline2.View.FlashConfig.cs -->
+<!-- FlashConfig.FlashAlignment.fromInt(int) -->
+<!-- FlashConfig.FlashAlignment.fromString(java.lang.String) -->
+<!-- FlashConfig.FlashAlignment.valueOf(java.lang.String) -->
+<!-- FlashConfig.FlashMode.fromInt(int) -->
+<!-- FlashConfig.FlashMode.fromString(java.lang.String) -->
+<!-- FlashConfig.FlashMode.valueOf(java.lang.String) -->
+<!-- FlashConfig.FlashConfig(android.content.Context, org.json.JSONObject) -->
+<!-- FlashConfig.setAlignment(io.anyline2.view.FlashConfig.FlashAlignment) -->
+<!-- FlashConfig.setImageAutoId(int) -->
+<!-- FlashConfig.setImageOffId(int) -->
+<!-- FlashConfig.setImageOnId(int) -->
+<!-- FlashConfig.setMode(io.anyline2.view.FlashConfig.FlashMode) -->
+<!-- FlashConfig.setOffsetXInDp(int) -->
+<!-- FlashConfig.setOffsetYInDp(int) -->
+<!-- FlashConfig.setPaddingInDp(int) -->
 <!-- File: IO.Anyline.View.ScanViewPluginConfig.cs -->
 <!-- ScanViewPluginConfig.ScanViewPluginConfig(android.content.Context, java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanViewPluginConfig']/constructor[@name='ScanViewPluginConfig' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">context</attr>
@@ -701,8 +717,10 @@
 <attr path="/api/package[@name='io.anyline.util']/class[@name='ImageToCutoutCropper']/method[@name='cropImage' and count(parameter)=5 and parameter[1][@type='io.anyline.models.AnylineYuvImage'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int']]/parameter[4]" name="managedName">imageCropWidth</attr>
 <attr path="/api/package[@name='io.anyline.util']/class[@name='ImageToCutoutCropper']/method[@name='cropImage' and count(parameter)=5 and parameter[1][@type='io.anyline.models.AnylineYuvImage'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int']]/parameter[5]" name="managedName">imageCropHeight</attr>
 <!-- File: IO.Anyline2.Viewplugin.ViewPluginBase.cs -->
-<!-- ViewPluginBase.subscribeToImageProvider(io.anyline2.image.ImageProvider) -->
+<!-- ViewPluginBase.setUIChangeListener(io.anyline2.view.UIChangeListener) -->
+<!-- ViewPluginBase.subscribeToImageProvider(io.anyline2.image.ImageProvider) -->
 <!-- ViewPluginBase.unsubscribeFromImageProvider(io.anyline2.image.ImageProvider) -->
+<!-- ViewPluginBase.setUIChangeListener(io.anyline2.view.UIChangeListener) -->
 <!-- ViewPluginBase.subscribeToImageProvider(io.anyline2.image.ImageProvider) -->
 <!-- ViewPluginBase.unsubscribeFromImageProvider(io.anyline2.image.ImageProvider) -->
 <!-- File: IO.Anyline.Plugin.Document.DocumentScanState.cs -->
@@ -881,6 +899,12 @@
 <!-- EM.trainEM(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
 <!-- EM.trainM(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
 <!-- EM.trainM(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
+<!-- File: IO.Anyline2.Viewplugin.ViewPluginComposite.cs -->
+<!-- ViewPluginComposite.ProcessingMode.valueOf(java.lang.String) -->
+<!-- ViewPluginComposite.ViewPluginComposite(org.json.JSONObject) -->
+<!-- ViewPluginComposite.setUIChangeListener(io.anyline2.view.UIChangeListener) -->
+<!-- ViewPluginComposite.subscribeToImageProvider(io.anyline2.image.ImageProvider) -->
+<!-- ViewPluginComposite.unsubscribeFromImageProvider(io.anyline2.image.ImageProvider) -->
 <!-- File: IO.Anyline.Plugin.Barcode.BarcodeScanViewPlugin.cs -->
 <!-- BarcodeScanViewPlugin.BarcodeScanViewPlugin(android.content.Context, io.anyline.plugin.AbstractScanPlugin, io.anyline.view.ScanViewPluginConfig) -->
 <attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='BarcodeScanViewPlugin']/constructor[@name='BarcodeScanViewPlugin' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='io.anyline.plugin.AbstractScanPlugin'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig']]/parameter[1]" name="managedName">context</attr>
@@ -957,6 +981,9 @@
 <!-- MatOfRect.fromArray(io.anyline.opencv.core.Rect...) -->
 <!-- MatOfRect.fromList(java.util.List&lt;io.anyline.opencv.core.Rect&gt;) -->
 <!-- MatOfRect.fromNativeAddr(long) -->
+<!-- File: IO.Anyline2.View.ScanViewUtil.cs -->
+<!-- ScanViewUtil.objectToOutline(java.lang.Object) -->
+<!-- ScanViewUtil.openCvPointListToPointFList(java.util.List&lt;io.anyline.opencv.core.Point&gt;) -->
 <!-- File: IO.Anyline.Opencv.Android.FpsMeter.cs -->
 <!-- FpsMeter.draw(android.graphics.Canvas, float, float) -->
 <!-- FpsMeter.setResolution(int, int) -->
@@ -1150,8 +1177,6 @@
 <!-- ScanView.drawVisualFeedback(java.lang.Object, java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='drawVisualFeedback' and count(parameter)=2 and parameter[1][@type='java.lang.Object'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">reportedObject</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='drawVisualFeedback' and count(parameter)=2 and parameter[1][@type='java.lang.Object'] and parameter[2][@type='java.lang.String']]/parameter[2]" name="managedName">id</attr>
-<!-- ScanView.getScanViewPlugin(int) -->
-<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='getScanViewPlugin' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">index</attr>
 <!-- ScanView.init(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='init' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">configFileName</attr>
 <!-- ScanView.init(org.json.JSONObject) -->
@@ -1181,6 +1206,8 @@
 <!-- ScanView.setScanViewPlugin(io.anyline.view.AbstractBaseScanViewPlugin&lt;?&gt;) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='setScanViewPlugin' and count(parameter)=1 and parameter[1][@type='io.anyline.view.AbstractBaseScanViewPlugin&lt;?&gt;']]/parameter[1]" name="managedName">scanViewPlugin</attr>
 <!-- ScanView.setupCameraController(android.content.Context) -->
+<!-- File: IO.Anyline2.View.ScanViewConfig.cs -->
+<!-- ScanViewConfig.ScanViewConfig(android.content.Context, org.json.JSONObject) -->
 <!-- File: IO.Anyline.Opencv.Android.OpenCVLoader.cs -->
 <!-- OpenCVLoader.initDebug(boolean) -->
 <!-- File: IO.Anyline.View.LightLevelHelper.cs -->
@@ -1219,10 +1246,12 @@
 <!-- ALContourVector.ALContourVector(org.json.JSONArray) -->
 <!-- ALContourVector.ALContourVector(org.json.JSONObject) -->
 <!-- File: IO.Anyline2.Viewplugin.ScanViewPlugin.cs -->
-<!-- ScanViewPlugin.ScanViewPlugin(android.content.Context, io.anyline2.viewplugin.ScanViewPluginConfig) -->
-<!-- ScanViewPlugin.ScanViewPlugin(android.content.Context, org.json.JSONObject) -->
+<!-- ScanViewPlugin.ScanViewPlugin(io.anyline2.viewplugin.ScanViewPluginConfig) -->
+<!-- ScanViewPlugin.ScanViewPlugin(org.json.JSONObject) -->
+<!-- ScanViewPlugin.ScanViewPlugin(org.json.JSONObject, io.anyline2.legacy.trainer.AssetContext) -->
 <!-- ScanViewPlugin.setROI(io.anyline2.model.ALRect) -->
-<!-- ScanViewPlugin.initScanPlugin(android.content.Context, org.json.JSONObject) -->
+<!-- ScanViewPlugin.calcCutOutAndImageCropBounds(android.content.Context, int, int, int, int, float) -->
+<!-- ScanViewPlugin.setUIChangeListener(io.anyline2.view.UIChangeListener) -->
 <!-- ScanViewPlugin.subscribeToImageProvider(io.anyline2.image.ImageProvider) -->
 <!-- ScanViewPlugin.unsubscribeFromImageProvider(io.anyline2.image.ImageProvider) -->
 <!-- File: IO.Anyline.Camera.VisualFeedbackConfig.cs -->
@@ -1328,6 +1357,18 @@
 <!-- DocumentScanPlugin.transformPicture(io.anyline.models.AnylineImage, java.util.List&lt;android.graphics.PointF&gt;) -->
 <attr path="/api/package[@name='io.anyline.plugin.document']/class[@name='DocumentScanPlugin']/method[@name='transformPicture' and count(parameter)=2 and parameter[1][@type='io.anyline.models.AnylineImage'] and parameter[2][@type='java.util.List&lt;android.graphics.PointF&gt;']]/parameter[1]" name="managedName">fullImage</attr>
 <attr path="/api/package[@name='io.anyline.plugin.document']/class[@name='DocumentScanPlugin']/method[@name='transformPicture' and count(parameter)=2 and parameter[1][@type='io.anyline.models.AnylineImage'] and parameter[2][@type='java.util.List&lt;android.graphics.PointF&gt;']]/parameter[2]" name="managedName">corners</attr>
+<!-- File: IO.Anyline2.Camera.CameraView.cs -->
+<!-- CameraView.CameraView(android.content.Context) -->
+<attr path="/api/package[@name='io.anyline2.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=1 and parameter[1][@type='android.content.Context']]/parameter[1]" name="managedName">context</attr>
+<!-- CameraView.CameraView(android.content.Context, android.util.AttributeSet) -->
+<attr path="/api/package[@name='io.anyline2.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]/parameter[1]" name="managedName">context</attr>
+<attr path="/api/package[@name='io.anyline2.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]/parameter[2]" name="managedName">attrs</attr>
+<!-- CameraView.CameraView(android.content.Context, android.util.AttributeSet, int) -->
+<attr path="/api/package[@name='io.anyline2.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[1]" name="managedName">context</attr>
+<attr path="/api/package[@name='io.anyline2.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[2]" name="managedName">attrs</attr>
+<attr path="/api/package[@name='io.anyline2.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[3]" name="managedName">defStyleAttr</attr>
+<!-- CameraView.addImageReceivedEventListener(io.anyline2.Event&lt;io.anyline2.image.AnylineImage&gt;) -->
+<!-- CameraView.removeImageReceivedEventListener(io.anyline2.Event&lt;io.anyline2.image.AnylineImage&gt;) -->
 <!-- File: IO.Anyline.Plugin.Config.LayoutInsuranceCard.cs -->
 <!-- LayoutInsuranceCard.setAuthority(io.anyline.plugin.config.UniversalIdField) -->
 <attr path="/api/package[@name='io.anyline.plugin.config']/class[@name='LayoutInsuranceCard']/method[@name='setAuthority' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.config.UniversalIdField']]/parameter[1]" name="managedName">authority</attr>
@@ -1467,7 +1508,13 @@
 <!-- DTrees.setUse1SERule(boolean) -->
 <!-- DTrees.setUseSurrogates(boolean) -->
 <!-- File: IO.Anyline2.ContextUtils.cs -->
-<!-- File: IO.Anyline.Plugin.Result.TireSizeResult.cs -->
+<!-- File: IO.Anyline2.View.IUIChangeListener.cs -->
+<!-- UIChangeListener.delayScanTime(io.anyline2.viewplugin.ScanViewPlugin) -->
+<!-- UIChangeListener.drawVisualFeedback(io.anyline2.viewplugin.ScanViewPlugin, java.lang.Object) -->
+<!-- UIChangeListener.onBrightnessUpdate(int) -->
+<!-- UIChangeListener.onCutoutChanged(java.util.List&lt;android.util.Pair&lt;io.anyline2.viewplugin.ScanViewPlugin, io.anyline2.view.CutoutRect&gt;&gt;) -->
+<!-- UIChangeListener.onCutoutVisibility(io.anyline2.viewplugin.ScanViewPlugin, boolean) -->
+<!-- File: IO.Anyline.Plugin.Result.TireSizeResult.cs -->
 <!-- TireSizeResult.setCommercialTire(io.anyline.plugin.result.TireSizeResultField) -->
 <attr path="/api/package[@name='io.anyline.plugin.result']/class[@name='TireSizeResult']/method[@name='setCommercialTire' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.result.TireSizeResultField']]/parameter[1]" name="managedName">commercialTire</attr>
 <!-- TireSizeResult.setConstruction(io.anyline.plugin.result.TireSizeResultField) -->
@@ -1554,6 +1601,9 @@
 <attr path="/api/package[@name='io.anyline.camera']/class[@name='CameraView']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[4]" name="managedName">bottom</attr>
 <attr path="/api/package[@name='io.anyline.camera']/class[@name='CameraView']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[5]" name="managedName">scanViewWidth</attr>
 <attr path="/api/package[@name='io.anyline.camera']/class[@name='CameraView']/method[@name='takeHighResolutionImage' and count(parameter)=6 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='int']]/parameter[6]" name="managedName">scanViewHeight</attr>
+<!-- File: IO.Anyline2.Viewplugin.IIntegratorScanViewPluginFeedback.cs -->
+<!-- IntegratorScanViewPluginFeedback.onBrightnessUpdated(int) -->
+<!-- IntegratorScanViewPluginFeedback.onDrawVisualFeedback(java.util.ArrayList&lt;java.lang.Integer&gt;, java.lang.String) -->
 <!-- File: IO.Anyline.View.ParallelScanViewComposite.cs -->
 <!-- ParallelScanViewComposite.ParallelScanViewComposite(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ParallelScanViewComposite']/constructor[@name='ParallelScanViewComposite' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">id</attr>
@@ -1745,6 +1795,67 @@
 <attr path="/api/package[@name='io.anyline.plugin.result']/class[@name='Arabic']/method[@name='setConfidence' and count(parameter)=1 and parameter[1][@type='java.lang.Integer']]/parameter[1]" name="managedName">confidence</attr>
 <!-- Arabic.setText(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.plugin.result']/class[@name='Arabic']/method[@name='setText' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">text</attr>
+<!-- File: IO.Anyline2.View.AnylineWebView.cs -->
+<!-- AnylineWebView.AnylineWebView(android.content.Context) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='AnylineWebView']/constructor[@name='AnylineWebView' and count(parameter)=1 and parameter[1][@type='android.content.Context']]/parameter[1]" name="managedName">context</attr>
+<!-- AnylineWebView.drawDocument(java.util.List&lt;android.graphics.PointF&gt;, java.lang.String) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='AnylineWebView']/method[@name='drawDocument' and count(parameter)=2 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">reportedShape</attr>
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='AnylineWebView']/method[@name='drawDocument' and count(parameter)=2 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[2][@type='java.lang.String']]/parameter[2]" name="managedName">id</attr>
+<!-- AnylineWebView.drawFeedback(java.util.List&lt;android.graphics.PointF&gt;, io.anyline2.model.ALRect, float, float, java.lang.String, java.lang.String, int, int, io.anyline2.viewplugin.ScanFeedbackConfig.ScanFeedbackStyle, android.graphics.Rect) -->
+<!-- AnylineWebView.getScaleWebView(android.webkit.WebView) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='AnylineWebView']/method[@name='getScaleWebView' and count(parameter)=1 and parameter[1][@type='android.webkit.WebView']]/parameter[1]" name="managedName">webView</attr>
+<!-- AnylineWebView.getViewRelativePointListFromCutoutRelativeShape(java.util.List&lt;android.graphics.PointF&gt;, java.lang.String, io.anyline2.model.ALRect, int, int, float, android.graphics.Rect, float) -->
+<!-- AnylineWebView.initConfig(io.anyline2.viewplugin.ViewPluginBase) -->
+<!-- AnylineWebView.loadJavascript(java.lang.String) -->
+<!-- AnylineWebView.setCameraView(io.anyline.camera.CameraView) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='AnylineWebView']/method[@name='setCameraView' and count(parameter)=1 and parameter[1][@type='io.anyline.camera.CameraView']]/parameter[1]" name="managedName">cameraView</attr>
+<!-- AnylineWebView.setRectRelativeToCutout(android.graphics.RectF, float, io.anyline.opencv.core.Rect, float, java.lang.String, io.anyline.opencv.core.Rect, int, int, android.graphics.Rect) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='AnylineWebView']/method[@name='setRectRelativeToCutout' and count(parameter)=9 and parameter[1][@type='android.graphics.RectF'] and parameter[2][@type='float'] and parameter[3][@type='io.anyline.opencv.core.Rect'] and parameter[4][@type='float'] and parameter[5][@type='java.lang.String'] and parameter[6][@type='io.anyline.opencv.core.Rect'] and parameter[7][@type='int'] and parameter[8][@type='int'] and parameter[9][@type='android.graphics.Rect']]/parameter[1]" name="managedName">rect</attr>
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='AnylineWebView']/method[@name='setRectRelativeToCutout' and count(parameter)=9 and parameter[1][@type='android.graphics.RectF'] and parameter[2][@type='float'] and parameter[3][@type='io.anyline.opencv.core.Rect'] and parameter[4][@type='float'] and parameter[5][@type='java.lang.String'] and parameter[6][@type='io.anyline.opencv.core.Rect'] and parameter[7][@type='int'] and parameter[8][@type='int'] and parameter[9][@type='android.graphics.Rect']]/parameter[2]" name="managedName">scale</attr>
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='AnylineWebView']/method[@name='setRectRelativeToCutout' and count(parameter)=9 and parameter[1][@type='android.graphics.RectF'] and parameter[2][@type='float'] and parameter[3][@type='io.anyline.opencv.core.Rect'] and parameter[4][@type='float'] and parameter[5][@type='java.lang.String'] and parameter[6][@type='io.anyline.opencv.core.Rect'] and parameter[7][@type='int'] and parameter[8][@type='int'] and parameter[9][@type='android.graphics.Rect']]/parameter[3]" name="managedName">reportedRect</attr>
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='AnylineWebView']/method[@name='setRectRelativeToCutout' and count(parameter)=9 and parameter[1][@type='android.graphics.RectF'] and parameter[2][@type='float'] and parameter[3][@type='io.anyline.opencv.core.Rect'] and parameter[4][@type='float'] and parameter[5][@type='java.lang.String'] and parameter[6][@type='io.anyline.opencv.core.Rect'] and parameter[7][@type='int'] and parameter[8][@type='int'] and parameter[9][@type='android.graphics.Rect']]/parameter[4]" name="managedName">resizeScale</attr>
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='AnylineWebView']/method[@name='setRectRelativeToCutout' and count(parameter)=9 and parameter[1][@type='android.graphics.RectF'] and parameter[2][@type='float'] and parameter[3][@type='io.anyline.opencv.core.Rect'] and parameter[4][@type='float'] and parameter[5][@type='java.lang.String'] and parameter[6][@type='io.anyline.opencv.core.Rect'] and parameter[7][@type='int'] and parameter[8][@type='int'] and parameter[9][@type='android.graphics.Rect']]/parameter[5]" name="managedName">id</attr>
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='AnylineWebView']/method[@name='setRectRelativeToCutout' and count(parameter)=9 and parameter[1][@type='android.graphics.RectF'] and parameter[2][@type='float'] and parameter[3][@type='io.anyline.opencv.core.Rect'] and parameter[4][@type='float'] and parameter[5][@type='java.lang.String'] and parameter[6][@type='io.anyline.opencv.core.Rect'] and parameter[7][@type='int'] and parameter[8][@type='int'] and parameter[9][@type='android.graphics.Rect']]/parameter[6]" name="managedName">cropRect</attr>
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='AnylineWebView']/method[@name='setRectRelativeToCutout' and count(parameter)=9 and parameter[1][@type='android.graphics.RectF'] and parameter[2][@type='float'] and parameter[3][@type='io.anyline.opencv.core.Rect'] and parameter[4][@type='float'] and parameter[5][@type='java.lang.String'] and parameter[6][@type='io.anyline.opencv.core.Rect'] and parameter[7][@type='int'] and parameter[8][@type='int'] and parameter[9][@type='android.graphics.Rect']]/parameter[7]" name="managedName">x</attr>
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='AnylineWebView']/method[@name='setRectRelativeToCutout' and count(parameter)=9 and parameter[1][@type='android.graphics.RectF'] and parameter[2][@type='float'] and parameter[3][@type='io.anyline.opencv.core.Rect'] and parameter[4][@type='float'] and parameter[5][@type='java.lang.String'] and parameter[6][@type='io.anyline.opencv.core.Rect'] and parameter[7][@type='int'] and parameter[8][@type='int'] and parameter[9][@type='android.graphics.Rect']]/parameter[8]" name="managedName">y</attr>
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='AnylineWebView']/method[@name='setRectRelativeToCutout' and count(parameter)=9 and parameter[1][@type='android.graphics.RectF'] and parameter[2][@type='float'] and parameter[3][@type='io.anyline.opencv.core.Rect'] and parameter[4][@type='float'] and parameter[5][@type='java.lang.String'] and parameter[6][@type='io.anyline.opencv.core.Rect'] and parameter[7][@type='int'] and parameter[8][@type='int'] and parameter[9][@type='android.graphics.Rect']]/parameter[9]" name="managedName">cutoutRectOnView</attr>
+<!-- AnylineWebView.setScanDelayTime(double, java.lang.String) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='AnylineWebView']/method[@name='setScanDelayTime' and count(parameter)=2 and parameter[1][@type='double'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">delayTime</attr>
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='AnylineWebView']/method[@name='setScanDelayTime' and count(parameter)=2 and parameter[1][@type='double'] and parameter[2][@type='java.lang.String']]/parameter[2]" name="managedName">id</attr>
+<!-- AnylineWebView.updateContours(java.lang.Object, float, float, java.lang.String, io.anyline.opencv.core.Rect, int, int, android.graphics.Rect) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='AnylineWebView']/method[@name='updateContours' and count(parameter)=8 and parameter[1][@type='java.lang.Object'] and parameter[2][@type='float'] and parameter[3][@type='float'] and parameter[4][@type='java.lang.String'] and parameter[5][@type='io.anyline.opencv.core.Rect'] and parameter[6][@type='int'] and parameter[7][@type='int'] and parameter[8][@type='android.graphics.Rect']]/parameter[1]" name="managedName">contours</attr>
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='AnylineWebView']/method[@name='updateContours' and count(parameter)=8 and parameter[1][@type='java.lang.Object'] and parameter[2][@type='float'] and parameter[3][@type='float'] and parameter[4][@type='java.lang.String'] and parameter[5][@type='io.anyline.opencv.core.Rect'] and parameter[6][@type='int'] and parameter[7][@type='int'] and parameter[8][@type='android.graphics.Rect']]/parameter[2]" name="managedName">scale</attr>
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='AnylineWebView']/method[@name='updateContours' and count(parameter)=8 and parameter[1][@type='java.lang.Object'] and parameter[2][@type='float'] and parameter[3][@type='float'] and parameter[4][@type='java.lang.String'] and parameter[5][@type='io.anyline.opencv.core.Rect'] and parameter[6][@type='int'] and parameter[7][@type='int'] and parameter[8][@type='android.graphics.Rect']]/parameter[3]" name="managedName">resizeScale</attr>
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='AnylineWebView']/method[@name='updateContours' and count(parameter)=8 and parameter[1][@type='java.lang.Object'] and parameter[2][@type='float'] and parameter[3][@type='float'] and parameter[4][@type='java.lang.String'] and parameter[5][@type='io.anyline.opencv.core.Rect'] and parameter[6][@type='int'] and parameter[7][@type='int'] and parameter[8][@type='android.graphics.Rect']]/parameter[4]" name="managedName">id</attr>
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='AnylineWebView']/method[@name='updateContours' and count(parameter)=8 and parameter[1][@type='java.lang.Object'] and parameter[2][@type='float'] and parameter[3][@type='float'] and parameter[4][@type='java.lang.String'] and parameter[5][@type='io.anyline.opencv.core.Rect'] and parameter[6][@type='int'] and parameter[7][@type='int'] and parameter[8][@type='android.graphics.Rect']]/parameter[5]" name="managedName">cropRect</attr>
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='AnylineWebView']/method[@name='updateContours' and count(parameter)=8 and parameter[1][@type='java.lang.Object'] and parameter[2][@type='float'] and parameter[3][@type='float'] and parameter[4][@type='java.lang.String'] and parameter[5][@type='io.anyline.opencv.core.Rect'] and parameter[6][@type='int'] and parameter[7][@type='int'] and parameter[8][@type='android.graphics.Rect']]/parameter[6]" name="managedName">x</attr>
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='AnylineWebView']/method[@name='updateContours' and count(parameter)=8 and parameter[1][@type='java.lang.Object'] and parameter[2][@type='float'] and parameter[3][@type='float'] and parameter[4][@type='java.lang.String'] and parameter[5][@type='io.anyline.opencv.core.Rect'] and parameter[6][@type='int'] and parameter[7][@type='int'] and parameter[8][@type='android.graphics.Rect']]/parameter[7]" name="managedName">y</attr>
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='AnylineWebView']/method[@name='updateContours' and count(parameter)=8 and parameter[1][@type='java.lang.Object'] and parameter[2][@type='float'] and parameter[3][@type='float'] and parameter[4][@type='java.lang.String'] and parameter[5][@type='io.anyline.opencv.core.Rect'] and parameter[6][@type='int'] and parameter[7][@type='int'] and parameter[8][@type='android.graphics.Rect']]/parameter[8]" name="managedName">rectOnVisibleView</attr>
+<!-- AnylineWebView.updateCutouts(java.lang.String, boolean) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='AnylineWebView']/method[@name='updateCutouts' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='boolean']]/parameter[1]" name="managedName">id</attr>
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='AnylineWebView']/method[@name='updateCutouts' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='boolean']]/parameter[2]" name="managedName">visible</attr>
+<!-- AnylineWebView.updateShape(java.util.List&lt;android.graphics.PointF&gt;, io.anyline2.model.ALRect, float, java.lang.String, int, int, android.graphics.Rect, float) -->
+<!-- File: IO.Anyline2.Util.JSUtil.cs -->
+<!-- JSUtil.setupConfig(android.content.Context, java.lang.String, io.anyline2.viewplugin.CutoutConfig, io.anyline2.viewplugin.ScanFeedbackConfig, android.graphics.Rect) -->
+<!-- JSUtil.setupDelayTime(double, java.lang.String) -->
+<attr path="/api/package[@name='io.anyline2.util']/class[@name='JSUtil']/method[@name='setupDelayTime' and count(parameter)=2 and parameter[1][@type='double'] and parameter[2][@type='java.lang.String']]/parameter[1]" name="managedName">delayTime</attr>
+<attr path="/api/package[@name='io.anyline2.util']/class[@name='JSUtil']/method[@name='setupDelayTime' and count(parameter)=2 and parameter[1][@type='double'] and parameter[2][@type='java.lang.String']]/parameter[2]" name="managedName">id</attr>
+<!-- JSUtil.setupMask(io.anyline2.viewplugin.CutoutConfig) -->
+<attr path="/api/package[@name='io.anyline2.util']/class[@name='JSUtil']/method[@name='setupMask' and count(parameter)=1 and parameter[1][@type='io.anyline2.viewplugin.CutoutConfig']]/parameter[1]" name="managedName">cutoutConfig</attr>
+<!-- JSUtil.setupParallelConfig(android.content.Context, java.util.ArrayList&lt;java.lang.String&gt;, java.util.ArrayList&lt;io.anyline2.viewplugin.CutoutConfig&gt;, java.util.ArrayList&lt;io.anyline2.viewplugin.ScanFeedbackConfig&gt;, java.util.ArrayList&lt;android.graphics.Rect&gt;) -->
+<!-- JSUtil.setupSerialConfig(android.content.Context, java.util.ArrayList&lt;java.lang.String&gt;, java.util.ArrayList&lt;io.anyline2.viewplugin.CutoutConfig&gt;, java.util.ArrayList&lt;io.anyline2.viewplugin.ScanFeedbackConfig&gt;, java.util.ArrayList&lt;android.graphics.Rect&gt;) -->
+<!-- JSUtil.updateCutout(java.lang.String, boolean) -->
+<attr path="/api/package[@name='io.anyline2.util']/class[@name='JSUtil']/method[@name='updateCutout' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='boolean']]/parameter[1]" name="managedName">id</attr>
+<attr path="/api/package[@name='io.anyline2.util']/class[@name='JSUtil']/method[@name='updateCutout' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='boolean']]/parameter[2]" name="managedName">visible</attr>
+<!-- JSUtil.updateDocumentColorsFeedback(io.anyline2.viewplugin.ScanFeedbackConfig, java.lang.String) -->
+<!-- JSUtil.updateFeedback(java.util.ArrayList&lt;android.graphics.RectF&gt;, android.content.Context, java.lang.String) -->
+<attr path="/api/package[@name='io.anyline2.util']/class[@name='JSUtil']/method[@name='updateFeedback' and count(parameter)=3 and parameter[1][@type='java.util.ArrayList&lt;android.graphics.RectF&gt;'] and parameter[2][@type='android.content.Context'] and parameter[3][@type='java.lang.String']]/parameter[1]" name="managedName">rectFs</attr>
+<attr path="/api/package[@name='io.anyline2.util']/class[@name='JSUtil']/method[@name='updateFeedback' and count(parameter)=3 and parameter[1][@type='java.util.ArrayList&lt;android.graphics.RectF&gt;'] and parameter[2][@type='android.content.Context'] and parameter[3][@type='java.lang.String']]/parameter[2]" name="managedName">context</attr>
+<attr path="/api/package[@name='io.anyline2.util']/class[@name='JSUtil']/method[@name='updateFeedback' and count(parameter)=3 and parameter[1][@type='java.util.ArrayList&lt;android.graphics.RectF&gt;'] and parameter[2][@type='android.content.Context'] and parameter[3][@type='java.lang.String']]/parameter[3]" name="managedName">id</attr>
+<!-- JSUtil.updateFeedbackShape(java.util.List&lt;android.graphics.PointF&gt;, android.content.Context, java.lang.String) -->
+<attr path="/api/package[@name='io.anyline2.util']/class[@name='JSUtil']/method[@name='updateFeedbackShape' and count(parameter)=3 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[2][@type='android.content.Context'] and parameter[3][@type='java.lang.String']]/parameter[1]" name="managedName">points</attr>
+<attr path="/api/package[@name='io.anyline2.util']/class[@name='JSUtil']/method[@name='updateFeedbackShape' and count(parameter)=3 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[2][@type='android.content.Context'] and parameter[3][@type='java.lang.String']]/parameter[2]" name="managedName">context</attr>
+<attr path="/api/package[@name='io.anyline2.util']/class[@name='JSUtil']/method[@name='updateFeedbackShape' and count(parameter)=3 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;'] and parameter[2][@type='android.content.Context'] and parameter[3][@type='java.lang.String']]/parameter[3]" name="managedName">id</attr>
 <!-- File: IO.Anyline.Opencv.Android.UtilsProviderImpl.cs -->
 <!-- UtilsProviderImpl.bitmapToMat(android.graphics.Bitmap, io.anyline.opencv.core.Mat, boolean) -->
 <!-- UtilsProviderImpl.matToBitmap(io.anyline.opencv.core.Mat, android.graphics.Bitmap) -->
@@ -1778,6 +1889,14 @@
 <!-- MatOfDouble.fromArray(double...) -->
 <!-- MatOfDouble.fromList(java.util.List&lt;java.lang.Double&gt;) -->
 <!-- MatOfDouble.fromNativeAddr(long) -->
+<!-- File: IO.Anyline2.View.AnylineFeedbackView.cs -->
+<!-- AnylineFeedbackView.AnylineFeedbackView(android.content.Context, android.util.AttributeSet) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='AnylineFeedbackView']/constructor[@name='AnylineFeedbackView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]/parameter[1]" name="managedName">context</attr>
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='AnylineFeedbackView']/constructor[@name='AnylineFeedbackView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]/parameter[2]" name="managedName">attrs</attr>
+<!-- AnylineFeedbackView.translateX(float) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='AnylineFeedbackView']/method[@name='translateX' and count(parameter)=1 and parameter[1][@type='float']]/parameter[1]" name="managedName">x</attr>
+<!-- AnylineFeedbackView.translateY(float) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='AnylineFeedbackView']/method[@name='translateY' and count(parameter)=1 and parameter[1][@type='float']]/parameter[1]" name="managedName">y</attr>
 <!-- File: IO.Anyline.Products.AnylineUpdater.cs -->
 <!-- AnylineUpdater.getLocalAssetVersion(io.anyline.trainer.AssetContext) -->
 <!-- AnylineUpdater.update(android.content.Context, io.anyline.trainer.AssetContext, io.anyline.products.IAnylineUpdateDelegate) -->
@@ -2144,6 +2263,25 @@
 <!-- MatOfPoint2f.fromArray(io.anyline.opencv.core.Point...) -->
 <!-- MatOfPoint2f.fromList(java.util.List&lt;io.anyline.opencv.core.Point&gt;) -->
 <!-- MatOfPoint2f.fromNativeAddr(long) -->
+<!-- File: IO.Anyline2.View.CameraConfig.cs -->
+<!-- CameraConfig.CameraConfig(org.json.JSONObject) -->
+<!-- CameraConfig.setDefaultLensFacing(io.anyline.camera.CameraFeatures.LensFacing) -->
+<!-- CameraConfig.setFallbackLensFacings(java.util.EnumSet&lt;io.anyline.camera.CameraFeatures.LensFacing&gt;) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='CameraConfig']/method[@name='setFallbackLensFacings' and count(parameter)=1 and parameter[1][@type='java.util.EnumSet&lt;io.anyline.camera.CameraFeatures.LensFacing&gt;']]/parameter[1]" name="managedName">fallbackLensFacings</attr>
+<!-- CameraConfig.setFocalLength(double) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='CameraConfig']/method[@name='setFocalLength' and count(parameter)=1 and parameter[1][@type='double']]/parameter[1]" name="managedName">focalLength</attr>
+<!-- CameraConfig.setMaxFocalLength(double) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='CameraConfig']/method[@name='setMaxFocalLength' and count(parameter)=1 and parameter[1][@type='double']]/parameter[1]" name="managedName">maxFocalLength</attr>
+<!-- CameraConfig.setMaxZoomRatio(double) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='CameraConfig']/method[@name='setMaxZoomRatio' and count(parameter)=1 and parameter[1][@type='double']]/parameter[1]" name="managedName">maxZoomRatio</attr>
+<!-- CameraConfig.setPreferredPictureHeight(int) -->
+<!-- CameraConfig.setPreferredPictureWidth(int) -->
+<!-- CameraConfig.setPreferredPreviewHeight(int) -->
+<!-- CameraConfig.setPreferredPreviewWidth(int) -->
+<!-- CameraConfig.setZoomGestureEnabled(boolean) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='CameraConfig']/method[@name='setZoomGestureEnabled' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">zoomGestureEnabled</attr>
+<!-- CameraConfig.setZoomRatio(double) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='CameraConfig']/method[@name='setZoomRatio' and count(parameter)=1 and parameter[1][@type='double']]/parameter[1]" name="managedName">zoomRatio</attr>
 <!-- File: IO.Anyline.Nfc.Reader.DESedeReader.cs -->
 <!-- DESedeReader.calculateEncryptionKey(byte[]) -->
 <!-- DESedeReader.calculateMac(byte[], byte[]) -->
@@ -2426,6 +2564,13 @@
 <!-- MatOfDMatch.fromArray(io.anyline.opencv.core.DMatch...) -->
 <!-- MatOfDMatch.fromList(java.util.List&lt;io.anyline.opencv.core.DMatch&gt;) -->
 <!-- MatOfDMatch.fromNativeAddr(long) -->
+<!-- File: IO.Anyline2.Composite.IntegratorParallelScanViewPluginComposite.cs -->
+<!-- IntegratorParallelScanViewPluginComposite.IntegratorParallelScanViewPluginComposite(org.json.JSONObject, org.json.JSONObject, io.anyline2.viewplugin.IntegratorScanViewPluginFeedback) -->
+<!-- IntegratorParallelScanViewPluginComposite.setErrorReceived(io.anyline2.Event&lt;org.json.JSONObject&gt;) -->
+<!-- IntegratorParallelScanViewPluginComposite.setResultsReceived(io.anyline2.Event&lt;java.util.List&lt;io.anyline2.ScanResult&gt;&gt;) -->
+<!-- IntegratorParallelScanViewPluginComposite.setRunSkippedReceived(io.anyline2.Event&lt;org.json.JSONObject&gt;) -->
+<!-- IntegratorParallelScanViewPluginComposite.setScanInfoReceived(io.anyline2.Event&lt;org.json.JSONObject&gt;) -->
+<!-- IntegratorParallelScanViewPluginComposite.setVisualFeedbackReceived(io.anyline2.Event&lt;org.json.JSONObject&gt;) -->
 <!-- File: IO.Anyline.Opencv.Core.DMatch.cs -->
 <!-- DMatch.DMatch(int, int, float) -->
 <!-- DMatch.DMatch(int, int, int, float) -->
@@ -2450,7 +2595,9 @@
 <!-- ScanFeedbackConfig.ScanFeedbackStyle.valueOf(java.lang.String) -->
 <!-- ScanFeedbackConfig.ScanFeedbackConfig(org.json.JSONObject) -->
 <!-- ScanFeedbackConfig.getAnimationStyle(java.lang.String) -->
+<!-- ScanFeedbackConfig.getCornerRadiusInPix(android.content.Context) -->
 <!-- ScanFeedbackConfig.getScanFeedbackStyle(java.lang.String) -->
+<!-- ScanFeedbackConfig.getStrokeWidthInPix(android.content.Context) -->
 <!-- File: IO.Anyline.Camera.SimpleZoomHandler.cs -->
 <!-- SimpleZoomHandler.IZoomHandlerListener.onZoomChanged(int) -->
 <attr path="/api/package[@name='io.anyline.camera']/interface[@name='SimpleZoomHandler.IZoomHandlerListener']/method[@name='onZoomChanged' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">newZoom</attr>
@@ -2458,6 +2605,45 @@
 <attr path="/api/package[@name='io.anyline.camera']/class[@name='SimpleZoomHandler']/method[@name='notifyZoomChanged' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">zoom</attr>
 <!-- SimpleZoomHandler.setZoomHandlerListener(io.anyline.camera.SimpleZoomHandler.IZoomHandlerListener) -->
 <attr path="/api/package[@name='io.anyline.camera']/class[@name='SimpleZoomHandler']/method[@name='setZoomHandlerListener' and count(parameter)=1 and parameter[1][@type='io.anyline.camera.SimpleZoomHandler.IZoomHandlerListener']]/parameter[1]" name="managedName">zoomHandlerListener</attr>
+<!-- File: IO.Anyline2.View.ScanView.cs -->
+<!-- ScanView.ScanView(android.content.Context) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='ScanView']/constructor[@name='ScanView' and count(parameter)=1 and parameter[1][@type='android.content.Context']]/parameter[1]" name="managedName">context</attr>
+<!-- ScanView.ScanView(android.content.Context, android.util.AttributeSet) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='ScanView']/constructor[@name='ScanView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]/parameter[1]" name="managedName">context</attr>
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='ScanView']/constructor[@name='ScanView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]/parameter[2]" name="managedName">attrs</attr>
+<!-- ScanView.ScanView(android.content.Context, android.util.AttributeSet, int) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='ScanView']/constructor[@name='ScanView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[1]" name="managedName">context</attr>
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='ScanView']/constructor[@name='ScanView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[2]" name="managedName">attrs</attr>
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='ScanView']/constructor[@name='ScanView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[3]" name="managedName">defStyleAttr</attr>
+<!-- ScanView.ScanView(android.content.Context, android.util.AttributeSet, int, int) -->
+<!-- ScanView.setScanViewPlugin(io.anyline2.viewplugin.ViewPluginBase) -->
+<!-- ScanView.delayScanTime(io.anyline2.viewplugin.ScanViewPlugin) -->
+<!-- ScanView.drawShape(java.util.List&lt;android.graphics.PointF&gt;) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='ScanView']/method[@name='drawShape' and count(parameter)=1 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;']]/parameter[1]" name="managedName">outline</attr>
+<!-- ScanView.drawVisualFeedback(io.anyline2.viewplugin.ScanViewPlugin, java.lang.Object) -->
+<!-- ScanView.init(io.anyline2.legacy.trainer.AssetContext, int) -->
+<!-- ScanView.init(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='ScanView']/method[@name='init' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">configFileName</attr>
+<!-- ScanView.init(org.json.JSONObject) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='ScanView']/method[@name='init' and count(parameter)=1 and parameter[1][@type='org.json.JSONObject']]/parameter[1]" name="managedName">configJsonObject</attr>
+<!-- ScanView.notifyTakeHighPictureResolution(io.anyline.CombinedImageProvider) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='ScanView']/method[@name='notifyTakeHighPictureResolution' and count(parameter)=1 and parameter[1][@type='io.anyline.CombinedImageProvider']]/parameter[1]" name="managedName">imageProvider</attr>
+<!-- ScanView.onBrightnessUpdate(int) -->
+<!-- ScanView.onCutoutChanged(java.util.List&lt;android.util.Pair&lt;io.anyline2.viewplugin.ScanViewPlugin, io.anyline2.view.CutoutRect&gt;&gt;) -->
+<!-- ScanView.onCutoutVisibility(io.anyline2.viewplugin.ScanViewPlugin, boolean) -->
+<!-- ScanView.onLayout(boolean, int, int, int, int) -->
+<!-- ScanView.setCountsForAutoFlash(int, int, int, int) -->
+<!-- ScanView.setCropRect(io.anyline.opencv.core.Rect) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='ScanView']/method[@name='setCropRect' and count(parameter)=1 and parameter[1][@type='io.anyline.opencv.core.Rect']]/parameter[1]" name="managedName">cropRect</attr>
+<!-- ScanView.setLevelsForAutoFlash(int, int, int, int) -->
+<!-- ScanView.setScanConfig(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='ScanView']/method[@name='setScanConfig' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">pathFile</attr>
+<!-- ScanView.setScanConfig(org.json.JSONObject) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='ScanView']/method[@name='setScanConfig' and count(parameter)=1 and parameter[1][@type='org.json.JSONObject']]/parameter[1]" name="managedName">jsonObject</attr>
+<!-- ScanView.setScanViewConfig(io.anyline2.view.ScanViewConfig) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='ScanView']/method[@name='setScanViewConfig' and count(parameter)=1 and parameter[1][@type='io.anyline2.view.ScanViewConfig']]/parameter[1]" name="managedName">scanViewConfig</attr>
+<!-- ScanView.setupCameraController(android.content.Context) -->
+<!-- ScanView.updateCutoutView(io.anyline2.viewplugin.ScanViewPlugin) -->
 <!-- File: IO.Anyline.Opencv.ML.LogisticRegression.cs -->
 <!-- LogisticRegression.LogisticRegression(long) -->
 <!-- LogisticRegression.setIterations(int) -->
@@ -2932,6 +3118,13 @@
 <attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='BarcodeFormat']/method[@name='toBarcodeFormatInt' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.barcode.BarcodeFormat']]/parameter[1]" name="managedName">barcodeFormat</attr>
 <!-- BarcodeFormat.valueOf(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='BarcodeFormat']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
+<!-- File: IO.Anyline2.Composite.IntegratorSequentialScanViewPluginComposite.cs -->
+<!-- IntegratorSequentialScanViewPluginComposite.IntegratorSequentialScanViewPluginComposite(org.json.JSONObject, org.json.JSONObject, io.anyline2.viewplugin.IntegratorScanViewPluginFeedback) -->
+<!-- IntegratorSequentialScanViewPluginComposite.setErrorReceived(io.anyline2.Event&lt;org.json.JSONObject&gt;) -->
+<!-- IntegratorSequentialScanViewPluginComposite.setResultsReceived(io.anyline2.Event&lt;java.util.List&lt;io.anyline2.ScanResult&gt;&gt;) -->
+<!-- IntegratorSequentialScanViewPluginComposite.setRunSkippedReceived(io.anyline2.Event&lt;org.json.JSONObject&gt;) -->
+<!-- IntegratorSequentialScanViewPluginComposite.setScanInfoReceived(io.anyline2.Event&lt;org.json.JSONObject&gt;) -->
+<!-- IntegratorSequentialScanViewPluginComposite.setVisualFeedbackReceived(io.anyline2.Event&lt;org.json.JSONObject&gt;) -->
 <!-- File: IO.Anyline.View.FlashViewConfig.cs -->
 <!-- FlashViewConfig.FlashAlignment.fromInt(int) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='FlashViewConfig.FlashAlignment']/method[@name='fromInt' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">pos</attr>
@@ -3407,10 +3600,8 @@
 <attr path="/api/package[@name='io.anyline.plugin.document']/class[@name='DocumentScanViewPlugin']/method[@name='transformPicture' and count(parameter)=2 and parameter[1][@type='io.anyline.models.AnylineImage'] and parameter[2][@type='java.util.List&lt;android.graphics.PointF&gt;']]/parameter[1]" name="managedName">fullImage</attr>
 <attr path="/api/package[@name='io.anyline.plugin.document']/class[@name='DocumentScanViewPlugin']/method[@name='transformPicture' and count(parameter)=2 and parameter[1][@type='io.anyline.models.AnylineImage'] and parameter[2][@type='java.util.List&lt;android.graphics.PointF&gt;']]/parameter[2]" name="managedName">corners</attr>
 <!-- File: IO.Anyline2.Viewplugin.IntegratorScanViewPlugin.cs -->
-<!-- IntegratorScanViewPlugin.IntegratorScanViewPluginFeedback.onBrightnessUpdated(int) -->
-<!-- IntegratorScanViewPlugin.IntegratorScanViewPluginFeedback.onDrawVisualFeedback(java.util.ArrayList&lt;java.lang.Integer&gt;, java.lang.String) -->
-<!-- IntegratorScanViewPlugin.IntegratorScanViewPlugin(android.content.Context, io.anyline2.viewplugin.ScanViewPlugin, io.anyline.plugin.AbstractScanPlugin, io.anyline.view.ScanViewPluginConfig) -->
-<!-- IntegratorScanViewPlugin.setScanViewFeedback(io.anyline2.viewplugin.IntegratorScanViewPlugin.IntegratorScanViewPluginFeedback) -->
+<!-- IntegratorScanViewPlugin.IntegratorScanViewPlugin(android.content.Context, io.anyline2.viewplugin.ScanViewPlugin, io.anyline.plugin.AbstractScanPlugin, io.anyline.view.ScanViewPluginConfig) -->
+<!-- IntegratorScanViewPlugin.setScanViewFeedback(io.anyline2.viewplugin.IntegratorScanViewPluginFeedback) -->
 <!-- File: IO.Anyline.Opencv.ML.TrainData.cs -->
 <!-- TrainData.TrainData(long) -->
 <!-- TrainData.getCatCount(int) -->
@@ -3596,6 +3787,11 @@
 <!-- RotatedRect.RotatedRect(io.anyline.opencv.core.Point, io.anyline.opencv.core.Size, double) -->
 <!-- RotatedRect.points(io.anyline.opencv.core.Point[]) -->
 <!-- RotatedRect.set(double[]) -->
+<!-- File: IO.Anyline2.View.AnylineCutoutBase.cs -->
+<!-- AnylineCutoutBase.AnylineCutoutBase(io.anyline2.view.AnylineFeedbackView, io.anyline2.viewplugin.CutoutConfig) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='AnylineCutoutBase']/constructor[@name='AnylineCutoutBase' and count(parameter)=2 and parameter[1][@type='io.anyline2.view.AnylineFeedbackView'] and parameter[2][@type='io.anyline2.viewplugin.CutoutConfig']]/parameter[1]" name="managedName">anylineFeedbackView</attr>
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='AnylineCutoutBase']/constructor[@name='AnylineCutoutBase' and count(parameter)=2 and parameter[1][@type='io.anyline2.view.AnylineFeedbackView'] and parameter[2][@type='io.anyline2.viewplugin.CutoutConfig']]/parameter[2]" name="managedName">cutoutConfig</attr>
+<!-- AnylineCutoutBase.draw(android.graphics.Canvas) -->
 <!-- File: IO.Anyline.Plugin.Tire.TireScanPlugin.cs -->
 <!-- TireScanPlugin.Companion.TireScanPlugin.Companion(kotlin.jvm.internal.DefaultConstructorMarker) -->
 <!-- TireScanPlugin.TireScanPlugin(android.content.Context, java.lang.String) -->
@@ -4003,6 +4199,16 @@
 <!-- MatOfFloat.fromArray(float...) -->
 <!-- MatOfFloat.fromList(java.util.List&lt;java.lang.Float&gt;) -->
 <!-- MatOfFloat.fromNativeAddr(long) -->
+<!-- File: IO.Anyline2.View.CutoutRect.cs -->
+<!-- CutoutRect.CutoutRect(android.content.Context, io.anyline2.viewplugin.CutoutConfig) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='CutoutRect']/constructor[@name='CutoutRect' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='io.anyline2.viewplugin.CutoutConfig']]/parameter[1]" name="managedName">context</attr>
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='CutoutRect']/constructor[@name='CutoutRect' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='io.anyline2.viewplugin.CutoutConfig']]/parameter[2]" name="managedName">config</attr>
+<!-- CutoutRect.calcCutOutAndImageCropBounds(int, int, int, int, float) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='CutoutRect']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='float']]/parameter[1]" name="managedName">frameWidth</attr>
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='CutoutRect']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='float']]/parameter[2]" name="managedName">frameHeight</attr>
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='CutoutRect']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='float']]/parameter[3]" name="managedName">viewWidth</attr>
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='CutoutRect']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='float']]/parameter[4]" name="managedName">viewHeight</attr>
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='CutoutRect']/method[@name='calcCutOutAndImageCropBounds' and count(parameter)=5 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='float']]/parameter[5]" name="managedName">scale</attr>
 <!-- File: IO.Anyline.Modules.IAnylineModuleResultListener.cs -->
 <!-- AnylineModuleResultListener.onResult(T) -->
 <attr path="/api/package[@name='io.anyline.modules']/interface[@name='AnylineModuleResultListener']/method[@name='onResult' and count(parameter)=1 and parameter[1][@type='T']]/parameter[1]" name="managedName">scanResult</attr>
@@ -4334,6 +4540,8 @@
 <!-- File: IO.Anyline.Opencv.Photo.AlignExposures.cs -->
 <!-- AlignExposures.AlignExposures(long) -->
 <!-- AlignExposures.process(java.util.List&lt;io.anyline.opencv.core.Mat&gt;, java.util.List&lt;io.anyline.opencv.core.Mat&gt;, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
+<!-- File: IO.Anyline2.Viewplugin.IntegratorViewPluginComposite.cs -->
+<!-- IntegratorViewPluginComposite.IntegratorViewPluginComposite(org.json.JSONObject, org.json.JSONObject) -->
 <!-- File: IO.Anyline.Plugin.Result.VinResult.cs -->
 <!-- VinResult.setText(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.plugin.result']/class[@name='VinResult']/method[@name='setText' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">text</attr>
@@ -4609,6 +4817,15 @@
 <attr path="/api/package[@name='io.anyline.plugin.licenseplate']/class[@name='LicensePlateScanPlugin']/method[@name='mapToStartVariableString' and count(parameter)=3 and parameter[1][@type='java.util.Map&lt;io.anyline.plugin.licenseplate.LicensePlateScanMode, java.lang.String&gt;'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[3]" name="managedName">delimiter</attr>
 <!-- LicensePlateScanPlugin.onFinishedWithOutput(java.lang.Object) -->
 <!-- LicensePlateScanPlugin.onFinishedWithOutput(java.lang.Object, io.anyline.models.AnylineImage) -->
+<!-- File: IO.Anyline2.View.BrightnessHelper.cs -->
+<!-- BrightnessHelper.BrightnessFeedback.valueOf(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='BrightnessHelper.BrightnessFeedback']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
+<!-- BrightnessHelper.setEpsonExposureCompensationLevels(java.lang.String, java.lang.String, java.lang.String, java.lang.String) -->
+<!-- BrightnessHelper.setLevelsForAutoFlash(int, int, int, int) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='BrightnessHelper']/method[@name='setLevelsForAutoFlash' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[1]" name="managedName">lowBrightness</attr>
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='BrightnessHelper']/method[@name='setLevelsForAutoFlash' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[2]" name="managedName">highBrightness</attr>
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='BrightnessHelper']/method[@name='setLevelsForAutoFlash' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[3]" name="managedName">lowAmbientLight</attr>
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='BrightnessHelper']/method[@name='setLevelsForAutoFlash' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[4]" name="managedName">highAmbientLight</attr>
 <!-- File: IO.Anyline.Plugin.Tire.TireBaseConfig.cs -->
 <!-- TireBaseConfig.UpsideDownMode.valueOf(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.plugin.tire']/class[@name='TireBaseConfig.UpsideDownMode']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
@@ -4736,10 +4953,31 @@
 <!-- VinConfig.setValidationRegex(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.plugin.config']/class[@name='VinConfig']/method[@name='setValidationRegex' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">validationRegex</attr>
 <!-- File: IO.Anyline.DI.FileOutputStreamProviderFactory.cs -->
-<!-- File: IO.Anyline2.Image.AnylineImage.cs -->
+<!-- File: IO.Anyline2.View.FlashView.cs -->
+<!-- FlashView.FlashView(android.content.Context) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='FlashView']/constructor[@name='FlashView' and count(parameter)=1 and parameter[1][@type='android.content.Context']]/parameter[1]" name="managedName">context</attr>
+<!-- FlashView.FlashView(android.content.Context, android.util.AttributeSet) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='FlashView']/constructor[@name='FlashView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]/parameter[1]" name="managedName">context</attr>
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='FlashView']/constructor[@name='FlashView' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet']]/parameter[2]" name="managedName">attrs</attr>
+<!-- FlashView.FlashView(android.content.Context, android.util.AttributeSet, int) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='FlashView']/constructor[@name='FlashView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[1]" name="managedName">context</attr>
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='FlashView']/constructor[@name='FlashView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[2]" name="managedName">attrs</attr>
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='FlashView']/constructor[@name='FlashView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[3]" name="managedName">defStyleAttr</attr>
+<!-- FlashView.FlashView(android.content.Context, io.anyline2.view.FlashConfig) -->
+<!-- FlashView.setConfig(io.anyline2.view.FlashConfig) -->
+<!-- FlashView.setAutoModeEnabled(boolean) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='FlashView']/method[@name='setAutoModeEnabled' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">isEnabled</attr>
+<!-- FlashView.setCameraController(io.anyline.camera.CameraController) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='FlashView']/method[@name='setCameraController' and count(parameter)=1 and parameter[1][@type='io.anyline.camera.CameraController']]/parameter[1]" name="managedName">cameraController</attr>
+<!-- FlashView.setFlashOnIfAuto(boolean) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='FlashView']/method[@name='setFlashOnIfAuto' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">setFlashOn</attr>
+<!-- FlashView.setMode(io.anyline.camera.FlashControl.Mode) -->
+<attr path="/api/package[@name='io.anyline2.view']/class[@name='FlashView']/method[@name='setMode' and count(parameter)=1 and parameter[1][@type='io.anyline.camera.FlashControl.Mode']]/parameter[1]" name="managedName">mode</attr>
+<!-- File: IO.Anyline2.Image.AnylineImage.cs -->
 <!-- AnylineImage.AnylineImage(android.graphics.Bitmap) -->
 <attr path="/api/package[@name='io.anyline2.image']/class[@name='AnylineImage']/constructor[@name='AnylineImage' and count(parameter)=1 and parameter[1][@type='android.graphics.Bitmap']]/parameter[1]" name="managedName">bitmap</attr>
 <!-- AnylineImage.AnylineImage(byte[], int, int) -->
+<!-- AnylineImage.rotate(int) -->
 <!-- File: IO.Anyline.Camera.FaceDetector.cs -->
 <!-- FaceDetector.FaceDetectionResultHandler.onFailure(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.camera']/interface[@name='FaceDetector.FaceDetectionResultHandler']/method[@name='onFailure' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">e</attr>
@@ -4769,10 +5007,10 @@
 <!-- ALPoint.ALPoint(org.json.JSONObject) -->
 <!-- File: IO.Anyline2.Plugin.ScanPlugin.cs -->
 <!-- ScanPlugin.ScanPlugin(org.json.JSONObject) -->
+<!-- ScanPlugin.ScanPlugin(org.json.JSONObject, io.anyline2.legacy.trainer.AssetContext) -->
 <!-- ScanPlugin.setImageProvider(io.anyline2.image.ImageProvider) -->
 <attr path="/api/package[@name='io.anyline2.plugin']/class[@name='ScanPlugin']/method[@name='setImageProvider' and count(parameter)=1 and parameter[1][@type='io.anyline2.image.ImageProvider']]/parameter[1]" name="managedName">imageProvider</attr>
 <!-- ScanPlugin.setRegionOfInterest(io.anyline2.model.ALRect) -->
-<!-- ScanPlugin.checkAndCopyAssets(android.content.Context, org.json.JSONObject) -->
 <!-- ScanPlugin.onError(java.lang.String) -->
 <!-- ScanPlugin.onInfo(java.lang.String) -->
 <!-- ScanPlugin.onRunSkipped(java.lang.String) -->
@@ -4785,7 +5023,11 @@
 <attr path="/api/package[@name='io.anyline2.viewplugin']/class[@name='CutoutConfig.CutoutAlignment']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
 <!-- CutoutConfig.CutoutConfig(org.json.JSONObject) -->
 <!-- CutoutConfig.getAnimationStyle(java.lang.String) -->
+<!-- CutoutConfig.getCornerRadiusInPix(android.content.Context) -->
+<attr path="/api/package[@name='io.anyline2.viewplugin']/class[@name='CutoutConfig']/method[@name='getCornerRadiusInPix' and count(parameter)=1 and parameter[1][@type='android.content.Context']]/parameter[1]" name="managedName">context</attr>
 <!-- CutoutConfig.getCutoutAlignment(java.lang.String) -->
+<!-- CutoutConfig.getCutoutStrokeWidthInPix(android.content.Context) -->
+<attr path="/api/package[@name='io.anyline2.viewplugin']/class[@name='CutoutConfig']/method[@name='getCutoutStrokeWidthInPix' and count(parameter)=1 and parameter[1][@type='android.content.Context']]/parameter[1]" name="managedName">context</attr>
 <!-- File: IO.Anyline.Plugin.ID.VehicleRegistrationCertificateConfig.cs -->
 <!-- VehicleRegistrationCertificateConfig.VehicleRegistrationCertificateConfig(org.json.JSONObject) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='VehicleRegistrationCertificateConfig']/constructor[@name='VehicleRegistrationCertificateConfig' and count(parameter)=1 and parameter[1][@type='org.json.JSONObject']]/parameter[1]" name="managedName">jsonObject</attr>

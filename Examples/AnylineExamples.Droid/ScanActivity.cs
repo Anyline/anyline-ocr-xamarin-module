@@ -11,6 +11,7 @@ using System.Collections;
 using IO.Anyline.View;
 using IO.Anyline.Camera;
 using IO.Anyline2;
+using IO.Anyline.Plugin;
 
 namespace AnylineExamples.Droid
 {
@@ -46,6 +47,7 @@ namespace AnylineExamples.Droid
 
                 // we pass the title from the previous activity
                 Title = Intent.GetStringExtra("title");
+                _scanResultListener.Title = Title;
 
                 Window.SetFlags(WindowManagerFlags.KeepScreenOn, WindowManagerFlags.KeepScreenOn);
                 SetContentView(Resource.Layout.scan_activity);
