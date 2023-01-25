@@ -84,14 +84,16 @@ namespace AnylineExamples.iOS
 
             foreach (var item in dict)
             {
+                var attributedString = new NSMutableAttributedString(item.Key);
+                int spaceIndex = item.Key.IndexOf(" ");
+                attributedString.AddAttribute(UIStringAttributeKey.Font, UIFont.BoldSystemFontOfSize(14), new NSRange(0, spaceIndex));
+                attributedString.AddAttribute(UIStringAttributeKey.Font, UIFont.SystemFontOfSize(9), new NSRange(spaceIndex + 1, item.Key.Length - spaceIndex - 1));
+
                 UILabel lbPluginName = new UILabel()
                 {
-                    //BackgroundColor = UIColor.Blue,
-                    //TranslatesAutoresizingMaskIntoConstraints = false,
-                    Text = item.Key.ToString(),
+                    AttributedText = attributedString,
                     LineBreakMode = UILineBreakMode.WordWrap,
                     Lines = 0,
-                    Font = UIFont.BoldSystemFontOfSize(15),
                     TextColor = UIColor.FromRGB(0, 122, 255),
                 };
                 stackContent.AddArrangedSubview(lbPluginName);
