@@ -94,6 +94,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
     <Compile Include="ObjectExtensions.cs" />
+    <Compile Include="ResultViewController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

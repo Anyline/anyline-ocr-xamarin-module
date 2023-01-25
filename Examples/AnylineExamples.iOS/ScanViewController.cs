@@ -24,7 +24,7 @@ namespace AnylineExamples.iOS
             Title = name;
             this.jsonPath = jsonPath;
 
-            _resultDelegate = new ScanResultDelegate(this);
+            _resultDelegate = new ScanResultDelegate(this, name);
         }
 
 

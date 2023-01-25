@@ -61,13 +61,16 @@ namespace Anyline
                 new KeyValuePair<string, string>("Barcode","sample_barcode_config"),
                 new KeyValuePair<string, string>("Barcode - Full frame","sample_barcode_fullframe_config"),
             };
+            var scanMode_configurations_composite = new List<KeyValuePair<string, string>>()
+            {
+                new KeyValuePair<string, string>("Parallel - ID + Barcode","id_composite_config"),
+            };
+
             var scanMode_configurations_nfc = new List<KeyValuePair<string, string>>()
             {
                 new KeyValuePair<string, string>("NFC", "mrz_config")
             };
             
-
-
             AddCategoryTitle("Energy");
             AddButtons(scanMode_configurations_energy, isEnabled: isAnylineInitialized);
             AddCategoryTitle("Identity");
@@ -80,6 +83,8 @@ namespace Anyline
             AddButtons(scanMode_configurations_mro, isEnabled: isAnylineInitialized);
             AddCategoryTitle("Barcode");
             AddButtons(scanMode_configurations_barcode, isEnabled: isAnylineInitialized);
+            AddCategoryTitle("Composite");
+            AddButtons(scanMode_configurations_composite, isEnabled: isAnylineInitialized);
             AddCategoryTitle("NFC");
             AddButtons(scanMode_configurations_nfc, isEnabled: isAnylineInitialized);
         }

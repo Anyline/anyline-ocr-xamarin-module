@@ -21,7 +21,7 @@ namespace AnylineExamples.Shared
         public static readonly string TIRE = "Tire";
         public static readonly string MRO = "MRO";
         public static readonly string Document = "Documents";
-        public static readonly string Others = "Others";
+        public static readonly string Barcode = "Barcode";
         public static readonly string Workflows = "Workflows";
         public static readonly string NFC = "NFC";
         public static readonly string Version = "Version";
@@ -30,7 +30,7 @@ namespace AnylineExamples.Shared
         {
             return new List<string>
             {
-                Energy, ID, Vehicle, MRO, Document, Others, Workflows,
+                Energy, ID, Vehicle, MRO, Document, Barcode, Workflows,
                 Version
             };
         }
@@ -58,10 +58,11 @@ namespace AnylineExamples.Shared
         public static readonly string ShippingContainerHorizontal = "Shipping Container - Horizontal";
         public static readonly string ShippingContainerVertical = "Shipping Container - Vertical";
         public static readonly string Barcode = "Barcode";
-        public static readonly string Document = "Document";
-        public static readonly string VoucherCode = "Voucher Code";
-        public static readonly string IBAN = "IBAN";
-        public static readonly string CowTag = "Cattle Tag";
+        public static readonly string BarcodeFullFrame = "Barcode - Full Frame";
+        //public static readonly string Document = "Document";
+        //public static readonly string VoucherCode = "Voucher Code";
+        //public static readonly string IBAN = "IBAN";
+        //public static readonly string CowTag = "Cattle Tag";
         public static readonly string SerialScanning = "Serial Scanning (LPT > ID > VIN)";
         public static readonly string ParallelScanning = "Parallel Scanning (Meter / Barcode)";
         public static readonly string NFCScanning = "Scan NFC of Passports";
@@ -103,8 +104,9 @@ namespace AnylineExamples.Shared
             //new ExampleModel(ItemType.Header, Category.Document, Category.Document, ""),
             //new ExampleModel(ItemType.Item, Example.Document, Category.Document, "document_config.json"),
 
-            new ExampleModel(ItemType.Header, Category.Others, Category.Others, ""),
-            new ExampleModel(ItemType.Item, Example.Barcode, Category.Others, "sample_barcode_config.json"),
+            new ExampleModel(ItemType.Header, Category.Barcode, Category.Barcode, ""),
+            new ExampleModel(ItemType.Item, Example.Barcode, Category.Barcode, "sample_barcode_config.json"),
+            new ExampleModel(ItemType.Item, Example.BarcodeFullFrame, Category.Barcode, "sample_barcode_fullframe_config.json"),
 
             //new ExampleModel(ItemType.Item, Example.VoucherCode, Category.Others, "others_config_voucher_code.json"),
             //new ExampleModel(ItemType.Item, Example.IBAN, Category.Others, "iban_view_config.json"),

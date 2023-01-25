@@ -161,6 +161,7 @@
     <BundleResource Include="Resources\vrc_config.json" />
     <BundleResource Include="Resources\commercial_tire_id_config.json" />
     <BundleResource Include="Resources\horizontal_container_scanner_capture_config.json" />
+    <BundleResource Include="Resources\id_composite_config.json" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default.png" />

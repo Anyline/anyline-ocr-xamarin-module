@@ -98,6 +98,7 @@
     <AndroidAsset Include="Assets\sample_barcode_config.json" />
     <AndroidAsset Include="Assets\sample_barcode_fullframe_config.json" />
     <AndroidAsset Include="Assets\mrz_config.json" />
+    <AndroidAsset Include="Assets\id_composite_config.json" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Tabbar.xml" />

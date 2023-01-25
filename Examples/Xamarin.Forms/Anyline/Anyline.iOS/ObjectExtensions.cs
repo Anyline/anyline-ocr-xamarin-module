@@ -22,6 +22,11 @@ namespace Anyline.iOS
         public static Dictionary<string, object> CreatePropertyDictionary(this object obj)
         {
             Dictionary<string, object> dict = new Dictionary<string, object>();
+
+            if (obj is Array array)
+            {
+                dict.Add($"Composite Results ({array.GetType()})", array.ProcessArray());
+            }
             try
             {
                 var props = obj.GetType().GetProperties();
@@ -50,6 +55,8 @@ namespace Anyline.iOS
                         case "AccessibilityRespondsToUserInteraction":
                         case "AccessibilityTextualContext":
                         case "AccessibilityUserInputLabels":
+                        case "Length":
+                        case "Rank":
                             break;
                         default:
                             var value = prop.GetValue(obj, null);
@@ -60,11 +67,7 @@ namespace Anyline.iOS
                             {
                                 if (value is Array valueArray)
                                 {
-                                    for (int i = 0; i < valueArray.Length; i++)
-                                    {
-                                        var v = valueArray.GetValue(i);
-                                        dict.Add($"{prop.Name} [{i}]", v.CreatePropertyDictionary());
-                                    }
+                                    dict.Add($"{prop.Name} ({prop.PropertyType})", valueArray.ProcessArray());
                                 }
                                 else
                                 {
@@ -85,6 +88,17 @@ namespace Anyline.iOS
                 Debug.WriteLine(e.Message);
             }
 
+            return dict;
+        }
+
+        public static Dictionary<string, object> ProcessArray(this Array array)
+        {
+            Dictionary<string, object> dict = new Dictionary<string, object>();
+            for (int i = 0; i < array.Length; i++)
+            {
+                var v = array.GetValue(i);
+                dict.Add($"[{i}] ({v.GetType()})", v.CreatePropertyDictionary());
+            }
             return dict;
         }
 

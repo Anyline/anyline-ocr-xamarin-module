@@ -72,6 +72,7 @@ namespace Anyline
             grContent.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Star });
             grContent.Children.Add(new BoxView { BackgroundColor = Color.Gray }, 0, 0);
             grContent.Children.Add(slItemResults, 1, 0);
+
             return grContent;
         }
     }

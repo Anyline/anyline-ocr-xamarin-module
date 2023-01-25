@@ -8,17 +8,19 @@ namespace AnylineExamples.iOS
     public sealed class ScanResultDelegate : ALScanPluginDelegate
     {
         // we store the ScanViewController for navigation purposes
-        private readonly ScanViewController scanViewController;
+        private readonly ScanViewController _scanViewController;
+        private string _title;
 
-        public ScanResultDelegate(ScanViewController scanViewController)
+        public ScanResultDelegate(ScanViewController scanViewController, string title)
         {
-            this.scanViewController = scanViewController;
+            _scanViewController = scanViewController;
+            _title = title;
         }
 
         public override void ResultReceived(ALScanPlugin scanPlugin, ALScanResult scanResult)
         {
-            var resultViewController = new ResultTableViewController(scanResult);
-            scanViewController.NavigationController?.PushViewController(resultViewController, false);
+            var resultViewController = new ResultViewController(scanResult, _title);
+            _scanViewController.NavigationController?.PushViewController(resultViewController, false);
         }
     }
 }
