@@ -32,48 +32,56 @@ namespace Anyline
         {
             var scanMode_configurations_energy = new List<KeyValuePair<string, string>>()
             {
-                new KeyValuePair<string, string>("Meter","meter_config"),
+                new KeyValuePair<string, string>("Analog/Digital Meter","analog_digital_meter_config"),
+                new KeyValuePair<string, string>("Dial Meter","dial_meter_config"),
             };
             var scanMode_configurations_identity = new List<KeyValuePair<string, string>>()
             {
-                new KeyValuePair<string, string>("Universal ID","universal_id_front_config"),
-                new KeyValuePair<string, string>("MRZ/Passport","mrz_config"),
+                new KeyValuePair<string, string>("Universal ID - Latin","universal_id_config"),
+                new KeyValuePair<string, string>("Universal ID - Arabic","arabic_id_config"),
+                new KeyValuePair<string, string>("Universal ID - Cyrillic","cyrillic_id_config"),
+                new KeyValuePair<string, string>("MRZ / Passport","mrz_config"),
             };
             var scanMode_configurations_vehicle = new List<KeyValuePair<string, string>>()
             {
-                new KeyValuePair<string, string>("Vehicle Identification Number (VIN)","vin_ocr_config"),
+                new KeyValuePair<string, string>("License Plate - EU","license_plate_eu_config"),
+                new KeyValuePair<string, string>("License Plate - USA","license_plate_us_config"),
+                new KeyValuePair<string, string>("License Plate - Africa","license_plate_af_config"),
+                new KeyValuePair<string, string>("Vehicle Identification Number (VIN)","vin_config"),
                 new KeyValuePair<string, string>("Vehicle Registration Certificate","vrc_config"),
             };
             var scanMode_configurations_tire = new List<KeyValuePair<string, string>>()
             {
-                new KeyValuePair<string, string>("Tire Identification Number (TIN) - Universal","tire_tin_config"),
-                new KeyValuePair<string, string>("Tire Size Specification","tire_size_config"),
+                new KeyValuePair<string, string>("Tire Identification Number (TIN) - Universal","tin_config"),
+                new KeyValuePair<string, string>("Tire Identification Number (TIN) - DOT","tire_config_tin_dot"),
+                new KeyValuePair<string, string>("Tire Size Specifications","tire_size_config"),
                 new KeyValuePair<string, string>("Commercial Tire Identification Number","commercial_tire_id_config"),
             };
             var scanMode_configurations_mro = new List<KeyValuePair<string, string>>()
             {
-                new KeyValuePair<string, string>("Universal Serial Number","serial_number_view_config"),
-                new KeyValuePair<string, string>("Shipping Container - Horizontal","horizontal_container_scanner_capture_config"),
-                new KeyValuePair<string, string>("Shipping Container - Vertical","vertical_container_scanner_capture_config"),
+                new KeyValuePair<string, string>("Serial Number","serial_number_config"),
+                new KeyValuePair<string, string>("Shipping Container - Horizontal","container_horizontal_config"),
+                new KeyValuePair<string, string>("Shipping Container - Vertical","container_vertical_config"),
             };
             var scanMode_configurations_barcode = new List<KeyValuePair<string, string>>()
             {
-                new KeyValuePair<string, string>("Barcode","sample_barcode_config"),
-                new KeyValuePair<string, string>("Barcode - Full frame","sample_barcode_fullframe_config"),
+                new KeyValuePair<string, string>("Barcode","barcode_config"),
+                new KeyValuePair<string, string>("Barcode - PDF417 - AAMVA","barcode_pdf417_config"),
             };
             var scanMode_configurations_composite = new List<KeyValuePair<string, string>>()
             {
-                new KeyValuePair<string, string>("Parallel - ID + Barcode","id_composite_config"),
+                new KeyValuePair<string, string>("Serial - License Plate (EU) + Driver's License + VIN","composite_serial_config"),
+                new KeyValuePair<string, string>("Parallel - Meter + Serial Number","composite_parallel_config"),
             };
 
             var scanMode_configurations_nfc = new List<KeyValuePair<string, string>>()
             {
-                new KeyValuePair<string, string>("NFC", "mrz_config")
+                new KeyValuePair<string, string>("Scan NFC of Passports", "mrz_config")
             };
             
             AddCategoryTitle("Energy");
             AddButtons(scanMode_configurations_energy, isEnabled: isAnylineInitialized);
-            AddCategoryTitle("Identity");
+            AddCategoryTitle("Identity Documents");
             AddButtons(scanMode_configurations_identity, isEnabled: isAnylineInitialized);
             AddCategoryTitle("Vehicle");
             AddButtons(scanMode_configurations_vehicle, isEnabled: isAnylineInitialized);

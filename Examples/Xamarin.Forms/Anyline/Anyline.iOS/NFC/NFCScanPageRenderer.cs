@@ -18,7 +18,7 @@ namespace Anyline.iOS.NFC
 
         private ALScanView _scanView;
 
-        ALNFCDetector nfcDetector;
+        ALNFCDetector _nfcDetector;
 
         protected override void OnElementChanged(VisualElementChangedEventArgs e)
         {
@@ -33,7 +33,7 @@ namespace Anyline.iOS.NFC
         {
             base.ViewDidLoad();
 
-            nfcDetector = new ALNFCDetector(this);
+            _nfcDetector = new ALNFCDetector(this, out NSError error);
         }
 
         public override void ViewDidAppear(bool animated)
@@ -64,12 +64,6 @@ namespace Anyline.iOS.NFC
                 {
                     throw new Exception(error.LocalizedDescription);
                 }
-
-                ALScanViewPluginBase scanViewPluginBase = _scanView.ScanViewPlugin;
-                ALScanViewPlugin scanViewPlugin = (ALScanViewPlugin)scanViewPluginBase;
-                scanViewPluginBase = (ALScanViewPluginBase)scanViewPlugin;
-
-                scanViewPlugin.ScanPlugin.WeakDelegate = this;
 
                 View.AddSubview(_scanView);
 
@@ -145,7 +139,7 @@ namespace Anyline.iOS.NFC
             // We use data from the MRZ to authenticate with the chip.
             BeginInvokeOnMainThread(() =>
             {
-                nfcDetector.StartNfcDetectionWithPassportNumber(passportNumberForNFC, dateOfBirth, dateOfExpiry);
+                _nfcDetector.StartNfcDetectionWithPassportNumber(passportNumberForNFC, dateOfBirth, dateOfExpiry);
             });
         }
 

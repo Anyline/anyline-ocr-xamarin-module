@@ -12,7 +12,7 @@
       "id": "TIRE",
       "cancelOnResult": true,
       "tireSizeConfig": {
-          "upsideDownMode": "AUTO"
+        "upsideDownMode": "AUTO"
       }
     },
     "cutoutConfig": {
@@ -43,4 +43,3 @@
     }
   }
 }
-

@@ -30,7 +30,10 @@ namespace Anyline
         private void ShowResults(Dictionary<string, object> results)
         {
             View viewResults = CreateResultView(results);
-            Device.BeginInvokeOnMainThread(() => cvContent.Content = viewResults);
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                cvContent.Content = viewResults;
+            });
         }
 
         private View CreateResultView(Dictionary<string, object> dict)

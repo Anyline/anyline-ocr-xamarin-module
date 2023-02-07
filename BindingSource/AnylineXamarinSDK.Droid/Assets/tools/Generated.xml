@@ -349,8 +349,6 @@
 <attr path="/api/package[@name='io.anyline.plugin.result']/class[@name='IdResult']/method[@name='setDocumentTypeDefinition' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.result.UniversalIdResultField']]/parameter[1]" name="managedName">documentTypeDefinition</attr>
 <!-- IdResult.setDocumentVersionsDefinition(io.anyline.plugin.result.UniversalIdResultField) -->
 <attr path="/api/package[@name='io.anyline.plugin.result']/class[@name='IdResult']/method[@name='setDocumentVersionsDefinition' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.result.UniversalIdResultField']]/parameter[1]" name="managedName">documentVersionsDefinition</attr>
-<!-- IdResult.setDrivingLicenseString(io.anyline.plugin.result.UniversalIdResultField) -->
-<attr path="/api/package[@name='io.anyline.plugin.result']/class[@name='IdResult']/method[@name='setDrivingLicenseString' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.result.UniversalIdResultField']]/parameter[1]" name="managedName">drivingLicenseString</attr>
 <!-- IdResult.setDuplicate(io.anyline.plugin.result.UniversalIdResultField) -->
 <attr path="/api/package[@name='io.anyline.plugin.result']/class[@name='IdResult']/method[@name='setDuplicate' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.result.UniversalIdResultField']]/parameter[1]" name="managedName">duplicate</attr>
 <!-- IdResult.setDuration(io.anyline.plugin.result.UniversalIdResultField) -->
@@ -395,8 +393,6 @@
 <attr path="/api/package[@name='io.anyline.plugin.result']/class[@name='IdResult']/method[@name='setHeight' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.result.UniversalIdResultField']]/parameter[1]" name="managedName">height</attr>
 <!-- IdResult.setHologram(io.anyline.plugin.result.UniversalIdResultField) -->
 <attr path="/api/package[@name='io.anyline.plugin.result']/class[@name='IdResult']/method[@name='setHologram' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.result.UniversalIdResultField']]/parameter[1]" name="managedName">hologram</attr>
-<!-- IdResult.setIdFrontString(io.anyline.plugin.result.UniversalIdResultField) -->
-<attr path="/api/package[@name='io.anyline.plugin.result']/class[@name='IdResult']/method[@name='setIdFrontString' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.result.UniversalIdResultField']]/parameter[1]" name="managedName">idFrontString</attr>
 <!-- IdResult.setInitials(io.anyline.plugin.result.UniversalIdResultField) -->
 <attr path="/api/package[@name='io.anyline.plugin.result']/class[@name='IdResult']/method[@name='setInitials' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.result.UniversalIdResultField']]/parameter[1]" name="managedName">initials</attr>
 <!-- IdResult.setInitialsAndDateOfBirth(io.anyline.plugin.result.UniversalIdResultField) -->
@@ -693,17 +689,6 @@
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzConfig']/method[@name='setCropAndTransformID' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">cropAndTransformID</attr>
 <!-- MrzConfig.setStrictMode(boolean) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='MrzConfig']/method[@name='setStrictMode' and count(parameter)=1 and parameter[1][@type='boolean']]/parameter[1]" name="managedName">strictMode</attr>
-<!-- File: IO.Anyline.Plugin.Result.LayoutDefinition.cs -->
-<!-- LayoutDefinition.Type.fromValue(java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.plugin.result']/class[@name='LayoutDefinition.Type']/method[@name='fromValue' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">value</attr>
-<!-- LayoutDefinition.Type.valueOf(java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.plugin.result']/class[@name='LayoutDefinition.Type']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
-<!-- LayoutDefinition.setCountry(java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.plugin.result']/class[@name='LayoutDefinition']/method[@name='setCountry' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">country</attr>
-<!-- LayoutDefinition.setLayout(java.lang.String) -->
-<attr path="/api/package[@name='io.anyline.plugin.result']/class[@name='LayoutDefinition']/method[@name='setLayout' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">layout</attr>
-<!-- LayoutDefinition.setType(io.anyline.plugin.result.LayoutDefinition.Type) -->
-<attr path="/api/package[@name='io.anyline.plugin.result']/class[@name='LayoutDefinition']/method[@name='setType' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.result.LayoutDefinition.Type']]/parameter[1]" name="managedName">type</attr>
 <!-- File: IO.Anyline.Util.TempFileUtil.cs -->
 <!-- TempFileUtil.createTempFileCheckCache(android.content.Context, java.lang.String, java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.util']/class[@name='TempFileUtil']/method[@name='createTempFileCheckCache' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[1]" name="managedName">context</attr>
@@ -719,10 +704,14 @@
 <!-- File: IO.Anyline2.Viewplugin.ViewPluginBase.cs -->
 <!-- ViewPluginBase.setUIChangeListener(io.anyline2.view.UIChangeListener) -->
 <!-- ViewPluginBase.subscribeToImageProvider(io.anyline2.image.ImageProvider) -->
+<!-- ViewPluginBase.subscribeToNativeBarcodeProvider(io.anyline2.image.NativeBarcodeProvider, java.util.List&lt;io.anyline.plugin.barcode.BarcodeFormat&gt;) -->
 <!-- ViewPluginBase.unsubscribeFromImageProvider(io.anyline2.image.ImageProvider) -->
+<!-- ViewPluginBase.unsubscribeFromNativeBarcodeProvider(io.anyline2.image.NativeBarcodeProvider) -->
 <!-- ViewPluginBase.setUIChangeListener(io.anyline2.view.UIChangeListener) -->
 <!-- ViewPluginBase.subscribeToImageProvider(io.anyline2.image.ImageProvider) -->
+<!-- ViewPluginBase.subscribeToNativeBarcodeProvider(io.anyline2.image.NativeBarcodeProvider, java.util.List&lt;io.anyline.plugin.barcode.BarcodeFormat&gt;) -->
 <!-- ViewPluginBase.unsubscribeFromImageProvider(io.anyline2.image.ImageProvider) -->
+<!-- ViewPluginBase.unsubscribeFromNativeBarcodeProvider(io.anyline2.image.NativeBarcodeProvider) -->
 <!-- File: IO.Anyline.Plugin.Document.DocumentScanState.cs -->
 <!-- DocumentScanState.valueOf(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.plugin.document']/class[@name='DocumentScanState']/method[@name='valueOf' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
@@ -899,12 +888,18 @@
 <!-- EM.trainEM(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
 <!-- EM.trainM(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
 <!-- EM.trainM(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
+<!-- File: IO.Anyline2.Image.INativeBarcodeProvider.cs -->
+<!-- NativeBarcodeProvider.Factory.setInstance(io.anyline2.image.NativeBarcodeProvider) -->
+<!-- NativeBarcodeProvider.addNativeBarcodeReceivedEventListener(io.anyline2.Event&lt;android.util.Pair&lt;io.anyline.models.AnylineYuvImage, io.anyline.plugin.result.BarcodeResult&gt;&gt;, java.util.List&lt;io.anyline.plugin.barcode.BarcodeFormat&gt;) -->
+<!-- NativeBarcodeProvider.removeNativeBarcodeReceivedEventListener(io.anyline2.Event&lt;android.util.Pair&lt;io.anyline.models.AnylineYuvImage, io.anyline.plugin.result.BarcodeResult&gt;&gt;) -->
 <!-- File: IO.Anyline2.Viewplugin.ViewPluginComposite.cs -->
 <!-- ViewPluginComposite.ProcessingMode.valueOf(java.lang.String) -->
 <!-- ViewPluginComposite.ViewPluginComposite(org.json.JSONObject) -->
 <!-- ViewPluginComposite.setUIChangeListener(io.anyline2.view.UIChangeListener) -->
 <!-- ViewPluginComposite.subscribeToImageProvider(io.anyline2.image.ImageProvider) -->
+<!-- ViewPluginComposite.subscribeToNativeBarcodeProvider(io.anyline2.image.NativeBarcodeProvider, java.util.List&lt;? extends io.anyline.plugin.barcode.BarcodeFormat&gt;) -->
 <!-- ViewPluginComposite.unsubscribeFromImageProvider(io.anyline2.image.ImageProvider) -->
+<!-- ViewPluginComposite.unsubscribeFromNativeBarcodeProvider(io.anyline2.image.NativeBarcodeProvider) -->
 <!-- File: IO.Anyline.Plugin.Barcode.BarcodeScanViewPlugin.cs -->
 <!-- BarcodeScanViewPlugin.BarcodeScanViewPlugin(android.content.Context, io.anyline.plugin.AbstractScanPlugin, io.anyline.view.ScanViewPluginConfig) -->
 <attr path="/api/package[@name='io.anyline.plugin.barcode']/class[@name='BarcodeScanViewPlugin']/constructor[@name='BarcodeScanViewPlugin' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='io.anyline.plugin.AbstractScanPlugin'] and parameter[3][@type='io.anyline.view.ScanViewPluginConfig']]/parameter[1]" name="managedName">context</attr>
@@ -1172,6 +1167,8 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/constructor[@name='ScanView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/constructor[@name='ScanView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[2]" name="managedName">attrs</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/constructor[@name='ScanView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[3]" name="managedName">defStyleAttr</attr>
+<!-- ScanView.setScanViewPlugin(io.anyline.view.AbstractBaseScanViewPlugin&lt;?&gt;) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='setScanViewPlugin' and count(parameter)=1 and parameter[1][@type='io.anyline.view.AbstractBaseScanViewPlugin&lt;?&gt;']]/parameter[1]" name="managedName">scanViewPlugin</attr>
 <!-- ScanView.drawShape(java.util.List&lt;android.graphics.PointF&gt;) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='drawShape' and count(parameter)=1 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;']]/parameter[1]" name="managedName">outline</attr>
 <!-- ScanView.drawVisualFeedback(java.lang.Object, java.lang.String) -->
@@ -1184,6 +1181,8 @@
 <!-- ScanView.initAsync(io.anyline.trainer.ProjectContext, io.anyline.trainer.TrainerUtils.ViewConfigResultHandler) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='initAsync' and count(parameter)=2 and parameter[1][@type='io.anyline.trainer.ProjectContext'] and parameter[2][@type='io.anyline.trainer.TrainerUtils.ViewConfigResultHandler']]/parameter[1]" name="managedName">projectContext</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='initAsync' and count(parameter)=2 and parameter[1][@type='io.anyline.trainer.ProjectContext'] and parameter[2][@type='io.anyline.trainer.TrainerUtils.ViewConfigResultHandler']]/parameter[2]" name="managedName">resultHandler</attr>
+<!-- ScanView.initComposite(org.json.JSONObject) -->
+<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='initComposite' and count(parameter)=1 and parameter[1][@type='org.json.JSONObject']]/parameter[1]" name="managedName">jsonObject</attr>
 <!-- ScanView.notifyDrawDocumentFeedback(java.util.List&lt;android.graphics.PointF&gt;) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='notifyDrawDocumentFeedback' and count(parameter)=1 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;']]/parameter[1]" name="managedName">points</attr>
 <!-- ScanView.notifyTakeHighPictureResolution(io.anyline.CombinedImageProvider) -->
@@ -1203,8 +1202,6 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='setScanConfig' and count(parameter)=1 and parameter[1][@type='org.json.JSONObject']]/parameter[1]" name="managedName">jsonObject</attr>
 <!-- ScanView.setScanViewConfig(io.anyline.view.BaseScanViewConfig) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='setScanViewConfig' and count(parameter)=1 and parameter[1][@type='io.anyline.view.BaseScanViewConfig']]/parameter[1]" name="managedName">scanViewConfig</attr>
-<!-- ScanView.setScanViewPlugin(io.anyline.view.AbstractBaseScanViewPlugin&lt;?&gt;) -->
-<attr path="/api/package[@name='io.anyline.view']/class[@name='ScanView']/method[@name='setScanViewPlugin' and count(parameter)=1 and parameter[1][@type='io.anyline.view.AbstractBaseScanViewPlugin&lt;?&gt;']]/parameter[1]" name="managedName">scanViewPlugin</attr>
 <!-- ScanView.setupCameraController(android.content.Context) -->
 <!-- File: IO.Anyline2.View.ScanViewConfig.cs -->
 <!-- ScanViewConfig.ScanViewConfig(android.content.Context, org.json.JSONObject) -->
@@ -1253,7 +1250,9 @@
 <!-- ScanViewPlugin.calcCutOutAndImageCropBounds(android.content.Context, int, int, int, int, float) -->
 <!-- ScanViewPlugin.setUIChangeListener(io.anyline2.view.UIChangeListener) -->
 <!-- ScanViewPlugin.subscribeToImageProvider(io.anyline2.image.ImageProvider) -->
+<!-- ScanViewPlugin.subscribeToNativeBarcodeProvider(io.anyline2.image.NativeBarcodeProvider, java.util.List&lt;io.anyline.plugin.barcode.BarcodeFormat&gt;) -->
 <!-- ScanViewPlugin.unsubscribeFromImageProvider(io.anyline2.image.ImageProvider) -->
+<!-- ScanViewPlugin.unsubscribeFromNativeBarcodeProvider(io.anyline2.image.NativeBarcodeProvider) -->
 <!-- File: IO.Anyline.Camera.VisualFeedbackConfig.cs -->
 <!-- VisualFeedbackConfig.AnimationStyle.fromInt(int) -->
 <attr path="/api/package[@name='io.anyline.camera']/class[@name='VisualFeedbackConfig.AnimationStyle']/method[@name='fromInt' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">style</attr>
@@ -1368,7 +1367,10 @@
 <attr path="/api/package[@name='io.anyline2.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[2]" name="managedName">attrs</attr>
 <attr path="/api/package[@name='io.anyline2.camera']/class[@name='CameraView']/constructor[@name='CameraView' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int']]/parameter[3]" name="managedName">defStyleAttr</attr>
 <!-- CameraView.addImageReceivedEventListener(io.anyline2.Event&lt;io.anyline2.image.AnylineImage&gt;) -->
+<!-- CameraView.addNativeBarcodeReceivedEventListener(io.anyline2.Event&lt;android.util.Pair&lt;io.anyline.models.AnylineYuvImage, io.anyline.plugin.result.BarcodeResult&gt;&gt;, java.util.List&lt;io.anyline.plugin.barcode.BarcodeFormat&gt;) -->
+<!-- CameraView.enableNativeBarcodeDetection(java.util.List&lt;io.anyline.plugin.barcode.BarcodeFormat&gt;) -->
 <!-- CameraView.removeImageReceivedEventListener(io.anyline2.Event&lt;io.anyline2.image.AnylineImage&gt;) -->
+<!-- CameraView.removeNativeBarcodeReceivedEventListener(io.anyline2.Event&lt;android.util.Pair&lt;io.anyline.models.AnylineYuvImage, io.anyline.plugin.result.BarcodeResult&gt;&gt;) -->
 <!-- File: IO.Anyline.Plugin.Config.LayoutInsuranceCard.cs -->
 <!-- LayoutInsuranceCard.setAuthority(io.anyline.plugin.config.UniversalIdField) -->
 <attr path="/api/package[@name='io.anyline.plugin.config']/class[@name='LayoutInsuranceCard']/method[@name='setAuthority' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.config.UniversalIdField']]/parameter[1]" name="managedName">authority</attr>
@@ -1514,6 +1516,8 @@
 <!-- UIChangeListener.onBrightnessUpdate(int) -->
 <!-- UIChangeListener.onCutoutChanged(java.util.List&lt;android.util.Pair&lt;io.anyline2.viewplugin.ScanViewPlugin, io.anyline2.view.CutoutRect&gt;&gt;) -->
 <!-- UIChangeListener.onCutoutVisibility(io.anyline2.viewplugin.ScanViewPlugin, boolean) -->
+<!-- UIChangeListener.onScanViewPluginStart(io.anyline2.viewplugin.ScanViewPlugin) -->
+<!-- UIChangeListener.onScanViewPluginStop(io.anyline2.viewplugin.ScanViewPlugin) -->
 <!-- File: IO.Anyline.Plugin.Result.TireSizeResult.cs -->
 <!-- TireSizeResult.setCommercialTire(io.anyline.plugin.result.TireSizeResultField) -->
 <attr path="/api/package[@name='io.anyline.plugin.result']/class[@name='TireSizeResult']/method[@name='setCommercialTire' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.result.TireSizeResultField']]/parameter[1]" name="managedName">commercialTire</attr>
@@ -1621,9 +1625,7 @@
 <!-- CameraFeatures2.getForAllCameras(android.content.Context) -->
 <attr path="/api/package[@name='io.anyline.camera']/class[@name='CameraFeatures2']/method[@name='getForAllCameras' and count(parameter)=1 and parameter[1][@type='android.content.Context']]/parameter[1]" name="managedName">context</attr>
 <!-- File: IO.Anyline.Plugin.Result.UniversalIdResult.cs -->
-<!-- UniversalIdResult.setLayoutDefinition(io.anyline.plugin.result.LayoutDefinition) -->
-<attr path="/api/package[@name='io.anyline.plugin.result']/class[@name='UniversalIdResult']/method[@name='setLayoutDefinition' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.result.LayoutDefinition']]/parameter[1]" name="managedName">layoutDefinition</attr>
-<!-- UniversalIdResult.setResult(io.anyline.plugin.result.IdResult) -->
+<!-- UniversalIdResult.setResult(io.anyline.plugin.result.IdResult) -->
 <attr path="/api/package[@name='io.anyline.plugin.result']/class[@name='UniversalIdResult']/method[@name='setResult' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.result.IdResult']]/parameter[1]" name="managedName">result</attr>
 <!-- UniversalIdResult.setVisualization(io.anyline.plugin.result.Visualization) -->
 <attr path="/api/package[@name='io.anyline.plugin.result']/class[@name='UniversalIdResult']/method[@name='setVisualization' and count(parameter)=1 and parameter[1][@type='io.anyline.plugin.result.Visualization']]/parameter[1]" name="managedName">visualization</attr>
@@ -2632,6 +2634,8 @@
 <!-- ScanView.onCutoutChanged(java.util.List&lt;android.util.Pair&lt;io.anyline2.viewplugin.ScanViewPlugin, io.anyline2.view.CutoutRect&gt;&gt;) -->
 <!-- ScanView.onCutoutVisibility(io.anyline2.viewplugin.ScanViewPlugin, boolean) -->
 <!-- ScanView.onLayout(boolean, int, int, int, int) -->
+<!-- ScanView.onScanViewPluginStart(io.anyline2.viewplugin.ScanViewPlugin) -->
+<!-- ScanView.onScanViewPluginStop(io.anyline2.viewplugin.ScanViewPlugin) -->
 <!-- ScanView.setCountsForAutoFlash(int, int, int, int) -->
 <!-- ScanView.setCropRect(io.anyline.opencv.core.Rect) -->
 <attr path="/api/package[@name='io.anyline2.view']/class[@name='ScanView']/method[@name='setCropRect' and count(parameter)=1 and parameter[1][@type='io.anyline.opencv.core.Rect']]/parameter[1]" name="managedName">cropRect</attr>
@@ -4030,6 +4034,15 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='BrightnessHelper']/method[@name='setLevelsForAutoFlash' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[2]" name="managedName">highBrightness</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='BrightnessHelper']/method[@name='setLevelsForAutoFlash' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[3]" name="managedName">lowAmbientLight</attr>
 <attr path="/api/package[@name='io.anyline.view']/class[@name='BrightnessHelper']/method[@name='setLevelsForAutoFlash' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[4]" name="managedName">highAmbientLight</attr>
+<!-- File: IO.Anyline2.Camera.FaceDetector.cs -->
+<!-- FaceDetector.FaceDetectionResultHandler.onFailure(java.lang.String) -->
+<attr path="/api/package[@name='io.anyline2.camera']/interface[@name='FaceDetector.FaceDetectionResultHandler']/method[@name='onFailure' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">e</attr>
+<!-- FaceDetector.FaceDetectionResultHandler.onSuccess(io.anyline2.image.AnylineImage) -->
+<attr path="/api/package[@name='io.anyline2.camera']/interface[@name='FaceDetector.FaceDetectionResultHandler']/method[@name='onSuccess' and count(parameter)=1 and parameter[1][@type='io.anyline2.image.AnylineImage']]/parameter[1]" name="managedName">faceImage</attr>
+<!-- FaceDetector.FaceDetector(io.anyline2.camera.FaceDetector.FaceDetectionResultHandler) -->
+<attr path="/api/package[@name='io.anyline2.camera']/class[@name='FaceDetector']/constructor[@name='FaceDetector' and count(parameter)=1 and parameter[1][@type='io.anyline2.camera.FaceDetector.FaceDetectionResultHandler']]/parameter[1]" name="managedName">faceDetectionResultHandler</attr>
+<!-- FaceDetector.startFaceDetection(io.anyline2.image.AnylineImage) -->
+<attr path="/api/package[@name='io.anyline2.camera']/class[@name='FaceDetector']/method[@name='startFaceDetection' and count(parameter)=1 and parameter[1][@type='io.anyline2.image.AnylineImage']]/parameter[1]" name="managedName">imageForProcessing</attr>
 <!-- File: IO.Anyline2.DI.Assetcontroller.AssetControllerProviderImpl.cs -->
 <!-- File: IO.Anyline.Plugin.ID.ID.cs -->
 <!-- ID.ID(io.anyline.plugin.id.Identification) -->
@@ -4617,6 +4630,8 @@
 <!-- MatOfKeyPoint.fromNativeAddr(long) -->
 <!-- File: IO.Anyline.IMapper.cs -->
 <!-- Mapper.map(From) -->
+<!-- File: IO.Anyline2.Camera.NativeBarcodeFormatToAnylineBarcodeFormatMapper.cs -->
+<!-- NativeBarcodeFormatToAnylineBarcodeFormatMapper.setInstance(io.anyline2.Mapper&lt;java.lang.Integer, io.anyline.plugin.barcode.BarcodeFormat&gt;) -->
 <!-- File: IO.Anyline.Plugin.Config.CommercialTireIdConfig.cs -->
 <!-- CommercialTireIdConfig.UpsideDownMode.fromValue(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.plugin.config']/class[@name='CommercialTireIdConfig.UpsideDownMode']/method[@name='fromValue' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">value</attr>
@@ -4977,6 +4992,7 @@
 <!-- AnylineImage.AnylineImage(android.graphics.Bitmap) -->
 <attr path="/api/package[@name='io.anyline2.image']/class[@name='AnylineImage']/constructor[@name='AnylineImage' and count(parameter)=1 and parameter[1][@type='android.graphics.Bitmap']]/parameter[1]" name="managedName">bitmap</attr>
 <!-- AnylineImage.AnylineImage(byte[], int, int) -->
+<!-- AnylineImage.crop(io.anyline.plugin.result.CropRect) -->
 <!-- AnylineImage.rotate(int) -->
 <!-- File: IO.Anyline.Camera.FaceDetector.cs -->
 <!-- FaceDetector.FaceDetectionResultHandler.onFailure(java.lang.String) -->
@@ -5031,7 +5047,8 @@
 <!-- File: IO.Anyline.Plugin.ID.VehicleRegistrationCertificateConfig.cs -->
 <!-- VehicleRegistrationCertificateConfig.VehicleRegistrationCertificateConfig(org.json.JSONObject) -->
 <attr path="/api/package[@name='io.anyline.plugin.id']/class[@name='VehicleRegistrationCertificateConfig']/constructor[@name='VehicleRegistrationCertificateConfig' and count(parameter)=1 and parameter[1][@type='org.json.JSONObject']]/parameter[1]" name="managedName">jsonObject</attr>
-<!-- File: IO.Anyline.View.AbstractScanViewPluginComposite.cs -->
+<!-- File: IO.Anyline2.Camera.NativeBarcodeDetector.cs -->
+<!-- File: IO.Anyline.View.AbstractScanViewPluginComposite.cs -->
 <!-- AbstractScanViewPluginComposite.AbstractScanViewPluginComposite(java.lang.String) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AbstractScanViewPluginComposite']/constructor[@name='AbstractScanViewPluginComposite' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">id</attr>
 <!-- AbstractScanViewPluginComposite.setCancelOnResult(boolean) -->

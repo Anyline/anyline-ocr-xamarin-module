@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using AnylineExamples.iOS;
 using AnylineXamarinSDK.iOS;
 using CoreGraphics;
@@ -10,22 +7,17 @@ using UIKit;
 
 namespace AnylineXamarinAppiOS
 {
-    public class NFCScanViewController : UIViewController
-        , IALNFCDetectorDelegate
-        //, IALIDPluginDelegate
+    public class NFCScanViewController : UIViewController, IALScanPluginDelegate, IALNFCDetectorDelegate
     {
 
-        //ALIDScanViewPlugin mrzScanViewPlugin;
-        //ALIDScanPlugin mrzScanPlugin;
-        ALScanView scanView;
-        ALNFCDetector nfcDetector;
+        ALScanView _scanView;
+        ALNFCDetector _nfcDetector;
         UIView hintView;
 
         // keep the last values we read from the MRZ so we can retry reading NFC if NFC failed for reasons other than getting these details wrong
         string passportNumberForNFC;
         NSDate dateOfBirth;
         NSDate dateOfExpiry;
-
 
         public NFCScanViewController(string name)
         {
@@ -59,54 +51,26 @@ namespace AnylineXamarinAppiOS
             hintViewLabel.TextColor = UIColor.White;
             View.AddSubview(hintView);
 
-            //ALMRZConfig mrzConfig = new ALMRZConfig();
-            ////we want to be quite confident of these fields to ensure we can read the NFC with them
-            //ALMRZFieldConfidences fieldConfidences = new ALMRZFieldConfidences();
-            //fieldConfidences.DocumentNumber = 90;
-            //fieldConfidences.DateOfBirth = 90;
-            //fieldConfidences.DateOfExpiry = 90;
-            //mrzConfig.IdFieldConfidences = fieldConfidences;
+            _nfcDetector = new ALNFCDetector(this, out NSError nfcDetectorError);
 
-            ////Create fieldScanOptions to configure individual scannable fields
-            //ALMRZFieldScanOptions scanOptions = new ALMRZFieldScanOptions();
-            //scanOptions.VizAddress = ALFieldScanOption.Default;
-            //scanOptions.VizDateOfIssue = ALFieldScanOption.Default;
-            //scanOptions.VizSurname = ALFieldScanOption.Default;
-            //scanOptions.VizGivenNames = ALFieldScanOption.Default;
-            //scanOptions.VizDateOfBirth = ALFieldScanOption.Default;
-            //scanOptions.VizDateOfExpiry = ALFieldScanOption.Default;
+            // Use the JSON file name that you want to load here
+            var configPath = NSBundle.MainBundle.PathForResource("mrz_config", @"json");
+            // This is the main intialization method that will create our use case depending on the JSON configuration.
+            _scanView = ALScanViewFactory.WithConfigFilePath(configPath, this, out NSError scanViewError);
 
-            ////Set scanOptions for MRZConfig
-            //mrzConfig.IdFieldScanOptions = scanOptions;
+            if (scanViewError != null)
+            {
+                System.Diagnostics.Debug.WriteLine(scanViewError.ToString());
+            }
 
-            //NSError error = null;
-            //// Init the anyline ID ScanPlugin with an ID, Licensekey, the delegate,
-            //// the MRZConfig (which will configure the scan Plugin for MRZ scanning), and an error
-            //this.mrzScanPlugin = new ALIDScanPlugin(@"ModuleID", this, mrzConfig, out error);
-
-            //nfcDetector = new ALNFCDetector(this);
-
-            //mrzScanViewPlugin = new ALIDScanViewPlugin(mrzScanPlugin);
-
-            //var frame = UIScreen.MainScreen.ApplicationFrame;
-            //frame = new CGRect(frame.X,
-            //    frame.Y + NavigationController.NavigationBar.Frame.Size.Height,
-            //    frame.Width,
-            //    frame.Height - NavigationController.NavigationBar.Frame.Size.Height);
-
-            //// This is the main intialization method that will create our use case depending on the JSON configuration.
-            //scanView = new ALScanView(frame, mrzScanViewPlugin);
-            //scanView.ScanViewPlugin.AddScanViewPluginDelegate(new CutoutListener(updateHintPosition, scanView));
-            //scanView.FlashButtonConfig.FlashAlignment = ALFlashAlignment.TopLeft;
-
-            //// After setup is complete we add the scanView to the view of this view controller
-            //View.AddSubview(scanView);
-            //View.SendSubviewToBack(scanView);
+            // After setup is complete we add the scanView to the view of this view controller
+            View.AddSubview(_scanView);
+            View.SendSubviewToBack(_scanView);
 
             var topGuide = TopLayoutGuide;
 
             var viewNames = NSDictionary.FromObjectsAndKeys(new object[] {
-            scanView,
+            _scanView,
             topGuide,
             }, new NSObject[] {
                 new NSString("scanView"),
@@ -118,7 +82,17 @@ namespace AnylineXamarinAppiOS
             View.AddConstraints(NSLayoutConstraint.FromVisualFormat("H:|[scanView]|", 0, emptyDict, viewNames));
             View.AddConstraints(NSLayoutConstraint.FromVisualFormat("V:[topGuide]-0-[scanView]|", 0, emptyDict, viewNames));
 
-            scanView.StartCamera();
+            // Pin the leading edge of the scan view to the parent view
+
+            _scanView.TranslatesAutoresizingMaskIntoConstraints = false;
+
+            _scanView.LeadingAnchor.ConstraintEqualTo(View.LeadingAnchor).Active = true;
+            _scanView.TrailingAnchor.ConstraintEqualTo(View.TrailingAnchor).Active = true;
+            _scanView.TopAnchor.ConstraintEqualTo(View.SafeAreaLayoutGuide.TopAnchor).Active = true;
+            _scanView.BottomAnchor.ConstraintEqualTo(View.SafeAreaLayoutGuide.BottomAnchor).Active = true;
+
+
+            _scanView.StartCamera();
         }
 
         public override void ViewDidAppear(bool animated)
@@ -141,15 +115,13 @@ namespace AnylineXamarinAppiOS
          */
         private void startMRZScanning()
         {
-            NSError error = null;
-            //mrzScanViewPlugin.StartAndReturnError(out error);
+            _scanView.ScanViewPlugin.StartWithError(out NSError scanViewStartError);
             hintView.Hidden = false;
         }
 
         private void stopMRZScanning()
         {
-            NSError error = null;
-            //mrzScanViewPlugin.StopAndReturnError(out error);
+            _scanView.ScanViewPlugin.Stop();
             hintView.Hidden = true;
         }
 
@@ -160,36 +132,53 @@ namespace AnylineXamarinAppiOS
              */
             BeginInvokeOnMainThread(() =>
             {
-                this.nfcDetector.StartNfcDetectionWithPassportNumber(this.passportNumberForNFC, this.dateOfBirth, this.dateOfExpiry);
+                _nfcDetector.StartNfcDetectionWithPassportNumber(this.passportNumberForNFC, this.dateOfBirth, this.dateOfExpiry);
             });
         }
 
-        //public void DidFindResult(ALIDScanPlugin anylineIDScanPlugin, ALIDResult scanResult)
-        //{
-        //    ALMRZIdentification identification = (ALMRZIdentification)scanResult.Result;
-        //    string passportNumber = identification.DocumentNumber.Trim();
-        //    NSDate dateOfBirth = identification.DateOfBirthObject;
-        //    NSDate dateOfExpiry = identification.DateOfExpiryObject;
-        //    //The passport number passed to the NFC chip must have a trailing < if there is one in the MRZ string.
-        //    string mrzString = identification.MrzString;
-        //    string passportNumberForNFC = String.Copy(passportNumber);
+        [Export("scanPlugin:resultReceived:")]
+        public void ResultReceived(ALScanPlugin scanPlugin, ALScanResult scanResult)
+        {
+            ALMrzResult mrzResult = scanResult.PluginResult.MrzResult;
 
-        //    while (passportNumberForNFC.Length < 9)
-        //    {
-        //        passportNumberForNFC += "<";
-        //    }
+            string passportNumber = mrzResult.DocumentNumber.Trim();
+            string dateOfBirth = mrzResult.DateOfBirth;
+            string dateOfExpiry = mrzResult.DateOfExpiry;
+            //The passport number passed to the NFC chip must have a trailing < if there is one in the MRZ string.
+            string mrzString = mrzResult.MrzString;
+            string passportNumberForNFC = String.Copy(passportNumber);
 
-        //    stopMRZScanning();
-        //    this.passportNumberForNFC = passportNumberForNFC;
-        //    this.dateOfBirth = dateOfBirth;
-        //    this.dateOfExpiry = dateOfExpiry;
-        //    readNFCChip();
-        //}
+            while (passportNumberForNFC.Length < 9)
+            {
+                passportNumberForNFC += "<";
+            }
+
+            stopMRZScanning();
+            this.passportNumberForNFC = passportNumberForNFC;
+            this.dateOfBirth = ConvertToNSDate(mrzResult.DateOfBirthObject);
+            this.dateOfExpiry = ConvertToNSDate(mrzResult.DateOfExpiryObject);
+            readNFCChip();
+        }
+
+        /// <summary>
+        /// Converts date strings from this: "Sun Apr 12 00:00:00 UTC 1977" to this: "04/12/1977"
+        /// </summary>
+        /// <param name="dateString">Date string to be converted</param>
+        /// <returns>NSDate of the informed date</returns>
+        private NSDate ConvertToNSDate(string dateString)
+        {
+            NSDateFormatter dateFormatter = new NSDateFormatter();
+            dateFormatter.TimeZone = NSTimeZone.FromAbbreviation("GMT+0:00");
+            dateFormatter.DateFormat = @"E MMM d HH:mm:ss zzz yyyy";
+            dateFormatter.Locale = NSLocale.FromLocaleIdentifier("en_US_POSIX");
+            NSDate nsDate = dateFormatter.Parse(dateString);
+            return nsDate;
+        }
 
         public void NfcSucceededWithResult(ALNFCResult nfcResult)
         {
             BeginInvokeOnMainThread(() => { 
-                var resultViewController = new ResultTableViewController(nfcResult);
+                var resultViewController = new ResultViewController(nfcResult, Title);
                 NavigationController?.PushViewController(resultViewController, false);
             });
         }
@@ -201,7 +190,7 @@ namespace AnylineXamarinAppiOS
             {
                 if (error.Code == (int)ALErrorCode.NFCTagErrorNFCNotSupported)
                 {
-                    this.nfcDetector.Dispose();
+                    this._nfcDetector.Dispose();
                     var okAlertController = UIAlertController.Create("NFC Not Supported", "NFC passport reading is not supported on this device", UIAlertControllerStyle.Alert);
                     okAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
                     PresentViewController(okAlertController, true, null);

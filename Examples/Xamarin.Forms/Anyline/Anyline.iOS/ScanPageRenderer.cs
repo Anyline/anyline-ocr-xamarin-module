@@ -145,12 +145,12 @@ namespace Anyline.iOS
             Dispose();
         }
 
-        new void Dispose()
+        protected override void Dispose(bool disposing)
         {
             _scanView?.RemoveFromSuperview();
             _scanView?.Dispose();
             _scanView = null;
-            base.Dispose();
+            base.Dispose(disposing);
         }
         #endregion
     }

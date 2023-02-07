@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/main_layout">
-    <io.anyline.view.ScanView
+    <io.anyline2.view.ScanView
 		android:id="@+id/scan_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

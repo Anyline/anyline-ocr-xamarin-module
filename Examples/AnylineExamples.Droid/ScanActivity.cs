@@ -12,6 +12,7 @@ using IO.Anyline.View;
 using IO.Anyline.Camera;
 using IO.Anyline2;
 using IO.Anyline.Plugin;
+using IO.Anyline2.View;
 
 namespace AnylineExamples.Droid
 {
@@ -23,7 +24,7 @@ namespace AnylineExamples.Droid
     {
         public static readonly string TAG = typeof(ScanActivity).Name;
 
-        private ScanView _scanView;
+        private IO.Anyline2.View.ScanView _scanView;
         private bool _isInitialized = false;
 
         private MyAnylineResultEventHandler _scanResultListener;
@@ -52,38 +53,22 @@ namespace AnylineExamples.Droid
                 Window.SetFlags(WindowManagerFlags.KeepScreenOn, WindowManagerFlags.KeepScreenOn);
                 SetContentView(Resource.Layout.scan_activity);
                 
-                _scanView = FindViewById<ScanView>(Resource.Id.scan_view);
+                _scanView = FindViewById<IO.Anyline2.View.ScanView>(Resource.Id.scan_view);
 
                 // the initialization parses the json configuration and builds the whole use-case
                 _scanView.Init(jsonPath);
-
-                // Activates Face Detection if the MRZ Scanner was initialized
-                //(((_scanView.ScanViewPlugin as AbstractScanViewPlugin)?.ScanPlugin as IdScanPlugin)?.IdConfig as MrzConfig)?.EnableFaceDetection(true);
-
-                // Activates PDF 417 parsing
-                // (you can activate this when scanning the barcode on US Driver's Licenses)
-                //if (_scanView.ScanViewPlugin is BarcodeScanViewPlugin barcodeSVP)
-                //{
-                //   (barcodeSVP.ScanPlugin as BarcodeScanPlugin).EnablePDF417Parsing();
-                //}
-
-                /*
-                 * Depending on your config/use-case, the ScanViewPlugin is of a different type.
-                 * You need to add your implementation of IO.Anyline.Plugin.IScanResultListener to retrieve scan results.
-                 */
-                //_scanView.ScanViewPlugin.Result.AddScanResultListener(_scanResultListener);
-
+                
                 //_scanView.ScanViewPlugin.RunSkippedReceived = _scanResultListener;
                 //_scanView.ScanViewPlugin.ErrorReceived = _scanResultListener;
                 //_scanView.ScanViewPlugin.VisualFeedbackReceived = _scanResultListener;
                 _scanView.ScanViewPlugin.ResultReceived = _scanResultListener;
+                _scanView.ScanViewPlugin.ResultsReceived = _scanResultListener;
 
-                //((_scanView.ScanViewPlugin as IdScanViewPlugin).ScanPlugin as IdScanPlugin).IdConfig
                 // handle camera open events
-                _scanView.CameraOpened += ScanView_CameraOpened;
+                _scanView.CameraView.CameraOpened += ScanView_CameraOpened;
 
                 // handle camera error events
-                _scanView.CameraError += ScanView_CameraError;
+                _scanView.CameraView.CameraError += ScanView_CameraError;
 
                 _isInitialized = true;
             }
@@ -92,12 +77,6 @@ namespace AnylineExamples.Droid
                 Util.ShowError(e.ToString(), this);
             }
         }
-
-        //public void EventReceived(Java.Lang.Object data)
-        //{
-        //    ScanResult sr = (data as ScanResult);
-        //    System.Diagnostics.Debug.WriteLine(sr.Result);
-        //}
 
         protected override void OnResume()
         {
@@ -143,12 +122,18 @@ namespace AnylineExamples.Droid
             }
         }
 
+        public override void OnBackPressed()
+        {
+            base.OnBackPressed();
+            StopScanning();
+        }
+
         private void StopScanning()
         {
             if (_scanView != null)
             {
                 _scanView.Stop();
-                _scanView.CameraView.ReleaseCamera();
+                _scanView.CameraView.ReleaseCameraInBackground();
             }
         }
 
@@ -160,19 +145,14 @@ namespace AnylineExamples.Droid
                 if (_scanView != null)
                 {
                     _scanView.Dispose();
-                    _scanView.CameraOpened -= ScanView_CameraOpened;
-                    _scanView.CameraError -= ScanView_CameraError;
+                    _scanView.CameraView.CameraOpened -= ScanView_CameraOpened;
+                    _scanView.CameraView.CameraError -= ScanView_CameraError;
                     _scanView = null;
-
-
-
-                    GC.Collect();
 
                     _isInitialized = false;
                 }
             }
             catch (Exception) { }
-            Finish();
         }
 
         #endregion

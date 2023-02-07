@@ -5,7 +5,6 @@ using Android.Content;
 using Android.OS;
 using Android.Views;
 using IO.Anyline.Camera;
-using IO.Anyline.View;
 
 using Android.Support.V7.App;
 using Android.Util;
@@ -13,6 +12,7 @@ using IO.Anyline.Plugin.ID;
 using IO.Anyline.Plugin;
 using Anyline.Droid.NFC;
 using IO.Anyline2;
+using IO.Anyline2.View;
 using IO.Anyline.Plugin.Result;
 
 namespace AnylineExamples.Droid.NFC
@@ -23,7 +23,7 @@ namespace AnylineExamples.Droid.NFC
     {
         public static readonly string TAG = typeof(ScanActivity).Name;
 
-       private ScanView _scanView;
+        private ScanView _scanView;
         private bool _isInitialized = false;
 
         public MRZScanActivity()
@@ -33,7 +33,7 @@ namespace AnylineExamples.Droid.NFC
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            
+
             try
             {
                 SupportActionBar.SetHomeButtonEnabled(true);
@@ -56,10 +56,10 @@ namespace AnylineExamples.Droid.NFC
                 _scanView.ScanViewPlugin.ResultReceived = this;
 
                 // handle camera open events
-                _scanView.CameraOpened += ScanView_CameraOpened;
+                _scanView.CameraView.CameraOpened += ScanView_CameraOpened;
 
                 // handle camera error events
-                _scanView.CameraError += ScanView_CameraError;
+                _scanView.CameraView.CameraError += ScanView_CameraError;
 
                 _isInitialized = true;
             }
@@ -158,8 +158,8 @@ namespace AnylineExamples.Droid.NFC
                 if (_scanView != null)
                 {
                     _scanView.Dispose();
-                    _scanView.CameraOpened -= ScanView_CameraOpened;
-                    _scanView.CameraError -= ScanView_CameraError;
+                    _scanView.CameraView.CameraOpened -= ScanView_CameraOpened;
+                    _scanView.CameraView.CameraError -= ScanView_CameraError;
                     _scanView = null;
 
                     _isInitialized = false;

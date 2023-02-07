@@ -27,7 +27,6 @@ namespace AnylineExamples.iOS
             _resultDelegate = new ScanResultDelegate(this, name);
         }
 
-
         private void InitializeAnyline()
         {
             NSError error = null;
@@ -43,16 +42,10 @@ namespace AnylineExamples.iOS
                 // This is the main intialization method that will create our use case depending on the JSON configuration.
                 _scanView = ALScanViewFactory.WithConfigFilePath(configPath, _resultDelegate, out error);
 
-
-                (_scanView.ScanViewPlugin as ALScanViewPlugin).ScanPlugin.Delegate = _resultDelegate;
-
-
                 if (error != null)
                 {
                     throw new Exception(error.LocalizedDescription);
                 }
-
-                ConnectDelegateToScanPlugin();
 
                 // Activates PDF 417 parsing
                 // (you can activate this when scanning the barcode on US Driver's Licenses)
@@ -82,40 +75,6 @@ namespace AnylineExamples.iOS
             }
         }
 
-        private void ConnectDelegateToScanPlugin()
-        {
-            //(scanView.ScanViewPlugin as ALIDScanViewPlugin)?.IdScanPlugin.AddDelegate(resultDelegate);
-            //(scanView.ScanViewPlugin as ALBarcodeScanViewPlugin)?.BarcodeScanPlugin.AddDelegate(resultDelegate);
-            //(scanView.ScanViewPlugin as ALOCRScanViewPlugin)?.OcrScanPlugin.AddDelegate(resultDelegate);
-            //(scanView.ScanViewPlugin as ALMeterScanViewPlugin)?.MeterScanPlugin.AddDelegate(resultDelegate);
-            //(scanView.ScanViewPlugin as ALDocumentScanViewPlugin)?.DocumentScanPlugin.AddDelegate(resultDelegate);
-            //(scanView.ScanViewPlugin as ALLicensePlateScanViewPlugin)?.LicensePlateScanPlugin.AddDelegate(resultDelegate);
-
-            //// add listener to the composite as a whole (to get the information once all the results are available)
-            //(scanView.ScanViewPlugin as ALAbstractScanViewPluginComposite)?.AddDelegate(resultDelegate);
-
-            // OR 
-
-            //// add individual listeners (in case you need to listen to partial results and interrupt the workflow)
-            //// -> in this case, remember to call "scanView.ScanViewPlugin.StopAndReturnError(out error)" after the result to stop scanning.
-
-            //var parallelComposite = (scanView.ScanViewPlugin as ALParallelScanViewPluginComposite);
-            //if (parallelComposite != null)
-            //{
-            //    foreach (ALAbstractScanViewPlugin item in parallelComposite.ChildPlugins.Values)
-            //    {
-            //        if (item is ALMeterScanViewPlugin meterScanViewPlugin)
-            //        {
-            //            meterScanViewPlugin.MeterScanPlugin.AddDelegate(resultDelegate);
-            //        }
-            //        else if (item is ALBarcodeScanViewPlugin barcodeScanViewPlugin)
-            //        {
-            //            barcodeScanViewPlugin.BarcodeScanPlugin.AddDelegate(resultDelegate);
-            //        }
-            //    }
-            //}
-        }
-
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
@@ -131,17 +90,17 @@ namespace AnylineExamples.iOS
             {
                 var success = _scanView.ScanViewPlugin.StartWithError(out error);
 
-                //if (!success)
-                //{
-                //    if (error != null)
-                //    {
-                //        ShowAlert("Start Scanning Error", error.DebugDescription);
-                //    }
-                //    else
-                //    {
-                //        ShowAlert("Start Scanning Error", "error is null");
-                //    }
-                //}
+                if (!success)
+                {
+                    if (error != null)
+                    {
+                        ShowAlert("Start Scanning Error", error.DebugDescription);
+                    }
+                    else
+                    {
+                        ShowAlert("Start Scanning Error", "error is null");
+                    }
+                }
             });
         }
 
@@ -164,12 +123,12 @@ namespace AnylineExamples.iOS
             Dispose();
         }
 
-        new void Dispose()
+        protected override void Dispose(bool disposing)
         {
             _scanView?.RemoveFromSuperview();
             _scanView?.Dispose();
             _scanView = null;
-            base.Dispose();
+            base.Dispose(disposing);
         }
         #endregion
 

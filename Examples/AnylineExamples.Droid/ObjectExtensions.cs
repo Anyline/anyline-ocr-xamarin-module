@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using Android.Graphics;
+using Android.Runtime;
 
 namespace AnylineExamples.Droid
 {
@@ -22,6 +23,11 @@ namespace AnylineExamples.Droid
         {
             Dictionary<string, object> dict = new Dictionary<string, object>();
 
+            if (obj is JavaList list)
+            {
+                dict.Add($"Composite Results ({list.GetType()})", list.ProcessJavaList());
+            }
+
             var props = obj.GetType().GetProperties();
             foreach (var prop in props)
             {
@@ -35,6 +41,11 @@ namespace AnylineExamples.Droid
                     case "Outline":
                     case "Class":
                     case "FieldNames":
+                    case "IsFixedSize":
+                    case "Count":
+                    case "IsReadOnly":
+                    case "IsSynchronized":
+                    case "IsEmpty":
                         break;
                     default:
                         try
@@ -42,22 +53,21 @@ namespace AnylineExamples.Droid
                             var value = prop.GetValue(obj, null);
 
                             if (value == null) { continue; }
-
                             // For Anyline objects, expand to show each property
                             if (value.GetType().Namespace.StartsWith("IO.Anyline"))
                             {
                                 if (value is Array valueArray)
                                 {
-                                    for (int i = 0; i < valueArray.Length; i++)
-                                    {
-                                        var v = valueArray.GetValue(i);
-                                        dict.Add($"{prop.Name} [{i}]", v.CreatePropertyDictionary());
-                                    }
+                                    dict.Add($"{prop.Name} ({prop.PropertyType})", valueArray.ProcessArray());
                                 }
                                 else
                                 {
                                     dict.Add($"{prop.Name} ({prop.PropertyType})", value.CreatePropertyDictionary());
                                 }
+                            }
+                            else if (value is JavaList javaList)
+                            {
+                                dict.Add($"{prop.Name} ({prop.PropertyType})", javaList.ProcessJavaList());
                             }
                             else
                             {
@@ -75,6 +85,36 @@ namespace AnylineExamples.Droid
 
             return dict;
         }
+
+        public static Dictionary<string, object> ProcessArray(this Array array)
+        {
+            Dictionary<string, object> dict = new Dictionary<string, object>();
+            for (int i = 0; i < array.Length; i++)
+            {
+                var v = array.GetValue(i);
+                dict.Add($"[{i}] ({v.GetType()})", v.CreatePropertyDictionary());
+            }
+            return dict;
+        }
+
+        public static Dictionary<string, object> ProcessJavaList(this JavaList list)
+        {
+            Dictionary<string, object> dict = new Dictionary<string, object>();
+            for (int i = 0; i < list.Count; i++)
+            {
+                var v = list[i];
+                if (v.GetType().Namespace.StartsWith("IO.Anyline"))
+                {
+                    dict.Add($"[{i}] ({v.GetType()})", v.CreatePropertyDictionary());
+                }
+                else
+                {
+                    dict.Add($"[{i}] ({v.GetType()})", v.ToString());
+                }
+            }
+            return dict;
+        }
+
 
         /// <summary>
         /// Adds an object with a given name to the dictionary.

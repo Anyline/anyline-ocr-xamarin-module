@@ -11,9 +11,7 @@
     "pluginConfig": {
       "id": "TIRE",
       "cancelOnResult": true,
-      "commercialTireIdConfig": {
-
-      }
+      "commercialTireIdConfig": {}
     },
     "cutoutConfig": {
       "style": "animated_rect",
@@ -43,4 +41,3 @@
     }
   }
 }
-

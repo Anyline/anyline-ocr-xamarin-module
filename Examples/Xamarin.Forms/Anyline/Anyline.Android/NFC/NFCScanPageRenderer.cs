@@ -5,13 +5,10 @@ using Android.Views;
 using Android.Widget;
 using Anyline.NFC;
 using Anyline.Droid.NFC;
-using IO.Anyline.Plugin;
-using IO.Anyline.Plugin.ID;
-using IO.Anyline.View;
+using IO.Anyline2.View;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
-using IO.Anyline.Models;
 using System.IO;
 using IO.Anyline.Plugin.Result;
 
@@ -56,12 +53,9 @@ namespace Anyline.Droid.NFC
 
                     scanView.Init(configurationFile);
 
-                    // Activates Face Detection if the MRZ Scanner was initialized
-                    //(((scanView.ScanViewPlugin as IdScanViewPlugin)?.ScanPlugin as IdScanPlugin)?.IdConfig as MrzConfig)?.EnableFaceDetection(true);
-
                     scanView.ScanViewPlugin.ResultReceived = this;
 
-                    scanView.CameraOpened += ScanView_CameraOpened;
+                    scanView.CameraView.CameraOpened += ScanView_CameraOpened;
                 }
 
             }
@@ -181,7 +175,6 @@ namespace Anyline.Droid.NFC
             }
             view = null;
             RemoveAllViews();
-            GC.Collect();
         }
         #endregion
     }

@@ -9,7 +9,10 @@
         <ScrollView>
             <StackLayout VerticalOptions="FillAndExpand" Padding="5" >
                 <Label Text="Results" FontSize="15" TextColor="#32ADFF" FontAttributes="Bold" />
-                <ContentView x:Name="cvContent" />
+
+                <ContentView x:Name="cvContent">
+                    <ActivityIndicator x:Name="loader" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsEnabled="True" IsRunning="True" />
+                </ContentView>
 
                 <BoxView HeightRequest="1" BackgroundColor="#30FFFFFF" />
 

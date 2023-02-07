@@ -23,9 +23,9 @@ namespace Anyline.Droid
         {
             Dictionary<string, object> dict = new Dictionary<string, object>();
 
-            if (obj is Array array)
+            if (obj is JavaList list)
             {
-                dict.Add($"Composite Results ({array.GetType()})", array.ProcessArray());
+                dict.Add($"Composite Results ({list.GetType()})", list.ProcessJavaList());
             }
             var props = obj.GetType().GetProperties();
             foreach (var prop in props)
@@ -40,6 +40,11 @@ namespace Anyline.Droid
                     case "Outline":
                     case "Class":
                     case "FieldNames":
+                    case "IsFixedSize":
+                    case "Count":
+                    case "IsReadOnly":
+                    case "IsSynchronized":
+                    case "IsEmpty":
                         break;
                     default:
                         try

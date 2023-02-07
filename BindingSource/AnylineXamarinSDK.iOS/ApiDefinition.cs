@@ -48,10 +48,10 @@ namespace AnylineXamarinSDK.iOS
 		string AsJSONString();
     }
 
-    // @interface ALExtras (NSData)
+    // @interface ALJSONExtras (NSData)
     [Category]
     [BaseType (typeof(NSData))]
-    interface NSData_ALExtras
+    interface NSData_ALJSONExtras
     {
         // -(id _Nullable)toJSONObject:(NSError * _Nullable * _Nullable)error;
         [Export ("toJSONObject:")]
@@ -59,14 +59,14 @@ namespace AnylineXamarinSDK.iOS
         NSObject ToJSONObject ([NullAllowed] out NSError error);
 
         // -(id _Nullable)asJSONObject;
-	    [Export ("asJSONObject")]
-		NSObject AsJSONObject();
+        [Export ("asJSONObject")]
+        NSObject AsJSONObject();
     }
 
-    // @interface ALExtras (NSString)
+    // @interface ALJSONExtras (NSString)
     [Category]
     [BaseType (typeof(NSString))]
-    interface NSString_ALExtras
+    interface NSString_ALJSONExtras
     {
         // -(id _Nullable)toJSONObject:(NSError * _Nullable * _Nullable)error;
         [Export ("toJSONObject:")]
@@ -74,21 +74,21 @@ namespace AnylineXamarinSDK.iOS
         NSObject ToJSONObject ([NullAllowed] out NSError error);
 
         // -(id _Nullable)asJSONObject;
-	    [Export ("asJSONObject")]
-		NSObject AsJSONObject();
+        [Export ("asJSONObject")]
+        NSObject AsJSONObject();
     }
 
-    // @interface ALExtras (NSDictionary) <ALJSONStringRepresentable>
+    // @interface ALJSONExtras (NSDictionary) <ALJSONStringRepresentable>
     [Protocol, Model]
     [BaseType (typeof(NSDictionary))]
-    interface NSDictionary_ALExtras : ALJSONStringRepresentable
+    interface NSDictionary_ALJSONExtras : ALJSONStringRepresentable
     {
     }
 
-    // @interface ALExtras (NSArray) <ALJSONStringRepresentable>
+    // @interface ALJSONExtras (NSArray) <ALJSONStringRepresentable>
     [Protocol, Model]
     [BaseType (typeof(NSArray))]
-    interface NSArray_ALExtras : ALJSONStringRepresentable
+    interface NSArray_ALJSONExtras : ALJSONStringRepresentable
     {
     }
 
@@ -130,10 +130,9 @@ namespace AnylineXamarinSDK.iOS
         [return: NullAllowed]
         ALCameraConfig WithJSONDictionary (NSDictionary JSONDictionary);
 
-        // +(instancetype _Nullable)defaultCameraConfig;
+        // +(instancetype _Nonnull)defaultCameraConfig;
         [Static]
         [Export ("defaultCameraConfig")]
-        [return: NullAllowed]
         ALCameraConfig DefaultCameraConfig ();
 
         // -(instancetype _Nonnull)initWithDefaultCamera:(NSString * _Nonnull)defaultCamera captureViewResolution:(ALCaptureViewResolution)captureResolution pictureResolution:(ALPictureResolution)pictureResolution zoomFactor:(CGFloat)zoomFactor maxZoomFactor:(CGFloat)maxZoomFactor zoomGesture:(BOOL)zoomGesture __attribute__((objc_designated_initializer));
@@ -187,9 +186,10 @@ namespace AnylineXamarinSDK.iOS
         [DesignatedInitializer]
         IntPtr Constructor (ALFlashMode flashMode, ALFlashAlignment flashAlignment, [NullAllowed] string flashImageName, CGPoint flashOffset);
 
-        // +(ALFlashConfig * _Nonnull)withFlashMode:(ALFlashMode)flashMode flashAlignment:(ALFlashAlignment)flashAlignment flashImageName:(NSString * _Nullable)flashImageName flashOffset:(CGPoint)flashOffset;
+        // +(ALFlashConfig * _Nullable)withFlashMode:(ALFlashMode)flashMode flashAlignment:(ALFlashAlignment)flashAlignment flashImageName:(NSString * _Nullable)flashImageName flashOffset:(CGPoint)flashOffset;
         [Static]
         [Export ("withFlashMode:flashAlignment:flashImageName:flashOffset:")]
+	    [return: NullAllowed]
         ALFlashConfig WithFlashMode (ALFlashMode flashMode, ALFlashAlignment flashAlignment, [NullAllowed] string flashImageName, CGPoint flashOffset);
     }
 
@@ -2311,297 +2311,313 @@ namespace AnylineXamarinSDK.iOS
         [Static]
         [Export ("withValue:")]
         [return: NullAllowed]
-        ALCountry WithValue (string value);
+        ALCountry WithValue (string value);    
 
         // // +(ALCountry * _Nonnull)a;
         // [Static]
         // [Export ("a")]
+        // [Verify (MethodToProperty)]
         // ALCountry A { get; }
 
         // // +(ALCountry * _Nonnull)af;
         // [Static]
         // [Export ("af")]
+        // [Verify (MethodToProperty)]
         // ALCountry Af { get; }
 
         // // +(ALCountry * _Nonnull)al;
         // [Static]
         // [Export ("al")]
+        // [Verify (MethodToProperty)]
         // ALCountry Al { get; }
 
         // // +(ALCountry * _Nonnull)am;
         // [Static]
         // [Export ("am")]
+        // [Verify (MethodToProperty)]
         // ALCountry Am { get; }
 
         // // +(ALCountry * _Nonnull)and;
         // [Static]
         // [Export ("and")]
+        // [Verify (MethodToProperty)]
         // ALCountry And { get; }
 
         // // +(ALCountry * _Nonnull)az;
         // [Static]
         // [Export ("az")]
+        // [Verify (MethodToProperty)]
         // ALCountry Az { get; }
 
         // // +(ALCountry * _Nonnull)b;
         // [Static]
         // [Export ("b")]
+        // [Verify (MethodToProperty)]
         // ALCountry B { get; }
 
         // // +(ALCountry * _Nonnull)bg;
         // [Static]
         // [Export ("bg")]
+        // [Verify (MethodToProperty)]
         // ALCountry Bg { get; }
 
         // // +(ALCountry * _Nonnull)bih;
         // [Static]
         // [Export ("bih")]
+        // [Verify (MethodToProperty)]
         // ALCountry Bih { get; }
 
         // // +(ALCountry * _Nonnull)by;
         // [Static]
         // [Export ("by")]
+        // [Verify (MethodToProperty)]
         // ALCountry By { get; }
 
         // // +(ALCountry * _Nonnull)ch;
         // [Static]
         // [Export ("ch")]
+        // [Verify (MethodToProperty)]
         // ALCountry Ch { get; }
 
         // // +(ALCountry * _Nonnull)cy;
         // [Static]
         // [Export ("cy")]
+        // [Verify (MethodToProperty)]
         // ALCountry Cy { get; }
 
         // // +(ALCountry * _Nonnull)cz;
         // [Static]
         // [Export ("cz")]
+        // [Verify (MethodToProperty)]
         // ALCountry Cz { get; }
 
         // // +(ALCountry * _Nonnull)d;
         // [Static]
         // [Export ("d")]
+        // [Verify (MethodToProperty)]
         // ALCountry D { get; }
 
         // // +(ALCountry * _Nonnull)dk;
         // [Static]
         // [Export ("dk")]
+        // [Verify (MethodToProperty)]
         // ALCountry Dk { get; }
 
         // // +(ALCountry * _Nonnull)e;
         // [Static]
         // [Export ("e")]
+        // [Verify (MethodToProperty)]
         // ALCountry E { get; }
 
         // // +(ALCountry * _Nonnull)empty;
         // [Static]
         // [Export ("empty")]
+        // [Verify (MethodToProperty)]
         // ALCountry Empty { get; }
 
         // // +(ALCountry * _Nonnull)est;
         // [Static]
         // [Export ("est")]
+        // [Verify (MethodToProperty)]
         // ALCountry Est { get; }
 
         // // +(ALCountry * _Nonnull)f;
         // [Static]
         // [Export ("f")]
+        // [Verify (MethodToProperty)]
         // ALCountry F { get; }
 
         // // +(ALCountry * _Nonnull)fin;
         // [Static]
         // [Export ("fin")]
+        // [Verify (MethodToProperty)]
         // ALCountry Fin { get; }
 
         // // +(ALCountry * _Nonnull)fl;
         // [Static]
         // [Export ("fl")]
+        // [Verify (MethodToProperty)]
         // ALCountry Fl { get; }
 
         // // +(ALCountry * _Nonnull)gb;
         // [Static]
         // [Export ("gb")]
+        // [Verify (MethodToProperty)]
         // ALCountry Gb { get; }
 
         // // +(ALCountry * _Nonnull)ge;
         // [Static]
         // [Export ("ge")]
+        // [Verify (MethodToProperty)]
         // ALCountry Ge { get; }
 
         // // +(ALCountry * _Nonnull)gr;
         // [Static]
         // [Export ("gr")]
+        // [Verify (MethodToProperty)]
         // ALCountry Gr { get; }
 
         // // +(ALCountry * _Nonnull)h;
         // [Static]
         // [Export ("h")]
+        // [Verify (MethodToProperty)]
         // ALCountry H { get; }
 
         // // +(ALCountry * _Nonnull)hr;
         // [Static]
         // [Export ("hr")]
+        // [Verify (MethodToProperty)]
         // ALCountry Hr { get; }
 
         // // +(ALCountry * _Nonnull)i;
         // [Static]
         // [Export ("i")]
+        // [Verify (MethodToProperty)]
         // ALCountry I { get; }
 
         // // +(ALCountry * _Nonnull)ire;
         // [Static]
         // [Export ("ire")]
+        // [Verify (MethodToProperty)]
         // ALCountry Ire { get; }
 
         // // +(ALCountry * _Nonnull)is;
         // [Static]
         // [Export ("is")]
+        // [Verify (MethodToProperty)]
         // ALCountry Is { get; }
 
         // // +(ALCountry * _Nonnull)l;
         // [Static]
         // [Export ("l")]
+        // [Verify (MethodToProperty)]
         // ALCountry L { get; }
 
         // // +(ALCountry * _Nonnull)lt;
         // [Static]
         // [Export ("lt")]
+        // [Verify (MethodToProperty)]
         // ALCountry Lt { get; }
 
         // // +(ALCountry * _Nonnull)lv;
         // [Static]
         // [Export ("lv")]
+        // [Verify (MethodToProperty)]
         // ALCountry Lv { get; }
 
         // // +(ALCountry * _Nonnull)m;
         // [Static]
         // [Export ("m")]
+        // [Verify (MethodToProperty)]
         // ALCountry M { get; }
 
         // // +(ALCountry * _Nonnull)mc;
         // [Static]
         // [Export ("mc")]
+        // [Verify (MethodToProperty)]
         // ALCountry Mc { get; }
 
         // // +(ALCountry * _Nonnull)mne;
         // [Static]
         // [Export ("mne")]
+        // [Verify (MethodToProperty)]
         // ALCountry Mne { get; }
 
         // // +(ALCountry * _Nonnull)mo;
         // [Static]
         // [Export ("mo")]
+        // [Verify (MethodToProperty)]
         // ALCountry Mo { get; }
 
         // // +(ALCountry * _Nonnull)n;
         // [Static]
         // [Export ("n")]
+        // [Verify (MethodToProperty)]
         // ALCountry N { get; }
 
         // // +(ALCountry * _Nonnull)nSpecial;
         // [Static]
         // [Export ("nSpecial")]
+        // [Verify (MethodToProperty)]
         // ALCountry NSpecial { get; }
 
         // // +(ALCountry * _Nonnull)nl;
         // [Static]
         // [Export ("nl")]
+        // [Verify (MethodToProperty)]
         // ALCountry Nl { get; }
 
         // // +(ALCountry * _Nonnull)nmk;
         // [Static]
         // [Export ("nmk")]
+        // [Verify (MethodToProperty)]
         // ALCountry Nmk { get; }
 
         // // +(ALCountry * _Nonnull)p;
         // [Static]
         // [Export ("p")]
+        // [Verify (MethodToProperty)]
         // ALCountry P { get; }
 
         // // +(ALCountry * _Nonnull)pl;
         // [Static]
         // [Export ("pl")]
+        // [Verify (MethodToProperty)]
         // ALCountry Pl { get; }
 
         // // +(ALCountry * _Nonnull)ro;
         // [Static]
         // [Export ("ro")]
+        // [Verify (MethodToProperty)]
         // ALCountry Ro { get; }
 
         // // +(ALCountry * _Nonnull)rus;
         // [Static]
         // [Export ("rus")]
+        // [Verify (MethodToProperty)]
         // ALCountry Rus { get; }
 
         // // +(ALCountry * _Nonnull)s;
         // [Static]
         // [Export ("s")]
+        // [Verify (MethodToProperty)]
         // ALCountry S { get; }
 
         // // +(ALCountry * _Nonnull)sk;
         // [Static]
         // [Export ("sk")]
+        // [Verify (MethodToProperty)]
         // ALCountry Sk { get; }
 
         // // +(ALCountry * _Nonnull)slo;
         // [Static]
         // [Export ("slo")]
+        // [Verify (MethodToProperty)]
         // ALCountry Slo { get; }
 
         // // +(ALCountry * _Nonnull)srb;
         // [Static]
         // [Export ("srb")]
+        // [Verify (MethodToProperty)]
         // ALCountry Srb { get; }
 
         // // +(ALCountry * _Nonnull)tr;
         // [Static]
         // [Export ("tr")]
+        // [Verify (MethodToProperty)]
         // ALCountry Tr { get; }
 
         // // +(ALCountry * _Nonnull)ua;
         // [Static]
         // [Export ("ua")]
+        // [Verify (MethodToProperty)]
         // ALCountry Ua { get; }
 
         // // +(ALCountry * _Nonnull)us;
         // [Static]
         // [Export ("us")]
+        // [Verify (MethodToProperty)]
         // ALCountry Us { get; }
-    }
-
-    // @interface ALType : NSObject
-    [BaseType (typeof(NSObject))]
-    interface ALType
-    {
-        // @property (readonly, copy, nonatomic) NSString * _Nonnull value;
-        [Export ("value")]
-        string Value { get; }
-
-        // +(instancetype _Nullable)withValue:(NSString * _Nonnull)value;
-        [Static]
-        [Export ("withValue:")]
-        [return: NullAllowed]
-        ALType WithValue (string value);
-
-        // // +(ALType * _Nonnull)drivingLicense;
-        // [Static]
-        // [Export ("drivingLicense")]
-        // ALType DrivingLicense { get; }
-
-        // // +(ALType * _Nonnull)insuranceCard;
-        // [Static]
-        // [Export ("insuranceCard")]
-        // ALType InsuranceCard { get; }
-
-        // // +(ALType * _Nonnull)mrz;
-        // [Static]
-        // [Export ("mrz")]
-        // ALType Mrz { get; }
-
-        // // +(ALType * _Nonnull)theIDFront;
-        // [Static]
-        // [Export ("theIDFront")]
-        // ALType TheIDFront { get; }
     }
 
     // @interface ALPluginResult : NSObject
@@ -3301,10 +3317,6 @@ namespace AnylineXamarinSDK.iOS
     [BaseType (typeof(NSObject))]
     interface ALUniversalIDResult
     {
-        // @property (nonatomic, strong) ALLayoutDefinition * _Nonnull layoutDefinition;
-        [Export ("layoutDefinition", ArgumentSemantic.Strong)]
-        ALLayoutDefinition LayoutDefinition { get; set; }
-
         // @property (nonatomic, strong) ALIDResult * _Nonnull result;
         [Export ("result", ArgumentSemantic.Strong)]
         ALIDResult Result { get; set; }
@@ -3312,23 +3324,6 @@ namespace AnylineXamarinSDK.iOS
         // @property (nonatomic, strong) ALVisualization * _Nullable visualization;
         [NullAllowed, Export ("visualization", ArgumentSemantic.Strong)]
         ALVisualization Visualization { get; set; }
-    }
-
-    // @interface ALLayoutDefinition : NSObject
-    [BaseType (typeof(NSObject))]
-    interface ALLayoutDefinition
-    {
-        // @property (copy, nonatomic) NSString * _Nonnull country;
-        [Export ("country")]
-        string Country { get; set; }
-
-        // @property (copy, nonatomic) NSString * _Nonnull layout;
-        [Export ("layout")]
-        string Layout { get; set; }
-
-        // @property (assign, nonatomic) ALType * _Nonnull type;
-        [Export ("type", ArgumentSemantic.Assign)]
-        ALType Type { get; set; }
     }
 
     // @interface ALIDResult : NSObject
@@ -3483,10 +3478,6 @@ namespace AnylineXamarinSDK.iOS
         [NullAllowed, Export ("documentVersionsDefinition", ArgumentSemantic.Strong)]
         ALUniversalIDResultField DocumentVersionsDefinition { get; set; }
 
-        // @property (nonatomic, strong) ALUniversalIDResultField * _Nullable drivingLicenseString;
-        [NullAllowed, Export ("drivingLicenseString", ArgumentSemantic.Strong)]
-        ALUniversalIDResultField DrivingLicenseString { get; set; }
-
         // @property (nonatomic, strong) ALUniversalIDResultField * _Nullable duplicate;
         [NullAllowed, Export ("duplicate", ArgumentSemantic.Strong)]
         ALUniversalIDResultField Duplicate { get; set; }
@@ -3574,10 +3565,6 @@ namespace AnylineXamarinSDK.iOS
         // @property (nonatomic, strong) ALUniversalIDResultField * _Nullable hologram;
         [NullAllowed, Export ("hologram", ArgumentSemantic.Strong)]
         ALUniversalIDResultField Hologram { get; set; }
-
-        // @property (nonatomic, strong) ALUniversalIDResultField * _Nullable theIDFrontString;
-        [NullAllowed, Export ("theIDFrontString", ArgumentSemantic.Strong)]
-        ALUniversalIDResultField TheIDFrontString { get; set; }
 
         // @property (nonatomic, strong) ALUniversalIDResultField * _Nullable initials;
         [NullAllowed, Export ("initials", ArgumentSemantic.Strong)]
@@ -4019,6 +4006,10 @@ namespace AnylineXamarinSDK.iOS
         // -(instancetype _Nullable)initWithJSONDictionary:(NSDictionary * _Nonnull)JSONDictionary error:(NSError * _Nullable * _Nullable)error;
         [Export ("initWithJSONDictionary:error:")]
         IntPtr Constructor (NSDictionary JSONDictionary, [NullAllowed] out NSError error);
+
+        // -(NSArray<NSDictionary<NSString *,NSString *> *> * _Nonnull)fieldList;
+        [Export ("fieldList")]
+        NSDictionary<NSString, NSString>[] FieldList { get; }
     }
 
     // @interface ALScanPluginConfig : NSObject <ALJSONStringRepresentable>
@@ -4183,6 +4174,7 @@ namespace AnylineXamarinSDK.iOS
         // +(ALScanResult * _Nonnull)withScanResultEvent:(ALEvent * _Nonnull)event;
         [Static]
         [Export ("withScanResultEvent:")]
+	    [return: NullAllowed]
         ALScanResult WithScanResultEvent (ALEvent @event);
     }
 
@@ -4508,7 +4500,23 @@ namespace AnylineXamarinSDK.iOS
         [Export ("regionOfInterest", ArgumentSemantic.Assign)]
         CGRect RegionOfInterest { get; set; }
 
-        // @property (readonly, nonatomic) NSArray<id<ALScanViewPluginBase>> * _Nonnull children;
+        // @property (readonly, nonatomic) BOOL isStarted;
+        [Export ("isStarted")]
+        bool IsStarted { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nonnull pluginID;
+        [Export ("pluginID")]
+        string PluginID { get; }
+
+        // -(BOOL)startWithError:(NSError * _Nullable * _Nullable)error;
+        [Export ("startWithError:")]
+        bool StartWithError ([NullAllowed] out NSError error);
+
+        // -(void)stop;
+        [Export ("stop")]
+        void Stop ();
+        
+        // @property (readonly, nonatomic) NSArray<NSObject<ALScanViewPluginBase> *> * _Nonnull children;
         [Export ("children")]
         ALScanViewPluginBase[] Children { get; }
 
@@ -4558,16 +4566,16 @@ namespace AnylineXamarinSDK.iOS
     [BaseType (typeof(UIView))]
     interface ALScanView
     {
-        // -(instancetype _Nullable)initWithFrame:(CGRect)frame scanViewPlugin:(id<ALScanViewPluginBase> _Nonnull)scanViewPlugin scanViewConfig:(ALScanViewConfig * _Nullable)scanViewConfig error:(NSError * _Nullable * _Nullable)error;
+	// -(instancetype _Nullable)initWithFrame:(CGRect)frame scanViewPlugin:(NSObject<ALScanViewPluginBase> * _Nonnull)scanViewPlugin scanViewConfig:(ALScanViewConfig * _Nullable)scanViewConfig error:(NSError * _Nullable * _Nullable)error;
         [Export ("initWithFrame:scanViewPlugin:scanViewConfig:error:")]
-        IntPtr Constructor (CGRect frame, ALScanViewPluginBase scanViewPlugin, [NullAllowed] ALScanViewConfig scanViewConfig, [NullAllowed] out NSError error);
+	    IntPtr Constructor (CGRect frame, ALScanViewPluginBase scanViewPlugin, [NullAllowed] ALScanViewConfig scanViewConfig, [NullAllowed] out NSError error);
 
-        // -(instancetype _Nullable)initWithFrame:(CGRect)frame scanViewPlugin:(id<ALScanViewPluginBase> _Nonnull)scanViewPlugin error:(NSError * _Nullable * _Nullable)error;
-        [Export ("initWithFrame:scanViewPlugin:error:")]
-        IntPtr Constructor (CGRect frame, ALScanViewPluginBase scanViewPlugin, [NullAllowed] out NSError error);
+    	// -(instancetype _Nullable)initWithFrame:(CGRect)frame scanViewPlugin:(NSObject<ALScanViewPluginBase> * _Nonnull)scanViewPlugin error:(NSError * _Nullable * _Nullable)error;
+	    [Export ("initWithFrame:scanViewPlugin:error:")]
+	    IntPtr Constructor (CGRect frame, ALScanViewPluginBase scanViewPlugin, [NullAllowed] out NSError error);
 
-        // -(BOOL)setScanViewPlugin:(id<ALScanViewPluginBase> _Nonnull)scanViewPlugin error:(NSError * _Nullable * _Nullable)error;
-        [Export ("setScanViewPlugin:error:")]
+        // -(BOOL)setScanViewPlugin:(NSObject<ALScanViewPluginBase> * _Nonnull)scanViewPlugin error:(NSError * _Nullable * _Nullable)error;
+	    [Export ("setScanViewPlugin:error:")]
         bool SetScanViewPlugin (ALScanViewPluginBase scanViewPlugin, [NullAllowed] out NSError error);
 
         [Wrap ("WeakDelegate")]
@@ -4578,8 +4586,8 @@ namespace AnylineXamarinSDK.iOS
         [NullAllowed, Export ("delegate", ArgumentSemantic.Weak)]
         NSObject WeakDelegate { get; set; }
 
-        // @property (readonly, nonatomic) id<ALScanViewPluginBase> _Nonnull scanViewPlugin;
-        [Export ("scanViewPlugin")]
+        // @property (readonly, nonatomic) NSObject<ALScanViewPluginBase> * _Nonnull scanViewPlugin;
+	    [Export ("scanViewPlugin")]
         ALScanViewPluginBase ScanViewPlugin { get; }
 
         // @property (readonly, nonatomic) CGRect flashButtonFrame;
@@ -4619,17 +4627,21 @@ namespace AnylineXamarinSDK.iOS
         // @optional -(void)scanView:(ALScanView * _Nonnull)scanView updatedCutoutWithPluginID:(NSString * _Nonnull)pluginID frame:(CGRect)frame;
         [Export ("scanView:updatedCutoutWithPluginID:frame:")]
         void ScanView (ALScanView scanView, string pluginID, CGRect frame);
+
+        // @optional -(void)scanView:(ALScanView * _Nonnull)scanView encounteredError:(NSError * _Nonnull)error;
+        [Export ("scanView:encounteredError:")]
+    	void ScanView (ALScanView scanView, NSError error);
     }
 
     // @interface ALScanViewPluginFactory : NSObject
     [BaseType (typeof(NSObject))]
     interface ALScanViewPluginFactory
     {
-        // +(id<ALScanViewPluginBase> _Nullable)withJSONDictionary:(NSDictionary * _Nonnull)JSONDictionary;
-        [Static]
-        [Export ("withJSONDictionary:")]
-        [return: NullAllowed]
-        ALScanViewPluginBase WithJSONDictionary (NSDictionary JSONDictionary);
+        // +(NSObject<ALScanViewPluginBase> * _Nullable)withJSONDictionary:(NSDictionary * _Nonnull)JSONDictionary error:(NSError * _Nullable * _Nullable)error;
+	    [Static]
+        [Export ("withJSONDictionary:error:")]
+    	[return: NullAllowed]
+	    ALScanViewPluginBase WithJSONDictionary (NSDictionary JSONDictionary, [NullAllowed] out NSError error);
     }
 
     // @interface ALScanViewFactory : NSObject
@@ -4646,19 +4658,7 @@ namespace AnylineXamarinSDK.iOS
         [Static]
         [Export ("withJSONDictionary:delegate:error:")]
         [return: NullAllowed]
-        ALScanView WithJSONDictionary (NSDictionary JSONDictionary, ALScanPluginDelegate @delegate, [NullAllowed] out NSError error);
-
-        // +(ALScanView * _Nullable)withConfigFilePath:(NSString * _Nonnull)configFilePath delegate:(id _Nonnull)delegate;
-        [Static]
-        [Export ("withConfigFilePath:delegate:")]
-        [return: NullAllowed]
-        ALScanView WithConfigFilePath (string configFilePath, NSObject @delegate);
-
-        // +(ALScanView * _Nullable)withJSONDictionary:(NSDictionary * _Nonnull)JSONDictionary delegate:(id<ALScanPluginDelegate> _Nonnull)delegate;
-        [Static]
-        [Export ("withJSONDictionary:delegate:")]
-        [return: NullAllowed]
-        ALScanView WithJSONDictionary (NSDictionary JSONDictionary, ALScanPluginDelegate @delegate);
+    	ALScanView WithJSONDictionary (NSDictionary JSONDictionary, NSObject @delegate, [NullAllowed] out NSError error);
     }
     
     // @interface ALViewPluginComposite : NSObject <ALScanViewPluginBase>
@@ -4685,8 +4685,8 @@ namespace AnylineXamarinSDK.iOS
         [Export ("pluginID")]
         string PluginID { get; }
 
-        // @property (readonly, nonatomic) NSArray<id<ALScanViewPluginBase>> * _Nonnull children;
-        [Export ("children")]
+        // @property (readonly, nonatomic) NSArray<NSObject<ALScanViewPluginBase> *> * _Nonnull children;
+	    [Export ("children")]
         ALScanViewPluginBase[] Children { get; }
 
         // @property (readonly, nonatomic) ALScanViewPlugin * _Nullable activeChild;
@@ -4705,14 +4705,22 @@ namespace AnylineXamarinSDK.iOS
         [Export ("initWithJSONDictionary:error:")]
         IntPtr Constructor (NSDictionary JSONDictionary, [NullAllowed] out NSError error);
 
-        // -(instancetype _Nullable)initWithID:(NSString * _Nonnull)ID mode:(ALCompositeProcessingMode)mode children:(NSArray<id<ALScanViewPluginBase>> * _Nonnull)children error:(NSError * _Nullable * _Nullable)error;
-        [Export ("initWithID:mode:children:error:")]
+        // -(instancetype _Nullable)initWithID:(NSString * _Nonnull)ID mode:(ALCompositeProcessingMode)mode children:(NSArray<NSObject<ALScanViewPluginBase> *> * _Nonnull)children error:(NSError * _Nullable * _Nullable)error;
+	    [Export ("initWithID:mode:children:error:")]
         IntPtr Constructor (string ID, ALCompositeProcessingMode mode, ALScanViewPluginBase[] children, [NullAllowed] out NSError error);
 
-        // -(id<ALScanViewPluginBase> _Nullable)pluginWithID:(NSString * _Nonnull)pluginID;
+        // -(NSObject<ALScanViewPluginBase> * _Nullable)pluginWithID:(NSString * _Nonnull)pluginID;
         [Export ("pluginWithID:")]
         [return: NullAllowed]
         ALScanViewPluginBase PluginWithID (string pluginID);
+
+        // -(BOOL)startWithError:(NSError * _Nullable * _Nullable)error;
+        [Export ("startWithError:")]
+        bool StartWithError ([NullAllowed] out NSError error);
+
+        // -(void)stop;
+        [Export ("stop")]
+        void Stop ();
     }
 
     // @protocol ALViewPluginCompositeDelegate <NSObject>
@@ -4740,6 +4748,10 @@ namespace AnylineXamarinSDK.iOS
         // @property (readonly, nonatomic) id _Nullable JSONObject;
         [NullAllowed, Export ("JSONObject")]
         NSObject JSONObject { get; }
+
+        // @property (copy, nonatomic) NSString * _Nullable channel;
+        [NullAllowed, Export ("channel")]
+        string Channel { get; set; }
 
         // @property (readonly, nonatomic) NSDate * _Nonnull timestamp;
         [Export ("timestamp")]
@@ -4813,6 +4825,198 @@ namespace AnylineXamarinSDK.iOS
         ALMultiImageEvent WithJSONObject (NSObject JSONObj, ALImage[] images, [NullAllowed] out NSError error);
     }
 
+    [Static]
+    partial interface Constants
+    {
+        // extern NSString *const _Nonnull kCodeTypeAll;
+        [Field ("kCodeTypeAll", "__Internal")]
+        NSString kCodeTypeAll { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeUnknown;
+        [Field ("kCodeTypeUnknown", "__Internal")]
+        NSString kCodeTypeUnknown { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeAztec;
+        [Field ("kCodeTypeAztec", "__Internal")]
+        NSString kCodeTypeAztec { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeCodabar;
+        [Field ("kCodeTypeCodabar", "__Internal")]
+        NSString kCodeTypeCodabar { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeCode39;
+        [Field ("kCodeTypeCode39", "__Internal")]
+        NSString kCodeTypeCode39 { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeCode93;
+        [Field ("kCodeTypeCode93", "__Internal")]
+        NSString kCodeTypeCode93 { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeCode128;
+        [Field ("kCodeTypeCode128", "__Internal")]
+        NSString kCodeTypeCode128 { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeDataMatrix;
+        [Field ("kCodeTypeDataMatrix", "__Internal")]
+        NSString kCodeTypeDataMatrix { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeEAN8;
+        [Field ("kCodeTypeEAN8", "__Internal")]
+        NSString kCodeTypeEAN8 { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeEAN13;
+        [Field ("kCodeTypeEAN13", "__Internal")]
+        NSString kCodeTypeEAN13 { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeITF;
+        [Field ("kCodeTypeITF", "__Internal")]
+        NSString kCodeTypeITF { get; }
+
+        // extern NSString *const _Nonnull kCodeTypePDF417;
+        [Field ("kCodeTypePDF417", "__Internal")]
+        NSString kCodeTypePDF417 { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeRSS14;
+        [Field ("kCodeTypeRSS14", "__Internal")]
+        NSString kCodeTypeRSS14 { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeRSSExpanded;
+        [Field ("kCodeTypeRSSExpanded", "__Internal")]
+        NSString kCodeTypeRSSExpanded { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeUPCA;
+        [Field ("kCodeTypeUPCA", "__Internal")]
+        NSString kCodeTypeUPCA { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeUPCE;
+        [Field ("kCodeTypeUPCE", "__Internal")]
+        NSString kCodeTypeUPCE { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeUPCEANExtension;
+        [Field ("kCodeTypeUPCEANExtension", "__Internal")]
+        NSString kCodeTypeUPCEANExtension { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeQR;
+        [Field ("kCodeTypeQR", "__Internal")]
+        NSString kCodeTypeQR { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeRSS_EXPANDED;
+        [Field ("kCodeTypeRSS_EXPANDED", "__Internal")]
+        NSString kCodeTypeRSS_EXPANDED { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeMATRIX_2_5;
+        [Field ("kCodeTypeMATRIX_2_5", "__Internal")]
+        NSString kCodeTypeMATRIX_2_5 { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeAZTEC_INVERSE;
+        [Field ("kCodeTypeAZTEC_INVERSE", "__Internal")]
+        NSString kCodeTypeAZTEC_INVERSE { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeDATAMATRIX_INVERSE;
+        [Field ("kCodeTypeDATAMATRIX_INVERSE", "__Internal")]
+        NSString kCodeTypeDATAMATRIX_INVERSE { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeQR_INVERSE;
+        [Field ("kCodeTypeQR_INVERSE", "__Internal")]
+        NSString kCodeTypeQR_INVERSE { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeDOT_CODE;
+        [Field ("kCodeTypeDOT_CODE", "__Internal")]
+        NSString kCodeTypeDOT_CODE { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeGS1_QR_CODE;
+        [Field ("kCodeTypeGS1_QR_CODE", "__Internal")]
+        NSString kCodeTypeGS1_QR_CODE { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeMICRO_QR;
+        [Field ("kCodeTypeMICRO_QR", "__Internal")]
+        NSString kCodeTypeMICRO_QR { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeISSN_EAN;
+        [Field ("kCodeTypeISSN_EAN", "__Internal")]
+        NSString kCodeTypeISSN_EAN { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeCOUPON;
+        [Field ("kCodeTypeCOUPON", "__Internal")]
+        NSString kCodeTypeCOUPON { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeTRIOPTIC;
+        [Field ("kCodeTypeTRIOPTIC", "__Internal")]
+        NSString kCodeTypeTRIOPTIC { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeDISCRETE_2_5;
+        [Field ("kCodeTypeDISCRETE_2_5", "__Internal")]
+        NSString kCodeTypeDISCRETE_2_5 { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeMSI;
+        [Field ("kCodeTypeMSI", "__Internal")]
+        NSString kCodeTypeMSI { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeONE_D_INVERSE;
+        [Field ("kCodeTypeONE_D_INVERSE", "__Internal")]
+        NSString kCodeTypeONE_D_INVERSE { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeUSPS_4CB;
+        [Field ("kCodeTypeUSPS_4CB", "__Internal")]
+        NSString kCodeTypeUSPS_4CB { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeUS_POSTNET;
+        [Field ("kCodeTypeUS_POSTNET", "__Internal")]
+        NSString kCodeTypeUS_POSTNET { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeUS_PLANET;
+        [Field ("kCodeTypeUS_PLANET", "__Internal")]
+        NSString kCodeTypeUS_PLANET { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeMICRO_PDF;
+        [Field ("kCodeTypeMICRO_PDF", "__Internal")]
+        NSString kCodeTypeMICRO_PDF { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeKIX;
+        [Field ("kCodeTypeKIX", "__Internal")]
+        NSString kCodeTypeKIX { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeUPU_FICS;
+        [Field ("kCodeTypeUPU_FICS", "__Internal")]
+        NSString kCodeTypeUPU_FICS { get; }
+
+        // extern NSString *const _Nonnull kCodeTypePOST_UK;
+        [Field ("kCodeTypePOST_UK", "__Internal")]
+        NSString kCodeTypePOST_UK { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeGS1_128;
+        [Field ("kCodeTypeGS1_128", "__Internal")]
+        NSString kCodeTypeGS1_128 { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeBOOKLAND;
+        [Field ("kCodeTypeBOOKLAND", "__Internal")]
+        NSString kCodeTypeBOOKLAND { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeISBT_128;
+        [Field ("kCodeTypeISBT_128", "__Internal")]
+        NSString kCodeTypeISBT_128 { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeCODE_11;
+        [Field ("kCodeTypeCODE_11", "__Internal")]
+        NSString kCodeTypeCODE_11 { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeCODE_32;
+        [Field ("kCodeTypeCODE_32", "__Internal")]
+        NSString kCodeTypeCODE_32 { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeUPC_EAN_EXTENSION;
+        [Field ("kCodeTypeUPC_EAN_EXTENSION", "__Internal")]
+        NSString kCodeTypeUPC_EAN_EXTENSION { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeDATABAR;
+        [Field ("kCodeTypeDATABAR", "__Internal")]
+        NSString kCodeTypeDATABAR { get; }
+
+        // extern NSString *const _Nonnull kCodeTypeMaxiCode;
+        [Field ("kCodeTypeMaxiCode", "__Internal")]
+        NSString kCodeTypeMaxiCode { get; }
+    }
+    
     // @interface ALImage : NSObject
     [BaseType (typeof(NSObject))]
     interface ALImage
@@ -4846,22 +5050,30 @@ namespace AnylineXamarinSDK.iOS
     [BaseType (typeof(NSObject))]
     interface ALLicenseUtil
     {
+        // @property (readonly, nonatomic) BOOL isLicenseValid;
+        [Export ("isLicenseValid")]
+        bool IsLicenseValid { get; }
+
+        // @property (readonly, nonatomic) BOOL showWatermark;
+        [Export ("showWatermark")]
+        bool ShowWatermark { get; }
+
+        // @property (readonly, nonatomic) BOOL showPopup;
+        [Export ("showPopup")]
+        bool ShowPopup { get; }
+
         // +(instancetype _Nonnull)sharedInstance;
         [Static]
         [Export ("sharedInstance")]
         ALLicenseUtil SharedInstance ();
 
-        // -(BOOL)wasLicenseChecked;
-        [Export ("wasLicenseChecked")]
-        bool WasLicenseChecked { get; }
-
         // -(BOOL)scopeEnabledFor:(NSString * _Nonnull)valueName;
         [Export ("scopeEnabledFor:")]
         bool ScopeEnabledFor (string valueName);
 
-        // -(NSString * _Nonnull)licenseExpirationDateForKey:(NSString * _Nonnull)licenseKey;
-        [Export ("licenseExpirationDateForKey:")]
-        string LicenseExpirationDateForKey (string licenseKey);
+        // -(NSString * _Nonnull)licenseExpirationDate;
+        [Export ("licenseExpirationDate")]
+        string LicenseExpirationDate { get; }
     }
 
     // @protocol ALNFCDetectorDelegate <NSObject>
@@ -4906,13 +5118,13 @@ namespace AnylineXamarinSDK.iOS
         [Export ("readingAvailable")]
         bool ReadingAvailable { get; }
 
-        // -(instancetype _Nullable)initWithDelegate:(id<ALNFCDetectorDelegate> _Nonnull)delegate licenseUtil:(ALLicenseUtil * _Nonnull)licenseUtil;
-        [Export ("initWithDelegate:licenseUtil:")]
-        IntPtr Constructor (NSObject @delegate, ALLicenseUtil licenseUtil);
+        // -(instancetype _Nullable)initWithDelegate:(id<ALNFCDetectorDelegate> _Nonnull)delegate licenseUtil:(ALLicenseUtil * _Nonnull)licenseUtil error:(NSError * _Nullable * _Nullable)error;
+        [Export ("initWithDelegate:licenseUtil:error:")]
+        IntPtr Constructor (NSObject @delegate, ALLicenseUtil licenseUtil, [NullAllowed] out NSError error);
 
-        // -(instancetype _Nullable)initWithDelegate:(id<ALNFCDetectorDelegate> _Nonnull)delegate;
-        [Export ("initWithDelegate:")]
-        IntPtr Constructor (NSObject @delegate);
+        // -(instancetype _Nullable)initWithDelegate:(id<ALNFCDetectorDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
+        [Export ("initWithDelegate:error:")]
+        IntPtr Constructor (NSObject @delegate, [NullAllowed] out NSError error);
 
         // -(void)startNfcDetectionWithPassportNumber:(NSString * _Nonnull)passportNumber dateOfBirth:(NSDate * _Nonnull)dateOfBirth expirationDate:(NSDate * _Nonnull)expirationDate;
         [Export ("startNfcDetectionWithPassportNumber:dateOfBirth:expirationDate:")]
@@ -4936,54 +5148,54 @@ namespace AnylineXamarinSDK.iOS
         [Export ("dataGroup2", ArgumentSemantic.Assign)]
         ALDataGroup2 DataGroup2 { get; set; }
 
-        // -(instancetype _Nonnull)initWithDataGroup1:(ALDataGroup1 * _Nonnull)dataGroup1 dataGroup2:(ALDataGroup2 * _Nonnull)dataGroup2 sod:(ALSOD * _Nonnull)sod;
-        [Export ("initWithDataGroup1:dataGroup2:sod:")]
-        IntPtr Constructor (ALDataGroup1 dataGroup1, ALDataGroup2 dataGroup2, ALSOD sod);
+        // -(instancetype _Nonnull)initWithDataGroup1:(ALDataGroup1 * _Nonnull)dataGroup1 dataGroup2:(ALDataGroup2 * _Nonnull)dataGroup2 sod:(ALSOD * _Nullable)sod;
+	    [Export ("initWithDataGroup1:dataGroup2:sod:")]
+        IntPtr Constructor (ALDataGroup1 dataGroup1, ALDataGroup2 dataGroup2, [NullAllowed] ALSOD sod);
     }
 
     // @interface ALDataGroup1 : NSObject
     [BaseType (typeof(NSObject))]
     interface ALDataGroup1
     {
-        // @property NSString * _Nonnull documentType;
-        [Export ("documentType")]
+        // @property (copy, nonatomic) NSString * _Nullable documentType;
+        [NullAllowed, Export ("documentType")]
         string DocumentType { get; set; }
 
-        // @property NSString * _Nonnull issuingStateCode;
-        [Export ("issuingStateCode")]
+        // @property (copy, nonatomic) NSString * _Nullable issuingStateCode;
+        [NullAllowed, Export ("issuingStateCode")]
         string IssuingStateCode { get; set; }
 
-        // @property NSString * _Nonnull documentNumber;
-        [Export ("documentNumber")]
+        // @property (copy, nonatomic) NSString * _Nullable documentNumber;
+        [NullAllowed, Export ("documentNumber")]
         string DocumentNumber { get; set; }
 
-        // @property NSDate * _Nonnull dateOfExpiry;
-        [Export ("dateOfExpiry", ArgumentSemantic.Assign)]
+        // @property (nonatomic, strong) NSDate * _Nullable dateOfExpiry;
+        [NullAllowed, Export ("dateOfExpiry", ArgumentSemantic.Strong)]
         NSDate DateOfExpiry { get; set; }
 
-        // @property NSString * _Nonnull gender;
-        [Export ("gender")]
+        // @property (copy, nonatomic) NSString * _Nullable gender;
+        [NullAllowed, Export ("gender")]
         string Gender { get; set; }
 
-        // @property NSString * _Nonnull nationality;
-        [Export ("nationality")]
+        // @property (copy, nonatomic) NSString * _Nullable nationality;
+        [NullAllowed, Export ("nationality")]
         string Nationality { get; set; }
 
-        // @property NSString * _Nonnull lastName;
-        [Export ("lastName")]
+        // @property (copy, nonatomic) NSString * _Nullable lastName;
+        [NullAllowed, Export ("lastName")]
         string LastName { get; set; }
 
-        // @property NSString * _Nonnull firstName;
-        [Export ("firstName")]
+        // @property (copy, nonatomic) NSString * _Nullable firstName;
+        [NullAllowed, Export ("firstName")]
         string FirstName { get; set; }
 
-        // @property NSDate * _Nonnull dateOfBirth;
-        [Export ("dateOfBirth", ArgumentSemantic.Assign)]
+        // @property (nonatomic, strong) NSDate * _Nullable dateOfBirth;
+        [NullAllowed, Export ("dateOfBirth", ArgumentSemantic.Strong)]
         NSDate DateOfBirth { get; set; }
 
-        // -(instancetype _Nonnull)initWithDocumentType:(NSString * _Nonnull)documentType issuingStateCode:(NSString * _Nonnull)issuingStateCode documentNumber:(NSString * _Nonnull)documentNumber dateOfExpiry:(NSDate * _Nonnull)dateOfExpiry gender:(NSString * _Nonnull)gender nationality:(NSString * _Nonnull)nationality lastName:(NSString * _Nonnull)lastName firstName:(NSString * _Nonnull)firstName dateOfBirth:(NSDate * _Nonnull)dateOfBirth;
+        // -(instancetype _Nonnull)initWithDocumentType:(NSString * _Nullable)documentType issuingStateCode:(NSString * _Nullable)issuingStateCode documentNumber:(NSString * _Nullable)documentNumber dateOfExpiry:(NSDate * _Nullable)dateOfExpiry gender:(NSString * _Nullable)gender nationality:(NSString * _Nullable)nationality lastName:(NSString * _Nullable)lastName firstName:(NSString * _Nullable)firstName dateOfBirth:(NSDate * _Nullable)dateOfBirth;
         [Export ("initWithDocumentType:issuingStateCode:documentNumber:dateOfExpiry:gender:nationality:lastName:firstName:dateOfBirth:")]
-        IntPtr Constructor (string documentType, string issuingStateCode, string documentNumber, NSDate dateOfExpiry, string gender, string nationality, string lastName, string firstName, NSDate dateOfBirth);
+        IntPtr Constructor ([NullAllowed] string documentType, [NullAllowed] string issuingStateCode, [NullAllowed] string documentNumber, [NullAllowed] NSDate dateOfExpiry, [NullAllowed] string gender, [NullAllowed] string nationality, [NullAllowed] string lastName, [NullAllowed] string firstName, [NullAllowed] NSDate dateOfBirth);
 
         // -(instancetype _Nonnull)initWithPassportDataElements:(NSDictionary<NSString *,NSString *> * _Nonnull)passportDataElements;
         [Export ("initWithPassportDataElements:")]
@@ -4994,13 +5206,13 @@ namespace AnylineXamarinSDK.iOS
     [BaseType (typeof(NSObject))]
     interface ALDataGroup2
     {
-        // @property UIImage * _Nonnull faceImage;
-        [Export ("faceImage", ArgumentSemantic.Assign)]
+        // @property (nonatomic, strong) UIImage * _Nullable faceImage;
+        [NullAllowed, Export ("faceImage", ArgumentSemantic.Strong)]
         UIImage FaceImage { get; set; }
 
-        // -(instancetype _Nonnull)initWithFaceImage:(UIImage * _Nonnull)faceImage;
+        // -(instancetype _Nonnull)initWithFaceImage:(UIImage * _Nullable)faceImage;
         [Export ("initWithFaceImage:")]
-        IntPtr Constructor (UIImage faceImage);
+        IntPtr Constructor ([NullAllowed] UIImage faceImage);
     }
 
     // @interface ALSOD : NSObject
@@ -5095,10 +5307,10 @@ namespace AnylineXamarinSDK.iOS
         [Export ("id")]
         string Id { get; }
 
-        // @property (nonatomic, strong) ALAssetControllerFactory * _Nonnull assetControllerFactory;
-        [Export ("assetControllerFactory", ArgumentSemantic.Strong)]
+        // @property (nonatomic, strong) ALAssetControllerFactory * _Nullable assetControllerFactory;
+        [NullAllowed, Export ("assetControllerFactory", ArgumentSemantic.Strong)]
         ALAssetControllerFactory AssetControllerFactory { get; set; }
-
+    
         // -(id _Nonnull)initWithAssetContext:(ALAssetContext * _Nonnull)assetContext assetUpdateDelegate:(id<ALAssetUpdateDelegate> _Nonnull)assetUpdateDelegate assetControllerFactory:(ALAssetControllerFactory * _Nullable)assetControllerFactory;
         [Export ("initWithAssetContext:assetUpdateDelegate:assetControllerFactory:")]
         IntPtr Constructor (ALAssetContext assetContext, ALAssetUpdateDelegate assetUpdateDelegate, [NullAllowed] ALAssetControllerFactory assetControllerFactory);
@@ -5136,8 +5348,8 @@ namespace AnylineXamarinSDK.iOS
         [Export ("count")]
         nint Count { get; }
 
-        // @property (nonatomic, strong) ALAssetUpdateTaskFactory * _Nonnull assetUpdateTaskFactory;
-        [Export ("assetUpdateTaskFactory", ArgumentSemantic.Strong)]
+        // @property (nonatomic, strong) ALAssetUpdateTaskFactory * _Nullable assetUpdateTaskFactory;
+        [NullAllowed, Export ("assetUpdateTaskFactory", ArgumentSemantic.Strong)]
         ALAssetUpdateTaskFactory AssetUpdateTaskFactory { get; set; }
 
         // +(ALAssetUpdateManager * _Nonnull)sharedManager;
@@ -5174,16 +5386,18 @@ namespace AnylineXamarinSDK.iOS
         [Export ("resetTask:")]
         void ResetTask (string id);
 
-        // -(ALAssetUpdateTask * _Nonnull)removeUpdateTask:(NSString * _Nonnull)id;
+        // -(ALAssetUpdateTask * _Nullable)removeUpdateTask:(NSString * _Nonnull)id;
         [Export ("removeUpdateTask:")]
+        [return: NullAllowed]
         ALAssetUpdateTask RemoveUpdateTask (string id);
 
         // -(void)removeAll;
         [Export ("removeAll")]
         void RemoveAll ();
 
-        // -(ALAssetController * _Nonnull)assetControllerForID:(NSString * _Nonnull)id;
+        // -(ALAssetController * _Nullable)assetControllerForID:(NSString * _Nonnull)id;
         [Export ("assetControllerForID:")]
+        [return: NullAllowed]
         ALAssetController AssetControllerForID (string id);
     }
 
@@ -5361,11 +5575,10 @@ namespace AnylineXamarinSDK.iOS
         [Export ("setupWithLicenseKey:error:")]
         bool SetupWithLicenseKey (string licenseKey, [NullAllowed] out NSError error);
 
-        // +(NSString * _Nonnull)licenseExpirationDateForLicense:(NSString * _Nonnull)licenseKey;
+        // +(NSString * _Nonnull)licenseExpirationDate;
         [Static]
-        [Export ("licenseExpirationDateForLicense:")]
-        string LicenseExpirationDateForLicense (string licenseKey);
-
+        [Export ("licenseExpirationDate")]
+        string LicenseExpirationDate { get; }
         // +(NSString * _Nonnull)versionNumber;
         [Static]
         [Export ("versionNumber")]

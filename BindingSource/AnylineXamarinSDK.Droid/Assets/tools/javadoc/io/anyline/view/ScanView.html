@@ -313,7 +313,7 @@ implements <a href="UIChangeListener.html" title="interface in io.anyline.view">
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i7" class="rowColor">
-<td class="colFirst"><code>ScanViewPlugin</code></td>
+<td class="colFirst"><code><a href="AbstractBaseScanViewPlugin.html" title="class in io.anyline.view">AbstractBaseScanViewPlugin</a>&lt;?&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getScanViewPlugin()">getScanViewPlugin</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
@@ -323,28 +323,28 @@ implements <a href="UIChangeListener.html" title="interface in io.anyline.view">
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i9" class="rowColor">
-<td class="colFirst"><code>ViewPluginComposite</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getViewPluginComposite()">getViewPluginComposite</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i10" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#init(java.lang.String)">init</a></span>&#8203;(java.lang.String&nbsp;configFileName)</code></th>
 <td class="colLast">
 <div class="block">Initializes the ScanView with the file path to a JSON config file and a license key.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#init(org.json.JSONObject)">init</a></span>&#8203;(org.json.JSONObject&nbsp;configJsonObject)</code></th>
 <td class="colLast">
 <div class="block">Initializes the ScanView with the file path to a JSON config file and a license key.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#initAsync(ProjectContext,TrainerUtils.ViewConfigResultHandler)">initAsync</a></span>&#8203;(ProjectContext&nbsp;projectContext,
          TrainerUtils.ViewConfigResultHandler&nbsp;resultHandler)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#initComposite(org.json.JSONObject)">initComposite</a></span>&#8203;(org.json.JSONObject&nbsp;jsonObject)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i13" class="rowColor">
@@ -563,16 +563,6 @@ implements <a href="UIChangeListener.html" title="interface in io.anyline.view">
 </dl>
 </li>
 </ul>
-<a id="getScanViewPlugin()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getScanViewPlugin</h4>
-<pre class="methodSignature">@Nullable
-public&nbsp;ScanViewPlugin&nbsp;getScanViewPlugin()</pre>
-</li>
-</ul>
 <a id="setScanViewPlugin(io.anyline.view.AbstractBaseScanViewPlugin)">
 <!--   -->
 </a>
@@ -587,14 +577,13 @@ public&nbsp;ScanViewPlugin&nbsp;getScanViewPlugin()</pre>
 </dl>
 </li>
 </ul>
-<a id="getViewPluginComposite()">
+<a id="getScanViewPlugin()">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getViewPluginComposite</h4>
-<pre class="methodSignature">@Nullable
-public&nbsp;ViewPluginComposite&nbsp;getViewPluginComposite()</pre>
+<h4>getScanViewPlugin</h4>
+<pre class="methodSignature">public&nbsp;<a href="AbstractBaseScanViewPlugin.html" title="class in io.anyline.view">AbstractBaseScanViewPlugin</a>&lt;?&gt;&nbsp;getScanViewPlugin()</pre>
 </li>
 </ul>
 <a id="getBrightnessFeedBack()">
@@ -692,6 +681,15 @@ public&nbsp;ViewPluginComposite&nbsp;getViewPluginComposite()</pre>
 <pre class="methodSignature">public&nbsp;void&nbsp;setCropRect&#8203;(<a href="../opencv/core/Rect.html" title="class in io.anyline.opencv.core">Rect</a>&nbsp;cropRect)</pre>
 </li>
 </ul>
+<a id="initComposite(org.json.JSONObject)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>initComposite</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;initComposite&#8203;(org.json.JSONObject&nbsp;jsonObject)</pre>
+</li>
+</ul>
 <a id="initAsync(ProjectContext,TrainerUtils.ViewConfigResultHandler)">
 <!--   -->
 </a>
@@ -709,18 +707,11 @@ public&nbsp;ViewPluginComposite&nbsp;getViewPluginComposite()</pre>
 <li class="blockList">
 <h4>init</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;init&#8203;(@NonNull
-                 java.lang.String&nbsp;configFileName)
-          throws java.io.IOException,
-                 AnylineException,
-                 org.json.JSONException</pre>
+                 java.lang.String&nbsp;configFileName)</pre>
 <div class="block">Initializes the ScanView with the file path to a JSON config file and a license key.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>configFileName</code> - the file path</dd>
-<dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.io.IOException</code></dd>
-<dd><code>AnylineException</code></dd>
-<dd><code>org.json.JSONException</code></dd>
 </dl>
 </li>
 </ul>
@@ -740,16 +731,11 @@ public&nbsp;ViewPluginComposite&nbsp;getViewPluginComposite()</pre>
 <li class="blockList">
 <h4>init</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;init&#8203;(@NonNull
-                 org.json.JSONObject&nbsp;configJsonObject)
-          throws AnylineException,
-                 org.json.JSONException</pre>
+                 org.json.JSONObject&nbsp;configJsonObject)</pre>
 <div class="block">Initializes the ScanView with the file path to a JSON config file and a license key.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>configJsonObject</code> - the config json Object</dd>
-<dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>AnylineException</code></dd>
-<dd><code>org.json.JSONException</code></dd>
 </dl>
 </li>
 </ul>
@@ -773,16 +759,7 @@ public&nbsp;ViewPluginComposite&nbsp;getViewPluginComposite()</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>setScanConfig</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setScanConfig&#8203;(java.lang.String&nbsp;pathFile)
-                   throws AnylineException,
-                          org.json.JSONException,
-                          java.io.IOException</pre>
-<dl>
-<dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>AnylineException</code></dd>
-<dd><code>org.json.JSONException</code></dd>
-<dd><code>java.io.IOException</code></dd>
-</dl>
+<pre class="methodSignature">public&nbsp;void&nbsp;setScanConfig&#8203;(java.lang.String&nbsp;pathFile)</pre>
 </li>
 </ul>
 <a id="setScanConfig(org.json.JSONObject)">
@@ -791,14 +768,7 @@ public&nbsp;ViewPluginComposite&nbsp;getViewPluginComposite()</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>setScanConfig</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setScanConfig&#8203;(org.json.JSONObject&nbsp;jsonObject)
-                   throws AnylineException,
-                          org.json.JSONException</pre>
-<dl>
-<dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>AnylineException</code></dd>
-<dd><code>org.json.JSONException</code></dd>
-</dl>
+<pre class="methodSignature">public&nbsp;void&nbsp;setScanConfig&#8203;(org.json.JSONObject&nbsp;jsonObject)</pre>
 </li>
 </ul>
 <a id="onCutoutChanged(io.anyline.view.CutoutRect)">

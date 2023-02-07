@@ -145,23 +145,28 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\anyline_logo.png" />
+    <BundleResource Include="Resources\analog_digital_meter_config.json" />
+    <BundleResource Include="Resources\arabic_id_config.json" />
+    <BundleResource Include="Resources\barcode_config.json" />
+    <BundleResource Include="Resources\barcode_pdf417_config.json" />
+    <BundleResource Include="Resources\commercial_tire_id_config.json" />
+    <BundleResource Include="Resources\composite_parallel_config.json" />
+    <BundleResource Include="Resources\composite_serial_config.json" />
+    <BundleResource Include="Resources\container_horizontal_config.json" />
+    <BundleResource Include="Resources\container_vertical_config.json" />
+    <BundleResource Include="Resources\cyrillic_id_config.json" />
     <BundleResource Include="Resources\license_plate_af_config.json" />
     <BundleResource Include="Resources\license_plate_eu_config.json" />
     <BundleResource Include="Resources\license_plate_us_config.json" />
-    <BundleResource Include="Resources\meter_config.json" />
     <BundleResource Include="Resources\mrz_config.json" />
-    <BundleResource Include="Resources\sample_barcode_config.json" />
-    <BundleResource Include="Resources\sample_barcode_fullframe_config.json" />
-    <BundleResource Include="Resources\serial_number_view_config.json" />
+    <BundleResource Include="Resources\serial_number_config.json" />
+    <BundleResource Include="Resources\tin_config.json" />
     <BundleResource Include="Resources\tire_size_config.json" />
-    <BundleResource Include="Resources\tire_tin_config.json" />
-    <BundleResource Include="Resources\universal_id_front_config.json" />
-    <BundleResource Include="Resources\vertical_container_scanner_capture_config.json" />
-    <BundleResource Include="Resources\vin_ocr_config.json" />
+    <BundleResource Include="Resources\universal_id_config.json" />
+    <BundleResource Include="Resources\vin_config.json" />
     <BundleResource Include="Resources\vrc_config.json" />
-    <BundleResource Include="Resources\commercial_tire_id_config.json" />
-    <BundleResource Include="Resources\horizontal_container_scanner_capture_config.json" />
-    <BundleResource Include="Resources\id_composite_config.json" />
+    <BundleResource Include="Resources\dial_meter_config.json" />
+    <BundleResource Include="Resources\tire_config_tin_dot.json" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default.png" />

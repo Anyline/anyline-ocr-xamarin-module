@@ -1,21 +1,14 @@
 ﻿using Android.App;
 using Android.Content;
 using Android.Content.Res;
-using Android.Graphics;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Anyline;
 using Anyline.Droid;
-using IO.Anyline.Models;
-using IO.Anyline.Plugin;
-using IO.Anyline.Plugin.ID;
-using IO.Anyline.View;
 using IO.Anyline2;
+using IO.Anyline2.View;
+using IO.Anyline2.Viewplugin;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
@@ -67,12 +60,10 @@ namespace Anyline.Droid
 
                     scanView.Init(configurationFile);
 
-                    // Activates Face Detection if the MRZ Scanner was initialized
-                    //(((scanView.ScanViewPlugin as IdScanViewPlugin)?.ScanPlugin as IdScanPlugin)?.IdConfig as MrzConfig)?.EnableFaceDetection(true);
-
                     scanView.ScanViewPlugin.ResultReceived = this;
+                    scanView.ScanViewPlugin.ResultsReceived = this;
 
-                    scanView.CameraOpened += ScanView_CameraOpened;
+                    scanView.CameraView.CameraOpened += ScanView_CameraOpened;
                 }
 
             }
@@ -85,8 +76,7 @@ namespace Anyline.Droid
 
         public void EventReceived(Java.Lang.Object data)
         {
-            var scanResult = data as IO.Anyline2.ScanResult;
-            (Element as ScanExamplePage).ShowResultsAction?.Invoke(scanResult.CreatePropertyDictionary());
+            (Element as ScanExamplePage).ShowResultsAction?.Invoke(data.CreatePropertyDictionary());
         }
 
         private void ScanView_CameraOpened(object sender, IO.Anyline.Camera.CameraOpenedEventArgs e)
@@ -126,13 +116,12 @@ namespace Anyline.Droid
             if (scanView != null)
             {
                 scanView.Stop();
-                scanView.ReleaseCameraInBackground();
+                scanView.CameraView.ReleaseCameraInBackground();
                 scanView.Dispose();
                 scanView = null;
             }
             view = null;
             RemoveAllViews();
-            GC.Collect();
         }
     }
 }

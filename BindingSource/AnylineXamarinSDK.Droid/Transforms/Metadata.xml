@@ -47,6 +47,7 @@
   <remove-node path="/api/package[@name='io.anyline.models']/class[@name='BitmapCreatorFactory']/field[@name='bitmapCreator']" />
 
   <remove-node path="/api/package[@name='io.anyline.camera']/interface[@name='CameraController.CameraControllerListener']"/>
+  <remove-node path="/api/package[@name='io.anyline2.camera']/interface[@name='NativeBarcodeResultListener']"/>
 
   <remove-node path="/api/package[@name='io.anyline2.core']"/>
 
@@ -238,8 +239,7 @@
 
   <!--Fixes Error CS0115: 'ViewPluginComposite.InvokeChildren()': no suitable method found to override -->
   <remove-node path="/api/package[@name='io.anyline2.viewplugin']/class[@name='ViewPluginComposite']/method[@name='getChildren' and count(parameter)=0]" />
-
-
+  
   <remove-node path="/api/package[starts-with(@name, 'io.anyline.nfc.bouncycastle')]" />
 
   <remove-node path="/api/package[@name='io.anyline.view']/interface[@name='LicenseKeyExceptionListener']"/>
