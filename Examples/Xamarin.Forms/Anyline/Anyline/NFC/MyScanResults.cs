@@ -9,7 +9,7 @@ namespace Anyline.NFC
 
     public class MyMRZScanResults
     {
-        public byte[] CutoutImage { get; set; }
+        public byte[] CroppedImage { get; set; }
         public byte[] FullImage { get; set; }
         public byte[] FaceImage { get; set; }
 

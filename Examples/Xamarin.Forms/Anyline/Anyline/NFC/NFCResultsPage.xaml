@@ -21,8 +21,8 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
+                        <!--<RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />-->
                     </Grid.RowDefinitions>
 
                     <Label Text="MRZ - Given Names" TextColor="#32ADFF" FontSize="15" Grid.Column="0" Grid.Row="0" />
@@ -43,18 +43,21 @@
                     <Label x:Name="lbMRZPassportNumber" TextColor="White" FontSize="17" FontAttributes="Bold" Grid.Column="0" Grid.Row="5" />
                     <Label x:Name="lbNFCDocumentNumber" TextColor="White" FontSize="17" FontAttributes="Bold" Grid.Column="1" Grid.Row="5" />
 
-                    <Label Text="Face Image - MRZ" TextColor="#32ADFF" FontSize="15" Grid.Column="0" Grid.Row="6" />
-                    <Label Text="Face Image - NFC" TextColor="#32ADFF" FontSize="15" Grid.Column="1" Grid.Row="6" />
+                    <!--<Label Text="MRZ - Face Image" TextColor="#32ADFF" FontSize="15" Grid.Column="0" Grid.Row="6" />
+                    <Label Text="NFC - Face Image" TextColor="#32ADFF" FontSize="15" Grid.Column="1" Grid.Row="6" />
 
                     <Image x:Name="imMrzFaceImage" Aspect="AspectFit" Grid.Column="0" Grid.Row="7" />
-                    <Image x:Name="imNFCFaceImage" Aspect="AspectFit" Grid.Column="1" Grid.Row="7" />
+                    <Image x:Name="imNFCFaceImage" Aspect="AspectFit" Grid.Column="1" Grid.Row="7" />-->
 
                 </Grid>
+                
+                <Label Text="NFC - Face Image" TextColor="#32ADFF" FontSize="15" />
+                <Image x:Name="imNFCFaceImage" Aspect="AspectFit" />
 
-                <Label Text="Cutout Image" TextColor="#32ADFF" FontSize="15" />
+                <Label Text="MRZ - Cutout Image" TextColor="#32ADFF" FontSize="15" />
                 <Image x:Name="imCutout" Aspect="AspectFit" />
 
-                <Label Text="Full Image" TextColor="#32ADFF" FontSize="15" />
+                <Label Text="MRZ - Full Image" TextColor="#32ADFF" FontSize="15" />
                 <Image x:Name="imFull" Aspect="AspectFit" />
 
                 <BoxView HeightRequest="1" BackgroundColor="#30FFFFFF" />

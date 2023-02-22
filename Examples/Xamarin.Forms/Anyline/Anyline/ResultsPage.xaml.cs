@@ -29,27 +29,54 @@ namespace Anyline
 
         private void ShowResults(Dictionary<string, object> results)
         {
-            StackLayout slResults = new StackLayout();
-            foreach (var item in results)
+            View viewResults = CreateResultView(results);
+            Device.BeginInvokeOnMainThread(() =>
             {
-                slResults.Children.Add(new Label { Text = item.Key, TextColor = Color.FromHex("32ADFF"), FontSize = 15 });
-                if (item.Value.GetType() == typeof(byte[]))
+                cvContent.Content = viewResults;
+            });
+        }
+
+        private View CreateResultView(Dictionary<string, object> dict)
+        {
+            StackLayout slItemResults = new StackLayout() { Padding = new Thickness(5, 0, 0, 0) };
+
+            foreach (var item in dict)
+            {
+                string[] name_type = item.Key.Split(' ');
+
+                var formmattedString = new FormattedString();
+                formmattedString.Spans.Add(new Span() { Text = name_type[0] + " ", TextColor = Color.FromHex("32ADFF"), FontSize = 15, FontAttributes = FontAttributes.Bold });
+                formmattedString.Spans.Add(new Span() { Text = name_type[1], TextColor = Color.FromHex("32ADFF"), FontSize = 10 });
+
+                slItemResults.Children.Add(new Label() { FormattedText = formmattedString });
+
+                if (item.Value is byte[] imageBytes)
                 {
                     var img = new Image()
                     {
                         Aspect = Aspect.AspectFit,
-                        Source = ImageSource.FromStream(() => new MemoryStream(item.Value as byte[]))
+                        Source = ImageSource.FromStream(() => new MemoryStream(imageBytes))
                     };
 
-                    slResults.Children.Add(img);
+                    slItemResults.Children.Add(img);
+                }
+                else if (item.Value is Dictionary<string, object> subItems)
+                {
+                    slItemResults.Children.Add(CreateResultView(subItems));
                 }
                 else
                 {
-                    slResults.Children.Add(new Label { Text = item.Value.ToString(), TextColor = Color.White, FontAttributes = FontAttributes.Bold, FontSize = 17 });
+                    slItemResults.Children.Add(new Label { Text = item.Value.ToString(), TextColor = Color.White, FontAttributes = FontAttributes.Bold, FontSize = 17 });
                 }
             }
 
-            Device.BeginInvokeOnMainThread(() => cvContent.Content = slResults);
+            Grid grContent = new Grid() { };
+            grContent.ColumnDefinitions.Add(new ColumnDefinition { Width = 0.3 });
+            grContent.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Star });
+            grContent.Children.Add(new BoxView { BackgroundColor = Color.Gray }, 0, 0);
+            grContent.Children.Add(slItemResults, 1, 0);
+
+            return grContent;
         }
     }
 }

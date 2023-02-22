@@ -1,6 +1,7 @@
 ﻿using AnylineXamarinSDK.iOS;
 using CoreGraphics;
 using Foundation;
+using SceneKit;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,8 +15,8 @@ namespace AnylineExamples.iOS
         string jsonPath;
         bool initialized = false;
 
-        ALScanView scanView;
-        ScanResultDelegate resultDelegate;
+        ALScanView _scanView;
+        ScanResultDelegate _resultDelegate;
         string configPath = null;
 
         public ScanViewController(string name, string jsonPath)
@@ -23,9 +24,8 @@ namespace AnylineExamples.iOS
             Title = name;
             this.jsonPath = jsonPath;
 
-            resultDelegate = new ScanResultDelegate(this);
+            _resultDelegate = new ScanResultDelegate(this, name);
         }
-
 
         private void InitializeAnyline()
         {
@@ -40,34 +40,32 @@ namespace AnylineExamples.iOS
                 configPath = NSBundle.MainBundle.PathForResource(@"" + jsonPath.Replace(".json", ""), @"json");
 
                 // This is the main intialization method that will create our use case depending on the JSON configuration.
-                scanView = ALScanView.ScanViewForFrame(View.Bounds, configPath, resultDelegate, out error);
+                _scanView = ALScanViewFactory.WithConfigFilePath(configPath, _resultDelegate, out error);
 
                 if (error != null)
                 {
                     throw new Exception(error.LocalizedDescription);
                 }
 
-                ConnectDelegateToScanPlugin();
-
                 // Activates PDF 417 parsing
                 // (you can activate this when scanning the barcode on US Driver's Licenses)
-                if (scanView.ScanViewPlugin is ALBarcodeScanViewPlugin barcodeSVP)
-                {
-                    barcodeSVP.BarcodeScanPlugin.ParsePDF417 = true;
-                }
+                //if (scanView.ScanViewPlugin is ALBarcodeScanViewPlugin barcodeSVP)
+                //{
+                //    barcodeSVP.BarcodeScanPlugin.ParsePDF417 = true;
+                //}
 
-                View.AddSubview(scanView);
+                View.AddSubview(_scanView);
 
                 // Pin the leading edge of the scan view to the parent view
 
-                scanView.TranslatesAutoresizingMaskIntoConstraints = false;
+                _scanView.TranslatesAutoresizingMaskIntoConstraints = false;
 
-                scanView.LeadingAnchor.ConstraintEqualTo(View.LeadingAnchor).Active = true;
-                scanView.TrailingAnchor.ConstraintEqualTo(View.TrailingAnchor).Active = true;
-                scanView.TopAnchor.ConstraintEqualTo(View.SafeAreaLayoutGuide.TopAnchor).Active = true;
-                scanView.BottomAnchor.ConstraintEqualTo(View.SafeAreaLayoutGuide.BottomAnchor).Active = true;
+                _scanView.LeadingAnchor.ConstraintEqualTo(View.LeadingAnchor).Active = true;
+                _scanView.TrailingAnchor.ConstraintEqualTo(View.TrailingAnchor).Active = true;
+                _scanView.TopAnchor.ConstraintEqualTo(View.SafeAreaLayoutGuide.TopAnchor).Active = true;
+                _scanView.BottomAnchor.ConstraintEqualTo(View.SafeAreaLayoutGuide.BottomAnchor).Active = true;
 
-                scanView.StartCamera();
+                _scanView.StartCamera();
 
                 initialized = true;
             }
@@ -75,40 +73,6 @@ namespace AnylineExamples.iOS
             {
                 ShowAlert("Init Error", e.Message);
             }
-        }
-
-        private void ConnectDelegateToScanPlugin()
-        {
-            (scanView.ScanViewPlugin as ALIDScanViewPlugin)?.IdScanPlugin.AddDelegate(resultDelegate);
-            (scanView.ScanViewPlugin as ALBarcodeScanViewPlugin)?.BarcodeScanPlugin.AddDelegate(resultDelegate);
-            (scanView.ScanViewPlugin as ALOCRScanViewPlugin)?.OcrScanPlugin.AddDelegate(resultDelegate);
-            (scanView.ScanViewPlugin as ALMeterScanViewPlugin)?.MeterScanPlugin.AddDelegate(resultDelegate);
-            (scanView.ScanViewPlugin as ALDocumentScanViewPlugin)?.DocumentScanPlugin.AddDelegate(resultDelegate);
-            (scanView.ScanViewPlugin as ALLicensePlateScanViewPlugin)?.LicensePlateScanPlugin.AddDelegate(resultDelegate);
-
-            // add listener to the composite as a whole (to get the information once all the results are available)
-            (scanView.ScanViewPlugin as ALAbstractScanViewPluginComposite)?.AddDelegate(resultDelegate);
-
-            // OR 
-
-            //// add individual listeners (in case you need to listen to partial results and interrupt the workflow)
-            //// -> in this case, remember to call "scanView.ScanViewPlugin.StopAndReturnError(out error)" after the result to stop scanning.
-
-            //var parallelComposite = (scanView.ScanViewPlugin as ALParallelScanViewPluginComposite);
-            //if (parallelComposite != null)
-            //{
-            //    foreach (ALAbstractScanViewPlugin item in parallelComposite.ChildPlugins.Values)
-            //    {
-            //        if (item is ALMeterScanViewPlugin meterScanViewPlugin)
-            //        {
-            //            meterScanViewPlugin.MeterScanPlugin.AddDelegate(resultDelegate);
-            //        }
-            //        else if (item is ALBarcodeScanViewPlugin barcodeScanViewPlugin)
-            //        {
-            //            barcodeScanViewPlugin.BarcodeScanPlugin.AddDelegate(resultDelegate);
-            //        }
-            //    }
-            //}
         }
 
         public override void ViewDidAppear(bool animated)
@@ -124,7 +88,7 @@ namespace AnylineExamples.iOS
 
             BeginInvokeOnMainThread(() =>
             {
-                var success = scanView.ScanViewPlugin.StartAndReturnError(out error);
+                var success = _scanView.ScanViewPlugin.StartWithError(out error);
 
                 if (!success)
                 {
@@ -147,11 +111,10 @@ namespace AnylineExamples.iOS
 
             initialized = false;
 
-            if (scanView?.ScanViewPlugin == null)
+            if (_scanView?.ScanViewPlugin == null)
                 return;
 
-            NSError error;
-            scanView.ScanViewPlugin.StopAndReturnError(out error);
+            _scanView.ScanViewPlugin.Stop();
         }
 
         public override void ViewDidDisappear(bool animated)
@@ -160,12 +123,12 @@ namespace AnylineExamples.iOS
             Dispose();
         }
 
-        new void Dispose()
+        protected override void Dispose(bool disposing)
         {
-            scanView?.RemoveFromSuperview();
-            scanView?.Dispose();
-            scanView = null;
-            base.Dispose();
+            _scanView?.RemoveFromSuperview();
+            _scanView?.Dispose();
+            _scanView = null;
+            base.Dispose(disposing);
         }
         #endregion
 

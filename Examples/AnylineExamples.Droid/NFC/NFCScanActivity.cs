@@ -153,6 +153,8 @@ namespace Anyline.Droid.NFC
             var intent = new Intent(this, typeof(ResultActivity));
             intent.PutExtra("handle", result.Handle.ToInt32());
             intent.PutExtra("Is_NFC_Result", true);
+            intent.PutExtra("title", "NFC Scan Result");
+
             StartActivity(intent);
             Finish();
         }

@@ -1,5 +1,4 @@
 ﻿using System;
-using IO.Anyline;
 
 [assembly: Xamarin.Forms.Dependency(typeof(Anyline.Droid.AnylineSDKService))]
 namespace Anyline.Droid
@@ -10,7 +9,7 @@ namespace Anyline.Droid
         {
             try
             {
-                AnylineSDK.Init(licenseKey, context: MainActivity.Instance);
+                IO.Anyline2.AnylineSdk.Init(licenseKey, context: MainActivity.Instance);
                 licenseErrorMessage = null;
                 return true;
             }

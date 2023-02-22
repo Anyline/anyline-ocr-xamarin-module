@@ -11,13 +11,15 @@ using Xamarin.Forms.Platform.iOS;
 [assembly: ExportRenderer(typeof(ScanExamplePage), typeof(ScanPageRenderer))]
 namespace Anyline.iOS
 {
-    public class ScanPageRenderer : PageRenderer
+    public class ScanPageRenderer : PageRenderer, IALScanPluginDelegate, IALViewPluginCompositeDelegate
     {
         private CGRect frame;
         private bool initialized;
 
         private ALScanView _scanView;
-        ScanResultDelegate _resultDelegate;
+        //ScanResultDelegate _resultDelegate;
+
+        private Action<object> _resultsAction;
 
         protected override void OnElementChanged(VisualElementChangedEventArgs e)
         {
@@ -27,6 +29,8 @@ namespace Anyline.iOS
             {
                 return;
             }
+
+            _resultsAction = (Element as ScanExamplePage).ShowResultsAction;
 
             InitializeAnyline();
         }
@@ -53,17 +57,15 @@ namespace Anyline.iOS
 
                 // Use the JSON file name that you want to load here
                 var configPath = NSBundle.MainBundle.PathForResource(configurationFile, @"json");
+                //_resultDelegate = new ScanResultDelegate((Element as ScanExamplePage).ShowResultsAction);
+
                 // This is the main intialization method that will create our use case depending on the JSON configuration.
-                _resultDelegate = new ScanResultDelegate((Element as ScanExamplePage).ShowResultsAction);
-                _scanView = ALScanView.ScanViewForFrame(View.Bounds, configPath, _resultDelegate, out error);
+                _scanView = ALScanViewFactory.WithConfigFilePath(configPath, this, out error);
 
                 if (error != null)
                 {
                     throw new Exception(error.LocalizedDescription);
                 }
-
-
-                ConnectDelegateToScanPlugin();
 
                 View.AddSubview(_scanView);
 
@@ -89,7 +91,7 @@ namespace Anyline.iOS
         private void StartAnyline()
         {
             NSError error = null;
-            var success = _scanView.ScanViewPlugin.StartAndReturnError(out error);
+            var success = _scanView.ScanViewPlugin.StartWithError(out error);
             if (!success)
             {
                 if (error != null)
@@ -108,16 +110,21 @@ namespace Anyline.iOS
             new UIAlertView(title, text, (IUIAlertViewDelegate)null, "OK", null).Show();
         }
 
-        private void ConnectDelegateToScanPlugin()
+        #region Handling Results
+        [Export("scanPlugin:resultReceived:")]
+        public void ResultReceived(ALScanPlugin scanPlugin, ALScanResult scanResult)
         {
-            (_scanView.ScanViewPlugin as ALIDScanViewPlugin)?.IdScanPlugin.AddDelegate(_resultDelegate);
-            (_scanView.ScanViewPlugin as ALBarcodeScanViewPlugin)?.BarcodeScanPlugin.AddDelegate(_resultDelegate);
-            (_scanView.ScanViewPlugin as ALOCRScanViewPlugin)?.OcrScanPlugin.AddDelegate(_resultDelegate);
-            (_scanView.ScanViewPlugin as ALMeterScanViewPlugin)?.MeterScanPlugin.AddDelegate(_resultDelegate);
-            (_scanView.ScanViewPlugin as ALDocumentScanViewPlugin)?.DocumentScanPlugin.AddDelegate(_resultDelegate);
-            (_scanView.ScanViewPlugin as ALLicensePlateScanViewPlugin)?.LicensePlateScanPlugin.AddDelegate(_resultDelegate);
-            (_scanView.ScanViewPlugin as ALSerialScanViewPluginComposite)?.AddDelegate(_resultDelegate);
+            _resultsAction?.Invoke(scanResult.CreatePropertyDictionary());
         }
+
+        [Export("viewPluginComposite:allResultsReceived:")]
+        public void AllResultsReceived(ALViewPluginComposite viewPluginComposite, ALScanResult[] scanResults)
+        {
+            _resultsAction?.Invoke(scanResults.CreatePropertyDictionary());
+        }
+
+        #endregion
+
 
         #region teardown
         public override void ViewWillDisappear(bool animated)
@@ -129,8 +136,7 @@ namespace Anyline.iOS
             if (_scanView?.ScanViewPlugin == null)
                 return;
 
-            NSError error;
-            _scanView.ScanViewPlugin.StopAndReturnError(out error);
+            _scanView.ScanViewPlugin.Stop();
         }
 
         public override void ViewDidDisappear(bool animated)
@@ -139,12 +145,12 @@ namespace Anyline.iOS
             Dispose();
         }
 
-        new void Dispose()
+        protected override void Dispose(bool disposing)
         {
             _scanView?.RemoveFromSuperview();
             _scanView?.Dispose();
             _scanView = null;
-            base.Dispose();
+            base.Dispose(disposing);
         }
         #endregion
     }

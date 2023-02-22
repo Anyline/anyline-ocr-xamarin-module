@@ -5,19 +5,21 @@ using Android.Content;
 using Android.OS;
 using Android.Views;
 using IO.Anyline.Camera;
-using IO.Anyline.View;
 
 using Android.Support.V7.App;
 using Android.Util;
 using IO.Anyline.Plugin.ID;
 using IO.Anyline.Plugin;
 using Anyline.Droid.NFC;
+using IO.Anyline2;
+using IO.Anyline2.View;
+using IO.Anyline.Plugin.Result;
 
 namespace AnylineExamples.Droid.NFC
 {
     [Activity(Label = "", MainLauncher = false, //ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait,
         HardwareAccelerated = true)]
-    public class MRZScanActivity : AppCompatActivity, IScanResultListener
+    public class MRZScanActivity : AppCompatActivity, IEvent
     {
         public static readonly string TAG = typeof(ScanActivity).Name;
 
@@ -31,7 +33,7 @@ namespace AnylineExamples.Droid.NFC
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            
+
             try
             {
                 SupportActionBar.SetHomeButtonEnabled(true);
@@ -46,18 +48,18 @@ namespace AnylineExamples.Droid.NFC
                 _scanView = FindViewById<ScanView>(Resource.Id.scan_view);
 
                 // the initialization parses the json configuration and builds the whole use-case
-                _scanView.Init("id_config_mrz.json");
+                _scanView.Init("mrz_config.json");
 
                 // Activates Face Detection if the MRZ Scanner was initialized
-                (((_scanView.ScanViewPlugin as IdScanViewPlugin)?.ScanPlugin as IdScanPlugin)?.IdConfig as MrzConfig)?.EnableFaceDetection(true);
+                //(((_scanView.ScanViewPlugin as IdScanViewPlugin)?.ScanPlugin as IdScanPlugin)?.IdConfig as MrzConfig)?.EnableFaceDetection(true);
 
-                _scanView.ScanViewPlugin.AddScanResultListener(this);
+                _scanView.ScanViewPlugin.ResultReceived = this;
 
                 // handle camera open events
-                _scanView.CameraOpened += ScanView_CameraOpened;
+                _scanView.CameraView.CameraOpened += ScanView_CameraOpened;
 
                 // handle camera error events
-                _scanView.CameraError += ScanView_CameraError;
+                _scanView.CameraView.CameraError += ScanView_CameraError;
 
                 _isInitialized = true;
             }
@@ -98,18 +100,14 @@ namespace AnylineExamples.Droid.NFC
 
         }
 
-        public void OnResult(Java.Lang.Object result)
+        public void EventReceived(Java.Lang.Object result)
         {
-            var scanResult = result as ScanResult;
-
-            var mrzIdentification = scanResult.Result as MrzIdentification;
-
+            var scanResult = result as IO.Anyline2.ScanResult;
+            PluginResult pluginResult = scanResult.PluginResult;
+            var mrzResult = pluginResult.MrzResult;
 
             // Gets the data necessary for the NFC reading
-            string passportNumber = mrzIdentification.DocumentNumber.Trim();
-            Java.Util.Date dateOfBirth = mrzIdentification.DateOfBirthObject;
-            Java.Util.Date expirationDate = mrzIdentification.DateOfExpiryObject;
-            var dateFormat = new Android.Icu.Text.SimpleDateFormat("yyMMdd");
+            string passportNumber = mrzResult.DocumentNumber.Trim();
 
             // The passport number passed to the NFC chip must have a trailing < if there is one in the MRZ string.
             string passportNumberForNFC = string.Copy(passportNumber);
@@ -124,8 +122,8 @@ namespace AnylineExamples.Droid.NFC
 
             var nfcActivity = new Intent(this, typeof(NFCScanActivity));
             nfcActivity.PutExtra("pn", passportNumberForNFC);
-            nfcActivity.PutExtra("db", dateFormat.Format(dateOfBirth));
-            nfcActivity.PutExtra("de", dateFormat.Format(expirationDate));
+            nfcActivity.PutExtra("db", mrzResult.DateOfBirth);
+            nfcActivity.PutExtra("de", mrzResult.DateOfExpiry);
             StartActivity(nfcActivity);
         }
 
@@ -160,11 +158,9 @@ namespace AnylineExamples.Droid.NFC
                 if (_scanView != null)
                 {
                     _scanView.Dispose();
-                    _scanView.CameraOpened -= ScanView_CameraOpened;
-                    _scanView.CameraError -= ScanView_CameraError;
+                    _scanView.CameraView.CameraOpened -= ScanView_CameraOpened;
+                    _scanView.CameraView.CameraError -= ScanView_CameraError;
                     _scanView = null;
-
-                    GC.Collect();
 
                     _isInitialized = false;
                 }

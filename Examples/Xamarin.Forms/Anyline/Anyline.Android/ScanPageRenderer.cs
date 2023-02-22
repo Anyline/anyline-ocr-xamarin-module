@@ -1,19 +1,14 @@
 ﻿using Android.App;
 using Android.Content;
 using Android.Content.Res;
-using Android.Graphics;
-using Android.Runtime;
 using Android.Views;
+using Android.Widget;
 using Anyline;
 using Anyline.Droid;
-using IO.Anyline.Models;
-using IO.Anyline.Plugin;
-using IO.Anyline.Plugin.ID;
-using IO.Anyline.View;
+using IO.Anyline2;
+using IO.Anyline2.View;
+using IO.Anyline2.Viewplugin;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
@@ -21,7 +16,7 @@ using Xamarin.Forms.Platform.Android;
 
 namespace Anyline.Droid
 {
-    public class ScanPageRenderer : PageRenderer, IScanResultListener
+    public class ScanPageRenderer : PageRenderer, IEvent
     {
 
         private Android.Views.View view;
@@ -56,7 +51,6 @@ namespace Anyline.Droid
             {
                 if (view == null)
                 {
-
                     var activity = Context as Activity;
                     view = activity.LayoutInflater.Inflate(Resource.Layout.ScanLayout, this, false);
 
@@ -66,19 +60,23 @@ namespace Anyline.Droid
 
                     scanView.Init(configurationFile);
 
-                    // Activates Face Detection if the MRZ Scanner was initialized
-                    (((scanView.ScanViewPlugin as IdScanViewPlugin)?.ScanPlugin as IdScanPlugin)?.IdConfig as MrzConfig)?.EnableFaceDetection(true);
+                    scanView.ScanViewPlugin.ResultReceived = this;
+                    scanView.ScanViewPlugin.ResultsReceived = this;
 
-                    scanView.ScanViewPlugin.AddScanResultListener(this);
-
-                    scanView.CameraOpened += ScanView_CameraOpened;
+                    scanView.CameraView.CameraOpened += ScanView_CameraOpened;
                 }
 
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                // show error
+                System.Diagnostics.Debug.WriteLine(e.Message);
+                Toast.MakeText(Context, "Anyline Init Failed: " + e.Message, ToastLength.Long).Show();
             }
+        }
+
+        public void EventReceived(Java.Lang.Object data)
+        {
+            (Element as ScanExamplePage).ShowResultsAction?.Invoke(data.CreatePropertyDictionary());
         }
 
         private void ScanView_CameraOpened(object sender, IO.Anyline.Camera.CameraOpenedEventArgs e)
@@ -107,12 +105,6 @@ namespace Anyline.Droid
             InitializeAnyline();
         }
 
-        public void OnResult(Java.Lang.Object result)
-        {
-            var processedResults = CreatePropertyList((result as AnylineScanResult));
-            (Element as ScanExamplePage).ShowResultsAction?.Invoke(processedResults);
-        }
-
         protected override void Dispose(bool disposing)
         {
             DisposeAnyline();
@@ -124,144 +116,12 @@ namespace Anyline.Droid
             if (scanView != null)
             {
                 scanView.Stop();
-                scanView.ReleaseCameraInBackground();
+                scanView.CameraView.ReleaseCameraInBackground();
                 scanView.Dispose();
                 scanView = null;
             }
             view = null;
             RemoveAllViews();
-            GC.Collect();
-        }
-
-        private Dictionary<string, object> CreatePropertyList(Java.Lang.Object obj)
-        {
-            var dict = new Dictionary<string, object>();
-            foreach (var prop in obj.GetType().GetProperties())
-            {
-                switch (prop.Name)
-                {
-                    // filter out properties that we don't want to display
-                    case "JniPeerMembers":
-                    case "JniIdentityHashCode":
-                    case "Handle":
-                    case "PeerReference":
-                    case "Outline":
-                    case "Class":
-                    case "FieldNames":
-                    case "Coordinates":
-                        break;
-                    default:
-
-                        try
-                        {
-                            var value = prop.GetValue(obj, null);
-
-
-                            // filter out deprecated fields
-                            if (prop.GetCustomAttributes(typeof(ObsoleteAttribute), true).ToArray().Length > 0)
-                                continue;
-
-                            if (value != null)
-                            {
-                                if (value is JavaList)
-                                {
-                                    var i = 0;
-                                    var resultList = (value as JavaList);
-                                    foreach (Java.Lang.Object v in resultList)
-                                    {
-                                        var sublist = CreatePropertyList(v);
-                                        sublist.ToList().ForEach(x => dict.Add(x.Key + $" ({i})", x.Value));
-                                        i++;
-                                    }
-                                }
-                                else if (value is Java.Util.AbstractList resultList)
-                                {
-                                    var i = 0;
-                                    var iterator = resultList.Iterator();
-                                    while (iterator.HasNext)
-                                    {
-                                        var v = iterator.Next();
-                                        var sublist = CreatePropertyList(v);
-                                        sublist.ToList().ForEach(x => dict.Add(x.Key + $" ({i})", x.Value));
-                                        i++;
-                                    }
-                                }
-                                else if (value is AnylineImage)
-                                {
-                                    var bitmap = (value as AnylineImage).Clone().Bitmap;
-
-                                    MemoryStream stream = new MemoryStream();
-                                    bitmap.Compress(Bitmap.CompressFormat.Jpeg, 100, stream);
-                                    byte[] bitmapData = stream.ToArray();
-
-                                    dict.Add(prop.Name, bitmapData);
-                                }
-                                else if (value is Android.Graphics.Bitmap bitmap)
-                                {
-                                    MemoryStream stream = new MemoryStream();
-                                    bitmap.Compress(Bitmap.CompressFormat.Jpeg, 100, stream);
-                                    byte[] bitmapData = stream.ToArray();
-
-                                    dict.Add(prop.Name, bitmapData);
-                                }
-                                else if (value is ID)
-                                {
-                                    var sublist = CreatePropertyList(value as ID);
-                                    sublist.ToList().ForEach(x => dict.Add(x.Key, x.Value));
-                                }
-                                else if (value is IDFieldConfidences)
-                                {
-                                    var sublist = CreatePropertyList(value as IDFieldConfidences);
-                                    sublist.ToList().ForEach(x => dict.Add($"{x.Key} (field confidence)", x.Value));
-                                }
-                                else if (value is LayoutDefinition universalIDInfo)
-                                {
-                                    var sublist = CreatePropertyList(universalIDInfo);
-                                    sublist.ToList().ForEach(x => dict.Add($"{x.Key}", x.Value));
-                                }
-                                else if (value is JavaDictionary<String, String> dictionaryValues)
-                                {
-                                    foreach (var v in dictionaryValues)
-                                        dict.Add(v.Key, new Java.Lang.String(v.Value.ToString()).ReplaceAll("\\\\n", "\\\n"));
-                                }
-                                else
-                                {
-                                    var str = new Java.Lang.String(value.ToString()).ReplaceAll("\\\\n", "\\\n");
-                                    dict.Add(prop.Name, str);
-                                }
-                            }
-                        }
-                        catch (Exception e)
-                        {
-                            System.Diagnostics.Debug.WriteLine("Exception: " + e.Message);
-                        }
-                        break;
-                }
-            }
-
-            // quick hack to re-order the list so that the result will be presented first:
-            MoveElementToIndex(dict, "Result", 0);
-
-            return dict;
-        }
-
-        public static void MoveElementToIndex<T>(Dictionary<string, T> dict, string identifier, int pos)
-        {
-            var result = new Dictionary<string, T>();
-
-            if (dict.ContainsKey(identifier))
-            {
-                var list = dict.ToList();
-
-                var currentIndex = list.FindIndex(x => x.Key == identifier);
-                var currentElement = list.ElementAt(currentIndex);
-
-                list.Remove(currentElement);
-                list.Insert(pos, currentElement);
-
-                dict.Clear();
-                list.ForEach(x => dict.Add(x.Key, x.Value));
-            }
         }
     }
 }

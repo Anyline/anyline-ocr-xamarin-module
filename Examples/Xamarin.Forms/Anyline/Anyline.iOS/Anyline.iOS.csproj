@@ -74,13 +74,7 @@
     <None Include="Info.plist" />
     <Compile Include="ObjectExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <BundleResource Include="Resources\energy_config_analog_digital.json" />
-    <BundleResource Include="Resources\mro_config_usnr.json" />
-    <BundleResource Include="Resources\others_config_barcode.json" />
-    <BundleResource Include="Resources\vehicle_config_license_plate.json" />
     <Compile Include="AnylineSDKService.cs" />
-    <BundleResource Include="Resources\id_config_universal.json" />
-    <BundleResource Include="Resources\id_config_mrz.json" />
     <Compile Include="NFC\NFCScanPageRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -137,7 +131,7 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Anyline.Xamarin.SDK.iOS" Version="42.3.0" />
+    <PackageReference Include="Anyline.Xamarin.SDK.iOS" Version="43.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Xamarin.Forms" Version="4.5.0.495" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
@@ -151,6 +145,28 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\anyline_logo.png" />
+    <BundleResource Include="Resources\analog_digital_meter_config.json" />
+    <BundleResource Include="Resources\arabic_id_config.json" />
+    <BundleResource Include="Resources\barcode_config.json" />
+    <BundleResource Include="Resources\barcode_pdf417_config.json" />
+    <BundleResource Include="Resources\commercial_tire_id_config.json" />
+    <BundleResource Include="Resources\composite_parallel_config.json" />
+    <BundleResource Include="Resources\composite_serial_config.json" />
+    <BundleResource Include="Resources\container_horizontal_config.json" />
+    <BundleResource Include="Resources\container_vertical_config.json" />
+    <BundleResource Include="Resources\cyrillic_id_config.json" />
+    <BundleResource Include="Resources\license_plate_af_config.json" />
+    <BundleResource Include="Resources\license_plate_eu_config.json" />
+    <BundleResource Include="Resources\license_plate_us_config.json" />
+    <BundleResource Include="Resources\mrz_config.json" />
+    <BundleResource Include="Resources\serial_number_config.json" />
+    <BundleResource Include="Resources\tin_config.json" />
+    <BundleResource Include="Resources\tire_size_config.json" />
+    <BundleResource Include="Resources\universal_id_config.json" />
+    <BundleResource Include="Resources\vin_config.json" />
+    <BundleResource Include="Resources\vrc_config.json" />
+    <BundleResource Include="Resources\dial_meter_config.json" />
+    <BundleResource Include="Resources\tire_config_tin_dot.json" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default.png" />
