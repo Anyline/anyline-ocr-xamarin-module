@@ -3998,9 +3998,9 @@ namespace AnylineXamarinSDK.iOS
         [Export ("initWithJSONDictionary:error:")]
         IntPtr Constructor (NSDictionary JSONDictionary, [NullAllowed] out NSError error);
 
-        // -(NSArray<NSDictionary<NSString *,NSString *> *> * _Nonnull)fieldList;
-        [Export ("fieldList")]
-        NSDictionary<NSString, NSString>[] FieldList { get; }
+        // // -(NSArray<NSDictionary<NSString *,NSString *> *> * _Nonnull)fieldList;
+        // [Export ("fieldList")]
+        // NSDictionary<NSString, NSString>[] FieldList { get; }
     }
 
     // @interface ALScanPluginConfig : NSObject <ALJSONStringRepresentable>
