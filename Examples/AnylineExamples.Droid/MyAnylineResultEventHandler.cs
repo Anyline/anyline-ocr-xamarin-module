@@ -34,6 +34,7 @@ namespace AnylineExamples.Droid
                 // because we can't simply pass the object through the intent, we'll pass the JNI handle & retrieve the object in the other activity
                 var intent = new Intent(Activity.ApplicationContext, typeof(ResultActivity));
                 intent.PutExtra("handle", data.Handle.ToInt32());
+                intent.PutExtra("Is_Composite_Result", data is Android.Runtime.JavaList);
                 intent.PutExtra("title", Title);
                 Activity.StartActivity(intent);
             }

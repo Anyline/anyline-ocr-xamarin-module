@@ -49,12 +49,17 @@ namespace AnylineExamples.Droid
             _llResults = FindViewById<LinearLayout>(Resource.Id.llResults);
 
             bool isNFCResult = Intent.GetBooleanExtra("Is_NFC_Result", false);
+            bool isCompositeResult = Intent.GetBooleanExtra("Is_Composite_Result", false);
             var handle = new IntPtr(Intent.GetIntExtra("handle", 0));
 
             Java.Lang.Object scanResult = null;
             if (isNFCResult)
             {
                 scanResult = GetObject<NFCResult>(handle, JniHandleOwnership.DoNotTransfer);
+            }
+            else if (isCompositeResult)
+            {
+                scanResult = GetObject<Android.Runtime.JavaList>(handle, JniHandleOwnership.DoNotTransfer);
             }
             else
             {

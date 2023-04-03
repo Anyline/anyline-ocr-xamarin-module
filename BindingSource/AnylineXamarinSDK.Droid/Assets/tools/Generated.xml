@@ -401,9 +401,9 @@
 <!-- SimpleZoomHandlerBuilder.setZoomListener(io.anyline.camera.SimpleZoomHandler.IZoomHandlerListener) -->
 <!-- File: IO.Anyline.Plugin.Result.Barcode.cs -->
 <!-- Barcode.setAamva(io.anyline.plugin.result.Aamva) -->
+<!-- Barcode.setBase64value(java.lang.String) -->
 <!-- Barcode.setCoordinates(java.util.List&lt;java.lang.Integer&gt;) -->
 <!-- Barcode.setFormat(java.lang.String) -->
-<!-- Barcode.setIsBase64(java.lang.Boolean) -->
 <!-- Barcode.setValue(java.lang.String) -->
 <!-- File: IO.Anyline.Opencv.Imgproc.Subdiv2D.cs -->
 <!-- Subdiv2D.Subdiv2D(io.anyline.opencv.core.Rect) -->
@@ -613,7 +613,8 @@
 <!-- ViewPluginComposite.subscribeToNativeBarcodeProvider(io.anyline2.image.NativeBarcodeProvider, java.util.List&lt;? extends io.anyline.plugin.barcode.BarcodeFormat&gt;) -->
 <!-- ViewPluginComposite.unsubscribeFromImageProvider(io.anyline2.image.ImageProvider) -->
 <!-- ViewPluginComposite.unsubscribeFromNativeBarcodeProvider(io.anyline2.image.NativeBarcodeProvider) -->
-<!-- File: IO.Anyline.Plugin.Barcode.BarcodeScanViewPlugin.cs -->
+<!-- File: IO.Anyline2.DI.SoundUtilProvider.cs -->
+<!-- File: IO.Anyline.Plugin.Barcode.BarcodeScanViewPlugin.cs -->
 <!-- BarcodeScanViewPlugin.BarcodeScanViewPlugin(android.content.Context, io.anyline.plugin.AbstractScanPlugin, io.anyline.view.ScanViewPluginConfig) -->
 <!-- BarcodeScanViewPlugin.BarcodeScanViewPlugin(android.content.Context, io.anyline.view.ScanViewPluginConfig, java.lang.String) -->
 <!-- BarcodeScanViewPlugin.addScannedBarcodesListener(io.anyline.plugin.barcode.ScannedBarcodesListener) -->
@@ -926,7 +927,7 @@
 <attr path="/api/package[@name='io.anyline2']/class[@name='SharedPreferencesProvider']/method[@name='provideSharePreferences' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[1]" name="managedName">name</attr>
 <!-- File: IO.Anyline.Plugin.Config.StartVariable.cs -->
 <!-- StartVariable.setKey(java.lang.String) -->
-<!-- StartVariable.setValue(java.lang.String) -->
+<!-- StartVariable.setValue(java.lang.Object) -->
 <!-- File: IO.Anyline.Camera.IZoomEventHandler.cs -->
 <!-- ZoomEventHandler.onZoomEventOccured(double) -->
 <!-- File: IO.Anyline2.AppEnvironment.cs -->
@@ -1705,6 +1706,7 @@
 <!-- TireSizeConfig.UpsideDownMode.fromValue(java.lang.String) -->
 <!-- TireSizeConfig.UpsideDownMode.valueOf(java.lang.String) -->
 <!-- TireSizeConfig.setMinConfidence(java.lang.Integer) -->
+<!-- TireSizeConfig.setValidationRegex(java.lang.String) -->
 <!-- TireSizeConfig.setUpsideDownMode(io.anyline.plugin.config.TireSizeConfig.UpsideDownMode) -->
 <!-- File: IO.Anyline.Plugin.Result.VrcResult.cs -->
 <!-- VrcResult.setAddress(io.anyline.plugin.result.VehicleRegistrationCertificateResultField) -->
@@ -1814,7 +1816,8 @@
 <!-- TonemapMantiuk.setSaturation(float) -->
 <!-- TonemapMantiuk.setScale(float) -->
 <!-- File: IO.Anyline2.ManagesUUIDImpl.cs -->
-<!-- File: IO.Anyline.Opencv.Objdetect.HOGDescriptor.cs -->
+<!-- ManagesUUIDImpl.Companion.ManagesUUIDImpl.Companion(kotlin.jvm.internal.DefaultConstructorMarker) -->
+<!-- File: IO.Anyline.Opencv.Objdetect.HOGDescriptor.cs -->
 <!-- HOGDescriptor.HOGDescriptor(io.anyline.opencv.core.Size, io.anyline.opencv.core.Size, io.anyline.opencv.core.Size, io.anyline.opencv.core.Size, int) -->
 <!-- HOGDescriptor.HOGDescriptor(io.anyline.opencv.core.Size, io.anyline.opencv.core.Size, io.anyline.opencv.core.Size, io.anyline.opencv.core.Size, int, int, double, int, double, boolean, int, boolean) -->
 <!-- HOGDescriptor.HOGDescriptor(java.lang.String) -->
@@ -2374,7 +2377,10 @@
 <!-- Point.inside(io.anyline.opencv.core.Rect) -->
 <!-- Point.set(double[]) -->
 <!-- File: IO.Anyline.Plugin.Result.TinResult.cs -->
-<!-- TinResult.setText(java.lang.String) -->
+<!-- TinResult.setProductionDate(java.lang.String) -->
+<!-- TinResult.setResultPrettified(java.lang.String) -->
+<!-- TinResult.setText(java.lang.String) -->
+<!-- TinResult.setTireAgeInYearsRoundedDown(java.lang.String) -->
 <!-- File: IO.Anyline.Plugin.Config.BarcodeFormat.cs -->
 <!-- BarcodeFormat.fromValue(java.lang.String) -->
 <!-- BarcodeFormat.valueOf(java.lang.String) -->
@@ -2761,6 +2767,8 @@
 <!-- TinConfig.UpsideDownMode.fromValue(java.lang.String) -->
 <!-- TinConfig.UpsideDownMode.valueOf(java.lang.String) -->
 <!-- TinConfig.setMinConfidence(java.lang.Integer) -->
+<!-- TinConfig.setValidateProductionDate(java.lang.Boolean) -->
+<!-- TinConfig.setValidationRegex(java.lang.String) -->
 <!-- TinConfig.setScanMode(io.anyline.plugin.config.TinConfig.ScanMode) -->
 <!-- TinConfig.setUpsideDownMode(io.anyline.plugin.config.TinConfig.UpsideDownMode) -->
 <!-- File: IO.Anyline.View.ScanViewRefactor.cs -->
@@ -2870,7 +2878,6 @@
 <!-- ActiveArrayZoomHandlerBuilder.setZoomListener(io.anyline.camera.ActiveArrayZoomHandler.IZoomHandlerListener) -->
 <!-- File: IO.Anyline2.IManagesUUID.cs -->
 <!-- ManagesUUID.Factory.setInstance(io.anyline2.ManagesUUID) -->
-<attr path="/api/package[@name='io.anyline2']/class[@name='ManagesUUID.Factory']/method[@name='setInstance' and count(parameter)=1 and parameter[1][@type='io.anyline2.ManagesUUID']]/parameter[1]" name="managedName">instance</attr>
 <!-- File: IO.Anyline.Plugin.Tire.TireScanResult.cs -->
 <!-- TireScanResult.TireScanResult(java.lang.String, java.util.List&lt;? extends android.graphics.PointF&gt;, java.lang.Integer, io.anyline.models.AnylineImage, io.anyline.models.AnylineImage, java.lang.String, java.lang.String) -->
 <!-- File: IO.Anyline.Nfc.Converter.ASN1Converter.cs -->
@@ -3407,6 +3414,7 @@
 <!-- CommercialTireIdConfig.UpsideDownMode.fromValue(java.lang.String) -->
 <!-- CommercialTireIdConfig.UpsideDownMode.valueOf(java.lang.String) -->
 <!-- CommercialTireIdConfig.setMinConfidence(java.lang.Integer) -->
+<!-- CommercialTireIdConfig.setValidationRegex(java.lang.String) -->
 <!-- CommercialTireIdConfig.setUpsideDownMode(io.anyline.plugin.config.CommercialTireIdConfig.UpsideDownMode) -->
 <!-- File: IO.Anyline.Nfc.Parser.DG2Parser.cs -->
 <!-- DG2Parser.DG2Parser(byte[]) -->

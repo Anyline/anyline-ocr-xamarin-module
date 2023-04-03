@@ -59,6 +59,7 @@ namespace AnylineExamples.Shared
         public static readonly string BarcodeFullFrame = "Barcode - PDF417 - AAMVA";
         public static readonly string SerialScanning = "Serial - License Plate (EU) + Driver's License + VIN";
         public static readonly string ParallelScanning = "Parallel - Meter + Serial Number";
+        public static readonly string ParallelFirstScan = "Parallel - First Scan (VIN or Barcode)";
         public static readonly string NFCScanning = "Scan NFC of Passports";
 
     }
@@ -102,6 +103,7 @@ namespace AnylineExamples.Shared
             new ExampleModel(ItemType.Header, Category.Composite, Category.Composite, ""),
             new ExampleModel(ItemType.Item, Example.SerialScanning, Category.Composite, "composite_serial_config.json"),
             new ExampleModel(ItemType.Item, Example.ParallelScanning, Category.Composite, "composite_parallel_config.json"),
+            new ExampleModel(ItemType.Item, Example.ParallelFirstScan, Category.Composite, "composite_parallel_config_first_scan.json"),
 
             new ExampleModel(ItemType.Header, Category.NFC, Category.NFC, ""),
             new ExampleModel(ItemType.Item, Example.NFCScanning, Category.NFC, "mrz_config.json"),

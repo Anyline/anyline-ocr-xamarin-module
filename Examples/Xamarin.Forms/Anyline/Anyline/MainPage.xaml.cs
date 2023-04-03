@@ -72,6 +72,7 @@ namespace Anyline
             {
                 new KeyValuePair<string, string>("Serial - License Plate (EU) + Driver's License + VIN","composite_serial_config"),
                 new KeyValuePair<string, string>("Parallel - Meter + Serial Number","composite_parallel_config"),
+                new KeyValuePair<string, string>("Parallel - First Scan (VIN or Barcode)","composite_parallel_config_first_scan.json"),
             };
 
             var scanMode_configurations_nfc = new List<KeyValuePair<string, string>>()
