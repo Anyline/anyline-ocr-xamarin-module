@@ -115,7 +115,7 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Anyline.Xamarin.SDK.Droid" Version="44.1.0" />
+    <PackageReference Include="Anyline.Xamarin.SDK.Droid" Version="46.1.0" />
     <PackageReference Include="Xamarin.Android.Support.Compat" Version="28.0.0.3" />
     <PackageReference Include="Xamarin.Android.Support.Core.UI" Version="28.0.0.3" />
     <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.3" />
@@ -170,6 +170,7 @@
     <AndroidAsset Include="Assets\dial_meter_config.json" />
     <AndroidAsset Include="Assets\tire_config_tin_dot.json" />
     <AndroidAsset Include="Assets\composite_parallel_config_first_scan.json" />
+    <AndroidAsset Include="Assets\tire_make_config.json" />
   </ItemGroup>
   <Import Project="..\AnylineExamples.Shared\AnylineExamples.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

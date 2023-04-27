@@ -729,6 +729,7 @@
 <!-- File: IO.Anyline.Plugin.Config.MeterConfig.cs -->
 <!-- MeterConfig.ScanMode.fromValue(java.lang.String) -->
 <!-- MeterConfig.ScanMode.valueOf(java.lang.String) -->
+<!-- MeterConfig.setMaxNumDecimalDigits(java.lang.Integer) -->
 <!-- MeterConfig.setMinConfidence(java.lang.Integer) -->
 <!-- MeterConfig.setScanMode(io.anyline.plugin.config.MeterConfig.ScanMode) -->
 <!-- File: IO.Anyline2.DI.Context.ContextProvider.cs -->
@@ -1026,6 +1027,7 @@
 <!-- PluginResult.setOcrResult(io.anyline.plugin.result.OcrResult) -->
 <!-- PluginResult.setPluginID(java.lang.String) -->
 <!-- PluginResult.setTinResult(io.anyline.plugin.result.TinResult) -->
+<!-- PluginResult.setTireMakeResult(io.anyline.plugin.result.TireMakeResult) -->
 <!-- PluginResult.setTireSizeResult(io.anyline.plugin.result.TireSizeResult) -->
 <!-- PluginResult.setUniversalIdResult(io.anyline.plugin.result.UniversalIdResult) -->
 <!-- PluginResult.setVehicleRegistrationCertificateResult(io.anyline.plugin.result.VehicleRegistrationCertificateResult) -->
@@ -1423,6 +1425,12 @@
 <!-- JlpResult.setDateOfIssue(io.anyline.plugin.result.JapaneseLandingPermissionResultField) -->
 <!-- JlpResult.setDuration(io.anyline.plugin.result.JapaneseLandingPermissionResultField) -->
 <!-- JlpResult.setStatus(io.anyline.plugin.result.JapaneseLandingPermissionResultField) -->
+<!-- File: IO.Anyline.Plugin.Config.TireMakeConfig.cs -->
+<!-- TireMakeConfig.UpsideDownMode.fromValue(java.lang.String) -->
+<!-- TireMakeConfig.UpsideDownMode.valueOf(java.lang.String) -->
+<!-- TireMakeConfig.setMinConfidence(java.lang.Integer) -->
+<!-- TireMakeConfig.setValidationRegex(java.lang.String) -->
+<!-- TireMakeConfig.setUpsideDownMode(io.anyline.plugin.config.TireMakeConfig.UpsideDownMode) -->
 <!-- File: IO.Anyline.Util.NumUtil.cs -->
 <!-- NumUtil.asDouble(java.lang.Object) -->
 <!-- NumUtil.asFloat(java.lang.Object) -->
@@ -1614,7 +1622,7 @@
 <!-- OcrConfig.setMinCharHeight(java.lang.Integer) -->
 <!-- OcrConfig.setMinConfidence(java.lang.Integer) -->
 <!-- OcrConfig.setMinSharpness(java.lang.Integer) -->
-<!-- OcrConfig.setModel(java.lang.String) -->
+<!-- OcrConfig.setModels(java.util.List&lt;java.lang.String&gt;) -->
 <!-- OcrConfig.setValidationRegex(java.lang.String) -->
 <!-- OcrConfig.setScanMode(io.anyline.plugin.config.OcrConfig.ScanMode) -->
 <!-- File: IO.Anyline.DI.IFileOutputStreamProvider.cs -->
@@ -2288,6 +2296,8 @@
 <!-- BarcodeScanResult.BarcodeScanResult(java.lang.String, java.util.List&lt;android.graphics.PointF&gt;, java.lang.Integer, io.anyline.models.AnylineImage, io.anyline.models.AnylineImage, java.util.List&lt;io.anyline.plugin.barcode.Barcode&gt;, java.lang.String) -->
 <!-- File: IO.Anyline.Opencv.Core.MatProviderImpl.cs -->
 <!-- MatProviderImpl.provideMat(io.anyline.opencv.core.Size, int) -->
+<!-- File: IO.Anyline.Plugin.Result.TireMakeResult.cs -->
+<!-- TireMakeResult.setText(java.lang.String) -->
 <!-- File: IO.Anyline.Plugin.Config.MrzFieldScanOptions.cs -->
 <!-- MrzFieldScanOptions.MrzScanOption.fromValue(java.lang.String) -->
 <!-- MrzFieldScanOptions.MrzScanOption.valueOf(java.lang.String) -->
@@ -2363,6 +2373,7 @@
 <!-- PluginConfig.setStartScanDelay(java.lang.Integer) -->
 <!-- PluginConfig.setStartVariables(java.util.List&lt;io.anyline.plugin.config.StartVariable&gt;) -->
 <!-- PluginConfig.setTinConfig(io.anyline.plugin.config.TinConfig) -->
+<!-- PluginConfig.setTireMakeConfig(io.anyline.plugin.config.TireMakeConfig) -->
 <!-- PluginConfig.setTireSizeConfig(io.anyline.plugin.config.TireSizeConfig) -->
 <!-- PluginConfig.setUniversalIdConfig(io.anyline.plugin.config.UniversalIdConfig) -->
 <!-- PluginConfig.setVehicleRegistrationCertificateConfig(io.anyline.plugin.config.VehicleRegistrationCertificateConfig) -->

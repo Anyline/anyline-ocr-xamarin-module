@@ -149,7 +149,7 @@
     </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Anyline.Xamarin.SDK.iOS" Version="44.1.0" />
+    <PackageReference Include="Anyline.Xamarin.SDK.iOS" Version="46.1.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
   <ItemGroup>
@@ -179,6 +179,7 @@
     <BundleResource Include="Resources\dial_meter_config.json" />
     <BundleResource Include="Resources\tire_config_tin_dot.json" />
     <BundleResource Include="Resources\composite_parallel_config_first_scan.json" />
+    <BundleResource Include="Resources\tire_make_config.json" />
   </ItemGroup>
   <Import Project="..\AnylineExamples.Shared\AnylineExamples.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

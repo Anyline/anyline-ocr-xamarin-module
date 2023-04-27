@@ -52,6 +52,7 @@ help:
 
 replace-android-sdk:
 # Download the SDK from the ANDROID_SDK_URL env. variable
+	mkdir -p BindingSource/AnylineXamarinSDK.Droid/Jars
 	curl $(ANDROID_SDK_URL) -o "BindingSource/AnylineXamarinSDK.Droid/Jars/anylinesdk.aar"
 # Download the JAVADOC from the ANDROID_JAVADOC_URL env. variable
 	curl $(ANDROID_JAVADOC_URL) -o "javadoc.jar"
@@ -68,11 +69,26 @@ replace-ios-sdk:
 	@-rm -rf BindingSource/AnylineXamarinSDK.iOS/Anyline.framework
 	@-rm BindingSource/AnylineXamarinSDK.iOS/Anyline.a
 	@-rm -rf Nuget/AnylineResources.bundle
-	@cp -r $(IOS_FRAMEWORK_PATH)/Anyline.framework BindingSource/AnylineXamarinSDK.iOS/Anyline.framework
-	@cp $(IOS_FRAMEWORK_PATH)/Anyline.framework/Anyline BindingSource/AnylineXamarinSDK.iOS/Anyline.a
-	@cp -r $(IOS_FRAMEWORK_PATH)/AnylineResources.bundle Nuget/
-	@echo "iOS Framework replaced"
+	cp -r $(IOS_FRAMEWORK_PATH)/Anyline.framework BindingSource/AnylineXamarinSDK.iOS/Anyline.framework
+	cp $(IOS_FRAMEWORK_PATH)/Anyline.framework/Anyline BindingSource/AnylineXamarinSDK.iOS/Anyline.a
+	cp -r $(IOS_FRAMEWORK_PATH)/AnylineResources.bundle Nuget/
+	@echo "iOS Framework replaced using PATH: ${IOS_FRAMEWORK_PATH}"
  
+replace-ios-sdk-from-github-release:
+	@-rm -rf BindingSource/AnylineXamarinSDK.iOS/Anyline.framework
+	@-rm BindingSource/AnylineXamarinSDK.iOS/Anyline.a
+	@-rm -rf Nuget/AnylineResources.bundle
+# Download the SDK from the IOS_FRAMEWORK_URL env. variable
+	curl -L \
+	https://github.com/Anyline/anyline-ocr-examples-ios/releases/download/v${ANYLINE_IOS_SDK_VERSION}/AnylineSDK_iOS_${ANYLINE_IOS_SDK_VERSION}.zip \
+	-o "anyline_ios_sdk.zip"
+	unzip -q "anyline_ios_sdk.zip" -d "anyline_ios_sdk"
+	cp -r anyline_ios_sdk/AnylineSDK_iOS_${ANYLINE_IOS_SDK_VERSION}/Framework/Anyline.framework BindingSource/AnylineXamarinSDK.iOS/Anyline.framework
+	cp -r anyline_ios_sdk/AnylineSDK_iOS_${ANYLINE_IOS_SDK_VERSION}/Framework/Anyline.framework/Anyline BindingSource/AnylineXamarinSDK.iOS/Anyline.a
+	cp -r anyline_ios_sdk/AnylineSDK_iOS_${ANYLINE_IOS_SDK_VERSION}/Framework/AnylineResources.bundle Nuget/
+	@rm "anyline_ios_sdk.zip"
+	@rm -rf "anyline_ios_sdk"
+	@echo "iOS Framework replaced using GitHub release: ${ANYLINE_IOS_SDK_VERSION}"
 # BUILD
 
 build-android-sdk:
@@ -214,9 +230,9 @@ ifeq ($(OS),Windows_NT)
 	@sed -i "s/<version>.*/<version>$(ANYLINE_ANDROID_SDK_VERSION)<\/version>/" Nuget/Anyline.Xamarin.SDK.Droid.nuspec
 else
 # Change SDK version
-	@sed -i '' "s/^\[assembly: AssemblyVersion.*/\[assembly: AssemblyVersion(\"$(ANYLINE_ANDROID_SDK_VERSION)\")\]/" BindingSource/AnylineXamarinSDK.Droid/Properties/AssemblyInfo.cs
+	@gsed -i "s/^\[assembly: AssemblyVersion.*/\[assembly: AssemblyVersion(\"$(ANYLINE_ANDROID_SDK_VERSION)\")\]/" BindingSource/AnylineXamarinSDK.Droid/Properties/AssemblyInfo.cs
 # Change NuGet package version
-	@sed -i '' "s/<version>.*/<version>$(ANYLINE_ANDROID_SDK_VERSION)<\/version>/" Nuget/Anyline.Xamarin.SDK.Droid.nuspec
+	@gsed -i "s/<version>.*/<version>$(ANYLINE_ANDROID_SDK_VERSION)<\/version>/" Nuget/Anyline.Xamarin.SDK.Droid.nuspec
 endif
 
 set-anyline-ios-version:
@@ -227,9 +243,9 @@ ifeq ($(OS),Windows_NT)
 	@sed -i "s/<version>.*/<version>$(ANYLINE_IOS_SDK_VERSION)<\/version>/" Nuget/Anyline.Xamarin.SDK.iOS.nuspec
 else
 # Change SDK version
-	@sed -i '' "s/^\[assembly: AssemblyVersion.*/\[assembly: AssemblyVersion(\"$(ANYLINE_IOS_SDK_VERSION)\")\]/" BindingSource/AnylineXamarinSDK.iOS/Properties/AssemblyInfo.cs
+	@gsed -i "s/^\[assembly: AssemblyVersion.*/\[assembly: AssemblyVersion(\"$(ANYLINE_IOS_SDK_VERSION)\")\]/" BindingSource/AnylineXamarinSDK.iOS/Properties/AssemblyInfo.cs
 # Change NuGet package version
-	@sed -i '' "s/<version>.*/<version>$(ANYLINE_IOS_SDK_VERSION)<\/version>/" Nuget/Anyline.Xamarin.SDK.iOS.nuspec
+	@gsed -i "s/<version>.*/<version>$(ANYLINE_IOS_SDK_VERSION)<\/version>/" Nuget/Anyline.Xamarin.SDK.iOS.nuspec
 endif
 
 create-local-nuget-source: clean-nuget-anyline-cache
