@@ -201,4 +201,3 @@ bin
 Nuget/AnylineResources.bundle/tests/
 BindingSource/AnylineXamarinSDK.Droid/Assets/tools/dist/__pycache__/
 *.zip
-Makefile
