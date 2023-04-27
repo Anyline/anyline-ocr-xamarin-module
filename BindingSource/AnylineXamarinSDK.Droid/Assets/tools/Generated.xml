@@ -111,6 +111,13 @@
 <!-- StereoMatcher.setSpeckleRange(int) -->
 <!-- StereoMatcher.setSpeckleWindowSize(int) -->
 <!-- StereoMatcher.compute(io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
+<!-- File: IO.Anyline2.Model.ALSquareVector.cs -->
+<!-- ALSquareVector.ALSquareVector(io.anyline2.model.ALSquareVector) -->
+<attr path="/api/package[@name='io.anyline2.model']/class[@name='ALSquareVector']/constructor[@name='ALSquareVector' and count(parameter)=1 and parameter[1][@type='io.anyline2.model.ALSquareVector']]/parameter[1]" name="managedName">alSquareVector</attr>
+<!-- ALSquareVector.ALSquareVector(java.util.List&lt;io.anyline2.model.ALSquare&gt;) -->
+<attr path="/api/package[@name='io.anyline2.model']/class[@name='ALSquareVector']/constructor[@name='ALSquareVector' and count(parameter)=1 and parameter[1][@type='java.util.List&lt;io.anyline2.model.ALSquare&gt;']]/parameter[1]" name="managedName">squares</attr>
+<!-- ALSquareVector.ALSquareVector(org.json.JSONObject) -->
+<attr path="/api/package[@name='io.anyline2.model']/class[@name='ALSquareVector']/constructor[@name='ALSquareVector' and count(parameter)=1 and parameter[1][@type='org.json.JSONObject']]/parameter[1]" name="managedName">json</attr>
 <!-- File: IO.Anyline.Plugin.Result.Visualization.cs -->
 <!-- Visualization.setContourPoints(java.util.List&lt;java.util.List&lt;java.util.List&lt;java.lang.Integer&gt;&gt;&gt;) -->
 <!-- Visualization.setContours(java.util.List&lt;java.util.List&lt;java.lang.Integer&gt;&gt;) -->
@@ -2011,13 +2018,8 @@
 <attr path="/api/package[@name='io.anyline2.view']/class[@name='ScanView']/constructor[@name='ScanView' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='android.util.AttributeSet'] and parameter[3][@type='int'] and parameter[4][@type='int']]/parameter[4]" name="managedName">defStyleRes</attr>
 <!-- ScanView.setScanViewPlugin(io.anyline2.viewplugin.ViewPluginBase) -->
 <attr path="/api/package[@name='io.anyline2.view']/class[@name='ScanView']/method[@name='setScanViewPlugin' and count(parameter)=1 and parameter[1][@type='io.anyline2.viewplugin.ViewPluginBase']]/parameter[1]" name="managedName">viewPluginBase</attr>
-<!-- ScanView.delayScanTime(io.anyline2.viewplugin.ScanViewPlugin) -->
-<attr path="/api/package[@name='io.anyline2.view']/class[@name='ScanView']/method[@name='delayScanTime' and count(parameter)=1 and parameter[1][@type='io.anyline2.viewplugin.ScanViewPlugin']]/parameter[1]" name="managedName">scanViewPlugin</attr>
 <!-- ScanView.drawShape(java.util.List&lt;android.graphics.PointF&gt;) -->
 <attr path="/api/package[@name='io.anyline2.view']/class[@name='ScanView']/method[@name='drawShape' and count(parameter)=1 and parameter[1][@type='java.util.List&lt;android.graphics.PointF&gt;']]/parameter[1]" name="managedName">outline</attr>
-<!-- ScanView.drawVisualFeedback(io.anyline2.viewplugin.ScanViewPlugin, java.lang.Object) -->
-<attr path="/api/package[@name='io.anyline2.view']/class[@name='ScanView']/method[@name='drawVisualFeedback' and count(parameter)=2 and parameter[1][@type='io.anyline2.viewplugin.ScanViewPlugin'] and parameter[2][@type='java.lang.Object']]/parameter[1]" name="managedName">scanViewPlugin</attr>
-<attr path="/api/package[@name='io.anyline2.view']/class[@name='ScanView']/method[@name='drawVisualFeedback' and count(parameter)=2 and parameter[1][@type='io.anyline2.viewplugin.ScanViewPlugin'] and parameter[2][@type='java.lang.Object']]/parameter[2]" name="managedName">reportedObject</attr>
 <!-- ScanView.init(io.anyline2.legacy.trainer.AssetContext, int) -->
 <attr path="/api/package[@name='io.anyline2.view']/class[@name='ScanView']/method[@name='init' and count(parameter)=2 and parameter[1][@type='io.anyline2.legacy.trainer.AssetContext'] and parameter[2][@type='int']]/parameter[1]" name="managedName">assetContext</attr>
 <attr path="/api/package[@name='io.anyline2.view']/class[@name='ScanView']/method[@name='init' and count(parameter)=2 and parameter[1][@type='io.anyline2.legacy.trainer.AssetContext'] and parameter[2][@type='int']]/parameter[2]" name="managedName">timeoutSeconds</attr>
@@ -2027,18 +2029,7 @@
 <attr path="/api/package[@name='io.anyline2.view']/class[@name='ScanView']/method[@name='init' and count(parameter)=1 and parameter[1][@type='org.json.JSONObject']]/parameter[1]" name="managedName">jsonConfig</attr>
 <!-- ScanView.notifyTakeHighPictureResolution(io.anyline.CombinedImageProvider) -->
 <attr path="/api/package[@name='io.anyline2.view']/class[@name='ScanView']/method[@name='notifyTakeHighPictureResolution' and count(parameter)=1 and parameter[1][@type='io.anyline.CombinedImageProvider']]/parameter[1]" name="managedName">imageProvider</attr>
-<!-- ScanView.onBrightnessUpdate(int) -->
-<attr path="/api/package[@name='io.anyline2.view']/class[@name='ScanView']/method[@name='onBrightnessUpdate' and count(parameter)=1 and parameter[1][@type='int']]/parameter[1]" name="managedName">value</attr>
-<!-- ScanView.onCutoutChanged(java.util.List&lt;android.util.Pair&lt;io.anyline2.viewplugin.ScanViewPlugin, io.anyline2.view.CutoutRect&gt;&gt;) -->
-<attr path="/api/package[@name='io.anyline2.view']/class[@name='ScanView']/method[@name='onCutoutChanged' and count(parameter)=1 and parameter[1][@type='java.util.List&lt;android.util.Pair&lt;io.anyline2.viewplugin.ScanViewPlugin, io.anyline2.view.CutoutRect&gt;&gt;']]/parameter[1]" name="managedName">scanViewPluginCutoutRectList</attr>
-<!-- ScanView.onCutoutVisibility(io.anyline2.viewplugin.ScanViewPlugin, boolean) -->
-<attr path="/api/package[@name='io.anyline2.view']/class[@name='ScanView']/method[@name='onCutoutVisibility' and count(parameter)=2 and parameter[1][@type='io.anyline2.viewplugin.ScanViewPlugin'] and parameter[2][@type='boolean']]/parameter[1]" name="managedName">scanViewPlugin</attr>
-<attr path="/api/package[@name='io.anyline2.view']/class[@name='ScanView']/method[@name='onCutoutVisibility' and count(parameter)=2 and parameter[1][@type='io.anyline2.viewplugin.ScanViewPlugin'] and parameter[2][@type='boolean']]/parameter[2]" name="managedName">visible</attr>
 <!-- ScanView.onLayout(boolean, int, int, int, int) -->
-<!-- ScanView.onScanViewPluginStart(io.anyline2.viewplugin.ScanViewPlugin) -->
-<attr path="/api/package[@name='io.anyline2.view']/class[@name='ScanView']/method[@name='onScanViewPluginStart' and count(parameter)=1 and parameter[1][@type='io.anyline2.viewplugin.ScanViewPlugin']]/parameter[1]" name="managedName">scanViewPlugin</attr>
-<!-- ScanView.onScanViewPluginStop(io.anyline2.viewplugin.ScanViewPlugin) -->
-<attr path="/api/package[@name='io.anyline2.view']/class[@name='ScanView']/method[@name='onScanViewPluginStop' and count(parameter)=1 and parameter[1][@type='io.anyline2.viewplugin.ScanViewPlugin']]/parameter[1]" name="managedName">scanViewPlugin</attr>
 <!-- ScanView.setCountsForAutoFlash(int, int, int, int) -->
 <!-- ScanView.setCropRect(io.anyline.opencv.core.Rect) -->
 <attr path="/api/package[@name='io.anyline2.view']/class[@name='ScanView']/method[@name='setCropRect' and count(parameter)=1 and parameter[1][@type='io.anyline.opencv.core.Rect']]/parameter[1]" name="managedName">cropRect</attr>
@@ -2191,11 +2182,23 @@
 <attr path="/api/package[@name='io.anyline2.legacy.util']/class[@name='AssetUtil']/method[@name='copyAssetFile' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.io.File'] and parameter[4][@type='boolean']]/parameter[2]" name="managedName">pathInAssets</attr>
 <attr path="/api/package[@name='io.anyline2.legacy.util']/class[@name='AssetUtil']/method[@name='copyAssetFile' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.io.File'] and parameter[4][@type='boolean']]/parameter[3]" name="managedName">dirToCopyTo</attr>
 <attr path="/api/package[@name='io.anyline2.legacy.util']/class[@name='AssetUtil']/method[@name='copyAssetFile' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.io.File'] and parameter[4][@type='boolean']]/parameter[4]" name="managedName">isForceCopy</attr>
+<!-- AssetUtil.copyAssetFile(android.content.Context, java.lang.String, java.io.File, boolean, java.lang.String) -->
+<attr path="/api/package[@name='io.anyline2.legacy.util']/class[@name='AssetUtil']/method[@name='copyAssetFile' and count(parameter)=5 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.io.File'] and parameter[4][@type='boolean'] and parameter[5][@type='java.lang.String']]/parameter[1]" name="managedName">context</attr>
+<attr path="/api/package[@name='io.anyline2.legacy.util']/class[@name='AssetUtil']/method[@name='copyAssetFile' and count(parameter)=5 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.io.File'] and parameter[4][@type='boolean'] and parameter[5][@type='java.lang.String']]/parameter[2]" name="managedName">pathInAssets</attr>
+<attr path="/api/package[@name='io.anyline2.legacy.util']/class[@name='AssetUtil']/method[@name='copyAssetFile' and count(parameter)=5 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.io.File'] and parameter[4][@type='boolean'] and parameter[5][@type='java.lang.String']]/parameter[3]" name="managedName">dirToCopyTo</attr>
+<attr path="/api/package[@name='io.anyline2.legacy.util']/class[@name='AssetUtil']/method[@name='copyAssetFile' and count(parameter)=5 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.io.File'] and parameter[4][@type='boolean'] and parameter[5][@type='java.lang.String']]/parameter[4]" name="managedName">isForceCopy</attr>
+<attr path="/api/package[@name='io.anyline2.legacy.util']/class[@name='AssetUtil']/method[@name='copyAssetFile' and count(parameter)=5 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.io.File'] and parameter[4][@type='boolean'] and parameter[5][@type='java.lang.String']]/parameter[5]" name="managedName">pathPrefix</attr>
 <!-- AssetUtil.copyAssetFile(android.content.Context, java.lang.String, java.io.File, java.lang.String) -->
 <attr path="/api/package[@name='io.anyline2.legacy.util']/class[@name='AssetUtil']/method[@name='copyAssetFile' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.io.File'] and parameter[4][@type='java.lang.String']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='io.anyline2.legacy.util']/class[@name='AssetUtil']/method[@name='copyAssetFile' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.io.File'] and parameter[4][@type='java.lang.String']]/parameter[2]" name="managedName">pathInAssets</attr>
 <attr path="/api/package[@name='io.anyline2.legacy.util']/class[@name='AssetUtil']/method[@name='copyAssetFile' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.io.File'] and parameter[4][@type='java.lang.String']]/parameter[3]" name="managedName">dirToCopyTo</attr>
 <attr path="/api/package[@name='io.anyline2.legacy.util']/class[@name='AssetUtil']/method[@name='copyAssetFile' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.io.File'] and parameter[4][@type='java.lang.String']]/parameter[4]" name="managedName">isForceCopy</attr>
+<!-- AssetUtil.copyAssetFile(android.content.Context, java.lang.String, java.io.File, java.lang.String, java.lang.String) -->
+<attr path="/api/package[@name='io.anyline2.legacy.util']/class[@name='AssetUtil']/method[@name='copyAssetFile' and count(parameter)=5 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.io.File'] and parameter[4][@type='java.lang.String'] and parameter[5][@type='java.lang.String']]/parameter[1]" name="managedName">context</attr>
+<attr path="/api/package[@name='io.anyline2.legacy.util']/class[@name='AssetUtil']/method[@name='copyAssetFile' and count(parameter)=5 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.io.File'] and parameter[4][@type='java.lang.String'] and parameter[5][@type='java.lang.String']]/parameter[2]" name="managedName">pathInAssets</attr>
+<attr path="/api/package[@name='io.anyline2.legacy.util']/class[@name='AssetUtil']/method[@name='copyAssetFile' and count(parameter)=5 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.io.File'] and parameter[4][@type='java.lang.String'] and parameter[5][@type='java.lang.String']]/parameter[3]" name="managedName">dirToCopyTo</attr>
+<attr path="/api/package[@name='io.anyline2.legacy.util']/class[@name='AssetUtil']/method[@name='copyAssetFile' and count(parameter)=5 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.io.File'] and parameter[4][@type='java.lang.String'] and parameter[5][@type='java.lang.String']]/parameter[4]" name="managedName">isForceCopy</attr>
+<attr path="/api/package[@name='io.anyline2.legacy.util']/class[@name='AssetUtil']/method[@name='copyAssetFile' and count(parameter)=5 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.io.File'] and parameter[4][@type='java.lang.String'] and parameter[5][@type='java.lang.String']]/parameter[5]" name="managedName">pathPrefix</attr>
 <!-- AssetUtil.copyAssetFileWithoutPath(android.content.Context, java.lang.String, java.io.File, boolean) -->
 <attr path="/api/package[@name='io.anyline2.legacy.util']/class[@name='AssetUtil']/method[@name='copyAssetFileWithoutPath' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.io.File'] and parameter[4][@type='boolean']]/parameter[1]" name="managedName">context</attr>
 <attr path="/api/package[@name='io.anyline2.legacy.util']/class[@name='AssetUtil']/method[@name='copyAssetFileWithoutPath' and count(parameter)=4 and parameter[1][@type='android.content.Context'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.io.File'] and parameter[4][@type='boolean']]/parameter[2]" name="managedName">pathInAssets</attr>
@@ -2796,9 +2799,9 @@
 <!-- MergeDebevec.MergeDebevec(long) -->
 <!-- MergeDebevec.process(java.util.List&lt;io.anyline.opencv.core.Mat&gt;, io.anyline.opencv.core.Mat, io.anyline.opencv.core.Mat) -->
 <!-- File: IO.Anyline2.AnylineSdk.cs -->
-<!-- AnylineSdk.init(java.lang.String, android.content.Context) -->
-<attr path="/api/package[@name='io.anyline2']/class[@name='AnylineSdk']/method[@name='init' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='android.content.Context']]/parameter[1]" name="managedName">licenseKey</attr>
-<attr path="/api/package[@name='io.anyline2']/class[@name='AnylineSdk']/method[@name='init' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='android.content.Context']]/parameter[2]" name="managedName">context</attr>
+<!-- AnylineSdk.setAssetPathPrefix(java.lang.String) -->
+<!-- AnylineSdk.init(java.lang.String, android.content.Context) -->
+<!-- AnylineSdk.init(java.lang.String, android.content.Context, java.lang.String) -->
 <!-- File: IO.Anyline.Plugin.Ocr.AnylineVINConfig.cs -->
 <!-- AnylineVINConfig.AnylineVINConfig(org.json.JSONObject) -->
 <!-- AnylineVINConfig.setValidationRegex(java.lang.String) -->
@@ -2858,6 +2861,7 @@
 <!-- CameraConfig.setFallbackLensFacings(io.anyline.camera.CameraFeatures.LensFacing...) -->
 <attr path="/api/package[@name='io.anyline.camera']/class[@name='CameraConfig']/method[@name='setFallbackLensFacings' and count(parameter)=1 and parameter[1][@type='io.anyline.camera.CameraFeatures.LensFacing...']]/parameter[1]" name="managedName">fallbackLensFacings</attr>
 <!-- CameraConfig.setHighResolutionPictureSize(io.anyline.camera.CameraSize) -->
+<!-- CameraConfig.updateScale(int, int) -->
 <!-- File: IO.Anyline.Nfc.Reader.IProgressListenerInterface.cs -->
 <!-- ProgressListenerInterface.updateProgress(int) -->
 <!-- File: IO.Anyline.Opencv.Core.RotatedRect.cs -->
@@ -2965,11 +2969,9 @@
 <!-- File: IO.Anyline.Plugin.Result.LicensePlateResult.cs -->
 <!-- LicensePlateResult.Area.fromValue(java.lang.String) -->
 <!-- LicensePlateResult.Area.valueOf(java.lang.String) -->
-<!-- LicensePlateResult.Country.fromValue(java.lang.String) -->
-<!-- LicensePlateResult.Country.valueOf(java.lang.String) -->
+<!-- LicensePlateResult.setCountry(java.lang.String) -->
 <!-- LicensePlateResult.setPlateText(java.lang.String) -->
 <!-- LicensePlateResult.setArea(io.anyline.plugin.result.LicensePlateResult.Area) -->
-<!-- LicensePlateResult.setCountry(io.anyline.plugin.result.LicensePlateResult.Country) -->
 <!-- File: IO.Anyline.Camera.FocusConfig.cs -->
 <!-- FocusConfig.Builder.setAutoFocusInterval(int) -->
 <!-- FocusConfig.Builder.setDefaultMode(java.lang.String) -->
