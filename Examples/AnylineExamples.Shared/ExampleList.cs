@@ -52,6 +52,7 @@ namespace AnylineExamples.Shared
         public static readonly string TIN_DOT = "Tire Identification Number (TIN) - DOT";
         public static readonly string TireSize = "Tire Size Specifications";
         public static readonly string CommercialTireID = "Commercial Tire Identification Numbers";
+        public static readonly string TireMake = "Tire Make";
         public static readonly string UniversalSerialNumber = "Serial Number";
         public static readonly string ShippingContainerHorizontal = "Shipping Container - Horizontal";
         public static readonly string ShippingContainerVertical = "Shipping Container - Vertical";
@@ -90,6 +91,7 @@ namespace AnylineExamples.Shared
             new ExampleModel(ItemType.Item, Example.TIN_DOT, Category.TIRE, "tire_config_tin_dot.json"),
             new ExampleModel(ItemType.Item, Example.TireSize, Category.TIRE, "tire_size_config.json"),
             new ExampleModel(ItemType.Item, Example.CommercialTireID, Category.TIRE, "commercial_tire_id_config.json"),
+            new ExampleModel(ItemType.Item, Example.TireMake, Category.TIRE, "tire_make_config.json"),
 
             new ExampleModel(ItemType.Header, Category.MRO, Category.MRO, ""),
             new ExampleModel(ItemType.Item, Example.UniversalSerialNumber, Category.MRO, "serial_number_config.json"),

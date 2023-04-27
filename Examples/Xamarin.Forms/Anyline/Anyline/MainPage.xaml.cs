@@ -56,6 +56,7 @@ namespace Anyline
                 new KeyValuePair<string, string>("Tire Identification Number (TIN) - DOT","tire_config_tin_dot"),
                 new KeyValuePair<string, string>("Tire Size Specifications","tire_size_config"),
                 new KeyValuePair<string, string>("Commercial Tire Identification Number","commercial_tire_id_config"),
+                new KeyValuePair<string, string>("Tire Make","tire_make_config"),
             };
             var scanMode_configurations_mro = new List<KeyValuePair<string, string>>()
             {
