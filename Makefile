@@ -230,9 +230,9 @@ ifeq ($(OS),Windows_NT)
 	@sed -i "s/<version>.*/<version>$(ANYLINE_ANDROID_SDK_VERSION)<\/version>/" Nuget/Anyline.Xamarin.SDK.Droid.nuspec
 else
 # Change SDK version
-	@sed -i'' "s/^\[assembly: AssemblyVersion.*/\[assembly: AssemblyVersion(\"$(ANYLINE_ANDROID_SDK_VERSION)\")\]/" BindingSource/AnylineXamarinSDK.Droid/Properties/AssemblyInfo.cs
+	@gsed -i "s/^\[assembly: AssemblyVersion.*/\[assembly: AssemblyVersion(\"$(ANYLINE_ANDROID_SDK_VERSION)\")\]/" BindingSource/AnylineXamarinSDK.Droid/Properties/AssemblyInfo.cs
 # Change NuGet package version
-	@sed -i'' "s/<version>.*/<version>$(ANYLINE_ANDROID_SDK_VERSION)<\/version>/" Nuget/Anyline.Xamarin.SDK.Droid.nuspec
+	@gsed -i "s/<version>.*/<version>$(ANYLINE_ANDROID_SDK_VERSION)<\/version>/" Nuget/Anyline.Xamarin.SDK.Droid.nuspec
 endif
 
 set-anyline-ios-version:
@@ -243,9 +243,9 @@ ifeq ($(OS),Windows_NT)
 	@sed -i "s/<version>.*/<version>$(ANYLINE_IOS_SDK_VERSION)<\/version>/" Nuget/Anyline.Xamarin.SDK.iOS.nuspec
 else
 # Change SDK version
-	@sed -i'' "s/^\[assembly: AssemblyVersion.*/\[assembly: AssemblyVersion(\"$(ANYLINE_IOS_SDK_VERSION)\")\]/" BindingSource/AnylineXamarinSDK.iOS/Properties/AssemblyInfo.cs
+	@gsed -i "s/^\[assembly: AssemblyVersion.*/\[assembly: AssemblyVersion(\"$(ANYLINE_IOS_SDK_VERSION)\")\]/" BindingSource/AnylineXamarinSDK.iOS/Properties/AssemblyInfo.cs
 # Change NuGet package version
-	@sed -i'' "s/<version>.*/<version>$(ANYLINE_IOS_SDK_VERSION)<\/version>/" Nuget/Anyline.Xamarin.SDK.iOS.nuspec
+	@gsed -i "s/<version>.*/<version>$(ANYLINE_IOS_SDK_VERSION)<\/version>/" Nuget/Anyline.Xamarin.SDK.iOS.nuspec
 endif
 
 create-local-nuget-source: clean-nuget-anyline-cache
