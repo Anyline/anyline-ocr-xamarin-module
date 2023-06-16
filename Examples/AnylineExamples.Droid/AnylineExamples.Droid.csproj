@@ -115,7 +115,7 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Anyline.Xamarin.SDK.Droid" Version="46.1.0" />
+    <PackageReference Include="Anyline.Xamarin.SDK.Droid" Version="47.1.0" />
     <PackageReference Include="Xamarin.Android.Support.Compat" Version="28.0.0.3" />
     <PackageReference Include="Xamarin.Android.Support.Core.UI" Version="28.0.0.3" />
     <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.3" />
