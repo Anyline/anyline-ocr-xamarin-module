@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9};
+var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -212,6 +212,15 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>static void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#copyAssetFile(android.content.Context,java.lang.String,java.io.File,boolean,java.lang.String)">copyAssetFile</a></span>&#8203;(android.content.Context&nbsp;context,
+             java.lang.String&nbsp;pathInAssets,
+             java.io.File&nbsp;dirToCopyTo,
+             boolean&nbsp;isForceCopy,
+             java.lang.String&nbsp;pathPrefix)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#copyAssetFile(android.content.Context,java.lang.String,java.io.File,java.lang.String)">copyAssetFile</a></span>&#8203;(android.content.Context&nbsp;context,
              java.lang.String&nbsp;pathInAssets,
              java.io.File&nbsp;dirToCopyTo,
@@ -221,7 +230,16 @@ extends java.lang.Object</pre>
  Copy the asset file specified by path to given directory.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>static void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#copyAssetFile(android.content.Context,java.lang.String,java.io.File,java.lang.String,java.lang.String)">copyAssetFile</a></span>&#8203;(android.content.Context&nbsp;context,
+             java.lang.String&nbsp;pathInAssets,
+             java.io.File&nbsp;dirToCopyTo,
+             java.lang.String&nbsp;md5Hash,
+             java.lang.String&nbsp;pathPrefix)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#copyAssetFileWithoutPath(android.content.Context,java.lang.String,java.io.File,boolean)">copyAssetFileWithoutPath</a></span>&#8203;(android.content.Context&nbsp;context,
                         java.lang.String&nbsp;pathInAssets,
@@ -233,7 +251,7 @@ extends java.lang.Object</pre>
  (without the relative path of the asset).</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#copyAssetFileWithoutPath(android.content.Context,java.lang.String,java.io.File,java.lang.String)">copyAssetFileWithoutPath</a></span>&#8203;(android.content.Context&nbsp;context,
                         java.lang.String&nbsp;pathInAssets,
@@ -245,7 +263,7 @@ extends java.lang.Object</pre>
  (without the relative path of the asset).</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#copyDirectory(java.io.File,java.io.File)">copyDirectory</a></span>&#8203;(java.io.File&nbsp;sourceDir,
              java.io.File&nbsp;destDir)</code></th>
@@ -253,20 +271,20 @@ extends java.lang.Object</pre>
 <div class="block">Copy a whole directory to another location.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#deleteDirectory(java.io.File)">deleteDirectory</a></span>&#8203;(java.io.File&nbsp;directoryToBeDeleted)</code></th>
 <td class="colLast">
 <div class="block">Deletes a directory recursively</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#fileExists(java.lang.String,java.lang.String)">fileExists</a></span>&#8203;(java.lang.String&nbsp;path,
           java.lang.String&nbsp;fileName)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>static org.json.JSONObject</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAnylineAssetsJson(android.content.Context,java.lang.String)">getAnylineAssetsJson</a></span>&#8203;(android.content.Context&nbsp;context,
                     java.lang.String&nbsp;fileName)</code></th>
@@ -274,12 +292,12 @@ extends java.lang.Object</pre>
 <div class="block">Get the json object from the assets with the given file name.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>static java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAssetPathForPlugin(io.anyline2.core.ScanController.PluginType)">getAssetPathForPlugin</a></span>&#8203;(<a href="../../core/ScanController.PluginType.html" title="enum in io.anyline2.core">ScanController.PluginType</a>&nbsp;pluginType)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>static java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#readFile(java.lang.String,java.lang.String)">readFile</a></span>&#8203;(java.lang.String&nbsp;path,
         java.lang.String&nbsp;fileName)</code></th>
@@ -434,6 +452,24 @@ extends java.lang.Object</pre>
 </dl>
 </li>
 </ul>
+<a id="copyAssetFile(android.content.Context,java.lang.String,java.io.File,boolean,java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>copyAssetFile</h4>
+<pre class="methodSignature">public static&nbsp;void&nbsp;copyAssetFile&#8203;(android.content.Context&nbsp;context,
+                                 java.lang.String&nbsp;pathInAssets,
+                                 java.io.File&nbsp;dirToCopyTo,
+                                 boolean&nbsp;isForceCopy,
+                                 java.lang.String&nbsp;pathPrefix)
+                          throws java.io.IOException</pre>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.io.IOException</code></dd>
+</dl>
+</li>
+</ul>
 <a id="copyAllAssetFiles(android.content.Context,java.lang.String...)">
 <!--   -->
 </a>
@@ -477,6 +513,24 @@ extends java.lang.Object</pre>
 <dd><code>md5Hash</code> - the md5 checksum for the file to copy</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.io.IOException</code> - if there is any problem copying the files</dd>
+</dl>
+</li>
+</ul>
+<a id="copyAssetFile(android.content.Context,java.lang.String,java.io.File,java.lang.String,java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>copyAssetFile</h4>
+<pre class="methodSignature">public static&nbsp;void&nbsp;copyAssetFile&#8203;(android.content.Context&nbsp;context,
+                                 java.lang.String&nbsp;pathInAssets,
+                                 java.io.File&nbsp;dirToCopyTo,
+                                 java.lang.String&nbsp;md5Hash,
+                                 java.lang.String&nbsp;pathPrefix)
+                          throws java.io.IOException</pre>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.io.IOException</code></dd>
 </dl>
 </li>
 </ul>

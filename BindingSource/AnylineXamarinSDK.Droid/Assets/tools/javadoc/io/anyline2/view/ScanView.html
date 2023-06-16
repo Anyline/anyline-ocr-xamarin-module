@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -141,12 +141,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><code>android.graphics.drawable.Drawable.Callback</code>, <code>android.view.accessibility.AccessibilityEventSource</code>, <code>android.view.KeyEvent.Callback</code>, <code>android.view.ViewManager</code>, <code>android.view.ViewParent</code>, <code><a href="UIChangeListener.html" title="interface in io.anyline2.view">UIChangeListener</a></code></dd>
+<dd><code>android.graphics.drawable.Drawable.Callback</code>, <code>android.view.accessibility.AccessibilityEventSource</code>, <code>android.view.KeyEvent.Callback</code>, <code>android.view.ViewManager</code>, <code>android.view.ViewParent</code></dd>
 </dl>
 <hr>
 <pre>public class <span class="typeNameLabel">ScanView</span>
-extends android.view.ViewGroup
-implements <a href="UIChangeListener.html" title="interface in io.anyline2.view">UIChangeListener</a></pre>
+extends android.view.ViewGroup</pre>
 </li>
 </ul>
 </div>
@@ -274,158 +273,116 @@ implements <a href="UIChangeListener.html" title="interface in io.anyline2.view"
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#delayScanTime(io.anyline2.viewplugin.ScanViewPlugin)">delayScanTime</a></span>&#8203;(<a href="../viewplugin/ScanViewPlugin.html" title="class in io.anyline2.viewplugin">ScanViewPlugin</a>&nbsp;scanViewPlugin)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i1" class="rowColor">
-<td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#drawShape(java.util.List)">drawShape</a></span>&#8203;(java.util.List&lt;android.graphics.PointF&gt;&nbsp;outline)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i2" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#drawVisualFeedback(io.anyline2.viewplugin.ScanViewPlugin,java.lang.Object)">drawVisualFeedback</a></span>&#8203;(<a href="../viewplugin/ScanViewPlugin.html" title="class in io.anyline2.viewplugin">ScanViewPlugin</a>&nbsp;scanViewPlugin,
-                  java.lang.Object&nbsp;reportedObject)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i3" class="rowColor">
+<tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="BrightnessHelper.BrightnessFeedback.html" title="enum in io.anyline2.view">BrightnessHelper.BrightnessFeedback</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getBrightnessFeedBack()">getBrightnessFeedBack</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="../camera/CameraView.html" title="class in io.anyline2.camera">CameraView</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCameraView()">getCameraView</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>android.view.ViewGroup</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getContainerView()">getContainerView</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="FlashView.html" title="class in io.anyline2.view">FlashView</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getFlashView()">getFlashView</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="../viewplugin/ViewPluginBase.html" title="class in io.anyline2.viewplugin">ViewPluginBase</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getScanViewPlugin()">getScanViewPlugin</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#init(io.anyline2.legacy.trainer.AssetContext,int)">init</a></span>&#8203;(<a href="../legacy/trainer/AssetContext.html" title="class in io.anyline2.legacy.trainer">AssetContext</a>&nbsp;assetContext,
     int&nbsp;timeoutSeconds)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#init(java.lang.String)">init</a></span>&#8203;(java.lang.String&nbsp;configFileName)</code></th>
 <td class="colLast">
 <div class="block">Initializes the ScanView with the file path to a JSON config file and a license key.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#init(org.json.JSONObject)">init</a></span>&#8203;(org.json.JSONObject&nbsp;jsonConfig)</code></th>
 <td class="colLast">
 <div class="block">Initializes the ScanView with the file path to a JSON config file and a license key.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isNativeBarcodeDetectionEnabled()">isNativeBarcodeDetectionEnabled</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#notifyCamera()">notifyCamera</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#notifyTakeHighPictureResolution(CombinedImageProvider)">notifyTakeHighPictureResolution</a></span>&#8203;(CombinedImageProvider&nbsp;imageProvider)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i14" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onBlinkAnimation()">onBlinkAnimation</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i15" class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onBrightnessUpdate(int)">onBrightnessUpdate</a></span>&#8203;(int&nbsp;value)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i16" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onCutoutChanged(java.util.List)">onCutoutChanged</a></span>&#8203;(java.util.List&lt;android.util.Pair&lt;<a href="../viewplugin/ScanViewPlugin.html" title="class in io.anyline2.viewplugin">ScanViewPlugin</a>,&#8203;<a href="CutoutRect.html" title="class in io.anyline2.view">CutoutRect</a>&gt;&gt;&nbsp;scanViewPluginCutoutRectList)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i17" class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onCutoutVisibility(io.anyline2.viewplugin.ScanViewPlugin,boolean)">onCutoutVisibility</a></span>&#8203;(<a href="../viewplugin/ScanViewPlugin.html" title="class in io.anyline2.viewplugin">ScanViewPlugin</a>&nbsp;scanViewPlugin,
-                  boolean&nbsp;visible)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i18" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onScanViewPluginStart(io.anyline2.viewplugin.ScanViewPlugin)">onScanViewPluginStart</a></span>&#8203;(<a href="../viewplugin/ScanViewPlugin.html" title="class in io.anyline2.viewplugin">ScanViewPlugin</a>&nbsp;scanViewPlugin)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i19" class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onScanViewPluginStop(io.anyline2.viewplugin.ScanViewPlugin)">onScanViewPluginStop</a></span>&#8203;(<a href="../viewplugin/ScanViewPlugin.html" title="class in io.anyline2.viewplugin">ScanViewPlugin</a>&nbsp;scanViewPlugin)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i20" class="altColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onTouchEvent(android.view.MotionEvent)">onTouchEvent</a></span>&#8203;(android.view.MotionEvent&nbsp;event)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCropRect(Rect)">setCropRect</a></span>&#8203;(Rect&nbsp;cropRect)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setScanConfig(java.lang.String)">setScanConfig</a></span>&#8203;(java.lang.String&nbsp;pathFile)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setScanConfig(org.json.JSONObject)">setScanConfig</a></span>&#8203;(org.json.JSONObject&nbsp;jsonObject)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setScanViewConfig(io.anyline2.view.ScanViewConfig)">setScanViewConfig</a></span>&#8203;(<a href="ScanViewConfig.html" title="class in io.anyline2.view">ScanViewConfig</a>&nbsp;scanViewConfig)</code></th>
 <td class="colLast">
 <div class="block">Sets the ScanView with the base config <a href="ScanViewConfig.html" title="class in io.anyline2.view"><code>ScanViewConfig</code></a> for cameraView and the flashView configurations</div>
 </td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setScanViewPlugin(io.anyline2.viewplugin.ViewPluginBase)">setScanViewPlugin</a></span>&#8203;(<a href="../viewplugin/ViewPluginBase.html" title="class in io.anyline2.viewplugin">ViewPluginBase</a>&nbsp;viewPluginBase)</code></th>
 <td class="colLast">
 <div class="block">Sets the ScanView with the specific <a href="../viewplugin/ScanViewPlugin.html" title="class in io.anyline2.viewplugin"><code>ScanViewPlugin</code></a></div>
 </td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#start()">start</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Starts the worker thread.</div>
 </td>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#stop()">stop</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#updateCutoutView(io.anyline2.viewplugin.ScanViewPlugin)">updateCutoutView</a></span>&#8203;(<a href="../viewplugin/ScanViewPlugin.html" title="class in io.anyline2.viewplugin">ScanViewPlugin</a>&nbsp;scanViewPlugin)</code></th>
 <td class="colLast">&nbsp;</td>
@@ -678,32 +635,6 @@ implements <a href="UIChangeListener.html" title="interface in io.anyline2.view"
 <pre class="methodSignature">public&nbsp;void&nbsp;updateCutoutView&#8203;(<a href="../viewplugin/ScanViewPlugin.html" title="class in io.anyline2.viewplugin">ScanViewPlugin</a>&nbsp;scanViewPlugin)</pre>
 </li>
 </ul>
-<a id="onBlinkAnimation()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>onBlinkAnimation</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;onBlinkAnimation()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="UIChangeListener.html#onBlinkAnimation()">onBlinkAnimation</a></code>&nbsp;in interface&nbsp;<code><a href="UIChangeListener.html" title="interface in io.anyline2.view">UIChangeListener</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="onBrightnessUpdate(int)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>onBrightnessUpdate</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;onBrightnessUpdate&#8203;(int&nbsp;value)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="UIChangeListener.html#onBrightnessUpdate(int)">onBrightnessUpdate</a></code>&nbsp;in interface&nbsp;<code><a href="UIChangeListener.html" title="interface in io.anyline2.view">UIChangeListener</a></code></dd>
-</dl>
-</li>
-</ul>
 <a id="setCropRect(Rect)">
 <!--   -->
 </a>
@@ -762,20 +693,6 @@ implements <a href="UIChangeListener.html" title="interface in io.anyline2.view"
 </dl>
 </li>
 </ul>
-<a id="drawVisualFeedback(io.anyline2.viewplugin.ScanViewPlugin,java.lang.Object)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>drawVisualFeedback</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;drawVisualFeedback&#8203;(<a href="../viewplugin/ScanViewPlugin.html" title="class in io.anyline2.viewplugin">ScanViewPlugin</a>&nbsp;scanViewPlugin,
-                               java.lang.Object&nbsp;reportedObject)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="UIChangeListener.html#drawVisualFeedback(io.anyline2.viewplugin.ScanViewPlugin,java.lang.Object)">drawVisualFeedback</a></code>&nbsp;in interface&nbsp;<code><a href="UIChangeListener.html" title="interface in io.anyline2.view">UIChangeListener</a></code></dd>
-</dl>
-</li>
-</ul>
 <a id="setScanConfig(java.lang.String)">
 <!--   -->
 </a>
@@ -792,72 +709,6 @@ implements <a href="UIChangeListener.html" title="interface in io.anyline2.view"
 <li class="blockList">
 <h4>setScanConfig</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;setScanConfig&#8203;(org.json.JSONObject&nbsp;jsonObject)</pre>
-</li>
-</ul>
-<a id="onCutoutChanged(java.util.List)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>onCutoutChanged</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;onCutoutChanged&#8203;(java.util.List&lt;android.util.Pair&lt;<a href="../viewplugin/ScanViewPlugin.html" title="class in io.anyline2.viewplugin">ScanViewPlugin</a>,&#8203;<a href="CutoutRect.html" title="class in io.anyline2.view">CutoutRect</a>&gt;&gt;&nbsp;scanViewPluginCutoutRectList)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="UIChangeListener.html#onCutoutChanged(java.util.List)">onCutoutChanged</a></code>&nbsp;in interface&nbsp;<code><a href="UIChangeListener.html" title="interface in io.anyline2.view">UIChangeListener</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="delayScanTime(io.anyline2.viewplugin.ScanViewPlugin)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>delayScanTime</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;delayScanTime&#8203;(<a href="../viewplugin/ScanViewPlugin.html" title="class in io.anyline2.viewplugin">ScanViewPlugin</a>&nbsp;scanViewPlugin)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="UIChangeListener.html#delayScanTime(io.anyline2.viewplugin.ScanViewPlugin)">delayScanTime</a></code>&nbsp;in interface&nbsp;<code><a href="UIChangeListener.html" title="interface in io.anyline2.view">UIChangeListener</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="onCutoutVisibility(io.anyline2.viewplugin.ScanViewPlugin,boolean)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>onCutoutVisibility</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;onCutoutVisibility&#8203;(<a href="../viewplugin/ScanViewPlugin.html" title="class in io.anyline2.viewplugin">ScanViewPlugin</a>&nbsp;scanViewPlugin,
-                               boolean&nbsp;visible)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="UIChangeListener.html#onCutoutVisibility(io.anyline2.viewplugin.ScanViewPlugin,boolean)">onCutoutVisibility</a></code>&nbsp;in interface&nbsp;<code><a href="UIChangeListener.html" title="interface in io.anyline2.view">UIChangeListener</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="onScanViewPluginStart(io.anyline2.viewplugin.ScanViewPlugin)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>onScanViewPluginStart</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;onScanViewPluginStart&#8203;(<a href="../viewplugin/ScanViewPlugin.html" title="class in io.anyline2.viewplugin">ScanViewPlugin</a>&nbsp;scanViewPlugin)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="UIChangeListener.html#onScanViewPluginStart(io.anyline2.viewplugin.ScanViewPlugin)">onScanViewPluginStart</a></code>&nbsp;in interface&nbsp;<code><a href="UIChangeListener.html" title="interface in io.anyline2.view">UIChangeListener</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="onScanViewPluginStop(io.anyline2.viewplugin.ScanViewPlugin)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>onScanViewPluginStop</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;onScanViewPluginStop&#8203;(<a href="../viewplugin/ScanViewPlugin.html" title="class in io.anyline2.viewplugin">ScanViewPlugin</a>&nbsp;scanViewPlugin)</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="UIChangeListener.html#onScanViewPluginStop(io.anyline2.viewplugin.ScanViewPlugin)">onScanViewPluginStop</a></code>&nbsp;in interface&nbsp;<code><a href="UIChangeListener.html" title="interface in io.anyline2.view">UIChangeListener</a></code></dd>
-</dl>
 </li>
 </ul>
 <a id="notifyCamera()">
