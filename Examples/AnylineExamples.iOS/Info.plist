@@ -11,7 +11,7 @@
       <integer>2</integer>
     </array>
     <key>CFBundleShortVersionString</key>
-    <string>47.0.1</string>
+    <string>49.0.0</string>
     <key>UILaunchStoryboardName</key>
     <string>MainStoryboard.storyboard</string>
     <key>UIMainStoryboardFile</key>

@@ -14,6 +14,7 @@
     "pluginConfig": {
       "id": "com.anyline.configs.plugin.id_mrz_dl_cyrillic",
       "universalIdConfig": {
+        "faceDetectionEnabled": true,
         "allowedLayouts": {
           "mrz": [],
           "drivingLicense": [],
@@ -21,79 +22,26 @@
         },
         "alphabet": "cyrillic",
         "drivingLicense": {
-          "surname": {
-            "scanOption": 0,
-            "minConfidence": 40
-          },
-          "givenNames": {
-            "scanOption": 0,
-            "minConfidence": 40
-          },
-          "dateOfBirth": {
-            "scanOption": 0,
-            "minConfidence": 50
-          },
-          "placeOfBirth": {
-            "scanOption": 1,
-            "minConfidence": 50
-          },
-          "dateOfIssue": {
-            "scanOption": 0,
-            "minConfidence": 50
-          },
-          "dateOfExpiry": {
-            "scanOption": 1,
-            "minConfidence": 50
-          },
-          "authority": {
-            "scanOption": 1,
-            "minConfidence": 30
-          },
-          "documentNumber": {
-            "scanOption": 0,
-            "minConfidence": 40
-          },
-          "categories": {
-            "scanOption": 1,
-            "minConfidence": 30
-          },
-          "address": {
-            "scanOption": 1
-          }
+          "surname": { "scanOption": 0, "minConfidence": 40 },
+          "givenNames": { "scanOption":  0, "minConfidence": 40 },
+          "dateOfBirth": { "scanOption":  0, "minConfidence": 50 },
+          "placeOfBirth": { "scanOption":  1, "minConfidence": 50 },
+          "dateOfIssue": { "scanOption":  0, "minConfidence": 50 },
+          "dateOfExpiry": { "scanOption":  1, "minConfidence": 50 },
+          "authority": { "scanOption":  1, "minConfidence": 30 },
+          "documentNumber": { "scanOption":  0, "minConfidence": 40 },
+          "categories": { "scanOption":  1, "minConfidence": 30 },
+          "address": { "scanOption":  1 }
         },
         "idFront": {
-          "surname": {
-            "scanOption": 0,
-            "minConfidence": 60
-          },
-          "givenNames": {
-            "scanOption": 0,
-            "minConfidence": 60
-          },
-          "dateOfBirth": {
-            "scanOption": 0,
-            "minConfidence": 60
-          },
-          "placeOfBirth": {
-            "scanOption": 1,
-            "minConfidence": 60
-          },
-          "dateOfExpiry": {
-            "scanOption": 1,
-            "minConfidence": 60
-          },
-          "cardAccessNumber": {
-            "scanOption": 1,
-            "minConfidence": 60
-          },
-          "documentNumber": {
-            "scanOption": 0,
-            "minConfidence": 60
-          },
-          "nationality": {
-            "scanOption": 1,
-            "minConfidence": 60
-          }
+          "surname": { "scanOption":  0, "minConfidence": 60 },
+          "givenNames": { "scanOption":  0, "minConfidence": 60 },
+          "dateOfBirth": { "scanOption":  0, "minConfidence": 60 },
+          "placeOfBirth": { "scanOption":  1, "minConfidence": 60 },
+          "dateOfExpiry": { "scanOption":  1, "minConfidence": 60 },
+          "cardAccessNumber": { "scanOption":  1, "minConfidence": 60 },
+          "documentNumber": { "scanOption":  0, "minConfidence": 60 },
+          "nationality": { "scanOption":  1, "minConfidence": 60 }
         }
       },
       "cancelOnResult": true

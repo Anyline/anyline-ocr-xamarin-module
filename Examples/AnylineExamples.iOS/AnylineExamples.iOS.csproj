@@ -149,7 +149,7 @@
     </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Anyline.Xamarin.SDK.iOS" Version="47.0.1" />
+    <PackageReference Include="Anyline.Xamarin.SDK.iOS" Version="49.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
   <ItemGroup>
