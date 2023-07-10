@@ -551,6 +551,7 @@
 <!-- ArrayUtil.contains(T[], T) -->
 <!-- File: IO.Anyline.Plugin.Config.MrzConfig.cs -->
 <!-- MrzConfig.setCropAndTransformID(java.lang.Boolean) -->
+<!-- MrzConfig.setFaceDetectionEnabled(java.lang.Boolean) -->
 <!-- MrzConfig.setMinConfidence(java.lang.Integer) -->
 <!-- MrzConfig.setMrzFieldScanOptions(io.anyline.plugin.config.MrzFieldScanOptions) -->
 <!-- MrzConfig.setMrzMinFieldConfidences(io.anyline.plugin.config.MrzMinFieldConfidences) -->
@@ -640,6 +641,8 @@
 <!-- MatOfFloat4.fromArray(float...) -->
 <!-- MatOfFloat4.fromList(java.util.List&lt;java.lang.Float&gt;) -->
 <!-- MatOfFloat4.fromNativeAddr(long) -->
+<!-- File: IO.Anyline2.Camera.AbstractMlKitDetector.cs -->
+<!-- AbstractMlKitDetector.AbstractMlKitDetector(android.content.Context) -->
 <!-- File: IO.Anyline.View.CutoutRect.cs -->
 <!-- CutoutRect.CutoutRect(android.content.Context, io.anyline.view.CutoutConfig) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='CutoutRect']/constructor[@name='CutoutRect' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='io.anyline.view.CutoutConfig']]/parameter[1]" name="managedName">context</attr>
@@ -738,6 +741,7 @@
 <!-- MeterConfig.ScanMode.valueOf(java.lang.String) -->
 <!-- MeterConfig.setMaxNumDecimalDigits(java.lang.Integer) -->
 <!-- MeterConfig.setMinConfidence(java.lang.Integer) -->
+<!-- MeterConfig.setValidationRegex(java.lang.String) -->
 <!-- MeterConfig.setScanMode(io.anyline.plugin.config.MeterConfig.ScanMode) -->
 <!-- File: IO.Anyline2.DI.Context.ContextProvider.cs -->
 <!-- ContextProvider.setInstance(android.content.Context) -->
@@ -936,7 +940,8 @@
 <!-- File: IO.Anyline.Plugin.Config.StartVariable.cs -->
 <!-- StartVariable.setKey(java.lang.String) -->
 <!-- StartVariable.setValue(java.lang.Object) -->
-<!-- File: IO.Anyline.Camera.IZoomEventHandler.cs -->
+<!-- File: IO.Anyline2.DI.Mlkit.MlKitContextProvider.cs -->
+<!-- File: IO.Anyline.Camera.IZoomEventHandler.cs -->
 <!-- ZoomEventHandler.onZoomEventOccured(double) -->
 <!-- File: IO.Anyline2.AppEnvironment.cs -->
 <!-- File: IO.Anyline.Plugin.Document.DocumentScanPlugin.cs -->
@@ -1032,6 +1037,7 @@
 <!-- PluginResult.setMeterResult(io.anyline.plugin.result.MeterResult) -->
 <!-- PluginResult.setMrzResult(io.anyline.plugin.result.MrzResult) -->
 <!-- PluginResult.setOcrResult(io.anyline.plugin.result.OcrResult) -->
+<!-- PluginResult.setOdometerResult(io.anyline.plugin.result.OdometerResult) -->
 <!-- PluginResult.setPluginID(java.lang.String) -->
 <!-- PluginResult.setTinResult(io.anyline.plugin.result.TinResult) -->
 <!-- PluginResult.setTireMakeResult(io.anyline.plugin.result.TireMakeResult) -->
@@ -1177,6 +1183,9 @@
 <attr path="/api/package[@name='io.anyline2']/interface[@name='CorrectedResultReporting']/method[@name='reportCorrectedResult' and count(parameter)=3 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.util.Map&lt;java.lang.String, java.lang.String&gt;'] and parameter[3][@type='java.lang.String']]/parameter[1]" name="managedName">blobKey</attr>
 <attr path="/api/package[@name='io.anyline2']/interface[@name='CorrectedResultReporting']/method[@name='reportCorrectedResult' and count(parameter)=3 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.util.Map&lt;java.lang.String, java.lang.String&gt;'] and parameter[3][@type='java.lang.String']]/parameter[2]" name="managedName">correctedResult</attr>
 <attr path="/api/package[@name='io.anyline2']/interface[@name='CorrectedResultReporting']/method[@name='reportCorrectedResult' and count(parameter)=3 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.util.Map&lt;java.lang.String, java.lang.String&gt;'] and parameter[3][@type='java.lang.String']]/parameter[3]" name="managedName">apiKey</attr>
+<!-- File: IO.Anyline.Plugin.Config.OdometerConfig.cs -->
+<!-- OdometerConfig.setMinConfidence(java.lang.Integer) -->
+<!-- OdometerConfig.setValidationRegex(java.lang.String) -->
 <!-- File: IO.Anyline.Plugin.Tire.ResultField.cs -->
 <!-- ResultField.Companion.ResultField.Companion(kotlin.jvm.internal.DefaultConstructorMarker) -->
 <!-- ResultField.ResultField(java.lang.String, int) -->
@@ -1941,6 +1950,8 @@
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineFeedbackView']/method[@name='translateX' and count(parameter)=1 and parameter[1][@type='float']]/parameter[1]" name="managedName">x</attr>
 <!-- AnylineFeedbackView.translateY(float) -->
 <attr path="/api/package[@name='io.anyline.view']/class[@name='AnylineFeedbackView']/method[@name='translateY' and count(parameter)=1 and parameter[1][@type='float']]/parameter[1]" name="managedName">y</attr>
+<!-- File: IO.Anyline.Plugin.Result.OdometerResult.cs -->
+<!-- OdometerResult.setValue(java.lang.String) -->
 <!-- File: IO.Anyline.Util.DimensUtil.cs -->
 <!-- DimensUtil.dpToPx(android.content.Context, float) -->
 <!-- DimensUtil.getDpFromPix(android.content.Context, int) -->
@@ -2373,6 +2384,7 @@
 <!-- PluginConfig.setMeterConfig(io.anyline.plugin.config.MeterConfig) -->
 <!-- PluginConfig.setMrzConfig(io.anyline.plugin.config.MrzConfig) -->
 <!-- PluginConfig.setOcrConfig(io.anyline.plugin.config.OcrConfig) -->
+<!-- PluginConfig.setOdometerConfig(io.anyline.plugin.config.OdometerConfig) -->
 <!-- PluginConfig.setStartScanDelay(java.lang.Integer) -->
 <!-- PluginConfig.setStartVariables(java.util.List&lt;io.anyline.plugin.config.StartVariable&gt;) -->
 <!-- PluginConfig.setTinConfig(io.anyline.plugin.config.TinConfig) -->
@@ -3940,6 +3952,7 @@
 <!-- UniversalIdConfig.Alphabet.valueOf(java.lang.String) -->
 <!-- UniversalIdConfig.setAllowedLayouts(io.anyline.plugin.config.AllowedLayouts) -->
 <!-- UniversalIdConfig.setDrivingLicense(io.anyline.plugin.config.LayoutDrivingLicense) -->
+<!-- UniversalIdConfig.setFaceDetectionEnabled(java.lang.Boolean) -->
 <!-- UniversalIdConfig.setIdFront(io.anyline.plugin.config.LayoutIdFront) -->
 <!-- UniversalIdConfig.setInsuranceCard(io.anyline.plugin.config.LayoutInsuranceCard) -->
 <!-- UniversalIdConfig.setMrz(io.anyline.plugin.config.LayoutMrz) -->

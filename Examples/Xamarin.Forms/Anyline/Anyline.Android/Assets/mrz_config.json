@@ -3,6 +3,7 @@
     "pluginConfig": {
       "id": "com.anyline.configs.plugin.mrz",
       "mrzConfig": {
+        "faceDetectionEnabled": true,
         "strictMode": false,
         "cropAndTransformID": false
       },

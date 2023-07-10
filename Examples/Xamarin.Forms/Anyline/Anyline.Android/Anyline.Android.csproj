@@ -16,7 +16,7 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v12.0</TargetFrameworkVersion>
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <AndroidUseAapt2>true</AndroidUseAapt2>
     <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
@@ -34,6 +34,7 @@
     <AndroidDexTool>d8</AndroidDexTool>
     <AndroidUseAapt2>true</AndroidUseAapt2>
     <AndroidSupportedAbis>arm64-v8a;armeabi-v7a</AndroidSupportedAbis>
+    <AndroidLinkMode>None</AndroidLinkMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -55,17 +56,16 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Anyline.Xamarin.SDK.Droid" Version="47.1.0" />
+    <PackageReference Include="Anyline.Xamarin.SDK.Droid" Version="49.0.0" />
     <PackageReference Include="Xamarin.Forms" Version="4.5.0.495" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
-    <PackageReference Include="Xamarin.Firebase.ML.Vision" Version="124.1.0" />
-    <PackageReference Include="Xamarin.AndroidX.Lifecycle.LiveData" Version="2.3.1" />
+    <PackageReference Include="Xamarin.AndroidX.AppCompat.Resources" Version="1.1.0.2" />
     <PackageReference Include="Xamarin.AndroidX.Browser" Version="1.3.0.4" />
     <PackageReference Include="Xamarin.AndroidX.Legacy.Support.V4" Version="1.0.0.5" />
+    <PackageReference Include="Xamarin.AndroidX.Lifecycle.LiveData" Version="2.3.1" />
     <PackageReference Include="Xamarin.Google.Android.Material" Version="1.3.0.1" />
-    <PackageReference Include="Xamarin.AndroidX.Legacy.Support.Core.UI" Version="1.0.0.8" />
-    <PackageReference Include="Xamarin.Google.MLKit.BarcodeScanning" Version="116.1.2" />
-    <PackageReference Include="Xamarin.GooglePlayServices.MLKit.FaceDetection" Version="116.1.7" />
+    <PackageReference Include="Xamarin.Google.MLKit.BarcodeScanning" Version="117.1.0.1" />
+    <PackageReference Include="Xamarin.Google.MLKit.FaceDetection" Version="116.1.5.4" />
     <PackageReference Include="Xamarin.Google.Dagger" Version="2.27.0" />
   </ItemGroup>
   <ItemGroup>

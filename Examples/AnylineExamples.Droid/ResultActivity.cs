@@ -3,12 +3,12 @@ using Android.Content;
 using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
-using Android.Support.V7.App;
 using Android.Text;
 using Android.Text.Style;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
+using AndroidX.AppCompat.App;
 using AnylineExamples.Shared;
 using IO.Anyline.Models;
 using IO.Anyline.Nfc.NFC;
@@ -23,7 +23,6 @@ using System.Reflection.Emit;
 using System.Runtime.Remoting.Contexts;
 using System.Threading.Tasks;
 using static Android.Bluetooth.BluetoothClass;
-using static Android.Support.V7.Widget.StaggeredGridLayoutManager;
 using static Android.Webkit.WebSettings;
 
 namespace AnylineExamples.Droid
