@@ -3,10 +3,11 @@ using Android.Content;
 using Android.Content.PM;
 using Android.OS;
 using Android.Support.V4.App;
-using Android.Support.V4.Content;
-using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
+using AndroidX.AppCompat.App;
+using AndroidX.Core.App;
+using AndroidX.Core.Content;
 using System;
 using System.Threading.Tasks;
 
@@ -30,7 +31,7 @@ namespace AnylineExamples.Droid
 
             SetContentView(Resource.Layout.activity_main);
 
-            Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+            var toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
 
             listView = FindViewById<ListView>(Resource.Id.listView);

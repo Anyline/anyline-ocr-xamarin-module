@@ -11,7 +11,7 @@ using Android.App;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("AnylineExamples.Droid")]
-[assembly: AssemblyCopyright("Copyright © 2021 Anyline GmbH")]
+[assembly: AssemblyCopyright("Copyright © 2023 Anyline GmbH")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]

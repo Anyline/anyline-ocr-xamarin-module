@@ -6,7 +6,6 @@ using Android.OS;
 using Android.Views;
 using IO.Anyline.Camera;
 
-using Android.Support.V7.App;
 using Android.Util;
 using IO.Anyline.Plugin.ID;
 using IO.Anyline.Plugin;
@@ -14,6 +13,7 @@ using Anyline.Droid.NFC;
 using IO.Anyline2;
 using IO.Anyline2.View;
 using IO.Anyline.Plugin.Result;
+using AndroidX.AppCompat.App;
 
 namespace AnylineExamples.Droid.NFC
 {
