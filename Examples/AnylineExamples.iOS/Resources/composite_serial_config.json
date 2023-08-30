@@ -48,7 +48,6 @@
             "outerAlpha": 0.3
           },
           "scanFeedbackConfig": {
-            "style": "rect",
             "strokeWidth": 2,
             "animationDuration": 0,
             "strokeColor": "0099ff",
@@ -72,7 +71,6 @@
             "cancelOnResult": true
           },
           "cutoutConfig": {
-            "style": "animated_rect",
             "maxWidthPercent": "90%",
             "maxHeightPercent": "90%",
             "alignment": "center",
