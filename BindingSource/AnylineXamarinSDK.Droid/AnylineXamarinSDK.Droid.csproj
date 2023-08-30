@@ -49,21 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Additions\AbstractBaseScanViewPlugin.cs" />
-    <Compile Include="Additions\IDocumentScanResultListener.cs" />
-    <Compile Include="Additions\IScanResultListener.cs" />
-    <Compile Include="Additions\MrzIdentification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <TransformFile Include="Transforms\Metadata.xml">
       <SubType>Designer</SubType>
     </TransformFile>
-    <TransformFile Include="Transforms\EnumFields.xml" />
-    <TransformFile Include="Transforms\EnumMethods.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Assets\raw\al_d6f3e042d13f4cc06b77dbdb2d2dcebaf46326e6.txt" />
   </ItemGroup>
   <ItemGroup>
     <LibraryProjectZip Include="Jars\anylinesdk.aar" />

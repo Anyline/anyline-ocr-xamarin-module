@@ -17,7 +17,7 @@ using Anyline.NFC;
 namespace Anyline.Droid.NFC
 {
     [Activity(Label = "NFCScanActivity")]
-    public class NFCScanActivity : Activity, NfcDetector.INfcDetectionHandler
+    public class NFCScanActivity : Activity, INfcDetectionHandler
     {
         protected NfcAdapter mNfcAdapter;
 
@@ -72,7 +72,7 @@ namespace Anyline.Droid.NFC
 
                     mNfcAdapter.EnableForegroundDispatch(
                         this,
-                        PendingIntent.GetActivity(this, 0, intent, 0),
+                        PendingIntent.GetActivity(this, 0, intent, PendingIntentFlags.Mutable),
                         new[] { new IntentFilter(NfcAdapter.ActionTechDiscovered) },
                         new string[][] {
                             new string[] {
@@ -109,21 +109,24 @@ namespace Anyline.Droid.NFC
             base.OnNewIntent(intent);
 
             Tag tag = intent.GetParcelableExtra(NfcAdapter.ExtraTag) as Tag;
-            TagProvider.Tag = IsoDep.Get(tag);
-
-            if (NfcAdapter.ActionTechDiscovered == intent.Action)
+            if (tag != null)
             {
-                if (tag.GetTechList().ToList().Contains("android.nfc.tech.IsoDep"))
+                TagProvider.Tag = IsoDep.Get(tag);
+
+                if (NfcAdapter.ActionTechDiscovered == intent.Action)
                 {
-                    try
+                    if (tag.GetTechList().ToList().Contains("android.nfc.tech.IsoDep"))
                     {
-                        // Begins to read the NFC chip
-                        NfcDetector nfcDetector = new NfcDetector(ApplicationContext, this);
-                        nfcDetector.StartNfcDetection(passportNumber, dateOfBirth, dateOfExpiry);
-                    }
-                    catch (Exception e)
-                    {
-                        System.Diagnostics.Debug.WriteLine(e.ToString());
+                        try
+                        {
+                            // Begins to read the NFC chip
+                            NfcDetector nfcDetector = new NfcDetector(ApplicationContext, this);
+                            nfcDetector.StartNfcDetection(passportNumber, dateOfBirth, dateOfExpiry);
+                        }
+                        catch (Exception e)
+                        {
+                            System.Diagnostics.Debug.WriteLine(e.ToString());
+                        }
                     }
                 }
             }
@@ -160,7 +163,7 @@ namespace Anyline.Droid.NFC
             {
                 FirstName = result.DataGroup1.FirstName,
                 LastName = result.DataGroup1.LastName,
-                Gender= result.DataGroup1.Gender,
+                Gender = result.DataGroup1.Gender,
                 DocumentNumber = result.DataGroup1.DocumentNumber,
                 DateOfBirth = result.DataGroup1.DateOfBirth,
                 DateOfExpiry = result.DataGroup1.DateOfExpiry,

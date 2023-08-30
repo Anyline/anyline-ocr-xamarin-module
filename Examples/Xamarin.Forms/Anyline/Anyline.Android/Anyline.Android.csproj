@@ -56,7 +56,7 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Anyline.Xamarin.SDK.Droid" Version="49.0.0" />
+    <PackageReference Include="Anyline.Xamarin.SDK.Droid" Version="50.0.3" />
     <PackageReference Include="Xamarin.Forms" Version="4.5.0.495" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
     <PackageReference Include="Xamarin.AndroidX.AppCompat.Resources" Version="1.1.0.2" />

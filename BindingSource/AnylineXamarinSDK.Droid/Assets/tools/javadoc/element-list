@@ -4,6 +4,7 @@ io.anyline2.core
 io.anyline2.di.anylineupdater
 io.anyline2.di.assetcontroller
 io.anyline2.di.assetutil
+io.anyline2.di.config
 io.anyline2.di.context
 io.anyline2.di.plugintype
 io.anyline2.di.scancontroller

@@ -9,21 +9,11 @@ using Android.Util;
 using Android.Views;
 using Android.Widget;
 using AndroidX.AppCompat.App;
-using AnylineExamples.Shared;
-using IO.Anyline.Models;
 using IO.Anyline.Nfc.NFC;
-using IO.Anyline.Plugin;
-using IO.Anyline.Plugin.ID;
-using Java.Util;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Runtime.Remoting.Contexts;
 using System.Threading.Tasks;
-using static Android.Bluetooth.BluetoothClass;
-using static Android.Webkit.WebSettings;
 
 namespace AnylineExamples.Droid
 {

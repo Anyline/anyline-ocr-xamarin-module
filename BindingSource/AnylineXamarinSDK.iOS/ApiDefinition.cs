@@ -468,6 +468,41 @@ namespace AnylineXamarinSDK.iOS
         [Export ("vertical")]
         ALContainerConfigScanMode Vertical { get; }
     }
+        
+    // @interface ALMrzScanOption : NSObject
+    [BaseType (typeof(NSObject))]
+    interface ALMrzScanOption
+    {
+        // @property (readonly, copy, nonatomic) NSString * _Nonnull value;
+        [Export ("value")]
+        string Value { get; }
+
+        // +(instancetype _Nullable)withValue:(NSString * _Nonnull)value;
+        [Static]
+        [Export ("withValue:")]
+        [return: NullAllowed]
+        ALMrzScanOption WithValue (string value);
+
+        // +(ALMrzScanOption * _Nonnull)disabled;
+        [Static]
+        [Export ("disabled")]
+        ALMrzScanOption Disabled { get; }
+
+        // +(ALMrzScanOption * _Nonnull)mandatory;
+        [Static]
+        [Export ("mandatory")]
+        ALMrzScanOption Mandatory { get; }
+
+        // +(ALMrzScanOption * _Nonnull)mrzScanOptionDefault;
+        [Static]
+        [Export ("mrzScanOptionDefault")]
+        ALMrzScanOption MrzScanOptionDefault { get; }
+
+        // +(ALMrzScanOption * _Nonnull)optional;
+        [Static]
+        [Export ("optional")]
+        ALMrzScanOption Optional { get; }
+    }
 
     // @interface ALLicensePlateConfigScanMode : NSObject
     [BaseType (typeof(NSObject))]
@@ -774,41 +809,6 @@ namespace AnylineXamarinSDK.iOS
         ALMeterConfigScanMode MultiFieldDigitalMeter { get; }
     }
 
-    // @interface ALMrzScanOption : NSObject
-    [BaseType (typeof(NSObject))]
-    interface ALMrzScanOption
-    {
-        // @property (readonly, copy, nonatomic) NSString * _Nonnull value;
-        [Export ("value")]
-        string Value { get; }
-
-        // +(instancetype _Nullable)withValue:(NSString * _Nonnull)value;
-        [Static]
-        [Export ("withValue:")]
-        [return: NullAllowed]
-        ALMrzScanOption WithValue (string value);
-
-        // +(ALMrzScanOption * _Nonnull)disabled;
-        [Static]
-        [Export ("disabled")]
-        ALMrzScanOption Disabled { get; }
-
-        // +(ALMrzScanOption * _Nonnull)mandatory;
-        [Static]
-        [Export ("mandatory")]
-        ALMrzScanOption Mandatory { get; }
-
-        // +(ALMrzScanOption * _Nonnull)mrzScanOptionDefault;
-        [Static]
-        [Export ("mrzScanOptionDefault")]
-        ALMrzScanOption MrzScanOptionDefault { get; }
-
-        // +(ALMrzScanOption * _Nonnull)optional;
-        [Static]
-        [Export ("optional")]
-        ALMrzScanOption Optional { get; }
-    }
-
     // @interface ALOcrConfigScanMode : NSObject
     [BaseType (typeof(NSObject))]
     interface ALOcrConfigScanMode
@@ -937,6 +937,10 @@ namespace AnylineXamarinSDK.iOS
         // @property (nonatomic, strong) ALOcrConfig * _Nullable ocrConfig;
         [NullAllowed, Export ("ocrConfig", ArgumentSemantic.Strong)]
         ALOcrConfig OcrConfig { get; set; }
+
+        // @property (nonatomic, strong) ALOdometerConfig * _Nullable odometerConfig;
+        [NullAllowed, Export ("odometerConfig", ArgumentSemantic.Strong)]
+        ALOdometerConfig OdometerConfig { get; set; }
 
         // @property (nonatomic, strong) NSNumber * _Nullable startScanDelay;
         [NullAllowed, Export ("startScanDelay", ArgumentSemantic.Strong)]
@@ -1081,9 +1085,9 @@ namespace AnylineXamarinSDK.iOS
         [NullAllowed, Export ("minConfidence", ArgumentSemantic.Strong)]
         NSNumber MinConfidence { get; set; }
 
-        // @property (nonatomic, strong) NSNumber * _Nullable scanOption;
-        [NullAllowed, Export ("scanOption", ArgumentSemantic.Strong)]
-        NSNumber ScanOption { get; set; }
+        // @property (assign, nonatomic) ALMrzScanOption * _Nullable scanOption;
+        [NullAllowed, Export ("scanOption", ArgumentSemantic.Assign)]
+        ALMrzScanOption ScanOption { get; set; }
     }
 
     // @interface ALLicensePlateConfig : NSObject
@@ -1118,6 +1122,10 @@ namespace AnylineXamarinSDK.iOS
         // @property (assign, nonatomic) ALMeterConfigScanMode * _Nonnull scanMode;
         [Export ("scanMode", ArgumentSemantic.Assign)]
         ALMeterConfigScanMode ScanMode { get; set; }
+
+        // @property (copy, nonatomic) NSString * _Nullable validationRegex;
+        [NullAllowed, Export ("validationRegex")]
+        string ValidationRegex { get; set; }
     }
 
     // @interface ALMrzConfig : NSObject
@@ -1127,6 +1135,10 @@ namespace AnylineXamarinSDK.iOS
         // @property (assign, nonatomic) BOOL isCropAndTransformID;
         [Export ("isCropAndTransformID")]
         bool IsCropAndTransformID { get; set; }
+
+        // @property (nonatomic, strong) NSNumber * _Nullable faceDetectionEnabled;
+        [NullAllowed, Export ("faceDetectionEnabled", ArgumentSemantic.Strong)]
+        NSNumber FaceDetectionEnabled { get; set; }
 
         // @property (nonatomic, strong) NSNumber * _Nullable minConfidence;
         [NullAllowed, Export ("minConfidence", ArgumentSemantic.Strong)]
@@ -1396,6 +1408,19 @@ namespace AnylineXamarinSDK.iOS
         string ValidationRegex { get; set; }
     }
 
+    // @interface ALOdometerConfig : NSObject
+    [BaseType (typeof(NSObject))]
+    interface ALOdometerConfig
+    {
+        // @property (nonatomic, strong) NSNumber * _Nullable minConfidence;
+        [NullAllowed, Export ("minConfidence", ArgumentSemantic.Strong)]
+        NSNumber MinConfidence { get; set; }
+
+        // @property (copy, nonatomic) NSString * _Nullable validationRegex;
+        [NullAllowed, Export ("validationRegex")]
+        string ValidationRegex { get; set; }
+    }
+
     // @interface ALStartVariable : NSObject
     [BaseType (typeof(NSObject))]
     interface ALStartVariable
@@ -1483,6 +1508,10 @@ namespace AnylineXamarinSDK.iOS
         // @property (nonatomic, strong) ALLayoutDrivingLicense * _Nullable drivingLicense;
         [NullAllowed, Export ("drivingLicense", ArgumentSemantic.Strong)]
         ALLayoutDrivingLicense DrivingLicense { get; set; }
+
+        // @property (nonatomic, strong) NSNumber * _Nullable faceDetectionEnabled;
+        [NullAllowed, Export ("faceDetectionEnabled", ArgumentSemantic.Strong)]
+        NSNumber FaceDetectionEnabled { get; set; }
 
         // @property (nonatomic, strong) ALLayoutIDFront * _Nullable theIDFront;
         [NullAllowed, Export ("theIDFront", ArgumentSemantic.Strong)]
@@ -1695,9 +1724,9 @@ namespace AnylineXamarinSDK.iOS
         [NullAllowed, Export ("minConfidence", ArgumentSemantic.Strong)]
         NSNumber MinConfidence { get; set; }
 
-        // @property (nonatomic, strong) NSNumber * _Nullable scanOption;
-        [NullAllowed, Export ("scanOption", ArgumentSemantic.Strong)]
-        NSNumber ScanOption { get; set; }
+        // @property (assign, nonatomic) ALMrzScanOption * _Nullable scanOption;
+        [NullAllowed, Export ("scanOption", ArgumentSemantic.Assign)]
+        ALMrzScanOption ScanOption { get; set; }
     }
 
     // @interface ALLayoutInsuranceCard : NSObject
@@ -1997,9 +2026,9 @@ namespace AnylineXamarinSDK.iOS
         [NullAllowed, Export ("minConfidence", ArgumentSemantic.Strong)]
         NSNumber MinConfidence { get; set; }
 
-        // @property (nonatomic, strong) NSNumber * _Nullable scanOption;
-        [NullAllowed, Export ("scanOption", ArgumentSemantic.Strong)]
-        NSNumber ScanOption { get; set; }
+        // @property (assign, nonatomic) ALMrzScanOption * _Nullable scanOption;
+        [NullAllowed, Export ("scanOption", ArgumentSemantic.Assign)]
+        ALMrzScanOption ScanOption { get; set; }
     }
 
     // @interface ALVinConfig : NSObject
@@ -2373,6 +2402,10 @@ namespace AnylineXamarinSDK.iOS
         // @property (nonatomic, strong) ALOcrResult * _Nullable ocrResult;
         [NullAllowed, Export ("ocrResult", ArgumentSemantic.Strong)]
         ALOcrResult OcrResult { get; set; }
+
+        // @property (nonatomic, strong) ALOdometerResult * _Nullable odometerResult;
+        [NullAllowed, Export ("odometerResult", ArgumentSemantic.Strong)]
+        ALOdometerResult OdometerResult { get; set; }
 
         // @property (copy, nonatomic) NSString * _Nonnull pluginID;
         [Export ("pluginID")]
@@ -2942,6 +2975,15 @@ namespace AnylineXamarinSDK.iOS
         // @property (copy, nonatomic) NSString * _Nullable text;
         [NullAllowed, Export ("text")]
         string Text { get; set; }
+    }
+
+    // @interface ALOdometerResult : NSObject
+    [BaseType (typeof(NSObject))]
+    interface ALOdometerResult
+    {
+        // @property (copy, nonatomic) NSString * _Nonnull value;
+        [Export ("value")]
+        string Value { get; set; }
     }
 
     // @interface ALTinResult : NSObject
@@ -3743,46 +3785,6 @@ namespace AnylineXamarinSDK.iOS
         // NSDictionary<NSString, NSString>[] FieldList { get; }
     }
 
-    // @interface ALScanPluginConfig : NSObject <ALJSONStringRepresentable>
-    [BaseType (typeof(NSObject))]
-    interface ALScanPluginConfig : ALJSONStringRepresentable
-    {
-        // @property (readonly, copy, nonatomic) NSString * _Nonnull pluginID;
-        [Export ("pluginID")]
-        string PluginID { get; }
-
-        // @property (readonly, nonatomic) NSInteger startScanDelay;
-        [Export ("startScanDelay")]
-        nint StartScanDelay { get; }
-
-        // @property (readonly, nonatomic) BOOL cancelOnResult;
-        [Export ("cancelOnResult")]
-        bool CancelOnResult { get; }
-
-        // @property (readonly, nonatomic) ALPluginConfig * _Nonnull pluginConfig;
-        [Export ("pluginConfig")]
-        ALPluginConfig PluginConfig { get; }
-
-        // -(id _Nonnull)initWithPluginConfig:(ALPluginConfig * _Nonnull)pluginConfig;
-        [Export ("initWithPluginConfig:")]
-        IntPtr Constructor (ALPluginConfig pluginConfig);
-
-        // -(id _Nullable)initWithJSONDictionary:(NSDictionary * _Nonnull)JSONDictionary error:(NSError * _Nullable * _Nullable)error;
-        [Export ("initWithJSONDictionary:error:")]
-        IntPtr Constructor (NSDictionary JSONDictionary, [NullAllowed] out NSError error);
-
-        // +(ALScanPluginConfig * _Nonnull)withPluginConfig:(ALPluginConfig * _Nonnull)pluginConfig;
-        [Static]
-        [Export ("withPluginConfig:")]
-        ALScanPluginConfig WithPluginConfig (ALPluginConfig pluginConfig);
-
-        // +(ALScanPluginConfig * _Nullable)withJSONDictionary:(NSDictionary * _Nonnull)JSONDictionary;
-        [Static]
-        [Export ("withJSONDictionary:")]
-        [return: NullAllowed]
-        ALScanPluginConfig WithJSONDictionary (NSDictionary JSONDictionary);
-    }
-
     // @interface ALScanPlugin : NSObject
     [BaseType (typeof(NSObject))]
     interface ALScanPlugin
@@ -3799,9 +3801,9 @@ namespace AnylineXamarinSDK.iOS
         [Export ("assetController", ArgumentSemantic.Strong)]
         ALAssetController AssetController { get; set; }
 
-        // @property (readonly, nonatomic, strong) ALScanPluginConfig * _Nonnull scanPluginConfig;
-        [Export ("scanPluginConfig", ArgumentSemantic.Strong)]
-        ALScanPluginConfig ScanPluginConfig { get; }
+        // @property (readonly, nonatomic, strong) ALPluginConfig * _Nonnull pluginConfig;
+        [Export ("pluginConfig", ArgumentSemantic.Strong)]
+        ALPluginConfig PluginConfig { get; }
 
         // @property (readonly, nonatomic) NSString * _Nonnull pluginID;
         [Export ("pluginID")]
@@ -3819,9 +3821,9 @@ namespace AnylineXamarinSDK.iOS
         [Export ("ROI", ArgumentSemantic.Assign)]
         CGRect ROI { get; set; }
 
-        // -(id _Nullable)initWithConfig:(ALScanPluginConfig * _Nonnull)scanPluginConfig error:(NSError * _Nullable * _Nullable)error;
+    // -(id _Nullable)initWithConfig:(ALPluginConfig * _Nonnull)pluginConfig error:(NSError * _Nullable * _Nullable)error;
         [Export ("initWithConfig:error:")]
-        IntPtr Constructor (ALScanPluginConfig scanPluginConfig, [NullAllowed] out NSError error);
+        IntPtr Constructor (ALPluginConfig pluginConfig, [NullAllowed] out NSError error);
 
         // -(id _Nullable)initWithJSONDictionary:(NSDictionary * _Nonnull)jsonConfig error:(NSError * _Nullable * _Nullable)error;
         [Export ("initWithJSONDictionary:error:")]
@@ -4174,34 +4176,34 @@ namespace AnylineXamarinSDK.iOS
         [Export ("scanFeedbackConfig")]
         ALScanFeedbackConfig ScanFeedbackConfig { get; }
 
-        // @property (readonly, nonatomic) ALScanPluginConfig * _Nonnull scanPluginConfig;
-        [Export ("scanPluginConfig")]
-        ALScanPluginConfig ScanPluginConfig { get; }
+        // @property (readonly, nonatomic) ALPluginConfig * _Nonnull pluginConfig;
+        [Export ("pluginConfig")]
+        ALPluginConfig PluginConfig { get; }
 
-        // -(instancetype _Nullable)initWithScanPluginConfig:(ALScanPluginConfig * _Nonnull)scanPluginConfig cutoutConfig:(ALCutoutConfig * _Nullable)cutoutConfig scanFeedbackConfig:(ALScanFeedbackConfig * _Nullable)scanFeedbackConfig error:(NSError * _Nullable * _Nullable)error __attribute__((objc_designated_initializer));
-        [Export ("initWithScanPluginConfig:cutoutConfig:scanFeedbackConfig:error:")]
+        // -(instancetype _Nullable)initWithPluginConfig:(ALPluginConfig * _Nonnull)pluginConfig cutoutConfig:(ALCutoutConfig * _Nullable)cutoutConfig scanFeedbackConfig:(ALScanFeedbackConfig * _Nullable)scanFeedbackConfig error:(NSError * _Nullable * _Nullable)error __attribute__((objc_designated_initializer));
+        [Export ("initWithPluginConfig:cutoutConfig:scanFeedbackConfig:error:")]
         [DesignatedInitializer]
-        IntPtr Constructor (ALScanPluginConfig scanPluginConfig, [NullAllowed] ALCutoutConfig cutoutConfig, [NullAllowed] ALScanFeedbackConfig scanFeedbackConfig, [NullAllowed] out NSError error);
+	    IntPtr Constructor (ALPluginConfig pluginConfig, [NullAllowed] ALCutoutConfig cutoutConfig, [NullAllowed] ALScanFeedbackConfig scanFeedbackConfig, [NullAllowed] out NSError error);
 
-        // -(instancetype _Nullable)initWithScanPluginConfig:(ALScanPluginConfig * _Nonnull)scanPluginConfig error:(NSError * _Nullable * _Nullable)error;
-        [Export ("initWithScanPluginConfig:error:")]
-        IntPtr Constructor (ALScanPluginConfig scanPluginConfig, [NullAllowed] out NSError error);
+        // -(instancetype _Nullable)initWithPluginConfig:(ALPluginConfig * _Nonnull)pluginConfig error:(NSError * _Nullable * _Nullable)error;
+        [Export ("initWithPluginConfig:error:")]
+        IntPtr Constructor (ALPluginConfig pluginConfig, [NullAllowed] out NSError error);
 
         // -(instancetype _Nullable)initWithJSONDictionary:(NSDictionary * _Nonnull)JSONDictionary error:(NSError * _Nullable * _Nullable)error;
         [Export ("initWithJSONDictionary:error:")]
         IntPtr Constructor (NSDictionary JSONDictionary, [NullAllowed] out NSError error);
 
-        // +(ALScanViewPluginConfig * _Nullable)withScanPluginConfig:(ALScanPluginConfig * _Nonnull)scanPluginConfig cutoutConfig:(ALCutoutConfig * _Nullable)cutoutConfig scanFeedbackConfig:(ALScanFeedbackConfig * _Nullable)scanFeedbackConfig;
+    	// +(ALScanViewPluginConfig * _Nullable)withPluginConfig:(ALPluginConfig * _Nonnull)pluginConfig cutoutConfig:(ALCutoutConfig * _Nullable)cutoutConfig scanFeedbackConfig:(ALScanFeedbackConfig * _Nullable)scanFeedbackConfig;
         [Static]
-        [Export ("withScanPluginConfig:cutoutConfig:scanFeedbackConfig:")]
+	    [Export ("withPluginConfig:cutoutConfig:scanFeedbackConfig:")]
         [return: NullAllowed]
-        ALScanViewPluginConfig WithScanPluginConfig (ALScanPluginConfig scanPluginConfig, [NullAllowed] ALCutoutConfig cutoutConfig, [NullAllowed] ALScanFeedbackConfig scanFeedbackConfig);
+	    ALScanViewPluginConfig WithPluginConfig (ALPluginConfig pluginConfig, [NullAllowed] ALCutoutConfig cutoutConfig, [NullAllowed] ALScanFeedbackConfig scanFeedbackConfig);
 
-        // +(ALScanViewPluginConfig * _Nullable)withScanPluginConfig:(ALScanPluginConfig * _Nonnull)scanPluginConfig;
+        // +(ALScanViewPluginConfig * _Nullable)withPluginConfig:(ALPluginConfig * _Nonnull)pluginConfig;
         [Static]
-        [Export ("withScanPluginConfig:")]
+        [Export ("withPluginConfig:")]
         [return: NullAllowed]
-        ALScanViewPluginConfig WithScanPluginConfig (ALScanPluginConfig scanPluginConfig);
+        ALScanViewPluginConfig WithPluginConfig (ALPluginConfig pluginConfig);
 
         // +(instancetype _Nullable)withJSONDictionary:(NSDictionary * _Nonnull)JSONDictionary;
         [Static]
@@ -4272,6 +4274,7 @@ namespace AnylineXamarinSDK.iOS
         // @optional -(void)scanViewPlugin:(ALScanViewPlugin * _Nonnull)scanViewPlugin visualFeedbackReceived:(ALEvent * _Nonnull)event;
         [Export ("scanViewPlugin:visualFeedbackReceived:")]
         void VisualFeedbackReceived (ALScanViewPlugin scanViewPlugin, ALEvent @event);
+
         // @optional -(void)scanViewPluginResultBeepTriggered:(ALScanViewPlugin * _Nonnull)scanViewPlugin;
         [Export ("scanViewPluginResultBeepTriggered:")]
         void ScanViewPluginResultBeepTriggered (ALScanViewPlugin scanViewPlugin);
@@ -4845,10 +4848,6 @@ namespace AnylineXamarinSDK.iOS
         [Export ("readingAvailable")]
         bool ReadingAvailable { get; }
 
-        // -(instancetype _Nullable)initWithDelegate:(id<ALNFCDetectorDelegate> _Nonnull)delegate licenseUtil:(ALLicenseUtil * _Nonnull)licenseUtil error:(NSError * _Nullable * _Nullable)error;
-        [Export ("initWithDelegate:licenseUtil:error:")]
-        IntPtr Constructor (NSObject @delegate, ALLicenseUtil licenseUtil, [NullAllowed] out NSError error);
-
         // -(instancetype _Nullable)initWithDelegate:(id<ALNFCDetectorDelegate> _Nonnull)delegate error:(NSError * _Nullable * _Nullable)error;
         [Export ("initWithDelegate:error:")]
         IntPtr Constructor (NSObject @delegate, [NullAllowed] out NSError error);
@@ -5090,7 +5089,7 @@ namespace AnylineXamarinSDK.iOS
 
         // -(void)addUpdateTask:(ALAssetContext * _Nonnull)assetContext delegate:(id<ALAssetUpdateDelegate> _Nonnull)delegate;
         [Export ("addUpdateTask:delegate:")]
-        void AddUpdateTask (ALAssetContext assetContext, ALAssetUpdateDelegate @delegate);
+        void AddUpdateTask (ALAssetContext assetContext, NSObject @delegate);
 
         // -(ALAssetUpdateTask * _Nullable)assetUpdateTaskWithID:(NSString * _Nonnull)id;
         [Export ("assetUpdateTaskWithID:")]
@@ -5213,7 +5212,7 @@ namespace AnylineXamarinSDK.iOS
 
         // -(instancetype _Nonnull)initWithContext:(ALAssetContext * _Nonnull)context delegate:(NSObject<ALAssetDelegate> * _Nonnull)delegate;
         [Export ("initWithContext:delegate:")]
-        IntPtr Constructor (ALAssetContext context, ALAssetDelegate @delegate);
+        IntPtr Constructor (ALAssetContext context, NSObject @delegate);
 
         // -(instancetype _Nonnull)initWithContext:(ALAssetContext * _Nonnull)context;
         [Export ("initWithContext:")]
@@ -5245,7 +5244,7 @@ namespace AnylineXamarinSDK.iOS
 
         // -(void)setupAssetUpdateWithContext:(ALAssetContext * _Nonnull)context delegate:(NSObject<ALAssetDelegate> * _Nullable)delegate;
         [Export ("setupAssetUpdateWithContext:delegate:")]
-        void SetupAssetUpdateWithContext (ALAssetContext context, [NullAllowed] ALAssetDelegate @delegate);
+        void SetupAssetUpdateWithContext (ALAssetContext context, [NullAllowed] NSObject @delegate);
 
         // -(BOOL)isActive;
         [Export ("isActive")]

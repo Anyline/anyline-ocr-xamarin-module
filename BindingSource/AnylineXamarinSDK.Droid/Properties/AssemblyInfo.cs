@@ -11,7 +11,7 @@ using Android.App;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Anyline")]
 [assembly: AssemblyProduct("AnylineXamarinSDK.Droid")]
-[assembly: AssemblyCopyright("Copyright © 2022 Anyline GmbH")]
+[assembly: AssemblyCopyright("Copyright © 2023 Anyline GmbH")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
@@ -23,7 +23,7 @@ using Android.App;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("49.0.0")]
+[assembly: AssemblyVersion("50.0.3")]
 //[assembly: AssemblyFileVersion("24.1.0.0")]
 //[assembly: AssemblyInformationalVersion("43.0.0-preview.1")]
 

@@ -6,12 +6,7 @@ using Android.OS;
 using Android.Views;
 
 using Android.Util;
-using System.Collections;
-using IO.Anyline.View;
 using IO.Anyline.Camera;
-using IO.Anyline2;
-using IO.Anyline.Plugin;
-using IO.Anyline2.View;
 using AndroidX.AppCompat.App;
 
 namespace AnylineExamples.Droid

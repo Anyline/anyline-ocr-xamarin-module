@@ -7,13 +7,13 @@ using Java.Lang;
 namespace AnylineExamples.Droid
 {
     /// <summary>
-    /// This scan result listener implements IScanResultListener 
-    /// in order to receive results and passes the JNI Handle to the 
+    /// This scan result listener is used to receive
+    /// results and passe the JNI Handle to the 
     /// result activity.
     /// </summary>
     public class MyAnylineResultEventHandler : Java.Lang.Object, IEvent
     {
-        public static readonly string TAG = typeof(ScanResultListener).Name;
+        public static readonly string TAG = typeof(MyAnylineResultEventHandler).Name;
         public string Title { get; set; }
         protected Activity Activity { get; set; }
 

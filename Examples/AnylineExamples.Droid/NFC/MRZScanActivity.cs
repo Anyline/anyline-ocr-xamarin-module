@@ -7,8 +7,6 @@ using Android.Views;
 using IO.Anyline.Camera;
 
 using Android.Util;
-using IO.Anyline.Plugin.ID;
-using IO.Anyline.Plugin;
 using Anyline.Droid.NFC;
 using IO.Anyline2;
 using IO.Anyline2.View;

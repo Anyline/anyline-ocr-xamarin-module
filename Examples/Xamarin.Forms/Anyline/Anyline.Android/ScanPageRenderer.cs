@@ -7,7 +7,6 @@ using Anyline;
 using Anyline.Droid;
 using IO.Anyline2;
 using IO.Anyline2.View;
-using IO.Anyline2.Viewplugin;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
