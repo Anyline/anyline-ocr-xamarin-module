@@ -46,7 +46,7 @@ namespace AnylineExamples.Droid.NFC
                 _scanView = FindViewById<ScanView>(Resource.Id.scan_view);
 
                 // the initialization parses the json configuration and builds the whole use-case
-                _scanView.Init("mrz_config.json");
+                _scanView.Init("id_config_mrz.json");
 
                 // Activates Face Detection if the MRZ Scanner was initialized
                 //(((_scanView.ScanViewPlugin as IdScanViewPlugin)?.ScanPlugin as IdScanPlugin)?.IdConfig as MrzConfig)?.EnableFaceDetection(true);

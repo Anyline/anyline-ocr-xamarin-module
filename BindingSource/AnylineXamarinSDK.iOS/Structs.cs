@@ -69,7 +69,9 @@ namespace AnylineXamarinSDK.iOS
         NFCTagErrorNotImplemented = 10017,
         TimeoutError = 11001,
         JSONError = 12001,
-        FileSystemError = 13001
+        FileSystemError = 13001,
+        CacheErrorNoLogsFound = 14001,
+        CacheErrorZipCreationFailed = 14002
     }
 
     [Native]

@@ -26,7 +26,10 @@ namespace AnylineExamples.iOS
             string licenseKey = "YOUR_LICENSE_KEY_HERE";
 
             // INITIALIZE THE ANYLINE SDK
-            bool validLicense = AnylineXamarinSDK.iOS.AnylineSDK.SetupWithLicenseKey(licenseKey, out NSError licenseError);
+            //bool validLicense = AnylineXamarinSDK.iOS.AnylineSDK.SetupWithLicenseKey(licenseKey, out NSError licenseError);
+            bool validLicense = AnylineXamarinSDK.iOS.AnylineSDK.SetupWithLicenseKey(licenseKey,
+                                AnylineXamarinSDK.iOS.ALCacheConfig.OfflineLicenseEventCachingEnabled,
+                                out NSError licenseError);
 
             // If the License Key is invalid
             if (!validLicense)
@@ -38,8 +41,16 @@ namespace AnylineExamples.iOS
                 System.Diagnostics.Debug.WriteLine(licenseError.LocalizedDescription);
             }
 
+            var exportMessage = "Event cache is empty.";
+            string exportedCacheFile = AnylineXamarinSDK.iOS.AnylineSDK.ExportCachedEvents(out NSError exportError);
+            if (exportedCacheFile != null)
+            {
+                exportMessage = $"New file generated at {exportedCacheFile}";
+            }
+            System.Diagnostics.Debug.WriteLine(exportMessage);
+
+
             var list = ExampleList.Items;
-            list.Remove(ExampleList.Items.FirstOrDefault(x => x.Type == ItemType.DocumentUI));
 
             string currentCategory = null;
             var currentElements = new List<ExampleModel>();

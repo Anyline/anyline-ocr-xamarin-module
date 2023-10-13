@@ -97,6 +97,7 @@
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
     <Compile Include="ObjectExtensions.cs" />
     <Compile Include="ResultViewController.cs" />
+    <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -149,37 +150,37 @@
     </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Anyline.Xamarin.SDK.iOS" Version="50.0.0" />
+    <PackageReference Include="Anyline.Xamarin.SDK.iOS" Version="51.1.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\analog_digital_meter_config.json" />
-    <BundleResource Include="Resources\arabic_id_config.json" />
-    <BundleResource Include="Resources\barcode_config.json" />
-    <BundleResource Include="Resources\barcode_pdf417_config.json" />
-    <BundleResource Include="Resources\commercial_tire_id_config.json" />
-    <BundleResource Include="Resources\composite_parallel_config.json" />
-    <BundleResource Include="Resources\composite_serial_config.json" />
-    <BundleResource Include="Resources\container_horizontal_config.json" />
-    <BundleResource Include="Resources\container_vertical_config.json" />
-    <BundleResource Include="Resources\cyrillic_id_config.json" />
-    <BundleResource Include="Resources\license_plate_af_config.json" />
-    <BundleResource Include="Resources\license_plate_eu_config.json" />
-    <BundleResource Include="Resources\license_plate_us_config.json" />
-    <BundleResource Include="Resources\mrz_config.json" />
-    <BundleResource Include="Resources\serial_number_config.json" />
-    <BundleResource Include="Resources\tin_config.json" />
     <BundleResource Include="Resources\tire_size_config.json" />
-    <BundleResource Include="Resources\universal_id_config.json" />
-    <BundleResource Include="Resources\vin_config.json" />
-    <BundleResource Include="Resources\vrc_config.json" />
-    <BundleResource Include="Resources\dial_meter_config.json" />
-    <BundleResource Include="Resources\tire_config_tin_dot.json" />
-    <BundleResource Include="Resources\composite_parallel_config_first_scan.json" />
     <BundleResource Include="Resources\tire_make_config.json" />
+    <BundleResource Include="Resources\energy_dial_config.json" />
+    <BundleResource Include="Resources\mro_usnr_config.json" />
+    <BundleResource Include="Resources\tire_commercial_tire_id_config.json" />
+    <BundleResource Include="Resources\id_config_universal.json" />
+    <BundleResource Include="Resources\id_config_cyrillic.json" />
+    <BundleResource Include="Resources\id_config_mrz.json" />
+    <BundleResource Include="Resources\vehicle_config_license_plate_eu.json" />
+    <BundleResource Include="Resources\tire_tin_universal_config.json" />
+    <BundleResource Include="Resources\vehicle_vin_config.json" />
+    <BundleResource Include="Resources\mro_shipping_container_vertical_config.json" />
+    <BundleResource Include="Resources\vehicle_registration_certificate_config.json" />
+    <BundleResource Include="Resources\workflows_config_serial_scanning.json" />
+    <BundleResource Include="Resources\energy_analog_digital_config.json" />
+    <BundleResource Include="Resources\vehicle_config_license_plate_us.json" />
+    <BundleResource Include="Resources\others_config_barcode.json" />
+    <BundleResource Include="Resources\id_config_arabic.json" />
+    <BundleResource Include="Resources\vehicle_config_license_plate_africa.json" />
+    <BundleResource Include="Resources\mro_shipping_container_horizontal_config.json" />
+    <BundleResource Include="Resources\tire_tin_dot_config.json" />
+    <BundleResource Include="Resources\workflows_config_parallel_scanning.json" />
+    <BundleResource Include="Resources\id_config_jlp.json" />
+    <BundleResource Include="Resources\workflows_config_parallel_first_scan.json" />
   </ItemGroup>
   <Import Project="..\AnylineExamples.Shared\AnylineExamples.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

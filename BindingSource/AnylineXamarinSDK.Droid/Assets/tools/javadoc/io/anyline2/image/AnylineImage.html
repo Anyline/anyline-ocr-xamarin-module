@@ -161,7 +161,7 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="rowColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(byte%5B%5D,io.anyline2.core.AnylineImage.ColorFormat,int,int,int)">AnylineImage</a></span>&#8203;(byte[]&nbsp;data,
-            <a href="../core/AnylineImage.ColorFormat.html" title="enum in io.anyline2.core">AnylineImage.ColorFormat</a>&nbsp;colorFormat,
+            io.anyline2.core.AnylineImage.ColorFormat&nbsp;colorFormat,
             int&nbsp;width,
             int&nbsp;height,
             int&nbsp;bytesPerRow)</code></th>
@@ -200,7 +200,7 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="AnylineImage.html" title="class in io.anyline2.image">AnylineImage</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#crop(CropRect)">crop</a></span>&#8203;(CropRect&nbsp;cropRect)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#crop(io.anyline.plugin.result.CropRect)">crop</a></span>&#8203;(<a href="../../anyline/plugin/result/CropRect.html" title="class in io.anyline.plugin.result">CropRect</a>&nbsp;cropRect)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
@@ -211,12 +211,12 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code><a href="../core/AnylineImage.ColorFormat.html" title="enum in io.anyline2.core">AnylineImage.ColorFormat</a></code></td>
+<td class="colFirst"><code>io.anyline2.core.AnylineImage.ColorFormat</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getColorFormat()">getColorFormat</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code><a href="../core/AnylineImage.html" title="class in io.anyline2.core">AnylineImage</a></code></td>
+<td class="colFirst"><code>io.anyline2.core.AnylineImage</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCoreImage()">getCoreImage</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
@@ -283,11 +283,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>AnylineImage</h4>
 <pre>public&nbsp;AnylineImage&#8203;(byte[]&nbsp;data,
-                    <a href="../core/AnylineImage.ColorFormat.html" title="enum in io.anyline2.core">AnylineImage.ColorFormat</a>&nbsp;colorFormat,
+                    io.anyline2.core.AnylineImage.ColorFormat&nbsp;colorFormat,
                     int&nbsp;width,
                     int&nbsp;height,
                     int&nbsp;bytesPerRow)
-             throws <a href="../core/AnylineException.html" title="class in io.anyline2.core">AnylineException</a></pre>
+             throws AnylineException</pre>
 <div class="block">Instantiates a new <a href="AnylineImage.html" title="class in io.anyline2.image"><code>AnylineImage</code></a> from a byte array with a given width and height.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -296,7 +296,7 @@ extends java.lang.Object</pre>
 <dd><code>width</code> - image width</dd>
 <dd><code>height</code> - image height</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../core/AnylineException.html" title="class in io.anyline2.core">AnylineException</a></code></dd>
+<dd><code>AnylineException</code></dd>
 </dl>
 </li>
 </ul>
@@ -309,7 +309,7 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;AnylineImage&#8203;(byte[]&nbsp;data,
                     int&nbsp;width,
                     int&nbsp;height)
-             throws <a href="../core/AnylineException.html" title="class in io.anyline2.core">AnylineException</a></pre>
+             throws AnylineException</pre>
 <div class="block">Instantiates a new <a href="AnylineImage.html" title="class in io.anyline2.image"><code>AnylineImage</code></a> from a byte array with a given width and height.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -317,7 +317,7 @@ extends java.lang.Object</pre>
 <dd><code>width</code> - image width</dd>
 <dd><code>height</code> - image height</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../core/AnylineException.html" title="class in io.anyline2.core">AnylineException</a></code></dd>
+<dd><code>AnylineException</code></dd>
 </dl>
 </li>
 </ul>
@@ -329,14 +329,14 @@ extends java.lang.Object</pre>
 <h4>AnylineImage</h4>
 <pre>public&nbsp;AnylineImage&#8203;(android.graphics.Bitmap&nbsp;bitmap)
              throws java.lang.IllegalStateException,
-                    <a href="../core/AnylineException.html" title="class in io.anyline2.core">AnylineException</a></pre>
+                    AnylineException</pre>
 <div class="block">Instantiates an <a href="AnylineImage.html" title="class in io.anyline2.image"><code>AnylineImage</code></a> from a <code>Bitmap</code>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>bitmap</code> - the image source in Bitmap format</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.lang.IllegalStateException</code></dd>
-<dd><code><a href="../core/AnylineException.html" title="class in io.anyline2.core">AnylineException</a></code></dd>
+<dd><code>AnylineException</code></dd>
 </dl>
 </li>
 </ul>
@@ -407,10 +407,10 @@ extends java.lang.Object</pre>
 <h4>copy</h4>
 <pre class="methodSignature">@NonNull
 public&nbsp;<a href="AnylineImage.html" title="class in io.anyline2.image">AnylineImage</a>&nbsp;copy()
-                  throws <a href="../core/AnylineException.html" title="class in io.anyline2.core">AnylineException</a></pre>
+                  throws AnylineException</pre>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../core/AnylineException.html" title="class in io.anyline2.core">AnylineException</a></code></dd>
+<dd><code>AnylineException</code></dd>
 </dl>
 </li>
 </ul>
@@ -431,17 +431,17 @@ public&nbsp;<a href="AnylineImage.html" title="class in io.anyline2.image">Anyli
 </dl>
 </li>
 </ul>
-<a id="crop(CropRect)">
+<a id="crop(io.anyline.plugin.result.CropRect)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>crop</h4>
-<pre class="methodSignature">public&nbsp;<a href="AnylineImage.html" title="class in io.anyline2.image">AnylineImage</a>&nbsp;crop&#8203;(CropRect&nbsp;cropRect)
-                  throws <a href="../core/AnylineException.html" title="class in io.anyline2.core">AnylineException</a></pre>
+<pre class="methodSignature">public&nbsp;<a href="AnylineImage.html" title="class in io.anyline2.image">AnylineImage</a>&nbsp;crop&#8203;(<a href="../../anyline/plugin/result/CropRect.html" title="class in io.anyline.plugin.result">CropRect</a>&nbsp;cropRect)
+                  throws AnylineException</pre>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../core/AnylineException.html" title="class in io.anyline2.core">AnylineException</a></code></dd>
+<dd><code>AnylineException</code></dd>
 </dl>
 </li>
 </ul>
@@ -451,7 +451,7 @@ public&nbsp;<a href="AnylineImage.html" title="class in io.anyline2.image">Anyli
 <ul class="blockList">
 <li class="blockList">
 <h4>getCoreImage</h4>
-<pre class="methodSignature">public&nbsp;<a href="../core/AnylineImage.html" title="class in io.anyline2.core">AnylineImage</a>&nbsp;getCoreImage()</pre>
+<pre class="methodSignature">public&nbsp;io.anyline2.core.AnylineImage&nbsp;getCoreImage()</pre>
 </li>
 </ul>
 <a id="getColorFormat()">
@@ -460,7 +460,7 @@ public&nbsp;<a href="AnylineImage.html" title="class in io.anyline2.image">Anyli
 <ul class="blockList">
 <li class="blockList">
 <h4>getColorFormat</h4>
-<pre class="methodSignature">public&nbsp;<a href="../core/AnylineImage.ColorFormat.html" title="enum in io.anyline2.core">AnylineImage.ColorFormat</a>&nbsp;getColorFormat()</pre>
+<pre class="methodSignature">public&nbsp;io.anyline2.core.AnylineImage.ColorFormat&nbsp;getColorFormat()</pre>
 </li>
 </ul>
 <a id="release()">

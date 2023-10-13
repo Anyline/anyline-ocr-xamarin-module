@@ -429,7 +429,7 @@
                 },
                 "upsideDownMode": {
                     "type": "string",
-                    "description": "Sets whether the text shall also be scanned upside-down. By default, it is disabled.",
+                    "description": "Sets whether the text shall also be scanned upside-down.",
                     "enum": [
                         "DISABLED",
                         "ENABLED",
@@ -443,7 +443,7 @@
                 },
                 "validateProductionDate": {
                     "type": "boolean",
-                    "description": "Sets whether the production date validation is enabled. If it is set to false the scan result is also returned for invalid and missing dates. Defaults to true.",
+                    "description": "Sets whether the production date validation is enabled. If it is set to false the scan result is also returned for invalid and missing dates.",
                     "default": true
                 },
                 "validationRegex": {
@@ -522,7 +522,7 @@
                 },
                 "validationRegex": {
                     "type": "string",
-                    "description": "Sets a regular expression per country. Expected format: \"'country':^regex$, 'other_country':^other_regex$\". Note: not available for unitedstates and africa."
+                    "description": "Sets a regular expression per country. Expected format: \"'country_code':^regex$, 'other_country_code':^other_regex$\". The country code needs to be provided in the international vehicle registration code format that is visible on the license plate (for example 'A' for Austria). Note: not available for the scanModes unitedstates and africa."
                 }
             },
             "additionalProperties": false

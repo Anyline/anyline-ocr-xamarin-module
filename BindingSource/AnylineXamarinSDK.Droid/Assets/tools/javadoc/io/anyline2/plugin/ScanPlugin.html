@@ -242,7 +242,7 @@ extends java.lang.Object</pre>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code><a href="../core/ScanController.PluginType.html" title="enum in io.anyline2.core">ScanController.PluginType</a></code></td>
+<td class="colFirst"><code>ScanController.PluginType</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getType()">getType</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
@@ -273,7 +273,7 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onResult(io.anyline2.core.AnylineImage,java.lang.String)">onResult</a></span>&#8203;(<a href="../core/AnylineImage.html" title="class in io.anyline2.core">AnylineImage</a>&nbsp;image,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onResult(io.anyline2.core.AnylineImage,java.lang.String)">onResult</a></span>&#8203;(io.anyline2.core.AnylineImage&nbsp;image,
         java.lang.String&nbsp;var)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
@@ -398,11 +398,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>ScanPlugin</h4>
 <pre>public&nbsp;ScanPlugin&#8203;(org.json.JSONObject&nbsp;jsonConfig)
-           throws <a href="../core/AnylineException.html" title="class in io.anyline2.core">AnylineException</a>,
+           throws AnylineException,
                   org.json.JSONException</pre>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../core/AnylineException.html" title="class in io.anyline2.core">AnylineException</a></code></dd>
+<dd><code>AnylineException</code></dd>
 <dd><code>org.json.JSONException</code></dd>
 </dl>
 </li>
@@ -415,11 +415,11 @@ extends java.lang.Object</pre>
 <h4>ScanPlugin</h4>
 <pre>public&nbsp;ScanPlugin&#8203;(org.json.JSONObject&nbsp;jsonConfig,
                   <a href="../legacy/trainer/AssetContext.html" title="class in io.anyline2.legacy.trainer">AssetContext</a>&nbsp;assetContext)
-           throws <a href="../core/AnylineException.html" title="class in io.anyline2.core">AnylineException</a>,
+           throws AnylineException,
                   org.json.JSONException</pre>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../core/AnylineException.html" title="class in io.anyline2.core">AnylineException</a></code></dd>
+<dd><code>AnylineException</code></dd>
 <dd><code>org.json.JSONException</code></dd>
 </dl>
 </li>
@@ -477,10 +477,10 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>processImage</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;processImage&#8203;(<a href="../image/AnylineImage.html" title="class in io.anyline2.image">AnylineImage</a>&nbsp;anylineImage)
-                  throws <a href="../core/AnylineException.html" title="class in io.anyline2.core">AnylineException</a></pre>
+                  throws AnylineException</pre>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../core/AnylineException.html" title="class in io.anyline2.core">AnylineException</a></code></dd>
+<dd><code>AnylineException</code></dd>
 </dl>
 </li>
 </ul>
@@ -562,7 +562,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>onResult</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;onResult&#8203;(<a href="../core/AnylineImage.html" title="class in io.anyline2.core">AnylineImage</a>&nbsp;image,
+<pre class="methodSignature">public&nbsp;void&nbsp;onResult&#8203;(io.anyline2.core.AnylineImage&nbsp;image,
                      java.lang.String&nbsp;var)</pre>
 </li>
 </ul>
@@ -590,7 +590,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getType</h4>
-<pre class="methodSignature">public&nbsp;<a href="../core/ScanController.PluginType.html" title="enum in io.anyline2.core">ScanController.PluginType</a>&nbsp;getType()</pre>
+<pre class="methodSignature">public&nbsp;ScanController.PluginType&nbsp;getType()</pre>
 </li>
 </ul>
 <a id="isFaceDetectionEnabled()">

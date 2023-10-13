@@ -41,18 +41,11 @@ namespace AnylineExamples.iOS
 
                 // This is the main intialization method that will create our use case depending on the JSON configuration.
                 _scanView = ALScanViewFactory.WithConfigFilePath(configPath, _resultDelegate, out error);
-
+                
                 if (error != null)
                 {
                     throw new Exception(error.LocalizedDescription);
                 }
-
-                // Activates PDF 417 parsing
-                // (you can activate this when scanning the barcode on US Driver's Licenses)
-                //if (scanView.ScanViewPlugin is ALBarcodeScanViewPlugin barcodeSVP)
-                //{
-                //    barcodeSVP.BarcodeScanPlugin.ParsePDF417 = true;
-                //}
 
                 View.AddSubview(_scanView);
 

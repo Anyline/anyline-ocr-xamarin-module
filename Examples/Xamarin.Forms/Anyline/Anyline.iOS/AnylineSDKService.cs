@@ -7,11 +7,26 @@ namespace Anyline.iOS
     {
         public bool SetupWithLicenseKey(string licenseKey, out string licenseErrorMessage)
         {
-            AnylineXamarinSDK.iOS.AnylineSDK.SetupWithLicenseKey(licenseKey, out NSError licenseError);
+            // INITIALIZE THE ANYLINE SDK
+            //bool validLicense = AnylineXamarinSDK.iOS.AnylineSDK.SetupWithLicenseKey(licenseKey, out NSError licenseError);
+            bool validLicense = AnylineXamarinSDK.iOS.AnylineSDK.SetupWithLicenseKey(licenseKey,
+                                AnylineXamarinSDK.iOS.ALCacheConfig.OfflineLicenseEventCachingEnabled,
+                                out NSError licenseError);
 
             if (licenseError == null)
             {
                 licenseErrorMessage = null;
+
+
+                var exportMessage = "Event cache is empty.";
+                string exportedCacheFile = AnylineXamarinSDK.iOS.AnylineSDK.ExportCachedEvents(out NSError exportError);
+                if (exportedCacheFile != null)
+                {
+                    exportMessage = $"New file generated at {exportedCacheFile}";
+                }
+                System.Diagnostics.Debug.WriteLine(exportMessage);
+
+
                 return true;
             }
             else

@@ -3002,9 +3002,9 @@ namespace AnylineXamarinSDK.iOS
         [Export ("text")]
         string Text { get; set; }
 
-        // @property (copy, nonatomic) NSString * _Nullable tireAgeInYearsRoundedDown;
-        [NullAllowed, Export ("tireAgeInYearsRoundedDown")]
-        string TireAgeInYearsRoundedDown { get; set; }
+        // @property (nonatomic, strong) NSNumber * _Nullable tireAgeInYearsRoundedDown;
+        [NullAllowed, Export ("tireAgeInYearsRoundedDown", ArgumentSemantic.Strong)]
+        NSNumber TireAgeInYearsRoundedDown { get; set; }
     }
 
     // @interface ALTireMakeResult : NSObject
@@ -5292,6 +5292,37 @@ namespace AnylineXamarinSDK.iOS
         ALAssetController MakeControllerWithAssetContext (ALAssetContext assetContext, ALAssetDelegate assetDelegate);
     }
 
+    // @interface ALCacheConfig : NSObject
+    [BaseType (typeof(NSObject))]
+    interface ALCacheConfig
+    {
+        // @property (readonly, nonatomic) BOOL cachingEnabled;
+        [Export ("cachingEnabled")]
+        bool CachingEnabled { get; }
+
+        // @property (readonly, nonatomic) BOOL offlineLicenseCachingEnabled;
+        [Export ("offlineLicenseCachingEnabled")]
+        bool OfflineLicenseCachingEnabled { get; }
+
+        // @property (readonly, nonatomic) NSUInteger maxEventAgeInDays;
+        [Export ("maxEventAgeInDays")]
+        nuint MaxEventAgeInDays { get; }
+
+        // @property (readonly, nonatomic) NSUInteger cachePullBatchSize;
+        [Export ("cachePullBatchSize")]
+        nuint CachePullBatchSize { get; }
+
+        // +(ALCacheConfig * _Nonnull)default;
+        [Static]
+        [Export ("default")]
+        ALCacheConfig Default { get; }
+
+        // +(ALCacheConfig * _Nonnull)offlineLicenseCachingEnabled;
+        [Static]
+        [Export ("offlineLicenseCachingEnabled")]
+        ALCacheConfig OfflineLicenseEventCachingEnabled { get; }
+    }
+
     // @interface AnylineSDK : NSObject
     [BaseType (typeof(NSObject))]
     interface AnylineSDK
@@ -5300,6 +5331,11 @@ namespace AnylineXamarinSDK.iOS
         [Static]
         [Export ("setupWithLicenseKey:error:")]
         bool SetupWithLicenseKey (string licenseKey, [NullAllowed] out NSError error);
+
+        // +(BOOL)setupWithLicenseKey:(NSString * _Nonnull)licenseKey cacheConfig:(ALCacheConfig * _Nullable)cacheConfig error:(NSError * _Nullable * _Nullable)error;
+        [Static]
+        [Export ("setupWithLicenseKey:cacheConfig:error:")]
+        bool SetupWithLicenseKey (string licenseKey, [NullAllowed] ALCacheConfig cacheConfig, [NullAllowed] out NSError error);
 
         // +(NSString * _Nonnull)licenseExpirationDate;
         [Static]
@@ -5314,5 +5350,11 @@ namespace AnylineXamarinSDK.iOS
         [Static]
         [Export ("buildNumber")]
         string BuildNumber { get; }
+
+        // +(NSString * _Nullable)exportCachedEvents:(NSError * _Nullable * _Nullable)error;
+        [Static]
+        [Export ("exportCachedEvents:")]
+        [return: NullAllowed]
+        string ExportCachedEvents ([NullAllowed] out NSError error);
     }
 }
